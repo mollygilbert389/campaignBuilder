@@ -3,9 +3,6 @@ import {Card} from 'react-bootstrap'
 
 class StoryInfo extends Component {
 
-    campaignFilller = () => {
-        
-    }
 
 render() {  
 
@@ -14,10 +11,18 @@ render() {
                 <Card.Body>
                     <Card.Title id="cardCampaignName">Campaign Name:</Card.Title>
                     <Card.Text>
-                    <p id="villianNameSpace">Villian:</p>
-                    <p id="questGiverNameSpace">Quest Giver:</p>
-                    <p id="heroNameSpace">Hero:</p>
-
+                    <p id="partyInfoSapce"></p>
+                    <p id="questGiverNameSpace"></p>
+                    <p id="villianNameSpace"></p>
+                    <p id="pillarTypeSpace"></p>
+                    <p id="themeSpace"></p>
+                    <p id="actsSpace"></p>
+                    <p id="sideQuestSpace"></p>
+                    <p id="dungeonTypeSpace"></p>
+                    <p id="roomsSpace"></p>
+                    <p id="setbackSpace"></p>
+                    <p id="monstersSpace"></p>
+                    <p id="treasueSpace"></p>
                     </Card.Text>
                 </Card.Body>
         </div>

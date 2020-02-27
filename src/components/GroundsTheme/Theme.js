@@ -18,9 +18,9 @@ class Theme extends Component {
               showModal: false,
               value: event.target.value
             })
-            // let questGiverName = this.state.value
-            // let newName = document.getElementById('questGiverNameSpace')
-            // newName.textContent = "Quest Giver: " + questGiverName
+            let theme = this.state.value
+            let newName = document.getElementById('themeSpace')
+            newName.textContent = "Theme: " + theme
       }
 
       //handles the key stoke changes????
@@ -52,25 +52,44 @@ render() {
 
             <Modal.Body>
                 <p>Below are some buttons to help create your ideal world!</p>
-                <Form inline>
-                    <FormControl type="text" placeholder="Guest Giver Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
-                </Form>
-                <br></br>
+                <p id="villianNameRemember">Some things you should keep in mind.</p>
+                <p id="questGiverNameRemember">Some things you should keep in mind.</p>
 
                 <Dropdown>
                     <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    Types of Themes
+                    What type of climate would you find your villian in?
                     </Dropdown.Toggle>
-
                     <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Human</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Elf</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">God</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Dwarf</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Wizard</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                    <Dropdown.Item href="#/action-1">Cold</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Hot</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Mild</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
+
+                <Dropdown>
+                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    What type of world is this?
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                    <Dropdown.Item href="#/action-1">Forest</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Desert</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">City</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+
+                <Dropdown>
+                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    Where do you intend your party to meet?
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                    <Dropdown.Item href="#/action-1">Meadow</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Tavern</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Party</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Dinner</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Mysterious Circumstance</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+
             </Modal.Body>
 
             <Modal.Footer>
