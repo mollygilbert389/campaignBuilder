@@ -12,3 +12,13 @@
 .btns {
     margin: 10px;
 }
+
+.partyBtnSpace {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.prtyBtns {
+    margin: 2px;
+}
