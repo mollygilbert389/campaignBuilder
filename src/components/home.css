@@ -1,0 +1,18 @@
+.mainques {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.btnspace {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.btns {
+    margin: 10px;
+}
+
+.storyCards {
+    margin: 30px;
+}
