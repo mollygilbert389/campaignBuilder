@@ -11,18 +11,18 @@ render() {
                 <Card.Body>
                     <Card.Title id="cardCampaignName">Campaign Name:</Card.Title>
                     <Card.Text>
-                    <p id="partyInfoSapce"></p>
-                    <p id="questGiverNameSpace"></p>
-                    <p id="villianNameSpace"></p>
-                    <p id="pillarTypeSpace"></p>
-                    <p id="themeSpace"></p>
-                    <p id="actsSpace"></p>
-                    <p id="sideQuestSpace"></p>
-                    <p id="dungeonTypeSpace"></p>
-                    <p id="roomsSpace"></p>
-                    <p id="setbackSpace"></p>
-                    <p id="monstersSpace"></p>
-                    <p id="treasueSpace"></p>
+                    <div id="partyInfoSapce"></div>
+                    <div id="questGiverNameSpace"></div>
+                    <div id="villianNameSpace"></div>
+                    <div id="pillarTypeSpace"></div>
+                    <div id="themeSpace"></div>
+                    <div id="actsSpace"></div>
+                    <div id="sideQuestSpace"></div>
+                    <div id="dungeonTypeSpace"></div>
+                    <div id="roomsSpace"></div>
+                    <div id="setbackSpace"></div>
+                    <div id="monstersSpace"></div>
+                    <div id="treasueSpace"></div>
                     </Card.Text>
                 </Card.Body>
         </div>

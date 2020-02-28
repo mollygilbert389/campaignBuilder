@@ -10,77 +10,76 @@ import "./style.css"
 
 class PartyInfo extends Component {
 
+    handleClick = (e) => {
+        let num = e.target.id
+        let threeForm = document.getElementById("threeForm")
+        let fourForm = document.getElementById("fourForm")
+        let fiveForm = document.getElementById("fiveForm")
+        let sixForm = document.getElementById("sixForm")
+        let sevenForm = document.getElementById("sevenForm")
+        let eightForm = document.getElementById("eightForm")
 
-handleClick = (e) => {
-    let num = e.target.id
-    let threeForm = document.getElementById("threeForm")
-    let fourForm = document.getElementById("fourForm")
-    let fiveForm = document.getElementById("fiveForm")
-    let sixForm = document.getElementById("sixForm")
-    let sevenForm = document.getElementById("sevenForm")
-    let eightForm = document.getElementById("eightForm")
+        const show = function (div) {
+            div.style.display = 'block'
+        }
 
-    const show = function (div) {
-        div.style.display = 'block'
-    }
+        const hide = function (div) {
+            div.style.display = 'none'
+        }
 
-    const hide = function (div) {
-        div.style.display = 'none'
-    }
+        if (num === "3") {         
+            show(threeForm)
+            hide(fourForm)
+            hide(fiveForm)
+            hide(sixForm)
+            hide(sevenForm)
+            hide(eightForm)
+        }
 
-    if (num === "3") {         
-        show(threeForm)
-        hide(fourForm)
-        hide(fiveForm)
-        hide(sixForm)
-        hide(sevenForm)
-        hide(eightForm)
-    }
+        if (num === "4") {
+            hide(threeForm)
+            show(fourForm)
+            hide(fiveForm)
+            hide(sixForm)
+            hide(sevenForm)
+            hide(eightForm)
+        }
+        if (num === "5") {
+            hide(threeForm)
+            hide(fourForm)
+            show(fiveForm)
+            hide(sixForm)
+            hide(sevenForm)
+            hide(eightForm)
+        }
+        if (num === "6") {
+            hide(threeForm)
+            hide(fourForm)
+            hide(fiveForm)
+            show(sixForm)
+            hide(sevenForm)
+            hide(eightForm)
+        }
 
-     if (num === "4") {
-        hide(threeForm)
-        show(fourForm)
-        hide(fiveForm)
-        hide(sixForm)
-        hide(sevenForm)
-        hide(eightForm)
-    }
-     if (num === "5") {
-        hide(threeForm)
-        hide(fourForm)
-        show(fiveForm)
-        hide(sixForm)
-        hide(sevenForm)
-        hide(eightForm)
-    }
-     if (num === "6") {
-        hide(threeForm)
-        hide(fourForm)
-        hide(fiveForm)
-        show(sixForm)
-        hide(sevenForm)
-        hide(eightForm)
-    }
+        if (num === "7") {
+            hide(threeForm)
+            hide(fourForm)
+            hide(fiveForm)
+            hide(sixForm)
+            show(sevenForm)
+            hide(eightForm)
+        }
 
-    if (num === "7") {
-        hide(threeForm)
-        hide(fourForm)
-        hide(fiveForm)
-        hide(sixForm)
-        show(sevenForm)
-        hide(eightForm)
-    }
+        if (num === "8") {
+            hide(threeForm)
+            hide(fourForm)
+            hide(fiveForm)
+            hide(sixForm)
+            hide(sevenForm)
+            show(eightForm)
+        }
 
-    if (num === "8") {
-        hide(threeForm)
-        hide(fourForm)
-        hide(fiveForm)
-        hide(sixForm)
-        hide(sevenForm)
-        show(eightForm)
     }
-
-}
 
 
 render() {  
