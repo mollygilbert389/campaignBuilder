@@ -28,28 +28,29 @@ class PartyThreeForm extends Component {
     playerOnebuttonClick = (event) =>  {
     this.setState({
         playerOneName: event.target.value,
-        // playerOneClass: event.target.value,
-        // playerOneRace: event.target.value,
         })
 
-
+        console.log(this.state.playerOneName)
         let newDiv = document.createElement('div')
         newDiv.classList.add('playerNameSpace')
         let playerOneName = this.state.playerOneName
+
         let partyName = document.getElementById('partyInfoSapce')
         newDiv.append("Player #1: " + playerOneName)
+        // newDiv.append("Class: " + playerOneClass)
 
         // newDiv.append("Race: " + playerOneRace)
         partyName.append(newDiv)
     }
 
     playerOneSelectRace = (choice) => {
-        let newChoice = choice.target.text 
         this.setState({
-            playerOneclass: choice.target.text 
+            playerOneClass: choice.target.text  
         })
 
-        alert(newChoice)
+        alert(choice.target.text)
+
+        console.log(this.state.playerOneClass)
     }
 
     /////////////////////
@@ -103,7 +104,7 @@ class PartyThreeForm extends Component {
                         </FormGroup>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-success" id="dropdown-basic">
+                            <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
                             What is the class of this member?
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -124,7 +125,7 @@ class PartyThreeForm extends Component {
 
                     <div className="addSpace"></div>
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-success" id="dropdown-basic">
+                            <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
                             What is the race of this member?
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -143,7 +144,7 @@ class PartyThreeForm extends Component {
                             </Dropdown.Menu>
                         </Dropdown>
                         </FormGroup>
-                        <Button variant="outline-primary" onClick={this.playerOnebuttonClick}>Save</Button>
+                        <Button variant="outline-success" onClick={this.playerOnebuttonClick}>Save</Button>
                     </Form>
                 </div>
 
@@ -155,7 +156,7 @@ class PartyThreeForm extends Component {
                         </FormGroup>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-success" id="dropdown-basic">
+                            <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
                             What is the class of this member?
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -176,7 +177,7 @@ class PartyThreeForm extends Component {
 
                         <div className="addSpace"></div>
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-success" id="dropdown-basic">
+                            <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
                             What is the race of this member?
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -196,7 +197,7 @@ class PartyThreeForm extends Component {
                         </Dropdown>
 
                         </FormGroup>
-                        <Button variant="outline-primary" onClick={this.playerTwobuttonClick}>Save</Button>
+                        <Button variant="outline-success" onClick={this.playerTwobuttonClick}>Save</Button>
                     </Form>
                 </div>
 
@@ -208,7 +209,7 @@ class PartyThreeForm extends Component {
                         </FormGroup>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-success" id="dropdown-basic">
+                            <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
                             What is the class of this member?
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -229,7 +230,7 @@ class PartyThreeForm extends Component {
 
                         <div className="addSpace"></div>
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-success" id="dropdown-basic">
+                            <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
                             What is the race of this member?
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -249,7 +250,7 @@ class PartyThreeForm extends Component {
                         </Dropdown>
 
                         </FormGroup>
-                        <Button variant="outline-primary" onClick={this.playerThreebuttonClick}>Save</Button>
+                        <Button variant="outline-success" onClick={this.playerThreebuttonClick}>Save</Button>
                     </Form>
                 </div>
 
