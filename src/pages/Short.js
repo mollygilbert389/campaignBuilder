@@ -28,17 +28,7 @@ class Short extends Component {
         this.state ={
             showDiv: false,
         }
-    }   
-
-hiddenDiv = () => {
-    let nextRound = document.getElementById("secondRoundQuestions")
-    if (this.showDiv===false) {
-        const hide = function (div) {
-            div.style.display = 'none'
-        }
-        hide(nextRound)
-    }
-}
+    } 
 
 handleFirstClick = () => {
     let firstQues = document.getElementById("firstRoundQuestions")
@@ -91,7 +81,7 @@ handleThirdClick = () => {
 
 handleFourthClick = () => {
     let firstQues = document.getElementById("fourthRoundQuestions")
-    let secondQues = document.getElementById("fifthRoundQuestions")
+    let secondQues = document.getElementById("fifthRoundQuestion")
 
     const show = function (div) {
         div.style.display = 'block'
@@ -106,18 +96,7 @@ handleFourthClick = () => {
 }
 
 handleLastClick = () => {
-    // let firstQues = document.getElementById("fourthRoundQuestions")
 
-    // const show = function (div) {
-    //     div.style.display = 'block'
-    // }
-    // const hide = function (div) {
-    //     div.style.display = 'none'
-
-    // }
-
-    // hide(firstQues)
-    // show(secondQues)
 }
 
     render() {
@@ -178,7 +157,7 @@ handleLastClick = () => {
                     </div>
                 </div>
 
-                <div id="fithRoundQuestions" style={{display:"none"}}>
+                <div id="fifthRoundQuestion" style={{display:"none"}}>
                     <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
                     <div className="btnspace">
                         <Treasure></Treasure>
