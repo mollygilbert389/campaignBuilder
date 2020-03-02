@@ -21,7 +21,7 @@ class PartyThreeForm extends Component {
         }
     }
 
-    playerOnehandleChange = (event) => {
+    playerhandleChange = (event) => {
         // this.setState({
         //     playerOneName: event.target.value,
         // })
@@ -35,10 +35,11 @@ class PartyThreeForm extends Component {
       }
 
     partyClick = () => {
-
         const playerArray = []
 
         let partyName = document.getElementById('partyInfoSapce')
+        partyName.textContent = "";
+
 
         let playerOnePartyName = this.state.playerOneName
         let playerOnePartyClass = this.state.playerOneClass
@@ -51,14 +52,12 @@ class PartyThreeForm extends Component {
         playerArray.push("Party Member #2: " + playerTwoPartyName + " Class: " + playerTwoPartyClass)
         playerArray.push("Party Member #3: " + playerThreePartyName + " Class: " + playerThreePartyClass)
 
-        console.log(playerArray)
-
         for (let i = 0; i < playerArray.length; i++ ) {
             const newDiv = document.createElement('div')
             newDiv.append(playerArray[i])
             partyName.append(newDiv)
         }
-  
+
     }
 
     playerOneSelectClass = (choice) => {
@@ -70,28 +69,6 @@ class PartyThreeForm extends Component {
     }
 
     /////////////////////
-    playerTwohandleChange = (event) => {
-        this.setState({
-            playerTwoName: event.target.value,
-        })
-      }
-
-      playerTwobuttonClick = (event) =>  {
-        this.setState({
-            playerTwoName: event.target.value,
-            })
-    
-            let newDiv = document.createElement('div')
-            newDiv.classList.add('playerNameSpace')
-            let playerTwoName = this.state.playerTwoName
-            let playerTwoClass = this.state.playerTwoClass
-            console.log(playerTwoClass)
-            let partyName = document.getElementById('partyInfoSapce')
-            newDiv.append("Player #2: " + playerTwoName)
-            newDiv.append("Class: " + playerTwoClass)
-            partyName.append(newDiv)
-        }
-
     playerTwoSelectClass = (choice) => {
         let newChoice = choice.target.text
         this.setState({
@@ -101,28 +78,6 @@ class PartyThreeForm extends Component {
     }
 
     /////////////////////
-    playerThreehandleChange = (event) => {
-        this.setState({
-            playerThreeName: event.target.value,
-        })
-      }
-
-      playerThreebuttonClick = (event) =>  {
-        this.setState({
-            playerOneName: event.target.value,
-            })
-    
-            let newDiv = document.createElement('div')
-            newDiv.classList.add('playerNameSpace')
-            let playerThreeName = this.state.playerThreeName
-            let playerThreeClass = this.state.playerThreeClass
-            console.log(playerThreeClass)
-            let partyName = document.getElementById('partyInfoSapce')
-            newDiv.append("Player #1: " + playerThreeName)
-            newDiv.append("Class: " + playerThreeClass)
-            partyName.append(newDiv)
-        }
-
     playerThreeSelectClass = (choice) => {
         let newChoice = choice.target.text
         this.setState({
@@ -132,16 +87,13 @@ class PartyThreeForm extends Component {
     }
 
     render() {
-
-
-
         return (
             <div className="forms">
                 <div className="partyFormSpace">
                     <Form inline>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                             <Label for="exampleEmail" className="mr-sm-2">Party Member #1</Label>
-                            <Input type="names" name="playerOneName" id="partyMemberOne" placeholder="Name" value={this.state.playerOneName} onChange={this.playerOnehandleChange}/>
+                            <Input type="names" name="playerOneName" id="partyMemberOne" placeholder="Name" value={this.state.playerOneName} onChange={this.playerhandleChange}/>
                         </FormGroup>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Dropdown>
@@ -172,7 +124,7 @@ class PartyThreeForm extends Component {
                     <Form inline>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                             <Label for="exampleEmail" className="mr-sm-2">Party Member #2</Label>
-                            <Input type="names" name="playerTwoName" id="partyMemberOne" placeholder="Name" value={this.state.playerTwoName} onChange={this.playerOnehandleChange} />
+                            <Input type="names" name="playerTwoName" id="partyMemberOne" placeholder="Name" value={this.state.playerTwoName} onChange={this.playerhandleChange} />
                         </FormGroup>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Dropdown>
@@ -203,7 +155,7 @@ class PartyThreeForm extends Component {
                     <Form inline>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                             <Label for="exampleEmail" className="mr-sm-2">Party Member #3</Label>
-                            <Input type="names" name="playerThreeName" id="partyMemberOne" placeholder="Name" value={this.state.playerThreeName} onChange={this.playerOnehandleChange}/>
+                            <Input type="names" name="playerThreeName" id="partyMemberOne" placeholder="Name" value={this.state.playerThreeName} onChange={this.playerhandleChange}/>
                         </FormGroup>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Dropdown>

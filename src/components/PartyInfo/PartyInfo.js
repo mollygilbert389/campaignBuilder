@@ -11,6 +11,10 @@ import "./style.css"
 class PartyInfo extends Component {
 
     handleClick = (e) => {
+
+        let partyName = document.getElementById('partyInfoSapce')
+        partyName.textContent = "";
+
         let num = e.target.id
         let threeForm = document.getElementById("threeForm")
         let fourForm = document.getElementById("fourForm")
