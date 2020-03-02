@@ -1,7 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import {Form, Label, Input,FormGroup} from 'reactstrap'
-import {Dropdown, Button, DropdownButton} from 'react-bootstrap'
+import {Dropdown, Button} from 'react-bootstrap'
 import '../style.css'
+
+
 
 class PartyThreeForm extends Component {
     constructor() {
@@ -20,37 +22,51 @@ class PartyThreeForm extends Component {
     }
 
     playerOnehandleChange = (event) => {
+        // this.setState({
+        //     playerOneName: event.target.value,
+        // })
+        const target = event.target;
+        const value = target.value
+        const name = target.name;
+
         this.setState({
-            playerOneName: event.target.value,
-        })
+        [name]: value
+        });
       }
 
-    playerOnebuttonClick = (event) =>  {
-    this.setState({
-        playerOneName: event.target.value,
-        })
+    partyClick = () => {
 
-        console.log(this.state.playerOneName)
-        let newDiv = document.createElement('div')
-        newDiv.classList.add('playerNameSpace')
-        let playerOneName = this.state.playerOneName
+        const playerArray = []
 
         let partyName = document.getElementById('partyInfoSapce')
-        newDiv.append("Player #1: " + playerOneName)
-        // newDiv.append("Class: " + playerOneClass)
 
-        // newDiv.append("Race: " + playerOneRace)
-        partyName.append(newDiv)
+        let playerOnePartyName = this.state.playerOneName
+        let playerOnePartyClass = this.state.playerOneClass
+        let playerTwoPartyName = this.state.playerTwoName
+        let playerTwoPartyClass = this.state.playerTwoClass
+        let playerThreePartyName = this.state.playerThreeName
+        let playerThreePartyClass = this.state.playerThreeClass
+
+        playerArray.push("Party Member #1: " + playerOnePartyName + " Class: " + playerOnePartyClass)
+        playerArray.push("Party Member #2: " + playerTwoPartyName + " Class: " + playerTwoPartyClass)
+        playerArray.push("Party Member #3: " + playerThreePartyName + " Class: " + playerThreePartyClass)
+
+        console.log(playerArray)
+
+        for (let i = 0; i < playerArray.length; i++ ) {
+            const newDiv = document.createElement('div')
+            newDiv.append(playerArray[i])
+            partyName.append(newDiv)
+        }
+  
     }
 
-    playerOneSelectRace = (choice) => {
+    playerOneSelectClass = (choice) => {
+        let newChoice = choice.target.text
         this.setState({
-            playerOneClass: choice.target.text  
-        })
-
-        alert(choice.target.text)
-
-        console.log(this.state.playerOneClass)
+            playerOneClass: newChoice
+        }, () => console.log(this.state.playerOneClass)
+        )
     }
 
     /////////////////////
@@ -60,17 +76,28 @@ class PartyThreeForm extends Component {
         })
       }
 
-    playerTwobuttonClick = (event) =>  {
-    this.setState({
-        playerTwoName: event.target.value,
-        })
+      playerTwobuttonClick = (event) =>  {
+        this.setState({
+            playerTwoName: event.target.value,
+            })
+    
+            let newDiv = document.createElement('div')
+            newDiv.classList.add('playerNameSpace')
+            let playerTwoName = this.state.playerTwoName
+            let playerTwoClass = this.state.playerTwoClass
+            console.log(playerTwoClass)
+            let partyName = document.getElementById('partyInfoSapce')
+            newDiv.append("Player #2: " + playerTwoName)
+            newDiv.append("Class: " + playerTwoClass)
+            partyName.append(newDiv)
+        }
 
-        let newDiv = document.createElement('div')
-        newDiv.classList.add('playerNameSpace')
-        let playerTwoName = this.state.playerTwoName
-        let partyName = document.getElementById('partyInfoSapce')
-        newDiv.append("Player #2: " + playerTwoName)
-        partyName.append(newDiv)
+    playerTwoSelectClass = (choice) => {
+        let newChoice = choice.target.text
+        this.setState({
+            playerTwoClass: newChoice
+        }, () => console.log(this.state.playerTwoClass)
+        )
     }
 
     /////////////////////
@@ -80,27 +107,41 @@ class PartyThreeForm extends Component {
         })
       }
 
-    playerThreebuttonClick = (event) =>  {
-    this.setState({
-        playerThreeName: event.target.value,
-        })
+      playerThreebuttonClick = (event) =>  {
+        this.setState({
+            playerOneName: event.target.value,
+            })
+    
+            let newDiv = document.createElement('div')
+            newDiv.classList.add('playerNameSpace')
+            let playerThreeName = this.state.playerThreeName
+            let playerThreeClass = this.state.playerThreeClass
+            console.log(playerThreeClass)
+            let partyName = document.getElementById('partyInfoSapce')
+            newDiv.append("Player #1: " + playerThreeName)
+            newDiv.append("Class: " + playerThreeClass)
+            partyName.append(newDiv)
+        }
 
-        let newDiv = document.createElement('div')
-        newDiv.classList.add('playerNameSpace')
-        let playerThreeName = this.state.playerThreeName
-        let partyName = document.getElementById('partyInfoSapce')
-        newDiv.append("Player #3: " + playerThreeName)
-        partyName.append(newDiv)
+    playerThreeSelectClass = (choice) => {
+        let newChoice = choice.target.text
+        this.setState({
+            playerThreeClass: newChoice
+        }, () => console.log(this.state.playerThreeClass)
+        )
     }
 
     render() {
+
+
+
         return (
-            <div>
+            <div className="forms">
                 <div className="partyFormSpace">
                     <Form inline>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                             <Label for="exampleEmail" className="mr-sm-2">Party Member #1</Label>
-                            <Input type="name" name="name" id="partyMemberOne" placeholder="Name" value={this.state.playerOneName} onChange={this.playerOnehandleChange}/>
+                            <Input type="names" name="playerOneName" id="partyMemberOne" placeholder="Name" value={this.state.playerOneName} onChange={this.playerOnehandleChange}/>
                         </FormGroup>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Dropdown>
@@ -108,43 +149,22 @@ class PartyThreeForm extends Component {
                             What is the class of this member?
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                            <Dropdown.Item onClick={this.playerOneSelectRace}>Barbarian</Dropdown.Item>
-                            <Dropdown.Item onClick={this.playerOneSelectRace}>Bard</Dropdown.Item>
-                            <Dropdown.Item onClick={this.playerOneSelectRace}>Cleric</Dropdown.Item>
-                            <Dropdown.Item onClick={this.playerOneSelectRace}>Druid</Dropdown.Item>
-                            <Dropdown.Item onClick={this.playerOneSelectRace}>Fighter</Dropdown.Item>
-                            <Dropdown.Item onClick={this.playerOneSelectRace}>Monk</Dropdown.Item>
-                            <Dropdown.Item onClick={this.playerOneSelectRace}>Paladin</Dropdown.Item>
-                            <Dropdown.Item onClick={this.playerOneSelectRace}>Ranger</Dropdown.Item>
-                            <Dropdown.Item onClick={this.playerOneSelectRace}>Rogue</Dropdown.Item>
-                            <Dropdown.Item onClick={this.playerOneSelectRace}>Sourcerer</Dropdown.Item>
-                            <Dropdown.Item onClick={this.playerOneSelectRace}>Warlock</Dropdown.Item>
-                            <Dropdown.Item onClick={this.playerOneSelectRace}>Wizard</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-
-                    <div className="addSpace"></div>
-                        <Dropdown>
-                            <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
-                            What is the race of this member?
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1">Barbarian</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Bard</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Cleric</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Druid</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Fighter</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Monk</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Paladin</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Ranger</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Rogue</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Sourcerer</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Warlock</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Wizard</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerOneSelectClass}>Barbarian</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerOneSelectClass}>Bard</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerOneSelectClass}>Cleric</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerOneSelectClass}>Druid</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerOneSelectClass}>Fighter</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerOneSelectClass}>Monk</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerOneSelectClass}>Paladin</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerOneSelectClass}>Ranger</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerOneSelectClass}>Rogue</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerOneSelectClass}>Sourcerer</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerOneSelectClass}>Warlock</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerOneSelectClass}>Wizard</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                         </FormGroup>
-                        <Button variant="outline-success" onClick={this.playerOnebuttonClick}>Save</Button>
+                        {/* <Button variant="outline-success" onClick={this.playerOnebuttonClick}>Save</Button> */}
                     </Form>
                 </div>
 
@@ -152,7 +172,7 @@ class PartyThreeForm extends Component {
                     <Form inline>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                             <Label for="exampleEmail" className="mr-sm-2">Party Member #2</Label>
-                            <Input type="name" name="partyMemberOne" id="partyMemberOne" placeholder="Name" value={this.state.playerTwoName} onChange={this.playerTwohandleChange} />
+                            <Input type="names" name="playerTwoName" id="partyMemberOne" placeholder="Name" value={this.state.playerTwoName} onChange={this.playerOnehandleChange} />
                         </FormGroup>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Dropdown>
@@ -160,44 +180,22 @@ class PartyThreeForm extends Component {
                             What is the class of this member?
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1">Barbarian</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Bard</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Cleric</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Druid</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Fighter</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Monk</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Paladin</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Ranger</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Rogue</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Sourcerer</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Warlock</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Wizard</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerTwoSelectClass}>Barbarian</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerTwoSelectClass}>Bard</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerTwoSelectClass}>Cleric</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerTwoSelectClass}>Druid</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerTwoSelectClass}>Fighter</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerTwoSelectClass}>Monk</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerTwoSelectClass}>Paladin</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerTwoSelectClass}>Ranger</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerTwoSelectClass}>Rogue</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerTwoSelectClass}>Sourcerer</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerTwoSelectClass}>Warlock</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerTwoSelectClass}>Wizard</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
-
-                        <div className="addSpace"></div>
-                        <Dropdown>
-                            <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
-                            What is the race of this member?
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1">Barbarian</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Bard</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Cleric</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Druid</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Fighter</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Monk</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Paladin</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Ranger</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Rogue</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Sourcerer</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Warlock</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Wizard</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-
                         </FormGroup>
-                        <Button variant="outline-success" onClick={this.playerTwobuttonClick}>Save</Button>
+                        {/* <Button variant="outline-success" onClick={this.playerTwobuttonClick}>Save</Button> */}
                     </Form>
                 </div>
 
@@ -205,7 +203,7 @@ class PartyThreeForm extends Component {
                     <Form inline>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                             <Label for="exampleEmail" className="mr-sm-2">Party Member #3</Label>
-                            <Input type="name" name="partyMemberOne" id="partyMemberOne" placeholder="Name" value={this.state.playerThreeName} onChange={this.playerThreehandleChange}/>
+                            <Input type="names" name="playerThreeName" id="partyMemberOne" placeholder="Name" value={this.state.playerThreeName} onChange={this.playerOnehandleChange}/>
                         </FormGroup>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Dropdown>
@@ -213,45 +211,26 @@ class PartyThreeForm extends Component {
                             What is the class of this member?
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1">Barbarian</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Bard</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Cleric</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Druid</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Fighter</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Monk</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Paladin</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Ranger</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Rogue</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Sourcerer</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Warlock</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Wizard</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerThreeSelectClass}>Barbarian</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerThreeSelectClass}>Bard</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerThreeSelectClass}>Cleric</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerThreeSelectClass}>Druid</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerThreeSelectClass}>Fighter</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerThreeSelectClass}>Monk</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerThreeSelectClass}>Paladin</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerThreeSelectClass}>Ranger</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerThreeSelectClass}>Rogue</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerThreeSelectClass}>Sourcerer</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerThreeSelectClass}>Warlock</Dropdown.Item>
+                            <Dropdown.Item onClick={this.playerThreeSelectClass}>Wizard</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
-
-                        <div className="addSpace"></div>
-                        <Dropdown>
-                            <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
-                            What is the race of this member?
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1">Barbarian</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Bard</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Cleric</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Druid</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Fighter</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Monk</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Paladin</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Ranger</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Rogue</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Sourcerer</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Warlock</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Wizard</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-
                         </FormGroup>
-                        <Button variant="outline-success" onClick={this.playerThreebuttonClick}>Save</Button>
+                        {/* <Button variant="outline-success" onClick={this.playerThreebuttonClick}>Save</Button> */}
                     </Form>
+                    <div className="saveBtnSpace">
+                     <Button variant="outline-success" onClick={this.partyClick}>Save</Button>
+                     </div>
                 </div>
 
             </div>

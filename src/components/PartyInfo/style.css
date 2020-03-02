@@ -30,3 +30,12 @@
 .addSpace {
     margin: 4px;
 }
+
+.saveBtnSpace {
+    display: inline-block;
+    margin: 20px;
+}
+
+.forms {
+    text-align: center;
+}
