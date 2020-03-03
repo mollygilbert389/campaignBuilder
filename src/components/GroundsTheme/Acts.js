@@ -9,73 +9,61 @@ class Theme extends Component {
         super();
         this.state ={
             showModal: false,
-            value: ""
+            acts: "",
         }
     }
 
-      close = (event) =>  {
-          this.setState({
-              showModal: false,
-              value: event.target.value
-            })
-            let acts = this.state.value
-            let newName = document.getElementById('actsSpace')
-            newName.textContent = "Acts: " + acts
-      }
-
-      //handles the key stoke changes????
-      handleChange = (event) => {
+    handleClick = () => {
         this.setState({
-            value: event.target.value
+            showModal: !this.state.showModal,
         })
-      }
+    }
 
-handleClick = () => {
-    this.setState({
-        showModal: !this.state.showModal,
-      })
-}
+    handleActBtn = (event) => {
+        let actSpace = document.getElementById('actsSpace')
+        let actChoice = event.target.name
+
+        actSpace.textContent = ""
+
+        this.setState({
+            showModal: !this.state.showModal,
+            acts: actChoice
+        })
+        actSpace.append("Acts: " + actChoice)
+    }
 
 render() {  
 
     return (
         <div>
         <div className="btns">
-        <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Acts
+        <Button variant="outline-success" size="lg" onClick={this.handleClick}>Acts
         </Button>
             </div>
         <Modal show={this.state.showModal}>
         <Modal.Dialog id="villianbtn">
             <Modal.Header>
-                <Modal.Title>Let's Create A Theme!</Modal.Title>
+                <Modal.Title>Deciding on Acts.</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
-                <p>Below are some buttons to help create your ideal world!</p>
-                <Form inline>
-                    <FormControl type="text" placeholder="Guest Giver Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
-                </Form>
-                <br></br>
+                <p>Here were will decide how many acts this campaign should be. Like a play a campaing should have at least three acts. A party meeting, a dungeon exploration, and a final battle or acheivement of the end goal.</p>
+                <p>Since you chose short campaign we reccomend you have no less than 3 and no more than 5 acts. </p>
 
-                <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    Types of Themes
-                    </Dropdown.Toggle>
+                <div className="actBtnSpace">
+                <div className="actBtns">
+                <Button name="3" variant="outline-primary" onClick={this.handleActBtn}>3</Button>
+                </div>
 
-                    <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Human</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Elf</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">God</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Dwarf</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Wizard</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+                <div className="actBtns">
+                <Button name="4" variant="outline-primary" onClick={this.handleActBtn}>4</Button>
+                </div>
+
+                <div className="actBtns">
+                <Button name="5" variant="outline-primary" onClick={this.handleActBtn}>5</Button>
+                </div>
+                </div>
             </Modal.Body>
-
-            <Modal.Footer>
-                <Button variant="secondary" onClick={this.close} >Save</Button>
-            </Modal.Footer>
         </Modal.Dialog>
         </Modal>
         </div>

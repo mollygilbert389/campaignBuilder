@@ -16,3 +16,23 @@
 .dropDownSpace {
     margin: 5px;
 }
+
+.actBtnSpace {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.actBtns {
+    margin: 2px;
+}
+
+.sideQuestBtnSpace {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.sideQuestBtns {
+    margin: 2px;
+}
