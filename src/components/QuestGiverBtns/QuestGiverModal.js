@@ -9,7 +9,8 @@ class QuestGiverModal extends Component {
         super();
         this.state ={
             showModal: false,
-            value: ""
+            value: "", 
+            tyep: ""
         }
     }
 
@@ -23,18 +24,39 @@ class QuestGiverModal extends Component {
             newName.textContent = "Quest Giver: " + questGiverName
       }
 
-      //handles the key stoke changes????
+
       handleChange = (event) => {
         this.setState({
             value: event.target.value
         })
+        let questGiverName = this.state.value
+        let newName = document.getElementById('questGiverNameSpace')
+        newName.textContent = "Quest Giver: " + questGiverName
       }
 
-handleClick = () => {
-    this.setState({
-        showModal: !this.state.showModal,
-      })
-}
+    handleClick = () => {
+        this.setState({
+            showModal: !this.state.showModal,
+        })
+    }
+
+    questGiverChoice = (choice) => {
+        if (this.state.type = "") {
+            let questGiverType = document.getElementById('questGiverType')
+            questGiverType.innerText = "Quest Giver Type"
+        } else {
+            let questGiverType = document.getElementById('questGiverType')
+            questGiverType.innerText = choice.target.text
+        }
+
+        let questGiverChoice = choice.target.text
+        this.setState({
+            type: questGiverChoice
+        })
+
+        let newNameandType = document.getElementById('questGiverTypeSpace')
+        newNameandType.append("Type: " + questGiverChoice) 
+    }
 
 render() {  
 
@@ -60,17 +82,17 @@ render() {
                 <br></br>
 
                 <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    <Dropdown.Toggle variant="success" id="questGiverType">
                     Quest Giver Type
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Human</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Elf</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">God</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Dwarf</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Wizard</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                    <Dropdown.Item onClick={this.questGiverChoice}>Human</Dropdown.Item>
+                    <Dropdown.Item onClick={this.questGiverChoice}>Elf</Dropdown.Item>
+                    <Dropdown.Item onClick={this.questGiverChoice}>God</Dropdown.Item>
+                    <Dropdown.Item onClick={this.questGiverChoice}>Dwarf</Dropdown.Item>
+                    <Dropdown.Item onClick={this.questGiverChoice}>Wizard</Dropdown.Item>
+                    <Dropdown.Item onClick={this.questGiverChoice}>Something else</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
             </Modal.Body>

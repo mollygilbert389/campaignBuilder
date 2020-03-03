@@ -9,7 +9,8 @@ class VillianModal extends Component {
         super();
         this.state ={
             showModal: false,
-            value: ""
+            value: "",
+            type: ""
         }
     }
 
@@ -18,22 +19,45 @@ class VillianModal extends Component {
               showModal: false,
               value: event.target.value
             })
+
             let villianName = this.state.value
             let newName = document.getElementById('villianNameSpace')
             newName.textContent = "Villian: " + villianName
       }
 
-      //handles the key stoke changes????
+      //may want to remove the showing of text here
       handleChange = (event) => {
         this.setState({
             value: event.target.value
         })
+        let villianName = this.state.value
+        let newName = document.getElementById('villianNameSpace')
+        newName.textContent = "Villian: " + villianName
       }
 
         handleClick = () => {
             this.setState({
                 showModal: !this.state.showModal,
                 })
+        }
+
+        villianChoice = (choice) => {
+            if (this.state.type = "") {
+                let villianType = document.getElementById('villianType')
+                villianType.innerText = "Villian Type"
+            } else {
+                let villianType = document.getElementById('villianType')
+                villianType.innerText = choice.target.text
+            }
+
+            let villianChoice = choice.target.text
+            this.setState({
+                type: villianChoice
+            }, () => console.log(this.state.villianChoice)
+            )
+
+            let newNameandType = document.getElementById('villianTypeSpace')
+            newNameandType.append("Type: " + villianChoice) 
         }
 
 render() {  
@@ -61,29 +85,28 @@ render() {
                 <br></br>
 
                 <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    <Dropdown.Toggle variant="success" id="villianType">
                     Villian Type
                     </Dropdown.Toggle>
-
                     <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-2">Human</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Hag</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Abyssal Chicken</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Alcolyte</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Elemental</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Dwarf</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Cult</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Animal</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Banshee</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Ghost</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Zombie</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Assasin</Dropdown.Item>
-                    <Dropdown.Item href="#/action-1">Giant</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Wizard</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Demogorgan</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Dragon</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">God</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                    <Dropdown.Item onClick={this.villianChoice}>Human</Dropdown.Item>
+                    <Dropdown.Item onClick={this.villianChoice}>Hag</Dropdown.Item>
+                    <Dropdown.Item onClick={this.villianChoice}>Abyssal Chicken</Dropdown.Item>
+                    <Dropdown.Item onClick={this.villianChoice}>Alcolyte</Dropdown.Item>
+                    <Dropdown.Item onClick={this.villianChoice}>Elemental</Dropdown.Item>
+                    <Dropdown.Item onClick={this.villianChoice}>Dwarf</Dropdown.Item>
+                    <Dropdown.Item onClick={this.villianChoice}>Cult</Dropdown.Item>
+                    <Dropdown.Item onClick={this.villianChoice}>Animal</Dropdown.Item>
+                    <Dropdown.Item onClick={this.villianChoice}>Banshee</Dropdown.Item>
+                    <Dropdown.Item onClick={this.villianChoice}>Ghost</Dropdown.Item>
+                    <Dropdown.Item onClick={this.villianChoice}>Zombie</Dropdown.Item>
+                    <Dropdown.Item onClick={this.villianChoice}>Assasin</Dropdown.Item>
+                    <Dropdown.Item onClick={this.villianChoice}>Giant</Dropdown.Item>
+                    <Dropdown.Item onClick={this.villianChoice}>Wizard</Dropdown.Item>
+                    <Dropdown.Item onClick={this.villianChoice}>Demogorgan</Dropdown.Item>
+                    <Dropdown.Item onClick={this.villianChoice}>Dragon</Dropdown.Item>
+                    <Dropdown.Item onClick={this.villianChoice}>God</Dropdown.Item>
+                    <Dropdown.Item onClick={this.villianChoice}>Something else</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
 

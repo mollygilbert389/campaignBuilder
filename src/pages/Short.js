@@ -113,7 +113,7 @@ handleLastClick = () => {
                         <CampaignNameModal></CampaignNameModal>
                         <VillianModal></VillianModal>
                         <QuestGiverModal></QuestGiverModal>
-                        <CustomBoth></CustomBoth>
+                        {/* <CustomBoth></CustomBoth> */}
                     </div>
 
                     <div className="nextBtn">

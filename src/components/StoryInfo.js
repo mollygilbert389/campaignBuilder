@@ -11,9 +11,11 @@ render() {
                 <Card.Body>
                     <Card.Title id="cardCampaignName">Campaign Name:</Card.Title>
                     <Card.Text>
-                    <div id="partyInfoSapce"></div>
-                    <div id="questGiverNameSpace"></div>
                     <div id="villianNameSpace"></div>
+                    <div id="villianTypeSpace"></div>
+                    <div id="questGiverNameSpace"></div>
+                    <div id="questGiverTypeSpace"></div>
+                    <div id="partyInfoSapce"></div>
                     <div id="pillarTypeSpace"></div>
                     <div id="themeSpace"></div>
                     <div id="actsSpace"></div>

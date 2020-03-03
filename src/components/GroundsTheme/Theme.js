@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button, Form, Dropdown, FormControl } from 'react-bootstrap'
+import {Button, Form, Dropdown, FormGroup } from 'react-bootstrap'
 import "./style.css"
 
 class Theme extends Component {
@@ -9,32 +9,85 @@ class Theme extends Component {
         super();
         this.state ={
             showModal: false,
-            value: ""
+            climate: "",
+            world: "",
+            meeting: ""
         }
     }
 
-      close = (event) =>  {
-          this.setState({
-              showModal: false,
-              value: event.target.value
-            })
-            let theme = this.state.value
-            let newName = document.getElementById('themeSpace')
-            newName.textContent = "Theme: " + theme
-      }
-
-      //handles the key stoke changes????
-      handleChange = (event) => {
+    close = () =>  {
         this.setState({
-            value: event.target.value
+            showModal: false,
         })
-      }
 
-handleClick = () => {
-    this.setState({
-        showModal: !this.state.showModal,
-      })
-}
+        let themeArray = []
+
+        let climate = this.state.climate
+        let world = this.state.world
+        let meeting = this.state.meeting
+        let newName = document.getElementById('themeSpace')
+
+
+        themeArray.push("Climate: " + climate)
+        themeArray.push("World: " + world)
+        themeArray.push("Meeting: " + meeting)
+
+        for (let i = 0; i < themeArray.length; i++ ) {
+            const newDiv = document.createElement('div')
+            newDiv.append(themeArray[i])
+            newName.append(newDiv)
+        }
+    }
+
+    handleClick = () => {
+        this.setState({
+            showModal: !this.state.showModal,
+        })
+    }
+
+    climateSelect = (choice) => {
+        if (this.state.climate = "") {
+            let climateSpace = document.getElementById('climateForm')
+            climateSpace.innerText = ""
+        } else {
+            let climateSpace = document.getElementById('climateForm')
+            climateSpace.innerText = choice.target.text
+        }
+        let newChoice = choice.target.text
+        this.setState({
+            climate: newChoice
+        })
+    }
+
+    worldSelect = (choice) => {
+        if (this.state.world = "") {
+            let worldSpace = document.getElementById('worldForm')
+            worldSpace.innerText = ""
+        } else {
+            let worldSpace = document.getElementById('worldForm')
+            worldSpace.innerText = choice.target.text
+        }
+
+        let newChoice = choice.target.text
+        this.setState({
+            world: newChoice
+        })
+    }
+
+    meetingSelect = (choice) => {
+        if (this.state.meeting = "") {
+            let meetSpace = document.getElementById('meetForm')
+                meetSpace.innerText = ""
+        } else {
+            let meetSpace = document.getElementById('meetForm')
+            meetSpace.innerText = choice.target.text
+        }
+
+        let newChoice = choice.target.text
+        this.setState({
+            meeting: newChoice
+        })
+    }
 
 render() {  
 
@@ -55,41 +108,46 @@ render() {
                 <p id="villianNameRemember">Some things you should keep in mind.</p>
                 <p id="questGiverNameRemember">Some things you should keep in mind.</p>
 
-                <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    What type of climate would you find your villian in?
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Cold</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Hot</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Mild</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+                <FormGroup>
+                    <Dropdown>
+                        <Dropdown.Toggle variant="outline-success" id="climateForm">
+                        What type of climate would you find your villian in?
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                        <Dropdown.Item onClick={this.climateSelect}>Cold</Dropdown.Item>
+                        <Dropdown.Item onClick={this.climateSelect}>Hot</Dropdown.Item>
+                        <Dropdown.Item onClick={this.climateSelect}>Mild</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                </FormGroup>
 
-                <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    What type of world is this?
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Forest</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Desert</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">City</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+                <FormGroup>
+                    <Dropdown>
+                        <Dropdown.Toggle variant="outline-success" id="worldForm">
+                        What type of world is this?
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                        <Dropdown.Item onClick={this.worldSelect}>Forest</Dropdown.Item>
+                        <Dropdown.Item onClick={this.worldSelect}>Desert</Dropdown.Item>
+                        <Dropdown.Item onClick={this.worldSelect}>City</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                </FormGroup>
 
-                <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    Where do you intend your party to meet?
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Meadow</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Tavern</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Party</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Dinner</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Mysterious Circumstance</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
-
+                <FormGroup>
+                    <Dropdown>
+                        <Dropdown.Toggle variant="outline-success" id="meetForm">
+                        Where do you intend your party to meet?
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                        <Dropdown.Item onClick={this.meetingSelect}>Meadow</Dropdown.Item>
+                        <Dropdown.Item onClick={this.meetingSelect}>Tavern</Dropdown.Item>
+                        <Dropdown.Item onClick={this.meetingSelect}>Party</Dropdown.Item>
+                        <Dropdown.Item onClick={this.meetingSelect}>Dinner</Dropdown.Item>
+                        <Dropdown.Item onClick={this.meetingSelect}>Mysterious Circumstance</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                </FormGroup>
             </Modal.Body>
 
             <Modal.Footer>
