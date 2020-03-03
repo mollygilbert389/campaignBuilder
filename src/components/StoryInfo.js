@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {Card} from 'react-bootstrap'
-import PlayerDiv from './PlayerDiv'
 
 class StoryInfo extends Component {
  
@@ -12,10 +11,7 @@ render() {
                 <Card.Body>
                     <Card.Title id="cardCampaignName">Campaign Name:</Card.Title>
                     <Card.Text>
-                    <div id="partyInfoSapce">
-                    {/* <PlayerDiv></PlayerDiv> */}
-                    </div>
-                    
+                    <div id="partyInfoSapce"></div>
                     <div id="questGiverNameSpace"></div>
                     <div id="villianNameSpace"></div>
                     <div id="pillarTypeSpace"></div>

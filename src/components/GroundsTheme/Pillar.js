@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import {Button, Form, Dropdown, FormControl } from 'react-bootstrap'
 import "./style.css"
+import { conditionalExpression } from '@babel/types';
 
 class Pillar extends Component {
 
@@ -9,35 +10,30 @@ class Pillar extends Component {
         super();
         this.state ={
             showModal: false,
-            value: ""
+            partyPillar: ""
         }
     }
 
-      close = (event) =>  {
+
+    handlePillarBtn = (event) =>  {
+        let pillarchoice = event.target.name
           this.setState({
-              showModal: false,
-              value: event.target.value
+            partyPillar: event.target.name,            
+            showModal: false,   
+            }, () => console.log(this.state.partyPillar)
+            )
+
+            let pillarName = document.getElementById('pillarTypeSpace')
+            pillarName.textContent = "Pillar: " + pillarchoice
+      }
+
+        handleClick = () => {
+            this.setState({
+                showModal: !this.state.showModal,
             })
-            let pillar = this.state.value
-            let newName = document.getElementById('pillarSpace')
-            newName.textContent = "Pillar: " + pillar
-      }
-
-      //handles the key stoke changes????
-      handleChange = (event) => {
-        this.setState({
-            value: event.target.value
-        })
-      }
-
-handleClick = () => {
-    this.setState({
-        showModal: !this.state.showModal,
-      })
-}
+        }
 
 render() {  
-
     return (
         <div>
         <div className="btns">
@@ -54,21 +50,19 @@ render() {
                 <p>Here you will choose your adventure type. We reccomend a Combat pillar for a short campaign, but you can have any type of campaign you choose!</p>
 
                 <div>
-                    <Button variant="outline-success" size="lg" block>
+                    <Button onClick={this.handlePillarBtn} variant="outline-success" name="Combat" size="lg" block>
                     Combat
                     </Button>
-                    <Button variant="outline-warning" size="lg" block>
+                    <Button onClick={this.handlePillarBtn} variant="outline-warning" name="Interaction" size="lg" block>
                     Interaction
                     </Button>
-                    <Button variant="outline-danger" size="lg" block>
+                    <Button onClick={this.handlePillarBtn} variant="outline-danger" name="Exploration" size="lg" block>
                     Exploration
                     </Button>
                 </div>
 
             </Modal.Body>
-
             <Modal.Footer>
-                <Button variant="secondary" onClick={this.close} >Save</Button>
             </Modal.Footer>
         </Modal.Dialog>
         </Modal>

@@ -22,9 +22,6 @@ class PartyThreeForm extends Component {
     }
 
     playerhandleChange = (event) => {
-        // this.setState({
-        //     playerOneName: event.target.value,
-        // })
         const target = event.target;
         const value = target.value
         const name = target.name;
