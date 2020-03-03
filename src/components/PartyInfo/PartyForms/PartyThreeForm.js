@@ -58,15 +58,33 @@ class PartyThreeForm extends Component {
     }
 
     playerOneSelectClass = (choice) => {
+        if (this.state.playerOneClass = "") {
+            let classSpace = document.getElementById('dropdown-basic')
+            classSpace.innerText = "What class is this party member?"
+        } else {
+            let classSpace = document.getElementById('dropdown-basic')
+            classSpace.innerText = choice.target.text
+        }
+
         let newChoice = choice.target.text
         this.setState({
             playerOneClass: newChoice
         }, () => console.log(this.state.playerOneClass)
         )
+        console.log(this.props.children)
+
     }
 
     /////////////////////
     playerTwoSelectClass = (choice) => {
+        if (this.state.playerTwoClass = "") {
+            let classSpace = document.getElementById('dropdown-basic two')
+            classSpace.innerText = "What class is this party member?"
+        } else {
+            let classSpace = document.getElementById('dropdown-basic two')
+            classSpace.innerText = choice.target.text
+        }
+
         let newChoice = choice.target.text
         this.setState({
             playerTwoClass: newChoice
@@ -76,6 +94,13 @@ class PartyThreeForm extends Component {
 
     /////////////////////
     playerThreeSelectClass = (choice) => {
+        if (this.state.playerThreeClass = "") {
+            let classSpace = document.getElementById('dropdown-basic threee')
+            classSpace.innerText = "What class is this party member?"
+        } else {
+            let classSpace = document.getElementById('dropdown-basic three')
+            classSpace.innerText = choice.target.text
+        }
         let newChoice = choice.target.text
         this.setState({
             playerThreeClass: newChoice
@@ -95,7 +120,7 @@ class PartyThreeForm extends Component {
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Dropdown>
                             <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
-                            What is the class of this member?
+                                What is the class of this party member?
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                             <Dropdown.Item onClick={this.playerOneSelectClass}>Barbarian</Dropdown.Item>
@@ -125,8 +150,8 @@ class PartyThreeForm extends Component {
                         </FormGroup>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
-                            What is the class of this member?
+                            <Dropdown.Toggle variant="outline-primary" id="dropdown-basic two">
+                            What is the class of this party member?
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                             <Dropdown.Item onClick={this.playerTwoSelectClass}>Barbarian</Dropdown.Item>
@@ -156,8 +181,8 @@ class PartyThreeForm extends Component {
                         </FormGroup>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
-                            What is the class of this member?
+                            <Dropdown.Toggle variant="outline-primary" id="dropdown-basic three">
+                            What is the class of this party member?
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                             <Dropdown.Item onClick={this.playerThreeSelectClass}>Barbarian</Dropdown.Item>
