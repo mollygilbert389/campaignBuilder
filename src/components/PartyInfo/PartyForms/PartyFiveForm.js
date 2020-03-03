@@ -65,7 +65,16 @@ class PartyFiveForm extends Component {
 
     }
 
+    /////////////////////
     playerOneSelectClass = (choice) => {
+        if (this.state.playerOneClass = "") {
+            let classSpace = document.getElementById('formFiveOne')
+            classSpace.innerText = "What class is this party member?"
+        } else {
+            let classSpace = document.getElementById('formFiveOne')
+            classSpace.innerText = choice.target.text
+        }
+
         let newChoice = choice.target.text
         this.setState({
             playerOneClass: newChoice
@@ -73,7 +82,16 @@ class PartyFiveForm extends Component {
         )
     }
 
+    /////////////////////
     playerTwoSelectClass = (choice) => {
+        if (this.state.playerTwoClass = "") {
+            let classSpace = document.getElementById('formFiveTwo')
+            classSpace.innerText = "What class is this party member?"
+        } else {
+            let classSpace = document.getElementById('formFiveTwo')
+            classSpace.innerText = choice.target.text
+        }
+
         let newChoice = choice.target.text
         this.setState({
             playerTwoClass: newChoice
@@ -81,7 +99,15 @@ class PartyFiveForm extends Component {
         )
     }
 
+    /////////////////////
     playerThreeSelectClass = (choice) => {
+        if (this.state.playerThreeClass = "") {
+            let classSpace = document.getElementById('formFiveThree')
+            classSpace.innerText = "What class is this party member?"
+        } else {
+            let classSpace = document.getElementById('formFiveThree')
+            classSpace.innerText = choice.target.text
+        }
         let newChoice = choice.target.text
         this.setState({
             playerThreeClass: newChoice
@@ -89,7 +115,15 @@ class PartyFiveForm extends Component {
         )
     }
 
+    /////////////////////
     playerFourSelectClass = (choice) => {
+        if (this.state.playerFourClass = "") {
+            let classSpace = document.getElementById('formFiveFour')
+            classSpace.innerText = "What class is this party member?"
+        } else {
+            let classSpace = document.getElementById('formFiveFour')
+            classSpace.innerText = choice.target.text
+        }
         let newChoice = choice.target.text
         this.setState({
             playerFourClass: newChoice
@@ -98,6 +132,13 @@ class PartyFiveForm extends Component {
     }
 
     playerFiveSelectClass = (choice) => {
+        if (this.state.playerFiveClass = "") {
+            let classSpace = document.getElementById('formFiveFive')
+            classSpace.innerText = "What class is this party member?"
+        } else {
+            let classSpace = document.getElementById('formFiveFive')
+            classSpace.innerText = choice.target.text
+        }
         let newChoice = choice.target.text
         this.setState({
             playerFiveClass: newChoice
@@ -111,12 +152,12 @@ class PartyFiveForm extends Component {
                 <div className="partyFormSpace">
                     <Form inline>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                            <Label for="exampleEmail" className="mr-sm-2">Party Member #1</Label>
-                            <Input type="names" name="playerOneName" id="partyMemberOne" placeholder="Name" value={this.state.playerOneName} onChange={this.playerhandleChange}/>
+                            <Label className="mr-sm-2">Party Member #1</Label>
+                            <Input type="names" name="playerOneName" placeholder="Name" value={this.state.playerOneName} onChange={this.playerhandleChange}/>
                         </FormGroup>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
+                            <Dropdown.Toggle variant="outline-primary" id="formFiveOne">
                             What is the class of this member?
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -135,19 +176,18 @@ class PartyFiveForm extends Component {
                             </Dropdown.Menu>
                         </Dropdown>
                         </FormGroup>
-                        {/* <Button variant="outline-success" onClick={this.playerOnebuttonClick}>Save</Button> */}
                     </Form>
                 </div>
 
                 <div className="partyFormSpace">
                     <Form inline>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                            <Label for="exampleEmail" className="mr-sm-2">Party Member #2</Label>
-                            <Input type="names" name="playerTwoName" id="partyMemberOne" placeholder="Name" value={this.state.playerTwoName} onChange={this.playerhandleChange} />
+                            <Label className="mr-sm-2">Party Member #2</Label>
+                            <Input type="names" name="playerTwoName" placeholder="Name" value={this.state.playerTwoName} onChange={this.playerhandleChange} />
                         </FormGroup>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
+                            <Dropdown.Toggle variant="outline-primary" id="formFiveTwo">
                             What is the class of this member?
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -166,19 +206,18 @@ class PartyFiveForm extends Component {
                             </Dropdown.Menu>
                         </Dropdown>
                         </FormGroup>
-                        {/* <Button variant="outline-success" onClick={this.playerTwobuttonClick}>Save</Button> */}
                     </Form>
                 </div>
 
                 <div className="partyFormSpace">
                     <Form inline>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                            <Label for="exampleEmail" className="mr-sm-2">Party Member #3</Label>
-                            <Input type="names" name="playerThreeName" id="partyMemberOne" placeholder="Name" value={this.state.playerThreeName} onChange={this.playerhandleChange} />
+                            <Label className="mr-sm-2">Party Member #3</Label>
+                            <Input type="names" name="playerThreeName" placeholder="Name" value={this.state.playerThreeName} onChange={this.playerhandleChange} />
                         </FormGroup>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
+                            <Dropdown.Toggle variant="outline-primary" id="formFiveThree">
                             What is the class of this member?
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -197,19 +236,18 @@ class PartyFiveForm extends Component {
                             </Dropdown.Menu>
                         </Dropdown>
                         </FormGroup>
-                        {/* <Button variant="outline-success" onClick={this.playerTwobuttonClick}>Save</Button> */}
                     </Form>
                 </div>
 
                 <div className="partyFormSpace">
                     <Form inline>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                            <Label for="exampleEmail" className="mr-sm-2">Party Member #4</Label>
-                            <Input type="names" name="playerFourName" id="partyMemberOne" placeholder="Name" value={this.state.playerFourName} onChange={this.playerhandleChange}/>
+                            <Label className="mr-sm-2">Party Member #4</Label>
+                            <Input type="names" name="playerFourName" placeholder="Name" value={this.state.playerFourName} onChange={this.playerhandleChange}/>
                         </FormGroup>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
+                            <Dropdown.Toggle variant="outline-primary" id="formFiveFour">
                             What is the class of this member?
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -228,19 +266,18 @@ class PartyFiveForm extends Component {
                             </Dropdown.Menu>
                         </Dropdown>
                         </FormGroup>
-                        {/* <Button variant="outline-success" onClick={this.playerThreebuttonClick}>Save</Button> */}
                     </Form>
                     </div>
 
                     <div className="partyFormSpace">
                     <Form inline>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                            <Label for="exampleEmail" className="mr-sm-2">Party Member #5</Label>
-                            <Input type="names" name="playerFiveName" id="partyMemberOne" placeholder="Name" value={this.state.playerFiveName} onChange={this.playerhandleChange}/>
+                            <Label className="mr-sm-2">Party Member #5</Label>
+                            <Input type="names" name="playerFiveName" placeholder="Name" value={this.state.playerFiveName} onChange={this.playerhandleChange}/>
                         </FormGroup>
                         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
+                            <Dropdown.Toggle variant="outline-primary" id="formFiveFive">
                             What is the class of this member?
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -259,7 +296,6 @@ class PartyFiveForm extends Component {
                             </Dropdown.Menu>
                         </Dropdown>
                         </FormGroup>
-                        {/* <Button variant="outline-success" onClick={this.playerThreebuttonClick}>Save</Button> */}
                     </Form>
                     <div className="saveBtnSpace">
                      <Button variant="outline-success" onClick={this.partyClick}>Save</Button>
