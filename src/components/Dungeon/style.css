@@ -12,3 +12,15 @@
 .btns {
     margin: 10px;
 }
+
+.roomSpace {
+    padding: 10px;
+    text-align:center;
+    display: block;
+
+}
+
+.roomBtns {
+    margin: 2px;
+    display: inline-block;
+}

@@ -9,32 +9,28 @@ class Setback extends Component {
         super();
         this.state ={
             showModal: false,
-            value: ""
+            setback: ""
         }
     }
 
-      close = (event) =>  {
-          this.setState({
-              showModal: false,
-              value: event.target.value
-            })
-            let setback = this.state.value
-            let newName = document.getElementById('setBackSpace')
-            newName.textContent = "Set Back: " + setback
-      }
-
-      //handles the key stoke changes????
-      handleChange = (event) => {
+    handleClick = () => {
         this.setState({
-            value: event.target.value
+            showModal: !this.state.showModal,
         })
-      }
+    }
 
-handleClick = () => {
-    this.setState({
-        showModal: !this.state.showModal,
-      })
-}
+    setback = (event) => {
+        let setbackSpace = document.getElementById('setbackSpace')
+        setbackSpace.textContent = ""
+
+        let setbackOption = event.target.name
+        this.setState({
+            showModal: !this.state.showModal,
+            setback: setbackOption
+        })
+
+        setbackSpace.append("Setback: " + setbackOption)
+    }
 
 render() {  
 
@@ -47,35 +43,23 @@ render() {
         <Modal show={this.state.showModal}>
         <Modal.Dialog id="villianbtn">
             <Modal.Header>
-                <Modal.Title>Let's Create A Theme!</Modal.Title>
+                <Modal.Title>Uh Oh Setbacks.</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
-                <p>Below are some buttons to help create your ideal world!</p>
-                <Form inline>
-                    <FormControl type="text" placeholder="Guest Giver Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
-                </Form>
-                <br></br>
+                <p>You might want to make the campaign a little more interesting by adding a setback. Would you like to throw a wrench in their plans?</p>
+                <p>Since you chose a short campaign this may not be in your best interest.</p>
 
-                <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    Types of Themes
-                    </Dropdown.Toggle>
+                <div className="sideQuestBtnSpace">
+                <div className="sideQuestBtns">
+                <Button name="Yes" variant="outline-success" onClick={this.setback}>Yes</Button>
+                </div>
 
-                    <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Human</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Elf</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">God</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Dwarf</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Wizard</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+                <div className="sideQuestBtns">
+                <Button name="No" variant="outline-danger" onClick={this.setback}>No</Button>
+                </div>
+                </div>
             </Modal.Body>
-
-            <Modal.Footer>
-                <Button variant="secondary" onClick={this.close} >Save</Button>
-            </Modal.Footer>
         </Modal.Dialog>
         </Modal>
         </div>

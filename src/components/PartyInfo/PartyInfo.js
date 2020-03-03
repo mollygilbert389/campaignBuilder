@@ -31,58 +31,36 @@ class PartyInfo extends Component {
             div.style.display = 'none'
         }
 
+        hide(threeForm)
+        hide(fourForm)
+        hide(fiveForm)
+        hide(sixForm)
+        hide(sevenForm)
+        hide(eightForm)
+
         if (num === "3") {         
             show(threeForm)
-            hide(fourForm)
-            hide(fiveForm)
-            hide(sixForm)
-            hide(sevenForm)
-            hide(eightForm)
         }
 
         if (num === "4") {
-            hide(threeForm)
             show(fourForm)
-            hide(fiveForm)
-            hide(sixForm)
-            hide(sevenForm)
-            hide(eightForm)
         }
+
         if (num === "5") {
-            hide(threeForm)
-            hide(fourForm)
             show(fiveForm)
-            hide(sixForm)
-            hide(sevenForm)
-            hide(eightForm)
         }
+
         if (num === "6") {
-            hide(threeForm)
-            hide(fourForm)
-            hide(fiveForm)
             show(sixForm)
-            hide(sevenForm)
-            hide(eightForm)
         }
 
         if (num === "7") {
-            hide(threeForm)
-            hide(fourForm)
-            hide(fiveForm)
-            hide(sixForm)
             show(sevenForm)
-            hide(eightForm)
         }
 
         if (num === "8") {
-            hide(threeForm)
-            hide(fourForm)
-            hide(fiveForm)
-            hide(sixForm)
-            hide(sevenForm)
             show(eightForm)
         }
-
     }
 
 

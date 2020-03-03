@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button, Form, Dropdown, FormControl } from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 import "./style.css"
 
 class Rooms extends Component {
@@ -9,74 +9,100 @@ class Rooms extends Component {
         super();
         this.state ={
             showModal: false,
-            value: ""
+            roomNum: "",
         }
     }
 
-      close = (event) =>  {
-          this.setState({
-              showModal: false,
-              value: event.target.value
-            })
-            let rooms = this.state.value
-            let newName = document.getElementById('rooms')
-            newName.textContent = "Theme: " + rooms
-      }
-
-      //handles the key stoke changes????
-      handleChange = (event) => {
+    handleClick = () => {
         this.setState({
-            value: event.target.value
+            showModal: !this.state.showModal,
         })
-      }
+    }
 
-handleClick = () => {
-    this.setState({
-        showModal: !this.state.showModal,
-      })
-}
+    handleActBtn = (event) => {
+        let roomSpace = document.getElementById("roomsSpace")
+        roomSpace.textContent = ""
+
+        let num = event.target.name
+        this.setState({ 
+            roomNum: num,
+            showModal: !this.state.showModal
+        })
+
+        roomSpace.append("Rooms: " + num)
+
+    }
 
 render() {  
 
     return (
         <div>
         <div className="btns">
-        <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Rooms
+        <Button id="" variant="outline-success" size="lg" onClick={this.handleClick}>Rooms
         </Button>
             </div>
         <Modal show={this.state.showModal}>
-        <Modal.Dialog id="villianbtn">
             <Modal.Header>
-                <Modal.Title>Let's Create A Theme!</Modal.Title>
+                <Modal.Title>Name that Room!</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
-                <p>Below are some buttons to help create your ideal world!</p>
-                <Form inline>
-                    <FormControl type="text" placeholder="Guest Giver Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
-                </Form>
-                <br></br>
+                <p>How many rooms are in this dungeon.</p>
+                <p>Since you have picked a short campaign we reccomend a minimum of 3 rooms and a max fo 5 rooms.</p>
+                <div className="roomSpace">
+                    <div className="roomBtns">
+                        <Button name="3" variant="outline-primary" onClick={this.handleActBtn}>3</Button>
+                    </div>
 
-                <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    Types of Themes
-                    </Dropdown.Toggle>
+                    <div className="roomBtns">
+                        <Button name="4" variant="outline-primary" onClick={this.handleActBtn}>4</Button>
+                    </div>
 
-                    <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Human</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Elf</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">God</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Dwarf</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Wizard</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+                    <div className="roomBtns">
+                        <Button name="5" variant="outline-primary" onClick={this.handleActBtn}>5</Button>
+                    </div>
+
+                    <div className="roomBtns">
+                        <Button name="6" variant="outline-primary" onClick={this.handleActBtn}>6</Button>
+                    </div>
+
+                    <div className="roomBtns">
+                        <Button name="7" variant="outline-primary" onClick={this.handleActBtn}>7</Button>
+                    </div>
+
+                    <div className="roomBtns">
+                        <Button name="8" variant="outline-primary" onClick={this.handleActBtn}>8</Button>
+                    </div>
+
+                    <div className="roomBtns">
+                        <Button name="9" variant="outline-primary" onClick={this.handleActBtn}>9</Button>
+                    </div>
+
+                    <div className="roomBtns">
+                        <Button name="10" variant="outline-primary" onClick={this.handleActBtn}>10</Button>
+                    </div>
+
+                    <div className="roomBtns">
+                        <Button name="11" variant="outline-primary" onClick={this.handleActBtn}>11</Button>
+                    </div>
+
+                    <div className="roomBtns">
+                        <Button name="12" variant="outline-primary" onClick={this.handleActBtn}>12</Button>
+                    </div>
+
+                    <div className="roomBtns">
+                        <Button name="13" variant="outline-primary" onClick={this.handleActBtn}>13</Button>
+                    </div>
+
+                    <div className="roomBtns">
+                        <Button name="14" variant="outline-primary" onClick={this.handleActBtn}>14</Button>
+                    </div>
+
+                    <div className="roomBtns">
+                        <Button name="15" variant="outline-primary" onClick={this.handleActBtn}>15</Button>
+                    </div>
+                </div>
             </Modal.Body>
-
-            <Modal.Footer>
-                <Button variant="secondary" onClick={this.close} >Save</Button>
-            </Modal.Footer>
-        </Modal.Dialog>
         </Modal>
         </div>
     );
