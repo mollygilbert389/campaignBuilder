@@ -37,7 +37,7 @@ render() {
         <div>
         <Modal 
         //to unhide once testing is done
-        // show={this.state.showModal}
+        show={this.state.showModal}
         >
             <Modal.Header>
                 <Modal.Title>Let's start with what you want your campaign to be named.</Modal.Title>

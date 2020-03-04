@@ -16,6 +16,7 @@ import PartyInfo from "../components/PartyInfo/PartyInfo"
 import Treasure from "../components/Treasure/Treasue"
 import Rooms from "../components/Dungeon/Rooms"
 import Setback from "../components/Dungeon/Setback"
+// import SideMonsters from "../components/Dungeon/SideMonsters"
 import SideMonsters from "../components/Dungeon/SideMonsters"
 import Type from "../components/Dungeon/Type"
 
