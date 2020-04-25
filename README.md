@@ -16,6 +16,6 @@ Phase one: Create campaign spit out based on the selections made.
 Phase two: Add database to save campaigns and edit them later. 
 Phase three: Create user profiles. 
 
-Demo: 
+<h2>Demo:</h2>
 Not yet deployed. 
 
