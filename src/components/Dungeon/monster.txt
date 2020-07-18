@@ -1,0 +1,643 @@
+ let monsterSpace4 = document.getElementById("monsterSpace4")
+        let monsterSpace5 = document.getElementById("monsterSpace5")
+        let monsterSpace6 = document.getElementById("monsterSpace6")
+        let monsterSpace7 = document.getElementById('monsterSpace7')
+        let monsterSpace8 = document.getElementById("monsterSpace8")
+        let monsterSpace9 = document.getElementById("monsterSpace9")
+        let monsterSpace10 = document.getElementById('monsterSpace10')
+        let monsterSpace11 = document.getElementById("monsterSpace11")
+        let monsterSpace12 = document.getElementById("monsterSpace12")
+        let monsterSpace13 = document.getElementById('monsterSpace13')
+        let monsterSpace14 = document.getElementById("monsterSpace14")
+        let monsterSpace15 = document.getElementById("monsterSpace15")
+        let monsterSpace16 = document.getElementById('monsterSpace16')
+        let monsterSpace17 = document.getElementById('monsterSpace17')
+        let monsterSpace18 = document.getElementById("monsterSpace18")
+        let monsterSpace19 = document.getElementById("monsterSpace19")
+        let monsterSpace20 = document.getElementById('monsterSpace20')
+
+        hide(monsterSpace4)
+        hide(monsterSpace5)
+        hide(monsterSpace6)
+        hide(monsterSpace7)
+        hide(monsterSpace8)
+        hide(monsterSpace9)
+        hide(monsterSpace10)
+        hide(monsterSpace11)
+        hide(monsterSpace12)
+        hide(monsterSpace13)
+        hide(monsterSpace14)
+        hide(monsterSpace15)
+        hide(monsterSpace16)
+        hide(monsterSpace17)
+        hide(monsterSpace18)
+        hide(monsterSpace19)
+        hide(monsterSpace20)
+
+
+
+        if (monsterFinalNum !== null) {
+            monsterFinalNum = parseInt(monsterFinalNum.textContent)
+            
+            if (monsterFinalNum === 4) {           
+                show(monsterSpace4)
+            }    
+            if (monsterFinalNum === 5) {           
+                show(monsterSpace5)
+             }   
+             if (monsterFinalNum === 6) {           
+                show(monsterSpace6)
+             }   
+             if (monsterFinalNum === 7) {           
+                show(monsterSpace7)
+             }   
+             if (monsterFinalNum === 8) {           
+                show(monsterSpace8)
+             }   
+             if (monsterFinalNum === 9) {           
+                show(monsterSpace9)
+             }   
+             if (monsterFinalNum === 9) {           
+                show(monsterSpace10)
+             }   
+             if (monsterFinalNum === 10) {           
+                show(monsterSpace11)
+             }   
+             if (monsterFinalNum === 11) {           
+                show(monsterSpace12)
+             }   
+             if (monsterFinalNum === 12) {           
+                show(monsterSpace13)
+             }   
+             if (monsterFinalNum === 13) {           
+                show(monsterSpace14)
+             }   
+             if (monsterFinalNum === 14) {           
+                show(monsterSpace15)
+             }   
+             if (monsterFinalNum === 15) {           
+                show(monsterSpace15)
+             }   
+             if (monsterFinalNum === 16) {           
+                show(monsterSpace16)
+             }   
+             if (monsterFinalNum === 17) {           
+                show(monsterSpace17)
+             }   
+             if (monsterFinalNum === 18) {           
+                show(monsterSpace18)
+             }   
+             if (monsterFinalNum === 19) {           
+                show(monsterSpace19)
+             }   
+             if (monsterFinalNum === 20) {           
+                show(monsterSpace20)
+             }          
+        }
+ 
+ 
+ {/* <div id="monsterSpace4" style={{display:"none"}}>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    </div>
+                    <div id="monsterSpace5" style={{display:"none"}}>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    </div>
+                    <div  id="monsterSpace6" style={{display:"none"}}>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    </div>
+                    <div  id="monsterSpace7" style={{display:"none"}}>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    </div>
+                    <div  id="monsterSpace8" style={{display:"none"}}>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    </div>
+                    <div  id="monsterSpace9" style={{display:"none"}}>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    </div>
+                    <div  id="monsterSpace10" style={{display:"none"}}>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    </div>
+                    <div   id="monsterSpace11" style={{display:"none"}}>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    </div>
+                    <div  id="monsterSpace12" style={{display:"none"}}>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    </div>
+                    <div   id="monsterSpace13" style={{display:"none"}}>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    </div>
+                    <div id="monsterSpace14" style={{display:"none"}}>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    </div>
+                    <div id="monsterSpace15" style={{display:"none"}}>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    </div>
+                    <div id="monsterSpace16" style={{display:"none"}}>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    </div>
+                    <div id="monsterSpace17" style={{display:"none"}}>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    </div>
+                    <div id="monsterSpace18" style={{display:"none"}}>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    </div>
+                    <div id="monsterSpace19" style={{display:"none"}}>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    </div>
+                    <div id="monsterSpace20" style={{display:"none"}}>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect>
+                    <MonsterSelect></MonsterSelect> */}
+                    {/* </div> */}
+
+                    [
+                {id:1, 
+                name: "Abberation",
+                types: {
+                    typeId: 0, typeName: 'Aboleth', 
+                    typeId: 2, typeName: 'Beholder', 
+                    typeId: 3, typeName: "Berbalang", 
+                    typeId: 4, typeName: "Blue Slaad", 
+                    typeId: 5, typeName: "Chocker", 
+                    typeId: 6, typeName: "Chaos Quadrapod", 
+                    typeId: 7, typeName: "Cloacker", 
+                    typeId: 8, typeName: "Death Kiss", 
+                    typeId: 9, typeName: "Elder Brain", 
+                    typeId: 10, typeName: "Mind Flayer", 
+                    typeId: 11, typeName: "Morkoth", 
+                    typeId: 12, typeName: "Nothic", 
+                    typeId: 13, typeName: "Shadow Horror", 
+                    typeId: 14, typeName: "Skum", 
+                    typeId: 15, typeName: "Spectator"
+                }},
+                
+                {id:2,
+                name: "Beast",
+                types: {
+                    typeId: 1, typeName:'Monkey', 
+                    typeId: 2, typeName:'Badger', 
+                    typeId: 3, typeName:"Bat Swarm", 
+                    typeId: 4, typeName:"Bear", 
+                    typeId: 5, typeName:"Blood Hawk", 
+                    typeId: 6, typeName:"Boar", 
+                    typeId: 7, typeName:"Large Cat", 
+                    typeId: 8, typeName:"Cow herd",
+                    typeId: 9, typeName:"Deep Rothe",
+                    typeId: 10, typeName:"Deer Herd",
+                    typeId: 11, typeName:"Wolf Pack",
+                    typeId: 12, typeName:"Horse Herd",
+                    typeId: 13, typeName:"Enrourmous Tentacle",
+                    typeId: 14, typeName:"Giant Snake",
+                    typeId: 15, typeName:"Giant Fly",
+                    typeId: 16, typeName:"Owlbear",
+                    typeId: 17, typeName:"Giant Crab",
+                    typeId: 18, typeName:"Giant Scorpion",
+                    typeId: 19, typeName:"Giant Spider",
+                    typeId: 20, typeName:"Giant Snapping Turtle",
+                    typeId: 21, typeName:"Giant Wasp",
+                    typeId: 22, typeName:"Guthash",
+                    typeId: 23, typeName:"Mammoth",
+                    typeId: 24, typeName:"Snarl",
+                    typeId: 25, typeName:"Swarm of Insects",
+                }},
+
+                {id:3,
+                name: "Celestial",
+                types: {
+                    typeId: 1, typeName: "Aurelia",
+                    typeId: 2, typeName: "Battleforce Angel",
+                    typeId: 3, typeName: "Deva",
+                    typeId: 4, typeName: "Empyrean",
+                    typeId: 5, typeName: "Hollyphant",
+                    typeId: 6, typeName: "Pegasus",
+                    typeId: 7, typeName: "Plantar",
+                    typeId: 8, typeName: "Radiant Idol",
+                    typeId: 9, typeName: "Solar",
+                    typeId: 10, typeName: "Unicorn",
+                }},
+
+                {id:4, 
+                name: "Construct",
+                types: {
+                    typeId: 1, typeName: "Animated Armor",
+                    typeId: 2, typeName: "Animated Statue",
+                    typeId: 3, typeName: "Braim in Iron",
+                    typeId: 4, typeName: "Cadaver Collector",
+                    typeId: 5, typeName: "Clay Gladiator",
+                    typeId: 6, typeName: "Clay Golem",
+                    typeId: 7, typeName: "Clockwork Dragon",
+                    typeId: 8, typeName: "Crystal Golem",
+                    typeId: 9, typeName: "Flying Sword",
+                    typeId: 10, typeName: "Guardian Portrait",
+                    typeId: 11, typeName: "Hellfire Engine",
+                    typeId: 12, typeName: "Homunculus",
+                    typeId: 13, typeName: "Iron Cobra",
+                    typeId: 14, typeName: "Jade Spider",
+                    typeId: 15, typeName: "Keg Robot",
+                    typeId: 16, typeName: "Rug of Smothering",
+                    typeId: 17, typeName: "Skull Flier",
+                    typeId: 18, typeName: "Warforaged Titan",
+                }},
+                
+                {id:5,
+                name: "Dragon",
+                types: {
+                    typeId: 1, typeName: "Adult Dragon",
+                    typeId: 2, typeName: "Ancient Dragon",
+                    typeId: 3, typeName: "Astyrranthor",
+                    typeId: 4, typeName: "Guard Drake",
+                    typeId: 5, typeName: "Dragon Wyrmling",
+                    typeId: 6, typeName: "Dragon Turtle",
+                    typeId: 7, typeName: "Faerie Dragon",
+                    typeId: 8, typeName: "Itmrith",
+                    typeId: 9, typeName: "Pseudodragon",
+                    typeId: 10, typeName: "Young Dragon",
+                }},
+                
+                {id:6,
+                name: "Elemental",
+                types: {
+                    typeId: 1, typeName: "Air Elemental",
+                    typeId: 2, typeName: "Azer",
+                    typeId: 3, typeName: "Dust Mephit",
+                    typeId: 4, typeName: "Earth Elemental",
+                    typeId: 5, typeName: "Efreeti",
+                    typeId: 6, typeName: "Tempest",
+                    typeId: 7, typeName: "Fire Elemental",
+                    typeId: 8, typeName: "Fire Snake",
+                    typeId: 9, typeName: "Flail Snail",
+                    typeId: 10, typeName: "Frost Salamander",
+                    typeId: 11, typeName: "Gargoyle",
+                    typeId: 12, typeName: "Ice Mephit",
+                    typeId: 13, typeName: "Imix",
+                    typeId: 14, typeName: "Invisible Stalker",
+                    typeId: 15, typeName: "Leviathan",
+                    typeId: 16, typeName: "Marid",
+                    typeId: 17, typeName: "Phoenix",
+                    typeId: 18, typeName: "Steam Mephit",
+                    typeId: 19, typeName: "Water Elemental",
+                    typeId: 20, typeName: "Water Weird",
+                }},
+
+                {id:7, 
+                name: "Fey",
+                types: {
+                    typeId: 1, typeName: "Autumn Eladrin",
+                    typeId: 2, typeName: "Blink Dog",
+                    typeId: 3, typeName: "Boggle",
+                    typeId: 4, typeName: "Conclave Dryad",
+                    typeId: 5, typeName: "Darkling Elder",
+                    typeId: 6, typeName: "Dusk Hag",
+                    typeId: 7, typeName: "Mite",
+                    typeId: 8, typeName: "Pixie",
+                    typeId: 9, typeName: "Quickling",
+                    typeId: 10, typeName: "Satyr",
+                    typeId: 11, typeName: "Siren",
+                }},
+                
+                {id:8,
+                name: "Fiend",
+                types: {
+                    typeId: 1, typeName: "Abyssal Chicken",
+                    typeId: 2, typeName: "Arcanaloth",
+                    typeId: 3, typeName: "Bael",
+                    typeId: 4, typeName: "Balor",
+                    typeId: 5, typeName: "Barbed Devil",
+                    typeId: 6, typeName: "Bone Devil",
+                    typeId: 7, typeName: "Cackler",
+                    typeId: 8, typeName: "Cambion",
+                    typeId: 9, typeName: "Demogorgon",
+                    typeId: 10, typeName: "Devourer",
+                    typeId: 11, typeName: "Erinyes",
+                    typeId: 12, typeName: "Hell Hound",
+                    typeId: 13, typeName: "Ice Devil",
+                    typeId: 14, typeName: "Imp",
+                    typeId: 15, typeName: "Incubus",
+                    typeId: 16, typeName: "Nightmare",
+                    typeId: 17, typeName: "Succubus",
+                    typeId: 18, typeName: "Vrock",
+                }},
+
+                {id:9,
+                name: "Giant",
+                types: {
+                    typeId: 1, typeName: "Cloud Giant",
+                    typeId: 2, typeName: "Cyclops",
+                    typeId: 3, typeName: "Ettin",
+                    typeId: 4, typeName: "Fire Giant",
+                    typeId: 5, typeName: "Frost Giant",
+                    typeId: 6, typeName: "Hill Giant",
+                    typeId: 7, typeName: "Ogre",
+                    typeId: 8, typeName: "Oni",
+                    typeId: 9, typeName: "Stone Giant",
+                    typeId: 10, typeName: "Storm Giant",
+                    typeId: 11, typeName: "Troll",
+                }},
+
+                {id:10, 
+                name: "Humanoid",
+                types: {
+                    typeId: 1, typeName: "Acolyte",
+                    typeId: 2, typeName: "Archmage",
+                    typeId: 3, typeName: "Assasin",
+                    typeId: 4, typeName: "Bandit",
+                    typeId: 5, typeName: "Bandit Captain",
+                    typeId: 6, typeName: "Berserker",
+                    typeId: 7, typeName: "Bugbear",
+                    typeId: 8, typeName: "Commoner",
+                    typeId: 9, typeName: "Cultist",
+                    typeId: 10, typeName: "Deeo Gnome",
+                    typeId: 11, typeName: "Drow",
+                    typeId: 12, typeName: "Druid",
+                    typeId: 13, typeName: "Duergar",
+                    typeId: 14, typeName: "Gladiator",
+                    typeId: 15, typeName: "Gnoll",
+                    typeId: 16, typeName: "Goblin",
+                    typeId: 17, typeName: "Grimlock",
+                    typeId: 18, typeName: "Guard",
+                    typeId: 19, typeName: "Hobgoblin",
+                    typeId: 20, typeName: "Knight",
+                    typeId: 21, typeName: "Kobold",
+                    typeId: 22, typeName: "Lizardfolk",
+                    typeId: 23, typeName: "Mage",
+                    typeId: 24, typeName: "Merfolk",
+                    typeId: 25, typeName: "Orc",
+                    typeId: 26, typeName: "Priest",
+                    typeId: 27, typeName: "Scout",
+                    typeId: 28, typeName: "Spy",
+                    typeId: 29, typeName: "Thug",
+                    typeId: 30, typeName: "Warrior",
+                    typeId: 31, typeName: "Veteran",
+                    typeId: 32, typeName: "Werebear",
+                    typeId: 33, typeName: "Wererat",
+                    typeId: 34, typeName: "Werewolf",
+                }},
+                
+                {id:11,
+                name: "Monstrosity",
+                types: {
+                    typeId: 1, typeName: "Androsphinx",
+                    typeId: 2, typeName: "Ankheg",
+                    typeId: 3, typeName: "Basilisk",
+                    typeId: 4, typeName: "Behir",
+                    typeId: 5, typeName: "Bulette",
+                    typeId: 6, typeName: "Centaur",
+                    typeId: 7, typeName: "Chimera",
+                    typeId: 8, typeName: "Cockatrice",
+                    typeId: 9, typeName: "Darkmantle",
+                    typeId: 10, typeName: "Death Dog",
+                    typeId: 11, typeName: "Doppelganger",
+                    typeId: 12, typeName: "Drider",
+                    typeId: 13, typeName: "Ettercap",
+                    typeId: 14, typeName: "Grick",
+                    typeId: 15, typeName: "Griffon",
+                    typeId: 16, typeName: "Guardian Naga",
+                    typeId: 17, typeName: "Gynosphinx",
+                    typeId: 18, typeName: "Harpy",
+                    typeId: 19, typeName: "Hippogriff",
+                    typeId: 20, typeName: "Hydra",
+                    typeId: 21, typeName: "Kraken",
+                    typeId: 22, typeName: "Lamia",
+                    typeId: 23, typeName: "Manticore",
+                    typeId: 24, typeName: "Medusa",
+                    typeId: 25, typeName: "Merrow",
+                    typeId: 26, typeName: "Mimic",
+                    typeId: 27, typeName: "Minotaur",
+                    typeId: 28, typeName: "Owlbear",
+                    typeId: 29, typeName: "Phase Spider",
+                    typeId: 30, typeName: "Rust Monster",
+                    typeId: 31, typeName: "Spirit Naga",
+                    typeId: 32, typeName: "Tarrasque",
+                    typeId: 33, typeName: "Winter Wolf",
+                    typeId: 34, typeName: "Worg",
+                    typeId: 35, typeName: "Yeti",
+                }},
+                
+                {id:12,
+                name: "Ooze",
+                types: {
+                    typeId: 1, typeName: "Black Pudding",
+                    typeId: 2, typeName: "Gelatinous Cube",
+                    typeId: 3, typeName: "Gray Ooze",
+                    typeId: 4, typeName: "Ochre Jelly",
+                }},
+
+                {id:13,
+                name: "Plant",
+                types: {
+                    typeId: 1, typeName: "Awakened Shrub",
+                    typeId: 2, typeName: "Awakened Tree",
+                    typeId: 3, typeName: "Shambling Mound",
+                    typeId: 4, typeName: "Shrieker",
+                    typeId: 5, typeName: "Treant",
+                    typeId: 6, typeName: "Twig Blight",
+                    typeId: 7, typeName: "Violet Fungus",
+                }},
+
+                {id:14, 
+                name: "Undead",
+                types: {
+                    typeId: 1, typeName: "Banshee",
+                    typeId: 2, typeName: "Flameskull",
+                    typeId: 3, typeName: "Ghast",
+                    typeId: 4, typeName: "Ghost",
+                    typeId: 5, typeName: "Ghoul",
+                    typeId: 6, typeName: "Lich",
+                    typeId: 7, typeName: "Minotaur Skeleton",
+                    typeId: 8, typeName: "Mummy",
+                    typeId: 9, typeName: "Mummy Lord",
+                    typeId: 10, typeName: "Orgre Zombie",
+                    typeId: 11, typeName: "Shadow",
+                    typeId: 12, typeName: "Skeleton",
+                    typeId: 13, typeName: "Specter",
+                    typeId: 14, typeName: "Vampire",
+                    typeId: 15, typeName: "Warhorse Skeleton",
+                    typeId: 16, typeName: "Wight",
+                    typeId: 17, typeName: "Will-O-Wisp",
+                    typeId: 18, typeName: "Wraith",
+                    typeId: 19, typeName: "Zombie",

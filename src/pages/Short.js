@@ -19,6 +19,7 @@ import Setback from "../components/Dungeon/Setback"
 // import SideMonsters from "../components/Dungeon/SideMonsters"
 import SideMonsters from "../components/Dungeon/SideMonsters"
 import Type from "../components/Dungeon/Type"
+import MonsterCard from "../components/Dungeon/MonsterCard";
 
 
 
@@ -40,7 +41,6 @@ handleFirstClick = () => {
     }
     const hide = function (div) {
         div.style.display = 'none'
-
     }
 
     hide(firstQues)
@@ -150,7 +150,7 @@ handleLastClick = () => {
                     <div className="btnspace">
                         <Rooms></Rooms>
                         <Setback></Setback>
-                        <SideMonsters></SideMonsters>
+                        <MonsterCard></MonsterCard>
                         <Type></Type>
                     </div>
                     <div className="nextBtn">

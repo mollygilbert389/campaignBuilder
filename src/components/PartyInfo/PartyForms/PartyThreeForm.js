@@ -20,6 +20,10 @@ class PartyThreeForm extends Component {
             playerThreeRace: "",
         }
     }
+    //set state with party members
+    //based on this number need to create an array with 4 objects
+    //run map over the players that will return new componet
+    //use hooks instead
 
     playerhandleChange = (event) => {
         const target = event.target;
