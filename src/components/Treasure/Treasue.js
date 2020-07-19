@@ -10,12 +10,12 @@ class Treasure extends Component {
         super();
         this.state ={
             showModal: false,
-            equipment: '', 
-            magicItem: '',
-            gems: '',
-            money:'',
-            tradeGoods: '',
-            justXp: ''
+            equipment: false, 
+            magicItem: false,
+            gems: false,
+            money: false,
+            tradeGoods: false,
+            justXp: false 
         }
     }
         handleChange = (event) => {
@@ -31,6 +31,13 @@ class Treasure extends Component {
         }
 
 render() {  
+
+    const{equipment} = this.state
+    const{magicItem} = this.state
+    const{gems} = this.state
+    const{money} = this.state
+    const{tradeGoods} = this.state
+    const{justXp} = this.state
 
     return (
         <div>
@@ -58,56 +65,66 @@ render() {
                 />
 
                 <FormGroup>
-                <FormControlLabel
+                <FormControlLabel disabled={(justXp) ? true: false}
                 control={
                 <Checkbox 
-                checked={this.equipment} 
+                checked={equipment} 
                 onChange={this.handleChange} 
                 name="equipment" 
                 color="primary"/>}
                 label="Equipment"
                 />
 
-                <FormControlLabel
+                <FormControlLabel disabled={(justXp) ? true: false}
                 control={
                 <Checkbox 
-                checked={this.magicItem} 
+                checked={magicItem} 
                 onChange={this.handleChange} 
-                name="Magic Items" 
+                name="magicItem" 
                 color="primary"/>}
                 label="Magic Items"
                 />
 
-                <FormControlLabel
+                <FormControlLabel disabled={(justXp) ? true: false}
                 control={
                 <Checkbox 
-                checked={this.gems} 
+                checked={gems} 
                 onChange={this.handleChange} 
-                name="Gems, Jewelry, Art" 
+                name="gems" 
                 color="primary"/>}
                 label="Gems, Jewelry, Art"
                 />
 
-                <FormControlLabel
+                <FormControlLabel disabled={(justXp) ? true: false}
                 control={
                 <Checkbox 
-                checked={this.tradeGoods} 
+                checked={tradeGoods} 
                 onChange={this.handleChange} 
-                name="Trade Goods" 
+                name="tradeGoods" 
                 color="primary"/>}
                 label="Trade Goods"
                 />
 
-              {/*   {adding disabler checkbox} */}
-                {/* <FormControlLabel {this.tradeGoods || this.gems || this.magicItem || this.equipment : {disabled} ? }
+                <FormControlLabel disabled={(justXp) ? true: false}
                 control={
                 <Checkbox 
-                checked={this.justXp} 
+                checked={money} 
                 onChange={this.handleChange} 
-                name="Just XP" 
+                name="money" 
+                color="primary"/>}
+                label="Money"
+                />
+
+              {/*   {adding disabler checkbox} */}
+                <FormControlLabel disabled={(tradeGoods || gems || magicItem || equipment || money) ? true: false}
+                control={
+                <Checkbox 
+                checked={justXp} 
+                onChange={this.handleChange} 
+                name="justXp" 
                 color="primary"/>}
                 label="Just XP"
-                /> */}
+                />
 
             </FormGroup>
             </Modal.Body>
