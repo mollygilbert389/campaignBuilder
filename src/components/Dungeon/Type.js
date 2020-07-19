@@ -40,14 +40,14 @@ render() {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Mansion</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Cave</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Lost City</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Cellar</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Tomb</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Temple</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Prison</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Vault</Dropdown.Item>
+                    <Dropdown.Item> Mansion</Dropdown.Item>
+                    <Dropdown.Item> Cave</Dropdown.Item>
+                    <Dropdown.Item> Lost City</Dropdown.Item>
+                    <Dropdown.Item> Cellar</Dropdown.Item>
+                    <Dropdown.Item> Tomb</Dropdown.Item>
+                    <Dropdown.Item> Temple</Dropdown.Item>
+                    <Dropdown.Item> Prison</Dropdown.Item>
+                    <Dropdown.Item> Vault</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
             </Modal.Body>

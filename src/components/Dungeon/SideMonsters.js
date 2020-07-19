@@ -14,20 +14,6 @@ class Monsters extends Component {
 
     handleMonsterForm() {
         let monsterFinalNum = document.getElementById("monsterNum")
-        
-        if (monsterFinalNum !== null) {
-        
-        // let monsterSelectSpace = document.getElementById("monsterSelectSpace")
-        // const show = function (div) {
-        //     div.style.display = 'block'
-        // }
-
-        // const hide = function (div) {
-        //     div.style.display = 'none'
-        // }
-
-        
-        }
     }
 
 render() {  
@@ -35,7 +21,6 @@ render() {
     return (
         
         <div>
-            {/* {this.handleMonsterForm()} */}
         <Modal.Dialog id="villianbtn">
             <Modal.Header>
                 <Modal.Title>Monster Monster</Modal.Title>
