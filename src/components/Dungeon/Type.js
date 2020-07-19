@@ -9,6 +9,7 @@ class Type extends Component {
         super();
         this.state ={
             showModal: false,
+            dungeonType: ""
         }
     }
 
@@ -18,7 +19,16 @@ class Type extends Component {
         })
     }
 
+    handleSelect = (eventKey , event) => {
+        let dungeonType = event.target.name
+        this.setState({
+            dungeonType: dungeonType
+        })
+    }
+
 render() {  
+
+    const{dungeonType} = this.state 
 
     return (
         <div>
@@ -34,26 +44,25 @@ render() {
 
             <Modal.Body>
                 <p>Let's start by designing a dungeon. Below are some questions to consider.</p>
-                <Dropdown>
+                <Dropdown onSelect={this.handleSelect}>
                     <Dropdown.Toggle variant="success" id="">
-                    Dungeon Type
+                    { dungeonType ? dungeonType: 'Dungeon Type'}
                     </Dropdown.Toggle>
-
                     <Dropdown.Menu>
-                    <Dropdown.Item> Mansion</Dropdown.Item>
-                    <Dropdown.Item> Cave</Dropdown.Item>
-                    <Dropdown.Item> Lost City</Dropdown.Item>
-                    <Dropdown.Item> Cellar</Dropdown.Item>
-                    <Dropdown.Item> Tomb</Dropdown.Item>
-                    <Dropdown.Item> Temple</Dropdown.Item>
-                    <Dropdown.Item> Prison</Dropdown.Item>
-                    <Dropdown.Item> Vault</Dropdown.Item>
+                    <Dropdown.Item name="Mansion"> Mansion</Dropdown.Item>
+                    <Dropdown.Item name="Cave"> Cave</Dropdown.Item>
+                    <Dropdown.Item name="Lost City"> Lost City</Dropdown.Item>
+                    <Dropdown.Item name="Cellar"> Cellar</Dropdown.Item>
+                    <Dropdown.Item name="tomb"> Tomb</Dropdown.Item>
+                    <Dropdown.Item name="Temple"> Temple</Dropdown.Item>
+                    <Dropdown.Item name="Prison"> Prison</Dropdown.Item>
+                    <Dropdown.Item name="Vault"> Vault</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
             </Modal.Body>
 
             <Modal.Footer>
-                <Button variant="secondary" onClick={this.close} >Save</Button>
+                <Button variant="secondary" onClick={this.handleClick} >Save</Button>
             </Modal.Footer>
         </Modal.Dialog>
         </Modal>

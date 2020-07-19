@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button, Form, Dropdown, FormControl } from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
+import {FormControlLabel, Checkbox, FormGroup, Slider} from '@material-ui/core'
 import "./style.css"
 
 class Treasure extends Component {
@@ -9,32 +10,25 @@ class Treasure extends Component {
         super();
         this.state ={
             showModal: false,
-            value: ""
+            equipment: '', 
+            magicItem: '',
+            gems: '',
+            money:'',
+            tradeGoods: '',
+            justXp: ''
         }
     }
+        handleChange = (event) => {
+            this.setState({
+                [event.target.name]: event.target.checked 
+            });
+          };
 
-      close = (event) =>  {
-          this.setState({
-              showModal: false,
-              value: event.target.value
+        handleClick = () => {
+            this.setState({
+                showModal: !this.state.showModal,
             })
-            let treasure = this.state.value
-            let newName = document.getElementById('treasureSpace')
-            newName.textContent = "Treasure: " + treasure
-      }
-
-      //handles the key stoke changes????
-      handleChange = (event) => {
-        this.setState({
-            value: event.target.value
-        })
-      }
-
-handleClick = () => {
-    this.setState({
-        showModal: !this.state.showModal,
-      })
-}
+        }
 
 render() {  
 
@@ -52,29 +46,74 @@ render() {
 
             <Modal.Body>
                 <p>Below are some buttons to help create the tresure and experience earned for your game!</p>
-                <Form inline>
-                    <FormControl type="text" placeholder="Guest Giver Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
-                </Form>
+                <p>You have selected {'x'} rooms and a {'short'} campaign. Due to this reason we suggest you have {'x'} treasures excluding the quest price. Please check the boxes below of items you'd like to include and we'll generate them for you.</p>
+
                 <br></br>
 
-                <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    Types of Themes
-                    </Dropdown.Toggle>
+                <Slider
+                min={1}
+                max={5}
+                defaultValue={3}
+                valueLabelDisplay="on"
+                />
 
-                    <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Human</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Elf</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">God</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Dwarf</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Wizard</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+                <FormGroup>
+                <FormControlLabel
+                control={
+                <Checkbox 
+                checked={this.equipment} 
+                onChange={this.handleChange} 
+                name="equipment" 
+                color="primary"/>}
+                label="Equipment"
+                />
+
+                <FormControlLabel
+                control={
+                <Checkbox 
+                checked={this.magicItem} 
+                onChange={this.handleChange} 
+                name="Magic Items" 
+                color="primary"/>}
+                label="Magic Items"
+                />
+
+                <FormControlLabel
+                control={
+                <Checkbox 
+                checked={this.gems} 
+                onChange={this.handleChange} 
+                name="Gems, Jewelry, Art" 
+                color="primary"/>}
+                label="Gems, Jewelry, Art"
+                />
+
+                <FormControlLabel
+                control={
+                <Checkbox 
+                checked={this.tradeGoods} 
+                onChange={this.handleChange} 
+                name="Trade Goods" 
+                color="primary"/>}
+                label="Trade Goods"
+                />
+
+              {/*   {adding disabler checkbox} */}
+                {/* <FormControlLabel {this.tradeGoods || this.gems || this.magicItem || this.equipment : {disabled} ? }
+                control={
+                <Checkbox 
+                checked={this.justXp} 
+                onChange={this.handleChange} 
+                name="Just XP" 
+                color="primary"/>}
+                label="Just XP"
+                /> */}
+
+            </FormGroup>
             </Modal.Body>
 
             <Modal.Footer>
-                <Button variant="secondary" onClick={this.close} >Save</Button>
+                <Button variant="secondary" onClick={this.handleClick} >Save</Button>
             </Modal.Footer>
         </Modal.Dialog>
         </Modal>
