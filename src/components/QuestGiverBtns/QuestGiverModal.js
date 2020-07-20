@@ -9,29 +9,24 @@ class QuestGiverModal extends Component {
         super();
         this.state ={
             showModal: false,
-            value: "", 
-            // tyep: ""
+            questGiverName: "", 
+            questGiverType: ""
         }
     }
 
       close = (event) =>  {
           this.setState({
               showModal: false,
-              value: event.target.value
+              questGiverName: event.target.value
             })
-            let questGiverName = this.state.value
-            let newName = document.getElementById('questGiverNameSpace')
-            newName.textContent = "Quest Giver: " + questGiverName
+            this.props.setQuestGiver(this.state.questGiverName, this.state.questGiverType)
       }
 
 
       handleChange = (event) => {
         this.setState({
-            value: event.target.value
+            questGiverName: event.target.value
         })
-        let questGiverName = this.state.value
-        let newName = document.getElementById('questGiverNameSpace')
-        newName.textContent = "Quest Giver: " + questGiverName
       }
 
     handleClick = () => {
@@ -41,21 +36,17 @@ class QuestGiverModal extends Component {
     }
 
     questGiverChoice = (choice) => {
-        if (this.state.type = "") {
-            let questGiverType = document.getElementById('questGiverType')
-            questGiverType.innerText = "Quest Giver Type"
-        } else {
-            let questGiverType = document.getElementById('questGiverType')
-            questGiverType.innerText = choice.target.text
-        }
+        // if (this.state.type = "") {
+        //     let questGiverType = document.getElementById('questGiverType')
+        //     questGiverType.innerText = "Quest Giver Type"
+        // } else {
+        //     let questGiverType = document.getElementById('questGiverType')
+        //     questGiverType.innerText = choice.target.text
+        // }
 
-        let questGiverChoice = choice.target.text
         this.setState({
-            type: questGiverChoice
+            questGiverType: choice.target.text
         })
-
-        let newNameandType = document.getElementById('questGiverTypeSpace')
-        newNameandType.append("Type: " + questGiverChoice) 
     }
 
 render() {  

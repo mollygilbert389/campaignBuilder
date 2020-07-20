@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button, Form, Dropdown, FormControl } from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 import "./style.css"
-import { conditionalExpression } from '@babel/types';
 
 class Pillar extends Component {
 
@@ -10,21 +9,18 @@ class Pillar extends Component {
         super();
         this.state ={
             showModal: false,
-            partyPillar: ""
+            pillar: ""
         }
     }
 
 
-    handlePillarBtn = (event) =>  {
-        let pillarchoice = event.target.name
+    handlePillarBtn = (selection) =>  {
           this.setState({
-            partyPillar: event.target.name,            
+            pillar: selection,          
             showModal: false,   
-            }, () => console.log(this.state.partyPillar)
-            )
-
-            let pillarName = document.getElementById('pillarTypeSpace')
-            pillarName.textContent = "Pillar: " + pillarchoice
+            }, () => {
+                this.props.setPillar(this.state.pillar)
+            })
       }
 
         handleClick = () => {
@@ -50,13 +46,13 @@ render() {
                 <p>Here you will choose your adventure type. We reccomend a Combat pillar for a short campaign, but you can have any type of campaign you choose!</p>
 
                 <div>
-                    <Button onClick={this.handlePillarBtn} variant="outline-success" name="Combat" size="lg" block>
+                    <Button onClick={() => this.handlePillarBtn("Combat")} variant="outline-success" name="Combat" size="lg" block>
                     Combat
                     </Button>
-                    <Button onClick={this.handlePillarBtn} variant="outline-warning" name="Interaction" size="lg" block>
+                    <Button onClick={() => this.handlePillarBtn("Interaction")} variant="outline-warning" name="Interaction" size="lg" block>
                     Interaction
                     </Button>
-                    <Button onClick={this.handlePillarBtn} variant="outline-danger" name="Exploration" size="lg" block>
+                    <Button onClick={() => this.handlePillarBtn("Exploration")} variant="outline-danger" name="Exploration" size="lg" block>
                     Exploration
                     </Button>
                 </div>

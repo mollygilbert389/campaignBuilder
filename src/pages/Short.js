@@ -19,6 +19,9 @@ import Setback from "../components/Dungeon/Setback"
 import Type from "../components/Dungeon/Type"
 import MonsterCard from "../components/Dungeon/MonsterCard";
 import CampaignCard from "../components/CampaignCard/CampaignCard"
+import {connect} from "react-redux"
+import {bindActionCreators} from "redux"
+import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQuestGiverName, setPillar} from "../actions/index"
 
 
 
@@ -113,6 +116,29 @@ handleFinalClick = () => {
     show(secondQues)
 }
 
+setCampaignName = (name) => {
+    const{onSetCampaignName}=this.props
+    onSetCampaignName(name)
+}
+
+setVillianNameAndType = (name, vType) => {
+    const{onSetVillianName, onSetVillianType}=this.props
+    onSetVillianName(name)
+    onSetVillianType(vType)
+}
+
+setQuestGiverNameAndType = (name, qType) => {
+    const{onSetQuestGiverName, onSetQuestGiverType}=this.props
+    onSetQuestGiverName(name)
+    onSetQuestGiverType(qType)
+}
+
+setPillar = (name) => {
+    const{onSetPillar}=this.props
+    onSetPillar(name)
+    console.log(name)
+}
+
 
     render() {
 
@@ -125,9 +151,9 @@ handleFinalClick = () => {
                 <div id="firstRoundQuestions">
                     <p>Let's talk characters. Let's think about the goal of this entire campaign. Do you want to start with your villian or your quest giver? Sometimes the quest giver and the villian are the same.</p>
                     <div className="btnspace">
-                        <CampaignNameModal></CampaignNameModal>
-                        <VillianModal></VillianModal>
-                        <QuestGiverModal></QuestGiverModal>
+                        <CampaignNameModal setCampaignName={this.setCampaignName}></CampaignNameModal>
+                        <VillianModal setVillian={this.setVillianNameAndType}></VillianModal>
+                        <QuestGiverModal setQuestGiver={this.setQuestGiverNameAndType}></QuestGiverModal>
                         {/* <CustomBoth></CustomBoth> */}
                     </div>
 
@@ -149,7 +175,7 @@ handleFinalClick = () => {
                 <div id="thirdRoundQuestions" style={{display:"none"}}>
                     <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
                     <div className="btnspace">
-                        <Pillar></Pillar>
+                        <Pillar setPillar={this.setPillar}></Pillar>
                         <Theme></Theme>
                         <Acts></Acts>
                         <SideQuests></SideQuests>
@@ -194,7 +220,7 @@ handleFinalClick = () => {
             <div className="storyCards" id="storyCard">
             <Card bg="light" style={{ width: '18rem' }}>
                 <Card.Header>Short Campaign</Card.Header>
-                    <StoryInfo></StoryInfo>
+                    <StoryInfo campaign={this.props.campaign}></StoryInfo>
             </Card>
             </div>
 
@@ -204,4 +230,18 @@ handleFinalClick = () => {
   }
 }
 
-export default Short;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetCampaignName: bindActionCreators(setCampaignName, dispatch),
+    onSetVillianName: bindActionCreators(setVillianName, dispatch),
+    onSetVillianType: bindActionCreators(setVillianType, dispatch),
+    onSetQuestGiverName: bindActionCreators(setQuestGiverName, dispatch),
+    onSetQuestGiverType: bindActionCreators(setQuestGiverType, dispatch),
+    onSetPillar: bindActionCreators(setPillar, dispatch)
+
+})
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Short);

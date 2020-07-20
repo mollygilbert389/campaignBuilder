@@ -9,26 +9,28 @@ class CampaignNameModal extends Component {
         super();
         this.state ={
             showModal: true,
-            value: ""
+            campaignName: "",
         }
     }
 
       close = (event) =>  {
-          this.setState({
-              showModal: false,
-              value: event.target.value
+            this.setState({
+                showModal: false,
+                // campaignName: event.target.value
             })
-            let campaignName = this.state.value
-            let newName = document.getElementById('campaignNameSpace')
-            let cardName = document.getElementById('cardCampaignName')
-            newName.textContent = "Campaign: " + campaignName
-            cardName.textContent = "Campaign Name: " + campaignName
+
+            this.props.setCampaignName(this.state.campaignName)
+
+            // let campaignName = this.state.value
+            // let newName = document.getElementById('campaignNameSpace')
+            // let cardName = document.getElementById('cardCampaignName')
+            // newName.textContent = "Campaign: " + campaignName
+            // cardName.textContent = "Campaign Name: " + campaignName
       }
 
-      //handles the key stoke changes????
       handleChange = (event) => {
         this.setState({
-            value: event.target.value
+            campaignName: event.target.value
         })
       }
     
@@ -36,7 +38,6 @@ render() {
     return (
         <div>
         <Modal 
-        //to unhide once testing is done
         show={this.state.showModal}
         >
             <Modal.Header>

@@ -9,29 +9,24 @@ class VillianModal extends Component {
         super();
         this.state ={
             showModal: false,
-            value: "",
-            type: ""
+            villianName: "",
+            villianType: ""
         }
     }
 
       close = (event) =>  {
           this.setState({
               showModal: false,
-              value: event.target.value
+              villianName: event.target.value
             })
 
-            let villianName = this.state.value
-            let newName = document.getElementById('villianNameSpace')
-            newName.textContent = "Villian: " + villianName
+            this.props.setVillian(this.state.villianName, this.state.villianType)
       }
 
       handleChange = (event) => {
         this.setState({
-            value: event.target.value
+            villianName: event.target.value
         })
-        let villianName = this.state.value
-        let newName = document.getElementById('villianNameSpace')
-        newName.textContent = "Villian: " + villianName
       }
 
         handleClick = () => {
@@ -41,22 +36,17 @@ class VillianModal extends Component {
         }
 
         villianChoice = (choice) => {
-            if (this.state.type = "") {
-                let villianType = document.getElementById('villianType')
-                villianType.innerText = "Villian Type"
-            } else {
-                let villianType = document.getElementById('villianType')
-                villianType.innerText = choice.target.text
-            }
+            // if (this.state.type = "") {
+            //     let villianType = document.getElementById('villianType')
+            //     villianType.innerText = "Villian Type"
+            // } else {
+            //     let villianType = document.getElementById('villianType')
+            //     villianType.innerText = choice.target.text
+            // }
 
-            let villianChoice = choice.target.text
             this.setState({
-                type: villianChoice
-            }, () => console.log(this.state.villianChoice)
-            )
-
-            let newNameandType = document.getElementById('villianTypeSpace')
-            newNameandType.append("Type: " + villianChoice) 
+                villianType: choice.target.text
+            })
         }
 
 render() {  

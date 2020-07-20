@@ -3,22 +3,22 @@ import {Card} from 'react-bootstrap'
 
 class StoryInfo extends Component {
 
-    
-
 render() {  
+
+    const{campaign}=this.props
 
     return (
         <div className="storyCards">
                 <Card.Body>
-                    <Card.Title id="cardCampaignName">Campaign Name:</Card.Title>
+                {(campaign.campaignName && <Card.Title>{`Campaign Name: ${campaign.campaignName}`}</Card.Title>)}
                     <Card.Text>
-                    <div id="villianNameSpace"></div>
-                    <div id="villianTypeSpace"></div>
-                    <div id="questGiverNameSpace"></div>
-                    <div id="questGiverTypeSpace"></div>
+                    {campaign.villianName && (<div> {`Villian Name: ${campaign.villianName}`}</div>)}
+                    {campaign.villianType && (<div>{`Villian Type: ${campaign.villianType}`}</div>)}
+                    {campaign.questGiverName && (<div>{`Quest Giver: ${campaign.questGiverName}`}</div>)}
+                    {campaign.questGiverType && (<div>{`Quest Giver Type: ${campaign.questGiverType}`}</div>)}
                     <div id="partyInfoSapce"></div>
-                    <div id="pillarTypeSpace"></div>
-                    <div id="themeSpace"></div>
+                    {campaign.pillar && (<div>{`Pillar: ${campaign.pillar}`}</div>)}
+                    {/* {campaign.theme && (<div>{`Theme: ${campaign.pillar}`}</div>)} */}
                     <div id="actsSpace"></div>
                     <div id="sideQuestSpace"></div>
                     <div id="dungeonTypeSpace"></div>

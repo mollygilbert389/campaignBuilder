@@ -8,9 +8,13 @@ import Custom from "./pages/Custom"
 import Navtabs from "./components/Navtabs"
 import './App.css';
 
+import {Provider} from "react-redux"
+import store from "./store"
+
 
 function App() {
   return (
+    <Provider store={store}>
     <div className="App">
       <Navtabs></Navtabs>
       <Router>
@@ -22,6 +26,7 @@ function App() {
         <Route exact path="/customcampaign" component={Custom}/>
       </Router>
     </div>
+    </Provider>
   );
 }
 
