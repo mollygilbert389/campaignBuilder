@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import {Card} from 'react-bootstrap'
 
 class StoryInfo extends Component {
- 
+
+    
 
 render() {  
 
@@ -23,8 +24,13 @@ render() {
                     <div id="dungeonTypeSpace"></div>
                     <div id="roomsSpace"></div>
                     <div id="setbackSpace"></div>
-                    <div id="monstersSpace"></div>
-                    <div id="treasueSpace"></div>
+                    <div>
+                        <div id="monsterOneTypeSpace"></div>
+                        <div id="monsterTwoTypeSpace"></div>
+                        <div id="monsterThreeTypeSpace"></div>
+                    </div>
+                    <div id="dungeonType"></div>
+                    <div id="treasureSpace"></div>
                     </Card.Text>
                 </Card.Body>
         </div>

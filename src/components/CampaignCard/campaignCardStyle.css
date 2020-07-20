@@ -1,0 +1,71 @@
+
+.campaignCardWhole {
+    text-align: left;
+}
+
+.main {
+    border: solid rgb(63, 156, 243) 1px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.logoSpace {
+    font-size: 50px;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-bottom: 10px;
+}
+
+.campaignTitle {
+    font-size: 35px;
+}
+
+.shortCampaignDescription{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.dateCreated {
+    font-size: 15px;
+}
+
+.keyfacts {
+    border: solid rgb(63, 156, 243) 1px;
+    margin: 5px;
+}
+
+.subTitle {
+    font-size: 25px;
+    border-bottom: rgb(198, 157, 252) 1px solid;
+    width: 400px;
+    margin: 5px;
+}
+
+p {
+    margin: 5px;
+}
+
+.aboutThisAdventure {
+    border: solid rgb(63, 156, 243) 1px;
+    margin: 5px;
+}
+
+.infoSection {
+    background-color: rgba(198, 157, 252, 0.514);
+    width: 400px;
+    text-align: center;
+    padding: 3px;
+    border-left: 10px solid rgb(198, 157, 252);
+}
+
+.act1 {
+    border: solid rgb(63, 156, 243) 1px;
+    margin: 5px;
+}
+
+.subSectionTitle {
+    font-size: 18px;
+    border-bottom: rgb(198, 157, 252) 1px solid;
+    width: 300px;
+    margin: 5px;
+}

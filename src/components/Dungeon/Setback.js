@@ -29,7 +29,7 @@ class Setback extends Component {
             setback: setbackOption
         })
 
-        setbackSpace.append("Setback: " + setbackOption)
+        setbackSpace.append("Setback: " + setbackOption) 
     }
 
 render() {  

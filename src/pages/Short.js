@@ -16,10 +16,9 @@ import PartyInfo from "../components/PartyInfo/PartyInfo"
 import Treasure from "../components/Treasure/Treasue"
 import Rooms from "../components/Dungeon/Rooms"
 import Setback from "../components/Dungeon/Setback"
-// import SideMonsters from "../components/Dungeon/SideMonsters"
-import SideMonsters from "../components/Dungeon/SideMonsters"
 import Type from "../components/Dungeon/Type"
 import MonsterCard from "../components/Dungeon/MonsterCard";
+import CampaignCard from "../components/CampaignCard/CampaignCard"
 
 
 
@@ -96,9 +95,24 @@ handleFourthClick = () => {
     show(secondQues)
 }
 
-handleLastClick = () => {
+handleFinalClick = () => {
+    let firstQues = document.getElementById("fifthRoundQuestion")
+    let secondQues = document.getElementById("campaginCard")
+    let storyCard = document.getElementById("storyCard")
 
+    const show = function (div) {
+        div.style.display = 'block'
+    }
+    const hide = function (div) {
+        div.style.display = 'none'
+
+    }
+
+    hide(firstQues)
+    hide(storyCard)
+    show(secondQues)
 }
+
 
     render() {
 
@@ -164,13 +178,20 @@ handleLastClick = () => {
                         <Treasure></Treasure>
                     </div>
                     <div className="nextBtn">
-                        <Button variant="outline-primary" size="lg" onClick={this.handleLastClick}>Next</Button>
+                        <Button variant="outline-primary" size="lg" onClick={this.handleFinalClick}>Next</Button>
+                    </div>
+                </div>
+
+                <div id="campaginCard" style={{display:"none"}}>
+                    <p>Check out your super cool campaign below. Feel free to make edits.</p>
+                    <div className="btnspace">
+                        <CampaignCard></CampaignCard>
                     </div>
                 </div>
 
                 </div>
 
-            <div className="storyCards">
+            <div className="storyCards" id="storyCard">
             <Card bg="light" style={{ width: '18rem' }}>
                 <Card.Header>Short Campaign</Card.Header>
                     <StoryInfo></StoryInfo>

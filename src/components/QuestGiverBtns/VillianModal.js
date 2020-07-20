@@ -25,7 +25,6 @@ class VillianModal extends Component {
             newName.textContent = "Villian: " + villianName
       }
 
-      //may want to remove the showing of text here
       handleChange = (event) => {
         this.setState({
             value: event.target.value
@@ -69,7 +68,7 @@ render() {
         </Button>
             </div>
         <Modal show={this.state.showModal}>
-        <Modal.Dialog id="villianbtn">
+        <Modal.Dialog>
             <Modal.Header>
                 <Modal.Title>Let's Create Yor Villian!</Modal.Title>
             </Modal.Header>
@@ -80,12 +79,12 @@ render() {
                 <Form inline>
                     <FormControl type="text" placeholder="Villian Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
                     <div style={{paddingRight: "10px"}}>or</div> 
-                    <Button variant="primary" >Generate</Button>
+                    <Button variant="outline-primary" >Generate</Button>
                 </Form>
                 <br></br>
 
                 <Dropdown>
-                    <Dropdown.Toggle variant="success" id="villianType">
+                    <Dropdown.Toggle variant="outline-primary" id="villianType">
                     Villian Type
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
@@ -114,7 +113,7 @@ render() {
             </Modal.Body>
 
             <Modal.Footer>
-                <Button variant="secondary" onClick={this.close} >Save</Button>
+                <Button variant="outline-success" onClick={this.close} >Save</Button>
             </Modal.Footer>
         </Modal.Dialog>
         </Modal>

@@ -48,12 +48,12 @@ render() {
                 <Form inline>
                     <FormControl type="text" placeholder="Campaign Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
                     <div style={{paddingRight: "10px"}}>or</div> 
-                    <Button variant="primary" >Generate</Button>
+                    <Button variant="outline-primary">Generate</Button>
                 </Form>
             </Modal.Body>
 
             <Modal.Footer>
-                <Button variant="secondary" type="submit" value="Submit" onClick={this.close}>Save</Button>
+                <Button variant="outline-success" type="submit" value="Submit" onClick={this.close}>Save</Button>
             </Modal.Footer>
         </Modal>
         </div>

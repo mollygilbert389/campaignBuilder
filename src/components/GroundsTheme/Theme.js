@@ -110,7 +110,7 @@ render() {
 
                 <FormGroup>
                     <Dropdown>
-                        <Dropdown.Toggle variant="outline-success" id="climateForm">
+                        <Dropdown.Toggle variant="outline-primary" id="climateForm">
                         What type of climate would you find your villian in?
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
@@ -123,7 +123,7 @@ render() {
 
                 <FormGroup>
                     <Dropdown>
-                        <Dropdown.Toggle variant="outline-success" id="worldForm">
+                        <Dropdown.Toggle variant="outline-primary" id="worldForm">
                         What type of world is this?
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
@@ -136,7 +136,7 @@ render() {
 
                 <FormGroup>
                     <Dropdown>
-                        <Dropdown.Toggle variant="outline-success" id="meetForm">
+                        <Dropdown.Toggle variant="outline-primary" id="meetForm">
                         Where do you intend your party to meet?
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
@@ -151,7 +151,7 @@ render() {
             </Modal.Body>
 
             <Modal.Footer>
-                <Button variant="secondary" onClick={this.close} >Save</Button>
+                <Button variant="outline-success" onClick={this.close} >Save</Button>
             </Modal.Footer>
         </Modal.Dialog>
         </Modal>

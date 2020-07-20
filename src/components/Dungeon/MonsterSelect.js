@@ -339,6 +339,7 @@ class MonsterSelect extends Component {
             monsterChoiceOne: monsterChoice,
             monsterTypesOne: monsterTypes
         })
+
     }
 
     handlemonsterTwoSelect = (eventKey, event) => {
@@ -353,6 +354,7 @@ class MonsterSelect extends Component {
             monsterChoiceTwo: monsterChoice,
             monsterTypesTwo: monsterTypes
         })
+
     }
 
     handlemonsterThreeSelect = (eventKey, event) => {
@@ -367,6 +369,7 @@ class MonsterSelect extends Component {
             monsterChoiceThree: monsterChoice,
             monsterTypesThree: monsterTypes
         })
+
     }
 
     handlemonsterTypeSelect = (eventKey, event) => {
@@ -374,6 +377,9 @@ class MonsterSelect extends Component {
         this.setState({ 
             monterTypeOneChoice: monsterTypeChoice
         })
+
+        let monsterOneStoryTypeSpace = document.getElementById("monsterOneTypeSpace")
+        monsterOneStoryTypeSpace.append("Monster Type: ", monsterTypeChoice)
 
     }
 
@@ -383,6 +389,9 @@ class MonsterSelect extends Component {
             monterTypeTwoChoice: monsterTypeChoice
         })
 
+        let monsterTwoStoryTypeSpace = document.getElementById("monsterTwoTypeSpace")
+        monsterTwoStoryTypeSpace.append("Monster Type: ", monsterTypeChoice)
+
     }
 
     handlemonsterThreeTypeSelect = (eventKey, event) => {
@@ -390,6 +399,9 @@ class MonsterSelect extends Component {
         this.setState({ 
             monterTypeThreeChoice: monsterTypeChoice
         })
+
+        let monsterThreeStoryTypeSpace = document.getElementById("monsterThreeTypeSpace")
+        monsterThreeStoryTypeSpace.append("Monster Type: ", monsterTypeChoice)
 
     }
 

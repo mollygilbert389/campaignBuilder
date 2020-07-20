@@ -109,7 +109,7 @@ render() {
                 </div>
 
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={this.handleFirstClick}> Next</Button>
+                    <Button variant="outline-success" onClick={this.handleFirstClick}> Next</Button>
                 </Modal.Footer>
                 
             </Modal.Body>
@@ -121,7 +121,7 @@ render() {
 
                 </SideMonsters>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={this.handleClick} >Save</Button>
+                    <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
                 </Modal.Footer>
             </div>
         </Modal>

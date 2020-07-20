@@ -10,7 +10,7 @@ class QuestGiverModal extends Component {
         this.state ={
             showModal: false,
             value: "", 
-            tyep: ""
+            // tyep: ""
         }
     }
 
@@ -67,7 +67,7 @@ render() {
         </Button>
             </div>
         <Modal show={this.state.showModal}>
-        <Modal.Dialog id="villianbtn">
+        <Modal.Dialog>
             <Modal.Header>
                 <Modal.Title>Let's Create A Quest Giver!</Modal.Title>
             </Modal.Header>
@@ -77,12 +77,12 @@ render() {
                 <Form inline>
                     <FormControl type="text" placeholder="Guest Giver Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
                     <div style={{paddingRight: "10px"}}>or</div> 
-                    <Button variant="primary" >Generate</Button>
+                    <Button variant="outline-primary">Generate</Button>
                 </Form>
                 <br></br>
 
                 <Dropdown>
-                    <Dropdown.Toggle variant="success" id="questGiverType">
+                    <Dropdown.Toggle variant="outline-primary" id="questGiverType">
                     Quest Giver Type
                     </Dropdown.Toggle>
 
@@ -98,7 +98,7 @@ render() {
             </Modal.Body>
 
             <Modal.Footer>
-                <Button variant="secondary" onClick={this.close} >Save</Button>
+                <Button variant="outline-success" onClick={this.close} >Save</Button>
             </Modal.Footer>
         </Modal.Dialog>
         </Modal>

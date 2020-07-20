@@ -24,6 +24,9 @@ class Type extends Component {
         this.setState({
             dungeonType: dungeonType
         })
+
+        let dungeonTypeSpace = document.getElementById("dungeonType")
+        dungeonTypeSpace.append("Dungeon Type: ", dungeonType)
     }
 
 render() {  
@@ -45,7 +48,7 @@ render() {
             <Modal.Body>
                 <p>Let's start by designing a dungeon. Below are some questions to consider.</p>
                 <Dropdown onSelect={this.handleSelect}>
-                    <Dropdown.Toggle variant="success" id="">
+                    <Dropdown.Toggle variant="outline-primary">
                     { dungeonType ? dungeonType: 'Dungeon Type'}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
@@ -62,7 +65,7 @@ render() {
             </Modal.Body>
 
             <Modal.Footer>
-                <Button variant="secondary" onClick={this.handleClick} >Save</Button>
+                <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
             </Modal.Footer>
         </Modal.Dialog>
         </Modal>

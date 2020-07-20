@@ -12,3 +12,8 @@
 .btns {
     margin: 10px;
 }
+
+.treasureSpace {
+    width: 50%;
+    align-items: center;
+}

@@ -22,9 +22,25 @@ class Treasure extends Component {
             this.setState({
                 [event.target.name]: event.target.checked 
             });
+
+            let treasureSpace = document.getElementById("treasureSpace")
+
+            let treasure = event.target.value 
+    
+            if (event.target.checked === true) {
+                treasureSpace.append(treasure, ', ')
+            }
           };
 
         handleClick = () => {
+            this.setState({
+                showModal: !this.state.showModal,
+            })
+            let treasureSpace = document.getElementById("treasureSpace")
+            treasureSpace.append("Treasure: ")
+        }
+
+        close = () => {
             this.setState({
                 showModal: !this.state.showModal,
             })
@@ -70,7 +86,8 @@ render() {
                 <Checkbox 
                 checked={equipment} 
                 onChange={this.handleChange} 
-                name="equipment" 
+                name="equipment"
+                value="Equipment" 
                 color="primary"/>}
                 label="Equipment"
                 />
@@ -80,7 +97,8 @@ render() {
                 <Checkbox 
                 checked={magicItem} 
                 onChange={this.handleChange} 
-                name="magicItem" 
+                name="magicItem"
+                value="Magic Item" 
                 color="primary"/>}
                 label="Magic Items"
                 />
@@ -90,7 +108,8 @@ render() {
                 <Checkbox 
                 checked={gems} 
                 onChange={this.handleChange} 
-                name="gems" 
+                name="gems"
+                value="Gems, Jewelry, Art" 
                 color="primary"/>}
                 label="Gems, Jewelry, Art"
                 />
@@ -101,6 +120,7 @@ render() {
                 checked={tradeGoods} 
                 onChange={this.handleChange} 
                 name="tradeGoods" 
+                value="Trade Goods"
                 color="primary"/>}
                 label="Trade Goods"
                 />
@@ -111,17 +131,18 @@ render() {
                 checked={money} 
                 onChange={this.handleChange} 
                 name="money" 
+                value="Money"
                 color="primary"/>}
                 label="Money"
                 />
 
-              {/*   {adding disabler checkbox} */}
                 <FormControlLabel disabled={(tradeGoods || gems || magicItem || equipment || money) ? true: false}
                 control={
                 <Checkbox 
                 checked={justXp} 
                 onChange={this.handleChange} 
                 name="justXp" 
+                value="XP Points"
                 color="primary"/>}
                 label="Just XP"
                 />
@@ -130,7 +151,7 @@ render() {
             </Modal.Body>
 
             <Modal.Footer>
-                <Button variant="secondary" onClick={this.handleClick} >Save</Button>
+                <Button variant="outline-success" onClick={this.close}> Save</Button>
             </Modal.Footer>
         </Modal.Dialog>
         </Modal>
