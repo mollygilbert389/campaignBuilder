@@ -1,13 +1,7 @@
 import React, {Component} from 'react'
 import {Button, Dropdown} from 'react-bootstrap'
 import {Form, Label, Input, FormGroup} from 'reactstrap'
-// import PartyThreeForm from './PartyForms/PartyThreeForm'
-// import PartyFourForm from './PartyForms/PartyFourForm'
-// import PartyFiveForm from './PartyForms/PartyFiveForm'
-// import PartySixForm from './PartyForms/PartySixForm'
-// import PartySevenForm from './PartyForms/PartySevenForm'
-// import PartyEightForm from './PartyForms/PartyEightForm'
-// import PartyLineItem from "./PartyForms/PartyLineItem"
+import update from 'immutability-helper';
 import "./style.css"
 
 class PartyInfo extends Component {
@@ -15,8 +9,8 @@ class PartyInfo extends Component {
     constructor() {
         super();
         this.state ={
-            partyMemebers: 0,
-            partymemberData: []
+            partyMembers: 0,
+            partymemberData: {}
         }
     }
 
@@ -25,7 +19,7 @@ class PartyInfo extends Component {
         partyMemberChoice = parseInt(partyMemberChoice)
         this.setState({
             ...this.state,
-            partyMemebers: partyMemberChoice
+            partyMembers: partyMemberChoice
         })
         
         let playerData = {}
@@ -34,8 +28,11 @@ class PartyInfo extends Component {
             case 3: 
             playerData = [
                 {id: 1, name: "", class: ""},
-                {id: 2, name: "", Class: ""},
-                {id: 3, name: "", Class: ""},
+                {id: 2, name: "", class: ""},
+                {id: 3, name: "", class: ""},
+                // {id: 1},
+                // {id: 2},
+                // {id: 3},
             ]
                 this.setState({
                     partymemberData: playerData
@@ -44,9 +41,13 @@ class PartyInfo extends Component {
             case 4: 
             playerData = [
                 {id: 1, name: "", class: ""},
-                {id: 2, name: "", Class: ""},
-                {id: 3, name: "", Class: ""},
-                {id: 4, name: "", Class: ""},
+                {id: 2, name: "", class: ""},
+                {id: 3, name: "", class: ""},
+                {id: 4, name: "", class: ""},
+                // {id: 1},
+                // {id: 2},
+                // {id: 3},
+                // {id: 4},
             ]
                 this.setState({
                     partymemberData: playerData
@@ -55,10 +56,15 @@ class PartyInfo extends Component {
             case 5: 
             playerData = [
                 {id: 1, name: "", class: "" },
-                {id: 2, name: "", Class: ""},
-                {id: 3, name: "", Class: ""},
-                {id: 4, name: "", Class: ""},
-                {id: 5, name: "", Class: ""},
+                {id: 2, name: "", class: ""},
+                {id: 3, name: "", class: ""},
+                {id: 4, name: "", class: ""},
+                {id: 5, name: "", class: ""},
+                // {id: 1},
+                // {id: 2},
+                // {id: 3},
+                // {id: 4},
+                // {id: 5},
             ]
                 this.setState({
                     partymemberData: playerData
@@ -67,11 +73,17 @@ class PartyInfo extends Component {
             case 6: 
             playerData = [
                 {id: 1, name: "", class: ""},
-                {id: 2, name: "", Class: ""},
-                {id: 3, name: "", Class: ""},
-                {id: 4, name: "", Class: ""},
-                {id: 5, name: "", Class: ""},
-                {id: 6, name: "", Class: ""},
+                {id: 2, name: "", class: ""},
+                {id: 3, name: "", class: ""},
+                {id: 4, name: "", class: ""},
+                {id: 5, name: "", class: ""},
+                {id: 6, name: "", class: ""},
+                // {id: 1},
+                // {id: 2},
+                // {id: 3},
+                // {id: 4},
+                // {id: 5},
+                // {id: 6},
             ]
                 this.setState({
                     partymemberData: playerData
@@ -80,12 +92,19 @@ class PartyInfo extends Component {
             case 7: 
             playerData = [
                 {id: 1, name: "", class: ""},
-                {id: 2, name: "", Class: ""},
-                {id: 3, name: "", Class: ""},
-                {id: 4, name: "", Class: ""},
-                {id: 5, name: "", Class: ""},
-                {id: 6, name: "", Class: ""},
-                {id: 7, name: "", Class: ""},
+                {id: 2, name: "", class: ""},
+                {id: 3, name: "", class: ""},
+                {id: 4, name: "", class: ""},
+                {id: 5, name: "", class: ""},
+                {id: 6, name: "", class: ""},
+                {id: 7, name: "", class: ""},
+                // {id: 1},
+                // {id: 2},
+                // {id: 3},
+                // {id: 4},
+                // {id: 5},
+                // {id: 6},
+                // {id: 7},
             ]
                 this.setState({
                     partymemberData: playerData
@@ -94,13 +113,21 @@ class PartyInfo extends Component {
             case 8: 
             playerData = [
                 {id: 1, name: "", class: ""},
-                {id: 2, name: "", Class: ""},
-                {id: 3, name: "", Class: ""},
-                {id: 4, name: "", Class: ""},
-                {id: 5, name: "", Class: ""},
-                {id: 6, name: "", Class: ""},
-                {id: 7, name: "", Class: ""},
-                {id: 8, name: "", Class: ""},
+                {id: 2, name: "", class: ""},
+                {id: 3, name: "", class: ""},
+                {id: 4, name: "", class: ""},
+                {id: 5, name: "", class: ""},
+                {id: 6, name: "", class: ""},
+                {id: 7, name: "", class: ""},
+                {id: 8, name: "", class: ""},
+                // {id: 1},
+                // {id: 2},
+                // {id: 3},
+                // {id: 4},
+                // {id: 5},
+                // {id: 6},
+                // {id: 7},
+                // {id: 8},
             ]
                 this.setState({
                     partymemberData: playerData
@@ -109,15 +136,30 @@ class PartyInfo extends Component {
             default: 
             return;
         } 
-
-       
     }
+
+    handlePartySelect = ()=> {
+        console.log("something")
+    }
+
+    playerhandleChange = (event) => {
+        let index = event.target.id -1
+        let playerName = event.target.value
+        const oldData = this.state.partymemberData
+
+        const newPartyMemberData = update(oldData, 
+            {[index]: {$set: {id: index+1, name: playerName, class: ""}}},
+          );
+
+          this.setState({
+            partymemberData: newPartyMemberData
+        });
+      }
 
 render() {  
 
         const quantity = [3,4,5,6,7,8]
-        const{partymemberData, partyMemebers} = this.state
-
+        const{partymemberData, partyMembers} = this.state
 
     return (
         <div>
@@ -131,18 +173,18 @@ render() {
                 })}
             </div>
 
-            {partyMemebers > 2 && (
+            {partyMembers > 2 && (
                 <div>
                     <div className="forms">
                         {[...partymemberData].map(partyMember => {
-                            return <div id={partymemberData.id} className="partyFormSpace">
+                            return <div key={partyMember.id} className="partyFormSpace">
                             <Form inline>
                                 <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                                    <Label className="mr-sm-2">Party Memeber</Label>
-                                    <Input type="names" placeholder="Name"/>
+                            <Label className="mr-sm-2">{`Party Member ${partyMember.id}`}</Label>
+                                    <Input type="names" placeholder="Name" id={partyMember.id} onChange={this.playerhandleChange}/>
                                 </FormGroup>
                                 <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                                <Dropdown>
+                                <Dropdown onSelect={this.handlePartySelect}>
                                     <Dropdown.Toggle variant="outline-primary" id="formThreeOne">
                                         What is the class of this party member?
                                     </Dropdown.Toggle>
@@ -176,3 +218,5 @@ render() {
 }
 
 export default PartyInfo;
+
+ 
