@@ -11,7 +11,7 @@ class Theme extends Component {
             showModal: false,
             climate: "",
             world: "",
-            meeting: ""
+            meetingPlace: ""
         }
     }
 
@@ -19,24 +19,6 @@ class Theme extends Component {
         this.setState({
             showModal: false,
         })
-
-        let themeArray = []
-
-        let climate = this.state.climate
-        let world = this.state.world
-        let meeting = this.state.meeting
-        let newName = document.getElementById('themeSpace')
-
-
-        themeArray.push("Climate: " + climate)
-        themeArray.push("World: " + world)
-        themeArray.push("Meeting: " + meeting)
-
-        for (let i = 0; i < themeArray.length; i++ ) {
-            const newDiv = document.createElement('div')
-            newDiv.append(themeArray[i])
-            newName.append(newDiv)
-        }
     }
 
     handleClick = () => {
@@ -45,48 +27,46 @@ class Theme extends Component {
         })
     }
 
-    climateSelect = (choice) => {
-        if (this.state.climate = "") {
-            let climateSpace = document.getElementById('climateForm')
-            climateSpace.innerText = ""
-        } else {
-            let climateSpace = document.getElementById('climateForm')
-            climateSpace.innerText = choice.target.text
-        }
-        let newChoice = choice.target.text
+    climateSelect = (eventKey, event) => {
+        // if (this.state.climate = "") {
+        //     let climateSpace = document.getElementById('climateForm')
+        //     climateSpace.innerText = ""
+        // } else {
+        //     let climateSpace = document.getElementById('climateForm')
+        //     climateSpace.innerText = choice.target.text
+        // }
+        console.log(event.target.text)
+
         this.setState({
-            climate: newChoice
-        })
+            climate: event.target.text
+        }, () => {this.props.setTheme(this.state.climate)})
+        
     }
 
-    worldSelect = (choice) => {
-        if (this.state.world = "") {
-            let worldSpace = document.getElementById('worldForm')
-            worldSpace.innerText = ""
-        } else {
-            let worldSpace = document.getElementById('worldForm')
-            worldSpace.innerText = choice.target.text
-        }
-
-        let newChoice = choice.target.text
+    worldSelect = (eventKey, event) => {
+        // if (this.state.world = "") {
+        //     let worldSpace = document.getElementById('worldForm')
+        //     worldSpace.innerText = ""
+        // } else {
+        //     let worldSpace = document.getElementById('worldForm')
+        //     worldSpace.innerText = choice.target.text
+        // }
         this.setState({
-            world: newChoice
-        })
+            world: event.target.text
+        }, () => {this.props.setTheme(this.state.world)})
     }
 
-    meetingSelect = (choice) => {
-        if (this.state.meeting = "") {
-            let meetSpace = document.getElementById('meetForm')
-                meetSpace.innerText = ""
-        } else {
-            let meetSpace = document.getElementById('meetForm')
-            meetSpace.innerText = choice.target.text
-        }
-
-        let newChoice = choice.target.text
+    meetingSelect = (eventKey, event) => {
+        // if (this.state.meeting = "") {
+        //     let meetSpace = document.getElementById('meetForm')
+        //         meetSpace.innerText = ""
+        // } else {
+        //     let meetSpace = document.getElementById('meetForm')
+        //     meetSpace.innerText = choice.target.text
+        // }
         this.setState({
-            meeting: newChoice
-        })
+            meeting: event.target.text
+        }, () => {this.props.setTheme(this.state.meetingPlace)} )
     }
 
 render() {  
@@ -109,47 +89,47 @@ render() {
                 <p id="questGiverNameRemember">Some things you should keep in mind.</p>
 
                 <FormGroup>
-                    <Dropdown>
+                    <Dropdown onSelect={this.climateSelect}>
                         <Dropdown.Toggle variant="outline-primary" id="climateForm">
                         What type of climate would you find your villian in?
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                        <Dropdown.Item onClick={this.climateSelect}>Cold</Dropdown.Item>
-                        <Dropdown.Item onClick={this.climateSelect}>Hot</Dropdown.Item>
-                        <Dropdown.Item onClick={this.climateSelect}>Mild</Dropdown.Item>
+                        <Dropdown.Item >Cold</Dropdown.Item>
+                        <Dropdown.Item >Hot</Dropdown.Item>
+                        <Dropdown.Item >Mild</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </FormGroup>
 
                 <FormGroup>
-                    <Dropdown>
+                    <Dropdown onSelect={this.worldSelect}>
                         <Dropdown.Toggle variant="outline-primary" id="worldForm">
                         What type of world is this?
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                        <Dropdown.Item onClick={this.worldSelect}>Forest</Dropdown.Item>
-                        <Dropdown.Item onClick={this.worldSelect}>Desert</Dropdown.Item>
-                        <Dropdown.Item onClick={this.worldSelect}>City</Dropdown.Item>
+                        <Dropdown.Item >Forest</Dropdown.Item>
+                        <Dropdown.Item >Desert</Dropdown.Item>
+                        <Dropdown.Item >City</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </FormGroup>
 
                 <FormGroup>
-                    <Dropdown>
+                    <Dropdown onSelect={this.meetingSelect}>
                         <Dropdown.Toggle variant="outline-primary" id="meetForm">
                         Where do you intend your party to meet?
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                        <Dropdown.Item onClick={this.meetingSelect}>Meadow</Dropdown.Item>
-                        <Dropdown.Item onClick={this.meetingSelect}>Tavern</Dropdown.Item>
-                        <Dropdown.Item onClick={this.meetingSelect}>Party</Dropdown.Item>
-                        <Dropdown.Item onClick={this.meetingSelect}>Dinner</Dropdown.Item>
-                        <Dropdown.Item onClick={this.meetingSelect}>Mysterious Circumstance</Dropdown.Item>
+                        <Dropdown.Item >Meadow</Dropdown.Item>
+                        <Dropdown.Item >Tavern</Dropdown.Item>
+                        <Dropdown.Item >Party</Dropdown.Item>
+                        <Dropdown.Item >Dinner</Dropdown.Item>
+                        <Dropdown.Item >Mysterious Circumstance</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </FormGroup>
-            </Modal.Body>
 
+            </Modal.Body>
             <Modal.Footer>
                 <Button variant="outline-success" onClick={this.close} >Save</Button>
             </Modal.Footer>

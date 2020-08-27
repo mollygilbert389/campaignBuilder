@@ -21,7 +21,7 @@ import MonsterCard from "../components/Dungeon/MonsterCard";
 import CampaignCard from "../components/CampaignCard/CampaignCard"
 import {connect} from "react-redux"
 import {bindActionCreators} from "redux"
-import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQuestGiverName, setPillar} from "../actions/index"
+import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQuestGiverName, setPillar, setActs, setClimate, setWorld, setMeetingPlace} from "../actions/index"
 
 
 
@@ -136,9 +136,19 @@ setQuestGiverNameAndType = (name, qType) => {
 setPillar = (name) => {
     const{onSetPillar}=this.props
     onSetPillar(name)
-    console.log(name)
 }
 
+setActs = (name) => {
+    const{onSetActs}=this.props
+    onSetActs(name)
+}
+
+setTheme = (climatetype, worldType, meeting) => {
+    const{onSetClimate, onSetWorld, onSetMeetingPlace}=this.props
+    onSetClimate(climatetype)
+    onSetWorld(worldType)
+    onSetMeetingPlace(meeting)
+}
 
     render() {
 
@@ -176,8 +186,8 @@ setPillar = (name) => {
                     <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
                     <div className="btnspace">
                         <Pillar setPillar={this.setPillar}></Pillar>
-                        <Theme></Theme>
-                        <Acts></Acts>
+                        <Theme setTheme={this.setTheme}></Theme>
+                        <Acts setActs={this.setActs}></Acts>
                         <SideQuests></SideQuests>
                     </div>
                     <div className="nextBtn">
@@ -240,7 +250,11 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetVillianType: bindActionCreators(setVillianType, dispatch),
     onSetQuestGiverName: bindActionCreators(setQuestGiverName, dispatch),
     onSetQuestGiverType: bindActionCreators(setQuestGiverType, dispatch),
-    onSetPillar: bindActionCreators(setPillar, dispatch)
+    onSetPillar: bindActionCreators(setPillar, dispatch),
+    onSetActs: bindActionCreators(setActs, dispatch),
+    onSetClimate: bindActionCreators(setClimate, dispatch),
+    onSetWorld: bindActionCreators(setWorld, dispatch),
+    onSetMeetingPlace: bindActionCreators(setMeetingPlace, dispatch),
 
 })
 

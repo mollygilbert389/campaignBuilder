@@ -20,16 +20,10 @@ class Theme extends Component {
     }
 
     handleActBtn = (event) => {
-        let actSpace = document.getElementById('actsSpace')
-        let actChoice = event.target.name
-
-        actSpace.textContent = ""
-
         this.setState({
             showModal: !this.state.showModal,
-            acts: actChoice
-        })
-        actSpace.append("Acts: " + actChoice)
+            acts: event.target.name
+        }, () => {this.props.setActs(this.state.acts)})
     }
 
 render() {  
@@ -41,7 +35,7 @@ render() {
         </Button>
             </div>
         <Modal show={this.state.showModal}>
-        <Modal.Dialog id="villianbtn">
+        <Modal.Dialog>
             <Modal.Header>
                 <Modal.Title>Deciding on Acts.</Modal.Title>
             </Modal.Header>

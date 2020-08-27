@@ -16,21 +16,21 @@ render() {
                     {campaign.villianType && (<div>{`Villian Type: ${campaign.villianType}`}</div>)}
                     {campaign.questGiverName && (<div>{`Quest Giver: ${campaign.questGiverName}`}</div>)}
                     {campaign.questGiverType && (<div>{`Quest Giver Type: ${campaign.questGiverType}`}</div>)}
-                    <div id="partyInfoSapce"></div>
+                    {/* <div id="partyInfoSapce"></div> */}
                     {campaign.pillar && (<div>{`Pillar: ${campaign.pillar}`}</div>)}
-                    {/* {campaign.theme && (<div>{`Theme: ${campaign.pillar}`}</div>)} */}
-                    <div id="actsSpace"></div>
-                    <div id="sideQuestSpace"></div>
+                    {campaign.theme && (<div>{`Pillar: ${campaign.theme}`}</div>)}
+                    {campaign.acts && (<div>{`Acts: ${campaign.acts}`}</div>)}
+                    {/* <div id="sideQuestSpace"></div>
                     <div id="dungeonTypeSpace"></div>
                     <div id="roomsSpace"></div>
-                    <div id="setbackSpace"></div>
-                    <div>
-                        <div id="monsterOneTypeSpace"></div>
+                    <div id="setbackSpace"></div> */}
+                    {/* <div> */}
+                        {/* <div id="monsterOneTypeSpace"></div>
                         <div id="monsterTwoTypeSpace"></div>
-                        <div id="monsterThreeTypeSpace"></div>
-                    </div>
-                    <div id="dungeonType"></div>
-                    <div id="treasureSpace"></div>
+                        <div id="monsterThreeTypeSpace"></div> */}
+                    {/* </div> */}
+                    {/* <div id="dungeonType"></div>
+                    <div id="treasureSpace"></div> */}
                     </Card.Text>
                 </Card.Body>
         </div>

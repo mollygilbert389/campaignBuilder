@@ -1,128 +1,175 @@
 import React, {Component} from 'react'
-import {Button, Form, Dropdown} from 'react-bootstrap'
-import PartyThreeForm from './PartyForms/PartyThreeForm'
-import PartyFourForm from './PartyForms/PartyFourForm'
-import PartyFiveForm from './PartyForms/PartyFiveForm'
-import PartySixForm from './PartyForms/PartySixForm'
-import PartySevenForm from './PartyForms/PartySevenForm'
-import PartyEightForm from './PartyForms/PartyEightForm'
+import {Button, Dropdown} from 'react-bootstrap'
+import {Form, Label, Input, FormGroup} from 'reactstrap'
+// import PartyThreeForm from './PartyForms/PartyThreeForm'
+// import PartyFourForm from './PartyForms/PartyFourForm'
+// import PartyFiveForm from './PartyForms/PartyFiveForm'
+// import PartySixForm from './PartyForms/PartySixForm'
+// import PartySevenForm from './PartyForms/PartySevenForm'
+// import PartyEightForm from './PartyForms/PartyEightForm'
+// import PartyLineItem from "./PartyForms/PartyLineItem"
 import "./style.css"
 
 class PartyInfo extends Component {
 
-    handleClick = (e) => {
-
-        let partyName = document.getElementById('partyInfoSapce')
-        partyName.textContent = "";
-
-        let num = e.target.id
-        let threeForm = document.getElementById("threeForm")
-        let fourForm = document.getElementById("fourForm")
-        let fiveForm = document.getElementById("fiveForm")
-        let sixForm = document.getElementById("sixForm")
-        let sevenForm = document.getElementById("sevenForm")
-        let eightForm = document.getElementById("eightForm")
-
-        const show = function (div) {
-            div.style.display = 'block'
-        }
-
-        const hide = function (div) {
-            div.style.display = 'none'
-        }
-
-        hide(threeForm)
-        hide(fourForm)
-        hide(fiveForm)
-        hide(sixForm)
-        hide(sevenForm)
-        hide(eightForm)
-
-        if (num === "3") {         
-            show(threeForm)
-        }
-
-        if (num === "4") {
-            show(fourForm)
-        }
-
-        if (num === "5") {
-            show(fiveForm)
-        }
-
-        if (num === "6") {
-            show(sixForm)
-        }
-
-        if (num === "7") {
-            show(sevenForm)
-        }
-
-        if (num === "8") {
-            show(eightForm)
+    constructor() {
+        super();
+        this.state ={
+            partyMemebers: 0,
+            partymemberData: []
         }
     }
 
+    handleClick = (e) => {
+        let partyMemberChoice = e.target.id
+        partyMemberChoice = parseInt(partyMemberChoice)
+        this.setState({
+            ...this.state,
+            partyMemebers: partyMemberChoice
+        })
+        
+        let playerData = {}
+
+        switch(partyMemberChoice) {
+            case 3: 
+            playerData = [
+                {id: 1, name: "", class: ""},
+                {id: 2, name: "", Class: ""},
+                {id: 3, name: "", Class: ""},
+            ]
+                this.setState({
+                    partymemberData: playerData
+                })
+            break;
+            case 4: 
+            playerData = [
+                {id: 1, name: "", class: ""},
+                {id: 2, name: "", Class: ""},
+                {id: 3, name: "", Class: ""},
+                {id: 4, name: "", Class: ""},
+            ]
+                this.setState({
+                    partymemberData: playerData
+                })
+            break;
+            case 5: 
+            playerData = [
+                {id: 1, name: "", class: "" },
+                {id: 2, name: "", Class: ""},
+                {id: 3, name: "", Class: ""},
+                {id: 4, name: "", Class: ""},
+                {id: 5, name: "", Class: ""},
+            ]
+                this.setState({
+                    partymemberData: playerData
+                })
+            break;
+            case 6: 
+            playerData = [
+                {id: 1, name: "", class: ""},
+                {id: 2, name: "", Class: ""},
+                {id: 3, name: "", Class: ""},
+                {id: 4, name: "", Class: ""},
+                {id: 5, name: "", Class: ""},
+                {id: 6, name: "", Class: ""},
+            ]
+                this.setState({
+                    partymemberData: playerData
+                })
+            break;
+            case 7: 
+            playerData = [
+                {id: 1, name: "", class: ""},
+                {id: 2, name: "", Class: ""},
+                {id: 3, name: "", Class: ""},
+                {id: 4, name: "", Class: ""},
+                {id: 5, name: "", Class: ""},
+                {id: 6, name: "", Class: ""},
+                {id: 7, name: "", Class: ""},
+            ]
+                this.setState({
+                    partymemberData: playerData
+                })
+            break;
+            case 8: 
+            playerData = [
+                {id: 1, name: "", class: ""},
+                {id: 2, name: "", Class: ""},
+                {id: 3, name: "", Class: ""},
+                {id: 4, name: "", Class: ""},
+                {id: 5, name: "", Class: ""},
+                {id: 6, name: "", Class: ""},
+                {id: 7, name: "", Class: ""},
+                {id: 8, name: "", Class: ""},
+            ]
+                this.setState({
+                    partymemberData: playerData
+                })
+            break;
+            default: 
+            return;
+        } 
+
+       
+    }
 
 render() {  
+
+        const quantity = [3,4,5,6,7,8]
+        const{partymemberData, partyMemebers} = this.state
+
 
     return (
         <div>
             <p>Click on the number of party members you plan to have. Must be at least 3 (exluding the DM) and the max is 8.</p>
             
             <div className="partyBtnSpace">
-                <div className="prtyBtns">
-                <Button id="3" variant="outline-primary" onClick={this.handleClick}>3</Button>
-                </div>
-
-                <div className="prtyBtns">
-                <Button id="4" variant="outline-primary" onClick={this.handleClick}>4</Button>
-                </div>
-
-                <div className="prtyBtns">
-                <Button id="5" variant="outline-primary" onClick={this.handleClick}>5</Button>
-                </div>
-
-                <div className="prtyBtns">
-                <Button id="6" variant="outline-primary" onClick={this.handleClick}>6</Button>
-                </div>
-
-                <div className="prtyBtns">
-                <Button id="7" variant="outline-primary" onClick={this.handleClick}>7</Button>
-                </div>
-
-                <div className="prtyBtns">
-                <Button id="8" variant="outline-primary" onClick={this.handleClick}>8</Button>
-                </div>
+                {quantity.map(number => {
+                    return <div key={number} className="prtyBtns">
+                    <Button id={number} variant="outline-primary" onClick={this.handleClick}>{number}</Button>
+                    </div>
+                })}
             </div>
 
-            <div id="partySpace">
-                <div id="threeForm" name="forms" style={{display:"none"}}>
-                    <PartyThreeForm></PartyThreeForm>
+            {partyMemebers > 2 && (
+                <div>
+                    <div className="forms">
+                        {[...partymemberData].map(partyMember => {
+                            return <div id={partymemberData.id} className="partyFormSpace">
+                            <Form inline>
+                                <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                                    <Label className="mr-sm-2">Party Memeber</Label>
+                                    <Input type="names" placeholder="Name"/>
+                                </FormGroup>
+                                <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                                <Dropdown>
+                                    <Dropdown.Toggle variant="outline-primary" id="formThreeOne">
+                                        What is the class of this party member?
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>
+                                    <Dropdown.Item>Barbarian</Dropdown.Item>
+                                    <Dropdown.Item>Bard</Dropdown.Item>
+                                    <Dropdown.Item>Cleric</Dropdown.Item>
+                                    <Dropdown.Item>Druid</Dropdown.Item>
+                                    <Dropdown.Item>Fighter</Dropdown.Item>
+                                    <Dropdown.Item>Monk</Dropdown.Item>
+                                    <Dropdown.Item>Paladin</Dropdown.Item>
+                                    <Dropdown.Item>Ranger</Dropdown.Item>
+                                    <Dropdown.Item>Rogue</Dropdown.Item>
+                                    <Dropdown.Item>Sourcerer</Dropdown.Item>
+                                    <Dropdown.Item>Warlock</Dropdown.Item>
+                                    <Dropdown.Item>Wizard</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                                </FormGroup>
+                            </Form>
+                        </div>
+                        }
+
+                        )}
+                    </div>
                 </div>
-
-                <div id="fourForm" name="forms" style={{display:"none"}}>
-                    <PartyFourForm></PartyFourForm>
-                </div>
-
-                <div id="fiveForm" name="forms" style={{display:"none"}}>
-                    <PartyFiveForm></PartyFiveForm>
-                </div>
-
-                <div id="sixForm" name="forms" style={{display:"none"}}>
-                    <PartySixForm></PartySixForm>
-                </div>
-
-                <div id="sevenForm" name="forms" style={{display:"none"}}>
-                    <PartySevenForm></PartySevenForm>
-                </div>
-
-                <div id="eightForm" name="forms" style={{display:"none"}}>
-                    <PartyEightForm></PartyEightForm>
-                </div>
-
-            </div>
-
+            )}
         </div>
     );
 }

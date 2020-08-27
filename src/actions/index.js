@@ -5,6 +5,10 @@ import {
     SET_QUESTGIVER_NAME,
     SET_QUESTGIVER_TYPE,
     SET_PILLAR,
+    SET_ACTS,
+    SET_CLIMATE,
+    SET_WORLD,
+    SET_MEETING_PLACE,
 
 } from './constant'
 
@@ -35,5 +39,25 @@ export const setQuestGiverType = (qType) => ({
 
 export const setPillar = (name) => ({
     type: SET_PILLAR,
+    payload: name
+}) 
+
+export const setActs = (name) => ({
+    type: SET_ACTS,
+    payload: name
+}) 
+
+export const setClimate = (name) => ({
+    type: SET_CLIMATE,
+    payload: name
+}) 
+
+export const setWorld = (name) => ({
+    type: SET_WORLD,
+    payload: name
+}) 
+
+export const setMeetingPlace = (name) => ({
+    type: SET_MEETING_PLACE,
     payload: name
 }) 

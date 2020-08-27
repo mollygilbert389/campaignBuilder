@@ -175,7 +175,7 @@ render() {
                     <p>Get my claw stuck in the dog's ear i see a bird i stare at it i meow at it i do a wiggle come here birdy and poop in a handbag look delicious and drink the soapy mopping up water then puke giant foamy fur-balls for eat owner's food for mouse.</p>
                 </div>
 
-                <button type="button" class="btn btn-outline-success">Save</button>
+                <button type="button" className="btn btn-outline-success">Save</button>
         </div>
     );
 }

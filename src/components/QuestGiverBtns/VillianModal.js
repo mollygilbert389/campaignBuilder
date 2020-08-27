@@ -36,20 +36,14 @@ class VillianModal extends Component {
         }
 
         villianChoice = (choice) => {
-            // if (this.state.type = "") {
-            //     let villianType = document.getElementById('villianType')
-            //     villianType.innerText = "Villian Type"
-            // } else {
-            //     let villianType = document.getElementById('villianType')
-            //     villianType.innerText = choice.target.text
-            // }
-
             this.setState({
                 villianType: choice.target.text
             })
         }
 
 render() {  
+
+    const{campaign}=this.props
 
     return (
         <div>
@@ -75,7 +69,7 @@ render() {
 
                 <Dropdown>
                     <Dropdown.Toggle variant="outline-primary" id="villianType">
-                    Villian Type
+                    {/* {campaign.villianType && (<div>{`${campaign.villianType}`}</div>)} */}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                     <Dropdown.Item onClick={this.villianChoice}>Human</Dropdown.Item>
