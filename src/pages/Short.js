@@ -250,6 +250,7 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetVillianType: bindActionCreators(setVillianType, dispatch),
     onSetQuestGiverName: bindActionCreators(setQuestGiverName, dispatch),
     onSetQuestGiverType: bindActionCreators(setQuestGiverType, dispatch),
+    // onSetPlayers: bindActionCreators(setPlayerObject, dispatch),
     onSetPillar: bindActionCreators(setPillar, dispatch),
     onSetActs: bindActionCreators(setActs, dispatch),
     onSetClimate: bindActionCreators(setClimate, dispatch),

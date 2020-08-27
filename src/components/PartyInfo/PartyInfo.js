@@ -27,12 +27,9 @@ class PartyInfo extends Component {
         switch(partyMemberChoice) {
             case 3: 
             playerData = [
-                {id: 1, name: "", class: ""},
-                {id: 2, name: "", class: ""},
-                {id: 3, name: "", class: ""},
-                // {id: 1},
-                // {id: 2},
-                // {id: 3},
+                {id: 1, name: "", raceClass: ""},
+                {id: 2, name: "", raceClass: ""},
+                {id: 3, name: "", raceClass: ""},
             ]
                 this.setState({
                     partymemberData: playerData
@@ -40,14 +37,10 @@ class PartyInfo extends Component {
             break;
             case 4: 
             playerData = [
-                {id: 1, name: "", class: ""},
-                {id: 2, name: "", class: ""},
-                {id: 3, name: "", class: ""},
-                {id: 4, name: "", class: ""},
-                // {id: 1},
-                // {id: 2},
-                // {id: 3},
-                // {id: 4},
+                {id: 1, name: "", raceClass: ""},
+                {id: 2, name: "", raceClass: ""},
+                {id: 3, name: "", raceClass: ""},
+                {id: 4, name: "", raceClass: ""},
             ]
                 this.setState({
                     partymemberData: playerData
@@ -55,16 +48,11 @@ class PartyInfo extends Component {
             break;
             case 5: 
             playerData = [
-                {id: 1, name: "", class: "" },
-                {id: 2, name: "", class: ""},
-                {id: 3, name: "", class: ""},
-                {id: 4, name: "", class: ""},
-                {id: 5, name: "", class: ""},
-                // {id: 1},
-                // {id: 2},
-                // {id: 3},
-                // {id: 4},
-                // {id: 5},
+                {id: 1, name: "", raceClass: "" },
+                {id: 2, name: "", raceClass: ""},
+                {id: 3, name: "", raceClass: ""},
+                {id: 4, name: "", raceClass: ""},
+                {id: 5, name: "", raceClass: ""},
             ]
                 this.setState({
                     partymemberData: playerData
@@ -72,18 +60,12 @@ class PartyInfo extends Component {
             break;
             case 6: 
             playerData = [
-                {id: 1, name: "", class: ""},
-                {id: 2, name: "", class: ""},
-                {id: 3, name: "", class: ""},
-                {id: 4, name: "", class: ""},
-                {id: 5, name: "", class: ""},
-                {id: 6, name: "", class: ""},
-                // {id: 1},
-                // {id: 2},
-                // {id: 3},
-                // {id: 4},
-                // {id: 5},
-                // {id: 6},
+                {id: 1, name: "", raceClass: ""},
+                {id: 2, name: "", raceClass: ""},
+                {id: 3, name: "", raceClass: ""},
+                {id: 4, name: "", raceClass: ""},
+                {id: 5, name: "", raceClass: ""},
+                {id: 6, name: "", raceClass: ""},
             ]
                 this.setState({
                     partymemberData: playerData
@@ -91,20 +73,13 @@ class PartyInfo extends Component {
             break;
             case 7: 
             playerData = [
-                {id: 1, name: "", class: ""},
-                {id: 2, name: "", class: ""},
-                {id: 3, name: "", class: ""},
-                {id: 4, name: "", class: ""},
-                {id: 5, name: "", class: ""},
-                {id: 6, name: "", class: ""},
-                {id: 7, name: "", class: ""},
-                // {id: 1},
-                // {id: 2},
-                // {id: 3},
-                // {id: 4},
-                // {id: 5},
-                // {id: 6},
-                // {id: 7},
+                {id: 1, name: "", raceClass: ""},
+                {id: 2, name: "", raceClass: ""},
+                {id: 3, name: "", raceClass: ""},
+                {id: 4, name: "", raceClass: ""},
+                {id: 5, name: "", raceClass: ""},
+                {id: 6, name: "", raceClass: ""},
+                {id: 7, name: "", raceClass: ""},
             ]
                 this.setState({
                     partymemberData: playerData
@@ -112,22 +87,14 @@ class PartyInfo extends Component {
             break;
             case 8: 
             playerData = [
-                {id: 1, name: "", class: ""},
-                {id: 2, name: "", class: ""},
-                {id: 3, name: "", class: ""},
-                {id: 4, name: "", class: ""},
-                {id: 5, name: "", class: ""},
-                {id: 6, name: "", class: ""},
-                {id: 7, name: "", class: ""},
-                {id: 8, name: "", class: ""},
-                // {id: 1},
-                // {id: 2},
-                // {id: 3},
-                // {id: 4},
-                // {id: 5},
-                // {id: 6},
-                // {id: 7},
-                // {id: 8},
+                {id: 1, name: "", raceClass: ""},
+                {id: 2, name: "", raceClass: ""},
+                {id: 3, name: "", raceClass: ""},
+                {id: 4, name: "", raceClass: ""},
+                {id: 5, name: "", raceClass: ""},
+                {id: 6, name: "", raceClass: ""},
+                {id: 7, name: "", raceClass: ""},
+                {id: 8, name: "", raceClass: ""},
             ]
                 this.setState({
                     partymemberData: playerData
@@ -138,17 +105,34 @@ class PartyInfo extends Component {
         } 
     }
 
-    handlePartySelect = ()=> {
-        console.log("something")
+    handlePartySelect = (eventKey, event)=> {
+        const index = event.target.id -1
+        const newRaceClass = event.target.name
+        const oldData = this.state.partymemberData
+
+        console.log(index)
+        console.log(newRaceClass)
+        console.log(oldData)
+
+        const newPartyMemberData = update(oldData, 
+            {[index]: {$set: {id: index+1, name: this.state.partymemberData[index].name, raceClass: newRaceClass}}},
+          );
+
+          this.setState({
+            partymemberData: newPartyMemberData
+        });
+
     }
 
-    playerhandleChange = (event) => {
-        let index = event.target.id -1
-        let playerName = event.target.value
+    playerNameChange = (event) => {
+        const index = event.target.id -1
+        const indexName = index.name
+        const playerName = event.target.value
         const oldData = this.state.partymemberData
 
         const newPartyMemberData = update(oldData, 
-            {[index]: {$set: {id: index+1, name: playerName, class: ""}}},
+            {[index]: {$set: {id: index+1, name: playerName, raceClass: this.state.partymemberData[index].raceClass}}},
+            // {[index]: {$set: {name:playerName}}}
           );
 
           this.setState({
@@ -181,26 +165,26 @@ render() {
                             <Form inline>
                                 <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                             <Label className="mr-sm-2">{`Party Member ${partyMember.id}`}</Label>
-                                    <Input type="names" placeholder="Name" id={partyMember.id} onChange={this.playerhandleChange}/>
+                                    <Input type="names" placeholder="Name" id={partyMember.id} onChange={this.playerNameChange}/>
                                 </FormGroup>
                                 <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                                <Dropdown onSelect={this.handlePartySelect}>
-                                    <Dropdown.Toggle variant="outline-primary" id="formThreeOne">
-                                        What is the class of this party member?
+                                <Dropdown onSelect={this.handlePartySelect} id={partyMember.id}>
+                                    <Dropdown.Toggle variant="outline-primary">
+                                        {partymemberData.raceClass ? partymemberData.raceClass : 'Choose a Class for this Party Member'}
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
-                                    <Dropdown.Item>Barbarian</Dropdown.Item>
-                                    <Dropdown.Item>Bard</Dropdown.Item>
-                                    <Dropdown.Item>Cleric</Dropdown.Item>
-                                    <Dropdown.Item>Druid</Dropdown.Item>
-                                    <Dropdown.Item>Fighter</Dropdown.Item>
-                                    <Dropdown.Item>Monk</Dropdown.Item>
-                                    <Dropdown.Item>Paladin</Dropdown.Item>
-                                    <Dropdown.Item>Ranger</Dropdown.Item>
-                                    <Dropdown.Item>Rogue</Dropdown.Item>
-                                    <Dropdown.Item>Sourcerer</Dropdown.Item>
-                                    <Dropdown.Item>Warlock</Dropdown.Item>
-                                    <Dropdown.Item>Wizard</Dropdown.Item>
+                                    <Dropdown.Item id={partyMember.id} name="Barbarian">Barbarian</Dropdown.Item>
+                                    <Dropdown.Item id={partyMember.id} name="Bard">Bard</Dropdown.Item>
+                                    <Dropdown.Item id={partyMember.id} name="Cleric">Cleric</Dropdown.Item>
+                                    <Dropdown.Item id={partyMember.id} name="Druid">Druid</Dropdown.Item>
+                                    <Dropdown.Item id={partyMember.id} name="Fighter">Fighter</Dropdown.Item>
+                                    <Dropdown.Item id={partyMember.id} name="Monk">Monk</Dropdown.Item>
+                                    <Dropdown.Item id={partyMember.id} name="Paladin">Paladin</Dropdown.Item>
+                                    <Dropdown.Item id={partyMember.id} name="Ranger">Ranger</Dropdown.Item>
+                                    <Dropdown.Item id={partyMember.id} name="Rogue">Rogue</Dropdown.Item>
+                                    <Dropdown.Item id={partyMember.id} name="Sourcerer">Sourcerer</Dropdown.Item>
+                                    <Dropdown.Item id={partyMember.id} name="Warlock">Warlock</Dropdown.Item>
+                                    <Dropdown.Item id={partyMember.id} name="Wizard">Wizard</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
                                 </FormGroup>

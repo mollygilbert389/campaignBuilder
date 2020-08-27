@@ -36,14 +36,6 @@ class QuestGiverModal extends Component {
     }
 
     questGiverChoice = (choice) => {
-        // if (this.state.type = "") {
-        //     let questGiverType = document.getElementById('questGiverType')
-        //     questGiverType.innerText = "Quest Giver Type"
-        // } else {
-        //     let questGiverType = document.getElementById('questGiverType')
-        //     questGiverType.innerText = choice.target.text
-        // }
-
         this.setState({
             questGiverType: choice.target.text
         })

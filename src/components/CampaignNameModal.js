@@ -18,14 +18,7 @@ class CampaignNameModal extends Component {
                 showModal: false,
                 // campaignName: event.target.value
             })
-
             this.props.setCampaignName(this.state.campaignName)
-
-            // let campaignName = this.state.value
-            // let newName = document.getElementById('campaignNameSpace')
-            // let cardName = document.getElementById('cardCampaignName')
-            // newName.textContent = "Campaign: " + campaignName
-            // cardName.textContent = "Campaign Name: " + campaignName
       }
 
       handleChange = (event) => {

@@ -1,11 +1,12 @@
-import {SET_CAMPAIGN_NAME, SET_VILLIAN_NAME, SET_VILLIAN_TYPE, SET_QUESTGIVER_NAME, SET_QUESTGIVER_TYPE, SET_PILLAR, SET_ACTS, SET_CLIMATE, SET_WORLD, SET_MEETING_PLACE} from '../actions/constant'
+import {SET_CAMPAIGN_NAME, SET_VILLIAN_NAME, SET_VILLIAN_TYPE, SET_QUESTGIVER_NAME, SET_QUESTGIVER_TYPE, SET_PLAYERDATA, SET_PILLAR, SET_ACTS, SET_CLIMATE, SET_WORLD, SET_MEETING_PLACE} from '../actions/constant'
 
 const initialState = {
-    campaignName: '',
+    campaignName: "Mollywood",
     villianName: '',
     villianType: '',
     questGiverName: '',
     questGiverType: '',
+    playerData: {},
     pillar: '',
     acts: '',
     climate: '',
@@ -41,6 +42,11 @@ export default function(state = initialState, action) {
           ...state,
           questGiverType: action.payload  
         }
+        // case SET_PLAYERDATA:
+        // return {
+        //   ...state,
+        //   playerData: action.payload
+        // }
         case SET_PILLAR: 
         return {
           ...state,
