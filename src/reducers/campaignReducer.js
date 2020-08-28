@@ -1,12 +1,12 @@
 import {SET_CAMPAIGN_NAME, SET_VILLIAN_NAME, SET_VILLIAN_TYPE, SET_QUESTGIVER_NAME, SET_QUESTGIVER_TYPE, SET_PLAYERDATA, SET_PILLAR, SET_ACTS, SET_CLIMATE, SET_WORLD, SET_MEETING_PLACE} from '../actions/constant'
 
 const initialState = {
-    campaignName: "Mollywood",
+    campaignName: "",
     villianName: '',
     villianType: '',
     questGiverName: '',
     questGiverType: '',
-    playerData: {},
+    playerData: [],
     pillar: '',
     acts: '',
     climate: '',
