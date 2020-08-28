@@ -9,6 +9,7 @@ import {
     SET_CLIMATE,
     SET_WORLD,
     SET_MEETING_PLACE,
+    SET_PLAYERDATA,
 
 } from './constant'
 
@@ -59,5 +60,10 @@ export const setWorld = (name) => ({
 
 export const setMeetingPlace = (name) => ({
     type: SET_MEETING_PLACE,
+    payload: name
+}) 
+
+export const setPlayers = (name) => ({
+    type: SET_PLAYERDATA,
     payload: name
 }) 

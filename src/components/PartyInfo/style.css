@@ -39,3 +39,9 @@
 .forms {
     text-align: center;
 }
+
+.saveBtn {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}

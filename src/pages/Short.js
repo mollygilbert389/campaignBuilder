@@ -21,7 +21,7 @@ import MonsterCard from "../components/Dungeon/MonsterCard";
 import CampaignCard from "../components/CampaignCard/CampaignCard"
 import {connect} from "react-redux"
 import {bindActionCreators} from "redux"
-import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQuestGiverName, setPillar, setActs, setClimate, setWorld, setMeetingPlace} from "../actions/index"
+import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQuestGiverName, setPlayers, setPillar, setActs, setClimate, setWorld, setMeetingPlace} from "../actions/index"
 
 
 
@@ -133,6 +133,11 @@ setQuestGiverNameAndType = (name, qType) => {
     onSetQuestGiverType(qType)
 }
 
+setPlayers = (playerData) => {
+    const{onSetPlayers}=this.props
+    onSetPlayers(playerData)
+}
+
 setPillar = (name) => {
     const{onSetPillar}=this.props
     onSetPillar(name)
@@ -175,7 +180,7 @@ setTheme = (climatetype, worldType, meeting) => {
                 <div id="secondRoundQuestions" style={{display:"none"}}>
                     <p>Now let's talk about your party. Anwser the questions below to help define the type of characters for this campaign. You may also skip this step as your party may want to decide for themselves the characters they want.</p>
                     <div className="btnspace">
-                        <PartyInfo></PartyInfo>
+                        <PartyInfo setPlayers={this.setPlayers}></PartyInfo>
                     </div>
                     <div className="nextBtn">
                         <Button variant="outline-primary" size="lg" onClick={this.handleSecondClick}>Next</Button>
@@ -250,7 +255,7 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetVillianType: bindActionCreators(setVillianType, dispatch),
     onSetQuestGiverName: bindActionCreators(setQuestGiverName, dispatch),
     onSetQuestGiverType: bindActionCreators(setQuestGiverType, dispatch),
-    // onSetPlayers: bindActionCreators(setPlayerObject, dispatch),
+    onSetPlayers: bindActionCreators(setPlayers, dispatch),
     onSetPillar: bindActionCreators(setPillar, dispatch),
     onSetActs: bindActionCreators(setActs, dispatch),
     onSetClimate: bindActionCreators(setClimate, dispatch),

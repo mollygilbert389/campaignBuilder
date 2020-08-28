@@ -138,6 +138,10 @@ class PartyInfo extends Component {
         });
       }
 
+      handleReduxSave = () => {
+        this.props.setPlayers(this.state.partymemberData)
+      }
+
 render() {  
 
         const quantity = [3,4,5,6,7,8]
@@ -192,7 +196,11 @@ render() {
 
                         )}
                     </div>
+                    <div className="saveBtn">
+                        <Button variant="outline-success" onClick={this.handleReduxSave}>Save</Button>
+                    </div>
                 </div>
+
             )}
         </div>
     );

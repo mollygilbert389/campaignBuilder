@@ -42,11 +42,11 @@ export default function(state = initialState, action) {
           ...state,
           questGiverType: action.payload  
         }
-        // case SET_PLAYERDATA:
-        // return {
-        //   ...state,
-        //   playerData: action.payload
-        // }
+        case SET_PLAYERDATA:
+        return {
+          ...state,
+          playerData: action.payload
+        }
         case SET_PILLAR: 
         return {
           ...state,

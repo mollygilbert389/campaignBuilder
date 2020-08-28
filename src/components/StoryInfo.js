@@ -16,7 +16,8 @@ render() {
                     {campaign.villianType && (<div>{`Villian Type: ${campaign.villianType}`}</div>)}
                     {campaign.questGiverName && (<div>{`Quest Giver: ${campaign.questGiverName}`}</div>)}
                     {campaign.questGiverType && (<div>{`Quest Giver Type: ${campaign.questGiverType}`}</div>)}
-                    {/* <div id="partyInfoSapce"></div> */}
+                    {/*need to map over the items inside of the playerData object*/}
+                    {/* {campaign.playerData && (<div>{`Players: ${campaign.playerData}`}</div>)} */}
                     {campaign.pillar && (<div>{`Pillar: ${campaign.pillar}`}</div>)}
                     {campaign.theme && (<div>{`Pillar: ${campaign.theme}`}</div>)}
                     {campaign.acts && (<div>{`Acts: ${campaign.acts}`}</div>)}
