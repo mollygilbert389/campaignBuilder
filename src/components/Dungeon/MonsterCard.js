@@ -117,7 +117,7 @@ render() {
             </div>
 
             <div id="secondRoundMonsterQuestions" style={{display:"none"}}>
-                <SideMonsters>
+                <SideMonsters campaign={campaign}>
 
                 </SideMonsters>
                 <Modal.Footer>

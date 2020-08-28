@@ -351,34 +351,36 @@ render() {
 
     return (
         <div>
-            <Form inline>
-                <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                <Dropdown onSelect={this.handleMonsterCategorySelect}>
-                    <Dropdown.Toggle variant="outline-primary">
-                        {monsterChoice ? monsterChoice: 'Monster Categories'}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu id="mainMonsterMenu">
-                        {monsterObjectArray.map(monsterObject => {
-                            return <Dropdown.Item key={monsterObject.id} name={monsterObject.name}> {monsterObject.name}</Dropdown.Item>
-                        })}
-                    </Dropdown.Menu>
-                </Dropdown>
+            <dvi>
+                <Form inline>
+                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                    <Dropdown onSelect={this.handleMonsterCategorySelect}>
+                        <Dropdown.Toggle variant="outline-primary">
+                            {monsterChoice ? monsterChoice: 'Monster Categories'}
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu id="mainMonsterMenu">
+                            {monsterObjectArray.map(monsterObject => {
+                                return <Dropdown.Item key={monsterObject.id} name={monsterObject.name}> {monsterObject.name}</Dropdown.Item>
+                            })}
+                        </Dropdown.Menu>
+                    </Dropdown>
 
-                    {monsterChoice.length > 0 && (
-                    <Dropdown onSelect={this.handleMonsterTypeSelect}>
-                    <Dropdown.Toggle variant="outline-primary">
-                        {finalMonsterType ? finalMonsterType: 'Monster Type'}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                    {monsterTypes.types.map(monsterTypesObject => {
-                            return <Dropdown.Item key={monsterTypesObject} name={monsterTypesObject}> {monsterTypesObject}</Dropdown.Item>
-                        })}
-                    </Dropdown.Menu>
-                </Dropdown>
-                )}
+                        {monsterChoice.length > 0 && (
+                        <Dropdown onSelect={this.handleMonsterTypeSelect}>
+                        <Dropdown.Toggle variant="outline-primary">
+                            {finalMonsterType ? finalMonsterType: 'Monster Type'}
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                        {monsterTypes.types.map(monsterTypesObject => {
+                                return <Dropdown.Item key={monsterTypesObject} name={monsterTypesObject}> {monsterTypesObject}</Dropdown.Item>
+                            })}
+                        </Dropdown.Menu>
+                    </Dropdown>
+                    )}
 
-                </FormGroup>
-            </Form>
+                    </FormGroup>
+                </Form>
+            </dvi>
         </div>
     );
 }

@@ -9,12 +9,21 @@ class Monsters extends Component {
         super();
         this.state ={
         }
-        this.handleMonsterForm = this.handleMonsterForm.bind(this)
     }
 
-    handleMonsterForm() {
-        
+    createMonsterForm = () => {
+        let monsterFormNumber = this.props.campaign.monsterNum 
+        monsterFormNumber = parseInt(monsterFormNumber)
+
+        const monsterFormsArray = []
+
+        for (var i = 0; i < monsterFormNumber; i++) {
+            monsterFormsArray.push(<MonsterSelect/>) 
+        }
+
+        return monsterFormsArray
     }
+
 
 render() {  
 
@@ -30,9 +39,11 @@ render() {
                 <p>Now that we have a good idea of rooms and dungeon let's throw some monsters into the mix. Your monsters should be varying in difficulty and type. Pick a few monster below, and we'll generate the rest for you.</p>
 
                 <div className="partyFormSpace">
-                <div>
-                <MonsterSelect></MonsterSelect>
-                </div>
+                
+                    <ul>
+                        {this.createMonsterForm()}
+                    </ul>
+                
                 </div>
                 
             </Modal.Body>
