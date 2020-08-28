@@ -8,8 +8,9 @@ class MonsterSelect extends Component {
     constructor() {
         super();
         this.state ={
-            monsterChoice: "",
+            monsterChoice: '',
             monsterTypes: {},
+            finalMonsterType: '',
             monsterObjectArray: 
             [
                 {id:1, 
@@ -322,18 +323,21 @@ class MonsterSelect extends Component {
         }
     }
 
-    handlemonsterSelect = (eventKey, event) => {
-        console.log()
-
-
+    handleMonsterCategorySelect = (eventKey, event) => {
         let monsterChoice = event.target.name
         let monsterTypes = this.state.monsterObjectArray.find(monster => monster.name === monsterChoice)
-        console.log(monsterTypes)
 
         this.setState({ 
             ...this.state,
             monsterChoice: monsterChoice,
             monsterTypes: monsterTypes
+        })
+    }
+
+    handleMonsterTypeSelect = (eventKey, event) => {
+        this.setState({ 
+            ...this.state,
+            finalMonsterType: event.target.name
         })
     }
 
@@ -343,12 +347,13 @@ render() {
     const{monsterObjectArray} = this.state 
     const{monsterChoice} = this.state
     const{monsterTypes} = this.state
+    const{finalMonsterType} = this.state
 
     return (
         <div>
             <Form inline>
                 <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                <Dropdown onSelect={this.handlemonsterSelect}>
+                <Dropdown onSelect={this.handleMonsterCategorySelect}>
                     <Dropdown.Toggle variant="outline-primary">
                         {monsterChoice ? monsterChoice: 'Monster Categories'}
                     </Dropdown.Toggle>
@@ -360,13 +365,13 @@ render() {
                 </Dropdown>
 
                     {monsterChoice.length > 0 && (
-                    <Dropdown>
+                    <Dropdown onSelect={this.handleMonsterTypeSelect}>
                     <Dropdown.Toggle variant="outline-primary">
-                        {/* {monsterTypes ? monsterTypes: 'Monster Type'} */}
+                        {finalMonsterType ? finalMonsterType: 'Monster Type'}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                     {monsterTypes.types.map(monsterTypesObject => {
-                            return <Dropdown.Item key={monsterTypesObject} name={monsterChoice}> {monsterTypesObject}</Dropdown.Item>
+                            return <Dropdown.Item key={monsterTypesObject} name={monsterTypesObject}> {monsterTypesObject}</Dropdown.Item>
                         })}
                     </Dropdown.Menu>
                 </Dropdown>
