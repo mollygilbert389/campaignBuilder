@@ -20,16 +20,10 @@ class Sidequests extends Component {
     }
 
     sideQuest = (event) => {
-        let sideQuestSpace = document.getElementById('sideQuestSpace')
-        sideQuestSpace.textContent = ""
-        let sideQuest = event.target.name
         this.setState({
             showModal: !this.state.showModal,
-            sideQuest: sideQuest
-        })
-
-        sideQuestSpace.append("Side Quests: " + sideQuest)
-
+            sideQuest: event.target.name
+        }, () => {})
     }
 
 render() {  

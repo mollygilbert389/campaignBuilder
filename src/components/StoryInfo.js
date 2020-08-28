@@ -27,7 +27,13 @@ render() {
                         })}
                         </div>)}
                     {campaign.pillar && (<div>{`Pillar: ${campaign.pillar}`}</div>)}
-                    {campaign.theme && (<div>{`Theme: ${campaign.theme}`}</div>)}
+                    {campaign.meetingPlace && (
+                    <div>Theme:
+                        <div>{`Climate: ${campaign.climate}`}</div>
+                        <div>{`World: ${campaign.world}`}</div>
+                        <div>{`Meeting: ${campaign.meetingPlace}`}</div>
+                    </div>
+                    )}
                     {campaign.acts && (<div>{`Acts: ${campaign.acts}`}</div>)}
                     {/* <div id="sideQuestSpace"></div>
                     <div id="dungeonTypeSpace"></div>

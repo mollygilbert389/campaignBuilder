@@ -35,15 +35,16 @@ class VillianModal extends Component {
                 })
         }
 
-        villianChoice = (choice) => {
+        handleVillainTypeSelect = (eventkey, event) => {
             this.setState({
-                villianType: choice.target.text
+                villianType: event.target.text
             })
         }
 
 render() {  
 
     const{campaign}=this.props
+    const{villianType}=this.state
 
     return (
         <div>
@@ -54,42 +55,42 @@ render() {
         <Modal show={this.state.showModal}>
         <Modal.Dialog>
             <Modal.Header>
-                <Modal.Title>Let's Create Yor Villian!</Modal.Title>
+                <Modal.Title>Let's Create Yor Villain!</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
-                <p>Below are some buttons to create your villian</p>
+                <p>Below are some buttons to create your villain</p>
 
                 <Form inline>
-                    <FormControl type="text" placeholder="Villian Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
+                    <FormControl type="text" placeholder="Villain Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
                     <div style={{paddingRight: "10px"}}>or</div> 
                     <Button variant="outline-primary" >Generate</Button>
                 </Form>
                 <br></br>
 
-                <Dropdown>
-                    <Dropdown.Toggle variant="outline-primary" id="villianType">
-                    {/* {campaign.villianType && (<div>{`${campaign.villianType}`}</div>)} */}
+                <Dropdown onSelect={this.handleVillainTypeSelect}>
+                    <Dropdown.Toggle variant="outline-primary">
+                    {villianType ? villianType: 'Choose your Villain Type'}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                    <Dropdown.Item onClick={this.villianChoice}>Human</Dropdown.Item>
-                    <Dropdown.Item onClick={this.villianChoice}>Hag</Dropdown.Item>
-                    <Dropdown.Item onClick={this.villianChoice}>Abyssal Chicken</Dropdown.Item>
-                    <Dropdown.Item onClick={this.villianChoice}>Alcolyte</Dropdown.Item>
-                    <Dropdown.Item onClick={this.villianChoice}>Elemental</Dropdown.Item>
-                    <Dropdown.Item onClick={this.villianChoice}>Dwarf</Dropdown.Item>
-                    <Dropdown.Item onClick={this.villianChoice}>Cult</Dropdown.Item>
-                    <Dropdown.Item onClick={this.villianChoice}>Animal</Dropdown.Item>
-                    <Dropdown.Item onClick={this.villianChoice}>Banshee</Dropdown.Item>
-                    <Dropdown.Item onClick={this.villianChoice}>Ghost</Dropdown.Item>
-                    <Dropdown.Item onClick={this.villianChoice}>Zombie</Dropdown.Item>
-                    <Dropdown.Item onClick={this.villianChoice}>Assasin</Dropdown.Item>
-                    <Dropdown.Item onClick={this.villianChoice}>Giant</Dropdown.Item>
-                    <Dropdown.Item onClick={this.villianChoice}>Wizard</Dropdown.Item>
-                    <Dropdown.Item onClick={this.villianChoice}>Demogorgan</Dropdown.Item>
-                    <Dropdown.Item onClick={this.villianChoice}>Dragon</Dropdown.Item>
-                    <Dropdown.Item onClick={this.villianChoice}>God</Dropdown.Item>
-                    <Dropdown.Item onClick={this.villianChoice}>Something else</Dropdown.Item>
+                    <Dropdown.Item>Human</Dropdown.Item>
+                    <Dropdown.Item>Hag</Dropdown.Item>
+                    <Dropdown.Item>Abyssal Chicken</Dropdown.Item>
+                    <Dropdown.Item>Alcolyte</Dropdown.Item>
+                    <Dropdown.Item>Elemental</Dropdown.Item>
+                    <Dropdown.Item>Dwarf</Dropdown.Item>
+                    <Dropdown.Item>Cult</Dropdown.Item>
+                    <Dropdown.Item>Animal</Dropdown.Item>
+                    <Dropdown.Item>Banshee</Dropdown.Item>
+                    <Dropdown.Item>Ghost</Dropdown.Item>
+                    <Dropdown.Item>Zombie</Dropdown.Item>
+                    <Dropdown.Item>Assasin</Dropdown.Item>
+                    <Dropdown.Item>Giant</Dropdown.Item>
+                    <Dropdown.Item>Wizard</Dropdown.Item>
+                    <Dropdown.Item>Demogorgan</Dropdown.Item>
+                    <Dropdown.Item>Dragon</Dropdown.Item>
+                    <Dropdown.Item>God</Dropdown.Item>
+                    <Dropdown.Item>Something else</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
 

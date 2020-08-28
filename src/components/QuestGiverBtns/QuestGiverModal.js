@@ -43,6 +43,8 @@ class QuestGiverModal extends Component {
 
 render() {  
 
+    const{questGiverType}=this.state
+
     return (
         <div>
         <div className="btns">
@@ -66,7 +68,7 @@ render() {
 
                 <Dropdown>
                     <Dropdown.Toggle variant="outline-primary" id="questGiverType">
-                    Quest Giver Type
+                    {questGiverType ? questGiverType: 'Choose your Quest Giver Type'}
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>

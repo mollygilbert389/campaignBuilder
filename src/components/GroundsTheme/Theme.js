@@ -16,9 +16,14 @@ class Theme extends Component {
     }
 
     close = () =>  {
+        this.props.setClimate(this.state.climate)
+        this.props.setWorld(this.state.world)
+        this.props.setMeetingPlace(this.state.meetingPlace)
+
         this.setState({
             showModal: false,
         })
+
     }
 
     handleClick = () => {
@@ -28,48 +33,26 @@ class Theme extends Component {
     }
 
     climateSelect = (eventKey, event) => {
-        // if (this.state.climate = "") {
-        //     let climateSpace = document.getElementById('climateForm')
-        //     climateSpace.innerText = ""
-        // } else {
-        //     let climateSpace = document.getElementById('climateForm')
-        //     climateSpace.innerText = choice.target.text
-        // }
-        console.log(event.target.text)
-
         this.setState({
             climate: event.target.text
-        }, () => {this.props.setTheme(this.state.climate)})
+        })
         
     }
 
     worldSelect = (eventKey, event) => {
-        // if (this.state.world = "") {
-        //     let worldSpace = document.getElementById('worldForm')
-        //     worldSpace.innerText = ""
-        // } else {
-        //     let worldSpace = document.getElementById('worldForm')
-        //     worldSpace.innerText = choice.target.text
-        // }
         this.setState({
             world: event.target.text
-        }, () => {this.props.setTheme(this.state.world)})
+        })
     }
 
     meetingSelect = (eventKey, event) => {
-        // if (this.state.meeting = "") {
-        //     let meetSpace = document.getElementById('meetForm')
-        //         meetSpace.innerText = ""
-        // } else {
-        //     let meetSpace = document.getElementById('meetForm')
-        //     meetSpace.innerText = choice.target.text
-        // }
         this.setState({
-            meeting: event.target.text
-        }, () => {this.props.setTheme(this.state.meetingPlace)} )
+            meetingPlace: event.target.text
+        })
     }
 
 render() {  
+    const{climate,world,meetingPlace} = this.state
 
     return (
         <div>
@@ -85,13 +68,11 @@ render() {
 
             <Modal.Body>
                 <p>Below are some buttons to help create your ideal world!</p>
-                <p id="villianNameRemember">Some things you should keep in mind.</p>
-                <p id="questGiverNameRemember">Some things you should keep in mind.</p>
 
                 <FormGroup>
                     <Dropdown onSelect={this.climateSelect}>
                         <Dropdown.Toggle variant="outline-primary" id="climateForm">
-                        What type of climate would you find your villian in?
+                            {climate ? climate: 'What type of climate would you find your villian in?'}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                         <Dropdown.Item >Cold</Dropdown.Item>
@@ -104,7 +85,7 @@ render() {
                 <FormGroup>
                     <Dropdown onSelect={this.worldSelect}>
                         <Dropdown.Toggle variant="outline-primary" id="worldForm">
-                        What type of world is this?
+                            {world ? world: 'What type of world is this?'}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                         <Dropdown.Item >Forest</Dropdown.Item>
@@ -117,7 +98,7 @@ render() {
                 <FormGroup>
                     <Dropdown onSelect={this.meetingSelect}>
                         <Dropdown.Toggle variant="outline-primary" id="meetForm">
-                        Where do you intend your party to meet?
+                            {meetingPlace ? meetingPlace: 'Where do you intend your party to meet?'}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                         <Dropdown.Item >Meadow</Dropdown.Item>

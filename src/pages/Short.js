@@ -148,11 +148,19 @@ setActs = (name) => {
     onSetActs(name)
 }
 
-setTheme = (climatetype, worldType, meeting) => {
-    const{onSetClimate, onSetWorld, onSetMeetingPlace}=this.props
-    onSetClimate(climatetype)
+setClimate = (climateType) => {
+    const{onSetClimate}=this.props
+    onSetClimate(climateType)
+}
+
+setWorld = (worldType) => {
+    const{onSetWorld}=this.props
     onSetWorld(worldType)
-    onSetMeetingPlace(meeting)
+}
+
+setMeetingPlace = (meetingPlace) => {
+    const{onSetMeetingPlace}=this.props
+    onSetMeetingPlace(meetingPlace)
 }
 
     render() {
@@ -191,7 +199,7 @@ setTheme = (climatetype, worldType, meeting) => {
                     <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
                     <div className="btnspace">
                         <Pillar setPillar={this.setPillar}></Pillar>
-                        <Theme setTheme={this.setTheme}></Theme>
+                        <Theme setClimate={this.setClimate} setWorld={this.setWorld} setMeetingPlace={this.setMeetingPlace}></Theme>
                         <Acts setActs={this.setActs}></Acts>
                         <SideQuests></SideQuests>
                     </div>

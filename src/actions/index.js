@@ -38,6 +38,11 @@ export const setQuestGiverType = (qType) => ({
     payload: qType
 }) 
 
+export const setPlayers = (name) => ({
+    type: SET_PLAYERDATA,
+    payload: name
+}) 
+
 export const setPillar = (name) => ({
     type: SET_PILLAR,
     payload: name
@@ -63,7 +68,3 @@ export const setMeetingPlace = (name) => ({
     payload: name
 }) 
 
-export const setPlayers = (name) => ({
-    type: SET_PLAYERDATA,
-    payload: name
-}) 
