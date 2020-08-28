@@ -4,12 +4,7 @@ import "./style.css"
 import MonsterSelect from './MonsterSelect'
 
 class Monsters extends Component {
-    
-    constructor() {
-        super();
-        this.state ={
-        }
-    }
+
 
     createMonsterForm = () => {
         let monsterFormNumber = this.props.campaign.monsterNum 

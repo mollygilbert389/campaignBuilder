@@ -41,7 +41,7 @@ class MonsterCard extends Component {
             roomNum: roomState,
             suggestedMonsterNum: suggestedMonsterNum,
             maxMonsterNum: maxMonsterNum
-        })
+        }, () => {this.props.setMonsterNum(this.state.suggestedMonsterNum)})
     }
 
     handleClick() {
