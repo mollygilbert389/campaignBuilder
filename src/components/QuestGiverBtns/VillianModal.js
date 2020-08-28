@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button, Dropdown, Form, FormControl} from 'react-bootstrap'
+import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "./style.css"
 
 class VillianModal extends Component {
@@ -64,7 +64,14 @@ render() {
                 <Form inline>
                     <FormControl type="text" placeholder="Villain Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
                     <div style={{paddingRight: "10px"}}>or</div> 
-                    <Button variant="outline-primary" >Generate</Button>
+
+                    <OverlayTrigger overlay={
+                    <Tooltip>Coming Soon!</Tooltip>}>
+                    <span className="d-inline-block">
+                    <Button variant="outline-primary" style={{ pointerEvents: 'none' }} disabled>Generate</Button>
+                    </span>
+                    </OverlayTrigger>
+
                 </Form>
                 <br></br>
 

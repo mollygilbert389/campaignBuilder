@@ -1,7 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Button} from 'react-bootstrap';
-import {UncontrolledTooltip} from 'reactstrap';
+import {Button, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "../components/home.css"
 
 function Home() {
@@ -17,33 +16,33 @@ function Home() {
         </div>
 
         <div className="btns">
-            <span id="UncontrolledTooltipExample">
-                <Button variant="outline-danger" size="lg" href="/mediumcampaign" disabled>Medium
-                </Button>
+            <OverlayTrigger overlay={
+            <Tooltip>Coming Soon!</Tooltip>}>
+            <span className="d-inline-block">
+            <Button variant="outline-danger" size="lg" href="/mediumcampaign" disabled>Medium
+            </Button>
             </span>
-            <UncontrolledTooltip placement="top" target="UncontrolledTooltipExample">
-                I currently don't work!
-            </UncontrolledTooltip>
+            </OverlayTrigger>
         </div>
 
         <div className="btns">
-            <span id="UncontrolledTooltipExample">
-                <Button variant="outline-danger" size="lg" href="/longcampaign" disabled>Long
-                </Button>
+            <OverlayTrigger overlay={
+            <Tooltip>Coming Soon!</Tooltip>}>
+            <span className="d-inline-block">
+            <Button variant="outline-danger" size="lg" href="/longcampaign" disabled>Long
+            </Button>
             </span>
-            <UncontrolledTooltip placement="top" target="UncontrolledTooltipExample">
-                I currently don't work!
-            </UncontrolledTooltip>
+            </OverlayTrigger>
         </div>
 
         <div className="btns">
-            <span id="UncontrolledTooltipExample">
-                <Button variant="outline-danger" size="lg" href="/" disabled>Not Sure Yet
-                </Button>
+            <OverlayTrigger overlay={
+            <Tooltip>Coming Soon!</Tooltip>}>
+            <span className="d-inline-block">
+            <Button variant="outline-danger" size="lg" href="/" disabled>Not Sure Yet
+            </Button>
             </span>
-            <UncontrolledTooltip placement="top" target="UncontrolledTooltipExample">
-                I currently don't work!
-            </UncontrolledTooltip>
+            </OverlayTrigger>
         </div>
 
         </div>

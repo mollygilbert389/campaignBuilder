@@ -12,8 +12,6 @@ function Navtabs() {
 
         <Nav>
           <Nav.Link>
-            <div id="campaignNameSpace">
-            </div>
             </Nav.Link>
         </Nav>
       </Navbar>
