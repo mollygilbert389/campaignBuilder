@@ -13,7 +13,7 @@ class Monsters extends Component {
     }
 
     handleMonsterForm() {
-        let monsterFinalNum = document.getElementById("monsterNum")
+        
     }
 
 render() {  

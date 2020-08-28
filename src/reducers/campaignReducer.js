@@ -1,7 +1,7 @@
-import {SET_CAMPAIGN_NAME, SET_VILLIAN_NAME, SET_VILLIAN_TYPE, SET_QUESTGIVER_NAME, SET_QUESTGIVER_TYPE, SET_PLAYERDATA, SET_PILLAR, SET_ACTS, SET_CLIMATE, SET_WORLD, SET_MEETING_PLACE, SET_SIDE_QUESTS} from '../actions/constant'
+import {SET_CAMPAIGN_NAME, SET_VILLIAN_NAME, SET_VILLIAN_TYPE, SET_QUESTGIVER_NAME, SET_QUESTGIVER_TYPE, SET_PLAYERDATA, SET_PILLAR, SET_ACTS, SET_CLIMATE, SET_WORLD, SET_MEETING_PLACE, SET_SIDE_QUESTS, SET_ROOMS, SET_SETBACKS, SET_MONSTER_NUM} from '../actions/constant'
 
 const initialState = {
-    campaignName: "",
+    campaignName: '',
     villianName: '',
     villianType: '',
     questGiverName: '',
@@ -13,6 +13,9 @@ const initialState = {
     world: '',
     meetingPlace: '',
     sideQuests: '',
+    rooms: '',
+    setbacks: '',
+    monsterNum: '',
  
 }
 
@@ -77,6 +80,21 @@ export default function(state = initialState, action) {
         return {
           ...state,
           sideQuests: action.payload  
+        }
+        case SET_ROOMS: 
+        return {
+          ...state,
+          rooms: action.payload  
+        }
+        case SET_SETBACKS: 
+        return {
+          ...state,
+          setbacks: action.payload  
+        }
+        case SET_MONSTER_NUM: 
+        return {
+          ...state,
+          monsterNum: action.payload  
         }
         default: 
             return state

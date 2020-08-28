@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button, Form, Dropdown, FormControl } from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 import "./style.css"
 
 class Setback extends Component {
@@ -20,16 +20,10 @@ class Setback extends Component {
     }
 
     setback = (event) => {
-        let setbackSpace = document.getElementById('setbackSpace')
-        setbackSpace.textContent = ""
-
-        let setbackOption = event.target.name
         this.setState({
             showModal: !this.state.showModal,
-            setback: setbackOption
-        })
-
-        setbackSpace.append("Setback: " + setbackOption) 
+            setback: event.target.name
+        }, () => {this.props.setSetBacks(this.state.setback)})
     }
 
 render() {  

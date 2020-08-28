@@ -36,10 +36,14 @@ render() {
                     )}
                     {campaign.acts && (<div>{`Acts: ${campaign.acts}`}</div>)}
                     {campaign.sideQuests && (<div>{`Side Quests: ${campaign.sideQuests}`}</div>)}
-                    {/* 
-                    <div id="dungeonTypeSpace"></div>
-                    <div id="roomsSpace"></div>
-                    <div id="setbackSpace"></div> */}
+                    {campaign.rooms && (
+                    <div>Dungeon:
+                        <div>{`Number of Rooms: ${campaign.rooms}`}</div>
+                        <div>{`Setbacks: ${campaign.setbacks}`}</div>
+                        <div>{`Total Monsters: ${campaign.monsterNum}`}</div>
+                    </div>
+                    )}
+
                     {/* <div> */}
                         {/* <div id="monsterOneTypeSpace"></div>
                         <div id="monsterTwoTypeSpace"></div>

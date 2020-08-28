@@ -21,7 +21,7 @@ import MonsterCard from "../components/Dungeon/MonsterCard";
 import CampaignCard from "../components/CampaignCard/CampaignCard"
 import {connect} from "react-redux"
 import {bindActionCreators} from "redux"
-import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQuestGiverName, setPlayers, setPillar, setActs, setClimate, setWorld, setMeetingPlace, setSideQuests} from "../actions/index"
+import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQuestGiverName, setPlayers, setPillar, setActs, setClimate, setWorld, setMeetingPlace, setSideQuests, setRooms, setSetbacks, setMonsterNum} from "../actions/index"
 
 
 
@@ -168,6 +168,21 @@ setSideQuests = (sideQuests) => {
     onSetSideQuests(sideQuests)
 }
 
+setRooms = (rooms) => {
+    const{onSetRooms}=this.props
+    onSetRooms(rooms)
+}
+
+setSetbacks = (yesno) => {
+    const{onSetSetbacks}=this.props
+    onSetSetbacks(yesno)
+}
+
+setMonsterNum = (number) => {
+    const{onSetMonsterNum}=this.props
+    onSetMonsterNum(number)
+}
+
     render() {
 
         return (
@@ -216,9 +231,9 @@ setSideQuests = (sideQuests) => {
                 <div id="fourthRoundQuestions" style={{display:"none"}}>
                     <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
                     <div className="btnspace">
-                        <Rooms></Rooms>
-                        <Setback></Setback>
-                        <MonsterCard></MonsterCard>
+                        <Rooms setRooms={this.setRooms}></Rooms>
+                        <Setback setSetBacks={this.setSetbacks}></Setback>
+                        <MonsterCard campaign={this.props.campaign} setMonsterNum={this.setMonsterNum}></MonsterCard>
                         <Type></Type>
                     </div>
                     <div className="nextBtn">
@@ -275,6 +290,9 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetWorld: bindActionCreators(setWorld, dispatch),
     onSetMeetingPlace: bindActionCreators(setMeetingPlace, dispatch),
     onSetSideQuests: bindActionCreators(setSideQuests, dispatch),
+    onSetRooms: bindActionCreators(setRooms, dispatch),
+    onSetSetbacks: bindActionCreators(setSetbacks, dispatch),
+    onSetMonsterNum: bindActionCreators(setMonsterNum, dispatch),
 
 })
 

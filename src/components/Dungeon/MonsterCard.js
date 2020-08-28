@@ -13,7 +13,6 @@ class MonsterCard extends Component {
         this.suggestMeMonsters = this.suggestMeMonsters.bind(this)
         this.state ={
             showModal: false,
-            roomNum:0,
             suggestedMonsterNum:0,
             maxMonsterNum:0, 
             finalMonsterNum:0
@@ -21,26 +20,25 @@ class MonsterCard extends Component {
     }
 
     suggestMeMonsters() {
-        let roomNumber = document.getElementById('roomsSpace').textContent
-        roomNumber = roomNumber.split(" ").pop()
+        let roomState = this.props.campaign.rooms
 
-        roomNumber = parseInt(roomNumber)
+        roomState = parseInt(roomState)
         let suggestedMonsterNum = 0
         let maxMonsterNum = 0
 
-        if (roomNumber <= 5) {
+        if (roomState <= 5) {
             suggestedMonsterNum = 10
             maxMonsterNum = 20
-        } else if (roomNumber <= 10) {
+        } else if (roomState <= 10) {
             suggestedMonsterNum = 6
             maxMonsterNum = 13
-        } else if (roomNumber > 10) {
+        } else if (roomState > 10) {
             suggestedMonsterNum = 4
             maxMonsterNum = 10
         }
 
         this.setState({
-            roomNum: roomNumber,
+            roomNum: roomState,
             suggestedMonsterNum: suggestedMonsterNum,
             maxMonsterNum: maxMonsterNum
         })
@@ -57,12 +55,6 @@ class MonsterCard extends Component {
     handleFirstClick = () => {
         let firstQues = document.getElementById("firstRoundMonsterQuestions")
         let secondQues = document.getElementById("secondRoundMonsterQuestions")
-        let monsterFinalNum = document.getElementById("monsterNum").textContent
-        monsterFinalNum = parseInt(monsterFinalNum)
-
-        this.setState({
-            monsterFinalNum: monsterFinalNum
-        })
     
         const show = function (div) {
             div.style.display = 'block'
@@ -75,8 +67,16 @@ class MonsterCard extends Component {
         show(secondQues)
     }
 
+    handleSlider = (event, value) => {
+        this.setState({
+            finalMonsterNum: value
+        }, () => {this.props.setMonsterNum(this.state.finalMonsterNum)})
+    }
+
 
 render() {  
+
+    const{campaign}=this.props
 
     return (
         <div>
@@ -84,7 +84,6 @@ render() {
         <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Monsters
         </Button>
             </div>
-
 
         <Modal show={this.state.showModal}>
         <div id="firstRoundMonsterQuestions">
@@ -95,7 +94,7 @@ render() {
 
             <Modal.Body>
                 <p>Now it's time to choose some monsters!</p>
-                <p>Since you have chosen {this.state.roomNum} rooms we reccomend chosing {this.state.suggestedMonsterNum} total monsters and no more than {this.state.maxMonsterNum}. How many monsters would you like in your dungeon?</p>
+                <p>Since you have chosen {campaign.rooms} rooms we reccomend chosing {this.state.suggestedMonsterNum} total monsters and no more than {this.state.maxMonsterNum}. How many monsters would you like in your dungeon?</p>
                 <br></br>
                 <br></br>
 
@@ -105,6 +104,7 @@ render() {
                 max={20}
                 defaultValue={this.state.suggestedMonsterNum}
                 valueLabelDisplay="on"
+                onChangeCommitted={this.handleSlider}
                 />
                 </div>
 

@@ -20,17 +20,12 @@ class Rooms extends Component {
     }
 
     handleActBtn = (event) => {
-        let roomSpace = document.getElementById("roomsSpace")
-        roomSpace.textContent = ""
-
-        let num = event.target.name
         this.setState({ 
-            roomNum: num,
+            roomNum: event.target.name,
             showModal: !this.state.showModal
-        })
+        }, () => {this.props.setRooms(this.state.roomNum)})
 
-        roomSpace.append("Rooms: " + num)
-
+        
     }
 
 render() {  

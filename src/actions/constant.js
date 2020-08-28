@@ -11,5 +11,8 @@ export const SET_WORLD = "SET_WORLD"
 export const SET_MEETING_PLACE = "SET_MEETING_PLACE"
 export const SET_ACTS = "SET_ACTS"
 export const SET_SIDE_QUESTS = "SET_SIDE_QUESTS"
+export const SET_ROOMS = "SET_ROOMS"
+export const SET_SETBACKS = "SET_SETBACKS"
+export const SET_MONSTER_NUM = "SET_MONSTER_NUM"
 
 

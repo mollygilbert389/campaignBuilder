@@ -11,6 +11,9 @@ import {
     SET_WORLD,
     SET_MEETING_PLACE,
     SET_SIDE_QUESTS,
+    SET_ROOMS,
+    SET_SETBACKS,
+    SET_MONSTER_NUM,
     
 
 
@@ -73,5 +76,20 @@ export const setMeetingPlace = (name) => ({
 
 export const setSideQuests = (name) => ({
     type: SET_SIDE_QUESTS,
+    payload: name
+}) 
+
+export const setRooms = (name) => ({
+    type: SET_ROOMS,
+    payload: name
+}) 
+
+export const setSetbacks = (name) => ({
+    type: SET_SETBACKS,
+    payload: name
+}) 
+
+export const setMonsterNum = (name) => ({
+    type: SET_MONSTER_NUM,
     payload: name
 }) 
