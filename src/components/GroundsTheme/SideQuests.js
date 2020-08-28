@@ -9,7 +9,7 @@ class Sidequests extends Component {
         super();
         this.state ={
             showModal: false,
-            sideQuest: "",
+            sideQuests: "",
         }
     }
 
@@ -19,11 +19,11 @@ class Sidequests extends Component {
         })
     }
 
-    sideQuest = (event) => {
+    sideQuestFunction = (event) => {
         this.setState({
             showModal: !this.state.showModal,
-            sideQuest: event.target.name
-        }, () => {})
+            sideQuests: event.target.name
+        }, () => {this.props.setSideQuests(this.state.sideQuests)})
     }
 
 render() {  
@@ -46,11 +46,11 @@ render() {
 
                 <div className="sideQuestBtnSpace">
                 <div className="sideQuestBtns">
-                <Button name="Yes" variant="outline-success" onClick={this.sideQuest}>Yes</Button>
+                <Button name="Yes" variant="outline-success" onClick={this.sideQuestFunction}>Yes</Button>
                 </div>
 
                 <div className="sideQuestBtns">
-                <Button name="No" variant="outline-danger" onClick={this.sideQuest}>No</Button>
+                <Button name="No" variant="outline-danger" onClick={this.sideQuestFunction}>No</Button>
                 </div>
                 </div>
             </Modal.Body>

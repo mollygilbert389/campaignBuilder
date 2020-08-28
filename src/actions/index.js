@@ -4,12 +4,15 @@ import {
     SET_VILLIAN_TYPE,
     SET_QUESTGIVER_NAME,
     SET_QUESTGIVER_TYPE,
+    SET_PLAYERDATA,
     SET_PILLAR,
     SET_ACTS,
     SET_CLIMATE,
     SET_WORLD,
     SET_MEETING_PLACE,
-    SET_PLAYERDATA,
+    SET_SIDE_QUESTS,
+    
+
 
 } from './constant'
 
@@ -68,3 +71,7 @@ export const setMeetingPlace = (name) => ({
     payload: name
 }) 
 
+export const setSideQuests = (name) => ({
+    type: SET_SIDE_QUESTS,
+    payload: name
+}) 

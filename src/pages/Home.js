@@ -1,9 +1,8 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Button, Card} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
+import {UncontrolledTooltip} from 'reactstrap';
 import "../components/home.css"
-import StoryInfo from "../components/StoryInfo";
-
 
 function Home() {
   return (
@@ -18,27 +17,37 @@ function Home() {
         </div>
 
         <div className="btns">
-            <Button variant="outline-success" size="lg" href="/mediumcampaign">Medium
-            </Button>
+            <span id="UncontrolledTooltipExample">
+                <Button variant="outline-danger" size="lg" href="/mediumcampaign" disabled>Medium
+                </Button>
+            </span>
+            <UncontrolledTooltip placement="top" target="UncontrolledTooltipExample">
+                I currently don't work!
+            </UncontrolledTooltip>
         </div>
 
         <div className="btns">
-            <Button variant="outline-success" size="lg" href="/longcampaign">Long
-            </Button>
+            <span id="UncontrolledTooltipExample">
+                <Button variant="outline-danger" size="lg" href="/longcampaign" disabled>Long
+                </Button>
+            </span>
+            <UncontrolledTooltip placement="top" target="UncontrolledTooltipExample">
+                I currently don't work!
+            </UncontrolledTooltip>
         </div>
 
         <div className="btns">
-            <Button variant="outline-success" size="lg" href="/customcampaign">Not Sure Yet
-            </Button>
+            <span id="UncontrolledTooltipExample">
+                <Button variant="outline-danger" size="lg" href="/" disabled>Not Sure Yet
+                </Button>
+            </span>
+            <UncontrolledTooltip placement="top" target="UncontrolledTooltipExample">
+                I currently don't work!
+            </UncontrolledTooltip>
         </div>
 
         </div>
     </div>
-
-    <div id="savedCampaigns">
-
-    </div>
-
     </div>
 
   );

@@ -21,7 +21,7 @@ import MonsterCard from "../components/Dungeon/MonsterCard";
 import CampaignCard from "../components/CampaignCard/CampaignCard"
 import {connect} from "react-redux"
 import {bindActionCreators} from "redux"
-import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQuestGiverName, setPlayers, setPillar, setActs, setClimate, setWorld, setMeetingPlace} from "../actions/index"
+import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQuestGiverName, setPlayers, setPillar, setActs, setClimate, setWorld, setMeetingPlace, setSideQuests} from "../actions/index"
 
 
 
@@ -163,6 +163,11 @@ setMeetingPlace = (meetingPlace) => {
     onSetMeetingPlace(meetingPlace)
 }
 
+setSideQuests = (sideQuests) => {
+    const{onSetSideQuests}=this.props
+    onSetSideQuests(sideQuests)
+}
+
     render() {
 
         return (
@@ -201,7 +206,7 @@ setMeetingPlace = (meetingPlace) => {
                         <Pillar setPillar={this.setPillar}></Pillar>
                         <Theme setClimate={this.setClimate} setWorld={this.setWorld} setMeetingPlace={this.setMeetingPlace}></Theme>
                         <Acts setActs={this.setActs}></Acts>
-                        <SideQuests></SideQuests>
+                        <SideQuests setSideQuests={this.setSideQuests}></SideQuests>
                     </div>
                     <div className="nextBtn">
                         <Button variant="outline-primary" size="lg" onClick={this.handleThirdClick}>Next</Button>
@@ -269,6 +274,7 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetClimate: bindActionCreators(setClimate, dispatch),
     onSetWorld: bindActionCreators(setWorld, dispatch),
     onSetMeetingPlace: bindActionCreators(setMeetingPlace, dispatch),
+    onSetSideQuests: bindActionCreators(setSideQuests, dispatch),
 
 })
 

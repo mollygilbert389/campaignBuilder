@@ -10,5 +10,6 @@ export const SET_CLIMATE = "SET_CLIMATE"
 export const SET_WORLD = "SET_WORLD"
 export const SET_MEETING_PLACE = "SET_MEETING_PLACE"
 export const SET_ACTS = "SET_ACTS"
+export const SET_SIDE_QUESTS = "SET_SIDE_QUESTS"
 
 

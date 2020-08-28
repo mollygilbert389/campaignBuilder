@@ -1,4 +1,4 @@
-import {SET_CAMPAIGN_NAME, SET_VILLIAN_NAME, SET_VILLIAN_TYPE, SET_QUESTGIVER_NAME, SET_QUESTGIVER_TYPE, SET_PLAYERDATA, SET_PILLAR, SET_ACTS, SET_CLIMATE, SET_WORLD, SET_MEETING_PLACE} from '../actions/constant'
+import {SET_CAMPAIGN_NAME, SET_VILLIAN_NAME, SET_VILLIAN_TYPE, SET_QUESTGIVER_NAME, SET_QUESTGIVER_TYPE, SET_PLAYERDATA, SET_PILLAR, SET_ACTS, SET_CLIMATE, SET_WORLD, SET_MEETING_PLACE, SET_SIDE_QUESTS} from '../actions/constant'
 
 const initialState = {
     campaignName: "",
@@ -12,6 +12,7 @@ const initialState = {
     climate: '',
     world: '',
     meetingPlace: '',
+    sideQuests: '',
  
 }
 
@@ -71,6 +72,11 @@ export default function(state = initialState, action) {
         return {
           ...state,
           meetingPlace: action.payload  
+        }
+        case SET_SIDE_QUESTS: 
+        return {
+          ...state,
+          sideQuests: action.payload  
         }
         default: 
             return state

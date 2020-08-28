@@ -35,7 +35,8 @@ render() {
                     </div>
                     )}
                     {campaign.acts && (<div>{`Acts: ${campaign.acts}`}</div>)}
-                    {/* <div id="sideQuestSpace"></div>
+                    {campaign.sideQuests && (<div>{`Side Quests: ${campaign.sideQuests}`}</div>)}
+                    {/* 
                     <div id="dungeonTypeSpace"></div>
                     <div id="roomsSpace"></div>
                     <div id="setbackSpace"></div> */}
