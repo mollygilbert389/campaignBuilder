@@ -126,13 +126,11 @@ class PartyInfo extends Component {
 
     playerNameChange = (event) => {
         const index = event.target.id -1
-        const indexName = index.name
         const playerName = event.target.value
         const oldData = this.state.partymemberData
 
         const newPartyMemberData = update(oldData, 
             {[index]: {$set: {id: index+1, name: playerName, raceClass: this.state.partymemberData[index].raceClass}}},
-            // {[index]: {$set: {name:playerName}}}
           );
 
           this.setState({
@@ -144,7 +142,7 @@ render() {
 
         const quantity = [3,4,5,6,7,8]
         const{partymemberData, partyMembers} = this.state
-
+        
     return (
         <div>
             <p>Click on the number of party members you plan to have. Must be at least 3 (exluding the DM) and the max is 8.</p>
@@ -160,7 +158,7 @@ render() {
             {partyMembers > 2 && (
                 <div>
                     <div className="forms">
-                        {[...partymemberData].map(partyMember => {
+                        {[...partymemberData].map((partyMember, index) => {
                             return <div key={partyMember.id} className="partyFormSpace">
                             <Form inline>
                                 <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
@@ -170,7 +168,7 @@ render() {
                                 <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                                 <Dropdown onSelect={this.handlePartySelect} id={partyMember.id}>
                                     <Dropdown.Toggle variant="outline-primary">
-                                        {partymemberData.raceClass ? partymemberData.raceClass : 'Choose a Class for this Party Member'}
+                                        {partymemberData[index].raceClass ? partymemberData[index].raceClass: 'Choose a Class for this Party Member'}
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
                                     <Dropdown.Item id={partyMember.id} name="Barbarian">Barbarian</Dropdown.Item>
