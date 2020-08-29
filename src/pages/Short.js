@@ -21,7 +21,7 @@ import MonsterCard from "../components/Dungeon/MonsterCard";
 import CampaignCard from "../components/CampaignCard/CampaignCard"
 import {connect} from "react-redux"
 import {bindActionCreators} from "redux"
-import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQuestGiverName, setPlayers, setPillar, setActs, setClimate, setWorld, setMeetingPlace, setSideQuests, setRooms, setSetbacks, setMonsterNum} from "../actions/index"
+import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQuestGiverName, setPlayers, setPillar, setActs, setClimate, setWorld, setMeetingPlace, setSideQuests, setRooms, setSetbacks, setMonsterNum, setDungeonType} from "../actions/index"
 
 
 
@@ -183,6 +183,11 @@ setMonsterNum = (number) => {
     onSetMonsterNum(number)
 }
 
+setDungeonType = (type) => {
+    const{onSetDungeonType}=this.props
+    onSetDungeonType(type)
+}
+
     render() {
 
         return (
@@ -234,7 +239,7 @@ setMonsterNum = (number) => {
                         <Rooms setRooms={this.setRooms}></Rooms>
                         <Setback setSetBacks={this.setSetbacks}></Setback>
                         <MonsterCard campaign={this.props.campaign} setMonsterNum={this.setMonsterNum}></MonsterCard>
-                        <Type></Type>
+                        <Type setDungeonType={this.setDungeonType}></Type>
                     </div>
                     <div className="nextBtn">
                         <Button variant="outline-primary" size="lg" onClick={this.handleFourthClick}>Next</Button>
@@ -293,6 +298,7 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetRooms: bindActionCreators(setRooms, dispatch),
     onSetSetbacks: bindActionCreators(setSetbacks, dispatch),
     onSetMonsterNum: bindActionCreators(setMonsterNum, dispatch),
+    onSetDungeonType: bindActionCreators(setDungeonType, dispatch),
 
 })
 

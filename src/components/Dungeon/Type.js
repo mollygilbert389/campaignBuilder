@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button, Form, Dropdown, FormControl } from 'react-bootstrap'
+import {Button, Dropdown} from 'react-bootstrap'
 import "./style.css"
 
 class Type extends Component {
@@ -20,13 +20,12 @@ class Type extends Component {
     }
 
     handleSelect = (eventKey , event) => {
-        let dungeonType = event.target.name
         this.setState({
-            dungeonType: dungeonType
+            dungeonType: event.target.name
         })
 
-        let dungeonTypeSpace = document.getElementById("dungeonType")
-        dungeonTypeSpace.append("Dungeon Type: ", dungeonType)
+        this.props.setDungeonType(event.target.name)
+
     }
 
 render() {  

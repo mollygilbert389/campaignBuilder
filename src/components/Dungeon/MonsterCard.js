@@ -5,6 +5,7 @@ import {Slider} from '@material-ui/core'
 import "./style.css"
 import SideMonsters from './SideMonsters'
 
+
 class MonsterCard extends Component {
 
     constructor(props) {
@@ -15,7 +16,8 @@ class MonsterCard extends Component {
             showModal: false,
             suggestedMonsterNum:0,
             maxMonsterNum:0, 
-            finalMonsterNum:0
+            finalMonsterNum:0,
+            finalMonsterChoices: [],
         }
     }
 
@@ -73,6 +75,16 @@ class MonsterCard extends Component {
         }, () => {this.props.setMonsterNum(this.state.finalMonsterNum)})
     }
 
+    // updateMonsterChoice = (monster) => {
+
+    //     let monsterChoiceArray = this.state.finalMonsterChoices
+    //     const newArray = update(monsterChoiceArray, {$push: [monster]}); 
+
+    //         this.setState({
+    //             finalMonsterChoices: update(monsterChoiceArray, {$push: [monster]})
+    //         })
+    // }
+
 
 render() {  
 
@@ -120,9 +132,6 @@ render() {
                 <SideMonsters campaign={campaign}>
 
                 </SideMonsters>
-                <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
-                </Modal.Footer>
             </div>
         </Modal>
         </div>

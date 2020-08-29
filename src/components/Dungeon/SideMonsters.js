@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import "./style.css"
 import MonsterSelect from './MonsterSelect'
+import {Button} from 'react-bootstrap'
 
 class Monsters extends Component {
 
@@ -19,6 +20,13 @@ class Monsters extends Component {
         return monsterFormsArray
     }
 
+    handleClick = () => {
+        this.setState({
+            showModal: !this.state.showModal,
+        })
+
+    }
+ 
 
 render() {  
 
@@ -44,6 +52,9 @@ render() {
             </Modal.Body>
             
         </Modal.Dialog>
+        <Modal.Footer>
+            <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
+        </Modal.Footer>
         </div>
     );
 }

@@ -38,6 +38,7 @@ render() {
                     {campaign.sideQuests && (<div>{`Side Quests: ${campaign.sideQuests}`}</div>)}
                     {campaign.rooms && (
                     <div>Dungeon:
+                        <div>{`Dungeon Type: ${campaign.dungeonType}`}</div>
                         <div>{`Number of Rooms: ${campaign.rooms}`}</div>
                         <div>{`Setbacks: ${campaign.setbacks}`}</div>
                         <div>{`Total Monsters: ${campaign.monsterNum}`}</div>
@@ -49,8 +50,7 @@ render() {
                         <div id="monsterTwoTypeSpace"></div>
                         <div id="monsterThreeTypeSpace"></div> */}
                     {/* </div> */}
-                    {/* <div id="dungeonType"></div>
-                    <div id="treasureSpace"></div> */}
+                    {/*<div id="treasureSpace"></div> */}
                     </Card.Text>
                 </Card.Body>
         </div>

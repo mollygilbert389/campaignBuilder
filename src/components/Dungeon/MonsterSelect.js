@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Dropdown} from 'react-bootstrap'
 import {Form, FormGroup} from "reactstrap"
+import update from 'immutability-helper'; 
 import "./style.css"
 
 class MonsterSelect extends Component {
@@ -11,6 +12,7 @@ class MonsterSelect extends Component {
             monsterChoice: '',
             monsterTypes: {},
             finalMonsterType: '',
+            finalMonsterChoiceArray: [],
             monsterObjectArray: 
             [
                 {id:1, 
@@ -335,9 +337,12 @@ class MonsterSelect extends Component {
     }
 
     handleMonsterTypeSelect = (eventKey, event) => {
+        const newSelection = event.target.name
+
         this.setState({ 
             ...this.state,
-            finalMonsterType: event.target.name
+            finalMonsterType: event.target.name,
+            finalMonsterChoiceArray: update(this.state.finalMonsterChoiceArray, {$push: [{newSelection}]})
         })
     }
 
