@@ -1,21 +1,34 @@
 # Campaign Builder
 
-<h2>Value Add</h2>
-<p>App that helps newbie DND Dungeon masters creativly build dnd campaigns based on time willing to be spent. This also gives them total power on the story, the dungeon, the monsters, the treasure, and the world. Most of them time you'll have a campaign already written out. This is a custom campaign maker that still gives you input about your game while educating you on the posibilities of the DND world.</p> 
+## Table of Contents
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Questions](#questions)
 
-<h2>Tech Stack</h2>
-<p>This application was made with React. It is hosted by Heroku, and will use MongoDB as a database.</p>
+## Description
+The purpose of this application is to help D&D Dungeon Masters build fun and engaging cam paigns, but also allow for user input. This application will walk you through a series of questions to get an idea of the kind of game you're after, then provide a custom campaign that DMs can use for gameplay. 
 
-<h2>Roles</h2>
-<ul>
-  <li>Molly: Full Stack. DM. Creative/Content Manager</li>
-</ul>
+## Deployed Application
+[Deployed Link](https://mollywoodcampaignbuilder.herokuapp.com/home
 
-<h2>MVP</h2>
-Phase one: Create campaign spit out based on the selections made. 
-Phase two: Add database to save campaigns and edit them later. 
-Phase three: Create user profiles. 
+![CB-Theme](https://user-images.githubusercontent.com/29104770/91627049-fa6d4080-e979-11ea-9f0d-a2c231317570.gif)
 
-<h2>Demo:</h2>
-Not yet deployed. 
+
+## Installation
+* react
+* react-bootstrap 
+* reactstrap
+* react-redux
+* immutability-helper
+* react-router-dom
+  
+## Usage
+1. Clone it down. 
+2. Run npm i.
+3. Run npm start at the root level.
+
+## Questions
+Please see my github: [Gihub Profile](https://github.com/mollygilberet389)
+<br>You can ask me questions here: msgilbrt389@gmail.com
 
