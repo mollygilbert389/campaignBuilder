@@ -21,7 +21,7 @@ import MonsterCard from "../components/Dungeon/MonsterCard";
 import CampaignCard from "../components/CampaignCard/CampaignCard"
 import {connect} from "react-redux"
 import {bindActionCreators} from "redux"
-import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQuestGiverName, setPlayers, setPillar, setActs, setClimate, setWorld, setMeetingPlace, setSideQuests, setRooms, setSetbacks, setMonsterNum, setDungeonType} from "../actions/index"
+import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQuestGiverName, setPlayers, setPillar, setActs, setClimate, setWorld, setMeetingPlace, setSideQuests, setRooms, setSetbacks, setMonsterNum, setDungeonType, setTreasure} from "../actions/index"
 
 
 
@@ -188,6 +188,11 @@ setDungeonType = (type) => {
     onSetDungeonType(type)
 }
 
+setTreasure = (type) => {
+    const{onSetTreasure}=this.props
+    onSetTreasure(type)
+}
+
     render() {
 
         return (
@@ -249,7 +254,7 @@ setDungeonType = (type) => {
                 <div id="fifthRoundQuestion" style={{display:"none"}}>
                     <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
                     <div className="btnspace">
-                        <Treasure></Treasure>
+                        <Treasure setTreasure={this.setTreasure}></Treasure>
                     </div>
                     <div className="nextBtn">
                         <Button variant="outline-primary" size="lg" onClick={this.handleFinalClick}>Next</Button>
@@ -299,6 +304,7 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetSetbacks: bindActionCreators(setSetbacks, dispatch),
     onSetMonsterNum: bindActionCreators(setMonsterNum, dispatch),
     onSetDungeonType: bindActionCreators(setDungeonType, dispatch),
+    onSetTreasure: bindActionCreators(setTreasure, dispatch),
 
 })
 

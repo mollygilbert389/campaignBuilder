@@ -15,5 +15,6 @@ export const SET_ROOMS = "SET_ROOMS"
 export const SET_SETBACKS = "SET_SETBACKS"
 export const SET_MONSTER_NUM = "SET_MONSTER_NUM"
 export const SET_DUNGEON_TYPE = "SET_DUNGEON_TYPE"
+export const SET_TREASURE = "SET_TREASURE"
 
 

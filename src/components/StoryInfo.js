@@ -50,7 +50,7 @@ render() {
                         <div id="monsterTwoTypeSpace"></div>
                         <div id="monsterThreeTypeSpace"></div> */}
                     {/* </div> */}
-                    {/*<div id="treasureSpace"></div> */}
+                    {campaign.treasure && (<div>{`Treasure: ${campaign.treasure}`}</div>)}
                     </Card.Text>
                 </Card.Body>
         </div>

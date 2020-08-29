@@ -15,7 +15,8 @@ class Treasure extends Component {
             gems: false,
             money: false,
             tradeGoods: false,
-            justXp: false 
+            justXp: false,
+            treasues: [], 
         }
     }
         handleChange = (event) => {
@@ -23,21 +24,22 @@ class Treasure extends Component {
                 [event.target.name]: event.target.checked 
             });
 
-            let treasureSpace = document.getElementById("treasureSpace")
+            if (event.target.checked) {
+                this.setState({
+                    treasues: event.target.value
+                }, () => this.props.setTreasure(this.state.treasues))
 
-            let treasure = event.target.value 
-    
-            if (event.target.checked === true) {
-                treasureSpace.append(treasure, ', ')
+                
+
             }
+
+
           };
 
         handleClick = () => {
             this.setState({
                 showModal: !this.state.showModal,
             })
-            let treasureSpace = document.getElementById("treasureSpace")
-            treasureSpace.append("Treasure: ")
         }
 
         close = () => {

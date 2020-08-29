@@ -15,6 +15,7 @@ import {
     SET_SETBACKS,
     SET_MONSTER_NUM,
     SET_DUNGEON_TYPE,
+    SET_TREASURE
     
 
 
@@ -97,5 +98,10 @@ export const setMonsterNum = (name) => ({
 
 export const setDungeonType = (name) => ({
     type: SET_DUNGEON_TYPE,
+    payload: name
+}) 
+
+export const setTreasure = (name) => ({
+    type: SET_TREASURE,
     payload: name
 }) 
