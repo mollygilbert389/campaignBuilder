@@ -75,16 +75,12 @@ class MonsterCard extends Component {
         }, () => {this.props.setMonsterNum(this.state.finalMonsterNum)})
     }
 
-    // updateMonsterChoice = (monster) => {
+    handleClose = () => {
+        this.setState({
+            showModal: !this.state.showModal,
+        })
 
-    //     let monsterChoiceArray = this.state.finalMonsterChoices
-    //     const newArray = update(monsterChoiceArray, {$push: [monster]}); 
-
-    //         this.setState({
-    //             finalMonsterChoices: update(monsterChoiceArray, {$push: [monster]})
-    //         })
-    // }
-
+    }
 
 render() {  
 
@@ -129,8 +125,7 @@ render() {
             </div>
 
             <div id="secondRoundMonsterQuestions" style={{display:"none"}}>
-                <SideMonsters campaign={campaign}>
-
+                <SideMonsters campaign={campaign} onClose={this.handleClose}>
                 </SideMonsters>
             </div>
         </Modal>

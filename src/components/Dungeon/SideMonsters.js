@@ -6,6 +6,14 @@ import {Button} from 'react-bootstrap'
 
 class Monsters extends Component {
 
+    constructor() {
+        super();
+        this.state ={
+            showModal: false,
+            finalMonsterChoices: []
+        }
+    }
+
 
     createMonsterForm = () => {
         let monsterFormNumber = this.props.campaign.monsterNum 
@@ -14,16 +22,24 @@ class Monsters extends Component {
         const monsterFormsArray = []
 
         for (var i = 0; i < monsterFormNumber; i++) {
-            monsterFormsArray.push(<MonsterSelect/>) 
+            monsterFormsArray.push(<MonsterSelect id={i} 
+                monsterDecider={this.saveMonster}
+                />) 
         }
 
         return monsterFormsArray
     }
 
-    handleClick = () => {
-        this.setState({
-            showModal: !this.state.showModal,
-        })
+    saveMonster = (newSelection) => {
+        let newMonsterArray = [...this.state.finalMonsterChoices]
+        newMonsterArray = newMonsterArray.concat(newSelection)
+
+        this.setState({ 
+            ...this.state,
+            finalMonsterChoices: newMonsterArray,
+        }, () => console.log(this.state.finalMonsterChoices))
+
+
 
     }
  
@@ -53,7 +69,7 @@ render() {
             
         </Modal.Dialog>
         <Modal.Footer>
-            <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
+            <Button variant="outline-success" onClick={this.props.onClose} >Save</Button>
         </Modal.Footer>
         </div>
     );

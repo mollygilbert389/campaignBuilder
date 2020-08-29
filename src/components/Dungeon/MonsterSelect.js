@@ -337,13 +337,16 @@ class MonsterSelect extends Component {
     }
 
     handleMonsterTypeSelect = (eventKey, event) => {
+        
         const newSelection = event.target.name
 
         this.setState({ 
             ...this.state,
-            finalMonsterType: event.target.name,
-            finalMonsterChoiceArray: update(this.state.finalMonsterChoiceArray, {$push: [{newSelection}]})
-        })
+            finalMonsterType: newSelection,
+        }, () => this.props.monsterDecider(this.state.finalMonsterType))
+
+        
+       
     }
 
 
