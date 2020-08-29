@@ -28,12 +28,7 @@ class Treasure extends Component {
                 this.setState({
                     treasues: event.target.value
                 }, () => this.props.setTreasure(this.state.treasues))
-
-                
-
             }
-
-
           };
 
         handleClick = () => {
