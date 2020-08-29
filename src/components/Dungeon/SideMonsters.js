@@ -37,10 +37,7 @@ class Monsters extends Component {
         this.setState({ 
             ...this.state,
             finalMonsterChoices: newMonsterArray,
-        }, () => console.log(this.state.finalMonsterChoices))
-
-
-
+        }, () => this.props.setMonsters(this.state.finalMonsterChoices))
     }
  
 

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Card} from 'react-bootstrap'
+import { SET_MONSTERS } from '../actions/constant'
 
 class StoryInfo extends Component {
 
@@ -45,11 +46,15 @@ render() {
                     </div>
                     )}
 
-                    {/* <div> */}
-                        {/* <div id="monsterOneTypeSpace"></div>
-                        <div id="monsterTwoTypeSpace"></div>
-                        <div id="monsterThreeTypeSpace"></div> */}
-                    {/* </div> */}
+                    {campaign.monsters.length > 0 && (<div>Monsters: 
+                        {campaign.monsters.map(oneMonster => {
+                             return (
+                                <div>{oneMonster}</div>
+                             )
+                        })}
+                        </div>
+                        )}
+
                     {campaign.treasure > 0 && (<div>{`Treasure: ${campaign.treasure}`}</div>)}
                     </Card.Text>
                 </Card.Body>

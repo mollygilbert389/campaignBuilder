@@ -21,7 +21,7 @@ import MonsterCard from "../components/Dungeon/MonsterCard";
 import CampaignCard from "../components/CampaignCard/CampaignCard"
 import {connect} from "react-redux"
 import {bindActionCreators} from "redux"
-import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQuestGiverName, setPlayers, setPillar, setActs, setClimate, setWorld, setMeetingPlace, setSideQuests, setRooms, setSetbacks, setMonsterNum, setDungeonType, setTreasure} from "../actions/index"
+import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQuestGiverName, setPlayers, setPillar, setActs, setClimate, setWorld, setMeetingPlace, setSideQuests, setRooms, setSetbacks, setMonsterNum, setDungeonType, setTreasure, setMonsters} from "../actions/index"
 
 
 
@@ -193,6 +193,11 @@ setTreasure = (type) => {
     onSetTreasure(type)
 }
 
+setMonsters = (type) => {
+    const{onSetMonsters}=this.props
+    onSetMonsters(type)
+}
+
     render() {
 
         return (
@@ -243,7 +248,7 @@ setTreasure = (type) => {
                     <div className="btnspace">
                         <Rooms setRooms={this.setRooms}></Rooms>
                         <Setback setSetBacks={this.setSetbacks}></Setback>
-                        <MonsterCard campaign={this.props.campaign} setMonsterNum={this.setMonsterNum}></MonsterCard>
+                        <MonsterCard campaign={this.props.campaign} setMonsterNum={this.setMonsterNum} setMonsters={this.setMonsters}></MonsterCard>
                         <Type setDungeonType={this.setDungeonType}></Type>
                     </div>
                     <div className="nextBtn">
@@ -305,6 +310,7 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetMonsterNum: bindActionCreators(setMonsterNum, dispatch),
     onSetDungeonType: bindActionCreators(setDungeonType, dispatch),
     onSetTreasure: bindActionCreators(setTreasure, dispatch),
+    onSetMonsters: bindActionCreators(setMonsters, dispatch),
 
 })
 

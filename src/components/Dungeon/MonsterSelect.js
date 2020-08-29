@@ -344,9 +344,6 @@ class MonsterSelect extends Component {
             ...this.state,
             finalMonsterType: newSelection,
         }, () => this.props.monsterDecider(this.state.finalMonsterType))
-
-        
-       
     }
 
 

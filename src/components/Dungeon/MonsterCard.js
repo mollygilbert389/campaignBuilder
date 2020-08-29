@@ -125,7 +125,7 @@ render() {
             </div>
 
             <div id="secondRoundMonsterQuestions" style={{display:"none"}}>
-                <SideMonsters campaign={campaign} onClose={this.handleClose}>
+                <SideMonsters campaign={campaign} onClose={this.handleClose} setMonsters={this.props.setMonsters}>
                 </SideMonsters>
             </div>
         </Modal>
