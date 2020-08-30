@@ -1,10 +1,10 @@
 import React, {Component} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import VillianModal from '../components/QuestGiverModals/VillianModal';
-import CampaignNameModal from '../components/CampaignNameModal';
+import VillianModal from '../components/StartingQuestInfo/VillianModal';
+import CampaignNameModal from '../components/StartingQuestInfo/CampaignNameModal';
 import '../components/home.css';
-import QuestGiverModal from "../components/QuestGiverModals/QuestGiverModal";
-import CustomBoth from "../components/QuestGiverModals/CustomBoth";
+import QuestGiverModal from "../components/StartingQuestInfo/QuestGiverModal";
+import CustomBoth from "../components/StartingQuestInfo/CustomBoth";
 import {Button, Card} from 'react-bootstrap'
 import './style.css'
 import StoryInfo from "../components/StoryInfo/StoryInfo";
@@ -21,7 +21,7 @@ import MonsterCard from "../components/Dungeon/MonsterCard";
 import CampaignCard from "../components/CampaignCard/CampaignCard"
 import {connect} from "react-redux"
 import {bindActionCreators} from "redux"
-import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQuestGiverName, setPlayers, setPillar, setActs, setClimate, setWorld, setMeetingPlace, setSideQuests, setRooms, setSetbacks, setMonsterNum, setDungeonType, setTreasure, setMonsters} from "../actions/index"
+import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQuestGiverName, setPlayers, setPillar, setActs, setClimate, setWorld, setMeetingPlace, setSideQuests, setRooms, setSetbacks, setMonsterNum, setDungeonType, setTreasureType, setMonsters, setTreasureNumber} from "../actions/index"
 
 
 
@@ -188,9 +188,14 @@ setDungeonType = (type) => {
     onSetDungeonType(type)
 }
 
-setTreasure = (type) => {
-    const{onSetTreasure}=this.props
-    onSetTreasure(type)
+setTreasureType = (type) => {
+    const{onSetTreasureType}=this.props
+    onSetTreasureType(type)
+}
+
+setTreasureNumber = (number) => {
+    const{onSetTreasureNumber}=this.props
+    onSetTreasureNumber(number)
 }
 
 setMonsters = (type) => {
@@ -259,7 +264,7 @@ setMonsters = (type) => {
                 <div id="fifthRoundQuestion" style={{display:"none"}}>
                     <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
                     <div className="btnspace">
-                        <Treasure setTreasure={this.setTreasure}></Treasure>
+                        <Treasure setTreasureType={this.setTreasureType} setTreasureNumber={this.setTreasureNumber} campaign={this.props.campaign}></Treasure>
                     </div>
                     <div className="nextBtn">
                         <Button variant="outline-primary" size="lg" onClick={this.handleFinalClick}>Next</Button>
@@ -306,7 +311,8 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetSetbacks: bindActionCreators(setSetbacks, dispatch),
     onSetMonsterNum: bindActionCreators(setMonsterNum, dispatch),
     onSetDungeonType: bindActionCreators(setDungeonType, dispatch),
-    onSetTreasure: bindActionCreators(setTreasure, dispatch),
+    onSetTreasureType: bindActionCreators(setTreasureType, dispatch),
+    onSetTreasureNumber: bindActionCreators(setTreasureNumber, dispatch),
     onSetMonsters: bindActionCreators(setMonsters, dispatch),
 
 })

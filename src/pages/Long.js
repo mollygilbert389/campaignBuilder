@@ -1,9 +1,9 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CampaignNameModal from "../components/CampaignNameModal"
-import VillianModal from "../components/QuestGiverBtns/VillianModal"
-import QuestGiverModal from "../components/QuestGiverBtns/QuestGiverModal"
-import CustomBoth from "../components/QuestGiverBtns/CustomBoth"
+import CampaignNameModal from "../components/StartingQuestInfo/CampaignNameModal"
+import VillianModal from "../components/StartingQuestInfo/VillianModal"
+import QuestGiverModal from "../components/StartingQuestInfo/QuestGiverModal"
+import CustomBoth from "../components/StartingQuestInfo/CustomBoth"
 import '../components/home.css';
 
 function Long() {

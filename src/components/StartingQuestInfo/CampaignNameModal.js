@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import {Button, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
-import "./home.css"
+import "../home.css"
 
 class CampaignNameModal extends Component {
 

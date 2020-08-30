@@ -17,6 +17,7 @@ class Treasure extends Component {
             tradeGoods: false,
             justXp: false,
             treasues: [], 
+            suggestedTreasure:0,
         }
     }
         handleChange = (event) => {
@@ -29,6 +30,8 @@ class Treasure extends Component {
             this.setState({
                 showModal: !this.state.showModal,
             })
+
+            this.suggestMeTreasure()
         }
 
         close = () => {
@@ -62,11 +65,34 @@ class Treasure extends Component {
 
             this.setState({
                 showModal: !this.state.showModal,
-                treasues: treasueHolder
-            }, () => {this.props.setTreasure(this.state.treasues)})
+                treasues: treasueHolder,
+            }, () => {this.props.setTreasureType(this.state.treasues)})
+
+            
+        }
+
+        suggestMeTreasure = () =>{
+            let rooms = this.props.campaign.rooms
+            rooms = rooms / 2
+            rooms = Math.round(rooms)
+            rooms = rooms -1 
+
+            this.setState({
+                suggestedTreasure: rooms
+            }, () => this.props.setTreasureNumber(this.state.suggestedTreasure))
+        }
+
+        handleSlider = (event, value) => {
+            console.log(value)
+            this.setState({
+                suggestedTreasure: value
+            }, () => {this.props.setTreasureNumber(this.state.suggestedTreasure)}
+            )
         }
 
 render() {  
+
+    const{campaign}=this.props
 
     const{equipment} = this.state
     const{magicItem} = this.state
@@ -89,14 +115,15 @@ render() {
 
             <Modal.Body>
                 <p>Below are some buttons to help create the tresure and experience earned for your game!</p>
-                <p>You have selected {'x'} rooms and a {'short'} campaign. Due to this reason we suggest you have {'x'} treasures excluding the quest price. Please check the boxes below of items you'd like to include and we'll generate them for you.</p>
+                <p>You have selected {campaign.rooms} rooms and a short campaign. Due to this reason we suggest you have {this.state.suggestedTreasure} treasures excluding the quest price. Please check the boxes below of items you'd like to include and we'll generate them for you.</p>
 
                 <br></br>
 
                 <Slider
                 min={1}
-                max={5}
-                defaultValue={3}
+                max={10}
+                defaultValue={this.state.suggestedTreasure}
+                onChangeCommitted={this.handleSlider}
                 valueLabelDisplay="on"
                 />
 

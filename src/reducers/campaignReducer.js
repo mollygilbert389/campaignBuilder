@@ -1,4 +1,4 @@
-import {SET_CAMPAIGN_NAME, SET_VILLIAN_NAME, SET_VILLIAN_TYPE, SET_QUESTGIVER_NAME, SET_QUESTGIVER_TYPE, SET_PLAYERDATA, SET_PILLAR, SET_ACTS, SET_CLIMATE, SET_WORLD, SET_MEETING_PLACE, SET_SIDE_QUESTS, SET_ROOMS, SET_SETBACKS, SET_MONSTER_NUM, SET_DUNGEON_TYPE, SET_TREASURE, SET_MONSTERS} from '../actions/constant'
+import {SET_CAMPAIGN_NAME, SET_VILLIAN_NAME, SET_VILLIAN_TYPE, SET_QUESTGIVER_NAME, SET_QUESTGIVER_TYPE, SET_PLAYERDATA, SET_PILLAR, SET_ACTS, SET_CLIMATE, SET_WORLD, SET_MEETING_PLACE, SET_SIDE_QUESTS, SET_ROOMS, SET_SETBACKS, SET_MONSTER_NUM, SET_DUNGEON_TYPE, SET_TREASURE_TYPE, SET_MONSTERS, SET_TREASURE_NUMBER} from '../actions/constant'
 
 const initialState = {
     campaignName: '',
@@ -19,6 +19,7 @@ const initialState = {
     dungeonType: '',
     treasure: [],
     monsters: [],
+    treasureNum: '',
  
 }
 
@@ -104,7 +105,7 @@ export default function(state = initialState, action) {
           ...state,
           dungeonType: action.payload  
         }
-        case SET_TREASURE: 
+        case SET_TREASURE_TYPE: 
         return {
           ...state,
           treasure: action.payload  
@@ -113,6 +114,11 @@ export default function(state = initialState, action) {
         return {
           ...state,
           monsters: action.payload  
+        }
+        case SET_TREASURE_NUMBER: 
+        return {
+          ...state,
+          treasureNum: action.payload  
         }
         default: 
             return state
