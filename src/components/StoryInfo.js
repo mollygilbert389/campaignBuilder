@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {Card} from 'react-bootstrap'
-import { SET_MONSTERS } from '../actions/constant'
 
 class StoryInfo extends Component {
 
@@ -42,7 +41,6 @@ render() {
                         <div>{`Dungeon Type: ${campaign.dungeonType}`}</div>
                         <div>{`Number of Rooms: ${campaign.rooms}`}</div>
                         <div>{`Setbacks: ${campaign.setbacks}`}</div>
-                        <div>{`Total Monsters: ${campaign.monsterNum}`}</div>
                     </div>
                     )}
 

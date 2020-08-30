@@ -1,8 +1,9 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar, Nav} from 'react-bootstrap'
+import {connect} from "react-redux"
 
-function Navtabs() {
+function Navtabs(props) {
     return (
         <Navbar bg="dark" variant="dark">
         <Navbar.Brand href="#home">{'D&D'} Campaign Maker</Navbar.Brand>
@@ -12,10 +13,16 @@ function Navtabs() {
 
         <Nav>
           <Nav.Link>
+              {props.campaign.campaignName}
             </Nav.Link>
         </Nav>
       </Navbar>
     )
 }
 
-export default Navtabs;
+const mapStateToProps = (state) => {
+  return {campaign: state.campaignReducer}
+}
+
+
+export default connect(mapStateToProps, null)(Navtabs);

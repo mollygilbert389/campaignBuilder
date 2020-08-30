@@ -10,20 +10,21 @@ class CampaignNameModal extends Component {
         this.state ={
             showModal: true,
             campaignName: "",
+            disabled: true,
         }
     }
 
       close = (event) =>  {
             this.setState({
                 showModal: false,
-                // campaignName: event.target.value
             })
             this.props.setCampaignName(this.state.campaignName)
       }
 
       handleChange = (event) => {
         this.setState({
-            campaignName: event.target.value
+            campaignName: event.target.value,
+            disabled: false
         })
       }
     
@@ -46,7 +47,11 @@ render() {
                     <OverlayTrigger overlay={
                     <Tooltip>Coming Soon!</Tooltip>}>
                     <span className="d-inline-block">
-                    <Button variant="outline-primary" style={{ pointerEvents: 'none' }} disabled>Generate</Button>
+                    <Button 
+                    variant="outline-primary" s
+                    tyle={{ pointerEvents: 'none' }} 
+                    disabled>
+                        Generate</Button>
                     </span>
                     </OverlayTrigger>
 
@@ -54,7 +59,13 @@ render() {
             </Modal.Body>
 
             <Modal.Footer>
-                <Button variant="outline-success" type="submit" value="Submit" onClick={this.close}>Save</Button>
+                <Button 
+                    variant={this.state.disabled ? "outline-success" : "success" }
+                    type="submit" 
+                    value="Submit" 
+                    onClick={this.close} 
+                    disabled={this.state.campaignName ? false : true}>
+                        Save</Button>
             </Modal.Footer>
         </Modal>
         </div>

@@ -246,10 +246,10 @@ setMonsters = (type) => {
                 <div id="fourthRoundQuestions" style={{display:"none"}}>
                     <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
                     <div className="btnspace">
+                        <Type setDungeonType={this.setDungeonType}></Type>
                         <Rooms setRooms={this.setRooms}></Rooms>
                         <Setback setSetBacks={this.setSetbacks}></Setback>
                         <MonsterCard campaign={this.props.campaign} setMonsterNum={this.setMonsterNum} setMonsters={this.setMonsters}></MonsterCard>
-                        <Type setDungeonType={this.setDungeonType}></Type>
                     </div>
                     <div className="nextBtn">
                         <Button variant="outline-primary" size="lg" onClick={this.handleFourthClick}>Next</Button>
