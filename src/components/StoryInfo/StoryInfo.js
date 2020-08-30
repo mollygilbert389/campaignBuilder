@@ -3,7 +3,6 @@ import {Card} from 'react-bootstrap'
 import "./style.css"
 
 class StoryInfo extends Component {
-
 render() {  
 
     const{campaign}=this.props
@@ -14,18 +13,19 @@ render() {
         <Card.Header>{(campaign.campaignName && <Card.Title>{`Campaign Name: ${campaign.campaignName}`}</Card.Title>)}</Card.Header>
         <Card.Body>
 
-          <div className="=questInfo grouping">
-          {campaign.questGiverName || campaign.villianName && (<Card.Title className="title">Quest Info:</Card.Title>)}
+          {campaign.questGiverName  && (<div className="=questInfo grouping">
+          {campaign.questGiverName && (<Card.Title className="title">Quest Info:</Card.Title>)}
           <div>
             {campaign.questGiverName && (<div>{`Quest Giver: ${campaign.questGiverName}`}</div>)}
             {campaign.questGiverType && (<div>{`Quest Giver Type: ${campaign.questGiverType}`}</div>)}
             {campaign.villianName && (<div> {`Villian Name: ${campaign.villianName}`}</div>)}
             {campaign.villianType && (<div>{`Villian Type: ${campaign.villianType}`}</div>)}
           </div>
-          </div>
+          </div>)}
 
           <br></br> 
-          <div className="playerInfo grouping">
+
+          {campaign.playerData.length > 0 && (<div className="playerInfo grouping">
           {campaign.playerData.length > 0 && (<Card.Title className="title">Player Info:</Card.Title>)}
           <div>
           {campaign.playerData && (
@@ -41,10 +41,10 @@ render() {
             })}
             </div>)}
           </div>
-          </div>
+          </div>)}
 
           <br></br> 
-          <div className="camapignInfo grouping">
+          {campaign.pillar && (<div className="grouping">
           {campaign.pillar && ( <Card.Title className="title">Campaign Info:</Card.Title>)}
           <div>
           {campaign.pillar && (<div>{`Pillar: ${campaign.pillar}`}</div>)}
@@ -61,12 +61,12 @@ render() {
               )}
           </div>
           </div>
-          </div>
+          </div>)}
 
           <br></br> 
           <div>
           
-          {campaign.rooms && (
+          {campaign.dungeonType && (
           <div className="dungeonInfo grouping"><Card.Title className="title">Dungeon Info:</Card.Title>
               <div>{`Dungeon Type: ${campaign.dungeonType}`}</div>
               <div>{`Number of Rooms: ${campaign.rooms}`}</div>

@@ -1,10 +1,10 @@
 import React, {Component} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import VillianModal from '../components/QuestGiverBtns/VillianModal';
+import VillianModal from '../components/QuestGiverModals/VillianModal';
 import CampaignNameModal from '../components/CampaignNameModal';
 import '../components/home.css';
-import QuestGiverModal from "../components/QuestGiverBtns/QuestGiverModal";
-import CustomBoth from "../components/QuestGiverBtns/CustomBoth";
+import QuestGiverModal from "../components/QuestGiverModals/QuestGiverModal";
+import CustomBoth from "../components/QuestGiverModals/CustomBoth";
 import {Button, Card} from 'react-bootstrap'
 import './style.css'
 import StoryInfo from "../components/StoryInfo/StoryInfo";
@@ -209,9 +209,9 @@ setMonsters = (type) => {
                 <div id="firstRoundQuestions">
                     <p>Let's talk characters. Let's think about the goal of this entire campaign. Do you want to start with your villian or your quest giver? Sometimes the quest giver and the villian are the same.</p>
                     <div className="btnspace">
-                        <CampaignNameModal setCampaignName={this.setCampaignName}></CampaignNameModal>
-                        <VillianModal setVillian={this.setVillianNameAndType}></VillianModal>
                         <QuestGiverModal setQuestGiver={this.setQuestGiverNameAndType}></QuestGiverModal>
+                        <VillianModal setVillian={this.setVillianNameAndType}></VillianModal>
+                        <CampaignNameModal setCampaignName={this.setCampaignName}></CampaignNameModal>
                         {/* <CustomBoth></CustomBoth> */}
                     </div>
 
