@@ -55,7 +55,14 @@ render() {
                         </div>
                         )}
 
-                    {campaign.treasure > 0 && (<div>{`Treasure: ${campaign.treasure}`}</div>)}
+                    {campaign.treasure.length > 0 && (<div>Treasure: 
+                        {campaign.treasure.map(oneTreasure => {
+                        return (
+                                <div>{oneTreasure}</div>
+                            )
+                        })}
+                        </div>
+                    )}
                     </Card.Text>
                 </Card.Body>
         </div>

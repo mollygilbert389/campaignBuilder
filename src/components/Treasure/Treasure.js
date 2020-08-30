@@ -23,13 +23,7 @@ class Treasure extends Component {
             this.setState({
                 [event.target.name]: event.target.checked 
             });
-
-            if (event.target.checked) {
-                this.setState({
-                    treasues: event.target.value
-                }, () => this.props.setTreasure(this.state.treasues))
-            }
-          };
+        }
 
         handleClick = () => {
             this.setState({
@@ -38,9 +32,38 @@ class Treasure extends Component {
         }
 
         close = () => {
+
+            let treasueHolder = []
+            const equipment = this.state.equipment
+            const magicItem = this.state.magicItem
+            const gems = this.state.gems
+            const money = this.state.money
+            const tradeGoods = this.state.tradeGoods
+            const justXp = this.state.justXp
+
+            if (equipment) {
+                treasueHolder = treasueHolder.concat("Equipment")
+            }
+            if (magicItem) {
+                treasueHolder = treasueHolder.concat("Magic Items")
+            }
+            if (gems) {
+                treasueHolder = treasueHolder.concat("Gems, Jewelry, Art")
+            }
+            if (money) {
+                treasueHolder = treasueHolder.concat("Money")
+            }
+            if (tradeGoods) {
+                treasueHolder = treasueHolder.concat("Trade Goods")
+            }
+            if (justXp) {
+                treasueHolder = treasueHolder.concat("XP Points")
+            }
+
             this.setState({
                 showModal: !this.state.showModal,
-            })
+                treasues: treasueHolder
+            }, () => {this.props.setTreasure(this.state.treasues)})
         }
 
 render() {  
