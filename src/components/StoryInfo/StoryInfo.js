@@ -89,7 +89,7 @@ render() {
         {campaign.treasure.length > 0 && (<div className="treasureInfo grouping"><Card.Title className="title">Treasure: {campaign.treasureNum}</Card.Title>
               {campaign.treasure.map(oneTreasure => {
               return (
-                      <div>{oneTreasure}</div>
+                      <div> {` -${oneTreasure}`}</div>
                   )
               })}
               </div>
