@@ -1,38 +1,35 @@
 import React, {Component} from 'react'
-import {Button} from 'react-bootstrap'
 import "./campaignCardStyle.css"
 
 
 class CampaignCard extends Component {
 
-    constructor(props) {
-        super(props);
-
-    }
-
 render() {  
 
+    const{campaign}=this.props
+    
     return (
         <div className="campaignCardWhole">
             <div className="main">
                 <div className="logoSpace">
-                    Logo: Mollywood
+                    {campaign.campaignName}
                 </div>
                 <div className="campaignTitle">
-                    Title: What the heck just happened, something feels fishy
+                    Title: {`Dynamically Created Title basde off random array`}
                 </div>
                 <div className="shortCampaignDescription">
                     Description: I'm going to lap some water out of my master's cup meow sit on human they not getting up ever so kitten is playing with dead mouse taco cat backwards spells taco cat get video posted to internet for chasing red dot.
                 </div>
                 <div className="dateCreated">
-                    Date Created: UserName: 
+                    Date Created: UserName: {`added once login is added`}
                 </div>
             </div>
 
-            <div className="infoSection">Here are some key facts about this Campaign:</div>
+{/* statc section this section can be added in now and will not change. I would also add this as a tab at the end*/}
+            <div className="infoSection">Here are some key facts about this D&D Gameplay:</div>
             <div className="keyfacts">
                 <div className="intro">
-                    <div className="subTitle">Overview</div>
+                    <div className="subTitle">Overview:</div>
                     <p>Eat from dog's food cats are a queer kind of folk so at four in the morning wake up owner meeeeeeooww scratch at legs and beg for food then cry and yowl until they wake up at two pm jump on window</p>
                 </div>
                 <div className="aboutCharacters">
@@ -40,7 +37,7 @@ render() {
                     <p>Throw down all the stuff in the kitchen run up and down stairs or push your water glass on the floor demand to have some of whatever the human is cooking, then sniff the offering and walk away scratch the furniture.</p>
                 </div>
                 <div className="adjustingAdventure"> 
-                    <div className="subTitle">Need adjusting? </div>
+                    <div className="subTitle">Need adjusting?</div>
                     <p>Sleep in the bathroom sink kitty loves pigs the fat cat sat on the mat bat away with paws. Sleep nap rub face on everything. Sleep nap where is my slave? I'm getting hungry for 𝕄𝔼𝕆𝕎 so run up and down stairs and lick face hiss at owner</p>
                 </div>
                 <div className="goodTipsTrade"> 
@@ -53,6 +50,7 @@ render() {
                 </div>
             </div>
 
+{/* this is the important part thtis will dynamically be created based off what the user has said*/}
             <div className="infoSection">Your Adventure:</div>
             <div className="aboutThisAdventure">
                 <div className="background">
@@ -69,6 +67,7 @@ render() {
                 </div>
             </div>
 
+{/* Acts will dynamically be created as well */}
             <div className="infoSection">Act 1</div>
             <div className="act1">
                 <div>
@@ -161,6 +160,7 @@ render() {
                 </div>
             </div>
 
+{/* this will always be in your game so it could be acts -1 and the finale */}
             <div className="infoSection">Finale</div>
             <div className="act1">
                 <div>

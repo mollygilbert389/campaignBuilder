@@ -19,6 +19,7 @@ import Setback from "../components/Dungeon/Setback"
 import Type from "../components/Dungeon/Type"
 import MonsterCard from "../components/Dungeon/MonsterCard";
 import CampaignCard from "../components/CampaignCard/CampaignCard"
+import GenerateButton from "../components/GenereateBtn/GenereateBtn"
 import {connect} from "react-redux"
 import {bindActionCreators} from "redux"
 import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQuestGiverName, setPlayers, setPillar, setActs, setClimate, setWorld, setMeetingPlace, setSideQuests, setRooms, setSetbacks, setMonsterNum, setDungeonType, setTreasureType, setMonsters, setTreasureNumber} from "../actions/index"
@@ -274,7 +275,8 @@ setMonsters = (type) => {
                 <div id="campaginCard" style={{display:"none"}}>
                     <p>Check out your super cool campaign below. Feel free to make edits.</p>
                     <div className="btnspace">
-                        <CampaignCard></CampaignCard>
+                        <GenerateButton campaign={this.props.campaign}></GenerateButton>
+                        {/* <CampaignCard campaign={this.props.campaign}></CampaignCard> */}
                     </div>
                 </div>
 

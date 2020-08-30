@@ -5,7 +5,7 @@ import Short from "./pages/Short"
 import Long from "./pages/Long"
 import Medium from "./pages/Medium"
 import Custom from "./pages/Custom"
-import Navtabs from "./components/Navtabs"
+import Navtabs from "./components/Navtabs/Navtabs"
 import './App.css';
 
 import {Provider} from "react-redux"
