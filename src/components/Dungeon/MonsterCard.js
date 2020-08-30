@@ -7,7 +7,6 @@ import SideMonsters from './SideMonsters'
 
 
 class MonsterCard extends Component {
-
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
@@ -18,12 +17,13 @@ class MonsterCard extends Component {
             maxMonsterNum:0, 
             finalMonsterNum:0,
             finalMonsterChoices: [],
+            firstQues: true,
+            secondQues: false
         }
     }
 
     suggestMeMonsters() {
         let roomState = this.props.campaign.rooms
-
         roomState = parseInt(roomState)
         let suggestedMonsterNum = 0
         let maxMonsterNum = 0
@@ -50,23 +50,14 @@ class MonsterCard extends Component {
         this.setState({
             showModal: !this.state.showModal,
         })
-
         this.suggestMeMonsters()
     }
 
-    handleFirstClick = () => {
-        let firstQues = document.getElementById("firstRoundMonsterQuestions")
-        let secondQues = document.getElementById("secondRoundMonsterQuestions")
-    
-        const show = function (div) {
-            div.style.display = 'block'
-        }
-        const hide = function (div) {
-            div.style.display = 'none'
-        }
-    
-        hide(firstQues)
-        show(secondQues)
+    handleNext = () => {
+        this.setState({
+            firstQues: false,
+            secondQues: true,
+        })
     }
 
     handleSlider = (event, value) => {
@@ -79,7 +70,6 @@ class MonsterCard extends Component {
         this.setState({
             showModal: !this.state.showModal,
         })
-
     }
 
 render() {  
@@ -94,8 +84,9 @@ render() {
             </div>
 
         <Modal show={this.state.showModal}>
-        <div id="firstRoundMonsterQuestions">
-        <Modal.Dialog id="villianbtn">
+        
+        {this.state.firstQues && (<div>
+        <Modal.Dialog>
             <Modal.Header>
                 <Modal.Title>Monster Time!</Modal.Title>
             </Modal.Header>
@@ -106,7 +97,7 @@ render() {
                 <br></br>
                 <br></br>
 
-                <div id="monsterNum">
+                <div>
                 <Slider
                 min={4}
                 max={20}
@@ -117,17 +108,18 @@ render() {
                 </div>
 
                 <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.handleFirstClick}> Next</Button>
+                    <Button variant="outline-success" onClick={this.handleNext}> Next</Button>
                 </Modal.Footer>
                 
             </Modal.Body>
             </Modal.Dialog>
-            </div>
+            </div>)}
 
-            <div id="secondRoundMonsterQuestions" style={{display:"none"}}>
+            {this.state.secondQues && (<div>
                 <SideMonsters campaign={campaign} onClose={this.handleClose} setMonsters={this.props.setMonsters}>
                 </SideMonsters>
-            </div>
+            </div>)}
+
         </Modal>
         </div>
     );

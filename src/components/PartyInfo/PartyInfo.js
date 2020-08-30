@@ -5,13 +5,9 @@ import update from 'immutability-helper';
 import "./style.css"
 
 class PartyInfo extends Component {
-
-    constructor() {
-        super();
-        this.state ={
-            partyMembers: 0,
-            partymemberData: {}
-        }
+    state = {
+        partyMembers: 0,
+        partymemberData: {}
     }
 
     handleClick = (e) => {
@@ -20,99 +16,95 @@ class PartyInfo extends Component {
         this.setState({
             ...this.state,
             partyMembers: partyMemberChoice
-        })
+    })
         
-        let playerData = {}
+    let playerData = {}
 
-        switch(partyMemberChoice) {
-            case 3: 
-            playerData = [
-                {id: 1, name: "", raceClass: ""},
-                {id: 2, name: "", raceClass: ""},
-                {id: 3, name: "", raceClass: ""},
-            ]
-                this.setState({
-                    partymemberData: playerData
-                })
-            break;
-            case 4: 
-            playerData = [
-                {id: 1, name: "", raceClass: ""},
-                {id: 2, name: "", raceClass: ""},
-                {id: 3, name: "", raceClass: ""},
-                {id: 4, name: "", raceClass: ""},
-            ]
-                this.setState({
-                    partymemberData: playerData
-                })
-            break;
-            case 5: 
-            playerData = [
-                {id: 1, name: "", raceClass: "" },
-                {id: 2, name: "", raceClass: ""},
-                {id: 3, name: "", raceClass: ""},
-                {id: 4, name: "", raceClass: ""},
-                {id: 5, name: "", raceClass: ""},
-            ]
-                this.setState({
-                    partymemberData: playerData
-                })
-            break;
-            case 6: 
-            playerData = [
-                {id: 1, name: "", raceClass: ""},
-                {id: 2, name: "", raceClass: ""},
-                {id: 3, name: "", raceClass: ""},
-                {id: 4, name: "", raceClass: ""},
-                {id: 5, name: "", raceClass: ""},
-                {id: 6, name: "", raceClass: ""},
-            ]
-                this.setState({
-                    partymemberData: playerData
-                })
-            break;
-            case 7: 
-            playerData = [
-                {id: 1, name: "", raceClass: ""},
-                {id: 2, name: "", raceClass: ""},
-                {id: 3, name: "", raceClass: ""},
-                {id: 4, name: "", raceClass: ""},
-                {id: 5, name: "", raceClass: ""},
-                {id: 6, name: "", raceClass: ""},
-                {id: 7, name: "", raceClass: ""},
-            ]
-                this.setState({
-                    partymemberData: playerData
-                })
-            break;
-            case 8: 
-            playerData = [
-                {id: 1, name: "", raceClass: ""},
-                {id: 2, name: "", raceClass: ""},
-                {id: 3, name: "", raceClass: ""},
-                {id: 4, name: "", raceClass: ""},
-                {id: 5, name: "", raceClass: ""},
-                {id: 6, name: "", raceClass: ""},
-                {id: 7, name: "", raceClass: ""},
-                {id: 8, name: "", raceClass: ""},
-            ]
-                this.setState({
-                    partymemberData: playerData
-                })
-            break;
-            default: 
-            return;
-        } 
+    switch(partyMemberChoice) {
+        case 3: 
+        playerData = [
+            {id: 1, name: "", raceClass: ""},
+            {id: 2, name: "", raceClass: ""},
+            {id: 3, name: "", raceClass: ""},
+        ]
+            this.setState({
+                partymemberData: playerData
+            })
+        break;
+        case 4: 
+        playerData = [
+            {id: 1, name: "", raceClass: ""},
+            {id: 2, name: "", raceClass: ""},
+            {id: 3, name: "", raceClass: ""},
+            {id: 4, name: "", raceClass: ""},
+        ]
+            this.setState({
+                partymemberData: playerData
+            })
+        break;
+        case 5: 
+        playerData = [
+            {id: 1, name: "", raceClass: "" },
+            {id: 2, name: "", raceClass: ""},
+            {id: 3, name: "", raceClass: ""},
+            {id: 4, name: "", raceClass: ""},
+            {id: 5, name: "", raceClass: ""},
+        ]
+            this.setState({
+                partymemberData: playerData
+            })
+        break;
+        case 6: 
+        playerData = [
+            {id: 1, name: "", raceClass: ""},
+            {id: 2, name: "", raceClass: ""},
+            {id: 3, name: "", raceClass: ""},
+            {id: 4, name: "", raceClass: ""},
+            {id: 5, name: "", raceClass: ""},
+            {id: 6, name: "", raceClass: ""},
+        ]
+            this.setState({
+                partymemberData: playerData
+            })
+        break;
+        case 7: 
+        playerData = [
+            {id: 1, name: "", raceClass: ""},
+            {id: 2, name: "", raceClass: ""},
+            {id: 3, name: "", raceClass: ""},
+            {id: 4, name: "", raceClass: ""},
+            {id: 5, name: "", raceClass: ""},
+            {id: 6, name: "", raceClass: ""},
+            {id: 7, name: "", raceClass: ""},
+        ]
+            this.setState({
+                partymemberData: playerData
+            })
+        break;
+        case 8: 
+        playerData = [
+            {id: 1, name: "", raceClass: ""},
+            {id: 2, name: "", raceClass: ""},
+            {id: 3, name: "", raceClass: ""},
+            {id: 4, name: "", raceClass: ""},
+            {id: 5, name: "", raceClass: ""},
+            {id: 6, name: "", raceClass: ""},
+            {id: 7, name: "", raceClass: ""},
+            {id: 8, name: "", raceClass: ""},
+        ]
+            this.setState({
+                partymemberData: playerData
+            })
+        break;
+        default: 
+        return;
+    } 
     }
 
     handlePartySelect = (eventKey, event)=> {
         const index = event.target.id -1
         const newRaceClass = event.target.name
         const oldData = this.state.partymemberData
-
-        console.log(index)
-        console.log(newRaceClass)
-        console.log(oldData)
 
         const newPartyMemberData = update(oldData, 
             {[index]: {$set: {id: index+1, name: this.state.partymemberData[index].name, raceClass: newRaceClass}}},
@@ -121,7 +113,6 @@ class PartyInfo extends Component {
           this.setState({
             partymemberData: newPartyMemberData
         });
-
     }
 
     playerNameChange = (event) => {
@@ -192,15 +183,13 @@ render() {
                                 </FormGroup>
                             </Form>
                         </div>
-                        }
-
-                        )}
+                        })}
                     </div>
+                    
                     <div className="saveBtn">
                         <Button variant="outline-success" onClick={this.handleReduxSave}>Save</Button>
                     </div>
                 </div>
-
             )}
         </div>
     );

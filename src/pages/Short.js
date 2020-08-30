@@ -4,8 +4,8 @@ import VillianModal from '../components/StartingQuestInfo/VillianModal';
 import CampaignNameModal from '../components/StartingQuestInfo/CampaignNameModal';
 import '../components/home.css';
 import QuestGiverModal from "../components/StartingQuestInfo/QuestGiverModal";
-import CustomBoth from "../components/StartingQuestInfo/CustomBoth";
-import {Button, Card} from 'react-bootstrap'
+// import CustomBoth from "../components/StartingQuestInfo/CustomBoth";
+import {Button} from 'react-bootstrap'
 import './style.css'
 import StoryInfo from "../components/StoryInfo/StoryInfo";
 import Theme from "../components/GroundsTheme/Theme"
@@ -18,7 +18,6 @@ import Rooms from "../components/Dungeon/Rooms"
 import Setback from "../components/Dungeon/Setback"
 import Type from "../components/Dungeon/Type"
 import MonsterCard from "../components/Dungeon/MonsterCard";
-import CampaignCard from "../components/CampaignCard/CampaignCard"
 import GenerateButton from "../components/GenereateBtn/GenereateBtn"
 import {connect} from "react-redux"
 import {bindActionCreators} from "redux"

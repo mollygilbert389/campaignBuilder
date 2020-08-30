@@ -4,64 +4,59 @@ import {Button} from 'react-bootstrap'
 import "./style.css"
 
 class Pillar extends Component {
-
-    constructor() {
-        super();
-        this.state ={
-            showModal: false,
-            pillar: ""
-        }
+    state ={
+        showModal: false,
+        pillar: ""
     }
 
-
     handlePillarBtn = (selection) =>  {
-          this.setState({
-            pillar: selection,          
-            showModal: false,   
-            }, () => {
-                this.props.setPillar(this.state.pillar)
-            })
+        this.setState({
+        pillar: selection,          
+        showModal: false,   
+        }, () => {
+            this.props.setPillar(this.state.pillar)
+        })
       }
 
-        handleClick = () => {
-            this.setState({
-                showModal: !this.state.showModal,
-            })
-        }
+    handleClick = () => {
+        this.setState({
+            showModal: !this.state.showModal,
+        })
+    }
 
 render() {  
     return (
         <div>
-        <div className="btns">
-        <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Pillar
-        </Button>
+            <div className="btns">
+                <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Pillar
+                </Button>
             </div>
-        <Modal show={this.state.showModal}>
-        <Modal.Dialog id="villianbtn">
-            <Modal.Header>
-                <Modal.Title>Adventure Type!</Modal.Title>
-            </Modal.Header>
 
-            <Modal.Body>
-                <p>Here you will choose your adventure type. We reccomend a Combat pillar for a short campaign, but you can have any type of campaign you choose!</p>
+            <Modal show={this.state.showModal}>
+                <Modal.Dialog id="villianbtn">
+                    <Modal.Header>
+                        <Modal.Title>Adventure Type!</Modal.Title>
+                    </Modal.Header>
 
-                <div>
-                    <Button onClick={() => this.handlePillarBtn("Combat")} variant="outline-success" name="Combat" size="lg" block>
-                    Combat
-                    </Button>
-                    <Button onClick={() => this.handlePillarBtn("Interaction")} variant="outline-warning" name="Interaction" size="lg" block>
-                    Interaction
-                    </Button>
-                    <Button onClick={() => this.handlePillarBtn("Exploration")} variant="outline-danger" name="Exploration" size="lg" block>
-                    Exploration
-                    </Button>
-                </div>
+                    <Modal.Body>
+                        <p>Here you will choose your adventure type. We reccomend a Combat pillar for a short campaign, but you can have any type of campaign you choose!</p>
+                        <div>
+                            <Button onClick={() => this.handlePillarBtn("Combat")} variant="outline-success" name="Combat" size="lg" block>
+                            Combat
+                            </Button>
+                            <Button onClick={() => this.handlePillarBtn("Interaction")} variant="outline-warning" name="Interaction" size="lg" block>
+                            Interaction
+                            </Button>
+                            <Button onClick={() => this.handlePillarBtn("Exploration")} variant="outline-danger" name="Exploration" size="lg" block>
+                            Exploration
+                            </Button>
+                        </div>
 
-            </Modal.Body>
-            <Modal.Footer>
-            </Modal.Footer>
-        </Modal.Dialog>
-        </Modal>
+                    </Modal.Body>
+                    <Modal.Footer>
+                    </Modal.Footer>
+                </Modal.Dialog>
+            </Modal>
         </div>
     );
 }
