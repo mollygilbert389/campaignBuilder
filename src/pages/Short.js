@@ -27,94 +27,51 @@ import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQ
 
 
 class Short extends Component {
-
-    constructor() {
-        super();
-        this.state ={
-            showDiv: false,
-        }
+    state ={
+        showDiv: false,
+        firstRoundBtns: true,
+        secondRoundBtns: false,
+        thirdRoundBtns: false,
+        fourthRoundBtns: false,
+        fifthRoundBtns: false,
+        finalRoundBtn: false,
+    }
+    
+handleNextBtn = () => {    
+    if(this.state.firstRoundBtns) {
+        this.setState({
+            firstRoundBtns: false,
+            secondRoundBtns: true,
+        })
     } 
-
-handleFirstClick = () => {
-    let firstQues = document.getElementById("firstRoundQuestions")
-    let secondQues = document.getElementById("secondRoundQuestions")
-
-    const show = function (div) {
-        div.style.display = 'block'
-    }
-    const hide = function (div) {
-        div.style.display = 'none'
-    }
-
-    hide(firstQues)
-    show(secondQues)
+    if(this.state.secondRoundBtns) {
+        this.setState({
+            secondRoundBtns: false,
+            thirdRoundBtns: true,
+        })
+    } 
+    if(this.state.thirdRoundBtns) {
+        this.setState({
+            thirdRoundBtns: false,
+            fourthRoundBtns: true,
+        })
+    } 
+    if(this.state.fourthRoundBtns) {
+        this.setState({
+            fourthRoundBtns: false,
+            fifthRoundBtns: true,
+        })
+    } 
+    if(this.state.fifthRoundBtns) {
+        this.setState({
+            fifthRoundBtns: false,
+            finalRoundBtn: true,
+        })
+    } 
 }
 
+handlePrevBtn = () => {
 
-handleSecondClick = () => {
-    let firstQues = document.getElementById("secondRoundQuestions")
-    let secondQues = document.getElementById("thirdRoundQuestions")
-
-    const show = function (div) {
-        div.style.display = 'block'
-    }
-    const hide = function (div) {
-        div.style.display = 'none'
-
-    }
-
-    hide(firstQues)
-    show(secondQues)
-}
-
-handleThirdClick = () => {
-    let firstQues = document.getElementById("thirdRoundQuestions")
-    let secondQues = document.getElementById("fourthRoundQuestions")
-
-    const show = function (div) {
-        div.style.display = 'block'
-    }
-    const hide = function (div) {
-        div.style.display = 'none'
-
-    }
-
-    hide(firstQues)
-    show(secondQues)
-}
-
-handleFourthClick = () => {
-    let firstQues = document.getElementById("fourthRoundQuestions")
-    let secondQues = document.getElementById("fifthRoundQuestion")
-
-    const show = function (div) {
-        div.style.display = 'block'
-    }
-    const hide = function (div) {
-        div.style.display = 'none'
-
-    }
-
-    hide(firstQues)
-    show(secondQues)
-}
-
-handleFinalClick = () => {
-    let firstQues = document.getElementById("fifthRoundQuestion")
-    let secondQues = document.getElementById("campaginCard")
-    let storyCard = document.getElementById("storyCard")
-
-    const show = function (div) {
-        div.style.display = 'block'
-    }
-    const hide = function (div) {
-        div.style.display = 'none'
-
-    }
-
-    hide(firstQues)
-    hide(storyCard)
-    show(secondQues)
 }
 
 setCampaignName = (name) => {
@@ -212,7 +169,8 @@ setMonsters = (type) => {
                 <h1> Welcome to the Short Campaign Builder</h1>
                 <p>A short campaign is comprised of one dungeon in which our adventures find themselves in almost immediately.</p>
 
-                <div id="firstRoundQuestions">
+                {this.state.firstRoundBtns && (
+                <div>
                     <p>Let's talk characters. Let's think about the goal of this entire campaign. Do you want to start with your villian or your quest giver? Sometimes the quest giver and the villian are the same.</p>
                     <div className="btnspace">
                         <QuestGiverModal setQuestGiver={this.setQuestGiverNameAndType}></QuestGiverModal>
@@ -220,23 +178,18 @@ setMonsters = (type) => {
                         <CampaignNameModal setCampaignName={this.setCampaignName}></CampaignNameModal>
                         {/* <CustomBoth></CustomBoth> */}
                     </div>
+                </div>)}
 
-                    <div className="nextBtn">
-                        <Button variant="outline-primary" size="lg" onClick={this.handleFirstClick}>Next</Button>
-                    </div>
-                </div>
-
-                <div id="secondRoundQuestions" style={{display:"none"}}>
+                {this.state.secondRoundBtns && (
+                <div>
                     <p>Now let's talk about your party. Anwser the questions below to help define the type of characters for this campaign. You may also skip this step as your party may want to decide for themselves the characters they want.</p>
                     <div className="btnspace">
                         <PartyInfo setPlayers={this.setPlayers}></PartyInfo>
                     </div>
-                    <div className="nextBtn">
-                        <Button variant="outline-primary" size="lg" onClick={this.handleSecondClick}>Next</Button>
-                    </div>
-                </div>
+                </div>)}
 
-                <div id="thirdRoundQuestions" style={{display:"none"}}>
+                {this.state.thirdRoundBtns && (
+                <div>
                     <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
                     <div className="btnspace">
                         <Pillar setPillar={this.setPillar}></Pillar>
@@ -244,12 +197,10 @@ setMonsters = (type) => {
                         <Acts setActs={this.setActs}></Acts>
                         <SideQuests setSideQuests={this.setSideQuests}></SideQuests>
                     </div>
-                    <div className="nextBtn">
-                        <Button variant="outline-primary" size="lg" onClick={this.handleThirdClick}>Next</Button>
-                    </div>
-                </div>
+                </div>)}
 
-                <div id="fourthRoundQuestions" style={{display:"none"}}>
+                {this.state.fourthRoundBtns && (
+                <div>
                     <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
                     <div className="btnspace">
                         <Type setDungeonType={this.setDungeonType}></Type>
@@ -257,37 +208,37 @@ setMonsters = (type) => {
                         <Setback setSetBacks={this.setSetbacks}></Setback>
                         <MonsterCard campaign={this.props.campaign} setMonsterNum={this.setMonsterNum} setMonsters={this.setMonsters}></MonsterCard>
                     </div>
-                    <div className="nextBtn">
-                        <Button variant="outline-primary" size="lg" onClick={this.handleFourthClick}>Next</Button>
-                    </div>
-                </div>
+                </div>)}
 
-                <div id="fifthRoundQuestion" style={{display:"none"}}>
+                {this.state.fifthRoundBtns && (
+                <div>
                     <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
                     <div className="btnspace">
                         <Treasure setTreasureType={this.setTreasureType} setTreasureNumber={this.setTreasureNumber} campaign={this.props.campaign}></Treasure>
                     </div>
-                    <div className="nextBtn">
-                        <Button variant="outline-primary" size="lg" onClick={this.handleFinalClick}>Next</Button>
-                    </div>
-                </div>
+                </div>)}
 
-                <div id="campaginCard" style={{display:"none"}}>
+                {this.state.finalRoundBtn && (
+                <div>
                     <p>Check out your super cool campaign below. Feel free to make edits.</p>
                     <div className="btnspace">
                         <GenerateButton campaign={this.props.campaign}></GenerateButton>
-                        {/* <CampaignCard campaign={this.props.campaign}></CampaignCard> */}
                     </div>
-                </div>
-
-                </div>
-
-            <div className="storyCards" id="storyCard">
-                <StoryInfo campaign={this.props.campaign}></StoryInfo>
+                </div>)}
             </div>
 
+            {!this.state.finalRoundBtn && (
+            <div className="nextBtn">
+                <Button variant="outline-primary" size="lg" onClick={this.handleNextBtn}>Next</Button>
             </div>
+            )}
 
+            {/* //////////////////////////////////// */}
+                <div className="storyCards">
+                    <StoryInfo campaign={this.props.campaign}></StoryInfo>
+                </div>
+
+            </div>
     );
   }
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import {Button, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import StoryInfo from "../StoryInfo/StoryInfo"
 import CampaignCard from '../CampaignCard/CampaignCard'
+import './style.css'
 
 
 function GeneratBtn(props) {
@@ -9,6 +10,7 @@ function GeneratBtn(props) {
     return (
         <div>
 
+        <div className="centerItem">
         <OverlayTrigger overlay={
             <Tooltip>Coming Soon!</Tooltip>}>
             <span className="d-inline-block">
@@ -16,8 +18,7 @@ function GeneratBtn(props) {
             </Button>
             </span>
             </OverlayTrigger>
-        
-          <StoryInfo campaign={props.campaign}></StoryInfo>
+        </div>
 
       {/* <CampaignCard></CampaignCard> */}
 

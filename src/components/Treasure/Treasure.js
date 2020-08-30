@@ -17,7 +17,8 @@ class Treasure extends Component {
             tradeGoods: false,
             justXp: false,
             treasues: [], 
-            suggestedTreasure:0,
+            treasureNumber: 0,
+            suggestedTreasure: 0,
         }
     }
         handleChange = (event) => {
@@ -78,15 +79,16 @@ class Treasure extends Component {
             rooms = rooms -1 
 
             this.setState({
-                suggestedTreasure: rooms
-            }, () => this.props.setTreasureNumber(this.state.suggestedTreasure))
+                suggestedTreasure: rooms,
+                treasureNumber: rooms
+            }, () => this.props.setTreasureNumber(this.state.treasureNumber))
         }
 
         handleSlider = (event, value) => {
             console.log(value)
             this.setState({
-                suggestedTreasure: value
-            }, () => {this.props.setTreasureNumber(this.state.suggestedTreasure)}
+                treasureNumber: value
+            }, () => {this.props.setTreasureNumber(this.state.treasureNumber)}
             )
         }
 
