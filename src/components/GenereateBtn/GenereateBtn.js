@@ -1,10 +1,11 @@
 import React from 'react'
 import {Button, OverlayTrigger, Tooltip} from 'react-bootstrap'
+import StoryInfo from "../StoryInfo/StoryInfo"
 import CampaignCard from '../CampaignCard/CampaignCard'
 
 
-
-function GeneratBtn() {
+function GeneratBtn(props) {
+  
     return (
         <div>
 
@@ -15,6 +16,8 @@ function GeneratBtn() {
             </Button>
             </span>
             </OverlayTrigger>
+        
+          <StoryInfo campaign={props.campaign}></StoryInfo>
 
       {/* <CampaignCard></CampaignCard> */}
 
