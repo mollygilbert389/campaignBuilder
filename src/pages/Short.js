@@ -7,7 +7,7 @@ import QuestGiverModal from "../components/QuestGiverBtns/QuestGiverModal";
 import CustomBoth from "../components/QuestGiverBtns/CustomBoth";
 import {Button, Card} from 'react-bootstrap'
 import './style.css'
-import StoryInfo from "../components/StoryInfo";
+import StoryInfo from "../components/StoryInfo/StoryInfo";
 import Theme from "../components/GroundsTheme/Theme"
 import Acts from "../components/GroundsTheme/Acts"
 import SideQuests from "../components/GroundsTheme/SideQuests"
@@ -276,10 +276,7 @@ setMonsters = (type) => {
                 </div>
 
             <div className="storyCards" id="storyCard">
-            <Card bg="light" style={{ width: '18rem' }}>
-                <Card.Header>Short Campaign</Card.Header>
-                    <StoryInfo campaign={this.props.campaign}></StoryInfo>
-            </Card>
+                <StoryInfo campaign={this.props.campaign}></StoryInfo>
             </div>
 
             </div>
