@@ -71,7 +71,36 @@ handleNextBtn = () => {
 }
 
 handlePrevBtn = () => {
-
+    if(this.state.finalRoundBtn) {
+        this.setState({
+            finalRoundBtn: false,
+            fifthRoundBtns: true,
+        })
+    } 
+    if(this.state.fifthRoundBtns) {
+        this.setState({
+            fifthRoundBtns: false,
+            fourthRoundBtns: true,
+        })
+    } 
+    if(this.state.fourthRoundBtns) {
+        this.setState({
+            fourthRoundBtns: false,
+            thirdRoundBtns: true,
+        })
+    } 
+    if(this.state.thirdRoundBtns) {
+        this.setState({
+            thirdRoundBtns: false,
+            secondRoundBtns: true,
+        })
+    } 
+    if(this.state.secondRoundBtns) {
+        this.setState({
+            secondRoundBtns: false,
+            firstRoundBtns: true,
+        })
+    } 
 }
 
 setCampaignName = (name) => {
@@ -162,7 +191,6 @@ setMonsters = (type) => {
 }
 
     render() {
-
         return (
         <div>
             <div className="mainques">
@@ -175,7 +203,7 @@ setMonsters = (type) => {
                     <div className="btnspace">
                         <QuestGiverModal setQuestGiver={this.setQuestGiverNameAndType}></QuestGiverModal>
                         <VillianModal setVillian={this.setVillianNameAndType}></VillianModal>
-                        <CampaignNameModal setCampaignName={this.setCampaignName}></CampaignNameModal>
+                        {!this.props.campaign.campaignName && (<CampaignNameModal setCampaignName={this.setCampaignName}></CampaignNameModal>)}
                         {/* <CustomBoth></CustomBoth> */}
                     </div>
                 </div>)}
@@ -227,11 +255,19 @@ setMonsters = (type) => {
                 </div>)}
             </div>
 
+            <div>
             {!this.state.finalRoundBtn && (
-            <div className="nextBtn">
-                <Button variant="outline-primary" size="lg" onClick={this.handleNextBtn}>Next</Button>
+                <div className="nextBtn">
+                    <Button variant="outline-primary" size="lg" onClick={this.handleNextBtn}>Next</Button>
+                </div>
+                )}
+
+                {!this.state.firstRoundBtns && (
+                <div className="nextBtn previousBtn">
+                    <Button variant="outline-primary" size="lg" onClick={this.handlePrevBtn}>Previous</Button>
+                </div>
+                )}
             </div>
-            )}
 
             {/* //////////////////////////////////// */}
                 <div className="storyCards">
