@@ -18,7 +18,7 @@ import Rooms from "../components/Dungeon/Rooms"
 import Setback from "../components/Dungeon/Setback"
 import Type from "../components/Dungeon/Type"
 import MonsterCard from "../components/Dungeon/MonsterCard";
-import GenerateButton from "../components/GenereateBtn/GenereateBtn"
+import FinalScreen from "../components/FinalCampaign/FinalScreen"
 import {connect} from "react-redux"
 import {bindActionCreators} from "redux"
 import {setCampaignName, setVillianName, setVillianType, setQuestGiverType, setQuestGiverName, setPlayers, setPillar, setActs, setClimate, setWorld, setMeetingPlace, setSideQuests, setRooms, setSetbacks, setMonsterNum, setDungeonType, setTreasureType, setMonsters, setTreasureNumber} from "../actions/index"
@@ -249,7 +249,7 @@ setMonsters = (type) => {
                 <div>
                     <p>Check out your super cool campaign below. Feel free to make edits.</p>
                     <div className="btnspace">
-                        <GenerateButton campaign={this.props.campaign}></GenerateButton>
+                        <FinalScreen campaign={this.props.campaign}></FinalScreen>
                     </div>
                 </div>)}
             </div>

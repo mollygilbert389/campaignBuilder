@@ -8,7 +8,7 @@ render() {
     const{campaign}=this.props
 
     return (
-      <div className="cardStyle centerItem">
+      <div className="cardStyle d-flex flex-column align-items-center">
         <Card className="text-center" style={{ width: '600px' }}>
           <Card.Header>{(campaign.campaignName && 
             <Card.Title>{`Campaign Name: ${campaign.campaignName}`}</Card.Title>)}

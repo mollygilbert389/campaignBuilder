@@ -17,6 +17,12 @@ class CampaignNameModal extends Component {
         this.props.setCampaignName(this.state.campaignName)
     }
 
+    handleClose = () => {
+        this.setState({
+            showModal: !this.state.showModal,
+        })
+    }
+
     handleChange = (event) => {
     this.setState({
         campaignName: event.target.value,
@@ -27,8 +33,8 @@ class CampaignNameModal extends Component {
 render() {  
     return (
         <div>
-            <Modal show={this.state.showModal}>
-                <Modal.Header>
+            <Modal show={this.state.showModal} onHide={this.handleClose}>
+                <Modal.Header closeButton>
                     <Modal.Title>Let's start with what you want your campaign to be named.</Modal.Title>
                 </Modal.Header>
 
@@ -58,7 +64,8 @@ render() {
                         type="submit" 
                         value="Submit" 
                         onClick={this.close} 
-                        disabled={this.state.campaignName ? false : true}>
+                        // disabled={this.state.campaignName ? false : true}
+                        >
                             Save</Button>
                 </Modal.Footer>
                 
