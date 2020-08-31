@@ -42,8 +42,8 @@ render() {
                         <Tooltip>Coming Soon!</Tooltip>}>
                         <span className="d-inline-block">
                         <Button 
-                        variant="outline-primary" s
-                        tyle={{ pointerEvents: 'none' }} 
+                        variant="outline-primary"
+                        style={{ pointerEvents: 'none' }} 
                         disabled>
                             Generate</Button>
                         </span>

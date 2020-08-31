@@ -1,11 +1,10 @@
 import React from 'react'
 import {Button, OverlayTrigger, Tooltip} from 'react-bootstrap'
-import StoryInfo from "../StoryInfo/StoryInfo"
 import CampaignCard from '../CampaignCard/CampaignCard'
 import './style.css'
 
 
-function GeneratBtn(props) {
+function GeneratBtn() {
   
     return (
         <div>
@@ -20,7 +19,7 @@ function GeneratBtn(props) {
             </OverlayTrigger>
         </div>
 
-      {/* <CampaignCard></CampaignCard> */}
+      <CampaignCard></CampaignCard>
 
       </div>
     )
