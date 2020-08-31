@@ -78,49 +78,47 @@ render() {
 
     return (
         <div>
-        <div className="btns">
-        <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Monsters
-        </Button>
+            <div className="btns">
+                <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Monsters
+                </Button>
             </div>
 
-        <Modal show={this.state.showModal}>
-        
-        {this.state.firstQues && (<div>
-        <Modal.Dialog>
-            <Modal.Header>
-                <Modal.Title>Monster Time!</Modal.Title>
-            </Modal.Header>
+            <Modal show={this.state.showModal}>
+            {this.state.firstQues && (<div>
+                <Modal.Dialog>
+                    <Modal.Header>
+                        <Modal.Title>Monster Time!</Modal.Title>
+                    </Modal.Header>
 
-            <Modal.Body>
-                <p>Now it's time to choose some monsters!</p>
-                <p>Since you have chosen {campaign.rooms} rooms we reccomend chosing {this.state.suggestedMonsterNum} total monsters and no more than {this.state.maxMonsterNum}. How many monsters would you like in your dungeon?</p>
-                <br></br>
-                <br></br>
+                    <Modal.Body>
+                        <p>Now it's time to choose some monsters!</p>
+                        <p>Since you have chosen {campaign.rooms} rooms we reccomend chosing {this.state.suggestedMonsterNum} total monsters and no more than {this.state.maxMonsterNum}. How many monsters would you like in your dungeon?</p>
+                        <br></br>
+                        <br></br>
 
-                <div>
-                <Slider
-                min={4}
-                max={20}
-                defaultValue={this.state.suggestedMonsterNum}
-                valueLabelDisplay="on"
-                onChangeCommitted={this.handleSlider}
-                />
-                </div>
+                        <div>
+                        <Slider
+                        min={4}
+                        max={20}
+                        defaultValue={this.state.suggestedMonsterNum}
+                        valueLabelDisplay="on"
+                        onChangeCommitted={this.handleSlider}
+                        />
+                        </div>
 
-                <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.handleNext}> Next</Button>
-                </Modal.Footer>
-                
-            </Modal.Body>
-            </Modal.Dialog>
-            </div>)}
+                        <Modal.Footer>
+                            <Button variant="outline-success" onClick={this.handleNext}> Next</Button>
+                        </Modal.Footer>
+                        
+                    </Modal.Body>
+                    </Modal.Dialog>
+                </div>)}
 
-            {this.state.secondQues && (<div>
-                <SideMonsters campaign={campaign} onClose={this.handleClose} setMonsters={this.props.setMonsters}>
-                </SideMonsters>
-            </div>)}
-
-        </Modal>
+                {this.state.secondQues && (<div>
+                    <SideMonsters campaign={campaign} onClose={this.handleClose} setMonsters={this.props.setMonsters}>
+                    </SideMonsters>
+                </div>)}
+            </Modal>
         </div>
     );
 }

@@ -1,19 +1,16 @@
 import React, {Component} from 'react'
 import {Dropdown} from 'react-bootstrap'
 import {Form, FormGroup} from "reactstrap"
-import update from 'immutability-helper'; 
+// import update from 'immutability-helper'; 
 import "./style.css"
 
 class MonsterSelect extends Component {
-
-    constructor() {
-        super();
-        this.state ={
-            monsterChoice: '',
-            monsterTypes: {},
-            finalMonsterType: '',
-            finalMonsterChoiceArray: [],
-            monsterObjectArray: 
+    state ={
+        monsterChoice: '',
+        monsterTypes: {},
+        finalMonsterType: '',
+        finalMonsterChoiceArray: [],
+        monsterObjectArray: 
             [
                 {id:1, 
                 name: "Abberation",
@@ -323,7 +320,6 @@ class MonsterSelect extends Component {
                 ]},
             ]
         }
-    }
 
     handleMonsterCategorySelect = (eventKey, event) => {
         let monsterChoice = event.target.name
@@ -337,7 +333,6 @@ class MonsterSelect extends Component {
     }
 
     handleMonsterTypeSelect = (eventKey, event) => {
-        
         const newSelection = event.target.name
 
         this.setState({ 
@@ -359,30 +354,29 @@ render() {
             <dvi>
                 <Form inline>
                     <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                    <Dropdown onSelect={this.handleMonsterCategorySelect}>
-                        <Dropdown.Toggle variant="outline-primary">
-                            {monsterChoice ? monsterChoice: 'Monster Categories'}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu id="mainMonsterMenu">
-                            {monsterObjectArray.map(monsterObject => {
-                                return <Dropdown.Item key={monsterObject.id} name={monsterObject.name}> {monsterObject.name}</Dropdown.Item>
-                            })}
-                        </Dropdown.Menu>
-                    </Dropdown>
+                        <Dropdown onSelect={this.handleMonsterCategorySelect}>
+                            <Dropdown.Toggle variant="outline-primary">
+                                {monsterChoice ? monsterChoice: 'Monster Categories'}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu id="mainMonsterMenu">
+                                {monsterObjectArray.map(monsterObject => {
+                                    return <Dropdown.Item key={monsterObject.id} name={monsterObject.name}> {monsterObject.name}</Dropdown.Item>
+                                })}
+                            </Dropdown.Menu>
+                        </Dropdown>
 
-                        {monsterChoice.length > 0 && (
-                        <Dropdown onSelect={this.handleMonsterTypeSelect}>
-                        <Dropdown.Toggle variant="outline-primary">
-                            {finalMonsterType ? finalMonsterType: 'Monster Type'}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                        {monsterTypes.types.map(monsterTypesObject => {
-                                return <Dropdown.Item key={monsterTypesObject} name={monsterTypesObject}> {monsterTypesObject}</Dropdown.Item>
-                            })}
-                        </Dropdown.Menu>
-                    </Dropdown>
-                    )}
-
+                            {monsterChoice.length > 0 && (
+                            <Dropdown onSelect={this.handleMonsterTypeSelect}>
+                            <Dropdown.Toggle variant="outline-primary">
+                                {finalMonsterType ? finalMonsterType: 'Monster Type'}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                            {monsterTypes.types.map(monsterTypesObject => {
+                                    return <Dropdown.Item key={monsterTypesObject} name={monsterTypesObject}> {monsterTypesObject}</Dropdown.Item>
+                                })}
+                            </Dropdown.Menu>
+                            </Dropdown>
+                        )}
                     </FormGroup>
                 </Form>
             </dvi>
