@@ -32,9 +32,8 @@ render() {
                 </Button>
             </div>
 
-            <Modal show={this.state.showModal}>
-                <Modal.Dialog id="villianbtn">
-                    <Modal.Header>
+            <Modal show={this.state.showModal} onHide={this.handleClick}>
+                    <Modal.Header closeButton>
                         <Modal.Title>Adventure Type!</Modal.Title>
                     </Modal.Header>
 
@@ -55,7 +54,6 @@ render() {
                     </Modal.Body>
                     <Modal.Footer>
                     </Modal.Footer>
-                </Modal.Dialog>
             </Modal>
         </div>
     );

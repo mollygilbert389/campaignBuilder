@@ -30,9 +30,8 @@ render() {
                 <Button variant="outline-success" size="lg" onClick={this.handleClick}>Acts
                 </Button>
             </div>
-            <Modal show={this.state.showModal}>
-                <Modal.Dialog>
-                    <Modal.Header>
+            <Modal show={this.state.showModal} onHide={this.handleClick}>
+                    <Modal.Header closeButton>
                         <Modal.Title>Deciding on Acts.</Modal.Title>
                     </Modal.Header>
 
@@ -54,7 +53,6 @@ render() {
                         </div>
                         </div>
                     </Modal.Body>
-                </Modal.Dialog>
             </Modal>
         </div>
     );

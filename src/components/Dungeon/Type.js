@@ -32,9 +32,8 @@ render() {
                 <Button id="" variant="outline-success" size="lg" onClick={this.handleClick}>Type
                 </Button>
             </div>
-            <Modal show={this.state.showModal}>
-            <Modal.Dialog id="">
-                <Modal.Header>
+            <Modal show={this.state.showModal} onHide={this.handleClick}>
+                <Modal.Header closeButton>
                     <Modal.Title>Let's Pick a Dungeon Type.</Modal.Title>
                 </Modal.Header>
 
@@ -60,7 +59,6 @@ render() {
                 <Modal.Footer>
                     <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
                 </Modal.Footer>
-            </Modal.Dialog>
             </Modal>
         </div>
     );

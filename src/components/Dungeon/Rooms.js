@@ -30,8 +30,8 @@ render() {
                 <Button id="" variant="outline-success" size="lg" onClick={this.handleClick}>Rooms
                 </Button>
             </div>
-            <Modal show={this.state.showModal}>
-                <Modal.Header>
+            <Modal show={this.state.showModal} onHide={this.handleClick}>
+                <Modal.Header closeButton>
                     <Modal.Title>Name that Room!</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>

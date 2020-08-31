@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
+import ModalHeader from 'react-bootstrap/ModalHeader'
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "./style.css"
 
@@ -45,21 +46,19 @@ render() {
     return (
         <div>
             <div className="btns">
-                <Button id="villian" variant="outline-success" size="lg" onClick={this.handleClick}>Villain
+                <Button id="villian" variant="outline-success" size="lg" onClick={this.handleClick}>Villian
                 </Button>
             </div>
 
-            <Modal show={this.state.showModal}>
-            <Modal.Dialog>
-                <Modal.Header>
-                    <Modal.Title>Let's Create Yor Villain!</Modal.Title>
+            <Modal show={this.state.showModal} onHide={this.handleClick}>
+            <Modal.Header closeButton>
+                    <Modal.Title>Let's Create Yor Villian!</Modal.Title>
                 </Modal.Header>
-
                 <Modal.Body>
-                    <p>Below are some buttons to create your villain</p>
+                    <p>Below are some buttons to create your villian</p>
 
                     <Form inline>
-                        <FormControl type="text" placeholder="Villain Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
+                        <FormControl type="text" placeholder="Villian Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
                         <div style={{paddingRight: "10px"}}>or</div> 
 
                         <OverlayTrigger overlay={
@@ -74,7 +73,7 @@ render() {
 
                     <Dropdown onSelect={this.handleVillainTypeSelect}>
                         <Dropdown.Toggle variant="outline-primary">
-                        {villianType ? villianType: 'Choose your Villain Type'}
+                        {villianType ? villianType: 'Choose your Villian Type'}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                         <Dropdown.Item>Human</Dropdown.Item>
@@ -99,11 +98,10 @@ render() {
                     </Dropdown>
 
                 </Modal.Body>
-
+                
                 <Modal.Footer>
                     <Button variant="outline-success" onClick={this.close} >Save</Button>
                 </Modal.Footer>
-            </Modal.Dialog>
             </Modal>
         </div>
     );

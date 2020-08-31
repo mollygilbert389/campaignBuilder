@@ -36,21 +36,19 @@ render() {
 
     return (
         <div>
-            <Modal.Dialog>
-                <Modal.Header>
-                    <Modal.Title>Monster Monster</Modal.Title>
-                </Modal.Header>
+            <Modal.Header>
+                <Modal.Title>Monster Monster</Modal.Title>
+            </Modal.Header>
 
-                <Modal.Body>
-                    <p>Now that we have a good idea of rooms and dungeon let's throw some monsters into the mix. Your monsters should be varying in difficulty and type. Pick a few monster below, and we'll generate the rest for you.</p>
+            <Modal.Body>
+                <p>Now that we have a good idea of rooms and dungeon let's throw some monsters into the mix. Your monsters should be varying in difficulty and type. Pick a few monster below, and we'll generate the rest for you.</p>
 
-                    <div className="partyFormSpace">
-                        <ul>
-                            {this.createMonsterForm()}
-                        </ul>
-                    </div>
-                </Modal.Body>
-            </Modal.Dialog>
+                <div className="partyFormSpace">
+                    <ul>
+                        {this.createMonsterForm()}
+                    </ul>
+                </div>
+            </Modal.Body>
             <Modal.Footer>
                 <Button variant="outline-success" onClick={this.props.onClose} >Save</Button>
             </Modal.Footer>

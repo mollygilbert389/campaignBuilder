@@ -47,9 +47,8 @@ render() {
                 <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Quest Giver
                 </Button>
             </div>
-            <Modal show={this.state.showModal}>
-            <Modal.Dialog>
-                <Modal.Header>
+            <Modal show={this.state.showModal} onHide={this.handleClick}>
+                <Modal.Header closeButton>
                     <Modal.Title>Let's Create A Quest Giver!</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -86,7 +85,6 @@ render() {
                 <Modal.Footer>
                     <Button variant="outline-success" onClick={this.close} >Save</Button>
                 </Modal.Footer>
-            </Modal.Dialog>
             </Modal>
         </div>
     );

@@ -85,10 +85,14 @@ class Treasure extends Component {
         )
     }
 
+    handleModalClose = () => {
+        this.setState({
+            showModal: !this.state.showModal,
+        })
+    }
+
 render() {  
-
     const{campaign}=this.props
-
     const{equipment} = this.state
     const{magicItem} = this.state
     const{gems} = this.state
@@ -102,8 +106,7 @@ render() {
                 <Button variant="outline-success" size="lg" onClick={this.handleClick}>Treasure
                 </Button>
             </div>
-            <Modal show={this.state.showModal}>
-            <Modal.Dialog>
+            <Modal show={this.state.showModal} onHide={this.handleModalClose}>
                 <Modal.Header>
                     <Modal.Title>Let's talk Treasure!</Modal.Title>
                 </Modal.Header>
@@ -194,7 +197,6 @@ render() {
                 <Modal.Footer>
                     <Button variant="outline-success" onClick={this.close}> Save</Button>
                 </Modal.Footer>
-            </Modal.Dialog>
             </Modal>
         </div>
     );

@@ -83,10 +83,9 @@ render() {
                 </Button>
             </div>
 
-            <Modal show={this.state.showModal}>
+            <Modal show={this.state.showModal} onHide={this.handleClose}>
             {this.state.firstQues && (<div>
-                <Modal.Dialog>
-                    <Modal.Header>
+                    <Modal.Header closeButtotn>
                         <Modal.Title>Monster Time!</Modal.Title>
                     </Modal.Header>
 
@@ -111,7 +110,6 @@ render() {
                         </Modal.Footer>
                         
                     </Modal.Body>
-                    </Modal.Dialog>
                 </div>)}
 
                 {this.state.secondQues && (<div>
