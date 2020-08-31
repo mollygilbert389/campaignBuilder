@@ -6,3 +6,14 @@
     border: solid 1px rgb(182, 177, 177);
     padding: 10px;
   }
+
+  .playerCards {
+    border: solid 1px rgb(182, 177, 177);
+    margin: 5px;
+    width: 300px;
+  }
+
+.centerItems {
+  justify-content: center;
+  align-items: center;
+}

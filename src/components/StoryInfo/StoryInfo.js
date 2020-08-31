@@ -34,10 +34,10 @@ render() {
               <Card.Title className="title">Player Info:</Card.Title>)}
                 <div>
                 {campaign.playerData && (
-                  <div>
+                  <div className="d-flex flex-column align-items-center">
                     {campaign.playerData.map(player => {
                           return (
-                          <div>
+                          <div className="playerCards">
                             <div>Player: {player.name}</div>
                             <div>Class: {player.raceClass}</div>
                         </div>
