@@ -68,16 +68,16 @@ render() {
                                 {world ? world: 'What is your setting?'}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                            <Dropdown.Item >Forest</Dropdown.Item>
-                            <Dropdown.Item >Desert</Dropdown.Item>
                             <Dropdown.Item >City</Dropdown.Item>
-                            <Dropdown.Item >Swamp</Dropdown.Item>
-                            <Dropdown.Item >Meadow</Dropdown.Item>
-                            <Dropdown.Item >Island</Dropdown.Item>
-                            <Dropdown.Item >Village</Dropdown.Item>
-                            <Dropdown.Item >Tundra</Dropdown.Item>
                             <Dropdown.Item >Coast</Dropdown.Item>
+                            <Dropdown.Item >Desert</Dropdown.Item>
+                            <Dropdown.Item >Forest</Dropdown.Item>
+                            <Dropdown.Item >Island</Dropdown.Item>
                             <Dropdown.Item >Jungle</Dropdown.Item>
+                            <Dropdown.Item >Meadow</Dropdown.Item>
+                            <Dropdown.Item >Swamp</Dropdown.Item>
+                            <Dropdown.Item >Tundra</Dropdown.Item>
+                            <Dropdown.Item >Village</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </FormGroup>
