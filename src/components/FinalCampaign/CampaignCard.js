@@ -1,12 +1,9 @@
 import React, {Component} from 'react'
-import maps from "./maps.json";
 import "./style.css"
 
 
 class CampaignCard extends Component {
-    state = {
-        maps
-    }
+
 
 render() {  
 

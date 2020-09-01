@@ -6,13 +6,13 @@ import "./style.css"
 class Theme extends Component {
     state ={
         showModal: false,
-        climate: "",
+        // climate: "",
         world: "",
         meetingPlace: ""
     }
 
     close = () =>  {
-        this.props.setClimate(this.state.climate)
+        // this.props.setClimate(this.state.climate)
         this.props.setWorld(this.state.world)
         this.props.setMeetingPlace(this.state.meetingPlace)
 
@@ -27,11 +27,11 @@ class Theme extends Component {
         })
     }
 
-    climateSelect = (eventKey, event) => {
-        this.setState({
-            climate: event.target.text
-        })
-    }
+    // climateSelect = (eventKey, event) => {
+    //     this.setState({
+    //         climate: event.target.text
+    //     })
+    // }
 
     worldSelect = (eventKey, event) => {
         this.setState({
@@ -46,7 +46,7 @@ class Theme extends Component {
     }
 
 render() {  
-    const{climate,world,meetingPlace} = this.state
+    const{world,meetingPlace} = this.state
 
     return (
         <div>
@@ -62,7 +62,7 @@ render() {
                 <Modal.Body>
                     <p>Below are some buttons to help create your ideal world!</p>
 
-                    <FormGroup>
+                    {/* <FormGroup>
                         <Dropdown onSelect={this.climateSelect}>
                             <Dropdown.Toggle variant="outline-primary" id="climateForm">
                                 {climate ? climate: 'What type of climate would you find your villian in?'}
@@ -73,17 +73,24 @@ render() {
                             <Dropdown.Item >Mild</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
-                    </FormGroup>
+                    </FormGroup> */}
 
                     <FormGroup>
                         <Dropdown onSelect={this.worldSelect}>
                             <Dropdown.Toggle variant="outline-primary" id="worldForm">
-                                {world ? world: 'What type of world is this?'}
+                                {world ? world: 'What is your setting?'}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                             <Dropdown.Item >Forest</Dropdown.Item>
                             <Dropdown.Item >Desert</Dropdown.Item>
                             <Dropdown.Item >City</Dropdown.Item>
+                            <Dropdown.Item >Swamp</Dropdown.Item>
+                            <Dropdown.Item >Meadow</Dropdown.Item>
+                            <Dropdown.Item >Island</Dropdown.Item>
+                            <Dropdown.Item >Village</Dropdown.Item>
+                            <Dropdown.Item >Tundra</Dropdown.Item>
+                            <Dropdown.Item >Coast</Dropdown.Item>
+                            <Dropdown.Item >Jungle</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </FormGroup>
@@ -94,7 +101,6 @@ render() {
                                 {meetingPlace ? meetingPlace: 'Where do you intend your party to meet?'}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                            <Dropdown.Item >Meadow</Dropdown.Item>
                             <Dropdown.Item >Tavern</Dropdown.Item>
                             <Dropdown.Item >Party</Dropdown.Item>
                             <Dropdown.Item >Dinner</Dropdown.Item>

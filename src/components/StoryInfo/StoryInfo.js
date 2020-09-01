@@ -64,7 +64,7 @@ render() {
                   {campaign.meetingPlace && (
                     <div className="theme grouping">
                       <Card.Subtitle>Theme:</Card.Subtitle>
-                      <div>{`Climate: ${campaign.climate}`}</div>
+                      {/* <div>{`Climate: ${campaign.climate}`}</div> */}
                       <div>{`World: ${campaign.world}`}</div>
                       <div>{`Meeting: ${campaign.meetingPlace}`}</div>
                     </div>
