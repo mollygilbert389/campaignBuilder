@@ -200,9 +200,9 @@ setMonsters = (type) => {
                 <div>
                     <p>Let's talk characters. Let's think about the goal of this entire campaign. Do you want to start with your villian or your quest giver? Sometimes the quest giver and the villian are the same.</p>
                     <div className="btnspace">
+                        {!this.props.campaign.campaignName && (<CampaignNameModal setCampaignName={this.setCampaignName}></CampaignNameModal>)}
                         <QuestGiverModal setQuestGiver={this.setQuestGiverNameAndType}></QuestGiverModal>
                         <VillianModal setVillian={this.setVillianNameAndType}></VillianModal>
-                        {!this.props.campaign.campaignName && (<CampaignNameModal setCampaignName={this.setCampaignName}></CampaignNameModal>)}
                         {/* <CustomBoth></CustomBoth> */}
                     </div>
                 </div>)}
@@ -262,7 +262,7 @@ setMonsters = (type) => {
                 )}
 
                 {!this.state.firstRoundBtns && (
-                <div className="nextBtn previousBtn">
+                <div className="previousBtn nextBtn">
                     <Button variant="outline-primary" size="lg" onClick={this.handlePrevBtn}>Previous</Button>
                 </div>
                 )}

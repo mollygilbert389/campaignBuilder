@@ -10,7 +10,7 @@ function MapCard(props) {
 
   return (
     <div>
-      <div>
+      <div className="d-flex flex-column align-items-center">
         <div>Your Map:</div>
         <div>{props.name}</div>
         <img alt={props.name} src={props.image} style={style}></img>

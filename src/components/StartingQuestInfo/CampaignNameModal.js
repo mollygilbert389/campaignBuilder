@@ -33,6 +33,10 @@ class CampaignNameModal extends Component {
 render() {  
     return (
         <div>
+            <div className="btns">
+                <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClose}>Campaign Name
+                </Button>
+            </div>
             <Modal show={this.state.showModal} onHide={this.handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Let's start with what you want your campaign to be named.</Modal.Title>

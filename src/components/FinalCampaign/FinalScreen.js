@@ -18,27 +18,17 @@ class FinalScreen extends Component {
             displayMap: true,
             clicked: true
         })
-        this.getMapsByType()
+
+        this.getMap()
     }
 
-    // getRandomMap = () => {
-    //     let mapArray = maps.map(map => map.id)
-    //     mapArray.sort(function() {
-    //         return .5 - Math.random();
-    //     })
-        
-    //     const randoId = mapArray.pop() -1
+    getMap = () => {
+        const mapChoice = this.props.campaign.world || "Forest"
 
-    //     this.setState({
-    //         randomMapId: randoId
-    //     })
-
-    // }
-
-    getMapsByType = () => {
-        const mapChoice = this.props.campaign.world
+        console.log(mapChoice)
 
         let filteredMaps  = maps.filter(map => (map.world.includes(mapChoice)))
+        console.log(filteredMaps)
         
         const chosenMap = filteredMaps.map(map => map.id)
         chosenMap.sort(function() {

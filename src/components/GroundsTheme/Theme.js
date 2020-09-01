@@ -62,19 +62,6 @@ render() {
                 <Modal.Body>
                     <p>Below are some buttons to help create your ideal world!</p>
 
-                    {/* <FormGroup>
-                        <Dropdown onSelect={this.climateSelect}>
-                            <Dropdown.Toggle variant="outline-primary" id="climateForm">
-                                {climate ? climate: 'What type of climate would you find your villian in?'}
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                            <Dropdown.Item >Cold</Dropdown.Item>
-                            <Dropdown.Item >Hot</Dropdown.Item>
-                            <Dropdown.Item >Mild</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-                    </FormGroup> */}
-
                     <FormGroup>
                         <Dropdown onSelect={this.worldSelect}>
                             <Dropdown.Toggle variant="outline-primary" id="worldForm">
