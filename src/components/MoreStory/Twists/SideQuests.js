@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import {Button, Form, Dropdown, FormControl } from 'react-bootstrap'
-import "./style.css"
+import "../style.css"
 
 class Sidequests extends Component {
     state ={

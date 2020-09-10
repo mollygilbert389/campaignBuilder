@@ -18,21 +18,10 @@ render() {
                 </div>
             </div> */}
 
-            {/* {this.state.friends.map(map => (
-            <div
-                id={map.id}
-                key={map.id}
-                name={map.name}
-                image={map.image}
-                location={map.location}
-                rooms={map.rooms}
-                world={map.world}
-            />
-            ))} */}
-            
-            {/* <div className="main">
+            <div className="main">
                 <div className="logoSpace">
-                    {campaign.campaignName}
+                    {/* {campaign.campaignName} */}
+                    Campaign Name: Mollywood
                 </div>
                 <div className="campaignTitle">
                     Title: {`Dynamically Created Title basde off random array`}
@@ -43,10 +32,10 @@ render() {
                 <div className="dateCreated">
                     Date Created: UserName: {`added once login is added`}
                 </div>
-            </div> */}
+            </div>
 
 {/* statc section this section can be added in now and will not change. I would also add this as a tab at the end*/}
-            {/* <div className="infoSection">Here are some key facts about this D&D Gameplay:</div>
+            <div className="infoSection">Here are some key facts about this D&D Gameplay:</div>
             <div className="keyfacts">
                 <div className="intro">
                     <div className="subTitle">Overview:</div>
@@ -68,10 +57,10 @@ render() {
                     <div className="subTitle">Handling Bad things that happen.</div> 
                     <p>Stare at ceiling ccccccccccccaaaaaaaaaaaaaaatttttttttttttttttssssssssssssssss my cat stared at me he was sipping his tea, too unwrap toilet paper cough hairball, eat toilet paper, meow in empty rooms sit in box.</p>
                 </div>
-            </div> */}
+            </div>
 
 {/* this is the important part thtis will dynamically be created based off what the user has said*/}
-            {/* <div className="infoSection">Your Adventure:</div>
+            <div className="infoSection">Your Adventure:</div>
             <div className="aboutThisAdventure">
                 <div className="background">
                     <div className="subTitle">A little background about this adventure:</div> 
@@ -85,10 +74,10 @@ render() {
                     <div className="subTitle">Key information to keep in mind to keep your adventures busy</div> 
                     <p>I shredded your linens for you bathe private parts with tongue then lick owner's face carefully drink from water glass and then spill it everywhere and proceed to lick the puddle pretend not to be evil.</p>
                 </div>
-            </div> */}
+            </div>
 
 {/* Acts will dynamically be created as well */}
-            {/* <div className="infoSection">Act 1</div>
+            <div className="infoSection">Act 1</div>
             <div className="act1">
                 <div>
                     <div className="">
@@ -132,9 +121,9 @@ render() {
                         <p>Imprtant information about your monsters: Purrrrrr meow go back to sleep owner brings food and water tries to pet on head, so scratch get sprayed by water because bad cat. Head nudges leave fur on owners clothes cry louder at reflection so annoy the old grumpy cat, </p>
                     </div>
                 </div>
-            </div> */}
+            </div>
 
-            {/* <div className="infoSection">Act 2</div>
+            <div className="infoSection">Act 2</div>
             <div className="act1">
                 <div>
                     <div className="">
@@ -178,10 +167,10 @@ render() {
                         <p>Imprtant information about your monsters: Purrrrrr meow go back to sleep owner brings food and water tries to pet on head, so scratch get sprayed by water because bad cat. Head nudges leave fur on owners clothes cry louder at reflection so annoy the old grumpy cat, </p>
                     </div>
                 </div>
-            </div> */}
+            </div>
 
 {/* this will always be in your game so it could be acts -1 and the finale */}
-            {/* <div>
+            <div>
             <div className="infoSection">Finale</div>
             <div className="act1">
                 <div>
@@ -195,7 +184,7 @@ render() {
                 <div className="subSectionTitle">Treasure</div>
                     <p>Get my claw stuck in the dog's ear i see a bird i stare at it i meow at it i do a wiggle come here birdy and poop in a handbag look delicious and drink the soapy mopping up water then puke giant foamy fur-balls for eat owner's food for mouse.</p>
                 </div>
-                </div> */}
+                </div>
         </div>
     );
 }

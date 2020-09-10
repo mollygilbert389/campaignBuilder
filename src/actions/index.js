@@ -1,7 +1,7 @@
 import {
     SET_CAMPAIGN_NAME,
-    SET_VILLIAN_NAME,
-    SET_VILLIAN_TYPE,
+    SET_VILLAIN_NAME,
+    SET_VILLAIN_TYPE,
     SET_QUESTGIVER_NAME,
     SET_QUESTGIVER_TYPE,
     SET_PLAYERDATA,
@@ -28,13 +28,13 @@ export const setCampaignName = (name) => ({
     payload: name
 })  
 
-export const setVillianName = (name) => ({
-    type: SET_VILLIAN_NAME,
+export const setVillainName = (name) => ({
+    type: SET_VILLAIN_NAME,
     payload: name
 })  
 
-export const setVillianType = (vType) => ({
-    type: SET_VILLIAN_TYPE,
+export const setVillainType = (vType) => ({
+    type: SET_VILLAIN_TYPE,
     payload: vType
 })  
 

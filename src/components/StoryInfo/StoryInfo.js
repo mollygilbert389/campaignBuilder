@@ -21,8 +21,8 @@ render() {
                 <div>
                   {campaign.questGiverName && (<div>{`Quest Giver: ${campaign.questGiverName}`}</div>)}
                   {campaign.questGiverType && (<div>{`Quest Giver Type: ${campaign.questGiverType}`}</div>)}
-                  {campaign.villianName && (<div> {`Villian Name: ${campaign.villianName}`}</div>)}
-                  {campaign.villianType && (<div>{`Villian Type: ${campaign.villianType}`}</div>)}
+                  {campaign.villainName && (<div> {`Villain Name: ${campaign.villainName}`}</div>)}
+                  {campaign.villainType && (<div>{`Villain Type: ${campaign.villainType}`}</div>)}
                 </div>
             </div>
             )}

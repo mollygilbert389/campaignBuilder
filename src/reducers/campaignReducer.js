@@ -1,9 +1,9 @@
-import {SET_CAMPAIGN_NAME, SET_VILLIAN_NAME, SET_VILLIAN_TYPE, SET_QUESTGIVER_NAME, SET_QUESTGIVER_TYPE, SET_PLAYERDATA, SET_PILLAR, SET_ACTS, SET_CLIMATE, SET_WORLD, SET_MEETING_PLACE, SET_SIDE_QUESTS, SET_ROOMS, SET_SETBACKS, SET_MONSTER_NUM, SET_DUNGEON_TYPE, SET_TREASURE_TYPE, SET_MONSTERS, SET_TREASURE_NUMBER} from '../actions/constant'
+import {SET_CAMPAIGN_NAME, SET_VILLAIN_NAME, SET_VILLAIN_TYPE, SET_QUESTGIVER_NAME, SET_QUESTGIVER_TYPE, SET_PLAYERDATA, SET_PILLAR, SET_ACTS, SET_CLIMATE, SET_WORLD, SET_MEETING_PLACE, SET_SIDE_QUESTS, SET_ROOMS, SET_SETBACKS, SET_MONSTER_NUM, SET_DUNGEON_TYPE, SET_TREASURE_TYPE, SET_MONSTERS, SET_TREASURE_NUMBER} from '../actions/constant'
 
 const initialState = {
     campaignName: '',
-    villianName: '',
-    villianType: '',
+    villainName: '',
+    villainType: '',
     questGiverName: '',
     questGiverType: '',
     playerData: [],
@@ -30,15 +30,15 @@ export default function(state = initialState, action) {
           ...state,
           campaignName: action.payload  
         }
-        case SET_VILLIAN_NAME: 
+        case SET_VILLAIN_NAME: 
         return {
           ...state,
-          villianName: action.payload  
+          villainName: action.payload  
         }
-        case SET_VILLIAN_TYPE: 
+        case SET_VILLAIN_TYPE: 
         return {
           ...state,
-          villianType: action.payload  
+          villainType: action.payload  
         }
         case SET_QUESTGIVER_NAME: 
         return {

@@ -9,11 +9,17 @@ function Home() {
     <div className="mainques">
         <h1> What kind of Campaign do you want to build?</h1>
        <div className="btnspace">
-        
-        <div className="btns">
-            <Button variant="outline-success" size="lg" href="/shortcampaign">Short
+
+       <div className="btns">
+            <OverlayTrigger overlay={
+            <Tooltip>Coming Soon!</Tooltip>}>
+            <span className="d-inline-block">
+            <Button variant="outline-danger" size="lg" href="/shortcampaign" disabled>Short
             </Button>
+            </span>
+            </OverlayTrigger>
         </div>
+
 
         <div className="btns">
             <OverlayTrigger overlay={
@@ -36,13 +42,8 @@ function Home() {
         </div>
 
         <div className="btns">
-            <OverlayTrigger overlay={
-            <Tooltip>Coming Soon!</Tooltip>}>
-            <span className="d-inline-block">
-            <Button variant="outline-danger" size="lg" href="/" disabled>Not Sure Yet
+            <Button variant="outline-success" size="lg" href="/customcampaign">Custom
             </Button>
-            </span>
-            </OverlayTrigger>
         </div>
 
         </div>

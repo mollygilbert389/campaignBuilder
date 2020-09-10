@@ -1,27 +1,27 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
-import "./style.css"
+import "../style.css"
 
-class QuestGiverModal extends Component {
+class Patron extends Component {
     state ={
         showModal: false,
-        questGiverName: "", 
-        questGiverType: ""
+        patronName: "", 
+        patronType: ""
     }
 
     close = (event) =>  {
         this.setState({
             showModal: false,
-            questGiverName: event.target.value
+            patronName: event.target.value
         })
-        this.props.setQuestGiver(this.state.questGiverName, this.state.questGiverType)
+        this.props.setQuestGiver(this.state.patronName, this.state.patronType)
     }
 
 
     handleChange = (event) => {
         this.setState({
-            questGiverName: event.target.value
+            patronName: event.target.value
         })
     }
 
@@ -31,20 +31,20 @@ class QuestGiverModal extends Component {
         })
     }
 
-    questGiverChoice = (choice) => {
+    handlePatronSlect = (eventkey, event) => {
         this.setState({
-            questGiverType: choice.target.text
+            patronType: event.target.text
         })
     }
 
 render() {  
 
-    const{questGiverType}=this.state
+    const{patronType}=this.state
 
     return (
         <div>
             <div className="btns">
-                <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Quest Giver
+                <Button variant="outline-success" size="lg" onClick={this.handleClick}>Patron
                 </Button>
             </div>
             <Modal show={this.state.showModal} onHide={this.handleClick}>
@@ -52,7 +52,7 @@ render() {
                     <Modal.Title>Let's Create A Quest Giver!</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>Below are some buttons to help create your quest giver</p>
+                    <p>Below are some buttons to help create your patron.</p>
                     <Form inline>
                         <FormControl type="text" placeholder="Guest Giver Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
                         <div style={{paddingRight: "10px"}}>or</div> 
@@ -67,17 +67,17 @@ render() {
                     </Form>
                     <br></br>
 
-                    <Dropdown>
-                        <Dropdown.Toggle variant="outline-primary" id="questGiverType">
-                        {questGiverType ? questGiverType: 'Choose your Quest Giver Type'}
+                    <Dropdown onSelect={this.handlePatronSlect}>
+                        <Dropdown.Toggle variant="outline-primary">
+                        {patronType ? patronType: 'Choose your Patron Type'}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                        <Dropdown.Item onClick={this.questGiverChoice}>Human</Dropdown.Item>
-                        <Dropdown.Item onClick={this.questGiverChoice}>Elf</Dropdown.Item>
-                        <Dropdown.Item onClick={this.questGiverChoice}>God</Dropdown.Item>
-                        <Dropdown.Item onClick={this.questGiverChoice}>Dwarf</Dropdown.Item>
-                        <Dropdown.Item onClick={this.questGiverChoice}>Wizard</Dropdown.Item>
-                        <Dropdown.Item onClick={this.questGiverChoice}>Something else</Dropdown.Item>
+                        <Dropdown.Item>Human</Dropdown.Item>
+                        <Dropdown.Item>Elf</Dropdown.Item>
+                        <Dropdown.Item>God</Dropdown.Item>
+                        <Dropdown.Item>Dwarf</Dropdown.Item>
+                        <Dropdown.Item>Wizard</Dropdown.Item>
+                        <Dropdown.Item>Something else</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </Modal.Body>
@@ -91,4 +91,4 @@ render() {
 }
 }
 
-export default QuestGiverModal;
+export default Patron;

@@ -65,6 +65,7 @@ render() {
                     image={maps[this.state.randomMapId].image}
                     name={maps[this.state.randomMapId].name}
                 ></MapCard>
+                <CampaignCard></CampaignCard>
                 </div>)}
         </div>
     )}}

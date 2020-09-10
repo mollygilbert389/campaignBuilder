@@ -1,20 +1,20 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import {Button, Form, Dropdown, FormGroup } from 'react-bootstrap'
-import "./style.css"
+import "../style.css"
 
-class Theme extends Component {
+class Atmosphere extends Component {
     state ={
         showModal: false,
-        // climate: "",
+        mapScale: "",
         world: "",
         meetingPlace: ""
     }
 
     close = () =>  {
         // this.props.setClimate(this.state.climate)
-        this.props.setWorld(this.state.world)
-        this.props.setMeetingPlace(this.state.meetingPlace)
+        // this.props.setWorld(this.state.world)
+        // this.props.setMeetingPlace(this.state.meetingPlace)
 
         this.setState({
             showModal: false,
@@ -27,11 +27,11 @@ class Theme extends Component {
         })
     }
 
-    // climateSelect = (eventKey, event) => {
-    //     this.setState({
-    //         climate: event.target.text
-    //     })
-    // }
+    mapScale = (eventKey, event) => {
+        this.setState({
+            mapScale: event.target.text
+        })
+    }
 
     worldSelect = (eventKey, event) => {
         this.setState({
@@ -64,27 +64,52 @@ render() {
 
                     <FormGroup>
                         <Dropdown onSelect={this.worldSelect}>
-                            <Dropdown.Toggle variant="outline-primary" id="worldForm">
+                            <Dropdown.Toggle variant="outline-primary">
                                 {world ? world: 'What is your setting?'}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                            <Dropdown.Item >City</Dropdown.Item>
                             <Dropdown.Item >Coast</Dropdown.Item>
                             <Dropdown.Item >Desert</Dropdown.Item>
                             <Dropdown.Item >Forest</Dropdown.Item>
                             <Dropdown.Item >Island</Dropdown.Item>
                             <Dropdown.Item >Jungle</Dropdown.Item>
-                            <Dropdown.Item >Meadow</Dropdown.Item>
                             <Dropdown.Item >Swamp</Dropdown.Item>
                             <Dropdown.Item >Tundra</Dropdown.Item>
-                            <Dropdown.Item >Village</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </FormGroup>
 
                     <FormGroup>
+                        <Dropdown onSelect={this.mapScale}>
+                            <Dropdown.Toggle variant="outline-primary">
+                                {this.state.mapScale ? this.state.mapScale : 'What kind of place are your adventurers starting?'}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                            <Dropdown.Item >Village</Dropdown.Item>
+                            <Dropdown.Item >Town</Dropdown.Item>
+                            <Dropdown.Item >City</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </FormGroup>
+
+                    <FormGroup>
+                        <Dropdown onSelect={this.government}>
+                            <Dropdown.Toggle variant="outline-primary">
+                                {this.state.government ? this.state.government : 'What is the government like here?'}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                            <Dropdown.Item >Autocracy</Dropdown.Item>
+                            <Dropdown.Item >Bureaucracy</Dropdown.Item>
+                            <Dropdown.Item >City</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+
+                        <Button>Roll for it</Button>
+                    </FormGroup>
+
+                    <FormGroup>
                         <Dropdown onSelect={this.meetingSelect}>
-                            <Dropdown.Toggle variant="outline-primary" id="meetForm">
+                            <Dropdown.Toggle variant="outline-primary">
                                 {meetingPlace ? meetingPlace: 'Where do you intend your party to meet?'}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -106,4 +131,4 @@ render() {
 }
 }
 
-export default Theme;
+export default Atmosphere;
