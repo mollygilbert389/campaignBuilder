@@ -46,7 +46,7 @@ render() {
     return (
         <div>
             <div className="btns">
-                <Button variant="outline-success" size="lg" onClick={this.handleClick}>villain
+                <Button variant="outline-success" size="lg" onClick={this.handleClick}>Villain
                 </Button>
             </div>
 

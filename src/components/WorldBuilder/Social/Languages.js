@@ -5,12 +5,12 @@ import "../style.css"
 
 class Languages extends Component {
     state ={
-        gods: ""
+        language: ""
     }
 
-    religousOrg = (eventKey, event) => {
+    handleLanguageSelect = (eventKey, event) => {
         this.setState({
-            gods: event.target.text
+            language: event.target.text
         })
     }
 
@@ -27,7 +27,7 @@ render() {
     return (
         <div>
             <div className="btns">
-                <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Languages
+                <Button variant="outline-success" size="lg" onClick={this.handleClick}>Languages
                 </Button>
             </div>
             <Modal show={this.state.showModal} onHide={this.handleClick}>
@@ -35,13 +35,13 @@ render() {
                     <Modal.Title>Talking Talking Talking Talk</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>Languages.</p>
+                    <p>Choose the languages spoken commonly.</p>
                     
                     <br></br>
 
-                    <Dropdown onSelect={this.religousOrg}>
+                    <Dropdown onSelect={this.handleLanguageSelect}>
                         <Dropdown.Toggle variant="outline-primary">
-                        {this.state.gods ? this.state.gods: 'Choose Your Religious Philosophy'}
+                        {this.state.language ? this.state.language: 'Choose Your Languages'}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                         {/* <Dropdown.Item>Loose Pantheons `(Suggested)`</Dropdown.Item>

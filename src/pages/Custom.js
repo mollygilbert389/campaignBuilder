@@ -19,7 +19,7 @@ import NPCs from "../components/MoreStory/NPCs/NPCs"
 import Twists from "../components/MoreStory/Twists/Twists"
 import PartyInfo from "../components/PartyInfo/PartyInfo"
 import Rooms from "../components/Dungeon/Rooms"
-import Setback from "../components/Dungeon/Setback"
+import Setback from "../components/MoreStory/Setback"
 import Type from "../components/Dungeon/Type"
 import MonsterCard from "../components/Dungeon/MonsterCard";
 import Treasure from "../components/Treasure/Treasure"
@@ -241,9 +241,7 @@ setMonsters = (type) => {
                 <div>
                     <p>Now let's talk about your party. Anwser the questions below to help define the type of characters for this campaign. You may also skip this step as your party may want to decide for themselves the characters they want.</p>
                     <div className="btnspace">
-                       <Between></Between>
-                       <NPCs></NPCs>
-                       <Twists></Twists>
+                        <PartyInfo setPlayers={this.setPlayers}></PartyInfo>
                     </div>
                 </div>)}
 
@@ -254,7 +252,10 @@ setMonsters = (type) => {
                         {/* <Pillar setPillar={this.setPillar}></Pillar>
                         <Acts setActs={this.setActs}></Acts>
                         <SideQuests setSideQuests={this.setSideQuests}></SideQuests> */}
-                         <PartyInfo setPlayers={this.setPlayers}></PartyInfo>
+                        <Between></Between>
+                        <NPCs></NPCs>
+                        <Twists></Twists>
+                        <Setback setSetBacks={this.setSetbacks}></Setback>
                     </div>
                 </div>)}
 
@@ -264,7 +265,7 @@ setMonsters = (type) => {
                     <div className="btnspace">
                         <Type setDungeonType={this.setDungeonType}></Type>
                         <Rooms setRooms={this.setRooms}></Rooms>
-                        <Setback setSetBacks={this.setSetbacks}></Setback>
+                        
                         <MonsterCard campaign={this.props.campaign} setMonsterNum={this.setMonsterNum} setMonsters={this.setMonsters}></MonsterCard>
                     </div>
                 </div>)}

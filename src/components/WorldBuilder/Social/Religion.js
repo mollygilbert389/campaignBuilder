@@ -32,7 +32,7 @@ render() {
             </div>
             <Modal show={this.state.showModal} onHide={this.handleClick}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Let's set up a religious structure</Modal.Title>
+                    <Modal.Title>Gods Oversee the World.</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <p>Below are some buttons to help you set up your gods.</p>

@@ -5,12 +5,12 @@ import "../style.css"
 
 class FactionOrgs extends Component {
     state ={
-        gods: ""
+        factionOrgs: []
     }
 
-    religousOrg = (eventKey, event) => {
+    handleFactionOrgs = (eventKey, event) => {
         this.setState({
-            gods: event.target.text
+            factionOrgs: event.target.text
         })
     }
 
@@ -26,38 +26,15 @@ render() {
 
     return (
         <div>
-            <div className="btns">
-                <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Factions And Organizations
-                </Button>
+            <div>
+                Player 1
             </div>
-            <Modal show={this.state.showModal} onHide={this.handleClick}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Let's set up a religious structure</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <p>Below are some buttons to help you set up your gods.</p>
-                    
-                    <br></br>
-
-                    <Dropdown onSelect={this.religousOrg}>
-                        <Dropdown.Toggle variant="outline-primary">
-                        {this.state.gods ? this.state.gods: 'Choose Your Religious Philosophy'}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                        {/* <Dropdown.Item>Loose Pantheons `(Suggested)`</Dropdown.Item>
-                        <Dropdown.Item>Tight Pantheons</Dropdown.Item>
-                        <Dropdown.Item>Mystery Cults</Dropdown.Item>
-                        <Dropdown.Item>Monotheism</Dropdown.Item>
-                        <Dropdown.Item>Dualism</Dropdown.Item>
-                        <Dropdown.Item>Animism</Dropdown.Item> */}
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </Modal.Body>
-
-                <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.close} >Save</Button>
-                </Modal.Footer>
-            </Modal>
+            <div>
+                Player 2
+            </div>
+            <div>
+                Player 3
+            </div>
         </div>
     );
 }

@@ -51,27 +51,35 @@ render() {
                         {this.state.government ? this.state.government: 'Choose Your Government'}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                        <Dropdown.Item>Loose Pantheons `(Suggested)`</Dropdown.Item>
-                        <Dropdown.Item>Tight Pantheons</Dropdown.Item>
-                        <Dropdown.Item>Mystery Cults</Dropdown.Item>
-                        <Dropdown.Item>Monotheism</Dropdown.Item>
-                        <Dropdown.Item>Dualism</Dropdown.Item>
-                        <Dropdown.Item>Animism</Dropdown.Item>
+                            <Dropdown.Item>Autogracy</Dropdown.Item>
+                            <Dropdown.Item>Bureaucracy</Dropdown.Item>
+                            <Dropdown.Item>Confederacy</Dropdown.Item>
+                            <Dropdown.Item>Democracy</Dropdown.Item>
+                            <Dropdown.Item>Dictatorship</Dropdown.Item>
+                            <Dropdown.Item>Feudalism</Dropdown.Item>
+                            <Dropdown.Item>Gerontocracy</Dropdown.Item>
+                            <Dropdown.Item>Hierarchy</Dropdown.Item>
+                            <Dropdown.Item>Magocracy</Dropdown.Item>
+                            <Dropdown.Item>Matriarchy/Patriarchy</Dropdown.Item>
+                            <Dropdown.Item>Militocracy</Dropdown.Item>
+                            <Dropdown.Item>Oligarchy</Dropdown.Item>
+                            <Dropdown.Item>Plutocracy</Dropdown.Item>
+                            <Dropdown.Item>Republic</Dropdown.Item>
+                            <Dropdown.Item>Satrapy</Dropdown.Item>
+                            <Dropdown.Item>Theocracy</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
 
+                    <br></br>
 
                     <Dropdown onSelect={this.currencyChoice}>
                         <Dropdown.Toggle variant="outline-primary">
                         {this.state.currency ? this.state.currency: 'Choose Your Currency'}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                        <Dropdown.Item>Loose Pantheons `(Suggested)`</Dropdown.Item>
-                        <Dropdown.Item>Tight Pantheons</Dropdown.Item>
-                        <Dropdown.Item>Mystery Cults</Dropdown.Item>
-                        <Dropdown.Item>Monotheism</Dropdown.Item>
-                        <Dropdown.Item>Dualism</Dropdown.Item>
-                        <Dropdown.Item>Animism</Dropdown.Item>
+                            <Dropdown.Item>Common Coinage</Dropdown.Item>
+                            <Dropdown.Item>Trade Bars</Dropdown.Item>
+                            <Dropdown.Item>Odd Currency</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </Modal.Body>
