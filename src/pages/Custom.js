@@ -11,7 +11,9 @@ import Government from "../components/WorldBuilder/Government/Government"
 import Physical from "../components/WorldBuilder/Physical/Physical"
 import Social from "../components/WorldBuilder/Social/Social"
 import ActsClimax from "../components/Adventure/Climax/ActsClimax"
-import Goals from "../components/Adventure/Goals/AdventureGoals"
+import MainGoals from "../components/Adventure/Goals/MainGoals"
+import AdventureStart from "../components/Adventure/Goals/AdventureStart"
+import Pillar from "../components/Adventure/Goals/Pillar"
 import PatronAllies from "../components/Adventure/PatronAllies/PatronAllies"
 import Villain from "../components/Adventure/Villain/Villain"
 import Between from "../components/MoreStory/Between/Between"
@@ -230,7 +232,9 @@ setMonsters = (type) => {
                     <p>Let's talk characters. Let's think about the goal of this entire campaign. Do you want to start with your villain or your quest giver? Sometimes the quest giver and the villain are the same.</p>
                     <div className="btnspace">
                         <ActsClimax></ActsClimax>
-                        <Goals></Goals>
+                        <MainGoals></MainGoals>
+                        <AdventureStart></AdventureStart>
+                        <Pillar></Pillar>
                         <PatronAllies></PatronAllies>
                         <Villain></Villain>
 

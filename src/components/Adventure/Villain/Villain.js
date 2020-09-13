@@ -73,27 +73,24 @@ render() {
 
                     <Dropdown onSelect={this.handleVillainTypeSelect}>
                         <Dropdown.Toggle variant="outline-primary">
-                        {villainType ? villainType: 'Choose your villain Type'}
+                        {villainType ? villainType: 'Choose your Adventure Villain'}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                        <Dropdown.Item>Human</Dropdown.Item>
-                        <Dropdown.Item>Hag</Dropdown.Item>
-                        <Dropdown.Item>Abyssal Chicken</Dropdown.Item>
-                        <Dropdown.Item>Alcolyte</Dropdown.Item>
-                        <Dropdown.Item>Elemental</Dropdown.Item>
-                        <Dropdown.Item>Dwarf</Dropdown.Item>
-                        <Dropdown.Item>Cult</Dropdown.Item>
-                        <Dropdown.Item>Animal</Dropdown.Item>
-                        <Dropdown.Item>Banshee</Dropdown.Item>
-                        <Dropdown.Item>Ghost</Dropdown.Item>
-                        <Dropdown.Item>Zombie</Dropdown.Item>
-                        <Dropdown.Item>Assasin</Dropdown.Item>
-                        <Dropdown.Item>Giant</Dropdown.Item>
-                        <Dropdown.Item>Wizard</Dropdown.Item>
-                        <Dropdown.Item>Demogorgan</Dropdown.Item>
-                        <Dropdown.Item>Dragon</Dropdown.Item>
-                        <Dropdown.Item>God</Dropdown.Item>
-                        <Dropdown.Item>Something else</Dropdown.Item>
+                            <Dropdown.Item>Beast or monstrosity with no particular agenda</Dropdown.Item>
+                            <Dropdown.Item>Abberation bent on corruption or desruction</Dropdown.Item>
+                            <Dropdown.Item>Dragon bent on domination and plunder</Dropdown.Item>
+                            <Dropdown.Item>Giant bent on plunder</Dropdown.Item>
+                            <Dropdown.Item>Undead with any agenda</Dropdown.Item>
+                            <Dropdown.Item>Fey with a mysterious goal</Dropdown.Item>
+                            <Dropdown.Item>Hummanoid cultist</Dropdown.Item>
+                            <Dropdown.Item>Hummanoid conqueror</Dropdown.Item>
+                            <Dropdown.Item>Hummanoid seeking revenge</Dropdown.Item>
+                            <Dropdown.Item>Hummanoid schemer seeking to rule</Dropdown.Item>
+                            <Dropdown.Item>Hummanoid criminal mastermind</Dropdown.Item>
+                            <Dropdown.Item>Hummanoid raider or ravager</Dropdown.Item>
+                            <Dropdown.Item>Hummanoid under a curse</Dropdown.Item>
+                            <Dropdown.Item>Misguided hummanoid zealot</Dropdown.Item>
+                            <Dropdown.Item>Something else</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
 

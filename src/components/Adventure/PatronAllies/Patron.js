@@ -49,19 +49,19 @@ render() {
             </div>
             <Modal show={this.state.showModal} onHide={this.handleClick}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Let's Create A Quest Giver!</Modal.Title>
+                    <Modal.Title>Let's Create A Patron!</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <p>Below are some buttons to help create your patron.</p>
                     <Form inline>
-                        <FormControl type="text" placeholder="Guest Giver Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
+                        <FormControl type="text" placeholder="Patron Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
                         <div style={{paddingRight: "10px"}}>or</div> 
 
                         <OverlayTrigger overlay={
-                        <Tooltip>Coming Soon!</Tooltip>}>
-                        <span className="d-inline-block">
-                        <Button variant="outline-primary" style={{ pointerEvents: 'none' }} disabled>Generate</Button>
-                        </span>
+                            <Tooltip>Coming Soon!</Tooltip>}>
+                            <span className="d-inline-block">
+                                <Button variant="outline-primary" style={{ pointerEvents: 'none' }} disabled>Generate</Button>
+                            </span>
                         </OverlayTrigger>
                         
                     </Form>
@@ -72,12 +72,21 @@ render() {
                         {patronType ? patronType: 'Choose your Patron Type'}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                        <Dropdown.Item>Human</Dropdown.Item>
-                        <Dropdown.Item>Elf</Dropdown.Item>
-                        <Dropdown.Item>God</Dropdown.Item>
-                        <Dropdown.Item>Dwarf</Dropdown.Item>
-                        <Dropdown.Item>Wizard</Dropdown.Item>
-                        <Dropdown.Item>Something else</Dropdown.Item>
+                            <Dropdown.Item>Retired Adventurer</Dropdown.Item>
+                            <Dropdown.Item>Local Ruler</Dropdown.Item>
+                            <Dropdown.Item>Military Officer</Dropdown.Item>
+                            <Dropdown.Item>Temple Official</Dropdown.Item>
+                            <Dropdown.Item>Sage</Dropdown.Item>
+                            <Dropdown.Item>Respected Elder</Dropdown.Item>
+                            <Dropdown.Item>Deity or Celestial</Dropdown.Item>
+                            <Dropdown.Item>Mysterious Fey</Dropdown.Item>
+                            <Dropdown.Item>Old Friend</Dropdown.Item>
+                            <Dropdown.Item>Former Teacher</Dropdown.Item>
+                            <Dropdown.Item>Parent or Family Member</Dropdown.Item>
+                            <Dropdown.Item>Desprate Commoner</Dropdown.Item>
+                            <Dropdown.Item>Embattled Merchant</Dropdown.Item>
+                            <Dropdown.Item>Villain posing as a patron</Dropdown.Item>
+                            <Dropdown.Item>Something else</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </Modal.Body>
