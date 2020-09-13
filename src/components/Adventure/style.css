@@ -42,3 +42,7 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.dunTypeBtns {
+    margin: 5px;
+}

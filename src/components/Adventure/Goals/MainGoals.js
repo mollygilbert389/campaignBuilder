@@ -82,11 +82,16 @@ class MainGoals extends Component {
         })
     }
 
-    handleGoalCat = (keyevent, event) => {
-        let selection = event.target.text
+    handleGoalCat = (event) => {
+        let selection = event.target.value
+        console.log(selection)
+
+        this.setState({
+            finalDungeonChoice: "",
+        })
 
         switch(selection) {
-            case "Have a Main Dungeon Goal":
+            case "dungeon":
                 this.setState({
                     goalsCat: selection,
                     dungeonGoalsClicked: true,
@@ -94,7 +99,7 @@ class MainGoals extends Component {
                     otherGoalsClicked: false
                 })
             break;
-            case "Have a Main Wilderness Goal":
+            case "wilderness":
                 this.setState({
                     goalsCat: selection,
                     dungeonGoalsClicked: false,
@@ -102,7 +107,7 @@ class MainGoals extends Component {
                     otherGoalsClicked: false
                 })
             break;
-            case "Other":
+            case "other":
                 this.setState({
                     goalsCat: selection,
                     dungeonGoalsClicked: false,
@@ -139,19 +144,15 @@ render() {
                     
                     <br></br>
 
-                    <Dropdown onSelect={this.handleGoalCat}>
-                        <Dropdown.Toggle variant="outline-primary">
-                        {this.state.goalsCat ? this.state.goalsCat: 'Choose a Type of Goal'}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                            <Dropdown.Item>Have a Main Dungeon Goal</Dropdown.Item>
-                            <Dropdown.Item>Have a Main Wilderness Goal</Dropdown.Item>
-                            <Dropdown.Item>Other</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
+                <div className="container adventureBtns">
+                    <Button className="dunTypeBtns" variant="outline-primary" onClick={this.handleGoalCat} value={"dungeon"}>Dungeon Type Goals</Button>
+                    <Button className="dunTypeBtns" variant="outline-primary" onClick={this.handleGoalCat} value={"wilderness"}>Wilderness Type Goals</Button>
+                    <Button className="dunTypeBtns" variant="outline-primary" onClick={this.handleGoalCat} value={"other"}>Other Type Goals</Button>
+                </div>
 
                     <br></br>
 
+                    <div className="d-flex flex-column align-items-center">
                     {this.state.dungeonGoalsClicked && (<div>
                         <Dropdown onSelect={this.handleGoalClick}>
                             <Dropdown.Toggle variant="outline-primary">
@@ -190,6 +191,8 @@ render() {
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>)}
+                    </div>
+
                     
                 </Modal.Body>
 
