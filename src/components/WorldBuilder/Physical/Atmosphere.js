@@ -93,21 +93,6 @@ render() {
                     </FormGroup>
 
                     <FormGroup>
-                        <Dropdown onSelect={this.government}>
-                            <Dropdown.Toggle variant="outline-primary">
-                                {this.state.government ? this.state.government : 'What is the government like here?'}
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                            <Dropdown.Item >Autocracy</Dropdown.Item>
-                            <Dropdown.Item >Bureaucracy</Dropdown.Item>
-                            <Dropdown.Item >City</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-
-                        <Button>Roll for it</Button>
-                    </FormGroup>
-
-                    <FormGroup>
                         <Dropdown onSelect={this.meetingSelect}>
                             <Dropdown.Toggle variant="outline-primary">
                                 {meetingPlace ? meetingPlace: 'Where do you intend your party to meet?'}

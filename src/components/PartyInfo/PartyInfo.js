@@ -23,9 +23,9 @@ class PartyInfo extends Component {
     switch(partyMemberChoice) {
         case 3: 
         playerData = [
-            {id: 1, name: "", raceClass: ""},
-            {id: 2, name: "", raceClass: ""},
-            {id: 3, name: "", raceClass: ""},
+            {id: 1, name: "", raceClass: "", level:0},
+            {id: 2, name: "", raceClass: "", level:0},
+            {id: 3, name: "", raceClass: "", level:0},
         ]
             this.setState({
                 partymemberData: playerData
@@ -33,10 +33,10 @@ class PartyInfo extends Component {
         break;
         case 4: 
         playerData = [
-            {id: 1, name: "", raceClass: ""},
-            {id: 2, name: "", raceClass: ""},
-            {id: 3, name: "", raceClass: ""},
-            {id: 4, name: "", raceClass: ""},
+            {id: 1, name: "", raceClass: "", level:0},
+            {id: 2, name: "", raceClass: "", level:0},
+            {id: 3, name: "", raceClass: "", level:0},
+            {id: 4, name: "", raceClass: "", level:0},
         ]
             this.setState({
                 partymemberData: playerData
@@ -44,11 +44,11 @@ class PartyInfo extends Component {
         break;
         case 5: 
         playerData = [
-            {id: 1, name: "", raceClass: "" },
-            {id: 2, name: "", raceClass: ""},
-            {id: 3, name: "", raceClass: ""},
-            {id: 4, name: "", raceClass: ""},
-            {id: 5, name: "", raceClass: ""},
+            {id: 1, name: "", raceClass: "", level:0},
+            {id: 2, name: "", raceClass: "", level:0},
+            {id: 3, name: "", raceClass: "", level:0},
+            {id: 4, name: "", raceClass: "", level:0},
+            {id: 5, name: "", raceClass: "", level:0},
         ]
             this.setState({
                 partymemberData: playerData
@@ -56,12 +56,12 @@ class PartyInfo extends Component {
         break;
         case 6: 
         playerData = [
-            {id: 1, name: "", raceClass: ""},
-            {id: 2, name: "", raceClass: ""},
-            {id: 3, name: "", raceClass: ""},
-            {id: 4, name: "", raceClass: ""},
-            {id: 5, name: "", raceClass: ""},
-            {id: 6, name: "", raceClass: ""},
+            {id: 1, name: "", raceClass: "", level:0},
+            {id: 2, name: "", raceClass: "", level:0},
+            {id: 3, name: "", raceClass: "", level:0},
+            {id: 4, name: "", raceClass: "", level:0},
+            {id: 5, name: "", raceClass: "", level:0},
+            {id: 6, name: "", raceClass: "", level:0},
         ]
             this.setState({
                 partymemberData: playerData
@@ -69,13 +69,13 @@ class PartyInfo extends Component {
         break;
         case 7: 
         playerData = [
-            {id: 1, name: "", raceClass: ""},
-            {id: 2, name: "", raceClass: ""},
-            {id: 3, name: "", raceClass: ""},
-            {id: 4, name: "", raceClass: ""},
-            {id: 5, name: "", raceClass: ""},
-            {id: 6, name: "", raceClass: ""},
-            {id: 7, name: "", raceClass: ""},
+            {id: 1, name: "", raceClass: "", level:0},
+            {id: 2, name: "", raceClass: "", level:0},
+            {id: 3, name: "", raceClass: "", level:0},
+            {id: 4, name: "", raceClass: "", level:0},
+            {id: 5, name: "", raceClass: "", level:0},
+            {id: 6, name: "", raceClass: "", level:0},
+            {id: 7, name: "", raceClass: "", level:0},
         ]
             this.setState({
                 partymemberData: playerData
@@ -83,14 +83,14 @@ class PartyInfo extends Component {
         break;
         case 8: 
         playerData = [
-            {id: 1, name: "", raceClass: ""},
-            {id: 2, name: "", raceClass: ""},
-            {id: 3, name: "", raceClass: ""},
-            {id: 4, name: "", raceClass: ""},
-            {id: 5, name: "", raceClass: ""},
-            {id: 6, name: "", raceClass: ""},
-            {id: 7, name: "", raceClass: ""},
-            {id: 8, name: "", raceClass: ""},
+            {id: 1, name: "", raceClass: "", level:0},
+            {id: 2, name: "", raceClass: "", level:0},
+            {id: 3, name: "", raceClass: "", level:0},
+            {id: 4, name: "", raceClass: "", level:0},
+            {id: 5, name: "", raceClass: "", level:0},
+            {id: 6, name: "", raceClass: "", level:0},
+            {id: 7, name: "", raceClass: "", level:0},
+            {id: 8, name: "", raceClass: "", level:0},
         ]
             this.setState({
                 partymemberData: playerData
@@ -107,7 +107,7 @@ class PartyInfo extends Component {
         const oldData = this.state.partymemberData
 
         const newPartyMemberData = update(oldData, 
-            {[index]: {$set: {id: index+1, name: this.state.partymemberData[index].name, raceClass: newRaceClass}}},
+            {[index]: {$set: {id: index+1, name: this.state.partymemberData[index].name, raceClass: newRaceClass, level:0}}},
           );
 
           this.setState({
@@ -121,7 +121,7 @@ class PartyInfo extends Component {
         const oldData = this.state.partymemberData
 
         const newPartyMemberData = update(oldData, 
-            {[index]: {$set: {id: index+1, name: playerName, raceClass: this.state.partymemberData[index].raceClass}}},
+            {[index]: {$set: {id: index+1, name: playerName, raceClass: this.state.partymemberData[index].raceClass, level:0}}},
           );
 
           this.setState({
@@ -131,6 +131,19 @@ class PartyInfo extends Component {
 
       handleReduxSave = () => {
         this.props.setPlayers(this.state.partymemberData)
+      }
+
+      handlePartyLevel = (eventKey, event) => {
+        const index = event.target.id -1
+        const newlevel = event.target.text
+        const oldData = this.state.partymemberData
+        const newPartyMemberData = update(oldData, 
+            {[index]: {$set: {id: index+1, name: this.state.partymemberData[index].name, raceClass: this.state.partymemberData[index].raceClass, level: newlevel}}},
+          );
+
+          this.setState({
+            partymemberData: newPartyMemberData
+        });
       }
 
 render() {  
@@ -178,6 +191,34 @@ render() {
                                     <Dropdown.Item id={partyMember.id} name="Sourcerer">Sourcerer</Dropdown.Item>
                                     <Dropdown.Item id={partyMember.id} name="Warlock">Warlock</Dropdown.Item>
                                     <Dropdown.Item id={partyMember.id} name="Wizard">Wizard</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+
+                                <Dropdown onSelect={this.handlePartyLevel} id={partyMember.id}>
+                                    <Dropdown.Toggle variant="outline-primary">
+                                        {partymemberData[index].level ? partymemberData[index].level: 'Choose a level for this party member'}
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item id={partyMember.id} >1</Dropdown.Item>
+                                        <Dropdown.Item id={partyMember.id} >2</Dropdown.Item>
+                                        <Dropdown.Item id={partyMember.id} >3</Dropdown.Item>
+                                        <Dropdown.Item id={partyMember.id} >4</Dropdown.Item>
+                                        <Dropdown.Item id={partyMember.id} >5</Dropdown.Item>
+                                        <Dropdown.Item id={partyMember.id} >6</Dropdown.Item>
+                                        <Dropdown.Item id={partyMember.id} >7</Dropdown.Item>
+                                        <Dropdown.Item id={partyMember.id} >8</Dropdown.Item>
+                                        <Dropdown.Item id={partyMember.id} >9</Dropdown.Item>
+                                        <Dropdown.Item id={partyMember.id} >10</Dropdown.Item>
+                                        <Dropdown.Item id={partyMember.id} >11</Dropdown.Item>
+                                        <Dropdown.Item id={partyMember.id} >12</Dropdown.Item>
+                                        <Dropdown.Item id={partyMember.id} >13</Dropdown.Item>
+                                        <Dropdown.Item id={partyMember.id} >14</Dropdown.Item>
+                                        <Dropdown.Item id={partyMember.id} >15</Dropdown.Item>
+                                        <Dropdown.Item id={partyMember.id} >16</Dropdown.Item>
+                                        <Dropdown.Item id={partyMember.id} >17</Dropdown.Item>
+                                        <Dropdown.Item id={partyMember.id} >18</Dropdown.Item>
+                                        <Dropdown.Item id={partyMember.id} >19</Dropdown.Item>
+                                        <Dropdown.Item id={partyMember.id} >20</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
                                 </FormGroup>
