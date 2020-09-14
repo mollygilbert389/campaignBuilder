@@ -1,16 +1,16 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import Encounters from "./Encounters"
+import Twists from './Twists'
 import RandomEvents from "./RandomEvents"
 import SideQuests from "./SideQuests"
 import Traps from "./Traps"
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "../style.css"
 
-class Physical extends Component {
+class ExtraAdventure extends Component {
 
     state = {
-        showModal: false
+        showModal: false,
     }
 
     handleClick = () => {
@@ -19,29 +19,28 @@ class Physical extends Component {
         })
     }
 
-
 render() {  
 
 
     return (
         <div>
             <div className="btns">
-                <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Twists
+                <Button variant="outline-success" size="lg" onClick={this.handleClick}>Extra Adventure
                 </Button>
             </div>
             <Modal size="lg" show={this.state.showModal} onHide={this.handleClick}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Paint with all th colors.</Modal.Title>
+                    <Modal.Title>Here are some things you could add to your story to make it more interesting.</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>Let's figure out the more apparent features of your world.</p>
+                    <p>These are optional. Click the buttons below to make some choices.</p>
                     
                     <br></br>
 
                     <div className="btnspace">
-                        <Encounters></Encounters>
-                        <RandomEvents></RandomEvents>
+                        <Twists></Twists>
                         <SideQuests></SideQuests>
+                        <RandomEvents></RandomEvents>
                         <Traps></Traps>
                     </div>
 
@@ -49,7 +48,7 @@ render() {
                 </Modal.Body>
 
                 <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.close} >Save</Button>
+                    <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>
@@ -57,4 +56,4 @@ render() {
 }
 }
 
-export default Physical;
+export default ExtraAdventure;

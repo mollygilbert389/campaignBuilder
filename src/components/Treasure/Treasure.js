@@ -78,7 +78,6 @@ class Treasure extends Component {
     }
 
     handleSlider = (event, value) => {
-        console.log(value)
         this.setState({
             treasureNumber: value
         }, () => {this.props.setTreasureNumber(this.state.treasureNumber)}

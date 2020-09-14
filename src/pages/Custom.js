@@ -19,7 +19,7 @@ import PatronAllies from "../components/Adventure/PatronAllies/PatronAllies"
 import Villain from "../components/Adventure/Villain/Villain"
 import Between from "../components/MoreStory/Between/Between"
 import NPCs from "../components/MoreStory/NPCs/NPCs"
-import Twists from "../components/MoreStory/Twists/Twists"
+import ExtraAdventure from "../components/MoreStory/ExtraAdventure/ExtraAdventure"
 import PartyInfo from "../components/PartyInfo/PartyInfo"
 import Rooms from "../components/Dungeon/Rooms"
 import Setback from "../components/MoreStory/Setback"
@@ -28,6 +28,7 @@ import MonsterCard from "../components/Dungeon/MonsterCard";
 import Treasure from "../components/Treasure/Treasure"
 import StoryInfo from "../components/StoryInfo/StoryInfo";
 import FinalScreen from "../components/FinalCampaign/FinalScreen"
+import AdventureSite from "../components/WorldBuilder/Physical/AdventureSite";
 // import DiceRoller from "../components/DiceRoller"
 
 
@@ -259,7 +260,7 @@ setMonsters = (type) => {
                         <LocalEvents></LocalEvents>
                         <Between></Between>
                         <NPCs></NPCs>
-                        <Twists></Twists>
+                        <ExtraAdventure></ExtraAdventure>
                         <Setback setSetBacks={this.setSetbacks}></Setback>
                     </div>
                 </div>)}

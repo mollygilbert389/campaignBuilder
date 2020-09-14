@@ -9,3 +9,30 @@
 .eventbtns {
     margin: 1px;
 }
+
+.staticModal {
+    height: 500px;
+    overflow: scroll;
+}
+
+.NPCimage {
+    width: 150px;
+    height: 150px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.color {
+    background-color: rgb(166, 204, 219);
+    width: 500px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.dropdown-toggle {
+    font-size: 12px;
+    margin: 2px;
+}

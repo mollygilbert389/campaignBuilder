@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal'
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "../style.css"
 
-class RandomEvents extends Component {
+class Traps extends Component {
     state ={
         gods: ""
     }
@@ -27,7 +27,7 @@ render() {
     return (
         <div>
             <div className="btns">
-                <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Random Events
+                <Button variant="outline-success" size="lg" onClick={this.handleClick}>Traps
                 </Button>
             </div>
             <Modal show={this.state.showModal} onHide={this.handleClick}>
@@ -63,4 +63,4 @@ render() {
 }
 }
 
-export default RandomEvents;
+export default Traps;

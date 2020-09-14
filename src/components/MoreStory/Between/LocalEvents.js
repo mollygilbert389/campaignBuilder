@@ -119,7 +119,7 @@ render() {
                     
                     <br></br>
 
-                    <div className="container">
+                    <div className="container staticModal">
                         <div className="side">
                         {this.state.localEventOptions.map(drop => {
                             return <Button name={drop.eventName} className="eventbtns" onClick={this.handleAddEvent} disabled={this.state.localEventChoice.length >= 5 ? true : false}> {drop.eventName}</Button>
