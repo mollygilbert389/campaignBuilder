@@ -12,7 +12,7 @@ import Physical from "../components/WorldBuilder/Physical/Physical"
 import Social from "../components/WorldBuilder/Social/Social"
 import ActsClimax from "../components/Adventure/Climax/ActsClimax"
 import MainGoals from "../components/Adventure/Goals/MainGoals"
-import AdventureStart from "../components/Adventure/Goals/AdventureStart"
+import AdventureStart from "../components/Dungeon/AdventureStart"
 import Pillar from "../components/Adventure/Goals/Pillar"
 import PatronAllies from "../components/Adventure/PatronAllies/PatronAllies"
 import Villain from "../components/Adventure/Villain/Villain"
@@ -233,7 +233,6 @@ setMonsters = (type) => {
                     <div className="btnspace">
                         <ActsClimax></ActsClimax>
                         <MainGoals></MainGoals>
-                        <AdventureStart></AdventureStart>
                         <Pillar></Pillar>
                         <PatronAllies></PatronAllies>
                         <Villain></Villain>
@@ -267,9 +266,9 @@ setMonsters = (type) => {
                 <div>
                     <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
                     <div className="btnspace">
+                        <AdventureStart></AdventureStart>
                         <Type setDungeonType={this.setDungeonType}></Type>
                         <Rooms setRooms={this.setRooms}></Rooms>
-                        
                         <MonsterCard campaign={this.props.campaign} setMonsterNum={this.setMonsterNum} setMonsters={this.setMonsters}></MonsterCard>
                     </div>
                 </div>)}

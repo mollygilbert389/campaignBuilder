@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Carousel from 'react-bootstrap/Carousel'
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
-import "../style.css"
+import "./style.css"
 
 class AdventureStart extends Component {
     state ={

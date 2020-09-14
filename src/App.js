@@ -5,7 +5,8 @@ import Short from "./pages/Short"
 import Long from "./pages/Long"
 import Medium from "./pages/Medium"
 import Custom from "./pages/Custom"
-import Navtabs from "./components/Navtabs/Navtabs"
+import Navtabs from "./components/StaticComps/Navtabs"
+import Footer from "./components/StaticComps/Footer"
 import './App.css';
 
 import {Provider} from "react-redux"
@@ -25,6 +26,7 @@ function App() {
         <Route exact path="/longcampaign" component={Long}/>
         <Route exact path="/customcampaign" component={Custom}/>
       </Router>
+      <Footer></Footer>
     </div>
     </Provider>
   );

@@ -10,6 +10,7 @@ class MainGoals extends Component {
         finalDungeonChoice: "",
         wildernessGoalsClickd: false,
         otherGoalsClicked: false, 
+        eventGoalsClicked: false,
         dungeonGoals: [
             {id:1, goal:"Stop the dungeon's monstrous inhabitants from raiding the surface world"},
             {id:2, goal:"Foil a villain's evil plan"},
@@ -67,6 +68,27 @@ class MainGoals extends Component {
             {id:10, goal:"Find the source of strange occurrences in a haunted house or other location"},
             {id:11, goal:"Interfere with the operation of a business"},
             {id:12, goal:"Rescue a character, monster, or object from a natural or unnatural disaster"},
+        ],
+        eventGoals: [
+            {id:1, goal:"Bring the villain to justice"},
+            {id:2, goal:"Clear the name of an innocent NPC"},
+            {id:3, goal:"Protect or hide an NPC"},
+            {id:4, goal:"Protect an object"},
+            {id:5, goal:"Discover the nature and origin of a strange phenomenon that might be the villain's doing"},
+            {id:6, goal:"Find a wanted fugitive"},
+            {id:7, goal:"Overthrow a tyrant"},
+            {id:8, goal:"Uncover a consiracy theory to overthrow a ruler"},
+            {id:9, goal:"Negotiate peace between enemy nations or feuding families"},
+            {id:10, goal:"Secure aid from a ruler or council"},
+            {id:11, goal:"Help a villain find redemption"},
+            {id:12, goal:"Parlay with a villain"},
+            {id:13, goal:"Smuggle weapons to rebel forces"},
+            {id:14, goal:"Stop a band of smugglers"},
+            {id:15, goal:"Gather intellegence on an enemy force"},
+            {id:16, goal:"Win a tournament"},
+            {id:17, goal:"Determine the villain's identity"},
+            {id:18, goal:"Locate a stolen item"},
+            {id:19, goal:"Make sure a wedding goes off without a hitch"},
         ]
     }
 
@@ -96,7 +118,9 @@ class MainGoals extends Component {
                     goalsCat: selection,
                     dungeonGoalsClicked: true,
                     wildernessGoalsClickd: false,
-                    otherGoalsClicked: false
+                    otherGoalsClicked: false,
+                    eventGoalsClicked: false,
+                    
                 })
             break;
             case "wilderness":
@@ -104,7 +128,17 @@ class MainGoals extends Component {
                     goalsCat: selection,
                     dungeonGoalsClicked: false,
                     wildernessGoalsClickd: true,
-                    otherGoalsClicked: false
+                    otherGoalsClicked: false,
+                    eventGoalsClicked: false,
+                })
+            break;
+            case "event":
+                this.setState({
+                    goalsCat: selection,
+                    dungeonGoalsClicked: false,
+                    wildernessGoalsClickd: false,
+                    otherGoalsClicked: false,
+                    eventGoalsClicked: true,
                 })
             break;
             case "other":
@@ -112,7 +146,8 @@ class MainGoals extends Component {
                     goalsCat: selection,
                     dungeonGoalsClicked: false,
                     wildernessGoalsClickd: false,
-                    otherGoalsClicked: true
+                    otherGoalsClicked: true,
+                    eventGoalsClicked: false,
                 })
             break;
             default: 
@@ -147,6 +182,7 @@ render() {
                 <div className="container adventureBtns">
                     <Button className="dunTypeBtns" variant="outline-primary" onClick={this.handleGoalCat} value={"dungeon"}>Dungeon Type Goals</Button>
                     <Button className="dunTypeBtns" variant="outline-primary" onClick={this.handleGoalCat} value={"wilderness"}>Wilderness Type Goals</Button>
+                    <Button className="dunTypeBtns" variant="outline-primary" onClick={this.handleGoalCat} value={"event"}>Event Type Goals</Button>
                     <Button className="dunTypeBtns" variant="outline-primary" onClick={this.handleGoalCat} value={"other"}>Other Type Goals</Button>
                 </div>
 
@@ -186,6 +222,19 @@ render() {
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                                 {this.state.otherGoals.map(drop => {
+                                    return <Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>
+                                })}
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </div>)}
+
+                    {this.state.eventGoalsClicked && (<div>
+                        <Dropdown onSelect={this.handleGoalClick}>
+                            <Dropdown.Toggle variant="outline-primary">
+                            {this.state.finalDungeonChoice ? this.state.finalDungeonChoice: 'Choose Overal Campaign Goal'}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                {this.state.eventGoals.map(drop => {
                                     return <Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>
                                 })}
                             </Dropdown.Menu>
