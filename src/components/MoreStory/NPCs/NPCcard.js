@@ -17,6 +17,7 @@ class NPCCard extends Component {
         NPCBondChoie: '',
         NPCFlawSecretChoice: '',
         NPCTraitChoice: '',
+        isDisabled: true,
         NPCDrilledIdealsList: [],
         NPCTalents: [
             {id: 1, option: "Plays a musical instrument" },
@@ -209,7 +210,8 @@ class NPCCard extends Component {
 
         this.setState({
             NPCIdealChoice: event.target.text,
-            NPCDrilledIdealsList: drilledChoices.list
+            NPCDrilledIdealsList: drilledChoices.list,
+            isDisabled: false,
         })
     }
 
@@ -242,9 +244,9 @@ render() {
                     <Card.Title>NPC Name</Card.Title>
                             <Dropdown onSelect={this.handleGenderSelect}>
                                 <Dropdown.Toggle variant="outline-primary">
-                                {this.state.gender ? this.state.gender: 'Choose your Characters Gender'}
+                                {this.state.gender ?  `Gender: ${this.state.gender}`: 'Choose your Characters Gender'}
                                 </Dropdown.Toggle>
-                                <Dropdown.Menu className="smallFont">
+                                <Dropdown.Menu>
                                     <Dropdown.Item>Female</Dropdown.Item>
                                     <Dropdown.Item>Male</Dropdown.Item>
                                     <Dropdown.Item>Non Binary</Dropdown.Item>
@@ -254,7 +256,7 @@ render() {
 
                             <Dropdown onSelect={this.handleHighAbilitySelect}>
                                 <Dropdown.Toggle variant="outline-primary">
-                                {this.state.NPCHighAbility ? this.state.NPCHighAbility: "Choose your NPC's High Ability"}
+                                {this.state.NPCHighAbility ? `High Ability: ${this.state.NPCHighAbility}`: "Choose your NPC's High Ability"}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
                                     <Dropdown.Item>Strength-powerful, brawny, strong as an ox</Dropdown.Item>
@@ -269,7 +271,7 @@ render() {
 
                             <Dropdown onSelect={this.handleLowAbilitySelect}>
                                 <Dropdown.Toggle variant="outline-primary">
-                                {this.state.NPCLowAbility ? this.state.NPCLowAbility: "Choose your NPC's Low Ability"}
+                                {this.state.NPCLowAbility ? `Low Ability: ${this.state.NPCLowAbility}`: "Choose your NPC's Low Ability"}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
                                     <Dropdown.Item>Strength-feeble, scrawny</Dropdown.Item>
@@ -283,7 +285,7 @@ render() {
 
                             <Dropdown onSelect={this.handleNPCTalent}>
                                 <Dropdown.Toggle variant="outline-primary">
-                                {this.state.NPCTalentChoice ? this.state.NPCTalentChoice: "Choose your NPC's Talent"}
+                                {this.state.NPCTalentChoice ? `Talent: ${this.state.NPCTalentChoice}`: "Choose your NPC's Talent"}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
                                     {this.state.NPCTalents.map(drop => {
@@ -294,7 +296,7 @@ render() {
 
                             <Dropdown onSelect={this.handleNPCManner}>
                                 <Dropdown.Toggle variant="outline-primary">
-                                {this.state.NPCMannerismChoice ? this.state.NPCMannerismChoice: "Choose your NPC's Mannerism"}
+                                {this.state.NPCMannerismChoice ? `Mannerism: ${this.state.NPCMannerismChoice}`: "Choose your NPC's Mannerism"}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
                                     {this.state.NPCMannerisms.map(drop => {
@@ -305,7 +307,7 @@ render() {
 
                             <Dropdown onSelect={this.handleNPCTrait}>
                                 <Dropdown.Toggle variant="outline-primary">
-                                {this.state.NPCTraitChoice ? this.state.NPCTraitChoice: "Choose your NPC's Trait"}
+                                {this.state.NPCTraitChoice ? `Trait: ${this.state.NPCTraitChoice}`: "Choose your NPC's Trait"}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
                                     {this.state.NPCInteractionTraits.map(drop => {
@@ -314,7 +316,7 @@ render() {
                                 </Dropdown.Menu>
                             </Dropdown>
 
-                            <div className="container">
+                            <div className="center">
                             <Dropdown onSelect={this.handleNPCIdeal}>
                                 <Dropdown.Toggle variant="outline-primary">
                                 {this.state.NPCIdealChoice ? this.state.NPCIdealChoice: "Choose your NPC's Ideal"}
@@ -326,8 +328,8 @@ render() {
                                 </Dropdown.Menu>
                             </Dropdown>
 
-                            {this.state.NPCIdealChoice && (<Dropdown onSelect={this.handleDrilledIdeal}>
-                                <Dropdown.Toggle variant="outline-primary">
+                           <Dropdown onSelect={this.handleDrilledIdeal}>
+                                <Dropdown.Toggle variant="outline-primary" disabled={this.state.isDisabled}>
                                 {this.state.NPCDrilledIdealChoice ? this.state.NPCDrilledIdealChoice: "Choose your NPC's Ideal"}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
@@ -335,12 +337,12 @@ render() {
                                         return <Dropdown.Item name={drop}> {drop}</Dropdown.Item>
                                     })}
                                 </Dropdown.Menu>
-                            </Dropdown>)}
+                            </Dropdown>
                             </div>
 
                             <Dropdown onSelect={this.handleNPCBond}>
                                 <Dropdown.Toggle variant="outline-primary">
-                                {this.state.NPCBondChoie ? this.state.NPCBondChoie: "Choose your NPC's Bond"}
+                                {this.state.NPCBondChoie ? `Bond: ${this.state.NPCBondChoie}`: "Choose your NPC's Bond"}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
                                     {this.state.NPCBonds.map(drop => {
@@ -351,7 +353,7 @@ render() {
 
                             <Dropdown onSelect={this.handleNPCFlawSecret}>
                                 <Dropdown.Toggle variant="outline-primary">
-                                {this.state.NPCFlawSecretChoice ? this.state.NPCFlawSecretChoice: "Choose your NPC's Flaw or Secret"}
+                                {this.state.NPCFlawSecretChoice ? `Flaw/Secret: ${this.state.NPCFlawSecretChoice}`: "Choose your NPC's Flaw or Secret"}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
                                     {this.state.NPCFlawsSecrets.map(drop => {
