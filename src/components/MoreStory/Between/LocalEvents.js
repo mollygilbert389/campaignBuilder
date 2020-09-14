@@ -7,7 +7,6 @@ class Religion extends Component {
     state ={
         showModal: false,
         localEventChoice: [],
-        eventCap: false,
         localEventOptions: [
             {id: 1, eventName: "Anniversary of a monarch's reign"},
             {id: 2, eventName: "Anniversary of an important event"},
@@ -123,7 +122,7 @@ render() {
                     <div className="container">
                         <div className="side">
                         {this.state.localEventOptions.map(drop => {
-                            return <Button name={drop.eventName} className="eventbtns" onClick={this.handleAddEvent} disabled={this.state.eventCap}> {drop.eventName}</Button>
+                            return <Button name={drop.eventName} className="eventbtns" onClick={this.handleAddEvent} disabled={this.state.localEventChoice.length >= 5 ? true : false}> {drop.eventName}</Button>
                             })}
                         </div>
                         <div className="side">
