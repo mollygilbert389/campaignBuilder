@@ -7,6 +7,7 @@ class Religion extends Component {
     state ={
         showModal: false,
         localEventChoice: [],
+        eventCap: false,
         localEventOptions: [
             {id: 1, eventName: "Anniversary of a monarch's reign"},
             {id: 2, eventName: "Anniversary of an important event"},
@@ -75,6 +76,12 @@ class Religion extends Component {
         const currentChoices = this.state.localEventChoice
         const updatedChoiceList = currentChoices.concat(event.target.name)
         const filteredChoiceList = updatedChoiceList.filter((item, index) => updatedChoiceList.indexOf(item) === index)
+        
+        if (this.state.localEventChoice.length >= 4) {
+            this.setState({
+                eventCap: true
+            })
+        }
 
         this.setState({
             localEventChoice: filteredChoiceList,
@@ -84,6 +91,12 @@ class Religion extends Component {
     removeEvent = (event) => {
         let choices = this.state.localEventChoice
         const newChoiceList = choices.filter(eventName => eventName !== event.target.name);
+
+        if (this.state.localEventChoice.length <= 5) {
+            this.setState({
+                eventCap: false
+            })
+        }
 
         this.setState({
             localEventChoice: newChoiceList
@@ -107,20 +120,10 @@ render() {
                     
                     <br></br>
 
-                    {/* <Dropdown onSelect={this.handleSelect}>
-                        <Dropdown.Toggle variant="outline-primary">
-                        {this.state.localEventChoice ? this.state.localEventChoice: 'Choose A Local Event'}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                            {this.state.localEventOptions.map(drop => {
-                                return <Dropdown.Item key={drop.id} name={drop.eventName}> {drop.eventName}</Dropdown.Item>
-                                })}
-                        </Dropdown.Menu>
-                    </Dropdown> */}
                     <div className="container">
                         <div className="side">
                         {this.state.localEventOptions.map(drop => {
-                            return <Button name={drop.eventName} className="eventbtns" onClick={this.handleAddEvent}> {drop.eventName}</Button>
+                            return <Button name={drop.eventName} className="eventbtns" onClick={this.handleAddEvent} disabled={this.state.eventCap}> {drop.eventName}</Button>
                             })}
                         </div>
                         <div className="side">
