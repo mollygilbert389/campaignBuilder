@@ -13,9 +13,11 @@ class NPCCard extends Component {
         NPCTalentChoice: '',
         NPCMannerismChoice:'',
         NPCIdealChoice: '',
+        NPCDrilledIdealChoice: '',
         NPCBondChoie: '',
         NPCFlawSecretChoice: '',
         NPCTraitChoice: '',
+        NPCDrilledIdealsList: [],
         NPCTalents: [
             {id: 1, option: "Plays a musical instrument" },
             {id: 2, option: "Speaks several languages" },
@@ -75,53 +77,65 @@ class NPCCard extends Component {
             {id: 12, option: "Suspicious" },
         ],
         NPCIdeals: [
-            {main: "Good Ideals", list: [
-                {id: 1, option: "Beauty" },
-                {id: 2, option: "Charity" },
-                {id: 3, option: "Greater Good" },
-                {id: 4, option: "Life" },
-                {id: 5, option: "Respect" },
-                {id: 6, option: "Self-sacrafice" },
+            {id: 1,
+            main: "Good Ideals", 
+            list: [
+                "Beauty",
+                "Charity",
+                "Greater Good",
+                "Life" ,
+                "Respect",
+                "Self-sacrafice",
             ]},
-            {main: "Evil Ideals", list: [
-                {id: 1, option: "Domination" },
-                {id: 2, option: "Greed" },
-                {id: 3, option: "Might" },
-                {id: 4, option: "Pain" },
-                {id: 5, option: "Retribution" },
-                {id: 6, option: "Slaughter" },
+            {id: 2,
+            main: "Evil Ideals", 
+            list: [
+                "Domination",
+                "Greed",
+                "Might" ,
+                "Pain" ,
+                "Retribution" ,
+                "Slaughter",
             ]},
-            {main: "Lawful Ideals", list: [
-                {id: 1, option: "Community" },
-                {id: 2, option: "Fairness" },
-                {id: 3, option: "Honor" },
-                {id: 4, option: "Logic" },
-                {id: 5, option: "Responsibility" },
-                {id: 6, option: "Tradition" },
+            {id: 3,
+            main: "Lawful Ideals", 
+            list: [
+                "Community",
+                "Fairness",
+                "Honor" ,
+                "Logic" ,
+                "Responsibility",
+                "Tradition",
             ]},
-            {main: "Chaotic Ideals", list: [
-                {id: 1, option: "Change" },
-                {id: 2, option: "Creativity" },
-                {id: 3, option: "Freedom" },
-                {id: 4, option: "Independence" },
-                {id: 5, option: "No limits" },
-                {id: 6, option: "Whimsey" },
+            {id: 4,
+            main: "Chaotic Ideals", 
+            list: [
+                "Change",
+                "Creativity",
+                "Freedom",
+                "Independence",
+                "No limits",
+                "Whimsey",
             ]},
-            {main: "Neutral Ideals", list: [
-                {id: 1, option: "Balance" },
-                {id: 2, option: "Knowledge" },
-                {id: 3, option: "Live and let live" },
-                {id: 4, option: "Moderation" },
-                {id: 5, option: "Neutrality" },
-                {id: 6, option: "People" },
+            {id: 5,
+            main: "Neutral Ideals", 
+            list: [
+                "Balance",
+                "Knowledge",
+                "Live and let live",
+                "Moderation",
+                "Neutrality",
+                "People" ,
             ]},
-            {main: "Other Ideals", list: [
-                {id: 1, option: "Aspiration" },
-                {id: 2, option: "Discovery" },
-                {id: 3, option: "Glory" },
-                {id: 4, option: "Nation" },
-                {id: 5, option: "Redemption" },
-                {id: 6, option: "Self-knowledge" },
+            {id: 6,
+            main: "Other Ideals", 
+            list: [
+                "Aspiration",
+                "Discovery",
+                "Glory",
+                "Nation",
+                "Redemption",
+                "Self-knowledge",
             ]},
         ], 
         NPCBonds: [
@@ -189,8 +203,19 @@ class NPCCard extends Component {
     }
 
     handleNPCIdeal = (eventKey, event) => {
+        let choice = event.target.name
+        let drilledChoices = this.state.NPCIdeals.find(item => item.main === choice)
+        console.log(drilledChoices)
+
         this.setState({
-            NPCIdealChoice: event.target.text
+            NPCIdealChoice: event.target.text,
+            NPCDrilledIdealsList: drilledChoices.list
+        })
+    }
+
+    handleDrilledIdeal = (eventKey, event) => {
+        this.setState({
+            NPCDrilledIdealChoice: event.target.name
         })
     }
 
@@ -289,6 +314,7 @@ render() {
                                 </Dropdown.Menu>
                             </Dropdown>
 
+                            <div className="container">
                             <Dropdown onSelect={this.handleNPCIdeal}>
                                 <Dropdown.Toggle variant="outline-primary">
                                 {this.state.NPCIdealChoice ? this.state.NPCIdealChoice: "Choose your NPC's Ideal"}
@@ -299,6 +325,18 @@ render() {
                                     })}
                                 </Dropdown.Menu>
                             </Dropdown>
+
+                            {this.state.NPCIdealChoice && (<Dropdown onSelect={this.handleDrilledIdeal}>
+                                <Dropdown.Toggle variant="outline-primary">
+                                {this.state.NPCDrilledIdealChoice ? this.state.NPCDrilledIdealChoice: "Choose your NPC's Ideal"}
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    {this.state.NPCDrilledIdealsList.map(drop => {
+                                        return <Dropdown.Item name={drop}> {drop}</Dropdown.Item>
+                                    })}
+                                </Dropdown.Menu>
+                            </Dropdown>)}
+                            </div>
 
                             <Dropdown onSelect={this.handleNPCBond}>
                                 <Dropdown.Toggle variant="outline-primary">
