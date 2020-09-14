@@ -6,6 +6,7 @@ import "../style.css"
 class Religion extends Component {
     state ={
         showModal: false,
+        localEventChoice: [],
         localEventOptions: [
             {id: 1, eventName: "Anniversary of a monarch's reign"},
             {id: 2, eventName: "Anniversary of an important event"},
@@ -58,15 +59,34 @@ class Religion extends Component {
 
     }
 
-    // religousOrg = (eventKey, event) => {
-    //     this.setState({
-    //         gods: event.target.text
-    //     })
-    // }
+    handleSelect = (eventKey, event) => {
+        this.setState({
+            localEventChoice: event.target.text
+        })
+    }
 
     handleClick = () => {
         this.setState({
             showModal: !this.state.showModal,
+        })
+    }
+
+    handleAddEvent = (event) => {
+        const currentChoices = this.state.localEventChoice
+        const updatedChoiceList = currentChoices.concat(event.target.name)
+        const filteredChoiceList = updatedChoiceList.filter((item, index) => updatedChoiceList.indexOf(item) === index)
+
+        this.setState({
+            localEventChoice: filteredChoiceList,
+        })
+    }
+
+    removeEvent = (event) => {
+        let choices = this.state.localEventChoice
+        const newChoiceList = choices.filter(eventName => eventName !== event.target.name);
+
+        this.setState({
+            localEventChoice: newChoiceList
         })
     }
 
@@ -78,7 +98,7 @@ render() {
                 <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Local Events
                 </Button>
             </div>
-            <Modal show={this.state.showModal} onHide={this.handleClick}>
+            <Modal size="lg" show={this.state.showModal} onHide={this.handleClick}>
                 <Modal.Header closeButton>
                     <Modal.Title>Anything Interesting Happening?</Modal.Title>
                 </Modal.Header>
@@ -87,19 +107,28 @@ render() {
                     
                     <br></br>
 
-                    <Dropdown onSelect={this.religousOrg}>
+                    {/* <Dropdown onSelect={this.handleSelect}>
                         <Dropdown.Toggle variant="outline-primary">
-                        {this.state.gods ? this.state.gods: 'Choose Your Religious Philosophy'}
+                        {this.state.localEventChoice ? this.state.localEventChoice: 'Choose A Local Event'}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                            <Dropdown.Item>Loose Pantheons `(Suggested)`</Dropdown.Item>
-                            <Dropdown.Item>Tight Pantheons</Dropdown.Item>
-                            <Dropdown.Item>Mystery Cults</Dropdown.Item>
-                            <Dropdown.Item>Monotheism</Dropdown.Item>
-                            <Dropdown.Item>Dualism</Dropdown.Item>
-                            <Dropdown.Item>Animism</Dropdown.Item>
+                            {this.state.localEventOptions.map(drop => {
+                                return <Dropdown.Item key={drop.id} name={drop.eventName}> {drop.eventName}</Dropdown.Item>
+                                })}
                         </Dropdown.Menu>
-                    </Dropdown>
+                    </Dropdown> */}
+                    <div className="container">
+                        <div className="side">
+                        {this.state.localEventOptions.map(drop => {
+                            return <Button name={drop.eventName} className="eventbtns" onClick={this.handleAddEvent}> {drop.eventName}</Button>
+                            })}
+                        </div>
+                        <div className="side">
+                        {this.state.localEventChoice.map(drop => {
+                            return <Button name={drop} className="eventbtns" onClick={this.removeEvent}> {drop}</Button>
+                            })}
+                        </div>
+                    </div>
                 </Modal.Body>
 
                 <Modal.Footer>

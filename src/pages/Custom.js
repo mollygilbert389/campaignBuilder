@@ -13,6 +13,7 @@ import Social from "../components/WorldBuilder/Social/Social"
 import ActsClimax from "../components/Adventure/Climax/ActsClimax"
 import MainGoals from "../components/Adventure/Goals/MainGoals"
 import AdventureStart from "../components/Dungeon/AdventureStart"
+import LocalEvents from "../components/MoreStory/Between/LocalEvents"
 import Pillar from "../components/Adventure/Goals/Pillar"
 import PatronAllies from "../components/Adventure/PatronAllies/PatronAllies"
 import Villain from "../components/Adventure/Villain/Villain"
@@ -255,6 +256,7 @@ setMonsters = (type) => {
                         {/* <Pillar setPillar={this.setPillar}></Pillar>
                         <Acts setActs={this.setActs}></Acts>
                         <SideQuests setSideQuests={this.setSideQuests}></SideQuests> */}
+                        <LocalEvents></LocalEvents>
                         <Between></Between>
                         <NPCs></NPCs>
                         <Twists></Twists>

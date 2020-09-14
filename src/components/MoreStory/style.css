@@ -1,0 +1,11 @@
+.side {
+    width: 500px;
+}
+
+.container {
+    display: flex;
+}
+
+.eventbtns {
+    margin: 1px;
+}
