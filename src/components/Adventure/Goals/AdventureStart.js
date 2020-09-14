@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
+import Carousel from 'react-bootstrap/Carousel'
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "../style.css"
 
@@ -37,8 +38,10 @@ class AdventureStart extends Component {
 
 render() {  
     const style = {
-        width: "170px",
+        width: "350px",
         height: "200px",
+        padding: "40px",
+        paddingTop: "10px",
         margin: "5px",
     }
     
@@ -53,30 +56,14 @@ render() {
                     <Modal.Title>Let's Figure Out Some Goals</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="d-flex flex-column align-items-center">
-                    <p>Click one of the buttons below to decide.</p>
-                    
-                    {/* <Dropdown onSelect={this.handleAdventureStart}>
-                        <Dropdown.Toggle variant="outline-primary">
-                        {this.state.meetingSelected ? this.state.meetingSelected: 'Choose how your characters will be set on their adventure'}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                            {this.state.meetingSelection.map(drop => {
-                                        return <Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>
-                                    })}
-                        </Dropdown.Menu>
-                    </Dropdown> */}
+                    <p>Read through the options below and click on to pick it.</p>
 
-                    <div className="container adventureBtns">
+                        <Carousel>
                         {this.state.meetingSelection.map(drop => {
-                                return (
-                                <div>
-                                    <br></br>
-                                    <Button variant="outline-primary" style={style} key={drop.id} name={drop.goal} onClick={this.handleAdventureStart}> {drop.goal}</Button>
-                                </div>)
-                            })}
-                    </div>
+                            return <Carousel.Item> <div className="d-block w-100"></div> <Button variant="primary" key={drop.id} style={style} name={drop.goal}>{drop.goal}</Button> </Carousel.Item>
+                        })}
+                        </Carousel>
 
-                    
                 </Modal.Body>
 
                 <Modal.Footer>
