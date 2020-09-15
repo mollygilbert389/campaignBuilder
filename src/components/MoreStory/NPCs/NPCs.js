@@ -7,7 +7,8 @@ import "../style.css"
 
 class NPCs extends Component {
     state ={
-        NPCNum: "", 
+        NPCNum: "",
+        nextClicked: false, 
         NPCAppearance: [
             {id: 1, option: "Distinctive Jewelry: earrings, necklace, circlet, braclets"},
             {id: 2, option: "Piercings"},
@@ -41,12 +42,13 @@ class NPCs extends Component {
     handleClick = () => {
         this.setState({
             showModal: !this.state.showModal,
+            nextClicked: false,
         })
     }
 
-    handleGenderSelect = (eventKey, event) => {
+    handleNextBtn = () => {
         this.setState({
-            gender: event.target.text
+            nextClicked: true, 
         })
     }
 
@@ -68,24 +70,28 @@ render() {
                     <p>Below are some buttons to help you pick some NPCs This modal is for NPCs that play a bigger part in your campaign, not everyone your characters will interact with.</p>
                     
                     <br></br>
+                    {!this.state.nextClicked && (<br></br>)}
 
-                    {this.state.randomEncounter &&(<div>
-                        <Slider
-                        min={1}
-                        max={10}
-                        defaultValue={2}
-                        onChangeCommitted={this.handleSlider}
-                        valueLabelDisplay="on"
-                        />
-                    </div>)}
+                    {!this.state.nextClicked && (
+                    <Slider
+                    min={1}
+                    max={10}
+                    defaultValue={2}
+                    onChangeCommitted={this.handleSlider}
+                    valueLabelDisplay="on"
+                    />)}
 
-                    <div>
+                    {!this.state.nextClicked && (
+                        <Button onClick={this.handleNextBtn}>Next</Button>
+                    )}
+
+                    {this.state.nextClicked && (<div>
                         <Carousel className="center" interval={null}>
                             <Carousel.Item><NPCCard></NPCCard></Carousel.Item>
                             <Carousel.Item> <NPCCard></NPCCard></Carousel.Item>
                             <Carousel.Item><NPCCard></NPCCard></Carousel.Item>
                         </Carousel>
-                    </div>
+                    </div>)}
 
 
                 </Modal.Body>

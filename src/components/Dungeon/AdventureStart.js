@@ -7,6 +7,8 @@ import "./style.css"
 class AdventureStart extends Component {
     state ={
         meetingSelected: "",
+        dungeonTypeLocationSelected: false, 
+        nondungeonTypeLocationSelected: false,
         meetingSelection: [
             {id:1, goal:"While traveling in the wilderness, the characters fall into a sinkhole that opens beneath their feet, dropping them into the adventure location."},
             {id:2, goal:"While traveling in the wilderness, the characters notice the entrance to the adventure location."},
@@ -21,6 +23,52 @@ class AdventureStart extends Component {
             {id:11, goal:"One night, the characters all dream about entering the adventure location."},
             {id:12, goal:"A ghost appears and terrorizes a village. Research reveals that us can be put to rest only by entering the adveenture location."},
         ],
+        dungeonTypeLocation: [
+            {id: 1, option: "A building or city"},
+            {id: 2, option: "Catacombs or sewers beneath the city"},
+            {id: 3, option: "Beneath a farmhouse"},
+            {id: 4, option: "Beneath a graveyard"},
+            {id: 5, option: "Beneath a ruined castle"},
+            {id: 6, option: "Beneath a ruined city"},
+            {id: 7, option: "Beneath a temple"},
+            {id: 8, option: "In a chasm"},
+            {id: 9, option: "In a cliff face"},
+            {id: 10, option: "In a desert"},
+            {id: 11, option: "In a forest"},
+            {id: 12, option: "In a glacier"},
+            {id: 13, option: "In a gorge"},
+            {id: 14, option: "In a jungle"},
+            {id: 15, option: "In a mountain pass"},
+            {id: 16, option: "In a swamp"},
+            {id: 17, option: "Beneath or on top of a mesa"},
+            {id: 18, option: "In sea caves"},
+            {id: 19, option: "In several connected mesas"},
+            {id: 20, option: "On a mountain peak"},
+            {id: 21, option: "On a promontory"},
+            {id: 22, option: "On an island"},
+            {id: 23, option: "Underwater"},
+        ], 
+        nondungeonTypeLocation: [
+            {id: 1, option: "Amoung the branches of a large tree"},
+            {id: 2, option: "Around a geyser"},
+            {id: 3, option: "Behind a waterfall"},
+            {id: 4, option: "Buried in an avalanche"},
+            {id: 5, option: "Buried in a sandstorm"},
+            {id: 6, option: "Buried in volcanic ash"},
+            {id: 7, option: "Castle or structure sunken in a swamp"},
+            {id: 8, option: "Castle or structure at the bottom of a sinkhole"},
+            {id: 9, option: "Floating on the sea"},
+            {id: 10, option: "In a meteorite"},
+            {id: 11, option: "On a demiplane or in a pcket dimension"},
+            {id: 12, option: "In an area devastated by a magical catastrophe"},
+            {id: 13, option: "On a cloud"},
+            {id: 14, option: "In the feywild"},
+            {id: 15, option: "In the shadowfell"},
+            {id: 16, option: "On an island in an underground sea"},
+            {id: 17, option: "In a volcano"},
+            {id: 18, option: "On the back of a Gargantuan living creature"},
+            {id: 19, option: "Sealed inside a magical dome of force"},
+        ]
     }
 
     handleClick = () => {
@@ -35,6 +83,26 @@ class AdventureStart extends Component {
         })
     }
 
+    handleDungeonClick = (event) => {
+        let choice = event.target.name
+        switch(choice) {
+            case "dungeonLocatios":
+                this.setState({
+                    dungeonTypeLocationSelected: true,
+                    nondungeonTypeLocationSelected: false,
+                })
+                break;
+            case "nondungeonLocatios":
+                this.setState({
+                    nondungeonTypeLocationSelected: true,
+                    dungeonTypeLocationSelected: false,
+                })
+                break;
+            default:
+                return;
+        }
+    }
+
 
 render() {  
     const style = {
@@ -44,6 +112,7 @@ render() {
         paddingTop: "10px",
         margin: "5px",
     }
+
     
     return (
         <div>
@@ -63,6 +132,25 @@ render() {
                             return <Carousel.Item> <div className="d-block w-100"></div> <Button variant="primary" key={drop.id} style={style} name={drop.goal}>{drop.goal}</Button> </Carousel.Item>
                         })}
                         </Carousel>
+
+                        <div>
+                            <Button onClick={this.handleDungeonClick} name={"dungeonLocatios"}>Dungeon Locations</Button>
+                            <Button onClick={this.handleDungeonClick} name={"nondungeonLocatios"}>Exotic Loactions</Button>
+                        </div>
+
+
+
+                        {this.state.dungeonTypeLocationSelected && (<Carousel>
+                        {this.state.dungeonTypeLocation.map(drop => {
+                            return <Carousel.Item> <div className="d-block w-100"></div> <Button variant="primary" key={drop.id} style={style} name={drop.option}>{drop.option}</Button> </Carousel.Item>
+                        })}
+                        </Carousel>)}
+                        
+                        {this.state.nondungeonTypeLocationSelected && (<Carousel>
+                        {this.state.nondungeonTypeLocation.map(drop => {
+                            return <Carousel.Item> <div className="d-block w-100"></div> <Button variant="primary" key={drop.id} style={style} name={drop.option}>{drop.option}</Button> </Carousel.Item>
+                        })}
+                        </Carousel>)}
 
                 </Modal.Body>
 
