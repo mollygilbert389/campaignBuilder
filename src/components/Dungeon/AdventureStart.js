@@ -127,7 +127,7 @@ render() {
                 <Modal.Body className="d-flex flex-column align-items-center">
                     <p>Read through the options below and click on to pick it.</p>
 
-                        <Carousel>
+                        <Carousel interval={null}>
                         {this.state.meetingSelection.map(drop => {
                             return <Carousel.Item> <div className="d-block w-100"></div> <Button variant="primary" key={drop.id} style={style} name={drop.goal}>{drop.goal}</Button> </Carousel.Item>
                         })}
@@ -140,13 +140,13 @@ render() {
 
 
 
-                        {this.state.dungeonTypeLocationSelected && (<Carousel>
+                        {this.state.dungeonTypeLocationSelected && (<Carousel interval={null}>
                         {this.state.dungeonTypeLocation.map(drop => {
                             return <Carousel.Item> <div className="d-block w-100"></div> <Button variant="primary" key={drop.id} style={style} name={drop.option}>{drop.option}</Button> </Carousel.Item>
                         })}
                         </Carousel>)}
                         
-                        {this.state.nondungeonTypeLocationSelected && (<Carousel>
+                        {this.state.nondungeonTypeLocationSelected && (<Carousel interval={null}>
                         {this.state.nondungeonTypeLocation.map(drop => {
                             return <Carousel.Item> <div className="d-block w-100"></div> <Button variant="primary" key={drop.id} style={style} name={drop.option}>{drop.option}</Button> </Carousel.Item>
                         })}

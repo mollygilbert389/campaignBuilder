@@ -84,7 +84,7 @@ render() {
 
                         <div className="d-flex flex-column align-items-center">
                             <p>Let's also plan your end goal. Click one of the boxes in the slider below.</p>
-                            <Carousel>
+                            <Carousel interval={null}>
                             {this.state.climaxOptions.map(drop => {
                                 return <Carousel.Item> <div className="d-block w-100"></div> <Button variant="primary" key={drop.id} style={style} name={drop.option}>{drop.option}</Button> </Carousel.Item>
                             })}
