@@ -1,8 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CampaignNameModal from "../components/WorldBuilder/CampaignNameModal"
-import Villain from "../components/Adventure/Villain/Villain"
-import Patron from "../components/Adventure/PatronAllies/Patron"
 import '../components/home.css';
 
 function Medium() {
@@ -15,8 +13,6 @@ function Medium() {
 
                 <div className="btnspace">
                 <CampaignNameModal></CampaignNameModal>
-                <Villain></Villain>
-                <Patron></Patron>
                 </div>
             </div>
         </div>
