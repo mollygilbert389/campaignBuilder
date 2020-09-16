@@ -74,6 +74,8 @@ class AdventureStart extends Component {
     handleClick = () => {
         this.setState({
             showModal: !this.state.showModal,
+            nondungeonTypeLocationSelected: false,
+            dungeonTypeLocationSelected: false,
         })
     }
 

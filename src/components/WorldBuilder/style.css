@@ -1,0 +1,28 @@
+.tagsArea {
+    width: 500px;
+}
+
+.factionInput {
+    border: none;
+    width: 300px;
+}
+
+.inputAndBtn{
+
+}
+
+.centeredItems {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.factionButtons {
+    margin: 2px;
+}
+
+.characterRenownContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

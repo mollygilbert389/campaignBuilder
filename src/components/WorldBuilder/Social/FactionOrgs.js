@@ -1,13 +1,21 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
+import {Button, ButtonGroup, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import {FormControlLabel, Checkbox, FormGroup, Slider} from '@material-ui/core'
 import "../style.css"
 
 class FactionOrgs extends Component {
     state ={
         other:false,
-        factionOrgs: []
+        value: "",
+        suggestedTags: [
+            "Harpers",
+            "Order of the Guantlet",
+            "Emerald Enclave",
+            "Lord's Alliance",
+            "Zhentarim",
+        ]
+
     }
 
     handleFactionOrgs = (eventKey, event) => {
@@ -34,6 +42,34 @@ class FactionOrgs extends Component {
         console.log(event.target.value)
     }
 
+    remove = (event) => {
+        let removedItem = event.target.name
+        let currentTags = this.state.suggestedTags
+        const removedFaction = currentTags.filter(item => item !== removedItem)
+        this.setState({
+            suggestedTags: removedFaction
+        })
+    }
+
+    addFaction = (event) => {
+        this.setState({
+            suggestedTags: this.state.suggestedTags.concat(this.state.value),
+            value: '',
+        })
+    }
+
+    handleInputChange = (event) => {
+        this.setState({
+            value: event.target.value
+        });
+    }
+
+    onKeyDown = (event) => {
+        if (event.key === "Enter") {
+            this.addFaction();
+          }
+    }
+
 
 render() {  
     const{other} = this.state
@@ -43,95 +79,26 @@ render() {
                 <Button variant="outline-success" size="lg" onClick={this.handleClick}>Factions and Organizations
                 </Button>
             </div>
-            <Modal show={this.state.showModal} onHide={this.handleClick}>
+            <Modal size="lg" show={this.state.showModal} onHide={this.handleClick} >
                 <Modal.Header closeButton>
                     <Modal.Title>Let's add some organizations to your world.</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
-                    <p>Below are some check boxes to help you add organizations to your world.</p>
+                <Modal.Body className="d-flex flex-column align-items-center">
+                    <p>We have a few factions and organizations suggestions. Feel free to add and remove as many or as little as you want.</p>
 
                     <br></br>
 
-                    {/* <Slider
-                    min={1}
-                    max={10}
-                    defaultValue={5}
-                    onChangeCommitted={this.handleSlider}
-                    valueLabelDisplay="on"
-                    /> */}
-
-                <FormGroup>
-                    <FormControlLabel
-                    control={
-                    <Checkbox 
-                    // checked={equipment} 
-                    onChange={this.handleCheckBoxChange} 
-                    name="harpers"
-                    value="Harpers" 
-                    color="primary"/>}
-                    label="Harpers"
-                    />
-
-                    <FormControlLabel
-                    control={
-                    <Checkbox 
-                    // checked={magicItem} 
-                    onChange={this.handleCheckBoxChange} 
-                    name="orderOfTheGauntlet"
-                    value="Order of The Gauntlet" 
-                    color="primary"/>}
-                    label="Order of the Guantlet"
-                    />
-
-                    <FormControlLabel
-                    control={
-                    <Checkbox 
-                    // checked={gems} 
-                    onChange={this.handleCheckBoxChange} 
-                    name="emeraldEnclave"
-                    value="Emerald Enclave" 
-                    color="primary"/>}
-                    label="Emerald Enclave"
-                    />
-
-                    <FormControlLabel
-                    control={
-                    <Checkbox 
-                    // checked={tradeGoods} 
-                    onChange={this.handleCheckBoxChange} 
-                    name="lordsAlliance" 
-                    value="Lord's Alliance"
-                    color="primary"/>}
-                    label="Lord's Alliance"
-                    />
-
-                    <FormControlLabel
-                    control={
-                    <Checkbox 
-                    // checked={money} 
-                    onChange={this.handleCheckBoxChange} 
-                    name="zhentarim" 
-                    value="Zhentarim"
-                    color="primary"/>}
-                    label="Zhentarim"
-                    />
-
-                    <FormControlLabel
-                    control={
-                    <Checkbox 
-                    onChange={this.handleCheckBoxChange} 
-                    name="other" 
-                    value="Other"
-                    color="primary"/>}
-                    label="Other"
-                    />
-
-                    {other &&  (
-                        <div>
-                            <FormControl type="text" placeholder="Other" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
-                        </div>)}
-
-                </FormGroup>
+                    <div className="tagsArea centeredItems">
+                    {this.state.suggestedTags.map(item => {
+                        return <ButtonGroup className="factionButtons"><Button name={item}>{item}</Button><Button name={item} onClick={this.remove}>X</Button></ButtonGroup>
+                    })}
+                        
+                        <div className="inputAndBtn factionButtons">
+                            <input className="factionInput" placeholder="Add Faction or Organization Here" type="text" value={this.state.value} onChange={this.handleInputChange} onKeyUp={(event) => this.onKeyDown(event)}></input>
+                            <Button size="sm" variant="outline-success" onClick={this.addFaction}>Submit</Button>
+                        </div>
+                    </div>
+                   
 
                 </Modal.Body>
 

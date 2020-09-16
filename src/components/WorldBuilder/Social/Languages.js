@@ -5,7 +5,16 @@ import "../style.css"
 
 class Languages extends Component {
     state ={
-        language: ""
+        language: "",
+        languageOptions: [
+            "Celestial",
+            "Common",
+            "Draconic",
+            "Druidic",
+            "Dwarvish",
+            "Elvish",
+            "Infernal",
+        ]
     }
 
     handleLanguageSelect = (eventKey, event) => {
@@ -44,12 +53,8 @@ render() {
                         {this.state.language ? this.state.language: 'Choose Your Languages'}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                        {/* <Dropdown.Item>Loose Pantheons `(Suggested)`</Dropdown.Item>
-                        <Dropdown.Item>Tight Pantheons</Dropdown.Item>
-                        <Dropdown.Item>Mystery Cults</Dropdown.Item>
-                        <Dropdown.Item>Monotheism</Dropdown.Item>
-                        <Dropdown.Item>Dualism</Dropdown.Item>
-                        <Dropdown.Item>Animism</Dropdown.Item> */}
+                        {this.state.languageOptions.map(item => {
+                            return <Dropdown.Item name={item}>{item}</Dropdown.Item>})}
                         </Dropdown.Menu>
                     </Dropdown>
                 </Modal.Body>
