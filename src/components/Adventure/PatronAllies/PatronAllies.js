@@ -44,7 +44,7 @@ render() {
                 </Modal.Body>
 
                 <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.close} >Save</Button>
+                    <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>

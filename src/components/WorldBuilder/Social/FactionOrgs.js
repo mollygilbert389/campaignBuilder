@@ -31,7 +31,6 @@ class FactionOrgs extends Component {
     }
 
     handleCheckBoxChange = (event) => {
-
         if (event.target.text = "Other")
         this.setState({
             other: true
@@ -103,7 +102,7 @@ render() {
                 </Modal.Body>
 
                 <Modal.Footer>
-                <Button variant="outline-success" onClick={this.close} >Save</Button>
+                <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>

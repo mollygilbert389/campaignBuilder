@@ -17,7 +17,8 @@ class Pillar extends Component {
     handlePillarBtn = (selection) =>  {
         // event.target.text
         this.setState({
-        pillar: selection,           
+        pillar: selection,
+        showModal: !this.state.showModal,           
         }, () => {
             // this.props.setPillar(this.state.pillar)
         })
@@ -56,7 +57,6 @@ render() {
                 </Modal.Body>
 
                 <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>

@@ -51,7 +51,7 @@ render() {
     return (
         <div>
             <div className="btns">
-                <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Theme
+                <Button variant="outline-success" size="lg" onClick={this.handleClick}>Theme
                 </Button>
             </div>
             <Modal show={this.state.showModal} onHide={this.handleClick}>
@@ -108,7 +108,7 @@ render() {
 
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.close} >Save</Button>
+                    <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>

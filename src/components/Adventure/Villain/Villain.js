@@ -8,8 +8,15 @@ class VillainModal extends Component {
     state ={
         showModal: false,
         villainName: "",
-        villainType: "", 
-        villainObjective: [
+        villainType: "",
+        finalVillainMethodChoice: "", 
+        villainMethodCatChoice: "",
+        villainMethodPossible: [],
+        finalVillainObjectiveChoice: "",
+        villainObjectiveCatChoice: "",
+        villainObjectivesPossible: [],
+        villainWeakness: "",
+        villainObjectives: [
             {
                 id: 1, 
                 objectiveCat: "Immortality", 
@@ -301,7 +308,7 @@ class VillainModal extends Component {
                 ]
             },
         ],
-        villainWeakness: [
+        villainWeaknessChoices: [
             {id: 1, option: "A hidden object that holds the villain's soul"},
             {id: 2, option: "The villain's power is broken if the death of its true love is avenged"},
             {id: 3, option: "The villain is weakened in the presence of a particular artifact"},
@@ -313,14 +320,14 @@ class VillainModal extends Component {
         ], 
     }
 
-    close = (event) =>  {
-        this.setState({
-            showModal: false,
-            villainName: event.target.value
-        })
+    // close = (event) =>  {
+    //     this.setState({
+    //         showModal: false,
+    //         villainName: event.target.value
+    //     })
 
-        this.props.setvillain(this.state.villainName, this.state.villainType)
-    }
+    //     this.props.setvillain(this.state.villainName, this.state.villainType)
+    // }
 
     handleChange = (event) => {
     this.setState({
@@ -337,6 +344,46 @@ class VillainModal extends Component {
     handleVillainTypeSelect = (eventkey, event) => {
         this.setState({
             villainType: event.target.text
+        })
+    }
+    
+
+    handleVillainObjectiveCatSelect = (eventkey, event) => {
+        let choice = event.target.text
+        const newVillainObjectiveChoices = this.state.villainObjectives.find(event => event.objectiveCat === choice)
+
+        this.setState({
+            villainObjectiveCatChoice: event.target.text,
+            villainObjectivesPossible: newVillainObjectiveChoices.objectives,
+        })
+    }
+
+    handleFinalVillainObjectiveSelect = (eventkey, event) => {
+        this.setState({
+            finalVillainObjectiveChoice: event.target.text,
+        })
+    }
+
+//////
+    handleVillainMethodCatSelect = (eventkey, event) => {
+        let choice = event.target.text
+        const newVillainMethodChoices = this.state.villainMethods.find(event => event.methodCat === choice)
+        
+        this.setState({
+            villainMethodCatChoice: event.target.text,
+            villainMethodPossible: newVillainMethodChoices.methods
+        })
+    }
+
+    handleFinalVillainMethodSelect = (eventkey, event) => {
+        this.setState({
+            finalVillainMethodChoice: event.target.text,
+        })
+    }
+
+    handleVillainWeaknessSelect = (eventkey, event) => {
+        this.setState({
+            villainWeakness: event.target.text
         })
     }
 
@@ -396,19 +443,65 @@ render() {
                         </Dropdown.Menu>
                     </Dropdown>
 
-                    <Dropdown onSelect={this.handleVillainTypeSelect}>
+                    <div className="dualDrop">
+                        <Dropdown onSelect={this.handleVillainObjectiveCatSelect}>
+                            <Dropdown.Toggle variant="outline-primary">
+                            {this.state.villainObjectiveCatChoice ? this.state.villainObjectiveCatChoice: "Choose your Villain's Main Objective"}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                            {this.state.villainObjectives.map(item => {
+                                return <Dropdown.Item key={item.id} name={item.objectiveCat}>{item.objectiveCat}</Dropdown.Item>})}
+                            </Dropdown.Menu>
+                        </Dropdown>
+
+                        {this.state.villainObjectivesPossible.length > 0 &&(<Dropdown onSelect={this.handleFinalVillainObjectiveSelect}>
+                            <Dropdown.Toggle variant="outline-primary">
+                            {this.state.finalVillainObjectiveChoice ? this.state.finalVillainObjectiveChoice: "Choose your Villain's Main Objective"}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                            {this.state.villainObjectivesPossible.map(item => {
+                                return <Dropdown.Item name={item}>{item}</Dropdown.Item>})}
+                            </Dropdown.Menu>
+                        </Dropdown>)}
+                    </div>
+
+                    <div className="dualDrop">
+                    <Dropdown onSelect={this.handleVillainMethodCatSelect}>
                         <Dropdown.Toggle variant="outline-primary">
-                        {villainType ? villainType: 'Choose your Adventure Villain'}
+                        {this.state.villainMethodCatChoice ? this.state.villainMethodCatChoice: "Choose your Villain's Method"}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
- 
+                        {this.state.villainMethods.map(item => {
+                            return <Dropdown.Item key={item.id} name={item.methodCat}>{item.methodCat}</Dropdown.Item>})}
+                        </Dropdown.Menu>
+                    </Dropdown>
+
+
+                    {this.state.villainMethodPossible.length > 0 && (<Dropdown onSelect={this.handleFinalVillainMethodSelect}>
+                        <Dropdown.Toggle variant="outline-primary">
+                        {this.state.finalVillainMethodChoice ? this.state.finalVillainMethodChoice: "Choose your Villain's Method"}
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                        {this.state.villainMethodPossible.map(item => {
+                            return <Dropdown.Item name={item}>{item}</Dropdown.Item>})}
+                        </Dropdown.Menu>
+                    </Dropdown>)}
+                    </div>
+
+                    <Dropdown onSelect={this.handleVillainWeaknessSelect}>
+                        <Dropdown.Toggle variant="outline-primary">
+                        {this.state.villainWeakness ? this.state.villainWeakness: "Choose your Villain's Weakness"}
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                        {this.state.villainWeaknessChoices.map(item => {
+                            return <Dropdown.Item key={item.id} name={item.option}>{item.option}</Dropdown.Item>})}
                         </Dropdown.Menu>
                     </Dropdown>
 
                 </Modal.Body>
                 
                 <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.close} >Save</Button>
+                    <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>

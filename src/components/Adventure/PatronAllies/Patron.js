@@ -15,7 +15,7 @@ class Patron extends Component {
             showModal: false,
             patronName: event.target.value
         })
-        this.props.setQuestGiver(this.state.patronName, this.state.patronType)
+        // this.props.setQuestGiver(this.state.patronName, this.state.patronType)
     }
 
 

@@ -10,12 +10,25 @@ class Physical extends Component {
 
     state = {
         showModal: false,
-        world: ""
+        world: "",
+        mapScale: "",
     }
 
     handleClick = () => {
         this.setState({
             showModal: !this.state.showModal,
+        })
+    }
+
+    worldSelect = (keyEvent, event) => {
+        this.setState({
+            world: event.target.text
+        })
+    }
+
+    mapScale = (keyEvent, event) => {
+        this.setState({
+            mapScale: event.target.text
         })
     }
 
@@ -77,7 +90,7 @@ render() {
                 </Modal.Body>
 
                 <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.close} >Save</Button>
+                    <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>

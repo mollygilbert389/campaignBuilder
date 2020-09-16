@@ -94,7 +94,6 @@ class Setback extends Component {
     })}
 
     handleFinalEvent = (keyevent, event) => {
-    
         this.setState({ 
         ...this.state,
         finalSetbackType: event.target.name,
