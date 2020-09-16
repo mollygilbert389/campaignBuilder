@@ -34,7 +34,7 @@ render() {
     return (
         <div>
             <div className="btns">
-                <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Encounters
+                <Button variant="outline-success" size="lg" onClick={this.handleClick}>Encounters
                 </Button>
             </div>
             <Modal show={this.state.showModal} onHide={this.handleClick}>

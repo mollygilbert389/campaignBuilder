@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import Allies from "./Allies"
+import NPCs from "./NPCs/NPCs"
 import Patron from "./Patron"
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "../style.css"
 
-class Physical extends Component {
+class PatronNPCs extends Component {
 
     state = {
         showModal: false
@@ -24,7 +24,7 @@ render() {
     return (
         <div>
             <div className="btns">
-                <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Patrons And Allies
+                <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Patrons And NPCs
                 </Button>
             </div>
             <Modal size="lg" show={this.state.showModal} onHide={this.handleClick}>
@@ -38,7 +38,7 @@ render() {
 
                     <div className="btnspace">
                         <Patron></Patron>
-                        <Allies></Allies>
+                        <NPCs></NPCs>
                     </div>
 
                 </Modal.Body>
@@ -52,4 +52,4 @@ render() {
 }
 }
 
-export default Physical;
+export default PatronNPCs;

@@ -46,3 +46,7 @@
 .dunTypeBtns {
     margin: 5px;
 }
+
+.dualDrop {
+    display: flex;
+}

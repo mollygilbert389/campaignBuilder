@@ -364,7 +364,6 @@ class VillainModal extends Component {
         })
     }
 
-//////
     handleVillainMethodCatSelect = (eventkey, event) => {
         let choice = event.target.text
         const newVillainMethodChoices = this.state.villainMethods.find(event => event.methodCat === choice)
@@ -420,83 +419,85 @@ render() {
                     </Form>
                     <br></br>
 
-                    <Dropdown onSelect={this.handleVillainTypeSelect}>
-                        <Dropdown.Toggle variant="outline-primary">
-                        {villainType ? villainType: 'Choose your Adventure Villain'}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                            <Dropdown.Item>Beast or monstrosity with no particular agenda</Dropdown.Item>
-                            <Dropdown.Item>Abberation bent on corruption or desruction</Dropdown.Item>
-                            <Dropdown.Item>Dragon bent on domination and plunder</Dropdown.Item>
-                            <Dropdown.Item>Giant bent on plunder</Dropdown.Item>
-                            <Dropdown.Item>Undead with any agenda</Dropdown.Item>
-                            <Dropdown.Item>Fey with a mysterious goal</Dropdown.Item>
-                            <Dropdown.Item>Hummanoid cultist</Dropdown.Item>
-                            <Dropdown.Item>Hummanoid conqueror</Dropdown.Item>
-                            <Dropdown.Item>Hummanoid seeking revenge</Dropdown.Item>
-                            <Dropdown.Item>Hummanoid schemer seeking to rule</Dropdown.Item>
-                            <Dropdown.Item>Hummanoid criminal mastermind</Dropdown.Item>
-                            <Dropdown.Item>Hummanoid raider or ravager</Dropdown.Item>
-                            <Dropdown.Item>Hummanoid under a curse</Dropdown.Item>
-                            <Dropdown.Item>Misguided hummanoid zealot</Dropdown.Item>
-                            <Dropdown.Item>Something else</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-
-                    <div className="dualDrop">
-                        <Dropdown onSelect={this.handleVillainObjectiveCatSelect}>
+                    <div className="d-flex flex-column align-items-center">
+                        <Dropdown onSelect={this.handleVillainTypeSelect}>
                             <Dropdown.Toggle variant="outline-primary">
-                            {this.state.villainObjectiveCatChoice ? this.state.villainObjectiveCatChoice: "Choose your Villain's Main Objective"}
+                            {villainType ? `Type: ${villainType}`: 'Choose your Adventure Villain'}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                            {this.state.villainObjectives.map(item => {
-                                return <Dropdown.Item key={item.id} name={item.objectiveCat}>{item.objectiveCat}</Dropdown.Item>})}
+                                <Dropdown.Item>Beast or monstrosity with no particular agenda</Dropdown.Item>
+                                <Dropdown.Item>Abberation bent on corruption or desruction</Dropdown.Item>
+                                <Dropdown.Item>Dragon bent on domination and plunder</Dropdown.Item>
+                                <Dropdown.Item>Giant bent on plunder</Dropdown.Item>
+                                <Dropdown.Item>Undead with any agenda</Dropdown.Item>
+                                <Dropdown.Item>Fey with a mysterious goal</Dropdown.Item>
+                                <Dropdown.Item>Hummanoid cultist</Dropdown.Item>
+                                <Dropdown.Item>Hummanoid conqueror</Dropdown.Item>
+                                <Dropdown.Item>Hummanoid seeking revenge</Dropdown.Item>
+                                <Dropdown.Item>Hummanoid schemer seeking to rule</Dropdown.Item>
+                                <Dropdown.Item>Hummanoid criminal mastermind</Dropdown.Item>
+                                <Dropdown.Item>Hummanoid raider or ravager</Dropdown.Item>
+                                <Dropdown.Item>Hummanoid under a curse</Dropdown.Item>
+                                <Dropdown.Item>Misguided hummanoid zealot</Dropdown.Item>
+                                <Dropdown.Item>Something else</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
 
-                        {this.state.villainObjectivesPossible.length > 0 &&(<Dropdown onSelect={this.handleFinalVillainObjectiveSelect}>
+                        <div className="dualDrop">
+                            <Dropdown onSelect={this.handleVillainObjectiveCatSelect}>
+                                <Dropdown.Toggle variant="outline-primary">
+                                {this.state.villainObjectiveCatChoice ? `Objective Category: ${this.state.villainObjectiveCatChoice}`: "Choose your Villain's Main Objective"}
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                {this.state.villainObjectives.map(item => {
+                                    return <Dropdown.Item key={item.id} name={item.objectiveCat}>{item.objectiveCat}</Dropdown.Item>})}
+                                </Dropdown.Menu>
+                            </Dropdown>
+
+                            {this.state.villainObjectivesPossible.length > 0 &&(<Dropdown onSelect={this.handleFinalVillainObjectiveSelect}>
+                                <Dropdown.Toggle variant="outline-primary">
+                                {this.state.finalVillainObjectiveChoice ? `Objective: ${this.state.finalVillainObjectiveChoice}`: "Choose your Villain's Main Objective"}
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                {this.state.villainObjectivesPossible.map(item => {
+                                    return <Dropdown.Item name={item}>{item}</Dropdown.Item>})}
+                                </Dropdown.Menu>
+                            </Dropdown>)}
+                        </div>
+
+                        <div className="dualDrop">
+                        <Dropdown onSelect={this.handleVillainMethodCatSelect}>
                             <Dropdown.Toggle variant="outline-primary">
-                            {this.state.finalVillainObjectiveChoice ? this.state.finalVillainObjectiveChoice: "Choose your Villain's Main Objective"}
+                            {this.state.villainMethodCatChoice ? `Method Category: ${this.state.villainMethodCatChoice}`: "Choose your Villain's Method"}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                            {this.state.villainObjectivesPossible.map(item => {
+                            {this.state.villainMethods.map(item => {
+                                return <Dropdown.Item key={item.id} name={item.methodCat}>{item.methodCat}</Dropdown.Item>})}
+                            </Dropdown.Menu>
+                        </Dropdown>
+
+
+                        {this.state.villainMethodPossible.length > 0 && (<Dropdown onSelect={this.handleFinalVillainMethodSelect}>
+                            <Dropdown.Toggle variant="outline-primary">
+                            {this.state.finalVillainMethodChoice ? `Method: ${this.state.finalVillainMethodChoice}`: "Choose your Villain's Method"}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                            {this.state.villainMethodPossible.map(item => {
                                 return <Dropdown.Item name={item}>{item}</Dropdown.Item>})}
                             </Dropdown.Menu>
                         </Dropdown>)}
+                        </div>
+
+                        <Dropdown onSelect={this.handleVillainWeaknessSelect}>
+                            <Dropdown.Toggle variant="outline-primary">
+                            {this.state.villainWeakness ? `Weakness: ${this.state.villainWeakness}`: "Choose your Villain's Weakness"}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                            {this.state.villainWeaknessChoices.map(item => {
+                                return <Dropdown.Item key={item.id} name={item.option}>{item.option}</Dropdown.Item>})}
+                            </Dropdown.Menu>
+                        </Dropdown>
                     </div>
-
-                    <div className="dualDrop">
-                    <Dropdown onSelect={this.handleVillainMethodCatSelect}>
-                        <Dropdown.Toggle variant="outline-primary">
-                        {this.state.villainMethodCatChoice ? this.state.villainMethodCatChoice: "Choose your Villain's Method"}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                        {this.state.villainMethods.map(item => {
-                            return <Dropdown.Item key={item.id} name={item.methodCat}>{item.methodCat}</Dropdown.Item>})}
-                        </Dropdown.Menu>
-                    </Dropdown>
-
-
-                    {this.state.villainMethodPossible.length > 0 && (<Dropdown onSelect={this.handleFinalVillainMethodSelect}>
-                        <Dropdown.Toggle variant="outline-primary">
-                        {this.state.finalVillainMethodChoice ? this.state.finalVillainMethodChoice: "Choose your Villain's Method"}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                        {this.state.villainMethodPossible.map(item => {
-                            return <Dropdown.Item name={item}>{item}</Dropdown.Item>})}
-                        </Dropdown.Menu>
-                    </Dropdown>)}
-                    </div>
-
-                    <Dropdown onSelect={this.handleVillainWeaknessSelect}>
-                        <Dropdown.Toggle variant="outline-primary">
-                        {this.state.villainWeakness ? this.state.villainWeakness: "Choose your Villain's Weakness"}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                        {this.state.villainWeaknessChoices.map(item => {
-                            return <Dropdown.Item key={item.id} name={item.option}>{item.option}</Dropdown.Item>})}
-                        </Dropdown.Menu>
-                    </Dropdown>
 
                 </Modal.Body>
                 

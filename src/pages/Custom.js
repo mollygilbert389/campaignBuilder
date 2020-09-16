@@ -15,10 +15,9 @@ import MainGoals from "../components/Adventure/Goals/MainGoals"
 import AdventureStart from "../components/Dungeon/AdventureStart"
 import LocalEvents from "../components/MoreStory/Between/LocalEvents"
 import Pillar from "../components/Adventure/Goals/Pillar"
-import PatronAllies from "../components/Adventure/PatronAllies/PatronAllies"
+import PatronNPCs from "../components/Adventure/PatronNPCs/PatronNPCs"
 import Villain from "../components/Adventure/Villain/Villain"
 import Between from "../components/MoreStory/Between/Between"
-import NPCs from "../components/MoreStory/NPCs/NPCs"
 import ExtraAdventure from "../components/MoreStory/ExtraAdventure/ExtraAdventure"
 import PartyInfo from "../components/PartyInfo/PartyInfo"
 import Rooms from "../components/Dungeon/Rooms"
@@ -28,7 +27,7 @@ import MonsterCard from "../components/Dungeon/MonsterCard";
 import Treasure from "../components/Treasure/Treasure"
 import StoryInfo from "../components/StoryInfo/StoryInfo";
 import FinalScreen from "../components/FinalCampaign/FinalScreen"
-import AdventureSite from "../components/WorldBuilder/Physical/AdventureSite";
+// import AdventureSite from "../components/WorldBuilder/Physical/AdventureSite";
 // import DiceRoller from "../components/DiceRoller"
 
 
@@ -214,8 +213,8 @@ setMonsters = (type) => {
         return (
         <div>
             <div className="mainques">
-                <h1> Welcome to the Short Campaign Builder</h1>
-                <p>A short campaign is comprised of one dungeon in which our adventures find themselves in almost immediately.</p>
+                <h1> Welcome to the Custom Campaign Builder</h1>
+                <p>A custom campaign is open ended and there are few limits on what you can add or not add here.</p>
 
                 {this.state.firstRoundBtns && (
                 <div>
@@ -236,7 +235,7 @@ setMonsters = (type) => {
                         <ActsClimax></ActsClimax>
                         <MainGoals></MainGoals>
                         <Pillar></Pillar>
-                        <PatronAllies></PatronAllies>
+                        <PatronNPCs></PatronNPCs>
                         <Villain></Villain>
 
                     </div>
@@ -259,7 +258,6 @@ setMonsters = (type) => {
                         <SideQuests setSideQuests={this.setSideQuests}></SideQuests> */}
                         <LocalEvents></LocalEvents>
                         <Between></Between>
-                        <NPCs></NPCs>
                         <ExtraAdventure></ExtraAdventure>
                         <Setback setSetBacks={this.setSetbacks}></Setback>
                     </div>

@@ -142,15 +142,15 @@ render() {
 
 
 
-                        {this.state.dungeonTypeLocationSelected && (<Carousel interval={null}>
+                        {this.state.dungeonTypeLocationSelected && (<Carousel  interval={null}>
                         {this.state.dungeonTypeLocation.map(drop => {
-                            return <Carousel.Item> <div className="d-block w-100"></div> <Button variant="primary" key={drop.id} style={style} name={drop.option}>{drop.option}</Button> </Carousel.Item>
+                            return <Carousel.Item className="smallCaro"> <div className="d-block w-100"></div> <Button variant="primary" key={drop.id} style={style} name={drop.option}>{drop.option}</Button> </Carousel.Item>
                         })}
                         </Carousel>)}
                         
-                        {this.state.nondungeonTypeLocationSelected && (<Carousel interval={null}>
+                        {this.state.nondungeonTypeLocationSelected && (<Carousel  interval={null}>
                         {this.state.nondungeonTypeLocation.map(drop => {
-                            return <Carousel.Item> <div className="d-block w-100"></div> <Button variant="primary" key={drop.id} style={style} name={drop.option}>{drop.option}</Button> </Carousel.Item>
+                            return <Carousel.Item className="smallCaro"> <div className="d-block w-100"></div> <Button variant="primary" key={drop.id} style={style} name={drop.option}>{drop.option}</Button> </Carousel.Item>
                         })}
                         </Carousel>)}
 

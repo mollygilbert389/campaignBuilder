@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal'
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, CardGroup, Carousel} from 'react-bootstrap'
 import {FormControlLabel, Checkbox, FormGroup, Slider} from '@material-ui/core'
 import NPCCard from "./NPCcard"
-import "../style.css"
+import "../../style.css"
 
 class NPCs extends Component {
     state ={

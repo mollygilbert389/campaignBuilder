@@ -34,7 +34,9 @@ class Acts extends Component {
     handleActBtn = (event) => {
         this.setState({
             acts: event.target.name
-        }, () => {this.props.setActs(this.state.acts)})
+        }, 
+        // () => {this.props.setActs(this.state.acts)}
+        )
     }
 
     handleClimax = (eventkey, event) => {
