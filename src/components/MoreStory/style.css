@@ -24,3 +24,29 @@
     display: flex;
     justify-content: center;
 }
+
+.sideQuestBtnSpace {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.sideQuestBtns {
+    margin: 2px;
+}
+
+.setbackContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.setBackItem {
+    align-self: start;
+    align-content: center;
+    margin: 10px;
+    width: 300px;
+}
+
+.setBackItemchild {
+    margin: 10px;
+}

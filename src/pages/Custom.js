@@ -14,20 +14,22 @@ import Social from "../components/WorldBuilder/Social/Social"
 import ActsClimax from "../components/Adventure/Climax/ActsClimax"
 import MainGoals from "../components/Adventure/Goals/MainGoals"
 import AdventureStart from "../components/Dungeon/AdventureStart"
-import LocalEvents from "../components/MoreStory/Between/LocalEvents"
+import LocalEvents from "../components/MoreStory/LocalEvents"
+import EncountersAndEvents from "../components/MoreStory/Encounters/EncountersAndEvents"
 import Pillar from "../components/Adventure/Goals/Pillar"
 import PatronNPCs from "../components/Adventure/PatronNPCs/PatronNPCs"
 import Villain from "../components/Adventure/Villain/Villain"
-import Between from "../components/MoreStory/Between/Between"
+// import Between from "../components/MoreStory/Between/Between"
 import ExtraAdventure from "../components/MoreStory/ExtraAdventure/ExtraAdventure"
 import PartyInfo from "../components/PartyInfo/PartyInfo"
 import Rooms from "../components/Dungeon/Rooms"
-import Setback from "../components/MoreStory/Setback"
+import Setback from "../components/MoreStory/SetbacksTraps/Setback"
 import Type from "../components/Dungeon/Type"
 import MonsterCard from "../components/Dungeon/MonsterCard";
 import Treasure from "../components/Treasure/Treasure"
 import StoryInfo from "../components/StoryInfo/StoryInfo";
 import FinalScreen from "../components/FinalCampaign/FinalScreen"
+import Encounters from "../components/MoreStory/Encounters/Encounters";
 // import AdventureSite from "../components/WorldBuilder/Physical/AdventureSite";
 // import DiceRoller from "../components/DiceRoller"
 
@@ -257,8 +259,9 @@ setMonsters = (type) => {
                         {/* <Pillar setPillar={this.setPillar}></Pillar>
                         <Acts setActs={this.setActs}></Acts>
                         <SideQuests setSideQuests={this.setSideQuests}></SideQuests> */}
+                        {/* <Between></Between> */}
                         <LocalEvents></LocalEvents>
-                        <Between></Between>
+                        <EncountersAndEvents></EncountersAndEvents>
                         <ExtraAdventure></ExtraAdventure>
                         <Setback setSetBacks={this.setSetbacks}></Setback>
                     </div>

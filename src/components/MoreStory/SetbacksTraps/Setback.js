@@ -1,17 +1,33 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import {Button, Dropdown, FormControl} from 'react-bootstrap'
-import "./style.css"
+import "../style.css"
 
 class Setback extends Component {
     state ={
         showModal: false,
         setback: false,
+        bigSetback: false,
+        smallSetback: false,
         setbackCatChoice: "",
         setBackTypes: [],
         setbackCategory: [],
         finalSetbackType: "",
         eventName: "",
+        trapChoice: "",
+        traps: [
+            {id: 1, option: "Collapsing Roof",},
+            {id: 1, option: "Falling Net",},
+            {id: 1, option: "Fire-Breathing Statue",},
+            {id: 1, option: "Simple Pit",},
+            {id: 1, option: "Hidden Pit",},
+            {id: 1, option: "Locking Pit",},
+            {id: 1, option: "Spiked Pit",},
+            {id: 1, option: "Poison Darts",},
+            {id: 1, option: "Poison Needle",},
+            {id: 1, option: "Rolling Sphere",},
+            {id: 1, option: "Sphere or Annihilation",},
+        ],
         worldShakingEvents: [
             {
                 id: 1,
@@ -62,8 +78,7 @@ class Setback extends Component {
                 id: 10,
                 title: "Myth and Legend",
                 possible: []
-            },
-            
+            }, 
         ]
 
     }
@@ -103,7 +118,29 @@ class Setback extends Component {
         this.setState({
             eventName: event.target.value
         })
+    }
 
+    handleSetbackBtn = (event) => {
+        let choice = event.target.name
+        switch(choice) {
+            case "large":
+                this.setState({
+                    bigSetback: true
+                })
+                break;
+            case "small":
+                this.setState({
+                    smallSetback: true
+                })
+                break;
+        }
+    }
+
+    handleTrapSelect = (keyEvent, event) => {
+        console.log(event.target.text)
+        this.setState({
+            trapChoice: event.target.text
+        })
     }
 
 render() {  
@@ -114,14 +151,13 @@ render() {
                 <Button variant="outline-success" size="lg" onClick={this.handleClick}>Setback
                 </Button>
             </div>
-            <Modal show={this.state.showModal} onHide={this.handleClick}>
+            <Modal size="lg" show={this.state.showModal} onHide={this.handleClick}>
                 <Modal.Header closeButton>
                     <Modal.Title>Uh Oh Setbacks.</Modal.Title>
                 </Modal.Header>
 
                 <Modal.Body>
                     <p>You might want to make the campaign a little more interesting by adding a setback. Would you like to throw a wrench in their plans?</p>
-                    <p>Since you chose a short campaign this may not be in your best interest.</p>
 
                     <div className="sideQuestBtnSpace">
                         <div className="sideQuestBtns">
@@ -133,41 +169,66 @@ render() {
                         </div>
                     </div>
 
-                    {this.state.setback && (<div>
-                        <Dropdown onSelect={this.handleSetbackCategorySelect}>
-                            <Dropdown.Toggle variant="outline-primary">
-                            {this.state.setbackCatChoice ? this.state.setbackCatChoice: 'Choose Your World-Shaking Category'}
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                                {this.state.worldShakingEvents.map(drop => { 
-                                    return <Dropdown.Item key={drop.id} name={drop.title}>{drop.title}</Dropdown.Item>
-                                })}
-                            </Dropdown.Menu>
-                        </Dropdown>
+                        {this.state.setback && (
+                        
+                        <div className="setbackContainer">
+                            <div className="setBackItem d-flex flex-column align-items-center"> 
+                                <Button onClick={this.handleSetbackBtn} name="large">Large Setback Options</Button>
+                                
+                                {this.state.bigSetback &&(
+                                <div>
+                                    <Dropdown className="setBackItemchild" onSelect={this.handleSetbackCategorySelect}>
+                                    <Dropdown.Toggle variant="outline-primary">
+                                    {this.state.setbackCatChoice ? this.state.setbackCatChoice: 'Choose Your Setback Category'}
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>
+                                        {this.state.worldShakingEvents.map(drop => { 
+                                            return <Dropdown.Item key={drop.id} name={drop.title}>{drop.title}</Dropdown.Item>
+                                        })}
+                                    </Dropdown.Menu>
+                                </Dropdown>
 
-                        <br></br>
+                                {this.state.setBackTypes.length > 0 && (<div className="d-flex flex-column align-items-center">
+                                    <Dropdown onSelect={this.handleFinalEvent}>
+                                        <Dropdown.Toggle variant="outline-primary">
+                                        {this.state.finalSetbackType ? this.state.finalSetbackType: 'Choose your event'}
+                                        </Dropdown.Toggle>
+                                        <Dropdown.Menu>
+                                        {this.state.setBackTypes.map(drop => {
+                                            return <Dropdown.Item name={drop}> {drop}</Dropdown.Item>
+                                        })}
+                                        </Dropdown.Menu>
+                                    </Dropdown>
+                                    </div>)}
+                                </div>)}
 
-                    {this.state.setBackTypes.length > 0 && (<div>
-                        <Dropdown onSelect={this.handleFinalEvent}>
-                            <Dropdown.Toggle variant="outline-primary">
-                            {this.state.finalSetbackType ? this.state.finalSetbackType: 'Choose your event'}
-                            </Dropdown.Toggle>
+                                {this.state.setbackCatChoice && this.state.setBackTypes.length <= 0 &&  (
+                                    <div>
+                                        <FormControl type="text" placeholder="Name Your Event" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
+                                    </div>
+                                )}
+                            </div>
+                                
+                            <div className="setBackItem d-flex flex-column align-items-center">
+                                <Button onClick={this.handleSetbackBtn} name="small">Small Setback Options</Button>
+                                
+                                {this.state.smallSetback &&(
+                                <div>
+                                    <Dropdown className="setBackItemchild" onSelect={this.handleTrapSelect}>
+                                        <Dropdown.Toggle variant="outline-primary">
+                                        {this.state.trapChoice ? this.state.trapChoice: 'Choose Your Trap'}
+                                        </Dropdown.Toggle>
+                                        <Dropdown.Menu>
+                                            {this.state.traps.map(drop => { 
+                                                return <Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>
+                                            })}
+                                        </Dropdown.Menu>
+                                    </Dropdown>
+                                </div>)}
+                            </div>
 
-                            <Dropdown.Menu>
-                            {this.state.setBackTypes.map(drop => {
-                                return <Dropdown.Item name={drop}> {drop}</Dropdown.Item>
-                            })}
-                            </Dropdown.Menu>
-                        </Dropdown>
-                    </div>)}
-
-                    {this.state.setbackCatChoice && this.state.setBackTypes.length <= 0 &&  (
-                        <div>
-                            <FormControl type="text" placeholder="Name Your Event" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
                         </div>)}
 
-
-                    </div>)}
                 </Modal.Body>
 
                 <Modal.Footer>
