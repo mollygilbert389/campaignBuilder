@@ -263,7 +263,7 @@ setMonsters = (type) => {
                         <LocalEvents></LocalEvents>
                         <EncountersAndEvents></EncountersAndEvents>
                         <ExtraAdventure></ExtraAdventure>
-                        <Setback setSetBacks={this.setSetbacks}></Setback>
+
                     </div>
                 </div>)}
 
@@ -272,9 +272,10 @@ setMonsters = (type) => {
                     <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
                     <div className="btnspace">
                         <AdventureStart></AdventureStart>
-                        <Type setDungeonType={this.setDungeonType}></Type>
+                        {/* <Type setDungeonType={this.setDungeonType}></Type> */}
                         <Rooms setRooms={this.setRooms}></Rooms>
                         <MonsterCard campaign={this.props.campaign} setMonsterNum={this.setMonsterNum} setMonsters={this.setMonsters}></MonsterCard>
+                        <Treasure setTreasureType={this.setTreasureType} setTreasureNumber={this.setTreasureNumber} campaign={this.props.campaign}></Treasure>
                     </div>
                 </div>)}
 
@@ -282,7 +283,7 @@ setMonsters = (type) => {
                 <div>
                     <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
                     <div className="btnspace">
-                        <Treasure setTreasureType={this.setTreasureType} setTreasureNumber={this.setTreasureNumber} campaign={this.props.campaign}></Treasure>
+                        <Setback setSetBacks={this.setSetbacks}></Setback>
                     </div>
                 </div>)}
 

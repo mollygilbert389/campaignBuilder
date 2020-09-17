@@ -136,28 +136,20 @@ render() {
     return (
         <div>
             <div className="btns">
-                <Button variant="outline-success" size="lg" onClick={this.handleClick}>Adventure Start
+                <Button variant="outline-success" size="lg" onClick={this.handleClick}>Dungeon Start
                 </Button>
             </div>
             <Modal size="lg" show={this.state.showModal} onHide={this.handleClick}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Let's Figure Out Some Goals</Modal.Title>
+                    <Modal.Title>Let's figure out some dungeon details.</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="d-flex flex-column align-items-center">
-                    <p>Read through the options below and click on to pick it.</p>
+                    <p>First let's figure out where your dungeon is. Then let's pick how your characters find themselves there.</p>
 
-                        <Carousel interval={null}>
-                        {this.state.meetingSelection.map(drop => {
-                            return <Carousel.Item> <div className="d-block w-100"></div> <Button variant="primary" key={drop.id} style={style} name={drop.goal}>{drop.goal}</Button> </Carousel.Item>
-                        })}
-                        </Carousel>
-
-                        <div>
+                    <div>
                             <Button className="giveMeSpace" onClick={this.handleDungeonClick} name={"dungeonLocatios"}>Dungeon Locations</Button>
                             <Button className="giveMeSpace" onClick={this.handleDungeonClick} name={"nondungeonLocatios"}>Exotic Loactions</Button>
                         </div>
-
-
 
                         {this.state.dungeonTypeLocationSelected && (
                         // <Carousel interval={null}>
@@ -198,6 +190,12 @@ render() {
                             </Dropdown>
                         </div>
                         )}
+
+                        <Carousel interval={null}>
+                        {this.state.meetingSelection.map(drop => {
+                            return <Carousel.Item> <div className="d-block w-100"></div> <Button variant="primary" key={drop.id} style={style} name={drop.goal}>{drop.goal}</Button> </Carousel.Item>
+                        })}
+                        </Carousel>
 
                 </Modal.Body>
 
