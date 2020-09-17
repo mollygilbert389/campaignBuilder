@@ -241,10 +241,10 @@ render() {
             <Card className="d-flex flex-column align-items-center color">
                 <Card.Img className="NPCimage" variant="top" src="https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg"/>
                 <Card.Body className="d-flex flex-column align-items-center">
-                    <Card.Title>NPC #1</Card.Title>
+                    <Card.Title>{this.props.name}</Card.Title>
                             <Dropdown onSelect={this.handleGenderSelect}>
                                 <Dropdown.Toggle variant="outline-primary">
-                                {this.state.gender ?  `Gender: ${this.state.gender}`: 'Choose your Characters Gender'}
+                                {this.state.gender ?  `Gender: ${this.state.gender}`: 'Choose your NPCs Gender'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
                                     <Dropdown.Item>Female</Dropdown.Item>

@@ -77,6 +77,7 @@ render() {
                     min={1}
                     max={10}
                     defaultValue={2}
+                    className="sliderclass"
                     onChangeCommitted={this.handleSlider}
                     valueLabelDisplay="on"
                     />)}
@@ -87,9 +88,9 @@ render() {
 
                     {this.state.nextClicked && (<div>
                         <Carousel className="center" interval={null}>
-                            <Carousel.Item><NPCCard></NPCCard></Carousel.Item>
-                            <Carousel.Item> <NPCCard></NPCCard></Carousel.Item>
-                            <Carousel.Item><NPCCard></NPCCard></Carousel.Item>
+                            <Carousel.Item><NPCCard name={"NPC 1"}></NPCCard></Carousel.Item>
+                            <Carousel.Item> <NPCCard name={"NPC 2"}></NPCCard></Carousel.Item>
+                            <Carousel.Item><NPCCard name={"NPC 3"}></NPCCard></Carousel.Item>
                         </Carousel>
                     </div>)}
 

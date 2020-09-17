@@ -50,3 +50,24 @@
 .dualDrop {
     display: flex;
 }
+
+.color {
+    background-color: #D9CDDF;
+    width: 500px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border: none;
+}
+
+/* .dropdown-toggle {
+    font-size: 12px;
+    margin: 2px;
+} */
+
+.sliderclass {
+   color: #576490
+}
+
+.villainPatronCard {
+    border: none;
+}

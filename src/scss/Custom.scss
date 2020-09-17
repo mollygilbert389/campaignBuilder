@@ -2,7 +2,8 @@ $theme-colors: (
   "primary": #8D6A9F,
   "danger": #ED705A,
   "success": #48AD97,
-  "dark" : #576490
+  "dark" : #576490, 
+  "warning": #E08A00
 );
 
 @import "node_modules/bootstrap/scss/bootstrap";
