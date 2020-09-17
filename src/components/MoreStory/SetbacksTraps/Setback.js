@@ -90,12 +90,32 @@ class Setback extends Component {
     }
 
     setback = (event) => {
-        this.setState({
-            // showModal: !this.state.showModal,
-            setback: event.target.value
+        let choice = event.target.name
+        console.log(choice)
+        switch (choice) {
+            case "Yes":
+                this.setState({
+                    setback: true
+                })
+                break;
+            case "No":
+                this.setState({
+                    setback: false,
+                    finalSetbackType: "",
+                    smallSetback: false,
+                    bigSetback: false,
+                    setbackCatChoice: "",
+                    setBackTypes: [],
+                    trapChoice: "",
+                    showModal: !this.state.showModal
+                })
         } 
+        // this.setState({
+        //     // showModal: !this.state.showModal,
+        //     setback: event.target.value
+        // } 
         // () => {this.props.setSetBacks(this.state.setback)}
-        )
+        // )
     }
 
     handleSetbackCategorySelect = (keyevent, event) => {
@@ -226,7 +246,6 @@ render() {
                                     </Dropdown>
                                 </div>)}
                             </div>
-
                         </div>)}
 
                 </Modal.Body>
