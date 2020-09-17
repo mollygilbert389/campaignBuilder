@@ -224,10 +224,6 @@ setMonsters = (type) => {
                     <p>We first need to build your world. Your leadership. Your religion, and your society.</p>
                     <div className="btnspace">
                         {!this.props.campaign.campaignName && (<CampaignNameModal setCampaignName={this.setCampaignName}></CampaignNameModal>)}
-                        <Government></Government>
-                        <Physical></Physical>
-                        <Social></Social>
-
                     </div>
                 </div>)}
 
@@ -235,12 +231,7 @@ setMonsters = (type) => {
                 <div>
                     <p>Let's talk characters. Let's think about the goal of this entire campaign. Do you want to start with your villain or your quest giver? Sometimes the quest giver and the villain are the same.</p>
                     <div className="btnspace">
-                        <ActsClimax></ActsClimax>
-                        <MainGoals></MainGoals>
-                        <Pillar></Pillar>
-                        <PatronNPCs></PatronNPCs>
-                        <Villain></Villain>
-
+                        <PartyInfo setPlayers={this.setPlayers}></PartyInfo>
                     </div>
                 </div>)}
 
@@ -248,11 +239,25 @@ setMonsters = (type) => {
                 <div>
                     <p>Now let's talk about your party. Anwser the questions below to help define the type of characters for this campaign. You may also skip this step as your party may want to decide for themselves the characters they want.</p>
                     <div className="btnspace">
-                        <PartyInfo setPlayers={this.setPlayers}></PartyInfo>
+                        <Government></Government>
+                        <Physical></Physical>
+                        <Social></Social>
                     </div>
                 </div>)}
 
                 {this.state.fourthRoundBtns && (
+                <div>
+                    <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
+                    <div className="btnspace">
+                        <ActsClimax></ActsClimax>
+                        <MainGoals></MainGoals>
+                        <Pillar></Pillar>
+                        <PatronNPCs></PatronNPCs>
+                        <Villain></Villain>
+                    </div>
+                </div>)}
+
+                {this.state.fifthRoundBtns && (
                 <div>
                     <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
                     <div className="btnspace">
@@ -263,11 +268,11 @@ setMonsters = (type) => {
                         <LocalEvents></LocalEvents>
                         <EncountersAndEvents></EncountersAndEvents>
                         <ExtraAdventure></ExtraAdventure>
-
+                        <Setback setSetBacks={this.setSetbacks}></Setback>
                     </div>
                 </div>)}
 
-                {this.state.fifthRoundBtns && (
+                {this.state.sixthRoundBtns && (
                 <div>
                     <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
                     <div className="btnspace">
@@ -276,14 +281,6 @@ setMonsters = (type) => {
                         <Rooms setRooms={this.setRooms}></Rooms>
                         <MonsterCard campaign={this.props.campaign} setMonsterNum={this.setMonsterNum} setMonsters={this.setMonsters}></MonsterCard>
                         <Treasure setTreasureType={this.setTreasureType} setTreasureNumber={this.setTreasureNumber} campaign={this.props.campaign}></Treasure>
-                    </div>
-                </div>)}
-
-                {this.state.sixthRoundBtns && (
-                <div>
-                    <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
-                    <div className="btnspace">
-                        <Setback setSetBacks={this.setSetbacks}></Setback>
                     </div>
                 </div>)}
 

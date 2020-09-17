@@ -1,8 +1,5 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import Atmosphere from "./Atmosphere"
-import Scale from "./Scale"
-import AdventureSite from "./AdventureSite"
 import {Button, Dropdown, Form, FormControl, FormGroup, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "../style.css"
 
@@ -47,20 +44,12 @@ render() {
                     <Modal.Title>Paint with all th colors.</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>Let's figure out the more apparent features of your world.</p>
-                    
-                    <br></br>
-
-                    {/* <div className="btnspace">
-                        <Atmosphere></Atmosphere>
-                        <Scale></Scale>
-                        <AdventureSite></AdventureSite>
-                    </div> */}
+                    <p>Below are some buttons to help create your ideal world!</p>
 
                     <FormGroup>
                         <Dropdown onSelect={this.worldSelect}>
                             <Dropdown.Toggle variant="outline-primary">
-                                {this.state.world ? this.state.world : 'What is your setting?'}
+                                {this.state.world ? `Setting: ${this.state.world}`: 'What is your setting?'}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                             <Dropdown.Item >Coast</Dropdown.Item>
@@ -77,12 +66,27 @@ render() {
                     <FormGroup>
                         <Dropdown onSelect={this.mapScale}>
                             <Dropdown.Toggle variant="outline-primary">
-                                {this.state.mapScale ? this.state.mapScale : 'What kind of place are your adventurers starting?'}
+                                {this.state.mapScale ? `Size: ${this.state.mapScale}` : 'What kind of place are your adventurers starting?'}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                             <Dropdown.Item >Village</Dropdown.Item>
                             <Dropdown.Item >Town</Dropdown.Item>
                             <Dropdown.Item >City</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </FormGroup>
+
+                    <FormGroup>
+                        <Dropdown onSelect={this.meetingSelect}>
+                            <Dropdown.Toggle variant="outline-primary">
+                                {this.state.meetingPlace ? `Meeting: ${this.state.meetingPlace}`: 'How do your characters know each other?'}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                            <Dropdown.Item >Meet in a tavern about a contract</Dropdown.Item>
+                            <Dropdown.Item >Party has already adventured togethr</Dropdown.Item>
+                            <Dropdown.Item >One member brings the group together</Dropdown.Item>
+                            <Dropdown.Item >Meet at a party</Dropdown.Item>
+                            <Dropdown.Item >Mysterious Circumstance</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </FormGroup>

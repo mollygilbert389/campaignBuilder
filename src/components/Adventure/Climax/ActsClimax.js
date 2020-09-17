@@ -8,7 +8,10 @@ class Acts extends Component {
     state ={
         showModal: false,
         acts: "",
-        climax: "", 
+        climax: "",
+        actsVarient1: "outline-primary", 
+        actsVarient2: "outline-primary", 
+        actsVarient3: "outline-primary", 
         climaxOptions: [
             {id:1, option: "The adventurers confront the main villain and a group of minions in a bloody battle to the finish"},
             {id:2, option: "The adventurers chase the villain while dodging obstacles designed to thwart them, leading to a final confrontation in or outside the villain's refuge"},
@@ -32,11 +35,34 @@ class Acts extends Component {
     }
 
     handleActBtn = (event) => {
-        this.setState({
-            acts: event.target.name
-        }, 
+        let choice = event.target.name
+        switch(choice) {
+            case "3":
+                this.setState({
+                    actsVarient1: "primary", 
+                    actsVarient2: "outline-primary", 
+                    actsVarient3: "outline-primary",
+                    acts: event.target.name
+                })
+                break;
+            case "4":
+                this.setState({
+                    actsVarient1: "outline-primary", 
+                    actsVarient2: "primary", 
+                    actsVarient3: "outline-primary",
+                    acts: event.target.name 
+                })
+                break;
+            case "5":
+                this.setState({
+                    actsVarient1: "outline-primary", 
+                    actsVarient2: "outline-primary", 
+                    actsVarient3: "primary",
+                    acts: event.target.name 
+                })
+                break;
+        }
         // () => {this.props.setActs(this.state.acts)}
-        )
     }
 
     handleClimax = (eventkey, event) => {
@@ -70,15 +96,15 @@ render() {
 
                         <div className="actBtnSpace">
                             <div className="actBtns">
-                                <Button name="3" variant="outline-primary" onClick={this.handleActBtn}>3</Button>
+                                <Button name="3" variant={this.state.actsVarient1} onClick={this.handleActBtn}>3</Button>
                             </div>
 
                             <div className="actBtns">
-                                <Button name="4" variant="outline-primary" onClick={this.handleActBtn}>4</Button>
+                                <Button name="4" variant={this.state.actsVarient2} onClick={this.handleActBtn}>4</Button>
                             </div>
 
                             <div className="actBtns">
-                                <Button name="5" variant="outline-primary" onClick={this.handleActBtn}>5</Button>
+                                <Button name="5" variant={this.state.actsVarient3} onClick={this.handleActBtn}>5</Button>
                             </div>
                         </div>
 
