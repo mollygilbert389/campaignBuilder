@@ -4,6 +4,7 @@ import {bindActionCreators} from "redux"
 import {setCampaignName, setVillainName, setVillainType, setQuestGiverType, setQuestGiverName, setPlayers, setPillar, setActs, setClimate, setWorld, setMeetingPlace, setSideQuests, setRooms, setSetbacks, setMonsterNum, setDungeonType, setTreasureType, setMonsters, setTreasureNumber} from "../actions/index"
 import {Button} from 'react-bootstrap'
 import './style.css'
+import "../scss/Custom.scss"
 import '../components/home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CampaignNameModal from '../components/WorldBuilder/CampaignNameModal';

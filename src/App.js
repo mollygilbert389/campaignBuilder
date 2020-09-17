@@ -8,6 +8,7 @@ import Custom from "./pages/Custom"
 import Navtabs from "./components/StaticComps/Navtabs"
 import Footer from "./components/StaticComps/Footer"
 import './App.css';
+import "./scss/Custom.scss"
 
 import {Provider} from "react-redux"
 import store from "./store"
