@@ -39,7 +39,6 @@ render() {
                     <div className="btnspace">
                         <Twists></Twists>
                         <SideQuests></SideQuests>
-                        <Traps></Traps>
                     </div>
 
 

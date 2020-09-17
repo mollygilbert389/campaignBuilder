@@ -4,7 +4,7 @@ import Encounters from "../Encounters/Encounters"
 import RandomEvents from "../Encounters/RandomEvents"
 import SideQuests from "./SideQuests"
 import Traps from "../SetbacksTraps/Traps"
-import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
+import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Carousel} from 'react-bootstrap'
 import "../style.css"
 
 class Twists extends Component {
@@ -50,23 +50,21 @@ class Twists extends Component {
         }
     }
 
-    handleTwistChoice = (keyEvent, event) => {
-        this.setState({
-            twistChoice: event.target.name,
-        })
-    }
-
-
 render() {  
-
-
+    const style = {
+        width: "350px",
+        height: "125px",
+        padding: "40px",
+        paddingTop: "10px",
+        margin: "5px",
+    }
     return (
         <div>
             <div className="btns">
                 <Button variant="outline-success" size="lg" onClick={this.handleClick}>Twists
                 </Button>
             </div>
-            <Modal show={this.state.showModal} onHide={this.handleClick}>
+            <Modal size="lg" show={this.state.showModal} onHide={this.handleClick}>
                 <Modal.Header closeButton>
                     <Modal.Title>This is optional, do you want to add a twist to your story?</Modal.Title>
                 </Modal.Header>
@@ -74,13 +72,6 @@ render() {
                     <p>Do you want to add a twist?</p>
                     
                     <br></br>
-
-                    {/* <div className="btnspace">
-                        <Encounters></Encounters>
-                        <RandomEvents></RandomEvents>
-                        <SideQuests></SideQuests>
-                        <Traps></Traps>
-                    </div> */}
 
                     <div className="sideQuestBtnSpace">
                         <div className="sideQuestBtns">
@@ -92,17 +83,15 @@ render() {
                     </div>
 
                     {this.state.twistYesNo && (<div>
-                        <Dropdown onSelect={this.handleTwistChoice}>
-                            <Dropdown.Toggle variant="outline-primary">
-                            {this.state.twistChoice ? this.state.twistChoice: 'Choose your twist'}
-                            </Dropdown.Toggle>
 
-                            <Dropdown.Menu>
+                        <div className="d-flex flex-column align-items-center">
+                            <p>Click through these to add a fun twist to your story.</p>
+                            <Carousel interval={null}>
                             {this.state.twists.map(drop => {
-                                return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
+                                return <Carousel.Item> <div className="d-block w-100"></div> <Button variant="primary" style={style} key={drop.id} name={drop.option}>{drop.option}</Button> </Carousel.Item>
                             })}
-                            </Dropdown.Menu>
-                        </Dropdown>
+                            </Carousel>
+                        </div>
                     </div>)}
 
 
