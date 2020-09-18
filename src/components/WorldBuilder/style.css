@@ -7,10 +7,6 @@
     width: 300px;
 }
 
-.inputAndBtn{
-
-}
-
 .centeredItems {
     display: flex;
     flex-wrap: wrap;
@@ -25,4 +21,10 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.characterBoxes {
+    border: solid 1px rgb(182, 177, 177);
+    margin: 10px;
+    padding: 5px;
 }

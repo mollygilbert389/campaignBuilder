@@ -23,7 +23,7 @@ render() {
             <div className="characterRenownContainer">
                 <div className="characterBoxes">
                     <div>
-                        {this.props.charName}
+                        <h2>{this.props.charName}</h2>
                     </div>
                     {this.state.suggestedTags.map(item => {
                         return <div>

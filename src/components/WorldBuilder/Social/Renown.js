@@ -33,11 +33,17 @@ render() {
                     
                     <br></br>
 
-                    <div className="characterRenownContainer">
+                    {this.state.playerInfo.length > 0 && (<div className="characterRenownContainer">
                         {this.state.playerInfo.map(item => {
                             return <CharacterRenownCard campaign={this.props.campaign} key={item.id} charName={item.name}></CharacterRenownCard>
                         })}
-                    </div>
+                    </div>)}
+
+                    {this.state.playerInfo.length < 1 && (<div className="characterRenownContainer">
+                        <div>
+                            <p>You haven't added charcters to your campaign yet! If you're like to add certain renown to certain characters go back and a some characters in!</p>
+                        </div>
+                    </div>)}
 
 
                 </Modal.Body>
