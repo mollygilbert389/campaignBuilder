@@ -330,15 +330,15 @@ class VillainModal extends Component {
     // }
 
     handleChange = (event) => {
-    this.setState({
-        villainName: event.target.value
-    })
+        this.setState({
+            villainName: event.target.value
+            }, () => {this.props.setVillainName(this.state.villainName)})
     }
 
     handleClick = () => {
         this.setState({
             showModal: !this.state.showModal,
-            })
+        })
     }
 
     handleVillainTypeSelect = (eventkey, event) => {

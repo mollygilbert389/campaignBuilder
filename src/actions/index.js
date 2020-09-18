@@ -9,26 +9,24 @@ import {
     SET_RELIGION,
     SET_LANGUAGES,
     SET_FACTION_ORGS,
-    // SET_VILLAIN_NAME,
-    // SET_VILLAIN_TYPE,
-    // SET_QUESTGIVER_NAME,
-    // SET_QUESTGIVER_TYPE,
-    // SET_PILLAR,
-    // SET_ACTS,
-    // SET_CLIMATE,
-    // SET_WORLD,
-    // SET_MEETING_PLACE,
+    SET_ACTS,
+    SET_CLIMAX,
+    SET_MAIN_GOAL,
+    SET_PILLAR,
+    SET_PATRON_NAME,
+    SET_VILLAIN_NAME,
+    SET_LOCAL_EVENTS,
+    SET_RANDOM_ENOUNTER_NUMBER,
+    SET_ROOMS,
+    SET_MONSTER_NUM,
+    SET_MONSTERS,
+    SET_TREASURE_TYPE, 
+    SET_TREASURE_NUMBER,
+
     // SET_SIDE_QUESTS,
-    // SET_ROOMS,
     // SET_SETBACKS,
-    // SET_MONSTER_NUM,
     // SET_DUNGEON_TYPE,
-    // SET_TREASURE_TYPE, 
-    // SET_MONSTERS,
-    // SET_TREASURE_NUMBER,
     
-
-
 } from './constant'
 
 export const setCampaignName = (name) => ({
@@ -79,62 +77,75 @@ export const setLanguages = (type) => ({
 export const setFactionOrgs = (names) => ({
     type: SET_FACTION_ORGS,
     payload: names
+})
+
+export const setActs = (number) => ({
+    type: SET_ACTS,
+    payload: number
+})
+
+export const setClimax = (type) => ({
+    type: SET_CLIMAX,
+    payload: type
 }) 
 
-// export const setVillainName = (name) => ({
-//     type: SET_VILLAIN_NAME,
-//     payload: name
-// })  
+export const setMainGoal = (type) => ({
+    type: SET_MAIN_GOAL,
+    payload: type
+}) 
 
-// export const setVillainType = (vType) => ({
-//     type: SET_VILLAIN_TYPE,
-//     payload: vType
-// })  
+export const setPillar = (type) => ({
+    type: SET_PILLAR,
+    payload: type
+}) 
 
-// export const setQuestGiverName = (name) => ({
-//     type: SET_QUESTGIVER_NAME,
-//     payload: name
-// }) 
+export const setPatronName = (name) => ({
+    type: SET_PATRON_NAME,
+    payload: name
+}) 
 
-// export const setQuestGiverType = (qType) => ({
-//     type: SET_QUESTGIVER_TYPE,
-//     payload: qType
-// }) 
+export const setVillainName = (name) => ({
+    type: SET_VILLAIN_NAME,
+    payload: name
+}) 
 
+export const setLocalEvents = (names) => ({
+    type: SET_LOCAL_EVENTS,
+    payload: names
+}) 
 
+export const setRandomEncounterNumber = (number) => ({
+    type: SET_RANDOM_ENOUNTER_NUMBER,
+    payload: number
+}) 
 
-// export const setPillar = (name) => ({
-//     type: SET_PILLAR,
-//     payload: name
-// }) 
+export const setRooms = (number) => ({
+    type: SET_ROOMS,
+    payload: number
+}) 
 
-// export const setActs = (name) => ({
-//     type: SET_ACTS,
-//     payload: name
-// }) 
+export const setMonsterNum = (number) => ({
+    type: SET_MONSTER_NUM,
+    payload: number
+}) 
 
-// export const setClimate = (name) => ({
-//     type: SET_CLIMATE,
-//     payload: name
-// }) 
+export const setMonsters = (name) => ({
+    type: SET_MONSTERS,
+    payload: name
+}) 
 
-// export const setWorld = (name) => ({
-//     type: SET_WORLD,
-//     payload: name
-// }) 
+export const setTreasureType = (type) => ({
+    type: SET_TREASURE_TYPE,
+    payload: type
+}) 
 
-// export const setMeetingPlace = (name) => ({
-//     type: SET_MEETING_PLACE,
-//     payload: name
-// }) 
+export const setTreasureNumber = (number) => ({
+    type: SET_TREASURE_NUMBER,
+    payload: number
+}) 
 
 // export const setSideQuests = (name) => ({
 //     type: SET_SIDE_QUESTS,
-//     payload: name
-// }) 
-
-// export const setRooms = (name) => ({
-//     type: SET_ROOMS,
 //     payload: name
 // }) 
 
@@ -143,27 +154,8 @@ export const setFactionOrgs = (names) => ({
 //     payload: name
 // }) 
 
-// export const setMonsterNum = (name) => ({
-//     type: SET_MONSTER_NUM,
-//     payload: name
-// }) 
-
 // export const setDungeonType = (name) => ({
 //     type: SET_DUNGEON_TYPE,
 //     payload: name
 // }) 
 
-// export const setTreasureType = (name) => ({
-//     type: SET_TREASURE_TYPE,
-//     payload: name
-// }) 
-
-// export const setMonsters = (name) => ({
-//     type: SET_MONSTERS,
-//     payload: name
-// }) 
-
-// export const setTreasureNumber = (name) => ({
-//     type: SET_TREASURE_NUMBER,
-//     payload: name
-// }) 

@@ -158,7 +158,7 @@ class MainGoals extends Component {
     handleGoalClick = (keyevent, event) => {
         this.setState({
             finalDungeonChoice: event.target.text
-        })
+        }, () => {this.props.setMainGoal(this.state.finalDungeonChoice)})
     }
 
 

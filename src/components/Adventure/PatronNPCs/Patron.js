@@ -15,7 +15,7 @@ class Patron extends Component {
             showModal: false,
             patronName: event.target.value
         })
-        // this.props.setQuestGiver(this.state.patronName, this.state.patronType)
+        this.props.setPatronName(this.state.patronName)
     }
 
 
@@ -65,8 +65,8 @@ render() {
                         <br></br>
 
                         <PatronCard name={this.state.patronName}>
-
                         </PatronCard>
+
                     </div>
 
                 </Modal.Body>

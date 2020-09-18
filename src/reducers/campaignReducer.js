@@ -9,6 +9,19 @@ import {
   SET_RELIGION,
   SET_LANGUAGES,
   SET_FACTION_ORGS,
+  SET_ACTS,
+  SET_CLIMAX,
+  SET_MAIN_GOAL,
+  SET_PILLAR,
+  SET_PATRON_NAME,
+  SET_VILLAIN_NAME,
+  SET_LOCAL_EVENTS,
+  SET_RANDOM_ENOUNTER_NUMBER,
+  SET_ROOMS,
+  SET_MONSTER_NUM,
+  SET_MONSTERS,
+  SET_TREASURE_TYPE,
+  SET_TREASURE_NUMBER
 
 } from '../actions/constant'
 
@@ -28,25 +41,25 @@ const initialState = {
       "Emerald Enclave",
       "Lord's Alliance",
       "Zhentarim",
-  ],
+    ],
+    acts: "",
+    climax: "",
+    mainGoal: "",
+    pillar: "",
+    patronName: "",
+    villainName: "",
+    localEvents: [],
+    randomEncounterNumber: "",
+    rooms: "",
+    monsterNum: "",
+    monsters: [],
+    treasure: [],
+    treasureNum: "",
 
-    // villainName: '',
-    // villainType: '',
-    // questGiverName: '',
-    // questGiverType: '',
-    // pillar: '',
-    // acts: '',
-    // climate: '',
-    // world: '',
-    // meetingPlace: '',
     // sideQuests: '',
-    // rooms: '',
     // setbacks: '',
-    // monsterNum: '',
     // dungeonType: '',
-    // treasure: [],
-    // monsters: [],
-    // treasureNum: '',
+
  
 }
 
@@ -102,92 +115,87 @@ export default function(state = initialState, action) {
             ...state,
             factionOrgs: action.payload
           }
-        // case SET_VILLAIN_NAME: 
-        // return {
-        //   ...state,
-        //   villainName: action.payload  
-        // }
-        // case SET_VILLAIN_TYPE: 
-        // return {
-        //   ...state,
-        //   villainType: action.payload  
-        // }
-        // case SET_QUESTGIVER_NAME: 
-        // return {
-        //   ...state,
-        //   questGiverName: action.payload  
-        // }
-        // case SET_QUESTGIVER_TYPE: 
-        // return {
-        //   ...state,
-        //   questGiverType: action.payload  
-        // }
-
-        // case SET_PILLAR: 
-        // return {
-        //   ...state,
-        //   pillar: action.payload  
-        // }
-        // case SET_ACTS: 
-        // return {
-        //   ...state,
-        //   acts: action.payload  
-        // }
-        // case SET_CLIMATE: 
-        // return {
-        //   ...state,
-        //   climate: action.payload  
-        // }
-        // case SET_WORLD: 
-        // return {
-        //   ...state,
-        //   world: action.payload  
-        // }
-        // case SET_MEETING_PLACE: 
-        // return {
-        //   ...state,
-        //   meetingPlace: action.payload  
-        // }
+        case SET_ACTS:
+          return {
+            ...state,
+            acts: action.payload
+          }
+        case SET_CLIMAX:
+          return {
+            ...state,
+            climax: action.payload
+          }
+        case SET_MAIN_GOAL:
+          return {
+            ...state,
+            mainGoal: action.payload
+          }
+        case SET_PILLAR: 
+        return {
+          ...state,
+          pillar: action.payload  
+        }
+        case SET_PATRON_NAME: 
+        return {
+          ...state,
+          patronName: action.payload  
+        }
+        case SET_VILLAIN_NAME: 
+        return {
+          ...state,
+          villainName: action.payload  
+        }
+        case SET_LOCAL_EVENTS: 
+        return {
+          ...state,
+          localEvents: action.payload  
+        }
+        case SET_RANDOM_ENOUNTER_NUMBER: 
+        return {
+          ...state,
+          randomEncounterNumber: action.payload  
+        }
+        case SET_ROOMS: 
+        return {
+          ...state,
+          rooms: action.payload  
+        }
+        case SET_MONSTER_NUM: 
+        return {
+          ...state,
+          monsterNum: action.payload  
+        }
+        case SET_MONSTERS: 
+        return {
+          ...state,
+          monsters: action.payload  
+        }
+        case SET_TREASURE_TYPE: 
+        return {
+          ...state,
+          treasure: action.payload  
+        }
+        case SET_TREASURE_NUMBER: 
+        return {
+          ...state,
+          treasureNum: action.payload  
+        }
         // case SET_SIDE_QUESTS: 
         // return {
         //   ...state,
         //   sideQuests: action.payload  
-        // }
-        // case SET_ROOMS: 
-        // return {
-        //   ...state,
-        //   rooms: action.payload  
         // }
         // case SET_SETBACKS: 
         // return {
         //   ...state,
         //   setbacks: action.payload  
         // }
-        // case SET_MONSTER_NUM: 
-        // return {
-        //   ...state,
-        //   monsterNum: action.payload  
-        // }
         // case SET_DUNGEON_TYPE: 
         // return {
         //   ...state,
         //   dungeonType: action.payload  
         // }
-        // case SET_TREASURE_TYPE: 
-        // return {
-        //   ...state,
-        //   treasure: action.payload  
-        // }
-        // case SET_MONSTERS: 
-        // return {
-        //   ...state,
-        //   monsters: action.payload  
-        // }
-        // case SET_TREASURE_NUMBER: 
-        // return {
-        //   ...state,
-        //   treasureNum: action.payload  
-        // }
+
         default: 
             return state
     } 

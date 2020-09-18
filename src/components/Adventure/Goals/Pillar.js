@@ -14,14 +14,11 @@ class Pillar extends Component {
         })
     }
 
-    handlePillarBtn = (selection) =>  {
-        // event.target.text
+    handlePillarBtn = (event) =>  {
         this.setState({
-        pillar: selection,
+        pillar: event.target.name,
         showModal: !this.state.showModal,           
-        }, () => {
-            // this.props.setPillar(this.state.pillar)
-        })
+        }, () => {this.props.setPillar(this.state.pillar)})
     }
 
 render() {  
@@ -43,13 +40,13 @@ render() {
 
                     <p>Here you will choose your adventure type. We reccomend a Combat pillar for a short campaign, but you can have any type of campaign you choose!</p>
                         <div>
-                            <Button onClick={() => this.handlePillarBtn("Combat")} variant="outline-success" name="Combat" size="lg" block>
+                            <Button onClick={this.handlePillarBtn} variant="outline-success" name="Combat" size="lg" block>
                             Combat
                             </Button>
-                            <Button onClick={() => this.handlePillarBtn("Interaction")} variant="outline-warning" name="Interaction" size="lg" block>
+                            <Button onClick={this.handlePillarBtn} variant="outline-warning" name="Interaction" size="lg" block>
                             Interaction
                             </Button>
-                            <Button onClick={() => this.handlePillarBtn("Exploration")} variant="outline-danger" name="Exploration" size="lg" block>
+                            <Button onClick={this.handlePillarBtn} variant="outline-danger" name="Exploration" size="lg" block>
                             Exploration
                             </Button>
                         </div>

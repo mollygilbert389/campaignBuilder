@@ -48,81 +48,79 @@ render() {
           </div>
           )}
 
-            {/* {campaign.questGiverName  && (
-            <div className="=questInfo grouping">
-              {campaign.questGiverName && (
-              <Card.Title className="title">Quest Info:</Card.Title>)}
-                <div>
-                  {campaign.questGiverName && (<div>{`Quest Giver: ${campaign.questGiverName}`}</div>)}
-                  {campaign.questGiverType && (<div>{`Quest Giver Type: ${campaign.questGiverType}`}</div>)}
-                  {campaign.villainName && (<div> {`Villain Name: ${campaign.villainName}`}</div>)}
-                  {campaign.villainType && (<div>{`Villain Type: ${campaign.villainType}`}</div>)}
-                </div>
-            </div>
-            )} */}
-
-            <br></br> 
-            {/* {campaign.pillar && (
+        {campaign.pillar && (
             <div className="grouping">
-              {campaign.pillar && (
-              <Card.Title className="title">Campaign Info:</Card.Title>)}
+            <Card.Title className="title">General Campaign Info:</Card.Title>
               <div>
-              {campaign.pillar && (
-                <div>{`Pillar: ${campaign.pillar}`}</div>)}
-                {campaign.acts && (
-                <div>{`Acts: ${campaign.acts}`}</div>)}
-                {campaign.sideQuests && (
-                <div>{`Side Quests: ${campaign.sideQuests}`}</div>)}
-                <br></br>
-                <div>
-                  {campaign.meetingPlace && (
-                    <div className="theme grouping">
-                      <Card.Subtitle>Theme:</Card.Subtitle>
-                      <div>{`Climate: ${campaign.climate}`}</div>
-                      <div>{`World: ${campaign.world}`}</div>
-                      <div>{`Meeting: ${campaign.meetingPlace}`}</div>
-                    </div>
-                    )}
-                </div>
+                {campaign.pillar && (<div>{`Campaign Type: ${campaign.pillar}`}</div>)}
+                {campaign.acts && (<div>{`Acts: ${campaign.acts}`}</div>)}
+                {campaign.climax && (<div>{`Ending: ${campaign.climax}`}</div>)}
+                {campaign.mainGoal && (<div>{`Main Dungeon Goal: ${campaign.mainGoal}`}</div>)}
               </div>
-            </div>)} */}
+          </div>
+          )}
+
+        {campaign.patronName && (
+            <div className="grouping">
+            <Card.Title className="title">Villain, Patron & NPC Info:</Card.Title>
+              <div>
+                {campaign.patronName && (<div>{`Patron Name: ${campaign.patronName}`}</div>)}
+                {campaign.villainName && (<div>{`Villain Name: ${campaign.villainName}`}</div>)}
+              </div>
+          </div>
+          )}
+
+        {campaign.localEvents.length > 0 && (
+            <div className="grouping">
+            <Card.Title className="title">More Story Info:</Card.Title>
+              <div>
+                {campaign.localEvents && (<div>{`Local Events:`}</div>)}
+                  {campaign.localEvents.map(localEvent => {
+                    return (
+                      <div> {` -${localEvent}`}</div>
+                        )
+                  })}
+              </div>
+              {campaign.randomEncounterNumber && (<div>{`Random Enounters: ${campaign.randomEncounterNumber}`}</div>)}
+          </div>
+          )}
 
             <br></br> 
             
-            {/* <div>
+            <div>
             {campaign.dungeonType && (
               <div className="dungeonInfo grouping">
                 <Card.Title className="title">Dungeon Info:</Card.Title>
-                <div>{`Dungeon Type: ${campaign.dungeonType}`}</div>
                 <div>{`Number of Rooms: ${campaign.rooms}`}</div>
-                <div>{`Setbacks: ${campaign.setbacks}`}</div>
               </div>
             )}
-            </div> */}
-
-            <br></br> 
-            {/* {campaign.monsters.length > 0 && (
-            <div className="monsterInfo grouping">
-              <Card.Title>Monsters Chosen:</Card.Title>
-            {campaign.monsters.map(oneMonster => {
-              return (
-                <div>{oneMonster}</div>
-              )
-            })}
             </div>
-            )} */}
 
-            <br></br> 
-            {/* {campaign.treasure.length > 0 && (
-            <div className="treasureInfo grouping">
-              <Card.Title className="title">Treasure: {campaign.treasureNum}</Card.Title>
-                  {campaign.treasure.map(oneTreasure => {
+            <br></br>
+
+            {campaign.monsters.length > 0 && (
+              <div className="monsterInfo grouping">
+                <Card.Title>Monsters Chosen:</Card.Title>
+                {campaign.monsters.map(oneMonster => {
                   return (
-                    <div> {` -${oneTreasure}`}</div>
+                      <div>{oneMonster}</div>
                       )
                   })}
-            </div>
-            )} */}
+              </div>
+            )}
+
+            <br></br>
+
+            {campaign.treasure.length > 0 && (
+              <div className="treasureInfo grouping">
+                <Card.Title className="title">Treasure: {campaign.treasureNum}</Card.Title>
+                    {campaign.treasure.map(oneTreasure => {
+                      return (
+                        <div> {` -${oneTreasure}`}</div>
+                          )
+                      })}
+              </div>
+            )}
 
           </Card.Body>
           <Card.Footer className="text-muted"></Card.Footer>

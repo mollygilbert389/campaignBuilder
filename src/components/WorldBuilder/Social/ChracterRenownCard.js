@@ -23,7 +23,7 @@ render() {
             <div className="characterRenownContainer">
                 <div className="characterBoxes">
                     <div>
-                        <h2>{this.props.charName}</h2>
+                        <h3>{this.props.charName}</h3>
                     </div>
                     {this.state.suggestedTags.map(item => {
                         return <div>
@@ -36,7 +36,7 @@ render() {
                                 color="primary"/>}
                                 label={item}
                                 />
-                            </div>})}
+                         </div>})}
                 </div>
             </div>
         </div>

@@ -84,7 +84,7 @@ class Religion extends Component {
 
         this.setState({
             localEventChoice: filteredChoiceList,
-        })
+        }, () => {this.props.setLocalEvents(this.state.localEventChoice)})
     }
 
     removeEvent = (event) => {
@@ -99,7 +99,7 @@ class Religion extends Component {
 
         this.setState({
             localEventChoice: newChoiceList
-        })
+        }, () => {this.props.setLocalEvents(this.state.localEventChoice)})
     }
 
 

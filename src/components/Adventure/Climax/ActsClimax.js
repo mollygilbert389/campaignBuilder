@@ -43,7 +43,7 @@ class Acts extends Component {
                     actsVarient2: "outline-primary", 
                     actsVarient3: "outline-primary",
                     acts: event.target.name
-                })
+                }, () => {this.props.setActs(this.state.acts)})
                 break;
             case "4":
                 this.setState({
@@ -51,7 +51,7 @@ class Acts extends Component {
                     actsVarient2: "primary", 
                     actsVarient3: "outline-primary",
                     acts: event.target.name 
-                })
+                }, () => {this.props.setActs(this.state.acts)})
                 break;
             case "5":
                 this.setState({
@@ -59,16 +59,15 @@ class Acts extends Component {
                     actsVarient2: "outline-primary", 
                     actsVarient3: "primary",
                     acts: event.target.name 
-                })
+                }, () => {this.props.setActs(this.state.acts)})
                 break;
         }
-        // () => {this.props.setActs(this.state.acts)}
     }
 
-    handleClimax = (eventkey, event) => {
+    handleClimax = (event) => {
         this.setState({
-            climax: event.target.text
-        })
+            climax: event.target.name
+        }, () => {this.props.setClimax(this.state.climax)})
     }
 
 render() {  
@@ -114,7 +113,7 @@ render() {
                             <p>Let's also plan your end goal. Click one of the boxes in the slider below.</p>
                             <Carousel interval={null}>
                             {this.state.climaxOptions.map(drop => {
-                                return <Carousel.Item> <div className="d-block w-100"></div> <Button variant="primary" key={drop.id} style={style} name={drop.option}>{drop.option}</Button> </Carousel.Item>
+                                return <Carousel.Item> <div className="d-block w-100"></div> <Button variant="primary" onClick={this.handleClimax} key={drop.id} style={style} name={drop.option}>{drop.option}</Button> </Carousel.Item>
                             })}
                             </Carousel>
                         </div>

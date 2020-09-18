@@ -27,7 +27,7 @@ class RandomEvents extends Component {
     handleSlider = (event, value) => {
         this.setState({
             randomEncounterNum: value
-        })
+        },() => this.props.setRandomEncounterNumber(this.state.randomEncounterNum))
     }
 
 

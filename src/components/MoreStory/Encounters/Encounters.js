@@ -6,7 +6,7 @@ import "../style.css"
 class Encounters extends Component {
     state ={
         enounter: "", 
-        difficulty: '',
+        difficulty: "",
     }
 
     handleClick = () => {
@@ -46,35 +46,33 @@ render() {
                     
                     <br></br>
 
-                    <Dropdown onSelect={this.handleEncounterSelect}>
-                        <Dropdown.Toggle variant="outline-primary">
-                        {this.state.enounter ? this.state.enounter: 'Choose some encounter options'}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                            <Dropdown.Item>Make peace</Dropdown.Item>
-                            <Dropdown.Item>Protect an NPC or Object</Dropdown.Item>
-                            <Dropdown.Item>Retrieve an object</Dropdown.Item>
-                            <Dropdown.Item>Run a guantlet</Dropdown.Item>
-                            <Dropdown.Item>Sneak In</Dropdown.Item>
-                            <Dropdown.Item>Stop a ritual</Dropdown.Item>
-                            <Dropdown.Item>Take out a single target</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                
-                    <div>
-                        <p>Creating a dificulty level for the encouonter.</p>
-
-                    <Dropdown onSelect={this.handleDifficultySelect}>
-                        <Dropdown.Toggle variant="outline-primary">
-                        {this.state.difficulty ? this.state.difficulty: 'Choose some encounter options'}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                            <Dropdown.Item>Easy</Dropdown.Item>
-                            <Dropdown.Item>Medium</Dropdown.Item>
-                            <Dropdown.Item>Hard</Dropdown.Item>
-                            <Dropdown.Item>Deadly</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
+                    <div className="together">
+                        <Dropdown className="addSpace" onSelect={this.handleEncounterSelect}>
+                            <Dropdown.Toggle variant="outline-primary">
+                            {this.state.enounter ? this.state.enounter: 'Choose an Encounter Goal'}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                <Dropdown.Item>Make peace</Dropdown.Item>
+                                <Dropdown.Item>Protect an NPC or Object</Dropdown.Item>
+                                <Dropdown.Item>Retrieve an object</Dropdown.Item>
+                                <Dropdown.Item>Run a guantlet</Dropdown.Item>
+                                <Dropdown.Item>Sneak In</Dropdown.Item>
+                                <Dropdown.Item>Stop a ritual</Dropdown.Item>
+                                <Dropdown.Item>Take out a single target</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    
+                        <Dropdown className="addSpace" onSelect={this.handleDifficultySelect}>
+                            <Dropdown.Toggle variant="outline-primary">
+                            {this.state.difficulty ? `Difficulty: ${this.state.difficulty}`: 'Choose the Difficulty'}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                <Dropdown.Item>Easy</Dropdown.Item>
+                                <Dropdown.Item>Medium</Dropdown.Item>
+                                <Dropdown.Item>Hard</Dropdown.Item>
+                                <Dropdown.Item>Deadly</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
                     </div>
 
                 </Modal.Body>

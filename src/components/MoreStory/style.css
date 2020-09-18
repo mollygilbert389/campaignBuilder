@@ -50,3 +50,12 @@
 .setBackItemchild {
     margin: 10px;
 }
+
+.together {
+    display: flex;
+    justify-content: center;
+}
+
+.addSpace {
+    margin: 5px;
+}
