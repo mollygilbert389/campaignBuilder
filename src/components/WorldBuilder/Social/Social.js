@@ -7,7 +7,7 @@ import Renown from "./Renown"
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "../style.css"
 
-class Physical extends Component {
+class Social extends Component {
 
     state = {
         showModal: false
@@ -21,8 +21,6 @@ class Physical extends Component {
 
 
 render() {  
-
-
     return (
         <div>
             <div className="btns">
@@ -39,10 +37,17 @@ render() {
                     <br></br>
 
                     <div className="btnspace">
-                        <Religion></Religion>
-                        <Languages></Languages>
-                        <FactionOrgs></FactionOrgs>
-                        <Renown></Renown>
+                        <Religion
+                        setReligion={this.props.setReligion}
+                        ></Religion>
+                        <Languages
+                        setLanguages={this.props.setLanguages}
+                        ></Languages>
+                        <FactionOrgs
+                        setFactionOrgs={this.props.setFactionOrgs}
+                        ></FactionOrgs>
+                        <Renown
+                        ></Renown>
                     </div>
 
                 </Modal.Body>
@@ -56,4 +61,4 @@ render() {
 }
 }
 
-export default Physical;
+export default Social;

@@ -11,7 +11,7 @@ class Religion extends Component {
     religousOrg = (eventKey, event) => {
         this.setState({
             gods: event.target.text
-        })
+        }, () => this.props.setReligion(this.state.gods))
     }
 
     handleClick = () => {

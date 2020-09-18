@@ -12,13 +12,13 @@ class Government extends Component {
     governmentChoice = (eventKey, event) => {
         this.setState({
             government: event.target.text
-        })
+        }, () => this.props.setGovernment(this.state.government))
     }
 
     currencyChoice = (eventKey, event) => {
         this.setState({
             currency: event.target.text
-        })
+        }, () => this.props.setCurrency(this.state.currency))
     }
 
     handleClick = () => {

@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux"
 import {bindActionCreators} from "redux"
-import {setCampaignName, setVillainName, setVillainType, setQuestGiverType, setQuestGiverName, setPlayers, setPillar, setActs, setClimate, setWorld, setMeetingPlace, setSideQuests, setRooms, setSetbacks, setMonsterNum, setDungeonType, setTreasureType, setMonsters, setTreasureNumber} from "../actions/index"
 import {Button} from 'react-bootstrap'
 import './style.css'
 import "../scss/Custom.scss"
@@ -31,7 +30,36 @@ import StoryInfo from "../components/StoryInfo/StoryInfo";
 import FinalScreen from "../components/FinalCampaign/FinalScreen"
 import Encounters from "../components/MoreStory/Encounters/Encounters";
 // import AdventureSite from "../components/WorldBuilder/Physical/AdventureSite";
-// import DiceRoller from "../components/DiceRoller"
+// import DiceRoller from "../components/DiceRoller"\
+import {
+    setCampaignName,
+    setPlayers, 
+    setGovernment,
+    setCurrency,
+    setWorld,
+    setMapScale,
+    setCharMeeting,
+    setReligion,
+    setLanguages,
+    setFactionOrgs,
+    // setVillainName, 
+    // setVillainType, 
+    // setQuestGiverType, 
+    // setQuestGiverName, 
+    // setPillar, 
+    // setActs, 
+    // setClimate, 
+    // setWorld, 
+    // setMeetingPlace, 
+    // setSideQuests, 
+    // setRooms, 
+    // setSetbacks, 
+    // setMonsterNum, 
+    // setDungeonType, 
+    // setTreasureType, 
+    // setMonsters, 
+    // setTreasureNumber
+} from "../actions/index"
 
 
 
@@ -130,87 +158,128 @@ setCampaignName = (name) => {
     onSetCampaignName(name)
 }
 
-setVillainNameAndType = (name, vType) => {
-    const{onSetVillainName, onSetVillainType}=this.props
-    onSetVillainName(name)
-    onSetVillainType(vType)
-}
-
-setQuestGiverNameAndType = (name, qType) => {
-    const{onSetQuestGiverName, onSetQuestGiverType}=this.props
-    onSetQuestGiverName(name)
-    onSetQuestGiverType(qType)
-}
-
 setPlayers = (playerData) => {
     const{onSetPlayers}=this.props
     onSetPlayers(playerData)
 }
 
-setPillar = (name) => {
-    const{onSetPillar}=this.props
-    onSetPillar(name)
+setGovernment = (type) => {
+    const{onSetGovernment}=this.props
+    onSetGovernment(type)
 }
 
-setActs = (name) => {
-    const{onSetActs}=this.props
-    onSetActs(name)
+setCurrency = (type) => {
+    const{onSetCurrency}=this.props
+    onSetCurrency(type)
 }
 
-setClimate = (climateType) => {
-    const{onSetClimate}=this.props
-    onSetClimate(climateType)
-}
-
-setWorld = (worldType) => {
+setWorld = (type) => {
     const{onSetWorld}=this.props
-    onSetWorld(worldType)
+    onSetWorld(type)
 }
 
-setMeetingPlace = (meetingPlace) => {
-    const{onSetMeetingPlace}=this.props
-    onSetMeetingPlace(meetingPlace)
+setMapScale = (type) => {
+    const{onSetMapScale}=this.props
+    onSetMapScale(type)
 }
 
-setSideQuests = (sideQuests) => {
-    const{onSetSideQuests}=this.props
-    onSetSideQuests(sideQuests)
+setCharMeeting = (place) => {
+    const{onSetCharMeeting}=this.props
+    onSetCharMeeting(place)
 }
 
-setRooms = (rooms) => {
-    const{onSetRooms}=this.props
-    onSetRooms(rooms)
+setReligion = (type) => {
+    const{onSetReligion}=this.props
+    onSetReligion(type)
 }
 
-setSetbacks = (yesno) => {
-    const{onSetSetbacks}=this.props
-    onSetSetbacks(yesno)
+setLanguages = (type) => {
+    const{onSetLanguages}=this.props
+    onSetLanguages(type)
 }
 
-setMonsterNum = (number) => {
-    const{onSetMonsterNum}=this.props
-    onSetMonsterNum(number)
+setFactionOrgs = (names) => {
+    const{onSetFactionOrgs}=this.props
+    onSetFactionOrgs(names)
 }
 
-setDungeonType = (type) => {
-    const{onSetDungeonType}=this.props
-    onSetDungeonType(type)
-}
+// setVillainNameAndType = (name, vType) => {
+//     const{onSetVillainName, onSetVillainType}=this.props
+//     onSetVillainName(name)
+//     onSetVillainType(vType)
+// }
 
-setTreasureType = (type) => {
-    const{onSetTreasureType}=this.props
-    onSetTreasureType(type)
-}
+// setQuestGiverNameAndType = (name, qType) => {
+//     const{onSetQuestGiverName, onSetQuestGiverType}=this.props
+//     onSetQuestGiverName(name)
+//     onSetQuestGiverType(qType)
+// }
 
-setTreasureNumber = (number) => {
-    const{onSetTreasureNumber}=this.props
-    onSetTreasureNumber(number)
-}
 
-setMonsters = (type) => {
-    const{onSetMonsters}=this.props
-    onSetMonsters(type)
-}
+// setPillar = (name) => {
+//     const{onSetPillar}=this.props
+//     onSetPillar(name)
+// }
+
+// setActs = (name) => {
+//     const{onSetActs}=this.props
+//     onSetActs(name)
+// }
+
+// setClimate = (climateType) => {
+//     const{onSetClimate}=this.props
+//     onSetClimate(climateType)
+// }
+
+// setWorld = (worldType) => {
+//     const{onSetWorld}=this.props
+//     onSetWorld(worldType)
+// }
+
+// setMeetingPlace = (meetingPlace) => {
+//     const{onSetMeetingPlace}=this.props
+//     onSetMeetingPlace(meetingPlace)
+// }
+
+// setSideQuests = (sideQuests) => {
+//     const{onSetSideQuests}=this.props
+//     onSetSideQuests(sideQuests)
+// }
+
+// setRooms = (rooms) => {
+//     const{onSetRooms}=this.props
+//     onSetRooms(rooms)
+// }
+
+// setSetbacks = (yesno) => {
+//     const{onSetSetbacks}=this.props
+//     onSetSetbacks(yesno)
+// }
+
+// setMonsterNum = (number) => {
+//     const{onSetMonsterNum}=this.props
+//     onSetMonsterNum(number)
+// }
+
+// setDungeonType = (type) => {
+//     const{onSetDungeonType}=this.props
+//     onSetDungeonType(type)
+// }
+
+// setTreasureType = (type) => {
+//     const{onSetTreasureType}=this.props
+//     onSetTreasureType(type)
+// }
+
+// setTreasureNumber = (number) => {
+//     const{onSetTreasureNumber}=this.props
+//     onSetTreasureNumber(number)
+// }
+
+// setMonsters = (type) => {
+//     const{onSetMonsters}=this.props
+//     onSetMonsters(type)
+// }
 
     render() {
         return (
@@ -239,9 +308,20 @@ setMonsters = (type) => {
                 <div>
                     <p>Now let's talk about your party. Anwser the questions below to help define the type of characters for this campaign. You may also skip this step as your party may want to decide for themselves the characters they want.</p>
                     <div className="btnspace">
-                        <Government></Government>
-                        <Physical></Physical>
-                        <Social></Social>
+                        <Physical
+                        setWorld={this.setWorld}
+                        setMapScale={this.setMapScale}
+                        setCharMeeting={this.setCharMeeting}
+                        ></Physical>
+                        <Social
+                        setReligion={this.setReligion}
+                        setLanguages={this.setLanguages}
+                        setFactionOrgs={this.setFactionOrgs}
+                        ></Social>
+                        <Government 
+                        setGovernment={this.setGovernment}
+                        setCurrency={this.setCurrency}
+                        ></Government>
                     </div>
                 </div>)}
 
@@ -279,8 +359,15 @@ setMonsters = (type) => {
                         <AdventureStart></AdventureStart>
                         {/* <Type setDungeonType={this.setDungeonType}></Type> */}
                         <Rooms setRooms={this.setRooms}></Rooms>
-                        <MonsterCard campaign={this.props.campaign} setMonsterNum={this.setMonsterNum} setMonsters={this.setMonsters}></MonsterCard>
-                        <Treasure setTreasureType={this.setTreasureType} setTreasureNumber={this.setTreasureNumber} campaign={this.props.campaign}></Treasure>
+                        <MonsterCard 
+                        // campaign={this.props.campaign} setMonsterNum={this.setMonsterNum} setMonsters={this.setMonsters}
+                        >
+                        </MonsterCard>
+                        <Treasure 
+                        // setTreasureType={this.setTreasureType} 
+                        // setTreasureNumber={this.setTreasureNumber} 
+                        // campaign={this.props.campaign}
+                        ></Treasure>
                     </div>
                 </div>)}
 
@@ -288,7 +375,9 @@ setMonsters = (type) => {
                 <div>
                     <p>Check out your super cool campaign below. Feel free to make edits.</p>
                     <div className="btnspace">
-                        <FinalScreen campaign={this.props.campaign}></FinalScreen>
+                        <FinalScreen 
+                        campaign={this.props.campaign}
+                        ></FinalScreen>
                     </div>
                 </div>)}
             </div>
@@ -327,24 +416,32 @@ const mapStateToProps = (state) => {
 
 const mapDispatchtoProps = (dispatch) => ({
     onSetCampaignName: bindActionCreators(setCampaignName, dispatch),
-    onSetVillainName: bindActionCreators(setVillainName, dispatch),
-    onSetVillainType: bindActionCreators(setVillainType, dispatch),
-    onSetQuestGiverName: bindActionCreators(setQuestGiverName, dispatch),
-    onSetQuestGiverType: bindActionCreators(setQuestGiverType, dispatch),
     onSetPlayers: bindActionCreators(setPlayers, dispatch),
-    onSetPillar: bindActionCreators(setPillar, dispatch),
-    onSetActs: bindActionCreators(setActs, dispatch),
-    onSetClimate: bindActionCreators(setClimate, dispatch),
+    onSetGovernment: bindActionCreators(setGovernment, dispatch),
+    onSetCurrency: bindActionCreators(setCurrency, dispatch),
     onSetWorld: bindActionCreators(setWorld, dispatch),
-    onSetMeetingPlace: bindActionCreators(setMeetingPlace, dispatch),
-    onSetSideQuests: bindActionCreators(setSideQuests, dispatch),
-    onSetRooms: bindActionCreators(setRooms, dispatch),
-    onSetSetbacks: bindActionCreators(setSetbacks, dispatch),
-    onSetMonsterNum: bindActionCreators(setMonsterNum, dispatch),
-    onSetDungeonType: bindActionCreators(setDungeonType, dispatch),
-    onSetTreasureType: bindActionCreators(setTreasureType, dispatch),
-    onSetTreasureNumber: bindActionCreators(setTreasureNumber, dispatch),
-    onSetMonsters: bindActionCreators(setMonsters, dispatch),
+    onSetMapScale: bindActionCreators(setMapScale, dispatch),
+    onSetCharMeeting: bindActionCreators(setCharMeeting, dispatch),
+    onSetReligion: bindActionCreators(setReligion, dispatch),
+    onSetLanguages: bindActionCreators(setLanguages, dispatch),
+    onSetFactionOrgs: bindActionCreators(setFactionOrgs, dispatch),
+    // onSetVillainName: bindActionCreators(setVillainName, dispatch),
+    // onSetVillainType: bindActionCreators(setVillainType, dispatch),
+    // onSetQuestGiverName: bindActionCreators(setQuestGiverName, dispatch),
+    // onSetQuestGiverType: bindActionCreators(setQuestGiverType, dispatch),
+    // onSetPillar: bindActionCreators(setPillar, dispatch),
+    // onSetActs: bindActionCreators(setActs, dispatch),
+    // onSetClimate: bindActionCreators(setClimate, dispatch),
+    // onSetWorld: bindActionCreators(setWorld, dispatch),
+    // onSetMeetingPlace: bindActionCreators(setMeetingPlace, dispatch),
+    // onSetSideQuests: bindActionCreators(setSideQuests, dispatch),
+    // onSetRooms: bindActionCreators(setRooms, dispatch),
+    // onSetSetbacks: bindActionCreators(setSetbacks, dispatch),
+    // onSetMonsterNum: bindActionCreators(setMonsterNum, dispatch),
+    // onSetDungeonType: bindActionCreators(setDungeonType, dispatch),
+    // onSetTreasureType: bindActionCreators(setTreasureType, dispatch),
+    // onSetTreasureNumber: bindActionCreators(setTreasureNumber, dispatch),
+    // onSetMonsters: bindActionCreators(setMonsters, dispatch),
 
 })
 

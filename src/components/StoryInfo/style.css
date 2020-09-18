@@ -2,16 +2,17 @@
     margin-top: 10%;
   }
   
-  .grouping {
-    border: solid 1px rgb(182, 177, 177);
-    padding: 10px;
-  }
+.grouping {
+  border: solid 1px rgb(182, 177, 177);
+  padding: 10px;
+  margin: 5px;
+}
 
-  .playerCards {
-    border: solid 1px rgb(182, 177, 177);
-    margin: 5px;
-    width: 300px;
-  }
+.playerCards {
+  border: solid 1px rgb(182, 177, 177);
+  margin: 5px;
+  width: 300px;
+}
 
 .centerItems {
   justify-content: center;

@@ -9,6 +9,7 @@ class Physical extends Component {
         showModal: false,
         world: "",
         mapScale: "",
+        meeting: "",
     }
 
     handleClick = () => {
@@ -17,16 +18,22 @@ class Physical extends Component {
         })
     }
 
-    worldSelect = (keyEvent, event) => {
+    handleWorldSelect = (keyEvent, event) => {
         this.setState({
             world: event.target.text
-        })
+        }, () => this.props.setWorld(this.state.world) )
     }
 
-    mapScale = (keyEvent, event) => {
+    handleMapScaleSelect = (keyEvent, event) => {
         this.setState({
             mapScale: event.target.text
-        })
+        }, () => this.props.setMapScale(this.state.mapScale))
+    }
+
+    handleMeetingSelect = (keyEvent, event) => {
+        this.setState({
+            meeting: event.target.text
+        }, () => this.props.setCharMeeting(this.state.meeting))
     }
 
 
@@ -47,7 +54,7 @@ render() {
                     <p>Below are some buttons to help create your ideal world!</p>
 
                     <FormGroup>
-                        <Dropdown onSelect={this.worldSelect}>
+                        <Dropdown onSelect={this.handleWorldSelect}>
                             <Dropdown.Toggle variant="outline-primary">
                                 {this.state.world ? `Setting: ${this.state.world}`: 'What is your setting?'}
                             </Dropdown.Toggle>
@@ -64,7 +71,7 @@ render() {
                     </FormGroup>
 
                     <FormGroup>
-                        <Dropdown onSelect={this.mapScale}>
+                        <Dropdown onSelect={this.handleMapScaleSelect}>
                             <Dropdown.Toggle variant="outline-primary">
                                 {this.state.mapScale ? `Size: ${this.state.mapScale}` : 'What kind of place are your adventurers starting?'}
                             </Dropdown.Toggle>
@@ -77,9 +84,9 @@ render() {
                     </FormGroup>
 
                     <FormGroup>
-                        <Dropdown onSelect={this.meetingSelect}>
+                        <Dropdown onSelect={this.handleMeetingSelect}>
                             <Dropdown.Toggle variant="outline-primary">
-                                {this.state.meetingPlace ? `Meeting: ${this.state.meetingPlace}`: 'How do your characters know each other?'}
+                                {this.state.meeting ? `Meeting: ${this.state.meeting}`: 'How do your characters know each other?'}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                             <Dropdown.Item >Meet in a tavern about a contract</Dropdown.Item>

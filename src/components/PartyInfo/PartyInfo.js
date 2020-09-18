@@ -129,10 +129,6 @@ class PartyInfo extends Component {
         });
       }
 
-      handleReduxSave = () => {
-        this.props.setPlayers(this.state.partymemberData)
-      }
-
       handlePartyLevel = (eventKey, event) => {
         const index = event.target.id -1
         const newlevel = event.target.text
@@ -144,6 +140,10 @@ class PartyInfo extends Component {
           this.setState({
             partymemberData: newPartyMemberData
         });
+      }
+
+      handleReduxSave = () => {
+        this.props.setPlayers(this.state.partymemberData)
       }
 
 render() {  
@@ -194,7 +194,7 @@ render() {
                                     </Dropdown.Menu>
                                 </Dropdown>
 
-                                <Dropdown onSelect={this.handlePartyLevel} id={partyMember.id}>
+                                <Dropdown className="someSpace" onSelect={this.handlePartyLevel} id={partyMember.id}>
                                     <Dropdown.Toggle variant="outline-primary">
                                         {partymemberData[index].level ? partymemberData[index].level: 'Choose a level for this party member'}
                                     </Dropdown.Toggle>

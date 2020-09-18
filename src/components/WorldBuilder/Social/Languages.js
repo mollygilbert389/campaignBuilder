@@ -20,7 +20,7 @@ class Languages extends Component {
     handleLanguageSelect = (eventKey, event) => {
         this.setState({
             language: event.target.text
-        })
+        }, () => this.props.setLanguages(this.state.language) )
     }
 
     handleClick = () => {

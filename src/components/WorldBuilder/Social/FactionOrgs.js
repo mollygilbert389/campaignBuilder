@@ -6,7 +6,6 @@ import "../style.css"
 
 class FactionOrgs extends Component {
     state ={
-        other:false,
         value: "",
         suggestedTags: [
             "Harpers",
@@ -18,30 +17,13 @@ class FactionOrgs extends Component {
 
     }
 
-    handleFactionOrgs = (eventKey, event) => {
-        this.setState({
-            factionOrgs: event.target.text
-        })
-    }
-
     handleClick = () => {
         this.setState({
             showModal: !this.state.showModal,
         })
     }
 
-    handleCheckBoxChange = (event) => {
-        if (event.target.text = "Other")
-        this.setState({
-            other: true
-        })
-    }
-
-    handleChange = (event) => {
-        console.log(event.target.value)
-    }
-
-    remove = (event) => {
+    handleRemove = (event) => {
         let removedItem = event.target.name
         let currentTags = this.state.suggestedTags
         const removedFaction = currentTags.filter(item => item !== removedItem)
@@ -50,7 +32,7 @@ class FactionOrgs extends Component {
         })
     }
 
-    addFaction = (event) => {
+    handleAddFaction = (event) => {
         this.setState({
             suggestedTags: this.state.suggestedTags.concat(this.state.value),
             value: '',
@@ -67,6 +49,13 @@ class FactionOrgs extends Component {
         if (event.key === "Enter") {
             this.addFaction();
           }
+    }
+
+    handleSave = () => {
+        this.setState({
+            showModal: !this.state.showModal,
+            // suggestedTags: this.state.suggestedTags
+        }, () => this.props.setFactionOrgs(this.state.suggestedTags))
     }
 
 
@@ -89,12 +78,12 @@ render() {
 
                     <div className="tagsArea centeredItems">
                     {this.state.suggestedTags.map(item => {
-                        return <ButtonGroup className="factionButtons"><Button name={item}>{item}</Button><Button name={item} onClick={this.remove}>X</Button></ButtonGroup>
+                        return <ButtonGroup className="factionButtons"><Button name={item}>{item}</Button><Button name={item} onClick={this.handleRemove}>X</Button></ButtonGroup>
                     })}
                         
                         <div className="inputAndBtn factionButtons">
                             <input className="factionInput" placeholder="Add Faction or Organization Here" type="text" value={this.state.value} onChange={this.handleInputChange} onKeyUp={(event) => this.onKeyDown(event)}></input>
-                            <Button size="sm" variant="outline-success" onClick={this.addFaction}>Submit</Button>
+                            <Button size="sm" variant="outline-success" onClick={this.handleAddFaction}>Submit</Button>
                         </div>
                     </div>
                    
@@ -102,7 +91,7 @@ render() {
                 </Modal.Body>
 
                 <Modal.Footer>
-                <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
+                <Button variant="outline-success" onClick={this.handleSave} >Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>
