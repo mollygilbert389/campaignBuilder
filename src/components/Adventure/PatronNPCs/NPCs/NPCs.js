@@ -7,7 +7,12 @@ import "../../style.css"
 
 class NPCs extends Component {
     state ={
-        NPCNum: "",
+        NPCNum: "3",
+        NPCData: [
+            // {id: 1, name: ""},
+            // {id: 2, name: ""},
+            // {id: 3, name: ""},
+        ],
         nextClicked: false, 
         NPCAppearance: [
             {id: 1, option: "Distinctive Jewelry: earrings, necklace, circlet, braclets"},
@@ -50,6 +55,63 @@ class NPCs extends Component {
         this.setState({
             nextClicked: true, 
         })
+
+        let choice = this.state.NPCNum.toString()
+        let newNPCData = []
+        console.log(choice)
+
+        switch(choice) {
+            case "1":
+                newNPCData = [
+                    {id: 1, name: ""},
+                ]
+                this.setState({
+                    NPCData: newNPCData
+                })
+                break;
+            case "2":
+                newNPCData = [
+                    {id: 1, name: ""},
+                    {id: 2, name: ""},
+                ]
+                this.setState({
+                    NPCData: newNPCData
+                })
+                break;
+            case "3":
+                newNPCData = [
+                    {id: 1, name: ""},
+                    {id: 2, name: ""},
+                    {id: 3, name: ""},
+                ]
+                this.setState({
+                    NPCData: newNPCData
+                })
+                break;
+            case "4":
+                newNPCData = [
+                    {id: 1, name: ""},
+                    {id: 2, name: ""},
+                    {id: 3, name: ""},
+                    {id: 4, name: ""},
+                ]
+                this.setState({
+                    NPCData: newNPCData
+                })
+                break;
+            case "5":
+                newNPCData = [
+                    {id: 1, name: ""},
+                    {id: 2, name: ""},
+                    {id: 3, name: ""},
+                    {id: 4, name: ""},
+                    {id: 5, name: ""},
+                ]
+                this.setState({
+                    NPCData: newNPCData
+                })
+                break;
+        }
     }
 
 
@@ -75,8 +137,8 @@ render() {
                     {!this.state.nextClicked && (
                     <Slider
                     min={1}
-                    max={10}
-                    defaultValue={2}
+                    max={5}
+                    defaultValue={3}
                     className="sliderclass"
                     onChangeCommitted={this.handleSlider}
                     valueLabelDisplay="on"
@@ -88,9 +150,9 @@ render() {
 
                     {this.state.nextClicked && (<div>
                         <Carousel className="center" interval={null}>
-                            <Carousel.Item><NPCCard name={"NPC 1"}></NPCCard></Carousel.Item>
-                            <Carousel.Item> <NPCCard name={"NPC 2"}></NPCCard></Carousel.Item>
-                            <Carousel.Item><NPCCard name={"NPC 3"}></NPCCard></Carousel.Item>
+                            {this.state.NPCData.map(item => 
+                                {return <Carousel.Item><NPCCard key={item.id} name={item.id}></NPCCard></Carousel.Item>}
+                            )}
                         </Carousel>
                     </div>)}
 

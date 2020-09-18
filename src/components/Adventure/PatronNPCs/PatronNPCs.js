@@ -39,6 +39,7 @@ render() {
                     <div className="btnspace">
                         <Patron
                         setPatronName={this.props.setPatronName}
+                        // setNPCNumber={this.props.setNPCNumber}
                         ></Patron>
                         <NPCs></NPCs>
                     </div>

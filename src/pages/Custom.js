@@ -47,6 +47,7 @@ import {
     setMainGoal,
     setPillar,
     setPatronName,
+    // setNPCNumber,
     setVillainName,
     setLocalEvents,
     setRandomEncounterNumber,
@@ -228,6 +229,11 @@ setPatronName = (name) => {
     onSetPatronName(name)
 }
 
+setNPCNumber = (number) => {
+    const{onSetNPCNumber}=this.props
+    onSetNPCNumber(number)
+}
+
 setVillainName = (name) => {
     const{onSetVillainName}=this.props
     onSetVillainName(name)
@@ -248,10 +254,10 @@ setRooms = (rooms) => {
     onSetRooms(rooms)
 }
 
-setMonsterNum = (number) => {
-    const{onSetMonsterNum}=this.props
-    onSetMonsterNum(number)
-}
+// setMonsterNum = (number) => {
+//     const{onSetMonsterNum}=this.props
+//     onSetMonsterNum(number)
+// }
 
 setMonsters = (type) => {
     const{onSetMonsters}=this.props
@@ -283,10 +289,6 @@ setTreasureNumber = (number) => {
 //     onSetDungeonType(type)
 // }
 
-
-
-
-
     render() {
         return (
         <div>
@@ -298,7 +300,9 @@ setTreasureNumber = (number) => {
                 <div>
                     <p>We first need to build your world. Your leadership. Your religion, and your society.</p>
                     <div className="btnspace">
-                        {!this.props.campaign.campaignName && (<CampaignNameModal setCampaignName={this.setCampaignName}></CampaignNameModal>)}
+                        <CampaignNameModal 
+                        setCampaignName={this.setCampaignName}
+                        ></CampaignNameModal>
                     </div>
                 </div>)}
 
@@ -306,7 +310,9 @@ setTreasureNumber = (number) => {
                 <div>
                     <p>Let's talk characters. Let's think about the goal of this entire campaign. Do you want to start with your villain or your quest giver? Sometimes the quest giver and the villain are the same.</p>
                     <div className="btnspace">
-                        <PartyInfo setPlayers={this.setPlayers}></PartyInfo>
+                        <PartyInfo 
+                        setPlayers={this.setPlayers}
+                        ></PartyInfo>
                     </div>
                 </div>)}
 
@@ -348,6 +354,7 @@ setTreasureNumber = (number) => {
                         ></MainGoals>
                         <PatronNPCs
                         setPatronName={this.setPatronName}
+                        // setNPCNumber={this.setNPCNumber}
                         ></PatronNPCs>
                         <Villain
                         setVillainName={this.setVillainName}
@@ -365,7 +372,9 @@ setTreasureNumber = (number) => {
                         setRandomEncounterNumber={this.setRandomEncounterNumber}
                         ></EncountersAndEvents>
                         <ExtraAdventure></ExtraAdventure>
-                        <Setback setSetBacks={this.setSetbacks}></Setback>
+                        <Setback 
+                        setSetBacks={this.setSetbacks}
+                        ></Setback>
                     </div>
                 </div>)}
 
@@ -451,6 +460,7 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetMainGoal: bindActionCreators(setMainGoal, dispatch),
     onSetPillar: bindActionCreators(setPillar, dispatch),
     onSetPatronName: bindActionCreators(setPatronName, dispatch),
+    // onSetNPCNumber: bindActionCreators(setNPCNumber, dispatch),
     onSetVillainName: bindActionCreators(setVillainName, dispatch),
     onSetLocalEvents: bindActionCreators(setLocalEvents, dispatch),
     onSetRandomEncounterNumber: bindActionCreators(setRandomEncounterNumber, dispatch),

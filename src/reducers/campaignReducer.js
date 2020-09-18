@@ -14,6 +14,7 @@ import {
   SET_MAIN_GOAL,
   SET_PILLAR,
   SET_PATRON_NAME,
+  // SET_NPC_NUMBER,
   SET_VILLAIN_NAME,
   SET_LOCAL_EVENTS,
   SET_RANDOM_ENOUNTER_NUMBER,
@@ -47,6 +48,7 @@ const initialState = {
     mainGoal: "",
     pillar: "",
     patronName: "",
+    // NPCNumber: "",
     villainName: "",
     localEvents: [],
     randomEncounterNumber: "",
@@ -140,6 +142,11 @@ export default function(state = initialState, action) {
           ...state,
           patronName: action.payload  
         }
+        // case SET_NPC_NUMBER: 
+        // return {
+        //   ...state,
+        //   NPCNumber: action.payload  
+        // }
         case SET_VILLAIN_NAME: 
         return {
           ...state,

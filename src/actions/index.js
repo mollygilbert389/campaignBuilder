@@ -14,6 +14,7 @@ import {
     SET_MAIN_GOAL,
     SET_PILLAR,
     SET_PATRON_NAME,
+    // SET_NPC_NUMBER,
     SET_VILLAIN_NAME,
     SET_LOCAL_EVENTS,
     SET_RANDOM_ENOUNTER_NUMBER,
@@ -103,6 +104,11 @@ export const setPatronName = (name) => ({
     type: SET_PATRON_NAME,
     payload: name
 }) 
+
+// export const seetNPCNumber = (number) => ({
+//     type: SET_NPC_NUMBER,
+//     payload: number
+// }) 
 
 export const setVillainName = (name) => ({
     type: SET_VILLAIN_NAME,
