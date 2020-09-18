@@ -22,7 +22,13 @@ const initialState = {
     charMeeting: "",
     religion: "",
     language: "",
-    factionOrgs: [],
+    factionOrgs: [            
+      "Harpers",
+      "Order of the Guantlet",
+      "Emerald Enclave",
+      "Lord's Alliance",
+      "Zhentarim",
+  ],
 
     // villainName: '',
     // villainType: '',

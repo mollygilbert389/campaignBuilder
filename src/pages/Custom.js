@@ -317,6 +317,7 @@ setFactionOrgs = (names) => {
                         setReligion={this.setReligion}
                         setLanguages={this.setLanguages}
                         setFactionOrgs={this.setFactionOrgs}
+                        campaign={this.props.campaign}
                         ></Social>
                         <Government 
                         setGovernment={this.setGovernment}

@@ -6,7 +6,7 @@ class StoryInfo extends Component {
 render() {  
 
     const{campaign}=this.props
-
+ 
     return (
       <div className="cardStyle d-flex flex-column align-items-center">
         <Card className="text-center" style={{ width: '600px' }}>

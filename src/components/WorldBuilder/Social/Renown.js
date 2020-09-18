@@ -1,18 +1,13 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
+import CharacterRenownCard from "./ChracterRenownCard"
 import {Button, Dropdown, Form, FormControl} from 'react-bootstrap'
 import {FormControlLabel, Checkbox} from '@material-ui/core'
 import "../style.css"
 
 class Renown extends Component {
     state ={
-        suggestedTags: [
-            "Harpers",
-            "Order of the Guantlet",
-            "Emerald Enclave",
-            "Lord's Alliance",
-            "Zhentarim",
-        ]
+        playerInfo: this.props.campaign.playerData
     }
 
     handleClick = () => {
@@ -23,8 +18,6 @@ class Renown extends Component {
 
 
 render() {  
-
-
     return (
         <div>
             <div className="btns">
@@ -41,59 +34,9 @@ render() {
                     <br></br>
 
                     <div className="characterRenownContainer">
-                        <div className="characterBoxes">
-                            <div>
-                                Character 1
-                            </div>
-                            {this.state.suggestedTags.map(item => {
-                                return <div>
-                                        <FormControlLabel
-                                        control={
-                                        <Checkbox
-                                        onChange={this.handleChange} 
-                                        name={item}
-                                        value={item}
-                                        color="primary"/>}
-                                        label={item}
-                                        />
-                                    </div>})}
-                        </div>
-
-                        <div className="characterBoxes">
-                            <div>
-                                Character 2
-                            </div>
-                            {this.state.suggestedTags.map(item => {
-                                return <div>
-                                        <FormControlLabel
-                                        control={
-                                        <Checkbox
-                                        onChange={this.handleChange} 
-                                        name={item}
-                                        value={item}
-                                        color="primary"/>}
-                                        label={item}
-                                        />
-                                    </div>})}
-                        </div>
-
-                        <div className="characterBoxes">
-                            <div>
-                                Character 3
-                            </div>
-                            {this.state.suggestedTags.map(item => {
-                                return <div>
-                                        <FormControlLabel
-                                        control={
-                                        <Checkbox
-                                        onChange={this.handleChange} 
-                                        name={item}
-                                        value={item}
-                                        color="primary"/>}
-                                        label={item}
-                                        />
-                                    </div>})}
-                        </div>
+                        {this.state.playerInfo.map(item => {
+                            return <CharacterRenownCard campaign={this.props.campaign} key={item.id} charName={item.name}></CharacterRenownCard>
+                        })}
                     </div>
 
 

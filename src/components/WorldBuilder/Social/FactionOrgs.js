@@ -47,14 +47,13 @@ class FactionOrgs extends Component {
 
     onKeyDown = (event) => {
         if (event.key === "Enter") {
-            this.addFaction();
+            this.handleAddFaction();
           }
     }
 
     handleSave = () => {
         this.setState({
             showModal: !this.state.showModal,
-            // suggestedTags: this.state.suggestedTags
         }, () => this.props.setFactionOrgs(this.state.suggestedTags))
     }
 
