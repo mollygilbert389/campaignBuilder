@@ -8,6 +8,8 @@ class Physical extends Component {
     state = {
         showModal: false,
         world: "",
+        feature: "",
+        era:"",
         mapScale: "",
         meeting: "",
     }
@@ -36,6 +38,19 @@ class Physical extends Component {
         }, () => this.props.setCharMeeting(this.state.meeting))
     }
 
+    handleEraSelect = (keyEvent, event) => {
+        this.setState({
+            era: event.target.text
+        })
+    }
+
+    handleFeatureSelect = (keyEvent, event) => {
+        this.setState({
+            feature: event.target.text
+        })
+    }
+
+
 
 render() {  
 
@@ -48,7 +63,7 @@ render() {
             </div>
             <Modal size="lg" show={this.state.showModal} onHide={this.handleClick}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Paint with all th colors.</Modal.Title>
+                    <Modal.Title>Paint with all the colors.</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <p>Below are some buttons to help create your ideal world!</p>
@@ -66,6 +81,44 @@ render() {
                             <Dropdown.Item >Jungle</Dropdown.Item>
                             <Dropdown.Item >Swamp</Dropdown.Item>
                             <Dropdown.Item >Tundra</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </FormGroup>
+
+                    <FormGroup>
+                        <Dropdown onSelect={this.handleEraSelect}>
+                            <Dropdown.Toggle variant="outline-primary">
+                                {this.state.era ? `Era: ${this.state.era}`: 'What Era does this adventure take place?'}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                            <Dropdown.Item >Beowulf Adventure Trope (The age of heros magic is common)</Dropdown.Item>
+                            <Dropdown.Item >Victorian Era (The time of romance magic is uncommon)</Dropdown.Item>
+                            <Dropdown.Item >Present Day (Modern technology magic does not exist)</Dropdown.Item>
+                            <Dropdown.Item >Steampunk Future (Technology & chivalry rule and magic is common)</Dropdown.Item>
+                            <Dropdown.Item >Dystopian Post Appocolypse (Chaos magic is uncommon)</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </FormGroup>
+
+                    <FormGroup>
+                        <Dropdown onSelect={this.handleFeatureSelect}>
+                            <Dropdown.Toggle variant="outline-primary">
+                                {this.state.feature ? `Feature: ${this.state.feature}`: 'Does this world have a unique feature?'}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                            <Dropdown.Item >At the base of a dorment valcano</Dropdown.Item>
+                            <Dropdown.Item >Extreme Weather</Dropdown.Item>
+                            <Dropdown.Item >Architecutral building or Massive Statue</Dropdown.Item>
+                            <Dropdown.Item >Many moons</Dropdown.Item>
+                            <Dropdown.Item >Large Bodies of Water</Dropdown.Item>
+                            <Dropdown.Item >Large Mountains</Dropdown.Item>
+                            <Dropdown.Item >Local Ruins</Dropdown.Item>
+                            <Dropdown.Item >Large Forest</Dropdown.Item>
+                            <Dropdown.Item >Swamp or Delta</Dropdown.Item>
+                            <Dropdown.Item >Religious Site</Dropdown.Item>
+                            <Dropdown.Item >Deserted City</Dropdown.Item>
+                            <Dropdown.Item >Canyon or Gorge</Dropdown.Item>
+                            <Dropdown.Item >Northern Lights</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </FormGroup>
@@ -90,9 +143,10 @@ render() {
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                             <Dropdown.Item >Meet in a tavern about a contract</Dropdown.Item>
-                            <Dropdown.Item >Party has already adventured togethr</Dropdown.Item>
+                            <Dropdown.Item >Party has already adventured together</Dropdown.Item>
                             <Dropdown.Item >One member brings the group together</Dropdown.Item>
                             <Dropdown.Item >Meet at a party</Dropdown.Item>
+                            <Dropdown.Item >Meet at school</Dropdown.Item>
                             <Dropdown.Item >Mysterious Circumstance</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>

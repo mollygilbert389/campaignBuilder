@@ -8,11 +8,7 @@ import "../../style.css"
 class NPCs extends Component {
     state ={
         NPCNum: "3",
-        NPCData: [
-            // {id: 1, name: ""},
-            // {id: 2, name: ""},
-            // {id: 3, name: ""},
-        ],
+        NPCData: [],
         nextClicked: false, 
         NPCAppearance: [
             {id: 1, option: "Distinctive Jewelry: earrings, necklace, circlet, braclets"},

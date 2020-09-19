@@ -1,13 +1,14 @@
 import React, {Component} from "react";
 import {connect} from "react-redux"
 import {bindActionCreators} from "redux"
-import {Button} from 'react-bootstrap'
+import {Button, ProgressBar} from 'react-bootstrap'
 import './style.css'
 import "../scss/Custom.scss"
 import '../components/home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CampaignNameModal from '../components/WorldBuilder/CampaignNameModal';
 import Government from "../components/WorldBuilder/Government/Government"
+import Religion from "../components/WorldBuilder/Religion"
 import Physical from "../components/WorldBuilder/Physical/Physical"
 import Social from "../components/WorldBuilder/Social/Social"
 import ActsClimax from "../components/Adventure/Climax/ActsClimax"
@@ -23,12 +24,12 @@ import ExtraAdventure from "../components/MoreStory/ExtraAdventure/ExtraAdventur
 import PartyInfo from "../components/PartyInfo/PartyInfo"
 import Rooms from "../components/Dungeon/Rooms"
 import Setback from "../components/MoreStory/SetbacksTraps/Setback"
-import Type from "../components/Dungeon/Type"
+// import Type from "../components/Dungeon/Type"
 import MonsterCard from "../components/Dungeon/MonsterCard";
 import Treasure from "../components/Treasure/Treasure"
 import StoryInfo from "../components/StoryInfo/StoryInfo";
 import FinalScreen from "../components/FinalCampaign/FinalScreen"
-import Encounters from "../components/MoreStory/Encounters/Encounters";
+// import Encounters from "../components/MoreStory/Encounters/Encounters";
 // import AdventureSite from "../components/WorldBuilder/Physical/AdventureSite";
 // import DiceRoller from "../components/DiceRoller"\
 import {
@@ -74,6 +75,7 @@ class Short extends Component {
         fifthRoundBtns: false,
         sixthRoundBtns: false,
         seventhRoundBtns: false,
+        progress: 15,
     }
     
 handleNextBtn = () => {    
@@ -81,36 +83,42 @@ handleNextBtn = () => {
         this.setState({
             firstRoundBtns: false,
             secondRoundBtns: true,
+            progress: 30,
         })
     } 
     if(this.state.secondRoundBtns) {
         this.setState({
             secondRoundBtns: false,
             thirdRoundBtns: true,
+            progress: 45
         })
     } 
     if(this.state.thirdRoundBtns) {
         this.setState({
             thirdRoundBtns: false,
             fourthRoundBtns: true,
+            progress: 57
         })
     } 
     if(this.state.fourthRoundBtns) {
         this.setState({
             fourthRoundBtns: false,
             fifthRoundBtns: true,
+            progress: 72
         })
     } 
     if(this.state.fifthRoundBtns) {
         this.setState({
             fifthRoundBtns: false,
             sixthRoundBtns: true,
+            progress: 84
         })
     } 
     if(this.state.sixthRoundBtns) {
         this.setState({
             sixthRoundBtns: false,
             seventhRoundBtns: true,
+            progress: 100
         })
     } 
 }
@@ -291,7 +299,9 @@ setTreasureNumber = (number) => {
 
     render() {
         return (
+            
         <div>
+            <ProgressBar animated now={this.state.progress} />
             <div className="mainques">
                 <h1> Welcome to the Custom Campaign Builder</h1>
                 <p>A custom campaign is open ended and there are few limits on what you can add or not add here.</p>
@@ -326,15 +336,17 @@ setTreasureNumber = (number) => {
                         setCharMeeting={this.setCharMeeting}
                         ></Physical>
                         <Social
-                        setReligion={this.setReligion}
-                        setLanguages={this.setLanguages}
                         setFactionOrgs={this.setFactionOrgs}
                         campaign={this.props.campaign}
                         ></Social>
                         <Government 
+                        setLanguages={this.setLanguages}
                         setGovernment={this.setGovernment}
                         setCurrency={this.setCurrency}
                         ></Government>
+                        <Religion
+                        setReligion={this.setReligion}
+                        ></Religion>
                     </div>
                 </div>)}
 

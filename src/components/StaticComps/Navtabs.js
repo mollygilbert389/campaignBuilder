@@ -1,6 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Navbar, Nav} from 'react-bootstrap'
+import {Navbar, Nav, ProgressBar} from 'react-bootstrap'
 import {connect} from "react-redux"
 
 function Navtabs(props) {
@@ -10,6 +10,8 @@ function Navtabs(props) {
         <Nav className="mr-auto">
           <Nav.Link href="/home">Home</Nav.Link>
         </Nav>
+
+          
 
         <Nav>
           <Nav.Link>

@@ -91,7 +91,6 @@ render() {
 
                     <Modal.Body>
                         <p>Here were will decide how many acts this campaign should be. Like a play a campaing should have at least three acts. A party meeting, a dungeon exploration, and a final battle or acheivement of the end goal.</p>
-                        <p>Since you chose short campaign we reccomend you have no less than 3 and no more than 5 acts. </p>
 
                         <div className="actBtnSpace">
                             <div className="actBtns">

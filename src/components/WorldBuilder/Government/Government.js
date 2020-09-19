@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
+import Languages from "./Languages"
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "../style.css"
 
@@ -78,10 +79,17 @@ render() {
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             <Dropdown.Item>Common Coinage</Dropdown.Item>
+                            <Dropdown.Item>Common Coinage (No Electum)</Dropdown.Item>
                             <Dropdown.Item>Trade Bars</Dropdown.Item>
+                            <Dropdown.Item>Barter System</Dropdown.Item>
                             <Dropdown.Item>Odd Currency</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
+
+                    <Languages
+                    setLanguages={this.props.setLanguages}
+                    ></Languages>
+
                 </Modal.Body>
 
                 <Modal.Footer>

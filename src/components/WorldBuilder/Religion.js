@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
-import "../style.css"
+import "./style.css"
 
 class Religion extends Component {
     state ={
@@ -44,12 +44,13 @@ render() {
                         {this.state.gods ? this.state.gods: 'Choose Your Religious Philosophy'}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                        <Dropdown.Item>Loose Pantheons `(Suggested)`</Dropdown.Item>
+                        <Dropdown.Item>Loose Pantheons (Suggested)</Dropdown.Item>
                         <Dropdown.Item>Tight Pantheons</Dropdown.Item>
                         <Dropdown.Item>Mystery Cults</Dropdown.Item>
                         <Dropdown.Item>Monotheism</Dropdown.Item>
                         <Dropdown.Item>Dualism</Dropdown.Item>
                         <Dropdown.Item>Animism</Dropdown.Item>
+                        <Dropdown.Item>Other</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </Modal.Body>
