@@ -308,7 +308,7 @@ setTreasureNumber = (number) => {
 
                 {this.state.firstRoundBtns && (
                 <div>
-                    <p>We first need to build your world. Your leadership. Your religion, and your society.</p>
+                    <p>We first need name this campaign!</p>
                     <div className="btnspace">
                         <CampaignNameModal 
                         setCampaignName={this.setCampaignName}
@@ -318,7 +318,7 @@ setTreasureNumber = (number) => {
 
                 {this.state.secondRoundBtns && (
                 <div>
-                    <p>Let's talk characters. Let's think about the goal of this entire campaign. Do you want to start with your villain or your quest giver? Sometimes the quest giver and the villain are the same.</p>
+                    <p>Let's talk adventurers, do you already know who is in your party? If not you can skip this, but it will be harder to make other choices down the line.</p>
                     <div className="btnspace">
                         <PartyInfo 
                         setPlayers={this.setPlayers}
@@ -328,7 +328,7 @@ setTreasureNumber = (number) => {
 
                 {this.state.thirdRoundBtns && (
                 <div>
-                    <p>Now let's talk about your party. Anwser the questions below to help define the type of characters for this campaign. You may also skip this step as your party may want to decide for themselves the characters they want.</p>
+                    <p>Now we need to start planning your world. Use the buttons below to make some of those decsions.</p>
                     <div className="btnspace">
                         <Physical
                         setWorld={this.setWorld}
@@ -339,7 +339,8 @@ setTreasureNumber = (number) => {
                         setFactionOrgs={this.setFactionOrgs}
                         campaign={this.props.campaign}
                         ></Social>
-                        <Government 
+                        <Government
+                        campaign={this.props.campaign} 
                         setLanguages={this.setLanguages}
                         setGovernment={this.setGovernment}
                         setCurrency={this.setCurrency}

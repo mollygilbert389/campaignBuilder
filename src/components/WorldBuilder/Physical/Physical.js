@@ -65,8 +65,8 @@ render() {
                 <Modal.Header closeButton>
                     <Modal.Title>Paint with all the colors.</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
-                    <p>Below are some buttons to help create your ideal world!</p>
+                <Modal.Body className="d-flex flex-column align-items-center">
+                    <p>Below are some buttons to help create your ideal world! The decisions you make now will help create a unique campaign down the line!</p>
 
                     <FormGroup>
                         <Dropdown onSelect={this.handleWorldSelect}>

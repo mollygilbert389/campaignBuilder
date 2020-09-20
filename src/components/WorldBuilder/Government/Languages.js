@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
+import {Button, ButtonGroup, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
+import {FormControlLabel, Checkbox, FormGroup, Slider} from '@material-ui/core'
 import "../style.css"
 
 class Languages extends Component {
     state ={
-        language: "",
-        languageOptions: [
+        value: "",
+        suggestedTags: [
             "Celestial",
             "Common",
             "Draconic",
@@ -17,55 +18,52 @@ class Languages extends Component {
         ]
     }
 
-    handleLanguageSelect = (eventKey, event) => {
+    handleRemove = (event) => {
+        let removedItem = event.target.name
+        let currentTags = this.state.suggestedTags
+        const removedTag = currentTags.filter(item => item !== removedItem)
         this.setState({
-            language: event.target.text
-        }, () => this.props.setLanguages(this.state.language) )
+            suggestedTags: removedTag
+        }, () => this.props.setLanguages(this.state.suggestedTags))
     }
 
-    handleClick = () => {
+    handleAddLanguage = (event) => {
         this.setState({
-            showModal: !this.state.showModal,
-        })
+            suggestedTags: this.state.suggestedTags.concat(this.state.value),
+            value: '',
+        }, () => this.props.setLanguages(this.state.suggestedTags))
     }
 
+    handleInputChange = (event) => {
+        this.setState({
+            value: event.target.value
+        });
+    }
+
+    onKeyDown = (event) => {
+        if (event.key === "Enter") {
+            this.handleAddLanguage();
+          }
+    }
 
 render() {  
-
-
+    const{other} = this.state
     return (
-        <div>
-            <div className="btns">
-                <Button variant="outline-success" size="lg" onClick={this.handleClick}>Languages
-                </Button>
+        <div className="d-flex flex-column align-items-center">
+            <br></br>
+            <p>We have a few languages suggestions here. Feel free to add and remove as many or as little as you want.</p>
+
+            <div className="tagsArea centeredItems">
+            {this.state.suggestedTags.map(item => {
+                return <ButtonGroup className="factionButtons"><Button name={item}>{item}</Button><Button name={item} onClick={this.handleRemove}>X</Button></ButtonGroup>
+            })}
+                
+                <div className="inputAndBtn factionButtons">
+                    <input className="factionInput" placeholder="Add Faction or Organization Here" type="text" value={this.state.value} onChange={this.handleInputChange} onKeyUp={(event) => this.onKeyDown(event)}></input>
+                    <Button size="sm" variant="outline-success" onClick={this.handleAddLanguage}>Submit</Button>
+                </div>
             </div>
-            <Modal show={this.state.showModal} onHide={this.handleClick}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Talking Talking Talking Talk</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <p>Choose the languages spoken commonly.</p>
-                    
-                    <br></br>
-
-                    <Dropdown onSelect={this.handleLanguageSelect}>
-                        <Dropdown.Toggle variant="outline-primary">
-                        {this.state.language ? this.state.language: 'Choose Your Languages'}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                        {this.state.languageOptions.map(item => {
-                            return <Dropdown.Item name={item}>{item}</Dropdown.Item>})}
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </Modal.Body>
-
-                <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
-                </Modal.Footer>
-            </Modal>
         </div>
-    );
-}
-}
+    )}}
 
 export default Languages;

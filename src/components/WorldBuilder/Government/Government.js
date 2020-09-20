@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Languages from "./Languages"
-import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
+import {Button, Dropdown, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "../style.css"
 
 class Government extends Component {
@@ -35,14 +35,14 @@ render() {
     return (
         <div>
             <div className="btns">
-                <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Government
+                <Button variant="outline-success" size="lg" onClick={this.handleClick}>Government
                 </Button>
             </div>
-            <Modal show={this.state.showModal} onHide={this.handleClick}>
+            <Modal   size="lg" show={this.state.showModal} onHide={this.handleClick}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Let's organize the Government and pick our Currency.</Modal.Title>
+                    <Modal.Title>Let's pick a government some local languages and our world's currency.</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body className="d-flex flex-column align-items-center">
                     <p>Below are some buttons to help you make those decisions.</p>
                     
                     <br></br>
@@ -87,6 +87,7 @@ render() {
                     </Dropdown>
 
                     <Languages
+                    campaign={this.props.campaign}
                     setLanguages={this.props.setLanguages}
                     ></Languages>
 

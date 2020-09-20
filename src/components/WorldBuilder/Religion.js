@@ -5,19 +5,33 @@ import "./style.css"
 
 class Religion extends Component {
     state ={
-        gods: ""
+        gods: "",
+        other: false,
     }
 
-    religousOrg = (eventKey, event) => {
-        this.setState({
-            gods: event.target.text
-        }, () => this.props.setReligion(this.state.gods))
+    handleReligion = (eventKey, event) => {
+
+        if (event.target.text === "Other") {
+            this.setState({
+                other: true,
+            })
+        } else {
+            this.setState({
+                gods: event.target.text
+            }, () => this.props.setReligion(this.state.gods))
+        }
     }
 
     handleClick = () => {
         this.setState({
             showModal: !this.state.showModal,
         })
+    }
+
+    handleChange = (event) => {
+        this.setState({
+            gods: event.target.value
+        }, () => this.props.setReligion(this.state.gods))
     }
 
 
@@ -34,14 +48,14 @@ render() {
                 <Modal.Header closeButton>
                     <Modal.Title>Gods Oversee the World.</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body className="d-flex flex-column align-items-center">
                     <p>Below are some buttons to help you set up your gods.</p>
                     
                     <br></br>
 
-                    <Dropdown onSelect={this.religousOrg}>
+                    <Dropdown onSelect={this.handleReligion}>
                         <Dropdown.Toggle variant="outline-primary">
-                        {this.state.gods ? this.state.gods: 'Choose Your Religious Philosophy'}
+                        {this.state.gods ? `Religion: ${this.state.gods}`: 'Choose Your Religious Philosophy'}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                         <Dropdown.Item>Loose Pantheons (Suggested)</Dropdown.Item>
@@ -53,6 +67,13 @@ render() {
                         <Dropdown.Item>Other</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
+
+                    <br></br>
+
+                    {this.state.other && (
+                    <FormControl type="text" placeholder="Add Religion" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
+                    )}
+
                 </Modal.Body>
 
                 <Modal.Footer>

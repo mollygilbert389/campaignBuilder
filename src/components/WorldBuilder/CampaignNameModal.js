@@ -29,6 +29,12 @@ class CampaignNameModal extends Component {
         disabled: false
     })
     }
+
+    // onKeyDown = (event) => {
+    //     if (event.key === "Enter") {
+    //         this.close();
+    //       }
+    // }
     
 render() {  
     return (
@@ -42,8 +48,8 @@ render() {
                     <Modal.Title>Let's start with what you want your campaign to be named.</Modal.Title>
                 </Modal.Header>
 
-                <Modal.Body>
-                    <p>Enter your campaign name here. If you want one generated for you click here.</p>
+                <Modal.Body className="d-flex flex-column align-items-center">
+                    <p>Enter your campaign name here.</p>
                     <Form inline>
                         <FormControl type="text" placeholder="Campaign Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
                         <div style={{paddingRight: "10px"}}>or</div> 
@@ -67,7 +73,7 @@ render() {
                         variant={this.state.disabled ? "outline-success" : "success" }
                         type="submit" 
                         value="Submit" 
-                        onClick={this.close} 
+                        onClick={this.close}
                         // disabled={this.state.campaignName ? false : true}
                         >
                             Save</Button>

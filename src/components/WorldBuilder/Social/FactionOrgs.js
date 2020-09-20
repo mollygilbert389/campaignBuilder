@@ -90,7 +90,7 @@ render() {
                 </Modal.Body>
 
                 <Modal.Footer>
-                <Button variant="outline-success" onClick={this.handleSave} >Save</Button>
+                    <Button variant="outline-success" onClick={this.handleSave} >Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>

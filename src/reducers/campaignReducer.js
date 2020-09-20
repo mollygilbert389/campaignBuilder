@@ -35,7 +35,15 @@ const initialState = {
     mapScale: "",
     charMeeting: "",
     religion: "",
-    language: "",
+    languages: [
+      "Celestial",
+      "Common",
+      "Draconic",
+      "Druidic",
+      "Dwarvish",
+      "Elvish",
+      "Infernal",
+    ],
     factionOrgs: [            
       "Harpers",
       "Order of the Guantlet",

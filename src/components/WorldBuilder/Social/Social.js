@@ -28,10 +28,10 @@ render() {
             </div>
             <Modal size="lg" show={this.state.showModal} onHide={this.handleClick}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Let's design some of the Soical norms of this world.</Modal.Title>
+                    <Modal.Title>Let's create some organizations that might exist in this world.</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>Use the buttons below to make some descsions about your society.</p>
+                    <p>Use the buttons below to make some create those organizations and decide if your characters will have familiartiry with them.</p>
                     
                     <br></br>
 
