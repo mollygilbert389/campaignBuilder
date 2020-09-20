@@ -47,6 +47,9 @@ class PatronCard extends Component {
             {id: 10, option: "Ponderous" },
             {id: 11, option: "Quiet" },
             {id: 12, option: "Suspicious" },
+            {id: 12, option: "Beautiful" },
+            {id: 12, option: "Humorous" },
+            {id: 12, option: "Generous" },
         ], 
         patronChoices: [
             "Retired Adventurer",
@@ -98,7 +101,7 @@ render() {
                 <Card.Img className="NPCimage" variant="top" src="https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg"/>
                 <Card.Body className="d-flex flex-column align-items-center">
                     <Card.Title>{this.props.name}</Card.Title>
-                            <Dropdown onSelect={this.handleGenderSelect}>
+                            <Dropdown onSelect={this.handleGenderSelect} className="giveMeNPCSpace">
                                 <Dropdown.Toggle variant="outline-primary">
                                 {this.state.patronGender ?  `Gender: ${this.state.patronGender}`: "Choose your Patron's Gender"}
                                 </Dropdown.Toggle>
@@ -109,7 +112,7 @@ render() {
                                 </Dropdown.Menu>
                             </Dropdown>
 
-                            <Dropdown onSelect={this.handlePatronSlect}>
+                            <Dropdown onSelect={this.handlePatronSlect} className="giveMeNPCSpace">
                                 <Dropdown.Toggle variant="outline-primary">
                                 {this.state.patronType ? this.state.patronType: "Choose your Patron's Type"}
                                 </Dropdown.Toggle>
@@ -119,7 +122,7 @@ render() {
                                 </Dropdown.Menu>
                             </Dropdown>
 
-                            <Dropdown onSelect={this.handleCManner}>
+                            <Dropdown onSelect={this.handleCManner} className="giveMeNPCSpace">
                                 <Dropdown.Toggle variant="outline-primary">
                                 {this.state.patronMannerismChoice ? `Mannerism: ${this.state.patronMannerismChoice}`: "Choose your Patron's Mannerism"}
                                 </Dropdown.Toggle>
@@ -130,7 +133,7 @@ render() {
                                 </Dropdown.Menu>
                             </Dropdown>
 
-                            <Dropdown onSelect={this.handleTrait}>
+                            <Dropdown onSelect={this.handleTrait} className="giveMeNPCSpace">
                                 <Dropdown.Toggle variant="outline-primary">
                                 {this.state.patronTraitChoice ? `Trait: ${this.state.patronTraitChoice}`: "Choose your Patron's Trait"}
                                 </Dropdown.Toggle>

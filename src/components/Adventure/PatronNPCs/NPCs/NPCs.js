@@ -125,7 +125,7 @@ render() {
                     <Modal.Title>Let's get some NPCs added to your campaign.</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="d-flex flex-column align-items-center">
-                    <p>Below are some buttons to help you pick some NPCs This modal is for NPCs that play a bigger part in your campaign, not everyone your characters will interact with.</p>
+                    <p>Below are some buttons to help you pick some NPCs This modal is for NPCs that play a bigger part in your campaign, not necesarily the shopkeeper your characters will buy things from.</p>
                     
                     <br></br>
                     {!this.state.nextClicked && (<br></br>)}

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import NPCs from "./NPCs/NPCs"
-import Patron from "./Patron"
+import Villain from "./Villain"
+import NPC from "../PatronNPCs/NPCs/NPCs"
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "../style.css"
 
@@ -24,24 +24,24 @@ render() {
     return (
         <div>
             <div className="btns">
-                <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Patrons And NPCs
+                <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Villains
                 </Button>
             </div>
             <Modal size="lg" show={this.state.showModal} onHide={this.handleClick}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Who's On Your Team?</Modal.Title>
+                    <Modal.Title>Let's talk about the main villain and the mini bosses.</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>Let's figure out some details about the NPCs you get the play in the game. Firstly, let's plan your patron who will be the benefactor of the adventure goal. You can also use this to add some NPC characters to your story to make things interesting.</p>
+                    <p>Now let's plan our your villain, their drives and goals, and who is on their team.</p>
                     
                     <br></br>
 
                     <div className="btnspace">
-                        <Patron
-                        setPatronName={this.props.setPatronName}
-                        // setNPCNumber={this.props.setNPCNumber}
-                        ></Patron>
-                        <NPCs></NPCs>
+                        <Villain
+                        setVillainName={this.props.setVillainName}
+                        ></Villain>
+                        <NPC></NPC>
+                        {/* <SubVillain></SubVillain> */}
                     </div>
 
                 </Modal.Body>

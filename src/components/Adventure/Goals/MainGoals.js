@@ -175,7 +175,7 @@ render() {
                     <Modal.Title>Let's Figure Out Some Goals</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>Use the dropdown below to decicde.</p>
+                    <p>Use the buttons below to figure out your main adventure goal. Each button represents a different goal category.</p>
                     
                     <br></br>
 

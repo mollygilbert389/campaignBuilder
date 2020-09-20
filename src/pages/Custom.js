@@ -18,7 +18,7 @@ import LocalEvents from "../components/MoreStory/LocalEvents"
 import EncountersAndEvents from "../components/MoreStory/Encounters/EncountersAndEvents"
 import Pillar from "../components/Adventure/Goals/Pillar"
 import PatronNPCs from "../components/Adventure/PatronNPCs/PatronNPCs"
-import Villain from "../components/Adventure/Villain/Villain"
+import VillainSubVillain from "../components/Adventure/Villain/VillainSubVillain"
 // import Between from "../components/MoreStory/Between/Between"
 import ExtraAdventure from "../components/MoreStory/ExtraAdventure/ExtraAdventure"
 import PartyInfo from "../components/PartyInfo/PartyInfo"
@@ -353,7 +353,7 @@ setTreasureNumber = (number) => {
 
                 {this.state.fourthRoundBtns && (
                 <div>
-                    <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
+                    <p>Now that we have some ideas rolling let's give your campaign some fundamentals and some characters.</p>
                     <div className="btnspace">
                         <Pillar
                         setPillar={this.setPillar}
@@ -369,15 +369,15 @@ setTreasureNumber = (number) => {
                         setPatronName={this.setPatronName}
                         // setNPCNumber={this.setNPCNumber}
                         ></PatronNPCs>
-                        <Villain
+                        <VillainSubVillain
                         setVillainName={this.setVillainName}
-                        ></Villain>
+                        ></VillainSubVillain>
                     </div>
                 </div>)}
 
                 {this.state.fifthRoundBtns && (
                 <div>
-                    <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
+                    <p>More world planning! Let's get some of the smaller details hammers out in here!</p>
                     <div className="btnspace">
                         <LocalEvents setLocalEvents={this.setLocalEvents}
                         ></LocalEvents>
@@ -393,7 +393,7 @@ setTreasureNumber = (number) => {
 
                 {this.state.sixthRoundBtns && (
                 <div>
-                    <p>Now let's talk about your world in this game. Click one of the buttons below to add to your party card.</p>
+                    <p>Dungeon time! What campaign is without a dungeon? Below you can plan your your dungeon details.</p>
                     <div className="btnspace">
                         <AdventureStart></AdventureStart>
                         {/* <Type setDungeonType={this.setDungeonType}></Type> */}
@@ -416,7 +416,7 @@ setTreasureNumber = (number) => {
 
                 {this.state.seventhRoundBtns && (
                 <div>
-                    <p>Check out your super cool campaign below. Feel free to make edits.</p>
+                    <p>Cool! You've made a campaign! Check ou the details below! These are meant to be suggestions. Feel free to edit this as you like! Happy Campaigning.</p>
                     <div className="btnspace">
                         <FinalScreen 
                         campaign={this.props.campaign}

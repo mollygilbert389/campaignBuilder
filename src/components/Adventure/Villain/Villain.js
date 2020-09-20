@@ -402,7 +402,7 @@ render() {
             <Modal.Header closeButton>
                     <Modal.Title>Let's Create Yor villain!</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body className="d-flex flex-column align-items-center">
                     <p>Below are some buttons to create your villain</p>
 
                     <Form inline>
