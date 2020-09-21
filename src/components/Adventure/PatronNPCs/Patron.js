@@ -18,7 +18,6 @@ class Patron extends Component {
         this.props.setPatronName(this.state.patronName)
     }
 
-
     handleChange = (event) => {
         this.setState({
             patronName: event.target.value

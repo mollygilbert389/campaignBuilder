@@ -245,7 +245,7 @@ class NPCCard extends Component {
 render() {  
     return (
         <div>
-            <Card className="d-flex flex-column align-items-center color">
+            <Card className="changeOverFlow d-flex flex-column align-items-center color">
                 <Card.Img className="NPCimage" variant="top" src="https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg"/>
                 <Card.Body className="d-flex flex-column align-items-center">
                     <Card.Title>{!this.state.NPCName ? `NPC # ${this.props.name}` : `${this.state.NPCName}`}</Card.Title>
@@ -318,7 +318,7 @@ render() {
                         <Dropdown.Toggle variant="outline-primary">
                         {this.state.NPCMannerismChoice ? `Mannerism: ${this.state.NPCMannerismChoice}`: "Choose your NPC's Mannerism"}
                         </Dropdown.Toggle>
-                        <Dropdown.Menu>
+                        <Dropdown.Menu className="bringToFront">
                             {this.state.NPCMannerisms.map(drop => {
                                 return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
                             })}

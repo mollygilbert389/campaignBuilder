@@ -424,7 +424,7 @@ render() {
                         <Card.Body className="d-flex flex-column align-items-center">
                             <Card.Title>{this.props.name}</Card.Title>
                             <div className="d-flex flex-column align-items-center">
-                                <Dropdown onSelect={this.handleVillainTypeSelect}>
+                                <Dropdown onSelect={this.handleVillainTypeSelect} className="giveMeNPCSpace">
                                     <Dropdown.Toggle variant="outline-primary">
                                     {villainType ? `Type: ${villainType}`: 'Choose your Adventure Villain'}
                                     </Dropdown.Toggle>
@@ -447,8 +447,8 @@ render() {
                                     </Dropdown.Menu>
                                 </Dropdown>
 
-                                <div className="dualDrop">
-                                    <Dropdown onSelect={this.handleVillainObjectiveCatSelect}>
+                                <div className="dualDrop giveMeNPCSpace">
+                                    <Dropdown onSelect={this.handleVillainObjectiveCatSelect} className="giveMeNPCSpace">
                                         <Dropdown.Toggle variant="outline-primary">
                                         {this.state.villainObjectiveCatChoice ? `Objective Category: ${this.state.villainObjectiveCatChoice}`: "Choose your Villain's Main Objective"}
                                         </Dropdown.Toggle>
@@ -469,7 +469,7 @@ render() {
                                     </Dropdown>)}
                                 </div>
 
-                                <div className="dualDrop">
+                                <div className="dualDrop giveMeNPCSpace">
                                 <Dropdown onSelect={this.handleVillainMethodCatSelect}>
                                     <Dropdown.Toggle variant="outline-primary">
                                     {this.state.villainMethodCatChoice ? `Method Category: ${this.state.villainMethodCatChoice}`: "Choose your Villain's Method"}
@@ -492,7 +492,7 @@ render() {
                                 </Dropdown>)}
                                 </div>
 
-                                <Dropdown onSelect={this.handleVillainWeaknessSelect}>
+                                <Dropdown onSelect={this.handleVillainWeaknessSelect} className="giveMeNPCSpace">
                                     <Dropdown.Toggle variant="outline-primary">
                                     {this.state.villainWeakness ? `Weakness: ${this.state.villainWeakness}`: "Choose your Villain's Weakness"}
                                     </Dropdown.Toggle>
