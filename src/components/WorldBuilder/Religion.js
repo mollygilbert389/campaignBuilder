@@ -6,6 +6,15 @@ import "./style.css"
 class Religion extends Component {
     state ={
         gods: "",
+        godChoices: [
+            {id: 1, option: "Loose Pantheons (Suggested)", toolTipData: "Most campaigns have a loose pantheos of gods. A multitude of deities rule the various aspects of your world in either peace or conflict. People gather in public shrines to worship gods of life and wisdom." },
+            {id: 2, option: "Tight Pantheons", toolTipData: "In contrast to loose pantheos, a tight pantheos focuses on a single religion whose teachings and edicts embrace a small group of deities." },
+            {id: 3, option: "Mystery Cults", toolTipData: "This is a secretive religious organization based on a ritutal initiation. Mystery cults are intensly personal." },
+            {id: 4, option: "Monotheism", toolTipData: "This religion revere's only one deity, and in some cases dny the existance of any other deity. For this to work you need to decide whether other gods exist." },
+            {id: 5, option: "Dualism", toolTipData: "This religion views the world as the stage for a conflict between two diametrically opposed deities or divine forces. Most often, the opposed forces are good and evil." },
+            {id: 6, option: "Animism", toolTipData: "This is the belief that spirits inhabit every part of the natural world. In an animistic worldview, everything has a spirit." },
+            {id: 7, option: "Other", toolTipData: "Any religious pathos you want to have!" },
+        ],
         other: false,
     }
 
@@ -58,13 +67,17 @@ render() {
                         {this.state.gods ? `Religion: ${this.state.gods}`: 'Choose Your Religious Philosophy'}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                        <Dropdown.Item>Loose Pantheons (Suggested)</Dropdown.Item>
-                        <Dropdown.Item>Tight Pantheons</Dropdown.Item>
-                        <Dropdown.Item>Mystery Cults</Dropdown.Item>
-                        <Dropdown.Item>Monotheism</Dropdown.Item>
-                        <Dropdown.Item>Dualism</Dropdown.Item>
-                        <Dropdown.Item>Animism</Dropdown.Item>
-                        <Dropdown.Item>Other</Dropdown.Item>
+                            {this.state.godChoices.map( item => {
+                                return <div>
+                                        <OverlayTrigger overlay={
+                                        <Tooltip>{item.toolTipData}</Tooltip>}>
+                                        <span className="d-inline-block">
+                                            <Dropdown.Item key={item.id} name={item.option}>{item.option}</Dropdown.Item>
+                                        </span>
+                                        </OverlayTrigger>
+                                    </div>
+                                
+                                })}
                         </Dropdown.Menu>
                     </Dropdown>
 

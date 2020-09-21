@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Languages from "./Languages"
+import governments from "./Govrenmnt.json";
 import {Button, Dropdown, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "../style.css"
 
@@ -52,22 +53,16 @@ render() {
                         {this.state.government ? this.state.government: 'Choose Your Government'}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                            <Dropdown.Item>Autogracy</Dropdown.Item>
-                            <Dropdown.Item>Bureaucracy</Dropdown.Item>
-                            <Dropdown.Item>Confederacy</Dropdown.Item>
-                            <Dropdown.Item>Democracy</Dropdown.Item>
-                            <Dropdown.Item>Dictatorship</Dropdown.Item>
-                            <Dropdown.Item>Feudalism</Dropdown.Item>
-                            <Dropdown.Item>Gerontocracy</Dropdown.Item>
-                            <Dropdown.Item>Hierarchy</Dropdown.Item>
-                            <Dropdown.Item>Magocracy</Dropdown.Item>
-                            <Dropdown.Item>Matriarchy/Patriarchy</Dropdown.Item>
-                            <Dropdown.Item>Militocracy</Dropdown.Item>
-                            <Dropdown.Item>Oligarchy</Dropdown.Item>
-                            <Dropdown.Item>Plutocracy</Dropdown.Item>
-                            <Dropdown.Item>Republic</Dropdown.Item>
-                            <Dropdown.Item>Satrapy</Dropdown.Item>
-                            <Dropdown.Item>Theocracy</Dropdown.Item>
+                            {governments.map(item => {
+                                return <div>
+                                    <OverlayTrigger overlay={
+                                    <Tooltip>{item.description}</Tooltip>}>
+                                    <span className="d-inline-block">
+                                    <Dropdown.Item key={item.id} name={item.name}>{item.name}</Dropdown.Item>
+                                    </span>
+                                    </OverlayTrigger> 
+                                </div>
+                                })}       
                         </Dropdown.Menu>
                     </Dropdown>
 

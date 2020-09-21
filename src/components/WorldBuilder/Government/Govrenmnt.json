@@ -1,13 +1,13 @@
 [
     {
     "id": 1,
-    "name": "Autocracy",
-    "description": "One hereditary ruler wields absolute they promise to protect their citizens from threats power. The autocrat either is supported by a well-developed bureaucracy or military or stands as the only authority in an otherwise anarchic society. The dynastic ruler could be immortal or unded."
+    "name": "Bureaucracy",
+    "description": "Various departments compose the government, each responsible for an aspect of rule. the department heads, ministers, or secretaries answer to a figurehead autocrat or council."
     },
     {
     "id": 2,
-    "name": "Bureaucracy",
-    "description": "Various departments compose the government, each responsible for an aspect of rule. the department heads, ministers, or secretaries answer to a figurehead autocrat or council."
+    "name": "Autocracy",
+    "description": "One hereditary ruler wields absolute they promise to protect their citizens from threats power. The autocrat either is supported by a well-developed bureaucracy or military or stands as the only authority in an otherwise anarchic society. The dynastic ruler could be immortal or unded."
     },
     {
     "id": 3,

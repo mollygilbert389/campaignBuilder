@@ -11,12 +11,6 @@ render() {
     
     return (
         <div className="campaignCardWhole">
-            
-            {/* <div>
-                <div className="card">
-                    <img alt={maps[4].name} src={maps[4].image} />
-                </div>
-            </div> */}
 
             <div className="main">
                 <div className="logoSpace">
