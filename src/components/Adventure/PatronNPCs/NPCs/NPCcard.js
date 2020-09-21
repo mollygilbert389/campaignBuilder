@@ -10,14 +10,15 @@ class NPCCard extends Component {
         NPCName: "",
         NPCHighAbility: "",
         NPCLowAbility: "",
-        NPCTalentChoice: '',
-        NPCMannerismChoice:'',
-        NPCIdealChoice: '',
-        NPCDrilledIdealChoice: '',
-        NPCBondChoie: '',
-        NPCFlawSecretChoice: '',
-        NPCTraitChoice: '',
+        NPCTalentChoice: "",
+        NPCMannerismChoice: "",
+        NPCIdealChoice: "",
+        NPCDrilledIdealChoice: "",
+        NPCBondChoie: "",
+        NPCFlawSecretChoice: "",
+        NPCTraitChoice: "",
         isDisabled: true,
+        NPCName: "",
         NPCDrilledIdealsList: [],
         NPCTalents: [
             {id: 1, option: "Plays a musical instrument" },
@@ -233,6 +234,12 @@ class NPCCard extends Component {
         })
     }
 
+    handleChange = (event) => {
+        this.setState({
+            NPCName: event.target.value
+        })
+    }
+
 
 
 render() {  
@@ -241,127 +248,140 @@ render() {
             <Card className="d-flex flex-column align-items-center color">
                 <Card.Img className="NPCimage" variant="top" src="https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg"/>
                 <Card.Body className="d-flex flex-column align-items-center">
-                    <Card.Title>NPC #{this.props.name}</Card.Title>
-                            <Dropdown onSelect={this.handleGenderSelect} className="giveMeNPCSpace">
-                                <Dropdown.Toggle variant="outline-primary">
-                                {this.state.gender ?  `Gender: ${this.state.gender}`: 'Choose your NPCs Gender'}
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    <Dropdown.Item>Female</Dropdown.Item>
-                                    <Dropdown.Item>Male</Dropdown.Item>
-                                    <Dropdown.Item>Non Binary</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
+                    <Card.Title>{!this.state.NPCName ? `NPC # ${this.props.name}` : `${this.state.NPCName}`}</Card.Title>
+
+                    <Form inline className="giveMeNPCSpace">
+                        <FormControl type="text" placeholder="NPC Name" className="mr-sm-2" value={this.state.NPCName} onChange={this.handleChange}/>
+                        <div style={{paddingRight: "10px"}}>or</div> 
+
+                        <OverlayTrigger overlay={
+                            <Tooltip>Coming Soon!</Tooltip>}>
+                            <span className="d-inline-block">
+                                <Button variant="outline-primary" style={{ pointerEvents: 'none' }} disabled>Generate</Button>
+                            </span>
+                        </OverlayTrigger>
+                    </Form>
+
+                    <Dropdown onSelect={this.handleGenderSelect} className="giveMeNPCSpace">
+                        <Dropdown.Toggle variant="outline-primary">
+                        {this.state.gender ?  `Gender: ${this.state.gender}`: 'Choose your NPCs Gender'}
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            <Dropdown.Item>Female</Dropdown.Item>
+                            <Dropdown.Item>Male</Dropdown.Item>
+                            <Dropdown.Item>Non Binary</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
 
 
-                            <Dropdown onSelect={this.handleHighAbilitySelect} className="giveMeNPCSpace">
-                                <Dropdown.Toggle variant="outline-primary">
-                                {this.state.NPCHighAbility ? `High Ability: ${this.state.NPCHighAbility}`: "Choose your NPC's High Ability"}
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    <Dropdown.Item>Strength-powerful, brawny, strong as an ox</Dropdown.Item>
-                                    <Dropdown.Item>Dexterity-lithe, agile, graceful</Dropdown.Item>
-                                    <Dropdown.Item>Consitution-hardy, hale, healthy</Dropdown.Item>
-                                    <Dropdown.Item>Intelligence-studious, learned, inquisitive</Dropdown.Item>
-                                    <Dropdown.Item>Wisdom-perceptive, spiritual, insightful</Dropdown.Item>
-                                    <Dropdown.Item>Charisma-persuasive, forceful, born leader</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
+                    <Dropdown onSelect={this.handleHighAbilitySelect} className="giveMeNPCSpace">
+                        <Dropdown.Toggle variant="outline-primary">
+                        {this.state.NPCHighAbility ? `High Ability: ${this.state.NPCHighAbility}`: "Choose your NPC's High Ability"}
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            <Dropdown.Item>Strength-powerful, brawny, strong as an ox</Dropdown.Item>
+                            <Dropdown.Item>Dexterity-lithe, agile, graceful</Dropdown.Item>
+                            <Dropdown.Item>Consitution-hardy, hale, healthy</Dropdown.Item>
+                            <Dropdown.Item>Intelligence-studious, learned, inquisitive</Dropdown.Item>
+                            <Dropdown.Item>Wisdom-perceptive, spiritual, insightful</Dropdown.Item>
+                            <Dropdown.Item>Charisma-persuasive, forceful, born leader</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
 
 
-                            <Dropdown onSelect={this.handleLowAbilitySelect} className="giveMeNPCSpace">
-                                <Dropdown.Toggle variant="outline-primary">
-                                {this.state.NPCLowAbility ? `Low Ability: ${this.state.NPCLowAbility}`: "Choose your NPC's Low Ability"}
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    <Dropdown.Item>Strength-feeble, scrawny</Dropdown.Item>
-                                    <Dropdown.Item>Dexterity-clumbsy, fumbling</Dropdown.Item>
-                                    <Dropdown.Item>Consitution-sickly, pale</Dropdown.Item>
-                                    <Dropdown.Item>Intelligence-dim-witted, slow</Dropdown.Item>
-                                    <Dropdown.Item>Wisdom-oblivious, absentminded</Dropdown.Item>
-                                    <Dropdown.Item>Charisma-dull, boring</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
+                    <Dropdown onSelect={this.handleLowAbilitySelect} className="giveMeNPCSpace">
+                        <Dropdown.Toggle variant="outline-primary">
+                        {this.state.NPCLowAbility ? `Low Ability: ${this.state.NPCLowAbility}`: "Choose your NPC's Low Ability"}
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            <Dropdown.Item>Strength-feeble, scrawny</Dropdown.Item>
+                            <Dropdown.Item>Dexterity-clumbsy, fumbling</Dropdown.Item>
+                            <Dropdown.Item>Consitution-sickly, pale</Dropdown.Item>
+                            <Dropdown.Item>Intelligence-dim-witted, slow</Dropdown.Item>
+                            <Dropdown.Item>Wisdom-oblivious, absentminded</Dropdown.Item>
+                            <Dropdown.Item>Charisma-dull, boring</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
 
-                            <Dropdown onSelect={this.handleNPCTalent} className="giveMeNPCSpace">
-                                <Dropdown.Toggle variant="outline-primary">
-                                {this.state.NPCTalentChoice ? `Talent: ${this.state.NPCTalentChoice}`: "Choose your NPC's Talent"}
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    {this.state.NPCTalents.map(drop => {
-                                        return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
-                                    })}
-                                </Dropdown.Menu>
-                            </Dropdown>
+                    <Dropdown onSelect={this.handleNPCTalent} className="giveMeNPCSpace">
+                        <Dropdown.Toggle variant="outline-primary">
+                        {this.state.NPCTalentChoice ? `Talent: ${this.state.NPCTalentChoice}`: "Choose your NPC's Talent"}
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            {this.state.NPCTalents.map(drop => {
+                                return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
+                            })}
+                        </Dropdown.Menu>
+                    </Dropdown>
 
-                            <Dropdown onSelect={this.handleNPCManner} className="giveMeNPCSpace">
-                                <Dropdown.Toggle variant="outline-primary">
-                                {this.state.NPCMannerismChoice ? `Mannerism: ${this.state.NPCMannerismChoice}`: "Choose your NPC's Mannerism"}
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    {this.state.NPCMannerisms.map(drop => {
-                                        return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
-                                    })}
-                                </Dropdown.Menu>
-                            </Dropdown>
+                    <Dropdown onSelect={this.handleNPCManner} className="giveMeNPCSpace">
+                        <Dropdown.Toggle variant="outline-primary">
+                        {this.state.NPCMannerismChoice ? `Mannerism: ${this.state.NPCMannerismChoice}`: "Choose your NPC's Mannerism"}
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            {this.state.NPCMannerisms.map(drop => {
+                                return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
+                            })}
+                        </Dropdown.Menu>
+                    </Dropdown>
 
-                            <Dropdown onSelect={this.handleNPCTrait} className="giveMeNPCSpace">
-                                <Dropdown.Toggle variant="outline-primary">
-                                {this.state.NPCTraitChoice ? `Trait: ${this.state.NPCTraitChoice}`: "Choose your NPC's Trait"}
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    {this.state.NPCInteractionTraits.map(drop => {
-                                        return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
-                                    })}
-                                </Dropdown.Menu>
-                            </Dropdown>
+                    <Dropdown onSelect={this.handleNPCTrait} className="giveMeNPCSpace">
+                        <Dropdown.Toggle variant="outline-primary">
+                        {this.state.NPCTraitChoice ? `Trait: ${this.state.NPCTraitChoice}`: "Choose your NPC's Trait"}
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            {this.state.NPCInteractionTraits.map(drop => {
+                                return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
+                            })}
+                        </Dropdown.Menu>
+                    </Dropdown>
 
-                            <div className="center">
-                            <Dropdown onSelect={this.handleNPCIdeal} className="giveMeNPCSpace">
-                                <Dropdown.Toggle variant="outline-primary">
-                                {this.state.NPCIdealChoice ? this.state.NPCIdealChoice: "Choose your NPC's Ideal"}
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    {this.state.NPCIdeals.map(drop => {
-                                        return <Dropdown.Item name={drop.main}> {drop.main}</Dropdown.Item>
-                                    })}
-                                </Dropdown.Menu>
-                            </Dropdown>
+                    <div className="center">
+                        <Dropdown onSelect={this.handleNPCIdeal} className="giveMeNPCSpace">
+                            <Dropdown.Toggle variant="outline-primary">
+                            {this.state.NPCIdealChoice ? this.state.NPCIdealChoice: "Choose your NPC's Ideal"}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                {this.state.NPCIdeals.map(drop => {
+                                    return <Dropdown.Item name={drop.main}> {drop.main}</Dropdown.Item>
+                                })}
+                            </Dropdown.Menu>
+                        </Dropdown>
 
-                           <Dropdown onSelect={this.handleDrilledIdeal} className="giveMeNPCSpace">
-                                <Dropdown.Toggle variant="outline-primary" disabled={this.state.isDisabled}>
-                                {this.state.NPCDrilledIdealChoice ? this.state.NPCDrilledIdealChoice: "Choose your NPC's Ideal"}
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    {this.state.NPCDrilledIdealsList.map(drop => {
-                                        return <Dropdown.Item name={drop}> {drop}</Dropdown.Item>
-                                    })}
-                                </Dropdown.Menu>
-                            </Dropdown>
-                            </div>
+                        <Dropdown onSelect={this.handleDrilledIdeal} className="giveMeNPCSpace">
+                            <Dropdown.Toggle variant="outline-primary" disabled={this.state.isDisabled}>
+                            {this.state.NPCDrilledIdealChoice ? this.state.NPCDrilledIdealChoice: "Choose your NPC's Ideal"}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                {this.state.NPCDrilledIdealsList.map(drop => {
+                                    return <Dropdown.Item name={drop}> {drop}</Dropdown.Item>
+                                })}
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </div>
 
-                            <Dropdown onSelect={this.handleNPCBond} className="giveMeNPCSpace">
-                                <Dropdown.Toggle variant="outline-primary">
-                                {this.state.NPCBondChoie ? `Bond: ${this.state.NPCBondChoie}`: "Choose your NPC's Bond"}
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    {this.state.NPCBonds.map(drop => {
-                                        return <Dropdown.Item  key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
-                                    })}
-                                </Dropdown.Menu>
-                            </Dropdown>
+                    <Dropdown onSelect={this.handleNPCBond} className="giveMeNPCSpace">
+                        <Dropdown.Toggle variant="outline-primary">
+                        {this.state.NPCBondChoie ? `Bond: ${this.state.NPCBondChoie}`: "Choose your NPC's Bond"}
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            {this.state.NPCBonds.map(drop => {
+                                return <Dropdown.Item  key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
+                            })}
+                        </Dropdown.Menu>
+                    </Dropdown>
 
-                            <Dropdown onSelect={this.handleNPCFlawSecret} className="giveMeNPCSpace">
-                                <Dropdown.Toggle variant="outline-primary">
-                                {this.state.NPCFlawSecretChoice ? `Flaw/Secret: ${this.state.NPCFlawSecretChoice}`: "Choose your NPC's Flaw or Secret"}
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    {this.state.NPCFlawsSecrets.map(drop => {
-                                        return <Dropdown.Item  key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
-                                    })}
-                                </Dropdown.Menu>
-                            </Dropdown>
-                    </Card.Body>
+                    <Dropdown onSelect={this.handleNPCFlawSecret} className="giveMeNPCSpace">
+                        <Dropdown.Toggle variant="outline-primary">
+                        {this.state.NPCFlawSecretChoice ? `Flaw/Secret: ${this.state.NPCFlawSecretChoice}`: "Choose your NPC's Flaw or Secret"}
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            {this.state.NPCFlawsSecrets.map(drop => {
+                                return <Dropdown.Item  key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
+                            })}
+                        </Dropdown.Menu>
+                    </Dropdown>
+                </Card.Body>
             </Card>
         </div>
     );

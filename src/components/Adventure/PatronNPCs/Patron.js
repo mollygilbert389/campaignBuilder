@@ -59,12 +59,13 @@ render() {
                                     <Button variant="outline-primary" style={{ pointerEvents: 'none' }} disabled>Generate</Button>
                                 </span>
                             </OverlayTrigger>
-                            
                         </Form>
 
                         <br></br>
 
-                        <PatronCard name={this.state.patronName}>
+                        <PatronCard 
+                        campaign={this.props.campaign}
+                        name={this.state.patronName}>
                         </PatronCard>
 
                     </div>

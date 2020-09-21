@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Card, CardGroup} from 'react-bootstrap'
+import CharacterRenownCard from "../../WorldBuilder/Social/ChracterRenownCard"
 import {FormControlLabel, Checkbox, FormGroup, Slider} from '@material-ui/core'
 import "../style.css"
 
@@ -96,56 +97,65 @@ class PatronCard extends Component {
 
 render() {  
     return (
-        <div>
-            <Card className="d-flex flex-column align-items-center villainPatronCard">
-                <Card.Img className="NPCimage" variant="top" src="https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg"/>
-                <Card.Body className="d-flex flex-column align-items-center">
-                    <Card.Title>{this.props.name}</Card.Title>
-                            <Dropdown onSelect={this.handleGenderSelect} className="giveMeNPCSpace">
-                                <Dropdown.Toggle variant="outline-primary">
-                                {this.state.patronGender ?  `Gender: ${this.state.patronGender}`: "Choose your Patron's Gender"}
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    <Dropdown.Item>Female</Dropdown.Item>
-                                    <Dropdown.Item>Male</Dropdown.Item>
-                                    <Dropdown.Item>Non Binary</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
+        <div className="patronContainer">
+            <div>
+                <Card className="d-flex flex-column align-items-center villainPatronCard">
+                    <Card.Img className="NPCimage" variant="top" src="https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg"/>
+                    <Card.Body className="d-flex flex-column align-items-center">
+                        <Card.Title>{this.props.name}</Card.Title>
+                        <Dropdown onSelect={this.handleGenderSelect} className="giveMeNPCSpace">
+                            <Dropdown.Toggle variant="outline-primary">
+                            {this.state.patronGender ?  `Gender: ${this.state.patronGender}`: "Choose your Patron's Gender"}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                <Dropdown.Item>Female</Dropdown.Item>
+                                <Dropdown.Item>Male</Dropdown.Item>
+                                <Dropdown.Item>Non Binary</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
 
-                            <Dropdown onSelect={this.handlePatronSlect} className="giveMeNPCSpace">
-                                <Dropdown.Toggle variant="outline-primary">
-                                {this.state.patronType ? this.state.patronType: "Choose your Patron's Type"}
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    {this.state.patronChoices.map(item => {
-                                        return <Dropdown.Item name={item}>{item}</Dropdown.Item>})}
-                                </Dropdown.Menu>
-                            </Dropdown>
+                        <Dropdown onSelect={this.handlePatronSlect} className="giveMeNPCSpace">
+                            <Dropdown.Toggle variant="outline-primary">
+                            {this.state.patronType ? this.state.patronType: "Choose your Patron's Type"}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                {this.state.patronChoices.map(item => {
+                                    return <Dropdown.Item name={item}>{item}</Dropdown.Item>})}
+                            </Dropdown.Menu>
+                        </Dropdown>
 
-                            <Dropdown onSelect={this.handleCManner} className="giveMeNPCSpace">
-                                <Dropdown.Toggle variant="outline-primary">
-                                {this.state.patronMannerismChoice ? `Mannerism: ${this.state.patronMannerismChoice}`: "Choose your Patron's Mannerism"}
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    {this.state.patronMannerisms.map(drop => {
-                                        return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
-                                    })}
-                                </Dropdown.Menu>
-                            </Dropdown>
+                        <Dropdown onSelect={this.handleCManner} className="giveMeNPCSpace">
+                            <Dropdown.Toggle variant="outline-primary">
+                            {this.state.patronMannerismChoice ? `Mannerism: ${this.state.patronMannerismChoice}`: "Choose your Patron's Mannerism"}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                {this.state.patronMannerisms.map(drop => {
+                                    return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
+                                })}
+                            </Dropdown.Menu>
+                        </Dropdown>
 
-                            <Dropdown onSelect={this.handleTrait} className="giveMeNPCSpace">
-                                <Dropdown.Toggle variant="outline-primary">
-                                {this.state.patronTraitChoice ? `Trait: ${this.state.patronTraitChoice}`: "Choose your Patron's Trait"}
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    {this.state.patronInteractionTraits.map(drop => {
-                                        return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
-                                    })}
-                                </Dropdown.Menu>
-                            </Dropdown>
-
+                        <Dropdown onSelect={this.handleTrait} className="giveMeNPCSpace">
+                            <Dropdown.Toggle variant="outline-primary">
+                            {this.state.patronTraitChoice ? `Trait: ${this.state.patronTraitChoice}`: "Choose your Patron's Trait"}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                {this.state.patronInteractionTraits.map(drop => {
+                                    return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
+                                })}
+                            </Dropdown.Menu>
+                        </Dropdown>
                     </Card.Body>
-            </Card>
+                </Card>
+            </div>
+
+            <div>
+                <CharacterRenownCard 
+                campaign={this.props.campaign} 
+                charName={this.props.name}>
+                </CharacterRenownCard>
+            </div>
+
         </div>
     );
 }

@@ -38,10 +38,13 @@ render() {
 
                     <div className="btnspace">
                         <Patron
+                        campaign={this.props.campaign}
                         setPatronName={this.props.setPatronName}
                         // setNPCNumber={this.props.setNPCNumber}
                         ></Patron>
-                        <NPCs></NPCs>
+                        <NPCs
+                        campaign={this.props.campaign}
+                        ></NPCs>
                     </div>
 
                 </Modal.Body>
