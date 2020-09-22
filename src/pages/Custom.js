@@ -23,11 +23,11 @@ import ExtraAdventure from "../components/MoreStory/ExtraAdventure/ExtraAdventur
 import PartyInfo from "../components/PartyInfo/PartyInfo"
 import Rooms from "../components/Dungeon/Rooms"
 import Setback from "../components/MoreStory/SetbacksTraps/Setback"
-// import Type from "../components/Dungeon/Type"
 import MonsterCard from "../components/Dungeon/MonsterCard";
 import Treasure from "../components/Treasure/Treasure"
 import StoryInfo from "../components/StoryInfo/StoryInfo";
 import FinalScreen from "../components/FinalCampaign/FinalScreen"
+
 // import Encounters from "../components/MoreStory/Encounters/Encounters";
 // import AdventureSite from "../components/WorldBuilder/Physical/AdventureSite";
 // import DiceRoller from "../components/DiceRoller"\
@@ -62,7 +62,7 @@ import {
 
 
 
-class Short extends Component {
+class Custom extends Component {
     state ={
         showDiv: false,
         firstRoundBtns: true,
@@ -199,9 +199,9 @@ setActsAndClimax = (destination, value) => {
     onSetActsAndClimx(destination, value)
 }
 
-setMainGoal = (type) => {
+setMainGoal = (destination, value) => {
     const{onSetMainGoal}=this.props
-    onSetMainGoal(type)
+    onSetMainGoal(destination, value)
 }
 
 setPillar = (type) => {
@@ -298,7 +298,8 @@ setTreasureNumber = (number) => {
                         campaign={this.props.campaign}
                         ></Social>
                         <Government
-                        campaign={this.props.campaign} 
+                        campaign={this.props.campaign}
+                        setLanguages={this.setLanguages} 
                         setGovernmentData={this.setGovernmentData}
                         ></Government>
                         <Religion
@@ -442,4 +443,4 @@ const mapDispatchtoProps = (dispatch) => ({
 
 })
 
-export default connect(mapStateToProps, mapDispatchtoProps)(Short);
+export default connect(mapStateToProps, mapDispatchtoProps)(Custom);

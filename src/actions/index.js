@@ -72,9 +72,10 @@ export const setActsAndClimax = (destination, value) => ({
     value
 })
 
-export const setMainGoal = (type) => ({
+export const setMainGoal = (destination, value) => ({
     type: SET_MAIN_GOAL,
-    payload: type
+    destination,
+    value
 }) 
 
 export const setPillar = (type) => ({

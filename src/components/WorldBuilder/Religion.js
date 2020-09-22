@@ -21,7 +21,6 @@ class Religion extends Component {
     }
 
     handleReligion = (eventKey, event) => {
-
         if (event.target.text === "Other") {
             this.setState({
                 other: true,

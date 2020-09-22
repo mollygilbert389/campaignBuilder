@@ -1,5 +1,6 @@
 import React from "react"
 import {Button} from "react-bootstrap"
+import "./style.css"
 
 
 const diceRoller = function(props) {
@@ -11,12 +12,14 @@ const diceRoller = function(props) {
         let randoNumber = Math.floor(Math.random() * Math.floor(diceMax))
 
         let finalItem = rollingArrary[randoNumber]
+
+        console.log(finalItem)
         props.handleRoll(finalItem, props.name)
     }
 
 
     return (
-        <Button onClick={rollIt}>Roll it</Button>
+        <Button className="giveMeSomeSpace" onClick={rollIt}>Roll it</Button>
     )
 }
 

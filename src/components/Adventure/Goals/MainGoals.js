@@ -1,13 +1,14 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
+import RollBtn from "../../StaticComps/RollBtn"
 import "../style.css"
 
 class MainGoals extends Component {
     state ={
         goalsCat: "",
-        dungeonGoalsClicked: false,
-        finalDungeonChoice: "",
+        dungeonGoalsClicked: true,
+        mainGoal: "",
         wildernessGoalsClickd: false,
         otherGoalsClicked: false, 
         eventGoalsClicked: false,
@@ -89,7 +90,25 @@ class MainGoals extends Component {
             {id:17, goal:"Determine the villain's identity"},
             {id:18, goal:"Locate a stolen item"},
             {id:19, goal:"Make sure a wedding goes off without a hitch"},
-        ]
+        ],
+        allGoals: [],
+    }
+
+    componentDidMount() {
+        this.handleGoalCollect()
+    }
+
+    handleGoalCollect = () => {
+        const allDungeonGoals = this.state.dungeonGoals.map(item => item.goal)
+        const allWildernessGoals = this.state.wildernessGoals.map(item => item.goal) 
+        const allEventGoals = this.state.eventGoals.map(item => item.goal)
+        const allOtherGoals = this.state.otherGoals.map(item => item.goal)
+
+        const allGoals = [...allDungeonGoals, ...allWildernessGoals, ...allEventGoals, ...allOtherGoals]
+
+        this.setState({
+            allGoals: allGoals
+        }, () => console.log(this.state.allGoals))
     }
 
     handleGoalClick = (eventKey, event) => {
@@ -109,7 +128,7 @@ class MainGoals extends Component {
         console.log(selection)
 
         this.setState({
-            finalDungeonChoice: "",
+            mainGoal: "",
         })
 
         switch(selection) {
@@ -161,9 +180,16 @@ class MainGoals extends Component {
         }, () => {this.props.setMainGoal(this.state.finalDungeonChoice)})
     }
 
+    handleRoll = (feedback, name) => {
+        this.setState({
+            mainGoal: feedback
+        })
+        this.props.setMainGoal("mainGoal", feedback)
+    }
+
 
 render() {  
-
+    
     return (
         <div>
             <div className="btns">
@@ -189,60 +215,65 @@ render() {
                     <br></br>
 
                     <div className="d-flex flex-column align-items-center">
-                    {this.state.dungeonGoalsClicked && (<div>
-                        <Dropdown onSelect={this.handleGoalClick}>
-                            <Dropdown.Toggle variant="outline-primary">
-                            {this.state.finalDungeonChoice ? this.state.finalDungeonChoice: 'Choose Overal Campaign Goal'}
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                                {this.state.dungeonGoals.map(drop => {
-                                    return <Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>
-                                })}
-                            </Dropdown.Menu>
-                        </Dropdown>
-                    </div>)}
+                    <Form inline>
+                        {this.state.dungeonGoalsClicked && (<div>
+                            <Dropdown onSelect={this.handleGoalClick}>
+                                <Dropdown.Toggle variant="outline-primary">
+                                {this.state.mainGoal ? `Goal: ${this.state.mainGoal}`: 'Choose Overal Campaign Goal'}
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    {this.state.dungeonGoals.map(drop => {
+                                        return <Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>
+                                    })}
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>)}
 
-                    {this.state.wildernessGoalsClickd && (<div>
-                        <Dropdown onSelect={this.handleGoalClick}>
-                            <Dropdown.Toggle variant="outline-primary">
-                            {this.state.finalDungeonChoice ? this.state.finalDungeonChoice: 'Choose Overal Campaign Goal'}
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                                {this.state.wildernessGoals.map(drop => {
-                                    return <Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>
-                                })}
-                            </Dropdown.Menu>
-                        </Dropdown>
-                    </div>)}
+                        {this.state.wildernessGoalsClickd && (<div>
+                            <Dropdown onSelect={this.handleGoalClick}>
+                                <Dropdown.Toggle variant="outline-primary">
+                                {this.state.mainGoal ? `Goal: ${this.state.mainGoal}`: 'Choose Overal Campaign Goal'}
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    {this.state.wildernessGoals.map(drop => {
+                                        return <Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>
+                                    })}
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>)}
 
-                    {this.state.otherGoalsClicked && (<div>
-                        <Dropdown onSelect={this.handleGoalClick}>
-                            <Dropdown.Toggle variant="outline-primary">
-                            {this.state.finalDungeonChoice ? this.state.finalDungeonChoice: 'Choose Overal Campaign Goal'}
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                                {this.state.otherGoals.map(drop => {
-                                    return <Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>
-                                })}
-                            </Dropdown.Menu>
-                        </Dropdown>
-                    </div>)}
+                        {this.state.otherGoalsClicked && (<div>
+                            <Dropdown onSelect={this.handleGoalClick}>
+                                <Dropdown.Toggle variant="outline-primary">
+                                {this.state.mainGoal ? `Goal: ${this.state.mainGoal}`: 'Choose Overal Campaign Goal'}
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    {this.state.otherGoals.map(drop => {
+                                        return <Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>
+                                    })}
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>)}
 
-                    {this.state.eventGoalsClicked && (<div>
-                        <Dropdown onSelect={this.handleGoalClick}>
-                            <Dropdown.Toggle variant="outline-primary">
-                            {this.state.finalDungeonChoice ? this.state.finalDungeonChoice: 'Choose Overal Campaign Goal'}
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                                {this.state.eventGoals.map(drop => {
-                                    return <Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>
-                                })}
-                            </Dropdown.Menu>
-                        </Dropdown>
-                    </div>)}
-                    </div>
+                        {this.state.eventGoalsClicked && (<div>
+                            <Dropdown onSelect={this.handleGoalClick}>
+                                <Dropdown.Toggle variant="outline-primary">
+                                {this.state.mainGoal ? `Goal: ${this.state.mainGoal}`: 'Choose Overal Campaign Goal'}
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    {this.state.eventGoals.map(drop => {
+                                        return <Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>
+                                    })}
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>)}
+                        
+                        <RollBtn name="mainGoal" handleRoll={this.handleRoll} rollingArray={this.state.allGoals}></RollBtn>
+                        </Form>
+                        </div>
 
-                    
+
+
                 </Modal.Body>
 
                 <Modal.Footer>

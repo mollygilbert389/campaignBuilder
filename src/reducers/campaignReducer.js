@@ -118,7 +118,7 @@ export default function(state = initialState, action) {
         case SET_MAIN_GOAL:
           return {
             ...state,
-            mainGoal: action.payload
+            [action.destination]: action.value
           }
         case SET_PILLAR: 
         return {

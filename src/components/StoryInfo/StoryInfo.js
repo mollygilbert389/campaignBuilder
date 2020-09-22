@@ -40,10 +40,25 @@ render() {
             <Card.Title className="title">World Info:</Card.Title>
               <div>
                 {campaign.world && (<div>{`World Type: ${campaign.world}`}</div>)}
+                {campaign.era && (<div>{`Era: ${campaign.era}`}</div>)}
                 {campaign.mapScale && (<div>{`Starting Size: ${campaign.mapScale}`}</div>)}
+                {campaign.uniqueFeature && (<div>{`Unique Feature: ${campaign.uniqueFeature}`}</div>)}
                 {campaign.charMeeting && (<div>{`Charaters Meet: ${campaign.charMeeting}`}</div>)}
+                <div>Factions and Organizations:</div>
+                {campaign.factionOrgs.map(oneFaction => {
+                      return (
+                        <div> {` -${oneFaction}`}</div>
+                          )
+                      })}
                 {campaign.government && (<div>{`Government: ${campaign.government}`}</div>)}
                 {campaign.currency && (<div>{`Currency: ${campaign.currency}`}</div>)}
+                <div>Languages:</div>
+                {campaign.languages.map(oneLanguage => {
+                      return (
+                        <div> {` -${oneLanguage}`}</div>
+                          )
+                      })}
+                {campaign.religion && (<div>{`Religion: ${campaign.religion}`}</div>)}
               </div>
           </div>
           )}
