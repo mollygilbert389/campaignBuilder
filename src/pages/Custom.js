@@ -179,9 +179,9 @@ setGovernmentData = (destinaton, value) => {
     onSetGovernmentData(destinaton, value)
 }
 
-setReligion = (type) => {
+setReligion = (destination, value) => {
     const{onSetReligion}=this.props
-    onSetReligion(type)
+    onSetReligion(destination, value)
 }
 
 setLanguages = (type) => {

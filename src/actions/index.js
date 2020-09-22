@@ -50,10 +50,10 @@ export const setWorldData = (destination, value) => ({
     value
 })
 
-
-export const setReligion = (type) => ({
+export const setReligion = (destination, value) => ({
     type: SET_RELIGION,
-    payload: type
+    destination,
+    value
 }) 
 
 export const setLanguages = (type) => ({

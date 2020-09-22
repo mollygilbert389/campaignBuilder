@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
+import RollBtn from "../StaticComps/RollBtn"
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "./style.css"
 
 class Religion extends Component {
     state ={
-        gods: "",
+        religion: "",
         godChoices: [
             {id: 1, option: "Loose Pantheons (Suggested)", toolTipData: "Most campaigns have a loose pantheos of gods. A multitude of deities rule the various aspects of your world in either peace or conflict. People gather in public shrines to worship gods of life and wisdom." },
             {id: 2, option: "Tight Pantheons", toolTipData: "In contrast to loose pantheos, a tight pantheos focuses on a single religion whose teachings and edicts embrace a small group of deities." },
@@ -15,6 +16,7 @@ class Religion extends Component {
             {id: 6, option: "Animism", toolTipData: "This is the belief that spirits inhabit every part of the natural world. In an animistic worldview, everything has a spirit." },
             {id: 7, option: "Other", toolTipData: "Any religious pathos you want to have!" },
         ],
+
         other: false,
     }
 
@@ -26,7 +28,7 @@ class Religion extends Component {
             })
         } else {
             this.setState({
-                gods: event.target.text
+                religion: event.target.text
             }, () => this.props.setReligion(this.state.gods))
         }
     }
@@ -39,8 +41,15 @@ class Religion extends Component {
 
     handleChange = (event) => {
         this.setState({
-            gods: event.target.value
+            religion: event.target.value
         }, () => this.props.setReligion(this.state.gods))
+    }
+
+    handleRoll = (feedback, name) => {
+        this.setState({
+            religion: feedback
+        })
+        this.props.setReligion("religion", feedback)
     }
 
 
@@ -62,24 +71,27 @@ render() {
                     
                     <br></br>
 
-                    <Dropdown onSelect={this.handleReligion}>
-                        <Dropdown.Toggle variant="outline-primary">
-                        {this.state.gods ? `Religion: ${this.state.gods}`: 'Choose Your Religious Philosophy'}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                            {this.state.godChoices.map( item => {
-                                return <div>
-                                        <OverlayTrigger overlay={
-                                        <Tooltip>{item.toolTipData}</Tooltip>}>
-                                        <span className="d-inline-block">
-                                            <Dropdown.Item key={item.id} name={item.option}>{item.option}</Dropdown.Item>
-                                        </span>
-                                        </OverlayTrigger>
-                                    </div>
-                                
-                                })}
-                        </Dropdown.Menu>
-                    </Dropdown>
+                    <Form inline>
+                        <Dropdown onSelect={this.handleReligion}>
+                            <Dropdown.Toggle variant="outline-primary">
+                            {this.state.religion ? `Religion: ${this.state.religion}`: 'Choose Your Religious Philosophy'}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                {this.state.godChoices.map( item => {
+                                    return <div>
+                                            <OverlayTrigger overlay={
+                                            <Tooltip>{item.toolTipData}</Tooltip>}>
+                                            <span className="d-inline-block">
+                                                <Dropdown.Item key={item.id} name={item.option}>{item.option}</Dropdown.Item>
+                                            </span>
+                                            </OverlayTrigger>
+                                        </div>
+                                    
+                                    })}
+                            </Dropdown.Menu>
+                        </Dropdown>
+                        <RollBtn name="religion" handleRoll={this.handleRoll} rollingArray={this.state.godChoices.map(item => item.option)}></RollBtn>
+                    </Form>
 
                     <br></br>
 

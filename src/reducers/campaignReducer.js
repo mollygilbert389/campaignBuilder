@@ -98,7 +98,7 @@ export default function(state = initialState, action) {
         case SET_RELIGION:
           return {
             ...state,
-            religion: action.payload
+            [action.destination]: action.value
           }
         case SET_LANGUAGES:
           return {
