@@ -8,19 +8,22 @@ import "../style.css"
 class Government extends Component {
     state ={
         government: "",
-        currency: ""
+        currency: "",
+        currencyOptions: [
+            "Common Coinage",
+            "Common Coinage (No Electum)",
+            "Trade Bars",
+            "Barter System",
+            "Odd Currency",
+        ]
     }
 
-    governmentChoice = (eventKey, event) => {
+    handleDropSelect = (keyEvent, event) => {
+        const name = event.target.name
+        const feedback = event.target.text
         this.setState({
-            government: event.target.text
-        }, () => this.props.setGovernment(this.state.government))
-    }
-
-    currencyChoice = (eventKey, event) => {
-        this.setState({
-            currency: event.target.text
-        }, () => this.props.setCurrency(this.state.currency))
+            [event.target.name]: event.target.text
+        })
     }
 
     handleClick = () => {
@@ -48,7 +51,7 @@ render() {
                     
                     <br></br>
 
-                    <Dropdown onSelect={this.governmentChoice}>
+                    <Dropdown onSelect={this.handleDropSelect}>
                         <Dropdown.Toggle variant="outline-primary">
                         {this.state.government ? this.state.government: 'Choose Your Government'}
                         </Dropdown.Toggle>
@@ -58,7 +61,7 @@ render() {
                                     <OverlayTrigger overlay={
                                     <Tooltip>{item.description}</Tooltip>}>
                                     <span className="d-inline-block">
-                                    <Dropdown.Item key={item.id} name={item.name}>{item.name}</Dropdown.Item>
+                                        <Dropdown.Item key={item.id} name="government">{item.name}</Dropdown.Item>
                                     </span>
                                     </OverlayTrigger> 
                                 </div>
@@ -68,16 +71,12 @@ render() {
 
                     <br></br>
 
-                    <Dropdown onSelect={this.currencyChoice}>
+                    <Dropdown onSelect={this.handleDropSelect}>
                         <Dropdown.Toggle variant="outline-primary">
                         {this.state.currency ? this.state.currency: 'Choose Your Currency'}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                            <Dropdown.Item>Common Coinage</Dropdown.Item>
-                            <Dropdown.Item>Common Coinage (No Electum)</Dropdown.Item>
-                            <Dropdown.Item>Trade Bars</Dropdown.Item>
-                            <Dropdown.Item>Barter System</Dropdown.Item>
-                            <Dropdown.Item>Odd Currency</Dropdown.Item>
+                            {this.state.currencyOptions.map(item => {return <Dropdown.Item name="currency">{item}</Dropdown.Item>})}
                         </Dropdown.Menu>
                     </Dropdown>
 
