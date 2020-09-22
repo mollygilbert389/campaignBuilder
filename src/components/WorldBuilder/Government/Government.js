@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Languages from "./Languages"
 import governments from "./Govrenmnt.json";
-import {Button, Dropdown, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
+import RollBtn from "../../StaticComps/RollBtn"
+import {Button, Dropdown, FormControl, OverlayTrigger, Tooltip, Form} from 'react-bootstrap'
 import "../style.css"
 
 class Government extends Component {
@@ -15,7 +16,8 @@ class Government extends Component {
             "Trade Bars",
             "Barter System",
             "Odd Currency",
-        ]
+        ],
+        // governmentOptions: governments.map(item => item.name)
     }
 
     handleDropSelect = (keyEvent, event) => {
@@ -32,6 +34,13 @@ class Government extends Component {
         this.setState({
             showModal: !this.state.showModal,
         })
+    }
+
+    handleRoll = (feedback, name) => {
+        this.setState({
+            [name]: feedback
+        })
+        this.props.setGovernmentData(name, feedback)
     }
 
 
@@ -53,34 +62,39 @@ render() {
                     
                     <br></br>
 
-                    <Dropdown onSelect={this.handleDropSelect}>
-                        <Dropdown.Toggle variant="outline-primary">
-                        {this.state.government ? this.state.government: 'Choose Your Government'}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                            {governments.map(item => {
-                                return <div>
-                                    <OverlayTrigger overlay={
-                                    <Tooltip>{item.description}</Tooltip>}>
-                                    <span className="d-inline-block">
-                                        <Dropdown.Item key={item.id} name="government">{item.name}</Dropdown.Item>
-                                    </span>
-                                    </OverlayTrigger> 
-                                </div>
-                                })}       
-                        </Dropdown.Menu>
-                    </Dropdown>
-
+                    <Form inline>
+                        <Dropdown onSelect={this.handleDropSelect}>
+                            <Dropdown.Toggle variant="outline-primary">
+                            {this.state.government ? this.state.government: 'Choose Your Government'}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                {governments.map(item => {
+                                    return <div>
+                                        <OverlayTrigger overlay={
+                                        <Tooltip>{item.description}</Tooltip>}>
+                                        <span className="d-inline-block">
+                                            <Dropdown.Item key={item.id} name="government">{item.name}</Dropdown.Item>
+                                        </span>
+                                        </OverlayTrigger> 
+                                    </div>
+                                    })}       
+                            </Dropdown.Menu>
+                        </Dropdown>
+                        <RollBtn name="government" handleRoll={this.handleRoll} rollingArray={governments.map(item => item.name)}></RollBtn>
+                    </Form>
                     <br></br>
 
-                    <Dropdown onSelect={this.handleDropSelect}>
-                        <Dropdown.Toggle variant="outline-primary">
-                        {this.state.currency ? this.state.currency: 'Choose Your Currency'}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                            {this.state.currencyOptions.map(item => {return <Dropdown.Item name="currency">{item}</Dropdown.Item>})}
-                        </Dropdown.Menu>
-                    </Dropdown>
+                    <Form inline>
+                        <Dropdown onSelect={this.handleDropSelect}>
+                            <Dropdown.Toggle variant="outline-primary">
+                            {this.state.currency ? this.state.currency: 'Choose Your Currency'}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                {this.state.currencyOptions.map(item => {return <Dropdown.Item name="currency">{item}</Dropdown.Item>})}
+                            </Dropdown.Menu>
+                        </Dropdown>
+                        <RollBtn name="currency" handleRoll={this.handleRoll} rollingArray={this.state.currencyOptions}></RollBtn>
+                    </Form>
 
                     <Languages
                     campaign={this.props.campaign}

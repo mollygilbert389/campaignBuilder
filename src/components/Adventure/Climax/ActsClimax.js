@@ -62,12 +62,9 @@ class Acts extends Component {
                 }, () => this.props.setActsAndClimax("acts", this.state.acts))
                 break;
         }
-
-       
     }
 
     handleClimax = (event) => {
-        const name = event.target.name
         this.setState({
             climax: event.target.name
         }, () => this.props.setActsAndClimax("climax", this.state.climax))
