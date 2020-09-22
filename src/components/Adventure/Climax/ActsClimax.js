@@ -43,7 +43,7 @@ class Acts extends Component {
                     actsVarient2: "outline-primary", 
                     actsVarient3: "outline-primary",
                     acts: event.target.name
-                }, () => {this.props.setActs(this.state.acts)})
+                }, () => this.props.setActsAndClimax("acts", this.state.acts))
                 break;
             case "4":
                 this.setState({
@@ -51,7 +51,7 @@ class Acts extends Component {
                     actsVarient2: "primary", 
                     actsVarient3: "outline-primary",
                     acts: event.target.name 
-                }, () => {this.props.setActs(this.state.acts)})
+                }, () => this.props.setActsAndClimax("acts", this.state.acts))
                 break;
             case "5":
                 this.setState({
@@ -59,15 +59,18 @@ class Acts extends Component {
                     actsVarient2: "outline-primary", 
                     actsVarient3: "primary",
                     acts: event.target.name 
-                }, () => {this.props.setActs(this.state.acts)})
+                }, () => this.props.setActsAndClimax("acts", this.state.acts))
                 break;
         }
+
+       
     }
 
     handleClimax = (event) => {
+        const name = event.target.name
         this.setState({
             climax: event.target.name
-        }, () => {this.props.setClimax(this.state.climax)})
+        }, () => this.props.setActsAndClimax("climax", this.state.climax))
     }
 
 render() {  

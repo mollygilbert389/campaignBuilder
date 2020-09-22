@@ -1,17 +1,14 @@
 
 export const SET_CAMPAIGN_NAME = 'SET_CAMPAIGN_NAME' 
 export const SET_PLAYER_DATA = "SET_PLAYER_DATA"
-export const SET_GOVERNMENT = "SET_GOVERNMENT"
-export const SET_CURRENCY = "SET_CURRENCY"
-export const SET_WORLD = "SET_WORLD"
-export const SET_MAP_SCALE = "SET_MAP_SCALE"
-export const SET_CHAR_MEETING = "SET_CHAR_MEETING"
+export const SET_WORLD_DATA = "SET_WORLD_DATA"
+export const SET_GOVERNMENT_DATA = "SET_GOVERNMENT_DATA"
 export const SET_RELIGION = "SET_RELIGION"
 export const SET_LANGUAGES = "SET_LANGUAGES"
 export const SET_FACTION_ORGS = "SET_FACTION_ORGS"
-export const SET_ACTS = "SET_ACTS"
-export const SET_CLIMAX = "SET_CLIMAX"
+export const SET_ACTS_CLIMAX = "SET_ACTS_CLIMAX"
 export const SET_MAIN_GOAL = "SET_MAIN_GOAL"
+
 export const SET_PILLAR = "SET_PILLAR"
 export const SET_PATRON_NAME = "SET_PATRON_NAME"
 // export const SET_NPC_NUMBER = "SET_NPC_NUMBER"
@@ -23,7 +20,7 @@ export const SET_MONSTERS = "SET_MONSTERS"
 export const SET_ROOMS = "SET_ROOMS"
 export const SET_TREASURE_TYPE = "SET_TREASURE_TYPE"
 export const SET_TREASURE_NUMBER = "SET_TREASURE_NUMBER"
-export const SET_WORLD_DATA = "SET_WORLD_DATA"
+
 
 // export const SET_SIDE_QUESTS = "SET_SIDE_QUESTS"
 // export const SET_SETBACKS = "SET_SETBACKS"

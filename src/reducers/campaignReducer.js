@@ -1,17 +1,14 @@
 import {
   SET_CAMPAIGN_NAME,
   SET_PLAYER_DATA,
-  SET_GOVERNMENT,
-  SET_CURRENCY,
-  SET_WORLD,
-  SET_MAP_SCALE,
-  SET_CHAR_MEETING,
+  SET_WORLD_DATA,
+  SET_GOVERNMENT_DATA,
   SET_RELIGION,
   SET_LANGUAGES,
   SET_FACTION_ORGS,
-  SET_ACTS,
-  SET_CLIMAX,
+  SET_ACTS_CLIMAX,
   SET_MAIN_GOAL,
+
   SET_PILLAR,
   SET_PATRON_NAME,
   // SET_NPC_NUMBER,
@@ -22,8 +19,8 @@ import {
   SET_MONSTER_NUM,
   SET_MONSTERS,
   SET_TREASURE_TYPE,
-  SET_TREASURE_NUMBER, 
-  SET_WORLD_DATA
+  SET_TREASURE_NUMBER,
+ 
 
 } from '../actions/constant'
 
@@ -88,30 +85,15 @@ export default function(state = initialState, action) {
             ...state,
             playerData: action.payload
           }
-        case SET_GOVERNMENT:
+        case SET_WORLD_DATA: 
           return {
             ...state,
-            government: action.payload
+            [action.destination]: action.value
           }
-        case SET_CURRENCY:
+        case SET_GOVERNMENT_DATA: 
           return {
             ...state,
-            currency: action.payload
-          }
-        case SET_WORLD:
-          return {
-            ...state,
-            world: action.payload
-          }
-        case SET_MAP_SCALE:
-          return {
-            ...state,
-            mapScale: action.payload
-          }
-        case SET_CHAR_MEETING:
-          return {
-            ...state,
-            charMeeting: action.payload
+            [action.destination]: action.value
           }
         case SET_RELIGION:
           return {
@@ -128,15 +110,10 @@ export default function(state = initialState, action) {
             ...state,
             factionOrgs: action.payload
           }
-        case SET_ACTS:
+        case SET_ACTS_CLIMAX:
           return {
             ...state,
-            acts: action.payload
-          }
-        case SET_CLIMAX:
-          return {
-            ...state,
-            climax: action.payload
+            [action.destination]: action.value
           }
         case SET_MAIN_GOAL:
           return {
@@ -197,11 +174,6 @@ export default function(state = initialState, action) {
         return {
           ...state,
           treasureNum: action.payload  
-        }
-        case SET_WORLD_DATA: 
-        return {
-          ...state,
-          [action.destination]: action.value
         }
         // case SET_SIDE_QUESTS: 
         // return {

@@ -24,6 +24,8 @@ class Government extends Component {
         this.setState({
             [event.target.name]: event.target.text
         })
+        
+        this.props.setGovernmentData(name, feedback)
     }
 
     handleClick = () => {

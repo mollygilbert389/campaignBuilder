@@ -34,17 +34,14 @@ import FinalScreen from "../components/FinalCampaign/FinalScreen"
 import {
     setCampaignName,
     setPlayers, 
-    setGovernment,
-    setCurrency,
-    setWorld,
-    setMapScale,
-    setCharMeeting,
+    setWorldData,
+    setGovernmentData,
     setReligion,
     setLanguages,
     setFactionOrgs,
-    setActs,
-    setClimax,
+    setActsAndClimax,
     setMainGoal,
+
     setPillar,
     setPatronName,
     // setNPCNumber,
@@ -56,7 +53,7 @@ import {
     setMonsters, 
     setTreasureType, 
     setTreasureNumber, 
-    setWorldData
+    
     // setSideQuests, 
     // setSetbacks, 
     // setDungeonType, 
@@ -172,29 +169,14 @@ setPlayers = (playerData) => {
     onSetPlayers(playerData)
 }
 
-setGovernment = (type) => {
-    const{onSetGovernment}=this.props
-    onSetGovernment(type)
+setWorldData = (destination, value) => {
+    const{onSetWorldData}=this.props
+    onSetWorldData(destination, value)
 }
 
-setCurrency = (type) => {
-    const{onSetCurrency}=this.props
-    onSetCurrency(type)
-}
-
-setWorld = (type) => {
-    const{onSetWorld}=this.props
-    onSetWorld(type)
-}
-
-setMapScale = (type) => {
-    const{onSetMapScale}=this.props
-    onSetMapScale(type)
-}
-
-setCharMeeting = (place) => {
-    const{onSetCharMeeting}=this.props
-    onSetCharMeeting(place)
+setGovernmentData = (destinaton, value) => {
+    const{onSetGovernmentData}=this.props
+    onSetGovernmentData(destinaton, value)
 }
 
 setReligion = (type) => {
@@ -212,14 +194,9 @@ setFactionOrgs = (names) => {
     onSetFactionOrgs(names)
 }
 
-setActs = (number) => {
-    const{onSetActs}=this.props
-    onSetActs(number)
-}
-
-setClimax = (type) => {
-    const{onSetClimax}=this.props
-    onSetClimax(type)
+setActsAndClimax = (destination, value) => {
+    const{onSetActsAndClimx}=this.props
+    onSetActsAndClimx(destination, value)
 }
 
 setMainGoal = (type) => {
@@ -262,11 +239,6 @@ setRooms = (rooms) => {
     onSetRooms(rooms)
 }
 
-// setMonsterNum = (number) => {
-//     const{onSetMonsterNum}=this.props
-//     onSetMonsterNum(number)
-// }
-
 setMonsters = (type) => {
     const{onSetMonsters}=this.props
     onSetMonsters(type)
@@ -282,26 +254,8 @@ setTreasureNumber = (number) => {
     onSetTreasureNumber(number)
 }
 
-setWorldData = (destination, value) => {
-    const{onSetWorldData}=this.props
-    onSetWorldData(destination, value)
-}
 
 
-// setSideQuests = (sideQuests) => {
-//     const{onSetSideQuests}=this.props
-//     onSetSideQuests(sideQuests)
-// }
-
-// setSetbacks = (yesno) => {
-//     const{onSetSetbacks}=this.props
-//     onSetSetbacks(yesno)
-// }
-
-// setDungeonType = (type) => {
-//     const{onSetDungeonType}=this.props
-//     onSetDungeonType(type)
-// }
 
     render() {
         return (
@@ -338,9 +292,6 @@ setWorldData = (destination, value) => {
                     <div className="btnspace">
                         <Physical
                         setWorldData={this.setWorldData}
-                        // setWorld={this.setWorld}
-                        // setMapScale={this.setMapScale}
-                        // setCharMeeting={this.setCharMeeting}
                         ></Physical>
                         <Social
                         setFactionOrgs={this.setFactionOrgs}
@@ -348,9 +299,7 @@ setWorldData = (destination, value) => {
                         ></Social>
                         <Government
                         campaign={this.props.campaign} 
-                        setLanguages={this.setLanguages}
-                        setGovernment={this.setGovernment}
-                        setCurrency={this.setCurrency}
+                        setGovernmentData={this.setGovernmentData}
                         ></Government>
                         <Religion
                         setReligion={this.setReligion}
@@ -366,8 +315,7 @@ setWorldData = (destination, value) => {
                         setPillar={this.setPillar}
                         ></Pillar>
                         <ActsClimax
-                        setActs={this.setActs}
-                        setClimax={this.setClimax}
+                        setActsAndClimax={this.setActsAndClimax}
                         ></ActsClimax>
                         <MainGoals
                         setMainGoal={this.setMainGoal}
@@ -468,17 +416,14 @@ const mapStateToProps = (state) => {
 const mapDispatchtoProps = (dispatch) => ({
     onSetCampaignName: bindActionCreators(setCampaignName, dispatch),
     onSetPlayers: bindActionCreators(setPlayers, dispatch),
-    onSetGovernment: bindActionCreators(setGovernment, dispatch),
-    onSetCurrency: bindActionCreators(setCurrency, dispatch),
-    onSetWorld: bindActionCreators(setWorld, dispatch),
-    onSetMapScale: bindActionCreators(setMapScale, dispatch),
-    onSetCharMeeting: bindActionCreators(setCharMeeting, dispatch),
+    onSetWorldData: bindActionCreators(setWorldData, dispatch),
+    onSetGovernmentData: bindActionCreators(setGovernmentData, dispatch),
     onSetReligion: bindActionCreators(setReligion, dispatch),
     onSetLanguages: bindActionCreators(setLanguages, dispatch),
     onSetFactionOrgs: bindActionCreators(setFactionOrgs, dispatch),
-    onSetActs: bindActionCreators(setActs, dispatch),
-    onSetClimax: bindActionCreators(setClimax, dispatch),
+    onSetActsAndClimx: bindActionCreators(setActsAndClimax, dispatch),
     onSetMainGoal: bindActionCreators(setMainGoal, dispatch),
+
     onSetPillar: bindActionCreators(setPillar, dispatch),
     onSetPatronName: bindActionCreators(setPatronName, dispatch),
     // onSetNPCNumber: bindActionCreators(setNPCNumber, dispatch),
@@ -490,7 +435,7 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetMonsters: bindActionCreators(setMonsters, dispatch),
     onSetTreasureType: bindActionCreators(setTreasureType, dispatch),
     onSetTreasureNumber: bindActionCreators(setTreasureNumber, dispatch),
-    onSetWorldData: bindActionCreators(setWorldData, dispatch),
+    
     // onSetSideQuests: bindActionCreators(setSideQuests, dispatch),
     // onSetSetbacks: bindActionCreators(setSetbacks, dispatch),
     // onSetDungeonType: bindActionCreators(setDungeonType, dispatch),

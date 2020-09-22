@@ -1,17 +1,14 @@
 import {
     SET_CAMPAIGN_NAME,
     SET_PLAYER_DATA,
-    SET_GOVERNMENT,
-    SET_CURRENCY,
-    SET_WORLD,
-    SET_MAP_SCALE,
-    SET_CHAR_MEETING,
+    SET_WORLD_DATA,
+    SET_GOVERNMENT_DATA,
     SET_RELIGION,
     SET_LANGUAGES,
     SET_FACTION_ORGS,
-    SET_ACTS,
-    SET_CLIMAX,
+    SET_ACTS_CLIMAX,
     SET_MAIN_GOAL,
+
     SET_PILLAR,
     SET_PATRON_NAME,
     // SET_NPC_NUMBER,
@@ -23,7 +20,7 @@ import {
     SET_MONSTERS,
     SET_TREASURE_TYPE, 
     SET_TREASURE_NUMBER,
-    SET_WORLD_DATA
+ 
 
     // SET_SIDE_QUESTS,
     // SET_SETBACKS,
@@ -41,14 +38,10 @@ export const setPlayers = (playerData) => ({
     payload: playerData
 })
 
-export const setGovernment = (type) => ({
-    type: SET_GOVERNMENT,
-    payload: type
-}) 
-
-export const setCurrency = (type) => ({
-    type: SET_CURRENCY,
-    payload: type
+export const setGovernmentData = (destination, value) => ({
+    type: SET_GOVERNMENT_DATA,
+    destination,
+    value
 })
 
 export const setWorldData = (destination, value) => ({
@@ -57,20 +50,6 @@ export const setWorldData = (destination, value) => ({
     value
 })
 
-export const setWorld = (type) => ({
-    type: SET_WORLD,
-    payload: type
-}) 
-
-export const setMapScale = (type) => ({
-    type: SET_MAP_SCALE,
-    payload: type
-}) 
-
-export const setCharMeeting = (place) => ({
-    type: SET_CHAR_MEETING,
-    payload: place
-})
 
 export const setReligion = (type) => ({
     type: SET_RELIGION,
@@ -87,15 +66,11 @@ export const setFactionOrgs = (names) => ({
     payload: names
 })
 
-export const setActs = (number) => ({
-    type: SET_ACTS,
-    payload: number
+export const setActsAndClimax = (destination, value) => ({
+    type: SET_ACTS_CLIMAX,
+    destination,
+    value
 })
-
-export const setClimax = (type) => ({
-    type: SET_CLIMAX,
-    payload: type
-}) 
 
 export const setMainGoal = (type) => ({
     type: SET_MAIN_GOAL,
