@@ -22,7 +22,8 @@ import {
   SET_MONSTER_NUM,
   SET_MONSTERS,
   SET_TREASURE_TYPE,
-  SET_TREASURE_NUMBER
+  SET_TREASURE_NUMBER, 
+  SET_WORLD_DATA
 
 } from '../actions/constant'
 
@@ -35,6 +36,8 @@ const initialState = {
     mapScale: "",
     charMeeting: "",
     religion: "",
+    era: "",
+    uniqueFeature: "",
     languages: [
       "Celestial",
       "Common",
@@ -194,6 +197,11 @@ export default function(state = initialState, action) {
         return {
           ...state,
           treasureNum: action.payload  
+        }
+        case SET_WORLD_DATA: 
+        return {
+          ...state,
+          [action.destination]: action.value
         }
         // case SET_SIDE_QUESTS: 
         // return {

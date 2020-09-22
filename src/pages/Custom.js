@@ -55,7 +55,8 @@ import {
     setMonsterNum, 
     setMonsters, 
     setTreasureType, 
-    setTreasureNumber
+    setTreasureNumber, 
+    setWorldData
     // setSideQuests, 
     // setSetbacks, 
     // setDungeonType, 
@@ -281,6 +282,12 @@ setTreasureNumber = (number) => {
     onSetTreasureNumber(number)
 }
 
+setWorldData = (destination, value) => {
+    const{onSetWorldData}=this.props
+    onSetWorldData(destination, value)
+}
+
+
 // setSideQuests = (sideQuests) => {
 //     const{onSetSideQuests}=this.props
 //     onSetSideQuests(sideQuests)
@@ -330,9 +337,10 @@ setTreasureNumber = (number) => {
                     <p>Now we need to start planning your world. Use the buttons below to make some of those decsions.</p>
                     <div className="btnspace">
                         <Physical
-                        setWorld={this.setWorld}
-                        setMapScale={this.setMapScale}
-                        setCharMeeting={this.setCharMeeting}
+                        setWorldData={this.setWorldData}
+                        // setWorld={this.setWorld}
+                        // setMapScale={this.setMapScale}
+                        // setCharMeeting={this.setCharMeeting}
                         ></Physical>
                         <Social
                         setFactionOrgs={this.setFactionOrgs}
@@ -482,6 +490,7 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetMonsters: bindActionCreators(setMonsters, dispatch),
     onSetTreasureType: bindActionCreators(setTreasureType, dispatch),
     onSetTreasureNumber: bindActionCreators(setTreasureNumber, dispatch),
+    onSetWorldData: bindActionCreators(setWorldData, dispatch),
     // onSetSideQuests: bindActionCreators(setSideQuests, dispatch),
     // onSetSetbacks: bindActionCreators(setSetbacks, dispatch),
     // onSetDungeonType: bindActionCreators(setDungeonType, dispatch),

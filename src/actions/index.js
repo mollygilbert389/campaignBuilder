@@ -23,6 +23,7 @@ import {
     SET_MONSTERS,
     SET_TREASURE_TYPE, 
     SET_TREASURE_NUMBER,
+    SET_WORLD_DATA
 
     // SET_SIDE_QUESTS,
     // SET_SETBACKS,
@@ -48,6 +49,12 @@ export const setGovernment = (type) => ({
 export const setCurrency = (type) => ({
     type: SET_CURRENCY,
     payload: type
+})
+
+export const setWorldData = (destination, value) => ({
+    type: SET_WORLD_DATA,
+    destination,
+    value
 })
 
 export const setWorld = (type) => ({

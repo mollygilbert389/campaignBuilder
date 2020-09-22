@@ -245,7 +245,7 @@ class NPCCard extends Component {
 render() {  
     return (
         <div>
-            <Card className="changeOverFlow d-flex flex-column align-items-center color">
+            <Card className="changeOverflow d-flex flex-column align-items-center color">
                 <Card.Img className="NPCimage" variant="top" src="https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg"/>
                 <Card.Body className="d-flex flex-column align-items-center">
                     <Card.Title>{!this.state.NPCName ? `NPC # ${this.props.name}` : `${this.state.NPCName}`}</Card.Title>

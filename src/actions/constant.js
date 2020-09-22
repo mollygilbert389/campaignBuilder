@@ -23,6 +23,7 @@ export const SET_MONSTERS = "SET_MONSTERS"
 export const SET_ROOMS = "SET_ROOMS"
 export const SET_TREASURE_TYPE = "SET_TREASURE_TYPE"
 export const SET_TREASURE_NUMBER = "SET_TREASURE_NUMBER"
+export const SET_WORLD_DATA = "SET_WORLD_DATA"
 
 // export const SET_SIDE_QUESTS = "SET_SIDE_QUESTS"
 // export const SET_SETBACKS = "SET_SETBACKS"
