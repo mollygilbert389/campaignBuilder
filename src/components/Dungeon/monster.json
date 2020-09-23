@@ -1,0 +1,1913 @@
+[
+    {
+    "id": 1,
+    "name": "Aarakocra",
+    "category": "Humanoid",
+    "subCategory": "",
+    "type" : "Medium Humanoid",
+    "area" : ["Forest", "Coast", "Island", "Desert", "Tundra"],
+    "ideal": "neutal good"
+    },
+    {
+    "id": 2,
+    "name": "Aboleth",
+    "category": "Aberration",
+    "subCategory": "",
+    "type" : "Large Aberration",
+    "area" : ["Coast", "Island", "Tundra"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 3,
+    "name": "Deva",
+    "category": "Celestial",
+    "subCategory": "Angel",
+    "type" : "Medium Celestial",
+    "area" : ["Any"],
+    "ideal": "lawful good"
+    },
+    {
+    "id": 4,
+    "name": "Planetar",
+    "category": "Celestial",
+    "subCategory": "Angel",
+    "type" : "Large Celestial",
+    "area" : ["Any"],
+    "ideal": "lawful good"
+    },
+    {
+    "id": 5,
+    "name": "Solar",
+    "category": "Celestial",
+    "subCategory": "Angel",
+    "type" : "Large Celestial",
+    "area" : ["Any"],
+    "ideal": "lawful good"
+    },
+    {
+    "id": 6,
+    "name": "Animated Armor",
+    "category": "Construct",
+    "subCategory": "Animated Object",
+    "type" : "Medium Construct",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 7,
+    "name": "Flying Sword",
+    "category": "Construct",
+    "subCategory": "Animated Object",
+    "type" : "Small Construct",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 8,
+    "name": "Rug of Smothering",
+    "category": "Construct",
+    "subCategory": "Animated Object",
+    "type" : "Large Construct",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 9,
+    "name": "Ankheg",
+    "category": "Monstrocity",
+    "subCategory": "",
+    "type" : "Large Monstrocity",
+    "area" : ["Forest, Jungle"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 10,
+    "name": "Azer",
+    "category": "Elemental",
+    "subCategory": "",
+    "type" : "Medium Elemental",
+    "area" : ["Desert"],
+    "ideal": "lawful neutral"
+    },
+    {
+    "id": 11,
+    "name": "Banshee",
+    "category": "Undead",
+    "subCategory": "",
+    "type" : "Medium Undead",
+    "area" : ["Any"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 12,
+    "name": "Basilisk",
+    "category": "Monstrocity",
+    "subCategory": "",
+    "type" : "Medium Monstrocity",
+    "area" : ["Jungle", "Forest", "Coast", "Desert", "Island", "Tundra"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 13,
+    "name": "Behir",
+    "category": "Monstrocity",
+    "subCategory": "",
+    "type" : "Huge Monstrocity",
+    "area" : ["Cave"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 14,
+    "name": "Beholder",
+    "category": "Abberation",
+    "subCategory": "Beholder",
+    "type" : "Large Abberation",
+    "area" : ["Ruins", "Cave"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 15,
+    "name": "Death Tyrant",
+    "category": "Undead",
+    "subCategory": "Beholder",
+    "type" : "Large Undead",
+    "area" : ["Ruins", "Cave"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 16,
+    "name": "Spectator",
+    "category": "Abberation",
+    "subCategory": "Beholder",
+    "type" : "Medium Abberation",
+    "area" : ["Any"],
+    "ideal": "lawful neutral"
+    },
+    {
+    "id": 17,
+    "name": "Needle Blight",
+    "category": "Plant",
+    "subCategory": "Blight",
+    "type" : "Medium Plant",
+    "area" : ["Forest", "Jungle", "Ruins"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 18,
+    "name": "Twig Blight",
+    "category": "Plant",
+    "subCategory": "Blight",
+    "type" : "Small Plant",
+    "area" : ["Forest", "Ruins"],
+    "ideal": "Neutral Evil"
+    },
+    {
+    "id": 19,
+    "name": "Vine Blight",
+    "category": "Plant",
+    "subCategory": "Blight",
+    "type" : "Medium Plant",
+    "area" : ["Forest", "Ruins", "Jungle"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 20,
+    "name": "Bugbear",
+    "category": "Humanoid",
+    "subCategory": "",
+    "type" : "Medium Humanoid",
+    "area" : ["Cave", "Ruins", "Village"],
+    "ideal": "Chaotic Evil"
+    },
+    {
+    "id": 22,
+    "name": "Bulette",
+    "category": "Monstrocity",
+    "subCategory": "",
+    "type" : "Large Monstrocity",
+    "area" : ["Cave"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 23,
+    "name": "Bullywug",
+    "category": "Humanoid",
+    "subCategory": "",
+    "type" : "Medium Humanoid",
+    "area" : ["Swamp"],
+    "ideal": "neutral evil"
+    },
+
+    {
+    "id": 24,
+    "name": "Cambion",
+    "category": "Fiend",
+    "subCategory": "",
+    "type" : "Medium Fiend",
+    "area" : ["Any"],
+    "ideal": "any evil alignement"
+    },
+
+    {
+    "id": 25,
+    "name": "Carrion Crawler",
+    "category": "Monstrocity",
+    "subCategory": "",
+    "type" : "Large Monstrocity",
+    "area" : ["Ruins", "Cave"],
+    "ideal": "unaligned"
+    },
+
+    {
+    "id": 26,
+    "name": "Centaur",
+    "category": "Monstrocity",
+    "subCategory": "",
+    "type" : "Large Monstrocity",
+    "area" : ["Forest", "Jungle", "Ruins"],
+    "ideal": "neutral good"
+    },
+
+    {
+    "id": 27,
+    "name": "Chimera",
+    "category": "Monstrocity",
+    "subCategory": "",
+    "type" : "Large Monstrocity",
+    "area" : ["Cave", "Ruins", "Forest", "Jungle"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 28,
+    "name": "Chuul",
+    "category": "Abberation",
+    "subCategory": "",
+    "type" : "Large Abberation",
+    "area" : ["Coast"],
+    "ideal": "chaotic evil"
+    },
+
+    {
+    "id": 29,
+    "name": "Cloaker",
+    "category": "Abberation",
+    "subCategory": "",
+    "type" : "Large Abberation",
+    "area" : ["Cave"],
+    "ideal": "chaotic neutral"
+    },
+
+    {
+    "id": 30,
+    "name": "Cockatrice",
+    "category": "Monstrocity",
+    "subCategory": "",
+    "type" : "Small Monstrocity",
+    "area" : ["Cave", "Forest", "Jungle"],
+    "ideal": "unaligned"
+    },
+
+    {
+    "id": 31,
+    "name": "Couatl",
+    "category": "Celestial",
+    "subCategory": "",
+    "type" : "Medium Celestial",
+    "area" : ["Ruins"],
+    "ideal": "lawful good"
+    },
+
+    {
+    "id": 32,
+    "name": "Crawling Claw",
+    "category": "Undead",
+    "subCategory": "",
+    "type" : "Tiny Undead",
+    "area" : ["Any", "Magical"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 33,
+    "name": "Cyclops",
+    "category": "Giant",
+    "subCategory": "",
+    "type" : "Huge Giant",
+    "area" : ["Forest", "Jungle", "Cave", "Ruins"],
+    "ideal": "chaotic neutral"
+    },
+
+    {
+    "id": 34,
+    "name": "Darkmantle",
+    "category": "Monstrocity",
+    "subCategory": "",
+    "type" : "Small Monstrocity",
+    "area" : ["Cave"],
+    "ideal": "unaligned"
+    },
+
+    {
+    "id": 35,
+    "name": "Death Knight",
+    "category": "Undead",
+    "subCategory": "",
+    "type" : "Medium Undead",
+    "area" : ["Any"],
+    "ideal": "chaotic evil"
+    },
+
+    {
+    "id": 36,
+    "name": "Demilich",
+    "category": "Undead",
+    "subCategory": "",
+    "type" : "Tiny Undead",
+    "area" : ["Tomb", "Cave"],
+    "ideal": "neutral evil"
+    },
+
+    {
+    "id": 37,
+    "name": "Balor",
+    "category": "Fiend",
+    "subCategory": "Demon",
+    "type" : "Huge Fiend",
+    "area" : ["Valcano"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 38,
+    "name": "Balgura",
+    "category": "Fiend",
+    "subCategory": "Demon",
+    "type" : "Lard Fiend",
+    "area" : ["Valcano"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 39,
+    "name": "Chasme",
+    "category": "Fiend",
+    "subCategory": "Demon",
+    "type" : "Large Fiend",
+    "area" : ["Valcano"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 40,
+    "name": "Dretch",
+    "category": "Fiend",
+    "subCategory": "Demon",
+    "type" : "Small Fiend",
+    "area" : ["Volcano"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 41,
+    "name": "Glabrezu",
+    "category": "Fiend",
+    "subCategory": "Demon",
+    "type" : "Large Fiend",
+    "area" : ["Volcano"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 42,
+    "name": "Goristro",
+    "category": "Fiend",
+    "subCategory": "Demon",
+    "type" : "Huge Fiend",
+    "area" : ["Volcano"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 43,
+    "name": "Hezrou",
+    "category": "Fiend",
+    "subCategory": "Demon",
+    "type" : "Large Fiend",
+    "area" : ["Volcano"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 44,
+    "name": "Manes",
+    "category": "Fiend",
+    "subCategory": "Demon",
+    "type" : "Small Fiend",
+    "area" : ["Valcano"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 45,
+    "name": "Marlilith",
+    "category": "Fiend",
+    "subCategory": "Demon",
+    "type" : "Large Fiend",
+    "area" : ["Volcano"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 46,
+    "name": "Nalfeshnee",
+    "category": "Fiend",
+    "subCategory": "Demon",
+    "type" : "Large Fiend",
+    "area" : ["Volcano"],
+    "ideal": "Chaotic Evil"
+    },
+    {
+    "id": 47,
+    "name": "Quasit",
+    "category": "Fiend",
+    "subCategory": "Demon",
+    "type" : "Tiny Fiend",
+    "area" : ["Volcano"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 48,
+    "name": "Shadow Demon",
+    "category": "Fiend",
+    "subCategory": "Demon",
+    "type" : "Medium Fiend",
+    "area" : ["Volcano"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 49,
+    "name": "Vrock",
+    "category": "Fiend",
+    "subCategory": "Demon",
+    "type" : "Large Fiend",
+    "area" : ["Volcano"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 50,
+    "name": "Yochlol",
+    "category": "Fiend",
+    "subCategory": "Demon",
+    "type" : "Medium Fiend",
+    "area" : ["Volcano"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 51,
+    "name": "Barbed Devil",
+    "category": "Fiend",
+    "subCategory": "Devil",
+    "type" : "Medium Fiend",
+    "area" : ["Volcano"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 52,
+    "name": "Bearded Devil",
+    "category": "Fiend",
+    "subCategory": "Devil",
+    "type" : "Medium Fiend",
+    "area" : ["Volcano"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 53,
+    "name": "Bone Devil",
+    "category": "Fiend",
+    "subCategory": "Devil",
+    "type" : "Large Fiend",
+    "area" : ["Volcano"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 54,
+    "name": "Chain Devil",
+    "category": "Fiend",
+    "subCategory": "Devil",
+    "type" : "Medium Fiend",
+    "area" : ["Volcano"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 55,
+    "name": "Erinyes",
+    "category": "Fiend",
+    "subCategory": "Devil",
+    "type" : "Medium Fiend",
+    "area" : ["Volcano"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 56,
+    "name": "Horned Devil",
+    "category": "Fiend",
+    "subCategory": "Devil",
+    "type" : "Large Fiend",
+    "area" : ["Volcano"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 57,
+    "name": "Ice Devil",
+    "category": "Fiend",
+    "subCategory": "Devil",
+    "type" : "Large Fiend",
+    "area" : ["Tundra"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 58,
+    "name": "Imp",
+    "category": "Fiend",
+    "subCategory": "Devil",
+    "type" : "Tiny Fiend",
+    "area" : ["Volcano"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 59,
+    "name": "Lemure",
+    "category": "Fiend",
+    "subCategory": "Devil",
+    "type" : "Medium Fiend",
+    "area" : ["Volcano"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 60,
+    "name": "Pit Fiend",
+    "category": "Fiend",
+    "subCategory": "Devil",
+    "type" : "Large Fiend",
+    "area" : ["Volcano"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 61,
+    "name": "Spined Devil",
+    "category": "Fiend",
+    "subCategory": "Devil",
+    "type" : "Small Fiend",
+    "area" : ["Volcano"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 61,
+    "name": "Allosaurus",
+    "category": "Beast",
+    "subCategory": "Dinosaur",
+    "type" : "Large Beast",
+    "area" : ["Forest", "Jungle", "Ruins", "Cave"],
+    "ideal": "Unaligned"
+    },
+    {
+    "id": 63,
+    "name": "Ankylosaurus",
+    "category": "Beast",
+    "subCategory": "Dinosaur",
+    "type" : "Huge Beast",
+    "area" : ["Forest", "Jungle", "Ruins", "Cave"],
+    "ideal": "Unaligned"
+    },
+    {
+    "id": 64,
+    "name": "Plesiosaurus",
+    "category": "Beast",
+    "subCategory": "Dinosaur",
+    "type" : "Large Beast",
+    "area" : ["Water" , "Coast", "Lake"],
+    "ideal": "Unaligned"
+    },
+    {
+    "id": 65,
+    "name": "Triceratops",
+    "category": "Beast",
+    "subCategory": "Dinosaur",
+    "type" : "Huge Beast",
+    "area" : ["Forest", "Jungle", "Ruins", "Cave"],
+    "ideal": "Unaligned"
+    },
+    {
+    "id": 66,
+    "name": "Pteranodon",
+    "category": "Beast",
+    "subCategory": "Dinosaur",
+    "type" : "Medium Beast",
+    "area" : ["Forest", "Jungle", "Ruins", "Cave"],
+    "ideal": "Unaligned"
+    },
+    {
+    "id": 67,
+    "name": "Tyrannosaurus Rex",
+    "category": "Beast",
+    "subCategory": "Dinosaur",
+    "type" : "Huge Beast",
+    "area" : ["Forest", "Jungle", "Ruins", "Cave"],
+    "ideal": "Unaligned"
+    },
+    {
+    "id": 68,
+    "name": "Displacer Beast",
+    "category": "Monstrocity",
+    "subCategory": "",
+    "type" : "Large Monstrocity",
+    "area" : ["Forest", "Jungle", "Cave", "Tundra"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 69,
+    "name": "Doppleganger",
+    "category": "Monstrocity",
+    "subCategory": "",
+    "type" : "Medium Monstrocity",
+    "area" : ["Any"],
+    "ideal": "neutral"
+    },
+    {
+    "id": 70,
+    "name": "Adult Blue Dracolich",
+    "category": "Undead",
+    "subCategory": "Dragon",
+    "type" : "Huge Undead",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 71,
+    "name": "Young Red Shadow Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Large Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 72,
+    "name": "Ancient Black Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Gargantuan Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 73,
+    "name": "Adult Black Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Huge Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 74,
+    "name": "Young Black Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Large Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 75,
+    "name": "Black Dragon Wyrmling",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Medium Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 76,
+    "name": "Ancient Blue Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Gargantuan Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 77,
+    "name": "Adult Blue Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Huge Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 78,
+    "name": "Young Blue Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Large Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 79,
+    "name": "Blue Dragon Wyrmling",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Medium Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 80,
+    "name": "Ancient Green Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Gargantuan Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 81,
+    "name": "Adult Green Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Huge Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 82,
+    "name": "Young Green Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Large Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 83,
+    "name": "Green Dragon Wyrmling",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Medium Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 84,
+    "name": "Ancient Red Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Gargantuan Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 85,
+    "name": "Adult Red Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Huge Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 86,
+    "name": "Young Red Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Large Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 87,
+    "name": "Red Dragon Wyrmling",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Medium Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 88,
+    "name": "Ancient White Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Gargantuan Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 89,
+    "name": "Adult White Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Huge Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 90,
+    "name": "Young White Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Large Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 91,
+    "name": "White Dragon Wyrmling",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Medium Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 92,
+    "name": "Ancient Brass Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Gargantuan Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic good"
+    },
+    {
+    "id": 93,
+    "name": "Adult Brass Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Huge Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic good"
+    },
+    {
+    "id": 94,
+    "name": "Young Brass Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Large Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic good"
+    },
+    {
+    "id": 95,
+    "name": "Brass Dragon Wyrmling",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Medium Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic good"
+    },
+    {
+    "id": 96,
+    "name": "Ancient Bronze Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Gargantuan Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful good"
+    },
+    {
+    "id": 97,
+    "name": "Adult Bronze Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Huge Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful good"
+    },
+    {
+    "id": 98,
+    "name": "Young Bronze Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Large Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful good"
+    },
+    {
+    "id": 99,
+    "name": "Bronze Dragon Wyrmling",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Medium Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful good"
+    },
+    {
+    "id": 100,
+    "name": "Ancient Copper Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Gargantuan Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic good"
+    },
+    {
+    "id": 101,
+    "name": "Adult Copper Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Huge Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic good"
+    },
+    {
+    "id": 102,
+    "name": "Young Copper Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Large Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic good"
+    },
+    {
+    "id": 103,
+    "name": "Copper Dragon Wyrmling",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Medium Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "chaotic good"
+    },
+    {
+    "id": 104,
+    "name": "Ancient Gold Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Gargantuan Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful good"
+    },
+    {
+    "id": 105,
+    "name": "Adult Gold Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Huge Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful good"
+    },
+    {
+    "id": 106,
+    "name": "Young Gold Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Large Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful good"
+    },
+    {
+    "id": 107,
+    "name": "Gold Dragon Wyrmling",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Medium Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful good"
+    },
+    {
+    "id": 108,
+    "name": "Ancient Silver Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Gargantuan Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful good"
+    },
+    {
+    "id": 109,
+    "name": "Adult Silver Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Huge Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful good"
+    },
+    {
+    "id": 110,
+    "name": "Young Silver Dragon",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Large Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful good"
+    },
+    {
+    "id": 111,
+    "name": "Silver Dragon Wyrmling",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Medium Dragon",
+    "area" : ["Forest, Ruins, Cave"],
+    "ideal": "lawful good"
+    },
+    {
+    "id": 112,
+    "name": "Dragon Turtle",
+    "category": "Dragon",
+    "subCategory": "Dragon",
+    "type" : "Gargantuan Dragon",
+    "area" : ["Coast", "Lake"],
+    "ideal": "neutral"
+    },
+    {
+    "id": 113,
+    "name": "Drider",
+    "category": "Monstrocity",
+    "subCategory": "",
+    "type" : "Large Monstrocity",
+    "area" : ["Cave"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 114,
+    "name": "Dryad",
+    "category": "Fey",
+    "subCategory": "",
+    "type" : "Medium Fey",
+    "area" : ["Forest", "Jungle"],
+    "ideal": "neutral"
+    },
+    {
+    "id": 115,
+    "name": "Dueragr",
+    "category": "Humanoid",
+    "subCategory": "",
+    "type" : "Medium Humanoid",
+    "area" : ["Tundra"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 116,
+    "name": "Air Elemental",
+    "category": "Elemental",
+    "subCategory": "Elemental",
+    "type" : "Large Elemental",
+    "area" : ["Any"],
+    "ideal": "neutral"
+    },
+    {
+    "id": 117,
+    "name": "Earth Elemental",
+    "category": "Elemental",
+    "subCategory": "Elemental",
+    "type" : "Large Elemental",
+    "area" : ["Any"],
+    "ideal": "neutral"
+    },
+    {
+    "id": 118,
+    "name": "Fire Elemental",
+    "category": "Elemental",
+    "subCategory": "Elemental",
+    "type" : "Large Elemental",
+    "area" : ["Any"],
+    "ideal": "neutral"
+    },
+    {
+    "id": 119,
+    "name": "Water Elemental",
+    "category": "Elemental",
+    "subCategory": "Elemental",
+    "type" : "Large Elemental",
+    "area" : ["Any"],
+    "ideal": "neutral"
+    },
+    {
+    "id": 120,
+    "name": "Drow",
+    "category": "Humanoid",
+    "subCategory": "Elf",
+    "type" : "Medium Humanoid",
+    "area" : ["Cave"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 121,
+    "name": "Drow Elite Warrior",
+    "category": "Humanoid",
+    "subCategory": "Elf",
+    "type" : "Medium Humanoid",
+    "area" : ["Cave"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 122,
+    "name": "Drow Mage",
+    "category": "Humanoid",
+    "subCategory": "Elf",
+    "type" : "Medium Humanoid",
+    "area" : ["Cave"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 123,
+    "name": "Drow Priestess of Lolth",
+    "category": "Humanoid",
+    "subCategory": "Elf",
+    "type" : "Medium Humanoid",
+    "area" : ["Cave"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 124,
+    "name": "Empyrean",
+    "category": "Celestial",
+    "subCategory": "Titan",
+    "type" : "Huge Celestial",
+    "area" : ["Any"],
+    "ideal": "chaotic good"
+    },
+    {
+    "id": 125,
+    "name": "Ettercap",
+    "category": "Monstrocity",
+    "subCategory": "",
+    "type" : "Medium Monstrocity",
+    "area" : ["Any"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 126,
+    "name": "Ettin",
+    "category": "Giant",
+    "subCategory": "",
+    "type" : "Large Giant",
+    "area" : ["Forest", "Jungle", "Tundra", "Desert"],
+    "ideal": ""
+    },
+    {
+    "id": 127,
+    "name": "Faerie Dragon",
+    "category": "Dragon",
+    "subCategory": "",
+    "type" : "Tiny Dragon",
+    "area" : ["Any"],
+    "ideal": "chaotic good"
+    },
+    {
+    "id": 128,
+    "name": "Flameskull",
+    "category": "Undead",
+    "subCategory": "",
+    "type" : "Tiny Undead",
+    "area" : ["Cave", "Ruins"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 129,
+    "name": "Flumph",
+    "category": "Abberation",
+    "subCategory": "",
+    "type" : "Small Abberation",
+    "area" : ["Cave"],
+    "ideal": "lawful good"
+    },
+    {
+    "id": 130,
+    "name": "Fomorian",
+    "category": "Giant",
+    "subCategory": "",
+    "type" : "Huge Giant",
+    "area" : ["Cave"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 130,
+    "name": "Gas Spore",
+    "category": "Plant",
+    "subCategory": "Fungi",
+    "type" : "Large Plant",
+    "area" : ["Forest", "Jungle", "Cave", "Ruin"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 131,
+    "name": "Shrieker",
+    "category": "Plant",
+    "subCategory": "Fungi",
+    "type" : "Medium Plant",
+    "area" : ["Forest", "Jungle", "Cave", "Ruin"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 132,
+    "name": "Violet Fungus",
+    "category": "Plant",
+    "subCategory": "Fungi",
+    "type" : "Medium Plant",
+    "area" : ["Forest", "Jungle", "Cave", "Ruin"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 133,
+    "name": "Galeb Duhr",
+    "category": "Elemental",
+    "subCategory": "",
+    "type" : "Medium Elemental",
+    "area" : ["Moutains", "Tundra", "Forest"],
+    "ideal": ""
+    },
+    {
+    "id": 134,
+    "name": "Gargoyle",
+    "category": "Elemental",
+    "subCategory": "",
+    "type" : "Medium Elemental",
+    "area" : ["Ruins"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 135,
+    "name": "Dao",
+    "category": "Elemtnal",
+    "subCategory": "Genie",
+    "type" : "Large Elemental",
+    "area" : ["Any"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 136,
+    "name": "Djinni",
+    "category": "Elemtnal",
+    "subCategory": "Genie",
+    "type" : "Large Elemental",
+    "area" : ["Any"],
+    "ideal": "chaotic good"
+    },
+    {
+    "id": 137,
+    "name": "Efreeti",
+    "category": "Elemtnal",
+    "subCategory": "Genie",
+    "type" : "Large Elemental",
+    "area" : ["Any"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 138,
+    "name": "Marid",
+    "category": "Elemtnal",
+    "subCategory": "Genie",
+    "type" : "Large Elemental",
+    "area" : ["Any"],
+    "ideal": "chaotic neutral"
+    },
+    {
+    "id": 139,
+    "name": "Ghost",
+    "category": "Undead",
+    "subCategory": "",
+    "type" : "Medium Undead",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 140,
+    "name": "Ghast",
+    "category": "Undead",
+    "subCategory": "Ghoul",
+    "type" : "Medium Undead",
+    "area" : ["Forest", "Swamp", "Jungle", "Cave", "Ruins"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 141,
+    "name": "Ghoul",
+    "category": "Undead",
+    "subCategory": "Ghoul",
+    "type" : "Medium Undead",
+    "area" : ["Forest", "Swamp", "Jungle", "Cave", "Ruins"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 142,
+    "name": "Cloud Giant",
+    "category": "Giant",
+    "subCategory": "Giant",
+    "type" : "Huge Giant",
+    "area" : ["Any"],
+    "ideal": "neutral good"
+    },
+    {
+    "id": 143,
+    "name": "Fire Giant",
+    "category": "Giant",
+    "subCategory": "Giant",
+    "type" : "Huge Giant",
+    "area" : ["Desert", "Volcano"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 144,
+    "name": "Frost Giant",
+    "category": "Giant",
+    "subCategory": "Giant",
+    "type" : "Huge Giant",
+    "area" : ["Tundra"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 145,
+    "name": "Hill Giant",
+    "category": "Giant",
+    "subCategory": "Giant",
+    "type" : "Huge Giant",
+    "area" : ["Forest", "Swamp", "Jungle", "Cave", "Ruins"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 146,
+    "name": "Stone Giant",
+    "category": "Giant",
+    "subCategory": "Giant",
+    "type" : "Huge Giant",
+    "area" : ["Forest", "Desert", "Jungle", "Cave", "Ruins"],
+    "ideal": "neutral"
+    },
+    {
+    "id": 147,
+    "name": "Storm Giant",
+    "category": "Giant",
+    "subCategory": "Giant",
+    "type" : "Huge Giant",
+    "area" : ["Forest", "Swamp", "Jungle", "Cave", "Ruins"],
+    "ideal": "chaotic good"
+    },
+    {
+    "id": 148,
+    "name": "Gibberubg Mouther",
+    "category": "Aberration",
+    "subCategory": "",
+    "type" : "Medium Abberation",
+    "area" : ["Cave"],
+    "ideal": "neutral"
+    },
+    {
+    "id": 149,
+    "name": "Githyanki Warrior",
+    "category": "Humanoid",
+    "subCategory": "Gith",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 150,
+    "name": "Githyanki Knight",
+    "category": "Humanoid",
+    "subCategory": "Gith",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 151,
+    "name": "Githyanki Monk",
+    "category": "Humanoid",
+    "subCategory": "Gith",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "lawful neutral"
+    },
+    {
+    "id": 152,
+    "name": "Githyanki Zerth",
+    "category": "Humanoid",
+    "subCategory": "Gith",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "lawful neutral"
+    },
+    {
+    "id": 153,
+    "name": "Gnoll",
+    "category": "Humanoid",
+    "subCategory": "Gnoll",
+    "type" : "Medium Humanoid",
+    "area" : ["Jungle"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 154,
+    "name": "Gnoll Pack Lord",
+    "category": "Humanoid",
+    "subCategory": "Gnoll",
+    "type" : "Medium Humanoid",
+    "area" : ["Jungle"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 155,
+    "name": "Gnoll Fang of Yeenoghu",
+    "category": "Fiend",
+    "subCategory": "Gnoll",
+    "type" : "Medium Fiend",
+    "area" : ["Jungle"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 156,
+    "name": "Deep Gnome",
+    "category": "Humanoid",
+    "subCategory": "Gnome",
+    "type" : "Small Humanoid",
+    "area" : ["Any"],
+    "ideal": "neutral good"
+    },
+    {
+    "id": 157,
+    "name": "Goblin",
+    "category": "Humanoid",
+    "subCategory": "Goblin",
+    "type" : "Small Humanoid",
+    "area" : ["Any"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 158,
+    "name": "Goblin Boss",
+    "category": "Humanoid",
+    "subCategory": "Goblin",
+    "type" : "Small Humanoid",
+    "area" : ["Any"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 159,
+    "name": "Clay Golem",
+    "category": "Construct",
+    "subCategory": "Golem",
+    "type" : "Large Construct",
+    "area" : ["Swamp", "Coast", "Forest"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 160,
+    "name": "Flesh Golem",
+    "category": "Construct",
+    "subCategory": "Golem",
+    "type" : "Medium Construct",
+    "area" : ["Swamp", "Coast", "Forest"],
+    "ideal": "neutral"
+    },
+    {
+    "id": 161,
+    "name": "Iron Golem",
+    "category": "Construct",
+    "subCategory": "Golem",
+    "type" : "Large Construct",
+    "area" : ["Swamp", "Coast", "Forest"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 162,
+    "name": "Stone Golem",
+    "category": "Construct",
+    "subCategory": "Golem",
+    "type" : "Large Construct",
+    "area" : ["Swamp", "Coast", "Forest"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 163,
+    "name": "Gorgon",
+    "category": "Monstrosity",
+    "subCategory": "",
+    "type" : "Large Monstrosity",
+    "area" : ["Forest", "Desert"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 164,
+    "name": "Grell",
+    "category": "Abberation",
+    "subCategory": "",
+    "type" : "Large Abberation",
+    "area" : ["Forest", "Desert"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 165,
+    "name": "Grick",
+    "category": "Monstrosity",
+    "subCategory": "",
+    "type" : "Medium Monstrosity",
+    "area" : ["Cave", "Forest", "Jungle", "Ruins"],
+    "ideal": "neutral"
+    },
+    {
+    "id": 166,
+    "name": "Grick Alpha",
+    "category": "Monstrosity",
+    "subCategory": "",
+    "type" : "Large Monstrosity",
+    "area" : ["Cave", "Forest", "Jungle", "Ruins"],
+    "ideal": "neutral"
+    },
+    {
+    "id": 167,
+    "name": "Griffon",
+    "category": "Monstrosity",
+    "subCategory": "",
+    "type" : "Large Monstrosity",
+    "area" : ["Cave", "Moutains", "Forest"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 168,
+    "name": "Grimlock",
+    "category": "Humanoid",
+    "subCategory": "Grimlock",
+    "type" : "Medium Humanoid",
+    "area" : ["Cave"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 169,
+    "name": "Green Hag",
+    "category": "Fey",
+    "subCategory": "Hag",
+    "type" : "Medium Fey",
+    "area" : ["Swamp", "Coast", "Lake"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 170,
+    "name": "Night Hag",
+    "category": "Fiend",
+    "subCategory": "Hag",
+    "type" : "Medium Fey",
+    "area" : ["Swamp", "Coast", "Lake"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 171,
+    "name": "Sea Hag",
+    "category": "Fey",
+    "subCategory": "Hag",
+    "type" : "Medium Fey",
+    "area" : ["Swamp", "Coast", "Lake"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 172,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 173,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 174,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : "",
+    "area" : [""],
+    "ideal": ""
+    },
+    {
+    "id": 175,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 176,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 177,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 178,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 179,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 180,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : "",
+    "area" : [""],
+    "ideal": ""
+    },
+    {
+    "id": 181,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 182,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 183,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 184,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 185,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : "",
+    "area" : [""],
+    "ideal": ""
+    },
+    {
+    "id": 186,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 187,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 188,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 189,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 190,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 191,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : "",
+    "area" : [""],
+    "ideal": ""
+    },
+    {
+    "id": 192,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 193,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 194,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 195,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 196,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : "",
+    "area" : [""],
+    "ideal": ""
+    },
+    {
+    "id": 197,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 198,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 199,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 200,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 201,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 202,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : "",
+    "area" : [""],
+    "ideal": ""
+    },
+    {
+    "id": 203,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 204,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 205,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 206,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 207,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : "",
+    "area" : [""],
+    "ideal": ""
+    },
+    {
+    "id": 208,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 209,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 210,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    },
+    {
+    "id": 211,
+    "name": "",
+    "category": "",
+    "subCategory": "",
+    "type" : " ",
+    "area" : [""],
+    "ideal": " "
+    }
+]
