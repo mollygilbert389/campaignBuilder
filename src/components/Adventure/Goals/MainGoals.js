@@ -108,7 +108,7 @@ class MainGoals extends Component {
 
         this.setState({
             allGoals: allGoals
-        }, () => console.log(this.state.allGoals))
+        })
     }
 
     handleGoalClick = (eventKey, event) => {
