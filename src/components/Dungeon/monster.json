@@ -2128,434 +2128,1730 @@
     },
     {
     "id": 236,
-    "name": "",
-    "category": "",
+    "name": "Black Pudding",
+    "category": "Ooze",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Large Ooze",
+    "area" : ["Cave", "Tomb"],
+    "ideal": "unaligned"
     },
     {
     "id": 237,
-    "name": "",
-    "category": "",
+    "name": "Gelatinous Cube",
+    "category": "Ooze",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Large Ooze",
+    "area" : ["Cave", "Tomb"],
+    "ideal": "unaligned"
     },
     {
     "id": 238,
-    "name": "",
-    "category": "",
+    "name": "Gray Ooze",
+    "category": "Ooze",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Medium Ooze",
+    "area" : ["Cave", "Tomb"],
+    "ideal": "unaligned"
     },
     {
     "id": 239,
-    "name": "",
-    "category": "",
+    "name": "Ochre Jelly",
+    "category": "Ooze",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Large Ooze",
+    "area" : ["Cave", "Tomb"],
+    "ideal": "unaligned"
     },    
     {
     "id": 240,
-    "name": "",
-    "category": "",
-    "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "name": "Orc",
+    "category": "Humanoid",
+    "subCategory": "Orc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "chaotic evil"
     },    
     {
     "id": 241,
-    "name": "",
-    "category": "",
-    "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "name": "Orc War Chief",
+    "category": "Humanoid",
+    "subCategory": "Orc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "chaotic evil"
     },
     {
     "id": 242,
-    "name": "",
-    "category": "",
-    "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "name": "Orc Eye of Gruumsh",
+    "category": "Humanoid",
+    "subCategory": "Orc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "chaotic evil"
     },
     {
     "id": 243,
-    "name": "",
-    "category": "",
-    "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "name": "Orog",
+    "category": "Humanoid",
+    "subCategory": "Orc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "chaotic evil"
     },
     {
     "id": 244,
-    "name": "",
-    "category": "",
+    "name": "Otyugh",
+    "category": "Abberation",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Large Abberation",
+    "area" : ["Swamp", "Cave"],
+    "ideal": "neutral"
     },
     {
     "id": 245,
-    "name": "",
-    "category": "",
+    "name": "Owlbear",
+    "category": "Monstrosity",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Large Monstrosity",
+    "area" : ["Forest"],
+    "ideal": "unaligned"
     },    
     {
     "id": 246,
-    "name": "",
-    "category": "",
+    "name": "Pegasus",
+    "category": "Celestial",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Large Celestial",
+    "area" : ["Forest"],
+    "ideal": "chaotic good"
     },    
     {
     "id": 247,
-    "name": "",
-    "category": "",
+    "name": "Peryton",
+    "category": "Monstrosity",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Medium Monstrosity",
+    "area" : ["Mountains"],
+    "ideal": "chaotic evil"
     },
     {
     "id": 248,
-    "name": "",
-    "category": "",
+    "name": "Piercer",
+    "category": "Monstrosity",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Medium Monstrosity",
+    "area" : ["Cave"],
+    "ideal": "unaligned"
     },
     {
     "id": 249,
-    "name": "",
-    "category": "",
+    "name": "Pixie",
+    "category": "Fey",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Tiny Fey",
+    "area" : ["Meadow"],
+    "ideal": "natural good"
     },
     {
     "id": 250,
-    "name": "",
-    "category": "",
+    "name": "Pseudogragon",
+    "category": "Dragon",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Tiny Dragon",
+    "area" : ["Any"],
+    "ideal": "neutral good"
     },
     {
     "id": 251,
-    "name": "",
-    "category": "",
+    "name": "Purple Worm",
+    "category": "Monstrosity",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Gargantuan Monstrosity",
+    "area" : ["Cave", "Desert"],
+    "ideal": "unaligned"
     },    
     {
     "id": 252,
-    "name": "",
-    "category": "",
+    "name": "Quaggoth",
+    "category": "Humanoid",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Medium Humanoid",
+    "area" : ["Cave"],
+    "ideal": "chaotic neutral"
     },    
     {
     "id": 253,
-    "name": "",
-    "category": "",
+    "name": "Rakshasa",
+    "category": "Fiend",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Medium Fiend",
+    "area" : ["Any"],
+    "ideal": "lawful evil"
     },
     {
     "id": 254,
-    "name": "",
-    "category": "",
+    "name": "Young Remorhaz",
+    "category": "Monstrosity",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Large Monstrosity",
+    "area" : ["Tundra"],
+    "ideal": "unaligned"
     },
     {
     "id": 256,
-    "name": "",
-    "category": "",
+    "name": "Remorhaz",
+    "category": "Monstrosity",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Huge Monstrosity",
+    "area" : ["Tundra"],
+    "ideal": "unaligned"
     },
     {
     "id": 257,
-    "name": "",
-    "category": "",
+    "name": "Revenant",
+    "category": "Undead",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Medium Undead",
+    "area" : ["Tomb", "Ruins"],
+    "ideal": "neutral"
     },
     {
     "id": 258,
-    "name": "",
-    "category": "",
+    "name": "Rog",
+    "category": "Monstrosity",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Gargantuan Monstrosity",
+    "area" : ["Mountains"],
+    "ideal": "unaligned"
     },    
     {
     "id": 259,
-    "name": "",
-    "category": "",
+    "name": "Roper",
+    "category": "Monstrosity",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Large Monstrosity",
+    "area" : ["Cave"],
+    "ideal": "neutral evil"
     },    
     {
     "id": 260,
-    "name": "",
-    "category": "",
+    "name": "Rust Monster",
+    "category": "Monstrosity",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Medium Monstrosity",
+    "area" : ["Cave"],
+    "ideal": "unaligned"
     },
     {
     "id": 261,
-    "name": "",
-    "category": "",
-    "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "name": "Sahuagin",
+    "category": "Humanoid",
+    "subCategory": "Sahuagin",
+    "type" : "Medium Humanoid",
+    "area" : ["Ocean", "Island"],
+    "ideal": "lawful evil"
     },
     {
     "id": 262,
-    "name": "",
-    "category": "",
-    "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "name": "Sahuagin Priestess",
+    "category": "Humanoid",
+    "subCategory": "Sahuagin",
+    "type" : "Medium Humanoid",
+    "area" : ["Ocean", "Island"],
+    "ideal": "lawful evil"
     },
     {
     "id": 263,
-    "name": "",
-    "category": "",
-    "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "name": "Sahuagin Baron",
+    "category": "Humanoid",
+    "subCategory": "Sahuagin",
+    "type" : "Large Humanoid",
+    "area" : ["Ocean", "Island"],
+    "ideal": "lawful evil"
     },
     {
     "id": 264,
-    "name": "",
-    "category": "",
-    "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "name": "Fire Snake",
+    "category": "Elemental",
+    "subCategory": "Salamander",
+    "type" : "Medium Elemental",
+    "area" : ["Volcano"],
+    "ideal": "neutral evil"
     },    
     {
     "id": 265,
-    "name": "",
-    "category": "",
-    "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "name": "Salamander",
+    "category": "Elemental",
+    "subCategory": "Salamander",
+    "type" : "Large Elemental",
+    "area" : ["Volcano"],
+    "ideal": "neutral evil"
     },    
     {
     "id": 266,
-    "name": "",
-    "category": "",
+    "name": "Satyr",
+    "category": "Fey",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Medium Fey",
+    "area" : ["Forest"],
+    "ideal": "chaotic neutral"
     },
     {
     "id": 267,
-    "name": "",
-    "category": "",
+    "name": "Scarecrow",
+    "category": "Construct",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Medium Construct",
+    "area" : ["Swamp", "Forest"],
+    "ideal": "chaotic evil"
     },
     {
     "id": 268,
-    "name": "",
-    "category": "",
+    "name": "Shadow",
+    "category": "Undead",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Medium Undead",
+    "area" : ["Any"],
+    "ideal": "chaotic evil"
     },
     {
     "id": 269,
-    "name": "",
-    "category": "",
+    "name": "Shambling Mound",
+    "category": "Plant",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Large Plant",
+    "area" : ["Swamp", "Forest"],
+    "ideal": "unaligned"
     },
     {
     "id": 270,
-    "name": "",
-    "category": "",
+    "name": "Shield Guardian",
+    "category": "Construct",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Large Construct",
+    "area" : ["Any"],
+    "ideal": "unaligned"
     },    
     {
     "id": 271,
-    "name": "",
-    "category": "",
-    "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "name": "Skeleton",
+    "category": "Undead",
+    "subCategory": "Skeleton",
+    "type" : "Medium Undead",
+    "area" : ["Tomb", "Ruins"],
+    "ideal": "lawful evil"
     },    
     {
     "id": 272,
-    "name": "",
-    "category": "",
-    "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "name": "Minotaur Skeleton",
+    "category": "Undead",
+    "subCategory": "Skeleton",
+    "type" : "Large Undead",
+    "area" : ["Tomb", "Ruins"],
+    "ideal": "lawful evil"
     },
     {
     "id": 273,
-    "name": "",
-    "category": "",
-    "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "name": "Warhorse Skeleton",
+    "category": "Undead",
+    "subCategory": "Skeleton",
+    "type" : "Large Undead",
+    "area" : ["Tomb", "Ruins"],
+    "ideal": "lawful evil"
     },
     {
     "id": 274,
-    "name": "",
-    "category": "",
-    "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "name": "Slaad Tadpole",
+    "category": "Abberation",
+    "subCategory": "Slaad",
+    "type" : "Tiny Abberation",
+    "area" : ["Swamp"],
+    "ideal": "chaotic neutral"
     },
     {
     "id": 275,
-    "name": "",
-    "category": "",
-    "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "name": "Blue Slaad",
+    "category": "Abberation",
+    "subCategory": "Slaad",
+    "type" : "Large Abberation",
+    "area" : ["Swamp"],
+    "ideal": "chaotic neutral"
     },
     {
     "id": 276,
-    "name": "",
-    "category": "",
-    "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "name": "Red Slaad",
+    "category": "Abberation",
+    "subCategory": "Slaad",
+    "type" : "Large Abberation",
+    "area" : ["Swamp"],
+    "ideal": "chaotic neutral"
     },    
     {
     "id": 278,
-    "name": "",
-    "category": "",
-    "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "name": "Green Slaad",
+    "category": "Abberation",
+    "subCategory": "Slaad",
+    "type" : "Large Abberation",
+    "area" : ["Swamp"],
+    "ideal": "chaotic neutral"
     },    
     {
     "id": 279,
-    "name": "",
-    "category": "",
-    "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "name": "Grey Slaad",
+    "category": "Abberation",
+    "subCategory": "Slaad",
+    "type" : "Medium Abberation",
+    "area" : ["Swamp"],
+    "ideal": "chaotic neutral"
     },
     {
     "id": 280,
-    "name": "",
-    "category": "",
-    "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "name": "Death Slaad",
+    "category": "Abberation",
+    "subCategory": "Slaad",
+    "type" : "Medium Abberation",
+    "area" : ["Swamp"],
+    "ideal": "chaotic neutral"
     },
     {
     "id": 281,
-    "name": "",
-    "category": "",
+    "name": "Specter",
+    "category": "Undead",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Medium Undead",
+    "area" : ["Any"],
+    "ideal": "chaotic evil"
     },
     {
     "id": 282,
-    "name": "",
-    "category": "",
+    "name": "Androphinx",
+    "category": "Monstrosity",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Large Monstrosity",
+    "area" : ["Desert"],
+    "ideal": "lawful neutral"
     },
     {
     "id": 283,
-    "name": "",
-    "category": "",
+    "name": "Gynosphinx",
+    "category": "Monstrosity",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Large Monstrosity",
+    "area" : ["Desert"],
+    "ideal": "lawful neutral"
     },    
     {
     "id": 284,
-    "name": "",
-    "category": "",
+    "name": "Sprite",
+    "category": "Fey",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
-    "ideal": ""
+    "type" : "Tiny Fey",
+    "area" : ["Meadow"],
+    "ideal": "neutral good"
     },    
     {
     "id": 285,
-    "name": "",
-    "category": "",
+    "name": "Stirge",
+    "category": "Beast",
     "subCategory": "",
-    "type" : "",
-    "area" : [""],
+    "type" : "Tiny Beast",
+    "area" : ["Cave"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 286,
+    "name": "Succubus/Incubus",
+    "category": "Fiend",
+    "subCategory": "",
+    "type" : "Medium Fiend",
+    "area" : ["Any"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 287,
+    "name": "Tarrasque",
+    "category": "Monstrosity",
+    "subCategory": "Titan",
+    "type" : "Gargantuan Monstrosity",
+    "area" : ["Cave"],
+    "ideal": "unaligned"
+    },    
+    {
+    "id": 288,
+    "name": "Thri-Kreen",
+    "category": "Humanoid",
+    "subCategory": "",
+    "type" : "Medium Humanoid",
+    "area" : ["Desert"],
+    "ideal": "chaotic neutral"
+    },
+    {
+    "id": 289,
+    "name": "Treant",
+    "category": "Plant",
+    "subCategory": "",
+    "type" : "Huge Plant",
+    "area" : ["Forest", "Swamp", "Meadow"],
+    "ideal": "chaotic good"
+    },
+    {
+    "id": 290,
+    "name": "Troglodyte",
+    "category": "Humanoid",
+    "subCategory": "",
+    "type" : "Medium Humanoid",
+    "area" : ["Ocean", "Coast"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 291,
+    "name": "Troll",
+    "category": "Giant",
+    "subCategory": "",
+    "type" : "Large Giant",
+    "area" : ["Any"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 292,
+    "name": "Umber Hulk",
+    "category": "Monstrosity",
+    "subCategory": "",
+    "type" : "Large Monstrosity",
+    "area" : ["Cave"],
     "ideal": ""
+    },    
+    {
+    "id": 293,
+    "name": "Unicorn",
+    "category": "Celestial",
+    "subCategory": "",
+    "type" : "Large Celestial",
+    "area" : ["Forest", "Meadow", "Jungle"],
+    "ideal": "lawful good"
+    },
+    {
+    "id": 294,
+    "name": "Vampire",
+    "category": "Undead",
+    "subCategory": "",
+    "type" : "Medium Undead",
+    "area" : ["Any"],
+    "ideal": "lawful evil"
+    },
+    {
+    "id": 295,
+    "name": "Vampire Spawn",
+    "category": "Undead",
+    "subCategory": "",
+    "type" : "Medium Undead",
+    "area" : ["Any"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 296,
+    "name": "Water Weird",
+    "category": "Elemental",
+    "subCategory": "",
+    "type" : "Large Elemental",
+    "area" : ["Ocean", "Lake"],
+    "ideal": "neutral"
+    },
+    {
+    "id": 297,
+    "name": "Wight",
+    "category": "Undead",
+    "subCategory": "",
+    "type" : "Medium Undead",
+    "area" : ["Tundra", "Tomb"],
+    "ideal": "neutral evil"
+    },    
+    {
+    "id": 298,
+    "name": "Will-o'-Whisp",
+    "category": "Undead",
+    "subCategory": "",
+    "type" : "Tiny Undead",
+    "area" : ["Forest", "Meadow", "Tomb", "Ruins"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 299,
+    "name": "Wraith",
+    "category": "Undead",
+    "subCategory": "",
+    "type" : "Medium Undead",
+    "area" : ["Any"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 300,
+    "name": "Wyvern",
+    "category": "Dragon",
+    "subCategory": "",
+    "type" : "Large Dragon",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 301,
+    "name": "Xorn",
+    "category": "Elemental",
+    "subCategory": "",
+    "type" : "Medium Elemental",
+    "area" : ["Volcano"],
+    "ideal": "neutral"
+    },
+    {
+    "id": 302,
+    "name": "Yeti",
+    "category": "Monstrosity",
+    "subCategory": "",
+    "type" : "Large Monstrosity",
+    "area" : ["Tundra"],
+    "ideal": "chaotic evil"
+    },    
+    {
+    "id": 303,
+    "name": "Abominable Yeti",
+    "category": "Monstrosity",
+    "subCategory": "",
+    "type" : "Huge Monstrosity",
+    "area" : ["Tundra"],
+    "ideal": "chaotic evil"
+    },
+    {
+    "id": 304,
+    "name": "Yuan-Ti Abomination",
+    "category": "Monstrosity",
+    "subCategory": "Yuan-Ti",
+    "type" : "Large Monstrosity",
+    "area" : ["Desert"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 305,
+    "name": "Yuan-Ti Malison",
+    "category": "Monstrosity",
+    "subCategory": "Yuan-Ti",
+    "type" : "Medium Monstrosity",
+    "area" : ["Desert"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 306,
+    "name": "Yuan-Ti Pureblood",
+    "category": "Humanoid",
+    "subCategory": "Yuan-Ti",
+    "type" : "Medium Humanoid",
+    "area" : ["Desert"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 307,
+    "name": "Arcanaloth",
+    "category": "Fiend",
+    "subCategory": "Yugoloth",
+    "type" : "Medium Fiend",
+    "area" : ["Any"],
+    "ideal": "neutral evil"
+    },    
+    {
+    "id": 308,
+    "name": "Mezzoloth",
+    "category": "Fiend",
+    "subCategory": "Yugoloth",
+    "type" : "Medium Fiend",
+    "area" : ["Cave"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 309,
+    "name": "Nycaloth",
+    "category": "Fiend",
+    "subCategory": "Yugoloth",
+    "type" : "Large Fiend",
+    "area" : ["Any"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 310,
+    "name": "Ultroloth",
+    "category": "Fiend",
+    "subCategory": "Yugoloth",
+    "type" : "Medium Fiend",
+    "area" : ["Any"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 311,
+    "name": "Zombie",
+    "category": "Undead",
+    "subCategory": "Zombie",
+    "type" : "Medium Undead",
+    "area" : ["Any"],
+    "ideal": "natural evil"
+    },
+    {
+    "id": 312,
+    "name": "Ogre Zombie",
+    "category": "Undead",
+    "subCategory": "Zombie",
+    "type" : "Large Undead",
+    "area" : ["Any"],
+    "ideal": "natural evil"
+    },    
+    {
+    "id": 313,
+    "name": "Beholder Zombie",
+    "category": "Undead",
+    "subCategory": "Zombie",
+    "type" : "Large Undead",
+    "area" : ["Any"],
+    "ideal": "natural evil"
+    },
+    {
+    "id": 314,
+    "name": "Ape",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Jungle"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 315,
+    "name": "Awakened Shrub",
+    "category": "Plant",
+    "subCategory": "Misc",
+    "type" : "Small Plant",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 316,
+    "name": "Awakened Tree",
+    "category": "Plant",
+    "subCategory": "Misc",
+    "type" : "Huge Plant",
+    "area" : ["Forest", "Swamp", "Tundra"],
+    "ideal": ""
+    },
+    {
+    "id": 317,
+    "name": "Axe Beak",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Mountains"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 318,
+    "name": "Baboon",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Small Beast",
+    "area" : ["Jungle"],
+    "ideal": "unalgined"
+    },
+    {
+    "id": 319,
+    "name": "Badger",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Tiny Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 320,
+    "name": "Bat",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Tiny Beast",
+    "area" : ["Cave"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 321,
+    "name": "Black Bear",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Forest"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 332,
+    "name": "Blink Dog",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Desert"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 333,
+    "name": "Blood Hawk",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Small Beast",
+    "area" : ["Mountains"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 334,
+    "name": "Boar",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 335,
+    "name": "Brown Bear",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Forest"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 336,
+    "name": "Camel",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Desert"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 337,
+    "name": "Cat",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Tiny Beasts",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 338,
+    "name": "Constrictor Snake",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Jungle"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 339,
+    "name": "Crab",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Tiny Beast",
+    "area" : ["Coast"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 340,
+    "name": "Crocodile",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Swamp"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 341,
+    "name": "Death Dog",
+    "category": "Monstrosity",
+    "subCategory": "Misc",
+    "type" : "Meadium Monstrosity",
+    "area" : ["Cave"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 342,
+    "name": "Deer",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Forest"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 343,
+    "name": "Dire Wolf",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Tundra"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 344,
+    "name": "Draft Horse",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Forest"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 345,
+    "name": "Eagle",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Small Beast",
+    "area" : ["Moutains"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 346,
+    "name": "Elephant",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Huge Beast",
+    "area" : ["Jungle"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 347,
+    "name": "Elk",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Forest"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 348,
+    "name": "Flying Snake",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Tiny Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 349,
+    "name": "Frog",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Tiny Beast",
+    "area" : ["Swamp"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 350,
+    "name": "Giant",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Huge Beast",
+    "area" : ["Jungle"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 351,
+    "name": "Giant Badger",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 352,
+    "name": "Giant Bat",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Cave"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 353,
+    "name": "Giant Boar",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Forest"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 354,
+    "name": "Giant Centipede",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "small Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 355,
+    "name": "Giant Constrictor Snake",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Huge Beast",
+    "area" : ["Forest"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 356,
+    "name": "Giant Crab",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Coast"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 357,
+    "name": "Giant Crocodile",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Huge Beast",
+    "area" : ["Swamp"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 358,
+    "name": "Giant Eagle",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Mountains"],
+    "ideal": "neutral good"
+    },
+    {
+    "id": 359,
+    "name": "Giant Elk",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Huge Beast",
+    "area" : ["Forest"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 360,
+    "name": "Giant Fire Beetle",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Small Beast",
+    "area" : ["Desert"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 361,
+    "name": "Giant Frog",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Swamp"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 362,
+    "name": "Giant Goat",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Mountains"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 363,
+    "name": "Giant Hyena",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Desert"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 364,
+    "name": "Giant Lizard",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Forest", "Jungle"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 365,
+    "name": "Giant Octopus",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Ocean"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 366,
+    "name": "Giant Owl",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Forest", "Tundra"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 367,
+    "name": "Giant Poisonous Snake",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Forest", "Jungle"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 368,
+    "name": "Giant Rat",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Small Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 361,
+    "name": "Giant Scorpion",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Desert"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 369,
+    "name": "Giant Sea Horse",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Ocean"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 370,
+    "name": "Giant Shark",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Ocean"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 371,
+    "name": "Giant Spider",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 372,
+    "name": "Giant Toad",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Forest"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 373,
+    "name": "Giant Vulture",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Desert"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 374,
+    "name": "Giant Wasp",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 375,
+    "name": "Giant Weasel",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 376,
+    "name": "Giant Wolf Spider",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 377,
+    "name": "Goat",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 378,
+    "name": "Hawk",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Tiny Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 379,
+    "name": "Hunter Shark",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Ocean"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 380,
+    "name": "Hyena",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Desert"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 381,
+    "name": "Jackal",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Small Beast",
+    "area" : ["Desert"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 382,
+    "name": "Killer Whale",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Huge Beast",
+    "area" : ["Ocean"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 383,
+    "name": "Lion",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Desert"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 384,
+    "name": "Lizard",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Tiny Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 385,
+    "name": "Mammoth",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Huge Beast",
+    "area" : ["Forest"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 386,
+    "name": "Mastiff",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 387,
+    "name": "Mule",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 388,
+    "name": "Ocotopus",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Small Beast",
+    "area" : ["Ocean"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 389,
+    "name": "Owl",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Tiny Beast",
+    "area" : ["Forest"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 390,
+    "name": "Panther",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Jungle"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 391,
+    "name": "Phase Spider",
+    "category": "Monstrosity",
+    "subCategory": "Misc",
+    "type" : "Large Monstrosity",
+    "area" : ["Tomb", "Ruins", "Tundra"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 392,
+    "name": "Poisonous Snake",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Tiny Beast",
+    "area" : ["Forest", "Jungle"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 393,
+    "name": "Polar Bear",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Tundra"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 394,
+    "name": "Pony",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Forest"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 395,
+    "name": "Quipper",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Tiny Beast",
+    "area" : ["Lake"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 396,
+    "name": "Rat",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Tiny Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 397,
+    "name": "Raven",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Tiny Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 398,
+    "name": "Reef Shark",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Tiny Beast",
+    "area" : ["Ocean"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 399,
+    "name": "Rhinoceros",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Desert"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 400,
+    "name": "Riding Horse",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 401,
+    "name": "Saber-Toothed Tiger",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Jungle"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 402,
+    "name": "Scorpion",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Tiny Beast",
+    "area" : ["Desert"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 403,
+    "name": "Sea Horse",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Tiny Beast",
+    "area" : ["Ocean"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 404,
+    "name": "Spider",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Tiny Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 405,
+    "name": "Swarm of Bats",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Cave"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 406,
+    "name": "Swarm of Insects",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 407,
+    "name": "Swarm of Poisonous Snakes",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Jungle"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 408,
+    "name": "Swarm of Quippers",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Ocean"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 409,
+    "name": "Swarm of Rats",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 410,
+    "name": "Swarm of Ravens",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 411,
+    "name": "Tiger",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Jungle"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 412,
+    "name": "Vulture",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Desert"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 413,
+    "name": "Warhorse",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Large Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 414,
+    "name": "Weasel",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Tiny Beast",
+    "area" : ["Any"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 415,
+    "name": "Winter Wolf",
+    "category": "Monstrosity",
+    "subCategory": "Misc",
+    "type" : "Large Monstrosity",
+    "area" : ["Tundra"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 416,
+    "name": "Wolf",
+    "category": "Beast",
+    "subCategory": "Misc",
+    "type" : "Medium Beast",
+    "area" : ["Forest"],
+    "ideal": "unaligned"
+    },
+    {
+    "id": 417,
+    "name": "Worg",
+    "category": "Monstrosity",
+    "subCategory": "Misc",
+    "type" : "Large Monstrosity",
+    "area" : ["Forest"],
+    "ideal": "neutral evil"
+    },
+    {
+    "id": 418,
+    "name": "Acolyte",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 419,
+    "name": "Archmage",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 420,
+    "name": "Assassin",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 421,
+    "name": "Bandit",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 422,
+    "name": "Bandit Captain",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 423,
+    "name": "Berserker",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 424,
+    "name": "Commoner",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 425,
+    "name": "Cult Fanatic",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 426,
+    "name": "Cultist",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 427,
+    "name": "Druid",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 428,
+    "name": "Gladiator",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 429,
+    "name": "Guard",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 430,
+    "name": "Knight",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 431,
+    "name": "Mage",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 432,
+    "name": "Noble",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 433,
+    "name": "Priest",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 434,
+    "name": "Scout",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 435,
+    "name": "Spy",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 436,
+    "name": "Thug",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 437,
+    "name": "Tribal Warrior",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
+    },
+    {
+    "id": 438,
+    "name": "Veteran",
+    "category": "Humanoid",
+    "subCategory": "Misc",
+    "type" : "Medium Humanoid",
+    "area" : ["Any"],
+    "ideal": "any"
     }
 ]
