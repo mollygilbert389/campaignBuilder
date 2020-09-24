@@ -5,7 +5,7 @@
     "category": "Humanoid",
     "subCategory": "",
     "type" : "Medium Humanoid",
-    "area" : ["Forest", "Coast", "Island", "Desert", "Tundra"],
+    "area" : ["Forest", "Mountains","Ruins","Tomb"],
     "ideal": "neutal good"
     },
     {
@@ -14,7 +14,7 @@
     "category": "Aberration",
     "subCategory": "",
     "type" : "Large Aberration",
-    "area" : ["Coast", "Island", "Tundra"],
+    "area" : ["Cave","Oasis","Ocean","Swamp"],
     "ideal": "lawful evil"
     },
     {
@@ -23,7 +23,7 @@
     "category": "Celestial",
     "subCategory": "Angel",
     "type" : "Medium Celestial",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp","Tomb"],
     "ideal": "lawful good"
     },
     {
@@ -32,7 +32,7 @@
     "category": "Celestial",
     "subCategory": "Angel",
     "type" : "Large Celestial",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp","Tomb"],
     "ideal": "lawful good"
     },
     {
@@ -41,7 +41,7 @@
     "category": "Celestial",
     "subCategory": "Angel",
     "type" : "Large Celestial",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp","Tomb"],
     "ideal": "lawful good"
     },
     {
@@ -50,7 +50,7 @@
     "category": "Construct",
     "subCategory": "Animated Object",
     "type" : "Medium Construct",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
     },
     {
@@ -59,7 +59,7 @@
     "category": "Construct",
     "subCategory": "Animated Object",
     "type" : "Small Construct",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
     },
     {
@@ -68,7 +68,7 @@
     "category": "Construct",
     "subCategory": "Animated Object",
     "type" : "Large Construct",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
     },
     {
@@ -77,7 +77,7 @@
     "category": "Monstrocity",
     "subCategory": "",
     "type" : "Large Monstrocity",
-    "area" : ["Forest, Jungle"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Ruins"],
     "ideal": "unaligned"
     },
     {
@@ -86,7 +86,7 @@
     "category": "Elemental",
     "subCategory": "",
     "type" : "Medium Elemental",
-    "area" : ["Desert"],
+    "area" : ["Volcano"],
     "ideal": "lawful neutral"
     },
     {
@@ -95,7 +95,7 @@
     "category": "Undead",
     "subCategory": "",
     "type" : "Medium Undead",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -104,7 +104,7 @@
     "category": "Monstrocity",
     "subCategory": "",
     "type" : "Medium Monstrocity",
-    "area" : ["Jungle", "Forest", "Coast", "Desert", "Island", "Tundra"],
+    "area" : ["Cave","Forest","Jungle","Mountains","Ruins","Swamp", "Tomb"],
     "ideal": "unaligned"
     },
     {
@@ -113,7 +113,7 @@
     "category": "Monstrocity",
     "subCategory": "",
     "type" : "Huge Monstrocity",
-    "area" : ["Cave"],
+    "area" : ["Cave","Ruins","Tomb", "Volcano"],
     "ideal": "neutral evil"
     },
     {
@@ -122,7 +122,7 @@
     "category": "Abberation",
     "subCategory": "Beholder",
     "type" : "Large Abberation",
-    "area" : ["Ruins", "Cave"],
+    "area" : ["Cave", "Tomb", "Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -131,7 +131,7 @@
     "category": "Undead",
     "subCategory": "Beholder",
     "type" : "Large Undead",
-    "area" : ["Ruins", "Cave"],
+    "area" : ["Cave", "Tomb", "Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -140,7 +140,7 @@
     "category": "Abberation",
     "subCategory": "Beholder",
     "type" : "Medium Abberation",
-    "area" : ["Any"],
+    "area" : ["Cave", "Tomb", "Volcano"],
     "ideal": "lawful neutral"
     },
     {
@@ -149,7 +149,7 @@
     "category": "Plant",
     "subCategory": "Blight",
     "type" : "Medium Plant",
-    "area" : ["Forest", "Jungle", "Ruins"],
+    "area" : ["Forest","Jungle","Meadow","Mountains","Ruins"],
     "ideal": "neutral evil"
     },
     {
@@ -158,7 +158,7 @@
     "category": "Plant",
     "subCategory": "Blight",
     "type" : "Small Plant",
-    "area" : ["Forest", "Ruins"],
+    "area" : ["Forest","Jungle","Meadow","Mountains", "Swamp","Ruins"],
     "ideal": "Neutral Evil"
     },
     {
@@ -167,7 +167,7 @@
     "category": "Plant",
     "subCategory": "Blight",
     "type" : "Medium Plant",
-    "area" : ["Forest", "Ruins", "Jungle"],
+    "area" : ["Forest","Jungle","Meadow","Swamp","Ruins"],
     "ideal": "neutral evil"
     },
     {
@@ -176,7 +176,7 @@
     "category": "Humanoid",
     "subCategory": "",
     "type" : "Medium Humanoid",
-    "area" : ["Cave", "Ruins", "Village"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "Chaotic Evil"
     },
     {
@@ -185,7 +185,7 @@
     "category": "Monstrocity",
     "subCategory": "",
     "type" : "Large Monstrocity",
-    "area" : ["Cave"],
+    "area" : ["Cave","Forest","Jungle","Mountains","Ruins","Swamp", "Tomb"],
     "ideal": "unaligned"
     },
     {
@@ -194,7 +194,7 @@
     "category": "Humanoid",
     "subCategory": "",
     "type" : "Medium Humanoid",
-    "area" : ["Swamp"],
+    "area" : ["Jungle","Meadow","Oasis","Ruins","Swamp"],
     "ideal": "neutral evil"
     },
 
@@ -204,7 +204,7 @@
     "category": "Fiend",
     "subCategory": "",
     "type" : "Medium Fiend",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any evil alignement"
     },
 
@@ -214,7 +214,7 @@
     "category": "Monstrocity",
     "subCategory": "",
     "type" : "Large Monstrocity",
-    "area" : ["Ruins", "Cave"],
+    "area" : ["Cave","Forest","Meadow","Ruins","Swamp", "Tomb"],
     "ideal": "unaligned"
     },
 
@@ -224,7 +224,7 @@
     "category": "Monstrocity",
     "subCategory": "",
     "type" : "Large Monstrocity",
-    "area" : ["Forest", "Jungle", "Ruins"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp"],
     "ideal": "neutral good"
     },
 
@@ -234,7 +234,7 @@
     "category": "Monstrocity",
     "subCategory": "",
     "type" : "Large Monstrocity",
-    "area" : ["Cave", "Ruins", "Forest", "Jungle"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -243,7 +243,7 @@
     "category": "Abberation",
     "subCategory": "",
     "type" : "Large Abberation",
-    "area" : ["Coast"],
+    "area" : ["Cave","Ocean"],
     "ideal": "chaotic evil"
     },
 
@@ -253,7 +253,7 @@
     "category": "Abberation",
     "subCategory": "",
     "type" : "Large Abberation",
-    "area" : ["Cave"],
+    "area" : ["Cave","Ruins","Tomb"],
     "ideal": "chaotic neutral"
     },
 
@@ -263,7 +263,7 @@
     "category": "Monstrocity",
     "subCategory": "",
     "type" : "Small Monstrocity",
-    "area" : ["Cave", "Forest", "Jungle"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Plains","Ruins","Swamp", "Tomb"],
     "ideal": "unaligned"
     },
 
@@ -273,7 +273,7 @@
     "category": "Celestial",
     "subCategory": "",
     "type" : "Medium Celestial",
-    "area" : ["Ruins"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Plains","Ruins","Tomb"],
     "ideal": "lawful good"
     },
 
@@ -283,7 +283,7 @@
     "category": "Undead",
     "subCategory": "",
     "type" : "Tiny Undead",
-    "area" : ["Any", "Magical"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "neutral evil"
     },
     {
@@ -292,7 +292,7 @@
     "category": "Giant",
     "subCategory": "",
     "type" : "Huge Giant",
-    "area" : ["Forest", "Jungle", "Cave", "Ruins"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb"],
     "ideal": "chaotic neutral"
     },
 
@@ -302,7 +302,7 @@
     "category": "Monstrocity",
     "subCategory": "",
     "type" : "Small Monstrocity",
-    "area" : ["Cave"],
+    "area" : ["Cave","Tomb","Volcano"],
     "ideal": "unaligned"
     },
 
@@ -312,7 +312,7 @@
     "category": "Undead",
     "subCategory": "",
     "type" : "Medium Undead",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
 
@@ -322,7 +322,7 @@
     "category": "Undead",
     "subCategory": "",
     "type" : "Tiny Undead",
-    "area" : ["Tomb", "Cave"],
+    "area" : ["Tomb", "Cave", "Ruins", "Ocean"],
     "ideal": "neutral evil"
     },
 
@@ -350,7 +350,7 @@
     "category": "Fiend",
     "subCategory": "Demon",
     "type" : "Large Fiend",
-    "area" : ["Valcano"],
+    "area" : ["Valcano", "Ruins", "Tomb"],
     "ideal": "chaotic evil"
     },
     {
@@ -359,7 +359,7 @@
     "category": "Fiend",
     "subCategory": "Demon",
     "type" : "Small Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -368,7 +368,7 @@
     "category": "Fiend",
     "subCategory": "Demon",
     "type" : "Large Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Volcano", "Ruins", "Tomb", "Cave"],
     "ideal": "chaotic evil"
     },
     {
@@ -377,7 +377,7 @@
     "category": "Fiend",
     "subCategory": "Demon",
     "type" : "Huge Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Volcano", "Ruins", "Tomb", "Cave"],
     "ideal": "chaotic evil"
     },
     {
@@ -386,7 +386,7 @@
     "category": "Fiend",
     "subCategory": "Demon",
     "type" : "Large Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Volcano", "Ruins", "Tomb", "Cave"],
     "ideal": "chaotic evil"
     },
     {
@@ -395,7 +395,7 @@
     "category": "Fiend",
     "subCategory": "Demon",
     "type" : "Small Fiend",
-    "area" : ["Valcano"],
+    "area" : ["Volcano", "Ruins", "Tomb", "Cave"],
     "ideal": "chaotic evil"
     },
     {
@@ -404,7 +404,7 @@
     "category": "Fiend",
     "subCategory": "Demon",
     "type" : "Large Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Valcano", "Ruins", "Tomb","Cave"],
     "ideal": "chaotic evil"
     },
     {
@@ -413,7 +413,7 @@
     "category": "Fiend",
     "subCategory": "Demon",
     "type" : "Large Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Volcano", "Ruins", "Tomb", "Mountains", "Cave"],
     "ideal": "Chaotic Evil"
     },
     {
@@ -422,7 +422,7 @@
     "category": "Fiend",
     "subCategory": "Demon",
     "type" : "Tiny Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Volcano", "Ruins", "Tomb", "Mountains", "Cave"],
     "ideal": "chaotic evil"
     },
     {
@@ -431,7 +431,7 @@
     "category": "Fiend",
     "subCategory": "Demon",
     "type" : "Medium Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Volcano", "Ruins", "Tomb", "Mountains", "Cave"],
     "ideal": "chaotic evil"
     },
     {
@@ -440,7 +440,7 @@
     "category": "Fiend",
     "subCategory": "Demon",
     "type" : "Large Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Volcano", "Ruins", "Tomb", "Mountains", "Cave"],
     "ideal": "chaotic evil"
     },
     {
@@ -449,7 +449,7 @@
     "category": "Fiend",
     "subCategory": "Demon",
     "type" : "Medium Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Volcano", "Ruins", "Tomb", "Mountains", "Cave"],
     "ideal": "chaotic evil"
     },
     {
@@ -458,7 +458,7 @@
     "category": "Fiend",
     "subCategory": "Devil",
     "type" : "Medium Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -467,7 +467,7 @@
     "category": "Fiend",
     "subCategory": "Devil",
     "type" : "Medium Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -476,7 +476,7 @@
     "category": "Fiend",
     "subCategory": "Devil",
     "type" : "Large Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -485,7 +485,7 @@
     "category": "Fiend",
     "subCategory": "Devil",
     "type" : "Medium Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -494,7 +494,7 @@
     "category": "Fiend",
     "subCategory": "Devil",
     "type" : "Medium Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -503,7 +503,7 @@
     "category": "Fiend",
     "subCategory": "Devil",
     "type" : "Large Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -512,7 +512,7 @@
     "category": "Fiend",
     "subCategory": "Devil",
     "type" : "Large Fiend",
-    "area" : ["Tundra"],
+    "area" : ["Cave","Mountains","Ruins","Tomb"],
     "ideal": "lawful evil"
     },
     {
@@ -521,7 +521,7 @@
     "category": "Fiend",
     "subCategory": "Devil",
     "type" : "Tiny Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -530,7 +530,7 @@
     "category": "Fiend",
     "subCategory": "Devil",
     "type" : "Medium Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -539,7 +539,7 @@
     "category": "Fiend",
     "subCategory": "Devil",
     "type" : "Large Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -548,7 +548,7 @@
     "category": "Fiend",
     "subCategory": "Devil",
     "type" : "Small Fiend",
-    "area" : ["Volcano"],
+    "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -557,7 +557,7 @@
     "category": "Beast",
     "subCategory": "Dinosaur",
     "type" : "Large Beast",
-    "area" : ["Forest", "Jungle", "Ruins", "Cave"],
+    "area" : ["Cave","Forest","Jungle","Volcano"],
     "ideal": "Unaligned"
     },
     {
@@ -566,7 +566,7 @@
     "category": "Beast",
     "subCategory": "Dinosaur",
     "type" : "Huge Beast",
-    "area" : ["Forest", "Jungle", "Ruins", "Cave"],
+    "area" : ["Cave","Forest","Jungle","Volcano"],
     "ideal": "Unaligned"
     },
     {
@@ -575,7 +575,7 @@
     "category": "Beast",
     "subCategory": "Dinosaur",
     "type" : "Large Beast",
-    "area" : ["Water" , "Coast", "Lake"],
+    "area" : ["Ocean", "Lake"],
     "ideal": "Unaligned"
     },
     {
@@ -584,7 +584,7 @@
     "category": "Beast",
     "subCategory": "Dinosaur",
     "type" : "Huge Beast",
-    "area" : ["Forest", "Jungle", "Ruins", "Cave"],
+    "area" : ["Cave","Forest","Jungle","Volcano"],
     "ideal": "Unaligned"
     },
     {
@@ -593,7 +593,7 @@
     "category": "Beast",
     "subCategory": "Dinosaur",
     "type" : "Medium Beast",
-    "area" : ["Forest", "Jungle", "Ruins", "Cave"],
+    "area" : ["Cave","Forest","Jungle","Volcano"],
     "ideal": "Unaligned"
     },
     {
@@ -602,7 +602,7 @@
     "category": "Beast",
     "subCategory": "Dinosaur",
     "type" : "Huge Beast",
-    "area" : ["Forest", "Jungle", "Ruins", "Cave"],
+    "area" : ["Cave","Forest","Jungle","Volcano"],
     "ideal": "Unaligned"
     },
     {
@@ -611,7 +611,7 @@
     "category": "Monstrocity",
     "subCategory": "",
     "type" : "Large Monstrocity",
-    "area" : ["Forest", "Jungle", "Cave", "Tundra"],
+    "area" : ["Cave","Jungle","Oasis","Ruins"],
     "ideal": "lawful evil"
     },
     {
@@ -620,7 +620,7 @@
     "category": "Monstrocity",
     "subCategory": "",
     "type" : "Medium Monstrocity",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "neutral"
     },
     {
@@ -629,7 +629,7 @@
     "category": "Undead",
     "subCategory": "Dragon",
     "type" : "Huge Undead",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -638,7 +638,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Large Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -647,7 +647,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Gargantuan Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -656,7 +656,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Huge Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -665,7 +665,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Large Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -674,7 +674,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Medium Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -683,7 +683,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Gargantuan Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -692,7 +692,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Huge Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -701,7 +701,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Large Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -710,7 +710,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Medium Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -719,7 +719,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Gargantuan Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -728,7 +728,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Huge Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -737,7 +737,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Large Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -746,7 +746,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Medium Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -755,7 +755,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Gargantuan Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -764,7 +764,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Huge Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -773,7 +773,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Large Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -782,7 +782,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Medium Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -791,7 +791,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Gargantuan Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -800,7 +800,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Huge Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -809,7 +809,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Large Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -818,7 +818,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Medium Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -827,7 +827,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Gargantuan Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic good"
     },
     {
@@ -836,7 +836,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Huge Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic good"
     },
     {
@@ -845,7 +845,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Large Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic good"
     },
     {
@@ -854,7 +854,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Medium Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic good"
     },
     {
@@ -863,7 +863,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Gargantuan Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
     },
     {
@@ -872,7 +872,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Huge Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
     },
     {
@@ -881,7 +881,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Large Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
     },
     {
@@ -890,7 +890,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Medium Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
     },
     {
@@ -899,7 +899,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Gargantuan Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic good"
     },
     {
@@ -908,7 +908,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Huge Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic good"
     },
     {
@@ -917,7 +917,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Large Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic good"
     },
     {
@@ -926,7 +926,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Medium Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic good"
     },
     {
@@ -935,7 +935,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Gargantuan Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
     },
     {
@@ -944,7 +944,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Huge Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
     },
     {
@@ -953,7 +953,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Large Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
     },
     {
@@ -962,7 +962,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Medium Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
     },
     {
@@ -971,7 +971,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Gargantuan Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
     },
     {
@@ -980,7 +980,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Huge Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
     },
     {
@@ -989,7 +989,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Large Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
     },
     {
@@ -998,7 +998,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Medium Dragon",
-    "area" : ["Forest, Ruins, Cave"],
+    "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
     },
     {
@@ -1007,7 +1007,7 @@
     "category": "Dragon",
     "subCategory": "Dragon",
     "type" : "Gargantuan Dragon",
-    "area" : ["Coast", "Lake"],
+    "area" : ["Ocean", "Lake"],
     "ideal": "neutral"
     },
     {
@@ -1016,7 +1016,7 @@
     "category": "Monstrocity",
     "subCategory": "",
     "type" : "Large Monstrocity",
-    "area" : ["Cave"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -1025,7 +1025,7 @@
     "category": "Fey",
     "subCategory": "",
     "type" : "Medium Fey",
-    "area" : ["Forest", "Jungle"],
+    "area" : ["Forest","Jungle","Meadow","Mountains","Ruins"],
     "ideal": "neutral"
     },
     {
@@ -1034,7 +1034,7 @@
     "category": "Humanoid",
     "subCategory": "",
     "type" : "Medium Humanoid",
-    "area" : ["Tundra"],
+    "area" : ["Cave","Forest","Mountains","Ruins", "Tomb"],
     "ideal": "lawful evil"
     },
     {
@@ -1043,7 +1043,7 @@
     "category": "Elemental",
     "subCategory": "Elemental",
     "type" : "Large Elemental",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp"],
     "ideal": "neutral"
     },
     {
@@ -1052,7 +1052,7 @@
     "category": "Elemental",
     "subCategory": "Elemental",
     "type" : "Large Elemental",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Plains","Ruins","Swamp","Volcano"],
     "ideal": "neutral"
     },
     {
@@ -1061,7 +1061,7 @@
     "category": "Elemental",
     "subCategory": "Elemental",
     "type" : "Large Elemental",
-    "area" : ["Any"],
+    "area" : ["Cave","Mountains","Ruins", "Tomb", "Volcano"],
     "ideal": "neutral"
     },
     {
@@ -1070,7 +1070,7 @@
     "category": "Elemental",
     "subCategory": "Elemental",
     "type" : "Large Elemental",
-    "area" : ["Any"],
+    "area" : ["Ocean","Lake","Oasis"],
     "ideal": "neutral"
     },
     {
@@ -1079,7 +1079,7 @@
     "category": "Humanoid",
     "subCategory": "Elf",
     "type" : "Medium Humanoid",
-    "area" : ["Cave"],
+    "area" : ["Cave","Forest","Mountains","Ruins","Swamp", "Tomb"],
     "ideal": "neutral evil"
     },
     {
@@ -1088,7 +1088,7 @@
     "category": "Humanoid",
     "subCategory": "Elf",
     "type" : "Medium Humanoid",
-    "area" : ["Cave"],
+    "area" : ["Cave","Forest","Mountains","Ruins","Swamp", "Tomb"],
     "ideal": "neutral evil"
     },
     {
@@ -1097,7 +1097,7 @@
     "category": "Humanoid",
     "subCategory": "Elf",
     "type" : "Medium Humanoid",
-    "area" : ["Cave"],
+    "area" : ["Cave","Forest","Mountains","Ruins","Swamp", "Tomb"],
     "ideal": "neutral evil"
     },
     {
@@ -1106,7 +1106,7 @@
     "category": "Humanoid",
     "subCategory": "Elf",
     "type" : "Medium Humanoid",
-    "area" : ["Cave"],
+    "area" : ["Cave","Forest","Mountains","Ruins","Swamp", "Tomb"],
     "ideal": "neutral evil"
     },
     {
@@ -1115,7 +1115,7 @@
     "category": "Celestial",
     "subCategory": "Titan",
     "type" : "Huge Celestial",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Tomb","Volcano"],
     "ideal": "chaotic good"
     },
     {
@@ -1124,7 +1124,7 @@
     "category": "Monstrocity",
     "subCategory": "",
     "type" : "Medium Monstrocity",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle"],
     "ideal": "neutral evil"
     },
     {
@@ -1133,7 +1133,7 @@
     "category": "Giant",
     "subCategory": "",
     "type" : "Large Giant",
-    "area" : ["Forest", "Jungle", "Tundra", "Desert"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Tomb","Volcano"],
     "ideal": ""
     },
     {
@@ -1142,7 +1142,7 @@
     "category": "Dragon",
     "subCategory": "",
     "type" : "Tiny Dragon",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Tomb","Volcano"],
     "ideal": "chaotic good"
     },
     {
@@ -1151,7 +1151,7 @@
     "category": "Undead",
     "subCategory": "",
     "type" : "Tiny Undead",
-    "area" : ["Cave", "Ruins"],
+    "area" : ["Cave","Tomb"],
     "ideal": "neutral evil"
     },
     {
@@ -1160,7 +1160,7 @@
     "category": "Abberation",
     "subCategory": "",
     "type" : "Small Abberation",
-    "area" : ["Cave"],
+    "area" : ["Cave","Tomb"],
     "ideal": "lawful good"
     },
     {
@@ -1169,7 +1169,7 @@
     "category": "Giant",
     "subCategory": "",
     "type" : "Huge Giant",
-    "area" : ["Cave"],
+    "area" : ["Cave","Tomb"],
     "ideal": "chaotic evil"
     },
     {
@@ -1178,7 +1178,7 @@
     "category": "Plant",
     "subCategory": "Fungi",
     "type" : "Large Plant",
-    "area" : ["Forest", "Jungle", "Cave", "Ruin"],
+    "area" : ["Cave","Forest","Jungle","Mountains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
     },
     {
@@ -1187,7 +1187,7 @@
     "category": "Plant",
     "subCategory": "Fungi",
     "type" : "Medium Plant",
-    "area" : ["Forest", "Jungle", "Cave", "Ruin"],
+    "area" : ["Cave","Forest","Jungle","Mountains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
     },
     {
@@ -1196,7 +1196,7 @@
     "category": "Plant",
     "subCategory": "Fungi",
     "type" : "Medium Plant",
-    "area" : ["Forest", "Jungle", "Cave", "Ruin"],
+    "area" : ["Cave","Forest","Jungle","Mountains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
     },
     {
@@ -1205,7 +1205,8 @@
     "category": "Elemental",
     "subCategory": "",
     "type" : "Medium Elemental",
-    "area" : ["Moutains", "Tundra", "Forest"],
+    "area" : ["Cave","Forest","Jungle","Lake","Mountains","Ocean","Ruins","Swamp","Tomb","Volcano"],
+
     "ideal": ""
     },
     {
@@ -1214,7 +1215,7 @@
     "category": "Elemental",
     "subCategory": "",
     "type" : "Medium Elemental",
-    "area" : ["Ruins"],
+    "area" : ["Cave","Forest","Jungle","Lake","Mountains","Ocean","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -1223,7 +1224,7 @@
     "category": "Elemtnal",
     "subCategory": "Genie",
     "type" : "Large Elemental",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "neutral evil"
     },
     {
@@ -1232,7 +1233,7 @@
     "category": "Elemtnal",
     "subCategory": "Genie",
     "type" : "Large Elemental",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic good"
     },
     {
@@ -1241,7 +1242,7 @@
     "category": "Elemtnal",
     "subCategory": "Genie",
     "type" : "Large Elemental",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -1250,7 +1251,7 @@
     "category": "Elemtnal",
     "subCategory": "Genie",
     "type" : "Large Elemental",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic neutral"
     },
     {
@@ -1259,7 +1260,7 @@
     "category": "Undead",
     "subCategory": "",
     "type" : "Medium Undead",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -1268,7 +1269,7 @@
     "category": "Undead",
     "subCategory": "Ghoul",
     "type" : "Medium Undead",
-    "area" : ["Forest", "Swamp", "Jungle", "Cave", "Ruins"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp"],
     "ideal": "chaotic evil"
     },
     {
@@ -1277,7 +1278,7 @@
     "category": "Undead",
     "subCategory": "Ghoul",
     "type" : "Medium Undead",
-    "area" : ["Forest", "Swamp", "Jungle", "Cave", "Ruins"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp"],
     "ideal": "chaotic evil"
     },
     {
@@ -1286,7 +1287,7 @@
     "category": "Giant",
     "subCategory": "Giant",
     "type" : "Huge Giant",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Mountains","Ruins"],
     "ideal": "neutral good"
     },
     {
@@ -1295,7 +1296,7 @@
     "category": "Giant",
     "subCategory": "Giant",
     "type" : "Huge Giant",
-    "area" : ["Desert", "Volcano"],
+    "area" : ["Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -1304,7 +1305,7 @@
     "category": "Giant",
     "subCategory": "Giant",
     "type" : "Huge Giant",
-    "area" : ["Tundra"],
+    "area" : ["Cave","Forest","Mountains","Ruins"],
     "ideal": "neutral evil"
     },
     {
@@ -1313,7 +1314,7 @@
     "category": "Giant",
     "subCategory": "Giant",
     "type" : "Huge Giant",
-    "area" : ["Forest", "Swamp", "Jungle", "Cave", "Ruins"],
+    "area" : ["Cave","Forest","Mountains","Ruins"],
     "ideal": "chaotic evil"
     },
     {
@@ -1322,7 +1323,7 @@
     "category": "Giant",
     "subCategory": "Giant",
     "type" : "Huge Giant",
-    "area" : ["Forest", "Desert", "Jungle", "Cave", "Ruins"],
+    "area" : ["Cave","Forest","Mountains","Ruins"],
     "ideal": "neutral"
     },
     {
@@ -1331,7 +1332,7 @@
     "category": "Giant",
     "subCategory": "Giant",
     "type" : "Huge Giant",
-    "area" : ["Forest", "Swamp", "Jungle", "Cave", "Ruins"],
+    "area" : ["Ocean", "Lake"],
     "ideal": "chaotic good"
     },
     {
@@ -1340,7 +1341,7 @@
     "category": "Aberration",
     "subCategory": "",
     "type" : "Medium Abberation",
-    "area" : ["Cave"],
+    "area" : ["Cave", "Tomb"],
     "ideal": "neutral"
     },
     {
@@ -1349,7 +1350,7 @@
     "category": "Humanoid",
     "subCategory": "Gith",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Swamp"],
     "ideal": "lawful evil"
     },
     {
@@ -1358,7 +1359,7 @@
     "category": "Humanoid",
     "subCategory": "Gith",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Swamp"],
     "ideal": "lawful evil"
     },
     {
@@ -1367,7 +1368,7 @@
     "category": "Humanoid",
     "subCategory": "Gith",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Swamp"],
     "ideal": "lawful neutral"
     },
     {
@@ -1376,7 +1377,7 @@
     "category": "Humanoid",
     "subCategory": "Gith",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Swamp"],
     "ideal": "lawful neutral"
     },
     {
@@ -1385,7 +1386,7 @@
     "category": "Humanoid",
     "subCategory": "Gnoll",
     "type" : "Medium Humanoid",
-    "area" : ["Jungle"],
+    "area" : ["Cave","Forest","Jungle","Ruins"],
     "ideal": "chaotic evil"
     },
     {
@@ -1394,7 +1395,7 @@
     "category": "Humanoid",
     "subCategory": "Gnoll",
     "type" : "Medium Humanoid",
-    "area" : ["Jungle"],
+    "area" : ["Cave","Forest","Jungle","Ruins"],
     "ideal": "chaotic evil"
     },
     {
@@ -1403,7 +1404,7 @@
     "category": "Fiend",
     "subCategory": "Gnoll",
     "type" : "Medium Fiend",
-    "area" : ["Jungle"],
+    "area" : ["Cave","Forest","Jungle","Ruins"],
     "ideal": "chaotic evil"
     },
     {
@@ -1412,7 +1413,7 @@
     "category": "Humanoid",
     "subCategory": "Gnome",
     "type" : "Small Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Mountains","Tomb","Volcano"],
     "ideal": "neutral good"
     },
     {
@@ -1421,7 +1422,7 @@
     "category": "Humanoid",
     "subCategory": "Goblin",
     "type" : "Small Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Ruins","Swamp","Tomb"],
     "ideal": "neutral evil"
     },
     {
@@ -1430,7 +1431,7 @@
     "category": "Humanoid",
     "subCategory": "Goblin",
     "type" : "Small Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Ruins","Swamp","Tomb"],
     "ideal": "neutral evil"
     },
     {
@@ -1439,7 +1440,7 @@
     "category": "Construct",
     "subCategory": "Golem",
     "type" : "Large Construct",
-    "area" : ["Swamp", "Coast", "Forest"],
+    "area" : ["Cave","Forest","Jungle","Mountains","Oasis","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
     },
     {
@@ -1448,7 +1449,7 @@
     "category": "Construct",
     "subCategory": "Golem",
     "type" : "Medium Construct",
-    "area" : ["Swamp", "Coast", "Forest"],
+    "area" : ["Cave","Forest","Jungle","Mountains","Oasis","Ruins","Swamp","Tomb"],
     "ideal": "neutral"
     },
     {
@@ -1457,7 +1458,7 @@
     "category": "Construct",
     "subCategory": "Golem",
     "type" : "Large Construct",
-    "area" : ["Swamp", "Coast", "Forest"],
+    "area" : ["Cave","Forest","Jungle","Mountains","Oasis","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
     },
     {
@@ -1466,7 +1467,7 @@
     "category": "Construct",
     "subCategory": "Golem",
     "type" : "Large Construct",
-    "area" : ["Swamp", "Coast", "Forest"],
+    "area" : ["Cave","Forest","Jungle","Mountains","Oasis","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
     },
     {
@@ -1475,7 +1476,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Large Monstrosity",
-    "area" : ["Forest", "Desert"],
+    "area" : ["Plains","Ruins"],
     "ideal": "unaligned"
     },
     {
@@ -1484,7 +1485,7 @@
     "category": "Abberation",
     "subCategory": "",
     "type" : "Large Abberation",
-    "area" : ["Forest", "Desert"],
+    "area" : ["Cave","Tomb","Volcano"],
     "ideal": "neutral evil"
     },
     {
@@ -1493,7 +1494,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Medium Monstrosity",
-    "area" : ["Cave", "Forest", "Jungle", "Ruins"],
+    "area" : ["Cave","Tomb","Volcano"],
     "ideal": "neutral"
     },
     {
@@ -1502,7 +1503,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Large Monstrosity",
-    "area" : ["Cave", "Forest", "Jungle", "Ruins"],
+    "area" : ["Cave","Tomb","Volcano"],
     "ideal": "neutral"
     },
     {
@@ -1511,7 +1512,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Large Monstrosity",
-    "area" : ["Cave", "Moutains", "Forest"],
+    "area" : ["Cave","Forest","Jungle","Mountains","Oasis","Ruins"],
     "ideal": "unaligned"
     },
     {
@@ -1520,7 +1521,7 @@
     "category": "Humanoid",
     "subCategory": "Grimlock",
     "type" : "Medium Humanoid",
-    "area" : ["Cave"],
+    "area" : ["Cave","Tomb","Volcano"],
     "ideal": "neutral evil"
     },
     {
@@ -1529,7 +1530,7 @@
     "category": "Fey",
     "subCategory": "Hag",
     "type" : "Medium Fey",
-    "area" : ["Swamp", "Coast", "Lake"],
+    "area" : ["Lake","Oasis","Ocean","Swamp"],
     "ideal": "neutral evil"
     },
     {
@@ -1538,7 +1539,7 @@
     "category": "Fiend",
     "subCategory": "Hag",
     "type" : "Medium Fey",
-    "area" : ["Swamp", "Coast", "Lake"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Ruins","Swamp","Tomb"],
     "ideal": "neutral evil"
     },
     {
@@ -1547,7 +1548,7 @@
     "category": "Fey",
     "subCategory": "Hag",
     "type" : "Medium Fey",
-    "area" : ["Swamp", "Coast", "Lake"],
+    "area" : ["Cave","Ocean","Tomb"],
     "ideal": "chaotic evil"
     },
     {
@@ -1565,7 +1566,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Medium Monstrosity",
-    "area" : ["Coast", "Ocean"],
+    "area" : ["Lake", "Ocean"],
     "ideal": "chaotic evil"
     },
     {
@@ -1574,7 +1575,7 @@
     "category": "Fiend",
     "subCategory": "",
     "type" : "Medium Fiend",
-    "area" : ["Desert", "Volcano"],
+    "area" : ["Cave","Forest","Jungle","Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -1583,7 +1584,7 @@
     "category": "Construct",
     "subCategory": "",
     "type" : "Medium Construct",
-    "area" : ["Cave", "Ruins"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "neutral"
     },
     {
@@ -1592,7 +1593,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Large Monstrosity",
-    "area" : ["Cave", "Ruins", "Coast", "Forest"],
+    "area" : ["Cave","Forest","Jungle","Mountains","Ruins"],
     "ideal": "unaligned"
     },
     {
@@ -1601,7 +1602,7 @@
     "category": "Humanoid",
     "subCategory": "Goblinoid",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -1610,7 +1611,7 @@
     "category": "Humanoid",
     "subCategory": "Goblinoid",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -1619,7 +1620,7 @@
     "category": "Humanoid",
     "subCategory": "Goblinoid",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -1628,7 +1629,7 @@
     "category": "Construct",
     "subCategory": "",
     "type" : "Tiny Construct",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "neutral"
     },
     {
@@ -1637,7 +1638,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Large Monstrosity",
-    "area" : ["Cave"],
+    "area" : ["Cave", "Tomb", "Volcano"],
     "ideal": "neutral"
     },
     {
@@ -1646,7 +1647,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Huge Monstrosity",
-    "area" : ["Swamp"],
+    "area" : ["Cave","Swamp", "Tomb"],
     "ideal": "unaligned"
     },
     {
@@ -1655,7 +1656,7 @@
     "category": "Abberation",
     "subCategory": "",
     "type" : "Tiny Abberation",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp"],
     "ideal": "lawful evil"
     },
     {
@@ -1664,7 +1665,7 @@
     "category": "Elemental",
     "subCategory": "",
     "type" : "Medium Elemental",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb"],
     "ideal": "neutral"
     },
     {
@@ -1673,7 +1674,7 @@
     "category": "Humanoid",
     "subCategory": "Shapechanger",
     "type" : "Medium Humanoid",
-    "area" : ["Forest", "Jungle", "Swamp","Cave"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "chaotic evil"
     },
     {
@@ -1682,7 +1683,7 @@
     "category": "Humanoid",
     "subCategory": "kenku",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic neutral"
     },
     {
@@ -1691,7 +1692,7 @@
     "category": "Humanoid",
     "subCategory": "Kobold",
     "type" : "Small Humanoid",
-    "area" : ["Cave"],
+    "area" : ["Cave","Mountains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -1700,7 +1701,7 @@
     "category": "Humanoid",
     "subCategory": "Kobold",
     "type" : "Small Humanoid",
-    "area" : ["Cave"],
+    "area" : ["Cave","Mountains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -1709,7 +1710,7 @@
     "category": "Monstrosity",
     "subCategory": "Titan",
     "type" : "Gargantuan Monstrosity",
-    "area" : ["Ocean", "Coast"],
+    "area" : ["Ocean"],
     "ideal": "chaotic evil"
     },
     {
@@ -1718,7 +1719,7 @@
     "category": "Humanoid",
     "subCategory": "Kuo-Toa",
     "type" : "Medium Humanoid",
-    "area" : ["Swamp", "Coast"],
+    "area" : ["Jungle","Meadow","Oasis","Swamp"],
     "ideal": "neutral evil"
     },
     {
@@ -1727,7 +1728,7 @@
     "category": "Humanoid",
     "subCategory": "Kuo-Toa",
     "type" : "Medium Humanoid",
-    "area" : ["Swamp", "Coast"],
+    "area" : ["Jungle","Meadow","Oasis","Swamp"],
     "ideal": "neutral evil"
     },
     {
@@ -1736,7 +1737,7 @@
     "category": "Humanoid",
     "subCategory": "Kuo-Toa",
     "type" : "Medium Humanoid",
-    "area" : ["Swamp", "Coast"],
+    "area" : ["Jungle","Meadow","Oasis","Swamp"],
     "ideal": "neutral evil"
     },
     {
@@ -1745,7 +1746,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Large Monstrosity",
-    "area" : ["Desert"],
+    "area" : ["Ruins","Tomb"],
     "ideal": "chaotic evil"
     },
     {
@@ -1754,7 +1755,7 @@
     "category": "Undead",
     "subCategory": "",
     "type" : "Medium Undead",
-    "area" : ["Ruins", "Cave", "Tomb"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -1763,7 +1764,7 @@
     "category": "Humanoid",
     "subCategory": "Lizardfolk",
     "type" : "Medium Monstrosity",
-    "area" : ["Swamp", "Coast"],
+    "area" : ["Forest","Jungle","Oasis","Swamp"],
     "ideal": "neutral"
     },
     {
@@ -1772,7 +1773,7 @@
     "category": "Humanoid",
     "subCategory": "Lizardfolk",
     "type" : "Medium Monstrosity",
-    "area" : ["Swamp", "Coast"],
+    "area" : ["Forest","Jungle","Oasis","Swamp"],
     "ideal": "neutral"
     },
     {
@@ -1781,7 +1782,7 @@
     "category": "Humanoid",
     "subCategory": "Lizardfolk",
     "type" : "Medium Monstrosity",
-    "area" : ["Swamp", "Coast"],
+    "area" : ["Forest","Jungle","Oasis","Swamp"],
     "ideal": "chaotic evil"
     },
     {
@@ -1790,7 +1791,7 @@
     "category": "Humanoid",
     "subCategory": "Human, Shapechanger",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "neutral good"
     },
     {
@@ -1799,7 +1800,7 @@
     "category": "Humanoid",
     "subCategory": "Human, Shapechanger",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "neutral evil"
     },
     {
@@ -1808,7 +1809,7 @@
     "category": "Humanoid",
     "subCategory": "Human, Shapechanger",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "lawful evil"
     },
     {
@@ -1817,7 +1818,7 @@
     "category": "Humanoid",
     "subCategory": "Human, Shapechanger",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "neutral"
     },
     {
@@ -1826,7 +1827,7 @@
     "category": "Humanoid",
     "subCategory": "Human, Shapechanger",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "chaotic evil"
     },
     {
@@ -1844,7 +1845,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Large Monstrosity",
-    "area" : ["Jungle"],
+    "area" : ["Cave","Jungle","Oasis","Ruins"],
     "ideal": "lawful evil"
     },
     {
@@ -1853,7 +1854,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Medium Monstrosity",
-    "area" : ["Cave", "Ruins"],
+    "area" : ["Cave","Ruins","Tomb"],
     "ideal": "lawful evil"
     },
     {
@@ -1862,7 +1863,7 @@
     "category": "Elemental",
     "subCategory": "Mephit",
     "type" : "Small Elemental",
-    "area" : ["Forest"],
+    "area" : ["Cave","Mountains","Oasis","Plains","Ruins","Tomb"],
     "ideal": "neutral evil"
     },
     {
@@ -1871,7 +1872,7 @@
     "category": "Elemental",
     "subCategory": "Mephit",
     "type" : "Small Elemental",
-    "area" : ["Tundra"],
+    "area" : ["Cave","Mountains","Ruins","Tomb"],
     "ideal": "neutral evil"
     },
     {
@@ -1889,7 +1890,7 @@
     "category": "Elemental",
     "subCategory": "Mephit",
     "type" : "Small Elemental",
-    "area" : ["Swamp"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "neutral evil"
     },
     {

@@ -72,6 +72,7 @@ class Physical extends Component {
             "Ruins",
             "Swamp",
             "Tomb",
+            "Volcano"
         ],
         travelPointChoices: []
 
@@ -106,6 +107,7 @@ class Physical extends Component {
                         "Ocean",
                         "Ruins",
                         "Tomb",
+                        "Volcano",
                     ]
                 })
             break;
@@ -159,6 +161,7 @@ class Physical extends Component {
                         "Rivers",
                         "Ruins",
                         "Tomb",
+                        "Volcano",
                     ]
                 })
             break;
@@ -174,6 +177,7 @@ class Physical extends Component {
                         "Rivers",
                         "Ruins",
                         "Tomb",
+                        "Volcano",
                     ]
                 })
             break;
