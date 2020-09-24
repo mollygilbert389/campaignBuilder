@@ -15,12 +15,13 @@ class Physical extends Component {
         charMeeting: "",
         rolledClicked: false,
         worldOptions: [
-            "Coast",
+            "Aquatic",
             "Desert",
-            "Forest",
-            "Island",
-            "Jungle",
-            "Swamp",
+            "Grassland",
+            "Savanna",
+            "Taiga",
+            "Temperate Forest",
+            "Tropical Rainforest",
             "Tundra",
         ],
         eraOptions: [
@@ -58,6 +59,21 @@ class Physical extends Component {
             "Meet at school",
             "Mysterious Circumstance",
         ],
+        travelPoints: [
+            "Cave",
+            "Forest",
+            "Jungle",
+            "Lake",
+            "Meadow",
+            "Mountains",
+            "Oasis",
+            "Ocean",
+            "Plains",
+            "Ruins",
+            "Swamp",
+            "Tomb",
+        ],
+        travelPointChoices: []
 
     }
 
@@ -71,9 +87,124 @@ class Physical extends Component {
         const name = event.target.name
         const feedback = event.target.text
         this.setState({
-            [event.target.name]: event.target.text
+            [event.target.name]: feedback
         })
         this.props.setWorldData(name, feedback)
+
+        this.handleTravelPointState(feedback)
+    }
+
+    handleTravelPointState =(feedback) => {
+        switch(feedback) {
+            case "Aquatic":
+                this.setState({
+                    travelPointChoices: [],
+                    travelPoints: [
+                        "Cave",
+                        "Lake",
+                        "Mountains",
+                        "Ocean",
+                        "Ruins",
+                        "Tomb",
+                    ]
+                })
+            break;
+            case "Desert":
+                this.setState({
+                    travelPointChoices: [],
+                    travelPoints: [
+                        "Cave",
+                        "Mountains",
+                        "Oasis",
+                        "Ruins",
+                        "Tomb",
+                    ]
+                })
+            break;
+            case "Grassland":
+                this.setState({
+                    travelPointChoices: [],
+                    travelPoints: [
+                        "Cave",
+                        "Forest",
+                        "Lake",
+                        "Meadow",
+                        "Plains",
+                        "Ruins",
+                        "Swamp",
+                        "Tomb",
+                    ]
+                })
+            break;
+            case "Savanna":
+                this.setState({
+                    travelPointChoices: [],
+                    travelPoints: [
+                        "Cave",
+                        "Oasis",
+                        "Ruins",
+                        "Tomb",
+                    ]
+                })
+            break;
+            case "Taiga":
+                this.setState({
+                    travelPointChoices: [],
+                    travelPoints: [
+                        "Cave",
+                        "Forest",
+                        "Lake",
+                        "Meadow",
+                        "Mountains",
+                        "Rivers",
+                        "Ruins",
+                        "Tomb",
+                    ]
+                })
+            break;
+            case "Temperate Forest":
+                this.setState({
+                    travelPointChoices: [],
+                    travelPoints: [
+                        "Cave",
+                        "Forest",
+                        "Lake",
+                        "Meadow",
+                        "Mountains",
+                        "Rivers",
+                        "Ruins",
+                        "Tomb",
+                    ]
+                })
+            break;
+            case "Tropical Rainforest":
+                this.setState({
+                    travelPointChoices: [],
+                    travelPoints: [
+                        "Cave",
+                        "Jungle",
+                        "Rivers",
+                        "Ruins",
+                        "Swamp",
+                        "Tomb",
+                    ]
+                })
+            break;
+            case "Tundra":
+                this.setState({
+                    travelPointChoices: [],
+                    travelPoints: [
+                        "Cave",
+                        "Forest",
+                        "Lake",
+                        "Mountains",
+                        "Ocean",
+                        "Ruins",
+                        "Tomb",
+                    ]
+                })
+            break;
+        }
     }
 
     handleRoll = (feedback, name) => {
@@ -81,6 +212,38 @@ class Physical extends Component {
             [name]: feedback
         })
         this.props.setWorldData(name, feedback)
+        this.handleTravelPointState(feedback)
+    }
+
+    handleAddEvent = (event) => {
+        const currentChoices = this.state.travelPointChoices
+        const updatedChoiceList = currentChoices.concat(event.target.name)
+        const filteredChoiceList = updatedChoiceList.filter((item, index) => updatedChoiceList.indexOf(item) === index)
+        
+        if (this.state.travelPointChoices.length >= 3) {
+            this.setState({
+                eventCap: true
+            })
+        }
+
+        this.setState({
+            travelPointChoices: filteredChoiceList,
+        })
+    }
+
+    removeEvent = (event) => {
+        let choices = this.state.travelPointChoices
+        const newChoiceList = choices.filter(eventName => eventName !== event.target.name);
+
+        if (this.state.travelPointChoices.length <= 5) {
+            this.setState({
+                eventCap: false
+            })
+        }
+
+        this.setState({
+            travelPointChoices: newChoiceList
+        })
     }
 
 
@@ -168,6 +331,21 @@ render() {
                             <RollBtn name="charMeeting" handleRoll={this.handleRoll} rollingArray={this.state.meetingOptions}></RollBtn>
                         </Form>
                     </FormGroup>
+
+                    <p>Consider some places your adventurers might travel through. Pick only 3.</p>
+
+                    <div className="container">
+                        <div className="side tags">
+                        {this.state.travelPoints.map(drop => {
+                            return <Button name={drop} className="eventbtns" onClick={this.handleAddEvent} disabled={this.state.travelPointChoices.length >= 3 ? true : false}> {drop}</Button>
+                            })}
+                        </div>
+                        <div className="side tags">
+                        {this.state.travelPointChoices.map(drop => {
+                            return <Button name={drop} className="eventbtns" onClick={this.removeEvent}> {drop}</Button>
+                            })}
+                        </div>
+                    </div>
 
                 </Modal.Body>
 

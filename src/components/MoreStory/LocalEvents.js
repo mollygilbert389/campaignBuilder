@@ -131,6 +131,7 @@ render() {
                             })}
                         </div>
                     </div>
+                    
                 </Modal.Body>
 
                 <Modal.Footer>

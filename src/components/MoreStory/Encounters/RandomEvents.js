@@ -9,7 +9,7 @@ class RandomEvents extends Component {
     state ={
         randomEncounter: false,
         randomEncounterNum: "",
-        monsterCat: "Forest",
+        monsterCat: "Any",
         filteredMonsterSelection: "",
         monsterDrop: [],
         monsterItemsByCategory: [],
@@ -133,7 +133,7 @@ render() {
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
                                     {this.state.monsterItemsByCategory.map(item => {
-                                        return <Dropdown.Item key={item.id}>{item.name}</Dropdown.Item> })}       
+                                        return <Dropdown.Item key={item.id}>{item.name}</Dropdown.Item>})}       
                                 </Dropdown.Menu>
                             </Dropdown>)}
                         </Form>
