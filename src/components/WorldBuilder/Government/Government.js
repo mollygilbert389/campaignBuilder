@@ -17,7 +17,6 @@ class Government extends Component {
             "Barter System",
             "Odd Currency",
         ],
-        // governmentOptions: governments.map(item => item.name)
     }
 
     handleDropSelect = (keyEvent, event) => {

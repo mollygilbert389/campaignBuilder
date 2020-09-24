@@ -35,6 +35,7 @@ const initialState = {
     religion: "",
     era: "",
     uniqueFeature: "",
+    travelPointChoices: [],
     languages: [
       "Celestial",
       "Common",

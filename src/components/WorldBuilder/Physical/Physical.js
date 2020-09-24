@@ -221,7 +221,7 @@ class Physical extends Component {
 
     handleAddEvent = (event) => {
         const currentChoices = this.state.travelPointChoices
-        const updatedChoiceList = currentChoices.concat(event.target.name)
+        const updatedChoiceList = currentChoices.concat(event.target.value)
         const filteredChoiceList = updatedChoiceList.filter((item, index) => updatedChoiceList.indexOf(item) === index)
         
         if (this.state.travelPointChoices.length >= 3) {
@@ -233,11 +233,12 @@ class Physical extends Component {
         this.setState({
             travelPointChoices: filteredChoiceList,
         })
+        this.props.setWorldData("travelPointChoices", filteredChoiceList)
     }
 
     removeEvent = (event) => {
         let choices = this.state.travelPointChoices
-        const newChoiceList = choices.filter(eventName => eventName !== event.target.name);
+        const newChoiceList = choices.filter(eventName => eventName !== event.target.value);
 
         if (this.state.travelPointChoices.length <= 5) {
             this.setState({
@@ -248,6 +249,7 @@ class Physical extends Component {
         this.setState({
             travelPointChoices: newChoiceList
         })
+        this.props.setWorldData("travelPointChoices", newChoiceList)
     }
 
 
@@ -341,12 +343,12 @@ render() {
                     <div className="container">
                         <div className="side tags">
                         {this.state.travelPoints.map(drop => {
-                            return <Button name={drop} className="eventbtns" onClick={this.handleAddEvent} disabled={this.state.travelPointChoices.length >= 3 ? true : false}> {drop}</Button>
+                            return <Button name="travelPointChoices" value={drop} className="eventbtns" onClick={this.handleAddEvent} disabled={this.state.travelPointChoices.length >= 3 ? true : false}> {drop}</Button>
                             })}
                         </div>
                         <div className="side tags">
                         {this.state.travelPointChoices.map(drop => {
-                            return <Button name={drop} className="eventbtns" onClick={this.removeEvent}> {drop}</Button>
+                            return <Button name="travelPointChoices" value={drop} className="eventbtns" onClick={this.removeEvent}> {drop}</Button>
                             })}
                         </div>
                     </div>

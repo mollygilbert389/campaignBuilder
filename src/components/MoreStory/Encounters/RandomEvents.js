@@ -2,18 +2,20 @@ import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import Monsters from "../../Dungeon/monster.json"
-import {FormControlLabel, Checkbox, FormGroup, Slider} from '@material-ui/core'
+import {FormControlLabel, Checkbox, FormGroup, Slider, MobileStepper} from '@material-ui/core'
 import "../style.css"
+import CampaignCard from '../../FinalCampaign/CampaignCard'
 
 class RandomEvents extends Component {
     state ={
         randomEncounter: false,
         randomEncounterNum: "",
-        monsterCat: "Any",
+        monsterCat: this.props.campaign.travelPointChoices,
         filteredMonsterSelection: "",
         monsterDrop: [],
         monsterItemsByCategory: [],
-        finalSelection: ""
+        finalSelection: "",
+        possibleMonsters: [],
     }
 
     componentDidMount() {
@@ -27,7 +29,6 @@ class RandomEvents extends Component {
     }
 
     handleBtnClick = (event) => {
-
         if (event.target.name === "Yes")
         this.setState({
            randomEncounter: true
@@ -41,32 +42,37 @@ class RandomEvents extends Component {
     }
 
     handleMonsterShow = () => {
-        const choice = this.state.monsterCat
-        const filteredMonsters = Monsters.filter(item => (item.area.includes(choice)))
-        
-        const monsterCategories = filteredMonsters.map(item => item.category)
+        const choices = this.state.monsterCat
+        const newFilteredMonsters = Monsters.filter(monster => {
+            for(let i=0; i < monster.area.length; i++) {
+                for(let j=0; j < choices.length; j++) {
+                    if (monster.area.includes(choices[j])) {
+                        return true
+                    }
+                    return false
+                }
+
+            }
+        })
+
+        const monsterCategories = newFilteredMonsters.map(item => item.category)
         const filterMonsterCategories = [...new Set(monsterCategories)]
 
         this.setState({
             monsterDrop: filterMonsterCategories,
+            possibleMonsters: newFilteredMonsters
         })
 
     }
 
     handleSelect = (eventKey, event) => {
         const selection = event.target.text
-        console.log(selection)
-        const choice = this.state.monsterCat
-        const filteredMonsters = Monsters.filter(item => (item.area.includes(choice)))
-        console.log(filteredMonsters)
-
-
-        const monsterNamesByCat = filteredMonsters.filter(item =>  (item.category.includes(selection)))
-        console.log(monsterNamesByCat)
-        
+        const updatedMonsterList = this.state.possibleMonsters
+       
+        const filteredMonsters = updatedMonsterList.filter(item => (item.category.includes(selection)))
         this.setState({
             filteredMonsterSelection: selection,
-            monsterItemsByCategory: monsterNamesByCat
+            monsterItemsByCategory: filteredMonsters
         })
     }
 

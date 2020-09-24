@@ -338,7 +338,8 @@ setTreasureNumber = (number) => {
                     <div className="btnspace">
                         <LocalEvents setLocalEvents={this.setLocalEvents}
                         ></LocalEvents>
-                        <EncountersAndEvents 
+                        <EncountersAndEvents
+                        campaign={this.props.campaign} 
                         setRandomEncounterNumber={this.setRandomEncounterNumber}
                         ></EncountersAndEvents>
                         <ExtraAdventure></ExtraAdventure>
