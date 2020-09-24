@@ -2,20 +2,20 @@ import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import Monsters from "../../Dungeon/monster.json"
-import {FormControlLabel, Checkbox, FormGroup, Slider, MobileStepper} from '@material-ui/core'
+import {FormControlLabel, Checkbox, FormGroup, Slider} from '@material-ui/core'
 import "../style.css"
-import CampaignCard from '../../FinalCampaign/CampaignCard'
 
 class RandomEvents extends Component {
     state ={
         randomEncounter: false,
-        randomEncounterNum: "",
+        randomEncounterNum: null,
         monsterCat: this.props.campaign.travelPointChoices,
         filteredMonsterSelection: "",
         monsterDrop: [],
         monsterItemsByCategory: [],
         finalSelection: "",
         possibleMonsters: [],
+        randomEncounterMonsters: []
     }
 
     componentDidMount() {
@@ -36,8 +36,18 @@ class RandomEvents extends Component {
     }
 
     handleSlider = (event, value) => {
+        let randomMonsterObject = []
+    
+        for (let i=0; i < value; i++) {
+            let newObject = {id:i}
+            randomMonsterObject.push(newObject)
+        }
+
+        console.log(randomMonsterObject)
+
         this.setState({
-            randomEncounterNum: value
+            randomEncounterNum: value,
+            randomEncounterMonsters: randomMonsterObject
         },() => this.props.setRandomEncounterNumber(this.state.randomEncounterNum))
     }
 
@@ -60,25 +70,38 @@ class RandomEvents extends Component {
 
         this.setState({
             monsterDrop: filterMonsterCategories,
-            possibleMonsters: newFilteredMonsters
+            possibleMonsters: newFilteredMonsters,
         })
 
     }
 
-    handleSelect = (eventKey, event) => {
+    handleSelect = (eventKey, event, index) => {
         const selection = event.target.text
         const updatedMonsterList = this.state.possibleMonsters
-       
         const filteredMonsters = updatedMonsterList.filter(item => (item.category.includes(selection)))
+
+        const newMonsterDrops = [...this.state.randomEncounterMonsters].map(monster => {
+            if (monster.id===index) {
+                return {...monster, category:selection, filteredMonsterList:filteredMonsters}
+            } return monster
+        })
+
         this.setState({
             filteredMonsterSelection: selection,
-            monsterItemsByCategory: filteredMonsters
+            randomEncounterMonsters: newMonsterDrops
         })
     }
 
-    handleFinalSelect = (eventKey, event) => {
+    handleFinalSelect = (eventKey, event, index) => {
+        const selection = event.target.text 
+        const newMonsterDrops = [...this.state.randomEncounterMonsters].map(monster => {
+            if (monster.id===index) {
+                return {...monster, finalSelection:selection}
+            } return monster
+        })
+
         this.setState({
-            finalSelection: event.target.text
+            randomEncounterMonsters: newMonsterDrops
         })
     }
 
@@ -115,17 +138,17 @@ render() {
                         <Slider
                         min={1}
                         max={10}
-                        defaultValue={2}
+                        defaultValue={5}
                         onChangeCommitted={this.handleSlider}
                         valueLabelDisplay="on"
                         />
                     </div>)}
 
-                    <div>
+                    {this.state.randomEncounterMonsters.map((space , index)=> {return <div>
                         <Form inline>
-                            <Dropdown onSelect={this.handleSelect}>
+                            <Dropdown onSelect={(keyEvent, event) => this.handleSelect(keyEvent, event, index)} name={space.id}>
                                 <Dropdown.Toggle variant="outline-primary">
-                                {this.state.filteredMonsterSelection ? this.state.filteredMonsterSelection: 'Choose Your Monsters'}
+                                {this.state.randomEncounterMonsters[index].category ? this.state.randomEncounterMonsters[index].category : 'Choose Your Monsters'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
                                     {this.state.monsterDrop.map(item => {
@@ -133,17 +156,17 @@ render() {
                                 </Dropdown.Menu>
                             </Dropdown>
 
-                            {this.state.filteredMonsterSelection && (<Dropdown onSelect={this.handleFinalSelect}>
+                            {this.state.randomEncounterMonsters[index].category && (<Dropdown onSelect={(keyEvent, event) => this.handleFinalSelect(keyEvent, event, index)}>
                                 <Dropdown.Toggle variant="outline-primary">
-                                {this.state.finalSelection ? this.state.finalSelection: 'Choose Your Monsters'}
+                                {this.state.randomEncounterMonsters[index].finalSelection ? this.state.randomEncounterMonsters[index].finalSelection : 'Choose Your Monsters'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {this.state.monsterItemsByCategory.map(item => {
+                                    {this.state.randomEncounterMonsters[index].filteredMonsterList.map(item => {
                                         return <Dropdown.Item key={item.id}>{item.name}</Dropdown.Item>})}       
                                 </Dropdown.Menu>
                             </Dropdown>)}
                         </Form>
-                    </div>
+                    </div>})}
 
 
                 </Modal.Body>
