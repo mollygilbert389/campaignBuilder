@@ -1890,7 +1890,7 @@
     "category": "Elemental",
     "subCategory": "Mephit",
     "type" : "Small Elemental",
-    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Plains","Ruins","Swamp"],
     "ideal": "neutral evil"
     },
     {
@@ -1899,7 +1899,7 @@
     "category": "Elemental",
     "subCategory": "Mephit",
     "type" : "Small Elemental",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Mountains","Plains","Ruins","Swamp", "Tomb","Volcano"],
     "ideal": "neutral evil"
     },
     {
@@ -1908,7 +1908,7 @@
     "category": "Elemental",
     "subCategory": "Mephit",
     "type" : "Small Elemental",
-    "area" : ["Tundra"],
+    "area" : ["Cave","Forest","Jungle","Mountains","Plains","Ruins","Swamp", "Tomb","Volcano"],
     "ideal": "neutral evil"
     },
     {
@@ -1917,7 +1917,7 @@
     "category": "Humanoid",
     "subCategory": "Merfolk",
     "type" : "Medium Humanoid",
-    "area" : ["Ocean"],
+    "area" : ["Ocean", "Lake"],
     "ideal": "neutral"
     },
     {
@@ -1926,7 +1926,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Large Monstrosity",
-    "area" : ["Ocean"],
+    "area" : ["Ocean", "Lake"],
     "ideal": "chaotic evil"
     },
     {
@@ -1935,7 +1935,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Medium Monstrosity",
-    "area" : ["House"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "neutral"
     },
     {
@@ -1944,7 +1944,7 @@
     "category": "Abberation",
     "subCategory": "",
     "type" : "Medium Abberation",
-    "area" : ["Any"],
+    "area" : ["Cave","Ruins","Tomb"],
     "ideal": "lawful evil"
     },    
     {
@@ -1953,7 +1953,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Large Monstrosity",
-    "area" : ["Forest", "Jungle"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp"],
     "ideal": "chaotic evil"
     },    
     {
@@ -2025,7 +2025,7 @@
     "category": "Plant",
     "subCategory": "Myconids",
     "type" : "Small Plant",
-    "area" : ["Cave"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Ruins","Swamp","Tomb"],
     "ideal": "laeful neutral"
     },
     {
@@ -2034,7 +2034,7 @@
     "category": "Plant",
     "subCategory": "Myconids",
     "type" : "Medium Plant",
-    "area" : ["Cave"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
     },
     {
@@ -2043,7 +2043,7 @@
     "category": "Plant",
     "subCategory": "Myconids",
     "type" : "Medium Plant",
-    "area" : ["Cave"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Ruins","Swamp","Tomb"],
     "ideal": "lawful neutral"
     },
     {
@@ -2052,7 +2052,7 @@
     "category": "Plant",
     "subCategory": "Myconids",
     "type" : "Large Plant",
-    "area" : ["Cave"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Ruins","Swamp","Tomb"],
     "ideal": "lawful neutral"
     },    
     {
@@ -2061,7 +2061,7 @@
     "category": "Undead",
     "subCategory": "Naga",
     "type" : "Large Undead",
-    "area" : ["Tomb"],
+    "area" : ["Tomb", "Ruins"],
     "ideal": "lawful evil"
     },    
     {
@@ -2070,7 +2070,7 @@
     "category": "Monstrosity",
     "subCategory": "Naga",
     "type" : "Large Monstrosity",
-    "area" : ["Cave"],
+    "area" : ["Tomb", "Ruins"],
     "ideal": "chaotic evil"
     },
     {
@@ -2079,7 +2079,7 @@
     "category": "Monstrosity",
     "subCategory": "Naga",
     "type" : "Large Monstrosity",
-    "area" : ["Forest"],
+    "area" : ["Tomb", "Ruins"],
     "ideal": "lawful good"
     },
     {
@@ -2088,7 +2088,7 @@
     "category": "Fiend",
     "subCategory": "",
     "type" : "Large Fiend",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Plains","Ruins","Tomb","Volcano"],
     "ideal": "neutral evil"
     },
     {
@@ -2097,7 +2097,7 @@
     "category": "Abberation",
     "subCategory": "",
     "type" : "Medium Abberation",
-    "area" : ["Cave", "Tomb", "Ruins"],
+    "area" : ["Cave","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "neutral evil"
     },
     {
@@ -2106,7 +2106,7 @@
     "category": "Giant",
     "subCategory": "",
     "type" : "Large Giant",
-    "area" : ["Forest", "Jungle", "Swamp"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "chaotic evil"
     },    
     {
@@ -2115,7 +2115,7 @@
     "category": "Giant",
     "subCategory": "",
     "type" : "Large Giant",
-    "area" : ["Forest", "Jungle", "Swamp"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "chaotic neutral"
     },    
     {
@@ -2124,7 +2124,7 @@
     "category": "Giant",
     "subCategory": "",
     "type" : "Large Giant",
-    "area" : ["Forest", "Jungle", "Swamp"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "lawful evil"
     },
     {
@@ -2133,7 +2133,7 @@
     "category": "Ooze",
     "subCategory": "",
     "type" : "Large Ooze",
-    "area" : ["Cave", "Tomb"],
+    "area" : ["Cave","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
     },
     {
@@ -2142,7 +2142,7 @@
     "category": "Ooze",
     "subCategory": "",
     "type" : "Large Ooze",
-    "area" : ["Cave", "Tomb"],
+    "area" : ["Cave","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
     },
     {
@@ -2151,7 +2151,7 @@
     "category": "Ooze",
     "subCategory": "",
     "type" : "Medium Ooze",
-    "area" : ["Cave", "Tomb"],
+    "area" : ["Cave","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
     },
     {
@@ -2160,7 +2160,7 @@
     "category": "Ooze",
     "subCategory": "",
     "type" : "Large Ooze",
-    "area" : ["Cave", "Tomb"],
+    "area" : ["Cave","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
     },    
     {
@@ -2169,7 +2169,7 @@
     "category": "Humanoid",
     "subCategory": "Orc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb","Volcano"],
     "ideal": "chaotic evil"
     },    
     {
@@ -2178,7 +2178,7 @@
     "category": "Humanoid",
     "subCategory": "Orc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb","Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -2187,7 +2187,7 @@
     "category": "Humanoid",
     "subCategory": "Orc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb","Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -2196,7 +2196,7 @@
     "category": "Humanoid",
     "subCategory": "Orc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb","Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -2205,7 +2205,7 @@
     "category": "Abberation",
     "subCategory": "",
     "type" : "Large Abberation",
-    "area" : ["Swamp", "Cave"],
+    "area" : ["Cave","Swamp","Tomb","Volcano"],
     "ideal": "neutral"
     },
     {
@@ -2214,7 +2214,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Large Monstrosity",
-    "area" : ["Forest"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Ruins"],
     "ideal": "unaligned"
     },    
     {
@@ -2223,7 +2223,7 @@
     "category": "Celestial",
     "subCategory": "",
     "type" : "Large Celestial",
-    "area" : ["Forest"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Ruins"],
     "ideal": "chaotic good"
     },    
     {
@@ -2232,7 +2232,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Medium Monstrosity",
-    "area" : ["Mountains"],
+    "area" : ["Cave","Forest","Mountains","Ruins"],
     "ideal": "chaotic evil"
     },
     {
@@ -2241,7 +2241,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Medium Monstrosity",
-    "area" : ["Cave"],
+    "area" : ["Cave","Ruins","Tomb","Volcano"],
     "ideal": "unaligned"
     },
     {
@@ -2250,7 +2250,7 @@
     "category": "Fey",
     "subCategory": "",
     "type" : "Tiny Fey",
-    "area" : ["Meadow"],
+    "area" : ["Forest","Jungle","Meadow","Oasis","Ruins"],
     "ideal": "natural good"
     },
     {
@@ -2259,7 +2259,7 @@
     "category": "Dragon",
     "subCategory": "",
     "type" : "Tiny Dragon",
-    "area" : ["Any"],
+    "area" : ["Forest","Jungle","Meadow","Oasis","Ruins"],
     "ideal": "neutral good"
     },
     {
@@ -2268,7 +2268,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Gargantuan Monstrosity",
-    "area" : ["Cave", "Desert"],
+    "area" : ["Cave","Ruins","Tomb","Volcano"],
     "ideal": "unaligned"
     },    
     {
@@ -2277,7 +2277,7 @@
     "category": "Humanoid",
     "subCategory": "",
     "type" : "Medium Humanoid",
-    "area" : ["Cave"],
+    "area" : ["Cave","Ruins","Tomb","Volcano"],
     "ideal": "chaotic neutral"
     },    
     {
@@ -2286,7 +2286,7 @@
     "category": "Fiend",
     "subCategory": "",
     "type" : "Medium Fiend",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Tomb"],
     "ideal": "lawful evil"
     },
     {
@@ -2295,7 +2295,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Large Monstrosity",
-    "area" : ["Tundra"],
+    "area" : ["Cave","Forest","Mountains","Ruins"],
     "ideal": "unaligned"
     },
     {
@@ -2304,7 +2304,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Huge Monstrosity",
-    "area" : ["Tundra"],
+    "area" : ["Cave","Forest","Mountains","Ruins"],
     "ideal": "unaligned"
     },
     {
@@ -2313,7 +2313,7 @@
     "category": "Undead",
     "subCategory": "",
     "type" : "Medium Undead",
-    "area" : ["Tomb", "Ruins"],
+    "area" : ["Cave","Forest","Mountains","Ruins","Tomb"],
     "ideal": "neutral"
     },
     {
@@ -2331,7 +2331,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Large Monstrosity",
-    "area" : ["Cave"],
+    "area" : ["Cave","Ruins","Tomb","Volcano"],
     "ideal": "neutral evil"
     },    
     {
@@ -2340,7 +2340,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Medium Monstrosity",
-    "area" : ["Cave"],
+    "area" : ["Cave","Ruins","Tomb","Volcano"],
     "ideal": "unaligned"
     },
     {
@@ -2349,7 +2349,7 @@
     "category": "Humanoid",
     "subCategory": "Sahuagin",
     "type" : "Medium Humanoid",
-    "area" : ["Ocean", "Island"],
+    "area" : ["Ocean", "Lake"],
     "ideal": "lawful evil"
     },
     {
@@ -2358,7 +2358,7 @@
     "category": "Humanoid",
     "subCategory": "Sahuagin",
     "type" : "Medium Humanoid",
-    "area" : ["Ocean", "Island"],
+    "area" : ["Ocean", "Lake"],
     "ideal": "lawful evil"
     },
     {
@@ -2367,7 +2367,7 @@
     "category": "Humanoid",
     "subCategory": "Sahuagin",
     "type" : "Large Humanoid",
-    "area" : ["Ocean", "Island"],
+    "area" : ["Ocean", "Lake"],
     "ideal": "lawful evil"
     },
     {
@@ -2394,7 +2394,7 @@
     "category": "Fey",
     "subCategory": "",
     "type" : "Medium Fey",
-    "area" : ["Forest"],
+    "area" : ["Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins"],
     "ideal": "chaotic neutral"
     },
     {
@@ -2403,7 +2403,7 @@
     "category": "Construct",
     "subCategory": "",
     "type" : "Medium Construct",
-    "area" : ["Swamp", "Forest"],
+    "area" : ["Forest","Jungle","Meadow","Plains","Ruins","Swamp"],
     "ideal": "chaotic evil"
     },
     {
@@ -2412,7 +2412,7 @@
     "category": "Undead",
     "subCategory": "",
     "type" : "Medium Undead",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -2421,7 +2421,7 @@
     "category": "Plant",
     "subCategory": "",
     "type" : "Large Plant",
-    "area" : ["Swamp", "Forest"],
+    "area" : ["Forest","Jungle","Meadow","Ruins","Swamp"],
     "ideal": "unaligned"
     },
     {
@@ -2430,7 +2430,7 @@
     "category": "Construct",
     "subCategory": "",
     "type" : "Large Construct",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "unaligned"
     },    
     {
@@ -2520,7 +2520,7 @@
     "category": "Undead",
     "subCategory": "",
     "type" : "Medium Undead",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -2529,7 +2529,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Large Monstrosity",
-    "area" : ["Desert"],
+    "area" : ["Oasis"],
     "ideal": "lawful neutral"
     },
     {
@@ -2538,7 +2538,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Large Monstrosity",
-    "area" : ["Desert"],
+    "area" : ["Oasis"],
     "ideal": "lawful neutral"
     },    
     {
@@ -2547,7 +2547,7 @@
     "category": "Fey",
     "subCategory": "",
     "type" : "Tiny Fey",
-    "area" : ["Meadow"],
+    "area" : ["Forest","Jungle","Meadow","Oasis"],
     "ideal": "neutral good"
     },    
     {
@@ -2556,7 +2556,7 @@
     "category": "Beast",
     "subCategory": "",
     "type" : "Tiny Beast",
-    "area" : ["Cave"],
+    "area" : ["Cave", "Tomb"],
     "ideal": "unaligned"
     },
     {
@@ -2565,7 +2565,7 @@
     "category": "Fiend",
     "subCategory": "",
     "type" : "Medium Fiend",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp"],
     "ideal": "neutral evil"
     },
     {
@@ -2583,7 +2583,7 @@
     "category": "Humanoid",
     "subCategory": "",
     "type" : "Medium Humanoid",
-    "area" : ["Desert"],
+    "area" : ["Oasis"],
     "ideal": "chaotic neutral"
     },
     {
@@ -2592,7 +2592,7 @@
     "category": "Plant",
     "subCategory": "",
     "type" : "Huge Plant",
-    "area" : ["Forest", "Swamp", "Meadow"],
+    "area" : ["Forest","Jungle","Meadow","Ruins","Swamp"],
     "ideal": "chaotic good"
     },
     {
@@ -2601,7 +2601,7 @@
     "category": "Humanoid",
     "subCategory": "",
     "type" : "Medium Humanoid",
-    "area" : ["Ocean", "Coast"],
+    "area" : ["Ocean", "Lake"],
     "ideal": "chaotic evil"
     },
     {
@@ -2610,7 +2610,7 @@
     "category": "Giant",
     "subCategory": "",
     "type" : "Large Giant",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic evil"
     },
     {
@@ -2619,7 +2619,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Large Monstrosity",
-    "area" : ["Cave"],
+    "area" : ["Cave","Tomb","Volcano"],
     "ideal": ""
     },    
     {
@@ -2628,7 +2628,7 @@
     "category": "Celestial",
     "subCategory": "",
     "type" : "Large Celestial",
-    "area" : ["Forest", "Meadow", "Jungle"],
+    "area" : ["Forest","Jungle","Meadow","Plains"],
     "ideal": "lawful good"
     },
     {
@@ -2637,7 +2637,7 @@
     "category": "Undead",
     "subCategory": "",
     "type" : "Medium Undead",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "lawful evil"
     },
     {
@@ -2646,7 +2646,7 @@
     "category": "Undead",
     "subCategory": "",
     "type" : "Medium Undead",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "neutral evil"
     },
     {
@@ -2664,7 +2664,7 @@
     "category": "Undead",
     "subCategory": "",
     "type" : "Medium Undead",
-    "area" : ["Tundra", "Tomb"],
+    "area" : ["Cave","Forest","Jungle","Mountains","Ruins","Tomb"],
     "ideal": "neutral evil"
     },    
     {
@@ -2673,7 +2673,7 @@
     "category": "Undead",
     "subCategory": "",
     "type" : "Tiny Undead",
-    "area" : ["Forest", "Meadow", "Tomb", "Ruins"],
+    "area" : ["Forest","Jungle","Meadow","Oasis","Ruins","Swamp"],
     "ideal": "chaotic evil"
     },
     {
@@ -2682,7 +2682,7 @@
     "category": "Undead",
     "subCategory": "",
     "type" : "Medium Undead",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "neutral evil"
     },
     {
@@ -2691,7 +2691,7 @@
     "category": "Dragon",
     "subCategory": "",
     "type" : "Large Dragon",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins"],
     "ideal": "unaligned"
     },
     {
@@ -2700,7 +2700,7 @@
     "category": "Elemental",
     "subCategory": "",
     "type" : "Medium Elemental",
-    "area" : ["Volcano"],
+    "area" : ["Volcano","Mountains"],
     "ideal": "neutral"
     },
     {
@@ -2709,7 +2709,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Large Monstrosity",
-    "area" : ["Tundra"],
+    "area" : ["Cave","Forest","Mountains","Ruins"],
     "ideal": "chaotic evil"
     },    
     {
@@ -2718,7 +2718,7 @@
     "category": "Monstrosity",
     "subCategory": "",
     "type" : "Huge Monstrosity",
-    "area" : ["Tundra"],
+    "area" : ["Cave","Forest","Mountains","Ruins"],
     "ideal": "chaotic evil"
     },
     {
@@ -2727,7 +2727,7 @@
     "category": "Monstrosity",
     "subCategory": "Yuan-Ti",
     "type" : "Large Monstrosity",
-    "area" : ["Desert"],
+    "area" : ["Oasis"],
     "ideal": "neutral evil"
     },
     {
@@ -2736,7 +2736,7 @@
     "category": "Monstrosity",
     "subCategory": "Yuan-Ti",
     "type" : "Medium Monstrosity",
-    "area" : ["Desert"],
+    "area" : ["Oasis"],
     "ideal": "neutral evil"
     },
     {
@@ -2745,7 +2745,7 @@
     "category": "Humanoid",
     "subCategory": "Yuan-Ti",
     "type" : "Medium Humanoid",
-    "area" : ["Desert"],
+    "area" : ["Oasis"],
     "ideal": "neutral evil"
     },
     {
@@ -2754,7 +2754,7 @@
     "category": "Fiend",
     "subCategory": "Yugoloth",
     "type" : "Medium Fiend",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains"],
     "ideal": "neutral evil"
     },    
     {
@@ -2763,7 +2763,7 @@
     "category": "Fiend",
     "subCategory": "Yugoloth",
     "type" : "Medium Fiend",
-    "area" : ["Cave"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis"],
     "ideal": "neutral evil"
     },
     {
@@ -2772,7 +2772,7 @@
     "category": "Fiend",
     "subCategory": "Yugoloth",
     "type" : "Large Fiend",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Volcano"],
     "ideal": "neutral evil"
     },
     {
@@ -2781,7 +2781,7 @@
     "category": "Fiend",
     "subCategory": "Yugoloth",
     "type" : "Medium Fiend",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Volcano"],
     "ideal": "neutral evil"
     },
     {
@@ -2790,7 +2790,7 @@
     "category": "Undead",
     "subCategory": "Zombie",
     "type" : "Medium Undead",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb"],
     "ideal": "natural evil"
     },
     {
@@ -2799,7 +2799,7 @@
     "category": "Undead",
     "subCategory": "Zombie",
     "type" : "Large Undead",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb"],
     "ideal": "natural evil"
     },    
     {
@@ -2808,7 +2808,7 @@
     "category": "Undead",
     "subCategory": "Zombie",
     "type" : "Large Undead",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb"],
     "ideal": "natural evil"
     },
     {
@@ -2826,7 +2826,7 @@
     "category": "Plant",
     "subCategory": "Misc",
     "type" : "Small Plant",
-    "area" : ["Any"],
+    "area" : ["Forest","Jungle","Meadow","Plains","Ruins","Swamp"],
     "ideal": "unaligned"
     },
     {
@@ -2835,8 +2835,8 @@
     "category": "Plant",
     "subCategory": "Misc",
     "type" : "Huge Plant",
-    "area" : ["Forest", "Swamp", "Tundra"],
-    "ideal": ""
+    "area" : ["Forest","Jungle","Meadow","Plains","Ruins","Swamp"],
+    "ideal": "unaligned"
     },
     {
     "id": 317,
@@ -2862,7 +2862,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Tiny Beast",
-    "area" : ["Any"],
+    "area" : ["Forest","Jungle","Meadow","Plains","Ruins"],
     "ideal": "unaligned"
     },
     {
@@ -2871,7 +2871,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Tiny Beast",
-    "area" : ["Cave"],
+    "area" : ["Cave","Tomb","Volcano"],
     "ideal": "unaligned"
     },
     {
@@ -2880,7 +2880,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Forest"],
+    "area" : ["Forest","Mountains","Cave"],
     "ideal": "unaligned"
     },
     {
@@ -2889,7 +2889,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Desert"],
+    "area" : ["Oasis"],
     "ideal": "unaligned"
     },
     {
@@ -2907,7 +2907,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Plains","Swamp"],
     "ideal": "unaligned"
     },
     {
@@ -2916,7 +2916,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Forest"],
+    "area" : ["Forest","Mountains","Cave"],
     "ideal": "unaligned"
     },
     {
@@ -2925,7 +2925,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Desert"],
+    "area" : ["Oasis"],
     "ideal": "unaligned"
     },
     {
@@ -2934,7 +2934,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Tiny Beasts",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains"],
     "ideal": "unaligned"
     },
     {
@@ -2943,7 +2943,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Jungle"],
+    "area" : ["Jungle","Meadow"],
     "ideal": "unaligned"
     },
     {
@@ -2952,7 +2952,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Tiny Beast",
-    "area" : ["Coast"],
+    "area" : ["Ocean"],
     "ideal": "unaligned"
     },
     {
@@ -2970,7 +2970,7 @@
     "category": "Monstrosity",
     "subCategory": "Misc",
     "type" : "Meadium Monstrosity",
-    "area" : ["Cave"],
+    "area" : ["Cave","Tomb","Volcano"],
     "ideal": "neutral evil"
     },
     {
@@ -2979,7 +2979,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Forest"],
+    "area" : ["Forest","Mountains","Meadow","Plains"],
     "ideal": "unaligned"
     },
     {
@@ -2988,7 +2988,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Tundra"],
+    "area" : ["Forest","Mountains"],
     "ideal": "unaligned"
     },
     {
@@ -2997,7 +2997,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Forest"],
+    "area" : ["Forest","Jungle","Meadow","Mountains","Plains"],
     "ideal": "unaligned"
     },
     {
@@ -3006,7 +3006,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Small Beast",
-    "area" : ["Moutains"],
+    "area" : ["Moutains","Forest"],
     "ideal": "unaligned"
     },
     {
@@ -3015,7 +3015,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Huge Beast",
-    "area" : ["Jungle"],
+    "area" : ["Jungle","Oasis"],
     "ideal": "unaligned"
     },
     {
@@ -3024,7 +3024,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Forest"],
+    "area" : ["Forest","Mountains"],
     "ideal": "unaligned"
     },
     {
@@ -3033,7 +3033,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Tiny Beast",
-    "area" : ["Any"],
+    "area" : ["Jungle"],
     "ideal": "unaligned"
     },
     {
@@ -3047,7 +3047,7 @@
     },
     {
     "id": 350,
-    "name": "Giant",
+    "name": "Giant Ape",
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Huge Beast",
@@ -3060,7 +3060,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Plains"],
     "ideal": "unaligned"
     },
     {
@@ -3069,7 +3069,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Cave"],
+    "area" : ["Cave","Tomb","Volcano"],
     "ideal": "unaligned"
     },
     {
@@ -3078,7 +3078,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Forest"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Plains","Swamp"],
     "ideal": "unaligned"
     },
     {
@@ -3087,7 +3087,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "small Beast",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Plains","Swamp","Oasis"],
     "ideal": "unaligned"
     },
     {
@@ -3096,7 +3096,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Huge Beast",
-    "area" : ["Forest"],
+    "area" : ["Jungle"],
     "ideal": "unaligned"
     },
     {
@@ -3105,7 +3105,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Coast"],
+    "area" : ["Ocean"],
     "ideal": "unaligned"
     },
     {
@@ -3132,7 +3132,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Huge Beast",
-    "area" : ["Forest"],
+    "area" : ["Forest","Mountains"],
     "ideal": "unaligned"
     },
     {
@@ -3141,7 +3141,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Small Beast",
-    "area" : ["Desert"],
+    "area" : ["Oasis"],
     "ideal": "unaligned"
     },
     {
@@ -3159,7 +3159,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Mountains"],
+    "area" : ["Mountains","Forest"],
     "ideal": "unaligned"
     },
     {
@@ -3168,7 +3168,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Desert"],
+    "area" : ["Oasis"],
     "ideal": "unaligned"
     },
     {
@@ -3195,7 +3195,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Forest", "Tundra"],
+    "area" : ["Forest"],
     "ideal": "unaligned"
     },
     {
@@ -3213,7 +3213,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Small Beast",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
     },
     {
@@ -3222,7 +3222,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Desert"],
+    "area" : ["Oasis"],
     "ideal": "unaligned"
     },
     {
@@ -3249,7 +3249,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
     },
     {
@@ -3258,7 +3258,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Forest"],
+    "area" : ["Forest","Meadow","Swamp"],
     "ideal": "unaligned"
     },
     {
@@ -3267,7 +3267,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Desert"],
+    "area" : ["Oasis"],
     "ideal": "neutral evil"
     },
     {
@@ -3276,7 +3276,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Mountains","Oasis","Ruins","Tomb","Volcano"],
     "ideal": "unaligned"
     },
     {
@@ -3285,7 +3285,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Any"],
+    "area" : ["Forest","Jungle","Meadow","Mountains"],
     "ideal": "unaligned"
     },
     {
@@ -3294,7 +3294,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Mountains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
     },
     {
@@ -3303,7 +3303,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Any"],
+    "area" : ["Forest","Mountains"],
     "ideal": "unaligned"
     },
     {
@@ -3312,7 +3312,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Tiny Beast",
-    "area" : ["Any"],
+    "area" : ["Mountains","Forest","Meadow","Plains"],
     "ideal": "unaligned"
     },
     {
@@ -3330,7 +3330,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Desert"],
+    "area" : ["Oasis"],
     "ideal": "unaligned"
     },
     {
@@ -3339,7 +3339,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Small Beast",
-    "area" : ["Desert"],
+    "area" : ["Oasis"],
     "ideal": "unaligned"
     },
     {
@@ -3357,7 +3357,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Desert"],
+    "area" : ["Oasis"],
     "ideal": "unaligned"
     },
     {
@@ -3366,7 +3366,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Tiny Beast",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Ruins","Swamp"],
     "ideal": "unaligned"
     },
     {
@@ -3375,7 +3375,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Huge Beast",
-    "area" : ["Forest"],
+    "area" : ["Forest","Cave"],
     "ideal": "unaligned"
     },
     {
@@ -3384,7 +3384,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Any"],
+    "area" : ["Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins"],
     "ideal": "unaligned"
     },
     {
@@ -3393,7 +3393,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Any"],
+    "area" : ["Forest","Meadow","Mountains","Plains"],
     "ideal": "unaligned"
     },
     {
@@ -3411,7 +3411,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Tiny Beast",
-    "area" : ["Forest"],
+    "area" : ["Forest","Mountains","Plains"],
     "ideal": "unaligned"
     },
     {
@@ -3429,7 +3429,7 @@
     "category": "Monstrosity",
     "subCategory": "Misc",
     "type" : "Large Monstrosity",
-    "area" : ["Tomb", "Ruins", "Tundra"],
+    "area" : ["Tomb","Ruins","Cave","Mountains"],
     "ideal": "unaligned"
     },
     {
@@ -3438,7 +3438,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Tiny Beast",
-    "area" : ["Forest", "Jungle"],
+    "area" : ["Jungle"],
     "ideal": "unaligned"
     },
     {
@@ -3447,7 +3447,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Tundra"],
+    "area" : ["Mountains","Ocean"],
     "ideal": "unaligned"
     },
     {
@@ -3456,7 +3456,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Forest"],
+    "area" : ["Forest","Plains"],
     "ideal": "unaligned"
     },
     {
@@ -3474,7 +3474,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Tiny Beast",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
     },
     {
@@ -3483,7 +3483,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Tiny Beast",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
     },
     {
@@ -3501,7 +3501,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Desert"],
+    "area" : ["Oasis"],
     "ideal": "unaligned"
     },
     {
@@ -3510,7 +3510,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Any"],
+    "area" : ["Forest","Plains"],
     "ideal": "unaligned"
     },
     {
@@ -3528,7 +3528,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Tiny Beast",
-    "area" : ["Desert"],
+    "area" : ["Oasis"],
     "ideal": "unaligned"
     },
     {
@@ -3546,7 +3546,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Tiny Beast",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb","Volcano"],
     "ideal": "unaligned"
     },
     {
@@ -3555,7 +3555,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Cave"],
+    "area" : ["Cave","Tomb","Volcano"],
     "ideal": "unaligned"
     },
     {
@@ -3564,7 +3564,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
     },
     {
@@ -3591,7 +3591,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
     },
     {
@@ -3600,7 +3600,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
     },
     {
@@ -3618,7 +3618,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Desert"],
+    "area" : ["Oasis"],
     "ideal": "unaligned"
     },
     {
@@ -3627,7 +3627,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Large Beast",
-    "area" : ["Any"],
+    "area" : ["Forest","Plains"],
     "ideal": "unaligned"
     },
     {
@@ -3636,7 +3636,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Tiny Beast",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins"],
     "ideal": "unaligned"
     },
     {
@@ -3645,7 +3645,7 @@
     "category": "Monstrosity",
     "subCategory": "Misc",
     "type" : "Large Monstrosity",
-    "area" : ["Tundra"],
+    "area" : ["Mountains","Forest"],
     "ideal": "neutral evil"
     },
     {
@@ -3654,7 +3654,7 @@
     "category": "Beast",
     "subCategory": "Misc",
     "type" : "Medium Beast",
-    "area" : ["Forest"],
+    "area" : ["Mountains","Forest"],
     "ideal": "unaligned"
     },
     {
@@ -3663,7 +3663,7 @@
     "category": "Monstrosity",
     "subCategory": "Misc",
     "type" : "Large Monstrosity",
-    "area" : ["Forest"],
+    "area" : ["Mountains","Forest"],
     "ideal": "neutral evil"
     },
     {
@@ -3672,7 +3672,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3681,7 +3681,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3690,7 +3690,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3699,7 +3699,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3708,7 +3708,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3717,7 +3717,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3726,7 +3726,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3735,7 +3735,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3744,7 +3744,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3753,7 +3753,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3762,7 +3762,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3771,7 +3771,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3780,7 +3780,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3789,7 +3789,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3798,7 +3798,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3807,7 +3807,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3816,7 +3816,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3825,7 +3825,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3834,7 +3834,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3843,7 +3843,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     },
     {
@@ -3852,7 +3852,7 @@
     "category": "Humanoid",
     "subCategory": "Misc",
     "type" : "Medium Humanoid",
-    "area" : ["Any"],
+    "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
     }
 ]
