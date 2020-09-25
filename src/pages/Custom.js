@@ -30,7 +30,7 @@ import FinalScreen from "../components/FinalCampaign/FinalScreen"
 
 // import Encounters from "../components/MoreStory/Encounters/Encounters";
 // import AdventureSite from "../components/WorldBuilder/Physical/AdventureSite";
-// import DiceRoller from "../components/DiceRoller"\
+
 import {
     setCampaignName,
     setPlayers, 
@@ -259,8 +259,6 @@ setDungeonMonsterNum = (number) => {
     onSetDungeonMonsterNum(number)
 }
 
-
-
     render() {
         return (
             
@@ -358,7 +356,6 @@ setDungeonMonsterNum = (number) => {
                     <p>Dungeon time! What campaign is without a dungeon? Below you can plan your your dungeon details.</p>
                     <div className="btnspace">
                         <AdventureStart></AdventureStart>
-                        {/* <Type setDungeonType={this.setDungeonType}></Type> */}
                         <Rooms 
                         setRooms={this.setRooms}
                         ></Rooms>
@@ -404,10 +401,6 @@ setDungeonMonsterNum = (number) => {
             {/* //////////////////////////////////// */}
                 <div className="storyCards">
                     <StoryInfo campaign={this.props.campaign}></StoryInfo>
-                </div>
-
-                <div>
-                    {/* <DiceRoller></DiceRoller> */}
                 </div>
 
             </div>

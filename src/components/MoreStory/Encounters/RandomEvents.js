@@ -141,7 +141,7 @@ render() {
                         />
 
                         {this.state.monsterCat.length <= 0 && (<div>
-                            <p>You haven't selected enough data about your world to plan this. If you want to plan some random encounters go back to The Physical and pick some areas of interest</p>
+                            <p>You haven't selected enough data about your world to plan this. If you want to plan some random encounters go back to The Physical and pick some areas of interest.</p>
                         </div>)}
                     </div>)}
 

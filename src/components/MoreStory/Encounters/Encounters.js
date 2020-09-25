@@ -1,12 +1,21 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
+import {FormControlLabel, Slider} from '@material-ui/core'
 import "../style.css"
 
 class Encounters extends Component {
     state ={
-        enounter: "", 
-        difficulty: "",
+        encounterEvents: [],
+        encounterOptions: [
+            "Protect an NPC or Object",
+            "Retrieve an object",
+            "Run a guantlet",
+            "Sneak In",
+            "Stop a ritual",
+            "Take out a single target",
+            "Investiage an area",
+        ]
     }
 
     handleClick = () => {
@@ -15,15 +24,45 @@ class Encounters extends Component {
         })
     }
 
-    handleEncounterSelect = (eventKey, event) => {
+    handleSlider = (event, value) => {
+        let encounterEvents = []
+    
+        for (let i=0; i < value; i++) {
+            let newObject = {id:i}
+            encounterEvents.push(newObject)
+        }
+
         this.setState({
-            enounter: event.target.text
+            encounterNum: value,
+            encounterEvents: encounterEvents
         })
     }
 
-    handleDifficultySelect = (eventKey, event) => {
+    handleSelect = (eventKey, event, index) => {
+        const selection = event.target.text
+
+        const encounterObject = [...this.state.encounterEvents].map(item => {
+            if (item.id===index) {
+                return {...item, type:selection}
+            } return item
+        })
+
         this.setState({
-            difficulty: event.target.text
+            encounterEvents: encounterObject
+        })
+    }
+
+    handleDifficultySelect = (eventKey, event, index) => {
+        const selection = event.target.text
+
+        const encounterObject = [...this.state.encounterEvents].map(item => {
+            if (item.id===index) {
+                return {...item, difficulty:selection}
+            } return item
+        })
+
+        this.setState({
+            encounterEvents: encounterObject
         })
     }
 
@@ -46,34 +85,41 @@ render() {
                     
                     <br></br>
 
-                    <div className="together">
-                        <Dropdown className="addSpace" onSelect={this.handleEncounterSelect}>
-                            <Dropdown.Toggle variant="outline-primary">
-                            {this.state.enounter ? this.state.enounter: 'Choose an Encounter Goal'}
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                                <Dropdown.Item>Make peace</Dropdown.Item>
-                                <Dropdown.Item>Protect an NPC or Object</Dropdown.Item>
-                                <Dropdown.Item>Retrieve an object</Dropdown.Item>
-                                <Dropdown.Item>Run a guantlet</Dropdown.Item>
-                                <Dropdown.Item>Sneak In</Dropdown.Item>
-                                <Dropdown.Item>Stop a ritual</Dropdown.Item>
-                                <Dropdown.Item>Take out a single target</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-                    
-                        <Dropdown className="addSpace" onSelect={this.handleDifficultySelect}>
-                            <Dropdown.Toggle variant="outline-primary">
-                            {this.state.difficulty ? `Difficulty: ${this.state.difficulty}`: 'Choose the Difficulty'}
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                                <Dropdown.Item>Easy</Dropdown.Item>
-                                <Dropdown.Item>Medium</Dropdown.Item>
-                                <Dropdown.Item>Hard</Dropdown.Item>
-                                <Dropdown.Item>Deadly</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-                    </div>
+                        <Slider
+                        min={1}
+                        max={5}
+                        defaultValue={3}
+                        onChangeCommitted={this.handleSlider}
+                        valueLabelDisplay="on"
+                        />
+                   
+                    {this.state.encounterEvents.length > 0 && (<div>
+                        {this.state.encounterEvents.map((space , index)=> {return <div>
+                            <Form inline>
+                                <Dropdown onSelect={(keyEvent, event) => this.handleSelect(keyEvent, event, index)} name={space.id}>
+                                    <Dropdown.Toggle variant="outline-primary">
+                                        {this.state.encounterEvents[index].type ? this.state.encounterEvents[index].type : 'Choose an Encounter Goal'}
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>
+                                        {this.state.encounterOptions.map(item => {return <Dropdown.Item name={item}>{item}</Dropdown.Item>})} 
+                                    </Dropdown.Menu>
+                                </Dropdown>
+
+                                <Dropdown onSelect={(keyEvent, event) => this.handleDifficultySelect(keyEvent, event, index)}>
+                                    <Dropdown.Toggle variant="outline-primary">
+                                        {this.state.encounterEvents[index].difficulty ? this.state.encounterEvents[index].difficulty : 'Choose the Difficulty'}
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item>Easy</Dropdown.Item>
+                                        <Dropdown.Item>Medium</Dropdown.Item>
+                                        <Dropdown.Item>Hard</Dropdown.Item>
+                                        <Dropdown.Item>Deadly</Dropdown.Item>  
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                            </Form>
+                        </div>})}
+                    </div>)}
+
 
                 </Modal.Body>
 
