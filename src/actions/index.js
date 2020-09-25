@@ -8,6 +8,7 @@ import {
     SET_FACTION_ORGS,
     SET_ACTS_CLIMAX,
     SET_MAIN_GOAL,
+    SET_DUNGEON_MONSTER_NUM,
 
     SET_PILLAR,
     SET_PATRON_NAME,
@@ -16,12 +17,9 @@ import {
     SET_LOCAL_EVENTS,
     SET_RANDOM_ENOUNTER_NUMBER,
     SET_ROOMS,
-    SET_MONSTER_NUM,
     SET_MONSTERS,
     SET_TREASURE_TYPE, 
     SET_TREASURE_NUMBER,
- 
-
     // SET_SIDE_QUESTS,
     // SET_SETBACKS,
     // SET_DUNGEON_TYPE,
@@ -113,8 +111,8 @@ export const setRooms = (number) => ({
     payload: number
 }) 
 
-export const setMonsterNum = (number) => ({
-    type: SET_MONSTER_NUM,
+export const setDungeonMonsterNum = (number) => ({
+    type: SET_DUNGEON_MONSTER_NUM,
     payload: number
 }) 
 

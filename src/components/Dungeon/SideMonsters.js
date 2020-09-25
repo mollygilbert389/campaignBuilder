@@ -1,36 +1,72 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import "./style.css"
-import MonsterSelect from './MonsterSelect'
-import {Button} from 'react-bootstrap'
+import Monsters from "./monster.json"
+import {Button, Dropdown, Form} from 'react-bootstrap'
 
-class Monsters extends Component {
+class SideMonsters extends Component {
     state = {
         showModal: false,
-        finalMonsterChoices: []
+        finalMonsterChoices: [],
+        monsterData: [],
+
+        monsterChoice: '',
+        monsterTypes: {},
+        finalMonsterType: '',
+        finalMonsterChoiceArray: [],
+        monsterCategories: [],
     }
 
     createMonsterForm = () => {
-        let monsterFormNumber = this.props.campaign.monsterNum 
-        monsterFormNumber = parseInt(monsterFormNumber)
-        const monsterFormsArray = []
-        for (var i = 0; i < monsterFormNumber; i++) {
-            monsterFormsArray.push(<MonsterSelect id={i} 
-                monsterDecider={this.saveMonster}
-            />) 
+        const monsterCategories = Monsters.map(item => item.category)
+        const filterMonsterCategories = [...new Set(monsterCategories)]
+        console.log(filterMonsterCategories)
+        
+        const monsterFormNumber = this.props.campaign.dungeonMonsterNum 
+        let sideMonsterObject = []
+    
+        for (let i=0; i < monsterFormNumber; i++) {
+            let newObject = {id:i}
+            sideMonsterObject.push(newObject)
         }
-        return monsterFormsArray
+
+        console.log(sideMonsterObject)
+
+        this.setState({
+            monsterData: sideMonsterObject,
+            monsterCategories: filterMonsterCategories
+        })
     }
 
-    saveMonster = (newSelection) => {
-        let newMonsterArray = [...this.state.finalMonsterChoices]
-        newMonsterArray = newMonsterArray.concat(newSelection)
+    handleMonsterCategorySelect = (eventKey, event) => {
+        let monsterChoice = event.target.text
+        let monsterTypes = Monsters.find(monster => monster.category === monsterChoice)
 
         this.setState({ 
             ...this.state,
-            finalMonsterChoices: newMonsterArray,
-        }, () => this.props.setMonsters(this.state.finalMonsterChoices))
+            monsterChoice: monsterChoice,
+            monsterTypes: monsterTypes
+        })
     }
+
+    handleMonsterTypeSelect = (eventKey, event) => {
+        const newSelection = event.target.text
+
+        this.setState({ 
+            ...this.state,
+            finalMonsterType: newSelection,
+        })
+    }
+
+    // saveMonster = (newSelection) => {
+    //     let newMonsterArray = [...this.state.finalMonsterChoices]
+    //     newMonsterArray = newMonsterArray.concat(newSelection)
+
+    //     this.setState({ 
+    //         ...this.state,
+    //         finalMonsterChoices: newMonsterArray,
+    //     }, () => this.props.setMonsters(this.state.finalMonsterChoices))
+    // }
 
 render() {  
 
@@ -43,11 +79,10 @@ render() {
             <Modal.Body>
                 <p>Now that we have a good idea of rooms and dungeon let's throw some monsters into the mix. Your monsters should be varying in difficulty and type. Pick a few monster below, and we'll generate the rest for you.</p>
 
-                <div className="partyFormSpace">
-                    <ul>
-                        {this.createMonsterForm()}
-                    </ul>
-                </div>
+
+
+                
+
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="outline-success" onClick={this.props.onClose} >Save</Button>
@@ -57,4 +92,4 @@ render() {
 }
 }
 
-export default Monsters;
+export default SideMonsters;

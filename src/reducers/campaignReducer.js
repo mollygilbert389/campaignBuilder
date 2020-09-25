@@ -9,6 +9,8 @@ import {
   SET_ACTS_CLIMAX,
   SET_MAIN_GOAL,
 
+  SET_DUNGEON_MONSTER_NUM,
+
   SET_PILLAR,
   SET_PATRON_NAME,
   // SET_NPC_NUMBER,
@@ -16,7 +18,7 @@ import {
   SET_LOCAL_EVENTS,
   SET_RANDOM_ENOUNTER_NUMBER,
   SET_ROOMS,
-  SET_MONSTER_NUM,
+  
   SET_MONSTERS,
   SET_TREASURE_TYPE,
   SET_TREASURE_NUMBER,
@@ -62,7 +64,7 @@ const initialState = {
     localEvents: [],
     randomEncounterNumber: "",
     rooms: "",
-    monsterNum: "",
+    dungeonMonsterNum: null,
     monsters: [],
     treasure: [],
     treasureNum: "",
@@ -156,10 +158,10 @@ export default function(state = initialState, action) {
           ...state,
           rooms: action.payload  
         }
-        case SET_MONSTER_NUM: 
+        case SET_DUNGEON_MONSTER_NUM: 
         return {
           ...state,
-          monsterNum: action.payload  
+          dungeonMonsterNum: action.payload  
         }
         case SET_MONSTERS: 
         return {

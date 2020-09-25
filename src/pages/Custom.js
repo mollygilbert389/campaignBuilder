@@ -49,7 +49,7 @@ import {
     setLocalEvents,
     setRandomEncounterNumber,
     setRooms, 
-    setMonsterNum, 
+    setDungeonMonsterNum, 
     setMonsters, 
     setTreasureType, 
     setTreasureNumber, 
@@ -254,6 +254,10 @@ setTreasureNumber = (number) => {
     onSetTreasureNumber(number)
 }
 
+setDungeonMonsterNum = (number) => {
+    const{onSetDungeonMonsterNum}=this.props
+    onSetDungeonMonsterNum(number)
+}
 
 
 
@@ -360,7 +364,7 @@ setTreasureNumber = (number) => {
                         ></Rooms>
                         <MonsterCard 
                         campaign={this.props.campaign} 
-                        setMonsterNum={this.setMonsterNum} 
+                        setDungeonMonsterNum={this.setDungeonMonsterNum} 
                         setMonsters={this.setMonsters}
                         >
                         </MonsterCard>
@@ -433,7 +437,7 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetLocalEvents: bindActionCreators(setLocalEvents, dispatch),
     onSetRandomEncounterNumber: bindActionCreators(setRandomEncounterNumber, dispatch),
     onSetRooms: bindActionCreators(setRooms, dispatch),
-    onSetMonsterNum: bindActionCreators(setMonsterNum, dispatch),
+    onSetDungeonMonsterNum: bindActionCreators(setDungeonMonsterNum, dispatch),
     onSetMonsters: bindActionCreators(setMonsters, dispatch),
     onSetTreasureType: bindActionCreators(setTreasureType, dispatch),
     onSetTreasureNumber: bindActionCreators(setTreasureNumber, dispatch),

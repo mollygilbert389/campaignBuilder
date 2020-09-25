@@ -139,11 +139,13 @@ render() {
                         onChangeCommitted={this.handleSlider}
                         valueLabelDisplay="on"
                         />
+
+                        {this.state.monsterCat.length <= 0 && (<div>
+                            <p>You haven't selected enough data about your world to plan this. If you want to plan some random encounters go back to The Physical and pick some areas of interest</p>
+                        </div>)}
                     </div>)}
 
-                    {this.state.monsterCat.length <= 0 && (<div>
-                        <p>You haven't selected enough data about your world to plan this. If you want to plan some random encounters go back to The Physical and pick some areas of interest</p>
-                    </div>)}
+
 
                     {this.state.monsterCat.length > 0 && (<div>
                         {this.state.randomEncounterMonsters.map((space , index)=> {return <div>

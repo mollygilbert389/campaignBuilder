@@ -1,30 +1,43 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button} from 'react-bootstrap'
+import {Button, Form, Dropdown} from 'react-bootstrap'
 import {Slider} from '@material-ui/core'
+import Monsters from "./monster.json"
 import "./style.css"
 import SideMonsters from './SideMonsters'
 
 
 class MonsterCard extends Component {
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-        this.suggestMeMonsters = this.suggestMeMonsters.bind(this)
-        this.state ={
-            showModal: false,
-            suggestedMonsterNum:0,
-            maxMonsterNum:0, 
-            finalMonsterNum:0,
-            finalMonsterChoices: [],
-            firstQues: true,
-            secondQues: false
-        }
+    state = {
+        showModal: false,
+        suggestedMonsterNum:0,
+        maxMonsterNum:0, 
+        finalMonsterNum:0,
+        finalMonsterChoices: [],
+        firstQues: true,
+        secondQues: false,
+        finalMonsterChoices: [],
+        monsterData: [],
+
+        monsterChoice: '',
+        monsterTypes: {},
+        finalMonsterType: '',
+        finalMonsterChoiceArray: [],
+        monsterCategories: [],
+    }
+
+    componentDidMount() {
+        this.suggestMeMonsters()
+    }
+
+    handleClick = () => {
+        this.setState({
+            showModal: !this.state.showModal,
+        })
     }
 
     suggestMeMonsters() {
         let roomState = this.props.campaign.rooms
-        roomState = parseInt(roomState)
         let suggestedMonsterNum = 0
         let maxMonsterNum = 0
 
@@ -43,27 +56,67 @@ class MonsterCard extends Component {
             roomNum: roomState,
             suggestedMonsterNum: suggestedMonsterNum,
             maxMonsterNum: maxMonsterNum
-        }, () => {this.props.setMonsterNum(this.state.suggestedMonsterNum)})
+        }, () => {this.props.setDungeonMonsterNum(this.state.suggestedMonsterNum)})
     }
 
-    handleClick() {
-        this.setState({
-            showModal: !this.state.showModal,
-        })
-        this.suggestMeMonsters()
-    }
-
-    handleNext = () => {
-        this.setState({
-            firstQues: false,
-            secondQues: true,
-        })
-    }
 
     handleSlider = (event, value) => {
         this.setState({
             finalMonsterNum: value
-        }, () => {this.props.setMonsterNum(this.state.finalMonsterNum)})
+        }, () => {this.props.setDungeonMonsterNum(this.state.finalMonsterNum)})
+        
+        this.createMonsterForm()
+    }
+
+    createMonsterForm = () => {
+        const monsterCategories = Monsters.map(item => item.category)
+        const filterMonsterCategories = [...new Set(monsterCategories)]
+        
+        const monsterFormNumber = this.props.campaign.dungeonMonsterNum 
+        let sideMonsterObject = []
+    
+        for (let i=0; i < monsterFormNumber; i++) {
+            let newObject = {id:i}
+            sideMonsterObject.push(newObject)
+        }
+
+        this.setState({
+            monsterData: sideMonsterObject,
+            monsterCategories: filterMonsterCategories
+        })
+    }
+
+    handleSelect = (eventKey, event, index) => {
+        const selection = event.target.text
+        const filteredMonsters = Monsters.filter(item => (item.category === selection))
+
+        const newMonsterDrops = [...this.state.monsterData].map(monster => {
+            if (monster.id===index) {
+                return {...monster, category:selection, monsterTypes:filteredMonsters}
+            } return monster
+        })
+
+        console.log(newMonsterDrops)
+
+        this.setState({ 
+            monsterData: newMonsterDrops,
+        })
+    }
+
+    handleMonsterTypeSelect = (eventKey, event, index) => {
+        const finalSelection = event.target.text
+    
+        const newMonsterDrops = [...this.state.monsterData].map(monster => {
+            if (monster.id===index) {
+                return {...monster, monsterName:finalSelection}
+            } return monster
+        })
+
+        console.log(newMonsterDrops)
+
+        this.setState({ 
+            monsterData: newMonsterDrops,
+        })
     }
 
     handleClose = () => {
@@ -79,23 +132,22 @@ render() {
     return (
         <div>
             <div className="btns">
-                <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Monsters
+                <Button variant="outline-success" size="lg" onClick={this.handleClick}>Monsters
                 </Button>
             </div>
 
             <Modal show={this.state.showModal} onHide={this.handleClose}>
-            {this.state.firstQues && (<div>
-                    <Modal.Header closeButtotn>
-                        <Modal.Title>Monster Time!</Modal.Title>
-                    </Modal.Header>
+                <Modal.Header closeButtotn>
+                    <Modal.Title>Monster Time!</Modal.Title>
+                </Modal.Header>
 
-                    <Modal.Body>
-                        <p>Now it's time to choose some monsters!</p>
-                        <p>Since you have chosen {campaign.rooms} rooms we reccomend chosing {this.state.suggestedMonsterNum} total monsters and no more than {this.state.maxMonsterNum}. How many monsters would you like in your dungeon?</p>
-                        <br></br>
-                        <br></br>
+                <Modal.Body>
+                    <p>Now it's time to choose some monsters!</p>
+                    <p>Since you have chosen {campaign.rooms} rooms we reccomend chosing {this.state.suggestedMonsterNum} total monsters and no more than {this.state.maxMonsterNum}. How many monsters would you like in your dungeon?</p>
+                    <br></br>
+                    <br></br>
 
-                        <div>
+                    <div>
                         <Slider
                         min={4}
                         max={20}
@@ -103,19 +155,43 @@ render() {
                         valueLabelDisplay="on"
                         onChangeCommitted={this.handleSlider}
                         />
+                    </div>
+
+                    {this.state.monsterData.map((space, index) =>  {return <div>
+                            <Form inline className="mb-2 mr-sm-2 mb-sm-0">
+                                
+                                <Dropdown onSelect={(keyEvent, event) => this.handleSelect(keyEvent, event, index)} name={space.id}>
+                                    <Dropdown.Toggle variant="outline-primary">
+                                        {this.state.monsterData[index].category ? this.state.monsterData[index].category : 'Monster Categories'}
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>
+                                        {this.state.monsterCategories.map(item => {
+                                            return <Dropdown.Item>{item}</Dropdown.Item>
+                                        })}
+                                    </Dropdown.Menu>
+                                </Dropdown>
+
+                                {this.state.monsterData[index].monsterTypes && (<Dropdown onSelect={(keyEvent, event) => this.handleMonsterTypeSelect(keyEvent, event, index)}>
+                                    <Dropdown.Toggle variant="outline-primary">
+                                        {this.state.monsterData[index].monsterName ? this.state.monsterData[index].monsterName : 'Monster Type'}
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>
+                                    {this.state.monsterData[index].monsterTypes.map(item => {
+                                            return <Dropdown.Item name={item.name} key={item.id}>{item.name}</Dropdown.Item>
+                                        })}
+                                    </Dropdown.Menu>
+                                </Dropdown>)}
+                            </Form>
                         </div>
+                    })}
 
-                        <Modal.Footer>
-                            <Button variant="outline-success" onClick={this.handleNext}> Next</Button>
-                        </Modal.Footer>
-                        
-                    </Modal.Body>
-                </div>)}
+                    <br></br>
 
-                {this.state.secondQues && (<div>
-                    <SideMonsters campaign={campaign} onClose={this.handleClose} setMonsters={this.props.setMonsters}>
-                    </SideMonsters>
-                </div>)}
+                    <Modal.Footer>
+                        <Button variant="outline-success" onClick={this.handleClick}> Save</Button>
+                    </Modal.Footer>
+                    
+                </Modal.Body>
             </Modal>
         </div>
     );
