@@ -4,7 +4,6 @@ import {Button, Form, Dropdown} from 'react-bootstrap'
 import {Slider} from '@material-ui/core'
 import Monsters from "./monster.json"
 import "./style.css"
-import SideMonsters from './SideMonsters'
 
 
 class MonsterCard extends Component {
