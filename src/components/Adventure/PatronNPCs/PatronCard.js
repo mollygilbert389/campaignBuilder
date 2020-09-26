@@ -104,7 +104,7 @@ class PatronCard extends Component {
 
     // handleImage = () => {
     //     this.setState({
-    //         trigger: "click"
+    //         toggle: true
     //     })
     // }
 
@@ -118,8 +118,9 @@ class PatronCard extends Component {
         const image = this.state.imageLink.trim()
         this.setState({
             setImageLink: image,
-            toggle: false,
         })
+
+        this.refs.overlay.hide();
 
     }
 
@@ -137,7 +138,7 @@ render() {
                         
                         <OverlayTrigger 
                             trigger="click"
-                            // onToggle={this.state.toggle}
+                            ref="overlay"
                             placement="top"
                             overlay={
                             <Popover className="makeItBigger">
