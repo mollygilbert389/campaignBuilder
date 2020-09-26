@@ -1,12 +1,14 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import ModalHeader from 'react-bootstrap/ModalHeader'
-import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Card} from 'react-bootstrap'
+import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Card, Popover} from 'react-bootstrap'
 import "../style.css"
 
 class VillainModal extends Component {
     state ={
         showModal: false,
+        imageLink: "",
+        setImageLink: "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg",
         villainName: "",
         villainType: "",
         finalVillainMethodChoice: "", 
@@ -386,6 +388,27 @@ class VillainModal extends Component {
         })
     }
 
+    handleImageLink = (event) => {
+        this.setState({
+            imageLink: event.target.value,
+        })
+    }
+
+    handleImageSubmit = () => {
+        const image = this.state.imageLink.trim()
+
+        if (image === "") {
+            this.setState({
+                setImageLink: "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg",
+            })
+        } else {
+            this.setState({
+                setImageLink: image,
+            })
+        }
+        this.refs.overlay.hide();
+    }
+
 render() {  
 
     const{campaign}=this.props
@@ -398,7 +421,12 @@ render() {
                 </Button>
             </div>
 
-            <Modal size="lg" show={this.state.showModal} onHide={this.handleClick}>
+            <Modal 
+            size="lg" 
+            show={this.state.showModal} 
+            onHide={this.handleClick}
+            enforceFocus={false}
+            >
             <Modal.Header closeButton>
                     <Modal.Title>Let's Create Yor villain!</Modal.Title>
                 </Modal.Header>
@@ -420,7 +448,27 @@ render() {
                     <br></br>
 
                     <Card className="d-flex flex-column align-items-center villainPatronCard">
-                        <Card.Img className="NPCimage" variant="top" src="https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg"/>
+                        
+                        <OverlayTrigger 
+                            trigger="click"
+                            ref="overlay"
+                            placement="top"
+                            overlay={
+                            <Popover className="makeItBigger">
+                                <Popover.Title as="h3">Add Your Image!</Popover.Title>
+                                <Popover.Content>
+                                    <div className="centerMe">
+                                        <FormControl type="text" placeholder="Image Link" className="mr-sm-2" value={this.state.imageLink} onChange={this.handleImageLink}/>
+                                        <Button onClick={this.handleImageSubmit} className="imageSubmit">Submit</Button>
+                                    </div>
+                                </Popover.Content>
+                            </Popover>
+                            }
+                            >
+                            <Card.Img className="NPCimage" variant="top" src={this.state.setImageLink}/> 
+                        </OverlayTrigger>
+                        
+                        
                         <Card.Body className="d-flex flex-column align-items-center">
                             <Card.Title>{this.props.name}</Card.Title>
                             <div className="d-flex flex-column align-items-center">

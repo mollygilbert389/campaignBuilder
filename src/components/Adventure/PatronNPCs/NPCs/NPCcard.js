@@ -1,11 +1,13 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Card, CardGroup} from 'react-bootstrap'
+import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Card, CardGroup, Popover} from 'react-bootstrap'
 import {FormControlLabel, Checkbox, FormGroup, Slider} from '@material-ui/core'
 import "../../style.css"
 
 class NPCCard extends Component {
     state ={
+        imageLink: "",
+        setImageLink: "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg",
         NPCGender: "",
         NPCName: "",
         NPCHighAbility: "",
@@ -240,13 +242,55 @@ class NPCCard extends Component {
         })
     }
 
+    handleImageLink = (event) => {
+        this.setState({
+            imageLink: event.target.value,
+        })
+    }
+
+    handleImageSubmit = () => {
+        const image = this.state.imageLink.trim()
+
+        if (image === "") {
+            this.setState({
+                setImageLink: "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg",
+            })
+        } else {
+            this.setState({
+                setImageLink: image,
+            })
+        }
+        this.refs.overlay.hide();
+    }
+
 
 
 render() {  
     return (
         <div>
             <Card className="changeOverflow d-flex flex-column align-items-center color">
-                <Card.Img className="NPCimage" variant="top" src="https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg"/>
+                
+                <div>
+                    <OverlayTrigger 
+                        trigger="click"
+                        ref="overlay"
+                        placement="top"
+                        overlay={
+                        <Popover className="makeItBigger">
+                            <Popover.Title as="h3">Add Your Image!</Popover.Title>
+                            <Popover.Content>
+                                <div className="centerMe">
+                                    <FormControl type="text" placeholder="Image Link" className="mr-sm-2" value={this.state.imageLink} onChange={this.handleImageLink}/>
+                                    <Button onClick={this.handleImageSubmit} className="imageSubmit">Submit</Button>
+                                </div>
+                            </Popover.Content>
+                        </Popover>
+                        }
+                        >
+                        <Card.Img className="NPCimage" variant="top" src={this.state.setImageLink}/> 
+                    </OverlayTrigger>
+                </div>
+                
                 <Card.Body className="d-flex flex-column align-items-center">
                     <Card.Title>{!this.state.NPCName ? `NPC # ${this.props.name}` : `${this.state.NPCName}`}</Card.Title>
 

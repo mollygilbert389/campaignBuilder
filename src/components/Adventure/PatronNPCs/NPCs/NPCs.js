@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, CardGroup, Carousel} from 'react-bootstrap'
+import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, CardGroup, Carousel, Popover} from 'react-bootstrap'
 import {FormControlLabel, Checkbox, FormGroup, Slider} from '@material-ui/core'
 import NPCCard from "./NPCcard"
 import "../../style.css"
@@ -120,7 +120,11 @@ render() {
                 <Button variant="outline-success" size="lg" onClick={this.handleClick}>NPCs
                 </Button>
             </div>
-            <Modal size="lg" show={this.state.showModal} onHide={this.handleClick}>
+            <Modal 
+            size="lg" show={this.state.showModal} 
+            onHide={this.handleClick}
+            enforceFocus={false}
+            >
                 <Modal.Header closeButton>
                     <Modal.Title>Let's get some NPCs added to your campaign.</Modal.Title>
                 </Modal.Header>

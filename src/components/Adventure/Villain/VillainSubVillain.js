@@ -24,10 +24,15 @@ render() {
     return (
         <div>
             <div className="btns">
-                <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Villains
+                <Button variant="outline-success" size="lg" onClick={this.handleClick}>Villains
                 </Button>
             </div>
-            <Modal size="lg" show={this.state.showModal} onHide={this.handleClick}>
+            <Modal 
+            size="lg" 
+            show={this.state.showModal} 
+            onHide={this.handleClick}
+            enforceFocus={false}
+            >
                 <Modal.Header closeButton>
                     <Modal.Title>Let's talk about the main villain and the mini bosses.</Modal.Title>
                 </Modal.Header>

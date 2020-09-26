@@ -11,8 +11,6 @@ class PatronCard extends Component {
         show: false,
         imageLink: "",
         setImageLink: "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg",
-        value: "",
-        toggle: false,
         isDisabled: true,
         patronMannerisms: [
             {id: 1, option: "Prone to singing, whistling, or humming quietly" },
@@ -102,12 +100,6 @@ class PatronCard extends Component {
         })
     }
 
-    // handleImage = () => {
-    //     this.setState({
-    //         toggle: true
-    //     })
-    // }
-
     handleImageLink = (event) => {
         this.setState({
             imageLink: event.target.value,
@@ -116,12 +108,17 @@ class PatronCard extends Component {
 
     handleImageSubmit = () => {
         const image = this.state.imageLink.trim()
-        this.setState({
-            setImageLink: image,
-        })
 
+        if (image === "") {
+            this.setState({
+                setImageLink: "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg",
+            })
+        } else {
+            this.setState({
+                setImageLink: image,
+            })
+        }
         this.refs.overlay.hide();
-
     }
 
     
@@ -135,7 +132,6 @@ render() {
                 enforceFocus={false}
                 >
                     <div>
-                        
                         <OverlayTrigger 
                             trigger="click"
                             ref="overlay"
