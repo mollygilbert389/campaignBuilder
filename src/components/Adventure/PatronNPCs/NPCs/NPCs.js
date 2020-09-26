@@ -7,92 +7,32 @@ import "../../style.css"
 
 class NPCs extends Component {
     state ={
-        NPCNum: "3",
+        NPCNum: null,
         NPCData: [],
-        nextClicked: false, 
-
     }
 
     handleSlider = (event, value) => {
+        let NPCData = []
+
+        for(let i=0; i < value; i++ ) {
+            let newObj = {id:i}
+            NPCData.push(newObj)
+        }
+
         this.setState({
-            NPCNum: value
+            NPCNum: value,
+            NPCData: NPCData
         })
     }
 
     handleClick = () => {
         this.setState({
             showModal: !this.state.showModal,
-            nextClicked: false,
         })
-    }
-
-    handleNextBtn = () => {
-        this.setState({
-            nextClicked: true, 
-        })
-
-        let choice = this.state.NPCNum.toString()
-        let newNPCData = []
-        console.log(choice)
-
-        switch(choice) {
-            case "1":
-                newNPCData = [
-                    {id: 1, name: ""},
-                ]
-                this.setState({
-                    NPCData: newNPCData
-                })
-                break;
-            case "2":
-                newNPCData = [
-                    {id: 1, name: ""},
-                    {id: 2, name: ""},
-                ]
-                this.setState({
-                    NPCData: newNPCData
-                })
-                break;
-            case "3":
-                newNPCData = [
-                    {id: 1, name: ""},
-                    {id: 2, name: ""},
-                    {id: 3, name: ""},
-                ]
-                this.setState({
-                    NPCData: newNPCData
-                })
-                break;
-            case "4":
-                newNPCData = [
-                    {id: 1, name: ""},
-                    {id: 2, name: ""},
-                    {id: 3, name: ""},
-                    {id: 4, name: ""},
-                ]
-                this.setState({
-                    NPCData: newNPCData
-                })
-                break;
-            case "5":
-                newNPCData = [
-                    {id: 1, name: ""},
-                    {id: 2, name: ""},
-                    {id: 3, name: ""},
-                    {id: 4, name: ""},
-                    {id: 5, name: ""},
-                ]
-                this.setState({
-                    NPCData: newNPCData
-                })
-                break;
-        }
     }
 
 
 render() {  
-
-
     return (
         <div>
             <div className="btns">
@@ -111,9 +51,7 @@ render() {
                     <p>Below are some buttons to help you pick some NPCs This modal is for NPCs that play a bigger part in your campaign, not necesarily the shopkeeper your characters will buy things from.</p>
                     
                     <br></br>
-                    {!this.state.nextClicked && (<br></br>)}
 
-                    {!this.state.nextClicked && (
                     <Slider
                     min={1}
                     max={5}
@@ -121,20 +59,13 @@ render() {
                     className="sliderclass"
                     onChangeCommitted={this.handleSlider}
                     valueLabelDisplay="on"
-                    />)}
+                    />
 
-                    {!this.state.nextClicked && (
-                        <Button onClick={this.handleNextBtn}>Next</Button>
-                    )}
-
-                    {this.state.nextClicked && (<div>
-                        <Carousel className="center" interval={null}>
-                            {this.state.NPCData.map(item => 
-                                {return <Carousel.Item><NPCCard key={item.id} name={item.id}></NPCCard></Carousel.Item>}
-                            )}
-                        </Carousel>
-                    </div>)}
-
+                    {this.state.NPCData.length > 0 && (<Carousel className="center" interval={null}>
+                        {this.state.NPCData.map(item => 
+                            {return <Carousel.Item><NPCCard key={item.id} name={item.id +1}></NPCCard></Carousel.Item>}
+                        )}
+                    </Carousel>)}
 
                 </Modal.Body>
 
