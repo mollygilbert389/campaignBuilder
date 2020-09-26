@@ -69,3 +69,21 @@
 .changeOverflow {
     overflow: auto;
 }
+
+.makeItBigger {
+    width: 650px;
+    height: 120px;
+}
+
+.imageLink{
+    width: 200px;
+}
+
+.imageSubmit {
+    margin-left: 5px;
+}
+
+.centerMe {
+    display: flex;
+    justify-content: center;
+}

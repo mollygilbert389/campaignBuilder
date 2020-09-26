@@ -1,13 +1,18 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Card, CardGroup} from 'react-bootstrap'
+import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Card, CardGroup, Popover} from 'react-bootstrap'
 import CharacterRenownCard from "../../WorldBuilder/Social/ChracterRenownCard"
-import {FormControlLabel, Checkbox, FormGroup, Slider} from '@material-ui/core'
+// import {FormControlLabel, Checkbox, FormGroup, Slider} from '@material-ui/core'
 import "../style.css"
 
 class PatronCard extends Component {
     state ={
         patronData: {},
+        show: false,
+        imageLink: "",
+        setImageLink: "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg",
+        value: "",
+        toggle: false,
         isDisabled: true,
         patronMannerisms: [
             {id: 1, option: "Prone to singing, whistling, or humming quietly" },
@@ -97,12 +102,60 @@ class PatronCard extends Component {
         })
     }
 
+    // handleImage = () => {
+    //     this.setState({
+    //         trigger: "click"
+    //     })
+    // }
+
+    handleImageLink = (event) => {
+        this.setState({
+            imageLink: event.target.value,
+        })
+    }
+
+    handleImageSubmit = () => {
+        const image = this.state.imageLink.trim()
+        this.setState({
+            setImageLink: image,
+            toggle: false,
+        })
+
+    }
+
+    
+
 render() {  
+    
     return (
         <div className="patronContainer">
             <div>
-                <Card className="d-flex flex-column align-items-center villainPatronCard">
-                    <Card.Img className="NPCimage" variant="top" src="https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg"/>
+                <Card className="d-flex flex-column align-items-center villainPatronCard"
+                enforceFocus={false}
+                >
+                    <div>
+                        
+                        <OverlayTrigger 
+                            trigger="click"
+                            // onToggle={this.state.toggle}
+                            placement="top"
+                            overlay={
+                            <Popover className="makeItBigger">
+                                <Popover.Title as="h3">Add Your Image!</Popover.Title>
+                                <Popover.Content>
+                                    <div className="centerMe">
+                                        <FormControl type="text" placeholder="Image Link" className="mr-sm-2" value={this.state.imageLink} onChange={this.handleImageLink}/>
+                                        <Button onClick={this.handleImageSubmit} className="imageSubmit">Submit</Button>
+                                    </div>
+                                </Popover.Content>
+                            </Popover>
+                            }
+                            >
+                            <Card.Img className="NPCimage" variant="top" src={this.state.setImageLink}/> 
+                        </OverlayTrigger>
+                    </div>
+                    
+                    
                     <Card.Body className="d-flex flex-column align-items-center">
                         <Card.Title>{this.props.name}</Card.Title>
                         <Dropdown onSelect={this.handleGenderSelect} className="giveMeNPCSpace">
@@ -153,8 +206,8 @@ render() {
 
             <div>
                 <CharacterRenownCard 
-                campaign={this.props.campaign} 
-                charName={this.props.name}>
+                    campaign={this.props.campaign} 
+                    charName={this.props.name}>
                 </CharacterRenownCard>
             </div>
 

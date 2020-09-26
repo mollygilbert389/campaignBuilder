@@ -16,7 +16,7 @@ class Patron extends Component {
             showModal: false,
             patronName: event.target.value
         })
-        this.props.setPatronName(this.state.patronName)
+        // this.props.setPatronName(this.state.patronName)
     }
 
     handleChange = (event) => {
@@ -41,7 +41,12 @@ render() {
                 <Button variant="outline-success" size="lg" onClick={this.handleClick}>Patron
                 </Button>
             </div>
-            <Modal size="lg" show={this.state.showModal} onHide={this.handleClick}>
+            <Modal 
+            size="lg" 
+            show={this.state.showModal} 
+            onHide={this.handleClick}
+            enforceFocus={false}
+            >
                 <Modal.Header closeButton>
                     <Modal.Title>Let's Create A Patron!</Modal.Title>
                 </Modal.Header>

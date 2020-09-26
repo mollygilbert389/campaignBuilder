@@ -17,6 +17,12 @@ class PatronNPCs extends Component {
         })
     }
 
+    handleClose = (playerData) => {
+        this.setState({
+            showModal: !this.state.showModal,
+        })
+    }
+
 
 render() {  
 
@@ -27,7 +33,12 @@ render() {
                 <Button id="questGiver" variant="outline-success" size="lg" onClick={this.handleClick}>Patrons And NPCs
                 </Button>
             </div>
-            <Modal size="lg" show={this.state.showModal} onHide={this.handleClick}>
+            <Modal 
+            size="lg" 
+            show={this.state.showModal} 
+            onHide={this.handleClick}
+            enforceFocus={false}
+            >
                 <Modal.Header closeButton>
                     <Modal.Title>Who's On Your Team?</Modal.Title>
                 </Modal.Header>
@@ -39,7 +50,7 @@ render() {
                     <div className="btnspace">
                         <Patron
                         campaign={this.props.campaign}
-                        setPatronName={this.props.setPatronName}
+                        onClick={this.handleClose}
                         // setNPCNumber={this.props.setNPCNumber}
                         ></Patron>
                         <NPCs
@@ -50,7 +61,7 @@ render() {
                 </Modal.Body>
 
                 <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
+                    <Button variant="outline-success" onClick={this.handleClose} >Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>

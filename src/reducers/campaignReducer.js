@@ -13,16 +13,11 @@ import {
 
   SET_VILLAIN_NAME,
   SET_LOCAL_EVENTS,
-  // SET_RANDOM_ENOUNTER_NUMBER,
   SET_ROOMS,
-  
   SET_MONSTERS,
   SET_TREASURE_TYPE,
   SET_TREASURE_NUMBER,
-
-
-  // SET_DUNGEON_MONSTER_NUM,
-   // SET_NPC_NUMBER,
+  // SET_NPC_NUMBER,
 
 } from '../actions/constant'
 
@@ -63,18 +58,12 @@ const initialState = {
     // NPCNumber: "",
     villainName: "",
     localEvents: [],
-    randomEncounterNumber: "",
     rooms: "",
-    dungeonMonsterNum: null,
     monsters: [],
     treasure: [],
     treasureNum: "",
-
     // sideQuests: '',
     // setbacks: '',
-    // dungeonType: '',
-
- 
 }
 
 export default function(state = initialState, action) {
@@ -149,21 +138,11 @@ export default function(state = initialState, action) {
           ...state,
           localEvents: action.payload  
         }
-        // case SET_RANDOM_ENOUNTER_NUMBER: 
-        // return {
-        //   ...state,
-        //   randomEncounterNumber: action.payload  
-        // }
         case SET_ROOMS: 
         return {
           ...state,
           rooms: action.payload  
         }
-        // case SET_DUNGEON_MONSTER_NUM: 
-        // return {
-        //   ...state,
-        //   dungeonMonsterNum: action.payload  
-        // }
         case SET_MONSTERS: 
         return {
           ...state,
@@ -188,11 +167,6 @@ export default function(state = initialState, action) {
         // return {
         //   ...state,
         //   setbacks: action.payload  
-        // }
-        // case SET_DUNGEON_TYPE: 
-        // return {
-        //   ...state,
-        //   dungeonType: action.payload  
         // }
 
         default: 

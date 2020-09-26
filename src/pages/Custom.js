@@ -229,11 +229,6 @@ setLocalEvents = (names) => {
     onSetLocalEvents(names)
 }
 
-setRandomEncounterNumber = (number) => {
-    const{onSetRandomEncounterNumber}=this.props
-    onSetRandomEncounterNumber(number)
-}
-
 setRooms = (rooms) => {
     const{onSetRooms}=this.props
     onSetRooms(rooms)
@@ -253,11 +248,6 @@ setTreasureNumber = (number) => {
     const{onSetTreasureNumber}=this.props
     onSetTreasureNumber(number)
 }
-
-// setDungeonMonsterNum = (number) => {
-//     const{onSetDungeonMonsterNum}=this.props
-//     onSetDungeonMonsterNum(number)
-// }
 
     render() {
         return (
@@ -342,7 +332,6 @@ setTreasureNumber = (number) => {
                         ></LocalEvents>
                         <EncountersAndEvents
                         campaign={this.props.campaign} 
-                        setRandomEncounterNumber={this.setRandomEncounterNumber}
                         ></EncountersAndEvents>
                         <ExtraAdventure></ExtraAdventure>
                         <Setback 
@@ -427,7 +416,7 @@ const mapDispatchtoProps = (dispatch) => ({
     // onSetNPCNumber: bindActionCreators(setNPCNumber, dispatch),
     onSetVillainName: bindActionCreators(setVillainName, dispatch),
     onSetLocalEvents: bindActionCreators(setLocalEvents, dispatch),
-    onSetRandomEncounterNumber: bindActionCreators(setRandomEncounterNumber, dispatch),
+
     onSetRooms: bindActionCreators(setRooms, dispatch),
     // onSetDungeonMonsterNum: bindActionCreators(setDungeonMonsterNum, dispatch),
     onSetMonsters: bindActionCreators(setMonsters, dispatch),

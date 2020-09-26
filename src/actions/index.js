@@ -11,19 +11,17 @@ import {
     SET_PILLAR,
     SET_PATRON_DATA,
 
-    // SET_DUNGEON_MONSTER_NUM, 
+
     // SET_NPC_NUMBER,
     SET_VILLAIN_NAME,
     SET_LOCAL_EVENTS,
-    SET_RANDOM_ENOUNTER_NUMBER,
     SET_ROOMS,
     SET_MONSTERS,
     SET_TREASURE_TYPE, 
     SET_TREASURE_NUMBER,
     // SET_SIDE_QUESTS,
     // SET_SETBACKS,
-    // SET_DUNGEON_TYPE,
-    
+  
 } from './constant'
 
 export const setCampaignName = (name) => ({
@@ -102,20 +100,10 @@ export const setLocalEvents = (names) => ({
     payload: names
 }) 
 
-export const setRandomEncounterNumber = (number) => ({
-    type: SET_RANDOM_ENOUNTER_NUMBER,
-    payload: number
-}) 
-
 export const setRooms = (number) => ({
     type: SET_ROOMS,
     payload: number
 }) 
-
-// export const setDungeonMonsterNum = (number) => ({
-//     type: SET_DUNGEON_MONSTER_NUM,
-//     payload: number
-// }) 
 
 export const setMonsters = (name) => ({
     type: SET_MONSTERS,
@@ -139,11 +127,6 @@ export const setTreasureNumber = (number) => ({
 
 // export const setSetbacks = (name) => ({
 //     type: SET_SETBACKS,
-//     payload: name
-// }) 
-
-// export const setDungeonType = (name) => ({
-//     type: SET_DUNGEON_TYPE,
 //     payload: name
 // }) 
 
