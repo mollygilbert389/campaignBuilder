@@ -10,28 +10,7 @@ class NPCs extends Component {
         NPCNum: "3",
         NPCData: [],
         nextClicked: false, 
-        NPCAppearance: [
-            {id: 1, option: "Distinctive Jewelry: earrings, necklace, circlet, braclets"},
-            {id: 2, option: "Piercings"},
-            {id: 3, option: "Flamboyent or outlandish clothes"},
-            {id: 4, option: "Formal, clean clothes"},
-            {id: 5, option: "Ragged, dirty clothes"},
-            {id: 6, option: "Pronounced scar"},
-            {id: 7, option: "Missing teeth"},
-            {id: 8, option: "Missing fingers"},
-            {id: 9, option: "Unusual eye color"},
-            {id: 10, option: "Tattoos"},
-            {id: 11, option: "Birthmark"},
-            {id: 12, option: "Unusual skin color"},
-            {id: 13, option: "Bald"},
-            {id: 14, option: "Braided beard or hair"},
-            {id: 15, option: "Unusual hair color"},
-            {id: 16, option: "Nervous eye twitch"},
-            {id: 17, option: "Distinctive nose"},
-            {id: 18, option: "Distinctive posture"},
-            {id: 19, option: "Exceptionally beautiful"},
-            {id: 20, option: "Exceptionally ugly"},
-        ]
+
     }
 
     handleSlider = (event, value) => {

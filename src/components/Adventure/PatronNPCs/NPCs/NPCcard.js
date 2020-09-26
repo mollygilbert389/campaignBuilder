@@ -8,20 +8,30 @@ class NPCCard extends Component {
     state ={
         imageLink: "",
         setImageLink: "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg",
-        NPCGender: "",
-        NPCName: "",
-        NPCHighAbility: "",
-        NPCLowAbility: "",
-        NPCTalentChoice: "",
-        NPCMannerismChoice: "",
-        NPCIdealChoice: "",
-        NPCDrilledIdealChoice: "",
-        NPCBondChoie: "",
-        NPCFlawSecretChoice: "",
-        NPCTraitChoice: "",
+        NPCData: {},
         isDisabled: true,
-        NPCName: "",
-        NPCDrilledIdealsList: [],
+        NPCAppearance: [
+            {id: 1, option: "Distinctive Jewelry: earrings, necklace, circlet, braclets"},
+            {id: 2, option: "Piercings"},
+            {id: 3, option: "Flamboyent or outlandish clothes"},
+            {id: 4, option: "Formal, clean clothes"},
+            {id: 5, option: "Ragged, dirty clothes"},
+            {id: 6, option: "Pronounced scar"},
+            {id: 7, option: "Missing teeth"},
+            {id: 8, option: "Missing fingers"},
+            {id: 9, option: "Unusual eye color"},
+            {id: 10, option: "Tattoos"},
+            {id: 11, option: "Birthmark"},
+            {id: 12, option: "Unusual skin color"},
+            {id: 13, option: "Bald"},
+            {id: 14, option: "Braided beard or hair"},
+            {id: 15, option: "Unusual hair color"},
+            {id: 16, option: "Nervous eye twitch"},
+            {id: 17, option: "Distinctive nose"},
+            {id: 18, option: "Distinctive posture"},
+            {id: 19, option: "Exceptionally beautiful"},
+            {id: 20, option: "Exceptionally ugly"},
+        ],
         NPCTalents: [
             {id: 1, option: "Plays a musical instrument" },
             {id: 2, option: "Speaks several languages" },
@@ -171,80 +181,97 @@ class NPCCard extends Component {
     }
 
     handleGenderSelect = (eventKey, event) => {
+        const selection = event.target.text
         this.setState({
-            gender: event.target.text
+            NPCData: {...this.state.NPCData, gender:selection}
         })
     }
 
     handleHighAbilitySelect = (eventKey, event) => {
+        const selection = event.target.text
         this.setState({
-            NPCHighAbility: event.target.text
+            NPCData: {...this.state.NPCData, highAbility:selection}
         })
     }
 
     handleLowAbilitySelect = (eventKey, event) => {
+        const selection = event.target.text
         this.setState({
-            NPCLowAbility: event.target.text
+            NPCData: {...this.state.NPCData, lowAbility:selection}
+        })
+    }
+
+    handleApperanceSelect = (eventKey, event) => {
+        const selection = event.target.text
+        this.setState({
+            NPCData: {...this.state.NPCData, appearance:selection}
         })
     }
 
     handleNPCTalent = (eventKey, event) => {
+        const selection = event.target.text
         this.setState({
-            NPCTalentChoice: event.target.text
+            NPCData: {...this.state.NPCData, talent:selection}
         })
     }
 
     handleNPCManner = (eventKey, event) => {
+        const selection = event.target.text
         this.setState({
-            NPCMannerismChoice: event.target.text
+            NPCData: {...this.state.NPCData, manner:selection}
         })
     }
 
     handleNPCTrait = (eventKey, event) => {
+        const selection = event.target.text
         this.setState({
-            NPCTraitChoice: event.target.text
+            NPCData: {...this.state.NPCData, trait:selection}
         })
     }
 
     handleNPCIdeal = (eventKey, event) => {
-        let choice = event.target.name
-        let drilledChoices = this.state.NPCIdeals.find(item => item.main === choice)
-        console.log(drilledChoices)
+        const choice = event.target.text.trim()
+        const drilledChoices = this.state.NPCIdeals.find(item => item.main === choice)
+        const idealsOptions = drilledChoices.list
 
         this.setState({
-            NPCIdealChoice: event.target.text,
-            NPCDrilledIdealsList: drilledChoices.list,
+            NPCData: {...this.state.NPCData, ideal:choice, finalIdeal:idealsOptions},
             isDisabled: false,
         })
     }
 
     handleDrilledIdeal = (eventKey, event) => {
+        const choice = event.target.text
         this.setState({
-            NPCDrilledIdealChoice: event.target.name
+            NPCData: {...this.state.NPCData, drilledIdealChoice:choice},
         })
     }
 
     handleNPCBond = (eventKey, event) => {
+        const selection = event.target.text
         this.setState({
-            NPCBondChoie: event.target.text
+            NPCData: {...this.state.NPCData, bond:selection},
         })
     }
 
     handleNPCFlawSecret = (eventKey, event) => {
+        const selection = event.target.text
         this.setState({
-            NPCFlawSecretChoice: event.target.text
+            NPCData: {...this.state.NPCData, flawOrSecret:selection},
         })
     }
 
     handleChange = (event) => {
+        const name = event.target.value
         this.setState({
-            NPCName: event.target.value
+            NPCData: {...this.state.NPCData, NPCName:name},
         })
     }
 
     handleImageLink = (event) => {
+        const image = event.target.text
         this.setState({
-            imageLink: event.target.value,
+            NPCData: {...this.state.NPCData, NPCImage:image},
         })
     }
 
@@ -258,6 +285,7 @@ class NPCCard extends Component {
         } else {
             this.setState({
                 setImageLink: image,
+                NPCData: {...this.state.NPCData, NPCImage:image},
             })
         }
         this.refs.overlay.hide();
@@ -292,10 +320,10 @@ render() {
                 </div>
                 
                 <Card.Body className="d-flex flex-column align-items-center">
-                    <Card.Title>{!this.state.NPCName ? `NPC # ${this.props.name}` : `${this.state.NPCName}`}</Card.Title>
+                    <Card.Title>{!this.state.NPCData.NPCName ? `NPC # ${this.props.name}` : `${this.state.NPCData.NPCName}`}</Card.Title>
 
                     <Form inline className="giveMeNPCSpace">
-                        <FormControl type="text" placeholder="NPC Name" className="mr-sm-2" value={this.state.NPCName} onChange={this.handleChange}/>
+                        <FormControl type="text" placeholder="NPC Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
                         <div style={{paddingRight: "10px"}}>or</div> 
 
                         <OverlayTrigger overlay={
@@ -308,7 +336,7 @@ render() {
 
                     <Dropdown onSelect={this.handleGenderSelect} className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
-                        {this.state.gender ?  `Gender: ${this.state.gender}`: 'Choose your NPCs Gender'}
+                        {this.state.NPCData.gender ?  `Gender: ${this.state.NPCData.gender}`: 'Choose your NPCs Gender'}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             <Dropdown.Item>Female</Dropdown.Item>
@@ -317,10 +345,18 @@ render() {
                         </Dropdown.Menu>
                     </Dropdown>
 
+                    <Dropdown onSelect={this.handleApperanceSelect} className="giveMeNPCSpace">
+                        <Dropdown.Toggle variant="outline-primary">
+                        {this.state.NPCData.appearance ? `Appearance: ${this.state.NPCData.appearance}`: "Choose your NPC's Appearance"}
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            {this.state.NPCAppearance.map(item => {return <Dropdown.Item>{item.option}</Dropdown.Item>})}
+                        </Dropdown.Menu>
+                    </Dropdown>
 
                     <Dropdown onSelect={this.handleHighAbilitySelect} className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
-                        {this.state.NPCHighAbility ? `High Ability: ${this.state.NPCHighAbility}`: "Choose your NPC's High Ability"}
+                        {this.state.NPCData.highAbility ? `High Ability: ${this.state.NPCData.highAbility}`: "Choose your NPC's High Ability"}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             <Dropdown.Item>Strength-powerful, brawny, strong as an ox</Dropdown.Item>
@@ -335,7 +371,7 @@ render() {
 
                     <Dropdown onSelect={this.handleLowAbilitySelect} className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
-                        {this.state.NPCLowAbility ? `Low Ability: ${this.state.NPCLowAbility}`: "Choose your NPC's Low Ability"}
+                        {this.state.NPCData.lowAbility ? `Low Ability: ${this.state.NPCData.lowAbility}`: "Choose your NPC's Low Ability"}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             <Dropdown.Item>Strength-feeble, scrawny</Dropdown.Item>
@@ -349,7 +385,7 @@ render() {
 
                     <Dropdown onSelect={this.handleNPCTalent} className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
-                        {this.state.NPCTalentChoice ? `Talent: ${this.state.NPCTalentChoice}`: "Choose your NPC's Talent"}
+                        {this.state.NPCData.talent ? `Talent: ${this.state.NPCData.talent}`: "Choose your NPC's Talent"}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             {this.state.NPCTalents.map(drop => {
@@ -360,7 +396,7 @@ render() {
 
                     <Dropdown onSelect={this.handleNPCManner} className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
-                        {this.state.NPCMannerismChoice ? `Mannerism: ${this.state.NPCMannerismChoice}`: "Choose your NPC's Mannerism"}
+                        {this.state.NPCData.manner? `Mannerism: ${this.state.NPCData.manner}`: "Choose your NPC's Mannerism"}
                         </Dropdown.Toggle>
                         <Dropdown.Menu className="bringToFront">
                             {this.state.NPCMannerisms.map(drop => {
@@ -371,7 +407,7 @@ render() {
 
                     <Dropdown onSelect={this.handleNPCTrait} className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
-                        {this.state.NPCTraitChoice ? `Trait: ${this.state.NPCTraitChoice}`: "Choose your NPC's Trait"}
+                        {this.state.NPCData.trait ? `Trait: ${this.state.NPCData.trait}`: "Choose your NPC's Trait"}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             {this.state.NPCInteractionTraits.map(drop => {
@@ -383,7 +419,7 @@ render() {
                     <div className="center">
                         <Dropdown onSelect={this.handleNPCIdeal} className="giveMeNPCSpace">
                             <Dropdown.Toggle variant="outline-primary">
-                            {this.state.NPCIdealChoice ? this.state.NPCIdealChoice: "Choose your NPC's Ideal"}
+                            {this.state.NPCData.ideal ? this.state.NPCData.ideal: "Choose your NPC's Ideal"}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                                 {this.state.NPCIdeals.map(drop => {
@@ -392,21 +428,21 @@ render() {
                             </Dropdown.Menu>
                         </Dropdown>
 
-                        <Dropdown onSelect={this.handleDrilledIdeal} className="giveMeNPCSpace">
+                        {this.state.NPCData.ideal && (<Dropdown onSelect={this.handleDrilledIdeal} className="giveMeNPCSpace">
                             <Dropdown.Toggle variant="outline-primary" disabled={this.state.isDisabled}>
-                            {this.state.NPCDrilledIdealChoice ? this.state.NPCDrilledIdealChoice: "Choose your NPC's Ideal"}
+                            {this.state.NPCData.drilledIdealChoice ? this.state.NPCData.drilledIdealChoice: "Choose your NPC's Ideal"}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                {this.state.NPCDrilledIdealsList.map(drop => {
+                                {this.state.NPCData.finalIdeal.map(drop => {
                                     return <Dropdown.Item name={drop}> {drop}</Dropdown.Item>
                                 })}
                             </Dropdown.Menu>
-                        </Dropdown>
+                        </Dropdown>)}
                     </div>
 
                     <Dropdown onSelect={this.handleNPCBond} className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
-                        {this.state.NPCBondChoie ? `Bond: ${this.state.NPCBondChoie}`: "Choose your NPC's Bond"}
+                        {this.state.NPCData.bond ? `Bond: ${this.state.NPCData.bond}`: "Choose your NPC's Bond"}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             {this.state.NPCBonds.map(drop => {
@@ -417,7 +453,7 @@ render() {
 
                     <Dropdown onSelect={this.handleNPCFlawSecret} className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
-                        {this.state.NPCFlawSecretChoice ? `Flaw/Secret: ${this.state.NPCFlawSecretChoice}`: "Choose your NPC's Flaw or Secret"}
+                        {this.state.NPCData.flawOrSecret ? `Flaw/Secret: ${this.state.NPCData.flawOrSecret}`: "Choose your NPC's Flaw or Secret"}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             {this.state.NPCFlawsSecrets.map(drop => {
