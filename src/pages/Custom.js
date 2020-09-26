@@ -315,8 +315,7 @@ setTreasureNumber = (number) => {
                         ></MainGoals>
                         <PatronNPCs
                         campaign={this.props.campaign}
-                        setPatronName={this.setPatronName}
-                        // setNPCNumber={this.setNPCNumber}
+                        setPatronData={this.setPatronData}
                         ></PatronNPCs>
                         <VillainSubVillain
                         setVillainName={this.setVillainName}
