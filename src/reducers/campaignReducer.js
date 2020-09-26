@@ -8,21 +8,21 @@ import {
   SET_FACTION_ORGS,
   SET_ACTS_CLIMAX,
   SET_MAIN_GOAL,
-
-  SET_DUNGEON_MONSTER_NUM,
-
   SET_PILLAR,
-  SET_PATRON_NAME,
-  // SET_NPC_NUMBER,
+  SET_PATRON_DATA,
+
   SET_VILLAIN_NAME,
   SET_LOCAL_EVENTS,
-  SET_RANDOM_ENOUNTER_NUMBER,
+  // SET_RANDOM_ENOUNTER_NUMBER,
   SET_ROOMS,
   
   SET_MONSTERS,
   SET_TREASURE_TYPE,
   SET_TREASURE_NUMBER,
- 
+
+
+  // SET_DUNGEON_MONSTER_NUM,
+   // SET_NPC_NUMBER,
 
 } from '../actions/constant'
 
@@ -58,7 +58,8 @@ const initialState = {
     climax: "",
     mainGoal: "",
     pillar: "",
-    patronName: "",
+    patronData: {},
+
     // NPCNumber: "",
     villainName: "",
     localEvents: [],
@@ -128,10 +129,10 @@ export default function(state = initialState, action) {
           ...state,
           pillar: action.payload  
         }
-        case SET_PATRON_NAME: 
+        case SET_PATRON_DATA: 
         return {
           ...state,
-          patronName: action.payload  
+          [action.destination]: action.value
         }
         // case SET_NPC_NUMBER: 
         // return {
@@ -148,21 +149,21 @@ export default function(state = initialState, action) {
           ...state,
           localEvents: action.payload  
         }
-        case SET_RANDOM_ENOUNTER_NUMBER: 
-        return {
-          ...state,
-          randomEncounterNumber: action.payload  
-        }
+        // case SET_RANDOM_ENOUNTER_NUMBER: 
+        // return {
+        //   ...state,
+        //   randomEncounterNumber: action.payload  
+        // }
         case SET_ROOMS: 
         return {
           ...state,
           rooms: action.payload  
         }
-        case SET_DUNGEON_MONSTER_NUM: 
-        return {
-          ...state,
-          dungeonMonsterNum: action.payload  
-        }
+        // case SET_DUNGEON_MONSTER_NUM: 
+        // return {
+        //   ...state,
+        //   dungeonMonsterNum: action.payload  
+        // }
         case SET_MONSTERS: 
         return {
           ...state,

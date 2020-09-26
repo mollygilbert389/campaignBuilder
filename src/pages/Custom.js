@@ -41,22 +41,22 @@ import {
     setFactionOrgs,
     setActsAndClimax,
     setMainGoal,
-
     setPillar,
-    setPatronName,
-    // setNPCNumber,
+    setPatronData,
+
     setVillainName,
     setLocalEvents,
     setRandomEncounterNumber,
     setRooms, 
-    setDungeonMonsterNum, 
+
     setMonsters, 
     setTreasureType, 
     setTreasureNumber, 
-    
+
+    // setNPCNumber,
+    // setDungeonMonsterNum,     
     // setSideQuests, 
     // setSetbacks, 
-    // setDungeonType, 
 
 } from "../actions/index"
 
@@ -209,9 +209,9 @@ setPillar = (type) => {
     onSetPillar(type)
 }
 
-setPatronName = (name) => {
-    const{onSetPatronName}=this.props
-    onSetPatronName(name)
+setPatronData = (destination, value) => {
+    const{onSetPatronData}=this.props
+    onSetPatronData(destination, value)
 }
 
 setNPCNumber = (number) => {
@@ -254,10 +254,10 @@ setTreasureNumber = (number) => {
     onSetTreasureNumber(number)
 }
 
-setDungeonMonsterNum = (number) => {
-    const{onSetDungeonMonsterNum}=this.props
-    onSetDungeonMonsterNum(number)
-}
+// setDungeonMonsterNum = (number) => {
+//     const{onSetDungeonMonsterNum}=this.props
+//     onSetDungeonMonsterNum(number)
+// }
 
     render() {
         return (
@@ -361,7 +361,6 @@ setDungeonMonsterNum = (number) => {
                         ></Rooms>
                         <MonsterCard 
                         campaign={this.props.campaign} 
-                        setDungeonMonsterNum={this.setDungeonMonsterNum} 
                         setMonsters={this.setMonsters}
                         >
                         </MonsterCard>
@@ -422,22 +421,21 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetFactionOrgs: bindActionCreators(setFactionOrgs, dispatch),
     onSetActsAndClimx: bindActionCreators(setActsAndClimax, dispatch),
     onSetMainGoal: bindActionCreators(setMainGoal, dispatch),
-
     onSetPillar: bindActionCreators(setPillar, dispatch),
-    onSetPatronName: bindActionCreators(setPatronName, dispatch),
+    onSetPatronData: bindActionCreators(setPatronData, dispatch),
+
     // onSetNPCNumber: bindActionCreators(setNPCNumber, dispatch),
     onSetVillainName: bindActionCreators(setVillainName, dispatch),
     onSetLocalEvents: bindActionCreators(setLocalEvents, dispatch),
     onSetRandomEncounterNumber: bindActionCreators(setRandomEncounterNumber, dispatch),
     onSetRooms: bindActionCreators(setRooms, dispatch),
-    onSetDungeonMonsterNum: bindActionCreators(setDungeonMonsterNum, dispatch),
+    // onSetDungeonMonsterNum: bindActionCreators(setDungeonMonsterNum, dispatch),
     onSetMonsters: bindActionCreators(setMonsters, dispatch),
     onSetTreasureType: bindActionCreators(setTreasureType, dispatch),
     onSetTreasureNumber: bindActionCreators(setTreasureNumber, dispatch),
     
     // onSetSideQuests: bindActionCreators(setSideQuests, dispatch),
     // onSetSetbacks: bindActionCreators(setSetbacks, dispatch),
-    // onSetDungeonType: bindActionCreators(setDungeonType, dispatch),
 
 })
 

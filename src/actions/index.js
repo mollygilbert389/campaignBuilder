@@ -8,10 +8,10 @@ import {
     SET_FACTION_ORGS,
     SET_ACTS_CLIMAX,
     SET_MAIN_GOAL,
-    SET_DUNGEON_MONSTER_NUM,
-
     SET_PILLAR,
-    SET_PATRON_NAME,
+    SET_PATRON_DATA,
+
+    // SET_DUNGEON_MONSTER_NUM, 
     // SET_NPC_NUMBER,
     SET_VILLAIN_NAME,
     SET_LOCAL_EVENTS,
@@ -81,9 +81,10 @@ export const setPillar = (type) => ({
     payload: type
 }) 
 
-export const setPatronName = (name) => ({
-    type: SET_PATRON_NAME,
-    payload: name
+export const setPatronData = (destination, value) => ({
+    type: SET_PATRON_DATA,
+    destination,
+    value
 }) 
 
 // export const seetNPCNumber = (number) => ({
@@ -111,10 +112,10 @@ export const setRooms = (number) => ({
     payload: number
 }) 
 
-export const setDungeonMonsterNum = (number) => ({
-    type: SET_DUNGEON_MONSTER_NUM,
-    payload: number
-}) 
+// export const setDungeonMonsterNum = (number) => ({
+//     type: SET_DUNGEON_MONSTER_NUM,
+//     payload: number
+// }) 
 
 export const setMonsters = (name) => ({
     type: SET_MONSTERS,

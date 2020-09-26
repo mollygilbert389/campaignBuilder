@@ -7,11 +7,7 @@ import "../style.css"
 
 class PatronCard extends Component {
     state ={
-        patronGender: "",
-        patronName: "",
-        patronMannerismChoice:'',
-        patronTraitChoice: '',
-        patronType: '',
+        patronData: {},
         isDisabled: true,
         patronMannerisms: [
             {id: 1, option: "Prone to singing, whistling, or humming quietly" },
@@ -72,26 +68,32 @@ class PatronCard extends Component {
     }
 
     handleGenderSelect = (eventKey, event) => {
+        const selection = event.target.text
+        
         this.setState({
-            patronGender: event.target.text
+            patronData: {...this.state.patronData, gender:selection}
         })
     }
 
-    handleCManner = (eventKey, event) => {
+    handleManner = (eventKey, event) => {
+        const selection = event.target.text
+
         this.setState({
-            patronMannerismChoice: event.target.text
+            patronData: {...this.state.patronData, manner:selection},
         })
     }
 
     handleTrait = (eventKey, event) => {
+        const selection = event.target.text
         this.setState({
-            patronTraitChoice: event.target.text
+            patronData: {...this.state.patronData, trait:selection},
         })
     }
 
     handlePatronSlect = (eventkey, event) => {
+        const selection = event.target.text
         this.setState({
-            patronType: event.target.text
+            patronData: {...this.state.patronData, type:selection},
         })
     }
 
@@ -105,7 +107,7 @@ render() {
                         <Card.Title>{this.props.name}</Card.Title>
                         <Dropdown onSelect={this.handleGenderSelect} className="giveMeNPCSpace">
                             <Dropdown.Toggle variant="outline-primary">
-                            {this.state.patronGender ?  `Gender: ${this.state.patronGender}`: "Choose your Patron's Gender"}
+                            {this.state.patronData.gender ?  `Gender: ${this.state.patronData.gender}`: "Choose your Patron's Gender"}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                                 <Dropdown.Item>Female</Dropdown.Item>
@@ -116,7 +118,7 @@ render() {
 
                         <Dropdown onSelect={this.handlePatronSlect} className="giveMeNPCSpace">
                             <Dropdown.Toggle variant="outline-primary">
-                            {this.state.patronType ? this.state.patronType: "Choose your Patron's Type"}
+                            {this.state.patronData.type ? `Type: ${this.state.patronData.type}` : "Choose your Patron's Type"}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                                 {this.state.patronChoices.map(item => {
@@ -124,9 +126,9 @@ render() {
                             </Dropdown.Menu>
                         </Dropdown>
 
-                        <Dropdown onSelect={this.handleCManner} className="giveMeNPCSpace">
+                        <Dropdown onSelect={this.handleManner} className="giveMeNPCSpace">
                             <Dropdown.Toggle variant="outline-primary">
-                            {this.state.patronMannerismChoice ? `Mannerism: ${this.state.patronMannerismChoice}`: "Choose your Patron's Mannerism"}
+                            {this.state.patronData.manner ? `Mannerism: ${this.state.patronData.manner}`: "Choose your Patron's Mannerism"}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                                 {this.state.patronMannerisms.map(drop => {
@@ -137,7 +139,7 @@ render() {
 
                         <Dropdown onSelect={this.handleTrait} className="giveMeNPCSpace">
                             <Dropdown.Toggle variant="outline-primary">
-                            {this.state.patronTraitChoice ? `Trait: ${this.state.patronTraitChoice}`: "Choose your Patron's Trait"}
+                                {this.state.patronData.trait ? `Trait: ${this.state.patronData.trait }`: "Choose your Patron's Trait"}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                                 {this.state.patronInteractionTraits.map(drop => {

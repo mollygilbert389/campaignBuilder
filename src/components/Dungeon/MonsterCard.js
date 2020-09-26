@@ -12,16 +12,7 @@ class MonsterCard extends Component {
         suggestedMonsterNum:0,
         maxMonsterNum:0, 
         finalMonsterNum:0,
-        finalMonsterChoices: [],
-        firstQues: true,
-        secondQues: false,
-        finalMonsterChoices: [],
         monsterData: [],
-
-        monsterChoice: '',
-        monsterTypes: {},
-        finalMonsterType: '',
-        finalMonsterChoiceArray: [],
         monsterCategories: [],
     }
 
@@ -55,14 +46,14 @@ class MonsterCard extends Component {
             roomNum: roomState,
             suggestedMonsterNum: suggestedMonsterNum,
             maxMonsterNum: maxMonsterNum
-        }, () => {this.props.setDungeonMonsterNum(this.state.suggestedMonsterNum)})
+        })
     }
 
 
     handleSlider = (event, value) => {
         this.setState({
             finalMonsterNum: value
-        }, () => {this.props.setDungeonMonsterNum(this.state.finalMonsterNum)})
+        })
         
         this.createMonsterForm()
     }
@@ -71,7 +62,7 @@ class MonsterCard extends Component {
         const monsterCategories = Monsters.map(item => item.category)
         const filterMonsterCategories = [...new Set(monsterCategories)]
         
-        const monsterFormNumber = this.props.campaign.dungeonMonsterNum 
+        const monsterFormNumber = this.state.finalMonsterNum
         let sideMonsterObject = []
     
         for (let i=0; i < monsterFormNumber; i++) {
@@ -95,8 +86,6 @@ class MonsterCard extends Component {
             } return monster
         })
 
-        console.log(newMonsterDrops)
-
         this.setState({ 
             monsterData: newMonsterDrops,
         })
@@ -110,8 +99,6 @@ class MonsterCard extends Component {
                 return {...monster, monsterName:finalSelection}
             } return monster
         })
-
-        console.log(newMonsterDrops)
 
         this.setState({ 
             monsterData: newMonsterDrops,

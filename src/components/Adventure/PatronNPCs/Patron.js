@@ -7,7 +7,8 @@ import "../style.css"
 class Patron extends Component {
     state ={
         showModal: false,
-        patronName: "", 
+        patronName: "",
+        patronData: this.patronData 
     }
 
     close = (event) =>  {

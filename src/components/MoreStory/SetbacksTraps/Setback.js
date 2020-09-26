@@ -26,7 +26,7 @@ class Setback extends Component {
             {id: 1, option: "Poison Darts",},
             {id: 1, option: "Poison Needle",},
             {id: 1, option: "Rolling Sphere",},
-            {id: 1, option: "Sphere or Annihilation",},
+            {id: 1, option: "Sphere of Annihilation",},
         ],
         worldShakingEvents: [
             {
