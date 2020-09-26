@@ -2,18 +2,14 @@ import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import Monsters from "../../Dungeon/monster.json"
-import {FormControlLabel, Checkbox, FormGroup, Slider} from '@material-ui/core'
+import {Slider} from '@material-ui/core'
 import "../style.css"
 
 class RandomEvents extends Component {
     state ={
         randomEncounter: false,
-        randomEncounterNum: null,
         monsterCat: this.props.campaign.travelPointChoices,
-        filteredMonsterSelection: "",
         monsterDrop: [],
-        monsterItemsByCategory: [],
-        finalSelection: "",
         possibleMonsters: [],
         randomEncounterMonsters: []
     }
@@ -84,7 +80,6 @@ class RandomEvents extends Component {
         })
 
         this.setState({
-            filteredMonsterSelection: selection,
             randomEncounterMonsters: newMonsterDrops
         })
     }
