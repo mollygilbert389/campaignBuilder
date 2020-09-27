@@ -15,6 +15,8 @@ import {
   SET_LOCAL_EVENTS,
   SET_ENCOUNTERS,
   SET_RANDOM_ENCOUNTERS,
+  SET_TWIST,
+  SET_SIDE_QUESTS,
 
   SET_ROOMS,
   SET_MONSTERS,
@@ -62,6 +64,8 @@ const initialState = {
     localEvents: [],
     encounters: [],
     randomEncounters: [],
+    twist: "",
+    sideQuests: [],
 
     rooms: "",
     monsters: [],
@@ -149,6 +153,16 @@ export default function(state = initialState, action) {
           [action.destination]: action.value
         }
         case SET_RANDOM_ENCOUNTERS: 
+        return {
+          ...state,
+          [action.destination]: action.value
+        }
+        case SET_TWIST: 
+        return {
+          ...state,
+          [action.destination]: action.value
+        }
+        case SET_SIDE_QUESTS: 
         return {
           ...state,
           [action.destination]: action.value

@@ -47,7 +47,16 @@ class Twists extends Component {
                 twistYesNo: '',
                 twistChoice: '',
             })
+            
         }
+    }
+
+    handleTwist = (event) => {
+        const choice = event.target.name
+        this.setState({
+            twistChoice: choice
+        })
+        this.props.setTwist("twist", choice)
     }
 
 render() {  
@@ -88,7 +97,7 @@ render() {
                             <p>Click through these to add a fun twist to your story.</p>
                             <Carousel interval={null}>
                             {this.state.twists.map(drop => {
-                                return <Carousel.Item> <div className="d-block w-100"></div> <Button variant="primary" style={style} key={drop.id} name={drop.option}>{drop.option}</Button> </Carousel.Item>
+                                return <Carousel.Item> <div className="d-block w-100"></div> <Button variant="primary" onClick={this.handleTwist} style={style} key={drop.id} name={drop.option}>{drop.option}</Button> </Carousel.Item>
                             })}
                             </Carousel>
                         </div>

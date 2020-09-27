@@ -5,6 +5,7 @@ import RandomEvents from "../Encounters/RandomEvents"
 import SideQuests from "./SideQuests"
 import Traps from "../SetbacksTraps/Traps"
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
+import {Slider} from '@material-ui/core'
 import "../style.css"
 
 class Twists extends Component {
@@ -13,6 +14,7 @@ class Twists extends Component {
         showModal: false,
         sideQuests: '',
         sideQuestChoice: '',
+        sideQuests: [],
         sideQuestOptions: [
             {id: 1, option: "Find a specific item rumored to be in the area"},
             {id: 2, option: "Retrieve information from an NPC in the area"},
@@ -31,7 +33,7 @@ class Twists extends Component {
         })
     }
 
-    handleYesNoTwists = (event) => {
+    handleYesNoSideQuest = (event) => {
         let choice = event.target.name
 
         switch(choice) {
@@ -48,10 +50,33 @@ class Twists extends Component {
         }
     }
 
-    handleSideQuestChoice = (keyEvent, event) => {
-        this.setState({
-            sideQuestChoice: event.target.name,
+    handleSideQuestChoice = (keyEvent, event, index) => {
+        const selection = event.target.text
+
+        const newSideQuest = [...this.state.sideQuests].map(item => {
+            if (item.id===index) {
+                return {...item, type:selection}
+            } return item
         })
+        
+        this.setState({
+            sideQuests: newSideQuest
+        })
+
+        this.props.setSideQuests("sideQuests", newSideQuest)
+    }
+
+    handleSlider = (event, value) => {
+        let sideQuests = []
+        for (let i=0; i < value; i++) {
+            let newObject = {id:i}
+            sideQuests.push(newObject)
+        }
+
+        this.setState({
+            sideQuests: sideQuests
+        })
+
     }
 
 
@@ -64,7 +89,10 @@ render() {
                 <Button variant="outline-success" size="lg" onClick={this.handleClick}>Side Quests
                 </Button>
             </div>
-            <Modal show={this.state.showModal} onHide={this.handleClick}>
+            <Modal
+            size="lg" 
+            show={this.state.showModal} 
+            onHide={this.handleClick}>
                 <Modal.Header closeButton>
                     <Modal.Title>This is optional, do you want to add a side quest to your story?</Modal.Title>
                 </Modal.Header>
@@ -75,17 +103,31 @@ render() {
 
                     <div className="sideQuestBtnSpace">
                         <div className="sideQuestBtns">
-                            <Button name="Yes" variant="outline-success" onClick={this.handleYesNoTwists}>Yes</Button>
+                            <Button name="Yes" variant="outline-success" onClick={this.handleYesNoSideQuest}>Yes</Button>
                         </div>
                         <div className="sideQuestBtns">
-                            <Button name="No" variant="outline-danger" onClick={this.handleYesNoTwists}>No</Button>
+                            <Button name="No" variant="outline-danger" onClick={this.handleYesNoSideQuest}>No</Button>
                         </div>
                     </div>
 
-                    {this.state.sideQuests && (<div>
-                        <Dropdown onSelect={this.handleSideQuestChoice}>
+                    <br></br>
+                    <br></br>
+
+                    {this.state.sideQuests &&(<div>
+                        <Slider
+                        min={1}
+                        max={10}
+                        defaultValue={5}
+                        onChangeCommitted={this.handleSlider}
+                        valueLabelDisplay="on"
+                        />
+                    </div>)}
+
+                    {this.state.sideQuests.length > 0 && (<div>
+                        {this.state.sideQuests.map((space , index)=> {return <div>
+                        <Dropdown onSelect={(keyEvent, event) => this.handleSideQuestChoice(keyEvent, event, index)}>
                             <Dropdown.Toggle variant="outline-primary">
-                            {this.state.sideQuestChoice ? this.state.sideQuestChoice: 'Choose your Side Quest Goal'}
+                            {this.state.sideQuests[index].type ? this.state.sideQuests[index].type: 'Choose your Side Quest Goal'}
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
@@ -94,6 +136,7 @@ render() {
                             })}
                             </Dropdown.Menu>
                         </Dropdown>
+                        </div>})}
                     </div>)}
 
 

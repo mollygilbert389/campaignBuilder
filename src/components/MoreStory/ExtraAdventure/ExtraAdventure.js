@@ -37,8 +37,12 @@ render() {
                     <br></br>
 
                     <div className="btnspace">
-                        <Twists></Twists>
-                        <SideQuests></SideQuests>
+                        <Twists
+                        setTwist={this.props.setTwist} 
+                        ></Twists>
+                        <SideQuests
+                        setSideQuests={this.props.setSideQuests} 
+                        ></SideQuests>
                     </div>
 
 

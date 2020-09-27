@@ -15,12 +15,13 @@ import {
     SET_LOCAL_EVENTS,
     SET_ENCOUNTERS,
     SET_RANDOM_ENCOUNTERS,
+    SET_TWIST,
+    SET_SIDE_QUESTS,
 
     SET_ROOMS,
     SET_MONSTERS,
     SET_TREASURE_TYPE, 
     SET_TREASURE_NUMBER,
-    // SET_SIDE_QUESTS,
     // SET_SETBACKS,
   
 } from './constant'
@@ -113,6 +114,18 @@ export const setRandomEncounters = (destination, value) => ({
     type: SET_RANDOM_ENCOUNTERS,
     destination,
     value
+})
+
+export const setTwist = (destination, value) => ({
+    type: SET_TWIST,
+    destination,
+    value
+}) 
+
+export const setSideQuests = (destination, value) => ({
+    type: SET_SIDE_QUESTS,
+    destination,
+    value
 }) 
 
 export const setRooms = (number) => ({
@@ -134,11 +147,6 @@ export const setTreasureNumber = (number) => ({
     type: SET_TREASURE_NUMBER,
     payload: number
 }) 
-
-// export const setSideQuests = (name) => ({
-//     type: SET_SIDE_QUESTS,
-//     payload: name
-// }) 
 
 // export const setSetbacks = (name) => ({
 //     type: SET_SETBACKS,

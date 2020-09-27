@@ -48,6 +48,8 @@ import {
     setLocalEvents,
     setEncounters,
     setRandomEncounters,
+    setTwist,
+    setSideQuests,
 
     setRooms, 
     setMonsters, 
@@ -238,6 +240,16 @@ setRandomEncounters = (destination, value) => {
     onSetRandomEncounters(destination, value)
 }
 
+setTwist = (destination, value) => {
+    const{onSetTwist}=this.props
+    onSetTwist(destination, value)
+}
+
+setSideQuests = (destination, value) => {
+    const{onSetSideQuests}=this.props
+    onSetSideQuests(destination, value)
+}
+
 setRooms = (rooms) => {
     const{onSetRooms}=this.props
     onSetRooms(rooms)
@@ -345,8 +357,11 @@ setTreasureNumber = (number) => {
                         campaign={this.props.campaign}
                         setEncounters={this.setEncounters} 
                         ></EncountersAndEvents>
-                        <ExtraAdventure></ExtraAdventure>
-                        <Setback 
+                        <ExtraAdventure
+                        setTwist={this.setTwist}
+                        setSideQuests={this.setSideQuests} 
+                        ></ExtraAdventure>
+                        <Setback
                         setSetBacks={this.setSetbacks}
                         ></Setback>
                     </div>
@@ -429,13 +444,14 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetLocalEvents: bindActionCreators(setLocalEvents, dispatch),
     onSetEncounters: bindActionCreators(setEncounters, dispatch),
     onSetRandomEncounters: bindActionCreators(setRandomEncounters, dispatch),
+    onSetTwist: bindActionCreators(setTwist, dispatch),
+    onSetSideQuests: bindActionCreators(setSideQuests, dispatch),
 
     onSetRooms: bindActionCreators(setRooms, dispatch),
     // onSetDungeonMonsterNum: bindActionCreators(setDungeonMonsterNum, dispatch),
     onSetMonsters: bindActionCreators(setMonsters, dispatch),
     onSetTreasureType: bindActionCreators(setTreasureType, dispatch),
     onSetTreasureNumber: bindActionCreators(setTreasureNumber, dispatch),
-    // onSetSideQuests: bindActionCreators(setSideQuests, dispatch),
     // onSetSetbacks: bindActionCreators(setSetbacks, dispatch),
 
 })
