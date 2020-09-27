@@ -10,9 +10,10 @@ export const SET_ACTS_CLIMAX = "SET_ACTS_CLIMAX"
 export const SET_MAIN_GOAL = "SET_MAIN_GOAL"
 export const SET_PILLAR = "SET_PILLAR"
 export const SET_PATRON_DATA = "SET_PATRON_DATA"
-export const SET_VILLAIN_NAME ="SET_VILLAIN_NAME"
+export const SET_VILLAIN_DATA ="SET_VILLAIN_DATA"
 export const SET_LOCAL_EVENTS = "SET_LOCAL_EVENTS"
 export const SET_NPC_DATA = "SET_NPC_DATA"
+
 
 export const SET_MONSTERS = "SET_MONSTERS"
 export const SET_ROOMS = "SET_ROOMS"

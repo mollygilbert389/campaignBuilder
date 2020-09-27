@@ -44,10 +44,9 @@ import {
     setPillar,
     setPatronData,
     setNPCData,
-
-    setVillainName,
+    setVillainData,
     setLocalEvents,
-    setRandomEncounterNumber,
+
     setRooms, 
     setMonsters, 
     setTreasureType, 
@@ -217,9 +216,9 @@ setNPCData = (destination, value) => {
     onSetNPCData(destination, value)
 }
 
-setVillainName = (name) => {
-    const{onSetVillainName}=this.props
-    onSetVillainName(name)
+setVillainData = (destination, value) => {
+    const{onSetVillainData}=this.props
+    onSetVillainData(destination, value)
 }
 
 setLocalEvents = (names) => {
@@ -317,7 +316,7 @@ setTreasureNumber = (number) => {
                         setNPCData={this.setNPCData}
                         ></PatronNPCs>
                         <VillainSubVillain
-                        setVillainName={this.setVillainName}
+                        setVillainData={this.setVillainData}
                         ></VillainSubVillain>
                     </div>
                 </div>)}
@@ -326,7 +325,8 @@ setTreasureNumber = (number) => {
                 <div>
                     <p>More world planning! Let's get some of the smaller details hammers out in here!</p>
                     <div className="btnspace">
-                        <LocalEvents setLocalEvents={this.setLocalEvents}
+                        <LocalEvents 
+                        setLocalEvents={this.setLocalEvents}
                         ></LocalEvents>
                         <EncountersAndEvents
                         campaign={this.props.campaign} 
@@ -411,9 +411,9 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetPillar: bindActionCreators(setPillar, dispatch),
     onSetPatronData: bindActionCreators(setPatronData, dispatch),
     onSetNPCData: bindActionCreators(setNPCData, dispatch),
-
-    onSetVillainName: bindActionCreators(setVillainName, dispatch),
+    onSetVillainData: bindActionCreators(setVillainData, dispatch),
     onSetLocalEvents: bindActionCreators(setLocalEvents, dispatch),
+
     onSetRooms: bindActionCreators(setRooms, dispatch),
     // onSetDungeonMonsterNum: bindActionCreators(setDungeonMonsterNum, dispatch),
     onSetMonsters: bindActionCreators(setMonsters, dispatch),

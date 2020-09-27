@@ -128,17 +128,18 @@ class Patron extends Component {
     }
 
     handleImageSubmit = () => {
-        const image = this.state.imageLink.trim()
+        let image = this.state.imageLink.trim()
 
-        if (image === "") {
-            this.setState({
-                setImageLink: "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg",
-            })
+        if (image !== "") {
+            image = image
         } else {
-            this.setState({
-                setImageLink: image,
-            })
+            image = "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg"
         }
+
+        this.setState({
+            patronData: {...this.state.patronData, image:image},
+        })
+        
         this.refs.overlay.hide();
     }
 

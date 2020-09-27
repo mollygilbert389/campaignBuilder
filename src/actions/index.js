@@ -11,9 +11,9 @@ import {
     SET_PILLAR,
     SET_PATRON_DATA,
     SET_NPC_DATA,
-
-    SET_VILLAIN_NAME,
+    SET_VILLAIN_DATA,
     SET_LOCAL_EVENTS,
+
     SET_ROOMS,
     SET_MONSTERS,
     SET_TREASURE_TYPE, 
@@ -90,9 +90,10 @@ export const setNPCData = (destination, value) => ({
     value
 }) 
 
-export const setVillainName = (name) => ({
-    type: SET_VILLAIN_NAME,
-    payload: name
+export const setVillainData = (destination, value) => ({
+    type: SET_VILLAIN_DATA,
+    destination,
+    value
 }) 
 
 export const setLocalEvents = (names) => ({

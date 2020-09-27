@@ -11,9 +11,9 @@ import {
   SET_PILLAR,
   SET_PATRON_DATA,
   SET_NPC_DATA,
-
-  SET_VILLAIN_NAME,
+  SET_VILLAIN_DATA,
   SET_LOCAL_EVENTS,
+
   SET_ROOMS,
   SET_MONSTERS,
   SET_TREASURE_TYPE,
@@ -56,9 +56,9 @@ const initialState = {
     pillar: "",
     patronData: {},
     NPCData: [],
-
-    villainName: "",
+    villainData: {},
     localEvents: [],
+
     rooms: "",
     monsters: [],
     treasure: [],
@@ -129,10 +129,10 @@ export default function(state = initialState, action) {
           ...state,
           [action.destination]: action.value
         }
-        case SET_VILLAIN_NAME: 
+        case SET_VILLAIN_DATA: 
         return {
           ...state,
-          villainName: action.payload  
+          [action.destination]: action.value
         }
         case SET_LOCAL_EVENTS: 
         return {

@@ -43,7 +43,7 @@ render() {
 
                     <div className="btnspace">
                         <Villain
-                        setVillainName={this.props.setVillainName}
+                        setVillainData={this.props.setVillainData}
                         ></Villain>
                         <NPC></NPC>
                         {/* <SubVillain></SubVillain> */}

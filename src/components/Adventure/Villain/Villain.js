@@ -9,15 +9,7 @@ class VillainModal extends Component {
         showModal: false,
         imageLink: "",
         setImageLink: "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg",
-        villainName: "",
-        villainType: "",
-        finalVillainMethodChoice: "", 
-        villainMethodCatChoice: "",
-        villainMethodPossible: [],
-        finalVillainObjectiveChoice: "",
-        villainObjectiveCatChoice: "",
-        villainObjectivesPossible: [],
-        villainWeakness: "",
+        villainData: {},
         villainObjectives: [
             {
                 id: 1, 
@@ -322,19 +314,11 @@ class VillainModal extends Component {
         ], 
     }
 
-    // close = (event) =>  {
-    //     this.setState({
-    //         showModal: false,
-    //         villainName: event.target.value
-    //     })
-
-    //     this.props.setvillain(this.state.villainName, this.state.villainType)
-    // }
-
     handleChange = (event) => {
+        const name = event.target.value
         this.setState({
-            villainName: event.target.value
-            }, () => {this.props.setVillainName(this.state.villainName)})
+            villainData: {...this.state.villainData, name:name}
+        })
     }
 
     handleClick = () => {
@@ -344,8 +328,18 @@ class VillainModal extends Component {
     }
 
     handleVillainTypeSelect = (eventkey, event) => {
+        const selection = event.target.text
+
         this.setState({
-            villainType: event.target.text
+            villainData: {...this.state.villainData, type:selection}
+        })
+    }
+
+    handleVillainGenderSelect = (eventkey, event) => {
+        const selection = event.target.text
+
+        this.setState({
+            villainData: {...this.state.villainData, gender:selection}
         })
     }
     
@@ -353,67 +347,80 @@ class VillainModal extends Component {
     handleVillainObjectiveCatSelect = (eventkey, event) => {
         let choice = event.target.text
         const newVillainObjectiveChoices = this.state.villainObjectives.find(event => event.objectiveCat === choice)
+        const objectivesList = newVillainObjectiveChoices.objectives
 
         this.setState({
-            villainObjectiveCatChoice: event.target.text,
-            villainObjectivesPossible: newVillainObjectiveChoices.objectives,
+            villainData: {...this.state.villainData, villainObjectiveCatChoice:choice},
+            villainData: {...this.state.villainData, villainObjectivesPossible:objectivesList},
         })
     }
 
     handleFinalVillainObjectiveSelect = (eventkey, event) => {
+        const selection = event.target.text
+        
         this.setState({
-            finalVillainObjectiveChoice: event.target.text,
+            villainData: {...this.state.villainData, finalVillainObjectiveChoice:selection},
         })
     }
 
     handleVillainMethodCatSelect = (eventkey, event) => {
-        let choice = event.target.text
-        const newVillainMethodChoices = this.state.villainMethods.find(event => event.methodCat === choice)
+        const selection = event.target.text
+        const newVillainMethodChoices = this.state.villainMethods.find(event => event.methodCat === selection)
+        const drilledMethods = newVillainMethodChoices.methods
         
         this.setState({
-            villainMethodCatChoice: event.target.text,
-            villainMethodPossible: newVillainMethodChoices.methods
+            villainData: {...this.state.villainData, villainMethodCatChoice:selection, villainMethodPossible:drilledMethods},
         })
     }
 
     handleFinalVillainMethodSelect = (eventkey, event) => {
+        const selection = event.target.text
+        
         this.setState({
-            finalVillainMethodChoice: event.target.text,
+            villainData: {...this.state.villainData, finalVillainMethodChoice:selection},
         })
     }
 
     handleVillainWeaknessSelect = (eventkey, event) => {
+        const selection = event.target.text
+        
         this.setState({
-            villainWeakness: event.target.text
+            villainData: {...this.state.villainData, villainWeakness:selection},
         })
     }
 
     handleImageLink = (event) => {
+        const selection = event.target.text
+        
         this.setState({
             imageLink: event.target.value,
         })
     }
 
     handleImageSubmit = () => {
-        const image = this.state.imageLink.trim()
+        let image = this.state.imageLink.trim()
 
-        if (image === "") {
-            this.setState({
-                setImageLink: "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg",
-            })
+        if (image !== "") {
+            image = image
         } else {
-            this.setState({
-                setImageLink: image,
-            })
+            image = "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg"
         }
+
+        this.setState({
+            villainData: {...this.state.villainData, image:image},
+        })
+        
         this.refs.overlay.hide();
     }
 
+    hanelSave = () => {
+        this.setState({
+            showModal: !this.state.showModal,
+        })
+        this.props.setVillainData("villainData", this.state.villainData)
+    }
+
 render() {  
-
-    const{campaign}=this.props
-    const{villainType}=this.state
-
     return (
         <div>
             <div className="btns">
@@ -470,11 +477,12 @@ render() {
                         
                         
                         <Card.Body className="d-flex flex-column align-items-center">
-                            <Card.Title>{this.props.name}</Card.Title>
+                        <Card.Title>{this.state.villainData.name && (`Name: ${this.state.villainData.name}`)}</Card.Title>
                             <div className="d-flex flex-column align-items-center">
+
                                 <Dropdown onSelect={this.handleVillainTypeSelect} className="giveMeNPCSpace">
                                     <Dropdown.Toggle variant="outline-primary">
-                                    {villainType ? `Type: ${villainType}`: 'Choose your Adventure Villain'}
+                                    {this.state.villainData.type ? `Type: ${this.state.villainData.type }`: 'Choose your Adventure Villain'}
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
                                         <Dropdown.Item>Beast or monstrosity with no particular agenda</Dropdown.Item>
@@ -495,10 +503,21 @@ render() {
                                     </Dropdown.Menu>
                                 </Dropdown>
 
+                                <Dropdown onSelect={this.handleVillainGenderSelect} className="giveMeNPCSpace">
+                                    <Dropdown.Toggle variant="outline-primary">
+                                    {this.state.villainData.gender ? `Gender: ${this.state.villainData.gender}`: 'Choose your Adventure Villain'}
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item>Female</Dropdown.Item>
+                                        <Dropdown.Item>Male</Dropdown.Item>
+                                        <Dropdown.Item>Non Binary</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+
                                 <div className="dualDrop giveMeNPCSpace">
                                     <Dropdown onSelect={this.handleVillainObjectiveCatSelect} className="giveMeNPCSpace">
                                         <Dropdown.Toggle variant="outline-primary">
-                                        {this.state.villainObjectiveCatChoice ? `Objective Category: ${this.state.villainObjectiveCatChoice}`: "Choose your Villain's Main Objective"}
+                                        {this.state.villainData.villainObjectiveCatChoice ? `Objective Category: ${this.state.villainData.villainObjectiveCatChoice}`: "Choose your Villain's Main Objective"}
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
                                         {this.state.villainObjectives.map(item => {
@@ -506,12 +525,12 @@ render() {
                                         </Dropdown.Menu>
                                     </Dropdown>
 
-                                    {this.state.villainObjectivesPossible.length > 0 &&(<Dropdown onSelect={this.handleFinalVillainObjectiveSelect}>
+                                    {this.state.villainData.villainObjectivesPossible &&(<Dropdown onSelect={this.handleFinalVillainObjectiveSelect}>
                                         <Dropdown.Toggle variant="outline-primary">
-                                        {this.state.finalVillainObjectiveChoice ? `Objective: ${this.state.finalVillainObjectiveChoice}`: "Choose your Villain's Main Objective"}
+                                        {this.state.villainData.finalVillainObjectiveChoice ? `Objective: ${this.state.villainData.finalVillainObjectiveChoice}`: "Choose your Villain's Main Objective"}
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
-                                        {this.state.villainObjectivesPossible.map(item => {
+                                        {this.state.villainData.villainObjectivesPossible.map(item => {
                                             return <Dropdown.Item name={item}>{item}</Dropdown.Item>})}
                                         </Dropdown.Menu>
                                     </Dropdown>)}
@@ -520,7 +539,7 @@ render() {
                                 <div className="dualDrop giveMeNPCSpace">
                                 <Dropdown onSelect={this.handleVillainMethodCatSelect}>
                                     <Dropdown.Toggle variant="outline-primary">
-                                    {this.state.villainMethodCatChoice ? `Method Category: ${this.state.villainMethodCatChoice}`: "Choose your Villain's Method"}
+                                    {this.state.villainData.villainMethodCatChoice ? `Method Category: ${this.state.villainData.villainMethodCatChoice}`: "Choose your Villain's Method"}
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
                                     {this.state.villainMethods.map(item => {
@@ -529,12 +548,12 @@ render() {
                                 </Dropdown>
 
 
-                                {this.state.villainMethodPossible.length > 0 && (<Dropdown onSelect={this.handleFinalVillainMethodSelect}>
+                                {this.state.villainData.villainMethodPossible && (<Dropdown onSelect={this.handleFinalVillainMethodSelect}>
                                     <Dropdown.Toggle variant="outline-primary">
-                                    {this.state.finalVillainMethodChoice ? `Method: ${this.state.finalVillainMethodChoice}`: "Choose your Villain's Method"}
+                                    {this.state.villainData.finalVillainMethodChoice ? `Method: ${this.state.villainData.finalVillainMethodChoice}`: "Choose your Villain's Method"}
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
-                                    {this.state.villainMethodPossible.map(item => {
+                                    {this.state.villainData.villainMethodPossible.map(item => {
                                         return <Dropdown.Item name={item}>{item}</Dropdown.Item>})}
                                     </Dropdown.Menu>
                                 </Dropdown>)}
@@ -542,7 +561,7 @@ render() {
 
                                 <Dropdown onSelect={this.handleVillainWeaknessSelect} className="giveMeNPCSpace">
                                     <Dropdown.Toggle variant="outline-primary">
-                                    {this.state.villainWeakness ? `Weakness: ${this.state.villainWeakness}`: "Choose your Villain's Weakness"}
+                                    {this.state.villainData.villainWeakness ? `Weakness: ${this.state.villainData.villainWeakness}`: "Choose your Villain's Weakness"}
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
                                     {this.state.villainWeaknessChoices.map(item => {
@@ -554,7 +573,7 @@ render() {
                     </Card>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
+                    <Button variant="outline-success" onClick={this.hanelSave} >Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>
