@@ -76,7 +76,7 @@ render() {
                                 // NPCDataObj={this.state.NPCData} 
                                 index={index} 
                                 key={item.id} 
-                                name={item.id +1}
+                                name={item.id}
                                 campaign={this.props.campaign}
                                 setNPCNumber={this.props.setNPCNumber}
                                 ></NPCCard></Carousel.Item>}

@@ -375,52 +375,53 @@ class NPCCard extends Component {
     }
 
     handleChange = (event, index) => {
-        const charName = event.target.value
+        const name = event.target.value
         const reduxNPCData = this.props.campaign.NPCNumber
 
         const newNPC = [...reduxNPCData].map(NPC => {
             if (NPC.id === index) {
-                return {...NPC, NPCName:charName}
+                return {...NPC, NPCName:name}
             } return NPC
         })
 
         this.setState({
-            NPCData: {...this.state.NPCData, NPCName:charName},
+            NPCData: {...this.state.NPCData, NPCName:name},
         })
 
         this.props.setNPCNumber("NPCNumber", newNPC)
     }
 
     handleImageLink = (event) => {
-        const image = event.target.text
+        const image = event.target.value
+
         this.setState({
             NPCData: {...this.state.NPCData, NPCImage:image},
         })
     }
 
-    handleImageSubmit = (index) => {
-        const image = this.state.imageLink.trim()
+    handleImageSubmit = (event, index) => {
+        let image=this.state.NPCData.NPCImage
 
-        if (image === "") {
-            this.setState({
-                setImageLink: "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg",
-            })
+        const reduxNPCData = this.props.campaign.NPCNumber
+
+        if (image !== "") {
+            image=image
         } else {
-            const reduxNPCData = this.props.campaign.NPCNumber
-
-            const newNPC = [...reduxNPCData].map(NPC => {
-                if (NPC.id === index) {
-                    return {...NPC, NPCImage:image}
-                } return NPC
-            })
-
-            this.setState({
-                setImageLink: image,
-                NPCData: {...this.state.NPCData, NPCImage:image},
-            })
-
-            this.props.setNPCNumber("NPCNumber", newNPC)
+            image= "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg"
         }
+
+        const newNPC = [...reduxNPCData].map(NPC => {
+            if (NPC.id === index) {
+                return {...NPC, NPCImage:image}
+            } return NPC
+        })
+
+        this.setState({
+            setImageLink: image,
+            NPCData: {...this.state.NPCData, NPCImage:image},
+        })
+
+        this.props.setNPCNumber("NPCNumber", newNPC)
 
         this.refs.overlay.hide();
     }
@@ -444,7 +445,7 @@ render() {
                             <Popover.Content>
                                 <div className="centerMe">
                                     <FormControl type="text" placeholder="Image Link" className="mr-sm-2" value={this.state.value} onChange={this.handleImageLink}/>
-                                    <Button onClick={(index) => this.handleImageSubmit(index)} className="imageSubmit">Submit</Button>
+                                    <Button onClick={(event) => this.handleImageSubmit(event, this.props.index)} className="imageSubmit">Submit</Button>
                                 </div>
                             </Popover.Content>
                         </Popover>
@@ -455,10 +456,10 @@ render() {
                 </div>
                 
                 <Card.Body className="d-flex flex-column align-items-center">
-                    <Card.Title>{!this.state.NPCData.NPCName ? `NPC # ${this.props.name}` : `${this.state.NPCData.NPCName}`}</Card.Title>
+                    <Card.Title>{!this.state.NPCData.NPCName ? `NPC # ${this.props.name +1}` : `${this.state.NPCData.NPCName}`}</Card.Title>
 
                     <Form inline className="giveMeNPCSpace">
-                        <FormControl type="text" placeholder="NPC Name" className="mr-sm-2" value={this.state.value} onChange={(index) => this.handleChange(index)}/>
+                        <FormControl type="text" placeholder="NPC Name" className="mr-sm-2" value={this.state.value} onChange={(event) => this.handleChange(event, this.props.index)}/>
                         <div style={{paddingRight: "10px"}}>or</div> 
 
                         <OverlayTrigger overlay={
