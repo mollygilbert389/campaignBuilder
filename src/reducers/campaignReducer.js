@@ -17,6 +17,7 @@ import {
   SET_RANDOM_ENCOUNTERS,
   SET_TWIST,
   SET_SIDE_QUESTS,
+  SET_SETBACK,
 
   SET_ROOMS,
   SET_MONSTERS,
@@ -66,13 +67,12 @@ const initialState = {
     randomEncounters: [],
     twist: "",
     sideQuests: [],
+    setBack: "",
 
     rooms: "",
     monsters: [],
     treasure: [],
     treasureNum: "",
-    // sideQuests: '',
-    // setbacks: '',
 }
 
 export default function(state = initialState, action) {
@@ -167,6 +167,11 @@ export default function(state = initialState, action) {
           ...state,
           [action.destination]: action.value
         }
+        case SET_SETBACK: 
+        return {
+          ...state,
+          [action.destination]: action.value
+        }
         case SET_ROOMS: 
         return {
           ...state,
@@ -187,17 +192,6 @@ export default function(state = initialState, action) {
           ...state,
           treasureNum: action.payload  
         }
-        // case SET_SIDE_QUESTS: 
-        // return {
-        //   ...state,
-        //   sideQuests: action.payload  
-        // }
-        // case SET_SETBACKS: 
-        // return {
-        //   ...state,
-        //   setbacks: action.payload  
-        // }
-
         default: 
             return state
     } 

@@ -1,15 +1,10 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import Encounters from "../Encounters/Encounters"
-import RandomEvents from "../Encounters/RandomEvents"
-import SideQuests from "./SideQuests"
-import Traps from "../SetbacksTraps/Traps"
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import {Slider} from '@material-ui/core'
 import "../style.css"
 
-class Twists extends Component {
-
+class SideQuests extends Component {
     state = {
         showModal: false,
         sideQuests: '',
@@ -81,8 +76,6 @@ class Twists extends Component {
 
 
 render() {  
-
-
     return (
         <div>
             <div className="btns">
@@ -151,4 +144,4 @@ render() {
 }
 }
 
-export default Twists;
+export default SideQuests;

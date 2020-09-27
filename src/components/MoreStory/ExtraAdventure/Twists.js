@@ -1,9 +1,5 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import Encounters from "../Encounters/Encounters"
-import RandomEvents from "../Encounters/RandomEvents"
-import SideQuests from "./SideQuests"
-import Traps from "../SetbacksTraps/Traps"
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Carousel} from 'react-bootstrap'
 import "../style.css"
 

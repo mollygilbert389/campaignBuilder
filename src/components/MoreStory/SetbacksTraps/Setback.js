@@ -91,7 +91,6 @@ class Setback extends Component {
 
     setback = (event) => {
         let choice = event.target.name
-        console.log(choice)
         switch (choice) {
             case "Yes":
                 this.setState({
@@ -110,12 +109,6 @@ class Setback extends Component {
                     showModal: !this.state.showModal
                 })
         } 
-        // this.setState({
-        //     // showModal: !this.state.showModal,
-        //     setback: event.target.value
-        // } 
-        // () => {this.props.setSetBacks(this.state.setback)}
-        // )
     }
 
     handleSetbackCategorySelect = (keyevent, event) => {
@@ -123,16 +116,24 @@ class Setback extends Component {
         let setBackTypes = this.state.worldShakingEvents.find(event => event.title === setbackCatChoice)
 
         this.setState({ 
-        ...this.state,
-        setbackCatChoice: setbackCatChoice,
-        setBackTypes: setBackTypes.possible
-    })}
+            setbackCatChoice: setbackCatChoice,
+            setBackTypes: setBackTypes.possible
+        })
+    }   
 
     handleFinalEvent = (keyevent, event) => {
+        let choice = event.target.name
+        let choiceCat = this.state.setbackCatChoice
+
         this.setState({ 
-        ...this.state,
-        finalSetbackType: event.target.name,
-    })}
+            finalSetbackType: choice,
+            trapChoice: "",
+        })
+
+        const finalChoice = choiceCat + " " + choice
+
+        this.props.setSetBack("setback", finalChoice)
+}
 
     handleChange = (event) => {
         this.setState({
@@ -145,22 +146,27 @@ class Setback extends Component {
         switch(choice) {
             case "large":
                 this.setState({
-                    bigSetback: true
+                    bigSetback: true,
+                    smallSetback: false,
                 })
                 break;
             case "small":
                 this.setState({
-                    smallSetback: true
+                    smallSetback: true,
+                    bigSetback: false,
                 })
                 break;
         }
     }
 
     handleTrapSelect = (keyEvent, event) => {
-        console.log(event.target.text)
+        const choice = event.target.text
         this.setState({
-            trapChoice: event.target.text
+            trapChoice: choice,
+            finalSetbackType: "",
         })
+
+        this.props.setSetBack("setback", choice)
     }
 
 render() {  

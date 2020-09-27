@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Twists from './Twists'
 import SideQuests from "./SideQuests"
-import Traps from "../SetbacksTraps/Traps"
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "../style.css"
 
@@ -19,8 +18,6 @@ class ExtraAdventure extends Component {
     }
 
 render() {  
-
-
     return (
         <div>
             <div className="btns">

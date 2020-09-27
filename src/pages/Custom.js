@@ -50,14 +50,13 @@ import {
     setRandomEncounters,
     setTwist,
     setSideQuests,
+    setSetback, 
 
     setRooms, 
     setMonsters, 
     setTreasureType, 
-    setTreasureNumber, 
-    // setDungeonMonsterNum,     
-    // setSideQuests, 
-    // setSetbacks, 
+    setTreasureNumber,    
+
 
 } from "../actions/index"
 
@@ -250,6 +249,11 @@ setSideQuests = (destination, value) => {
     onSetSideQuests(destination, value)
 }
 
+setSetback = (destination, value) => {
+    const{onSetSetback}=this.props
+    onSetSetback(destination, value)
+}
+
 setRooms = (rooms) => {
     const{onSetRooms}=this.props
     onSetRooms(rooms)
@@ -362,7 +366,7 @@ setTreasureNumber = (number) => {
                         setSideQuests={this.setSideQuests} 
                         ></ExtraAdventure>
                         <Setback
-                        setSetBacks={this.setSetbacks}
+                        setSetBack={this.setSetback}
                         ></Setback>
                     </div>
                 </div>)}
@@ -446,13 +450,13 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetRandomEncounters: bindActionCreators(setRandomEncounters, dispatch),
     onSetTwist: bindActionCreators(setTwist, dispatch),
     onSetSideQuests: bindActionCreators(setSideQuests, dispatch),
+    onSetSetback: bindActionCreators(setSetback, dispatch),
 
     onSetRooms: bindActionCreators(setRooms, dispatch),
-    // onSetDungeonMonsterNum: bindActionCreators(setDungeonMonsterNum, dispatch),
     onSetMonsters: bindActionCreators(setMonsters, dispatch),
     onSetTreasureType: bindActionCreators(setTreasureType, dispatch),
     onSetTreasureNumber: bindActionCreators(setTreasureNumber, dispatch),
-    // onSetSetbacks: bindActionCreators(setSetbacks, dispatch),
+
 
 })
 
