@@ -54,6 +54,7 @@ render() {
                         setPatronData={this.props.setPatronData}
                         ></Patron>
                         <NPCs
+                        setNPCNumber={this.props.setNPCNumber}
                         campaign={this.props.campaign}
                         ></NPCs>
                     </div>

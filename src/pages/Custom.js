@@ -43,17 +43,15 @@ import {
     setMainGoal,
     setPillar,
     setPatronData,
+    setNPCNumber,
 
     setVillainName,
     setLocalEvents,
     setRandomEncounterNumber,
     setRooms, 
-
     setMonsters, 
     setTreasureType, 
     setTreasureNumber, 
-
-    // setNPCNumber,
     // setDungeonMonsterNum,     
     // setSideQuests, 
     // setSetbacks, 
@@ -214,9 +212,9 @@ setPatronData = (destination, value) => {
     onSetPatronData(destination, value)
 }
 
-setNPCNumber = (number) => {
+setNPCNumber = (destination, value) => {
     const{onSetNPCNumber}=this.props
-    onSetNPCNumber(number)
+    onSetNPCNumber(destination, value)
 }
 
 setVillainName = (name) => {
@@ -316,6 +314,7 @@ setTreasureNumber = (number) => {
                         <PatronNPCs
                         campaign={this.props.campaign}
                         setPatronData={this.setPatronData}
+                        setNPCNumber={this.setNPCNumber}
                         ></PatronNPCs>
                         <VillainSubVillain
                         setVillainName={this.setVillainName}
@@ -411,17 +410,15 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetMainGoal: bindActionCreators(setMainGoal, dispatch),
     onSetPillar: bindActionCreators(setPillar, dispatch),
     onSetPatronData: bindActionCreators(setPatronData, dispatch),
+    onSetNPCNumber: bindActionCreators(setNPCNumber, dispatch),
 
-    // onSetNPCNumber: bindActionCreators(setNPCNumber, dispatch),
     onSetVillainName: bindActionCreators(setVillainName, dispatch),
     onSetLocalEvents: bindActionCreators(setLocalEvents, dispatch),
-
     onSetRooms: bindActionCreators(setRooms, dispatch),
     // onSetDungeonMonsterNum: bindActionCreators(setDungeonMonsterNum, dispatch),
     onSetMonsters: bindActionCreators(setMonsters, dispatch),
     onSetTreasureType: bindActionCreators(setTreasureType, dispatch),
     onSetTreasureNumber: bindActionCreators(setTreasureNumber, dispatch),
-    
     // onSetSideQuests: bindActionCreators(setSideQuests, dispatch),
     // onSetSetbacks: bindActionCreators(setSetbacks, dispatch),
 

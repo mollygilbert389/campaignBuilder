@@ -10,6 +10,7 @@ import {
   SET_MAIN_GOAL,
   SET_PILLAR,
   SET_PATRON_DATA,
+  SET_NPC_NUMBER,
 
   SET_VILLAIN_NAME,
   SET_LOCAL_EVENTS,
@@ -17,7 +18,7 @@ import {
   SET_MONSTERS,
   SET_TREASURE_TYPE,
   SET_TREASURE_NUMBER,
-  // SET_NPC_NUMBER,
+
 
 } from '../actions/constant'
 
@@ -54,8 +55,8 @@ const initialState = {
     mainGoal: "",
     pillar: "",
     patronData: {},
+    NPCNumber: [],
 
-    // NPCNumber: "",
     villainName: "",
     localEvents: [],
     rooms: "",
@@ -123,11 +124,11 @@ export default function(state = initialState, action) {
           ...state,
           [action.destination]: action.value
         }
-        // case SET_NPC_NUMBER: 
-        // return {
-        //   ...state,
-        //   NPCNumber: action.payload  
-        // }
+        case SET_NPC_NUMBER: 
+        return {
+          ...state,
+          [action.destination]: action.value
+        }
         case SET_VILLAIN_NAME: 
         return {
           ...state,

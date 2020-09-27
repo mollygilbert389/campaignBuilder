@@ -23,9 +23,18 @@ class NPCs extends Component {
             NPCNum: value,
             NPCData: NPCData
         })
+
+        this.props.setNPCNumber("NPCNumber", NPCData)
     }
 
     handleClick = () => {
+        this.setState({
+            showModal: !this.state.showModal,
+        })
+    }
+
+    handleSave = () => {
+        console.log(this.state.NPCData)
         this.setState({
             showModal: !this.state.showModal,
         })
@@ -62,15 +71,22 @@ render() {
                     />
 
                     {this.state.NPCData.length > 0 && (<Carousel className="center" interval={null}>
-                        {this.state.NPCData.map(item => 
-                            {return <Carousel.Item><NPCCard key={item.id} name={item.id +1}></NPCCard></Carousel.Item>}
+                        {this.state.NPCData.map((item, index) => 
+                            {return <Carousel.Item><NPCCard 
+                                // NPCDataObj={this.state.NPCData} 
+                                index={index} 
+                                key={item.id} 
+                                name={item.id +1}
+                                campaign={this.props.campaign}
+                                setNPCNumber={this.props.setNPCNumber}
+                                ></NPCCard></Carousel.Item>}
                         )}
                     </Carousel>)}
 
                 </Modal.Body>
 
                 <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
+                    <Button variant="outline-success" onClick={this.handleSave} >Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>

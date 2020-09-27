@@ -9,6 +9,7 @@ class NPCCard extends Component {
         imageLink: "",
         setImageLink: "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg",
         NPCData: {},
+        // NPCReduxData: this.props.campaign.NPCData,
         isDisabled: true,
         NPCAppearance: [
             {id: 1, option: "Distinctive Jewelry: earrings, necklace, circlet, braclets"},
@@ -180,92 +181,214 @@ class NPCCard extends Component {
 
     }
 
-    handleGenderSelect = (eventKey, event) => {
+    handleGenderSelect = (eventKey, event, index) => {
         const selection = event.target.text
-        this.setState({
-            NPCData: {...this.state.NPCData, gender:selection}
+        const reduxNPCData = this.props.campaign.NPCNumber
+
+        const newNPC = [...reduxNPCData].map(NPC => {
+            if (NPC.id === index) {
+                return {...NPC, gender:selection}
+            } return NPC
         })
+
+        this.setState({
+            NPCData: {...this.state.NPCData, gender:selection},
+        })
+
+        this.props.setNPCNumber("NPCNumber", newNPC)
     }
 
-    handleHighAbilitySelect = (eventKey, event) => {
+    handleHighAbilitySelect = (eventKey, event, index) => {
         const selection = event.target.text
+        const reduxNPCData = this.props.campaign.NPCNumber
+
+        const newNPC = [...reduxNPCData].map(NPC => {
+            if (NPC.id === index) {
+                return {...NPC, highAbility:selection}
+            } return NPC
+        })
+
         this.setState({
             NPCData: {...this.state.NPCData, highAbility:selection}
         })
+
+        this.props.setNPCNumber("NPCNumber", newNPC)
     }
 
-    handleLowAbilitySelect = (eventKey, event) => {
+    handleLowAbilitySelect = (eventKey, event, index) => {
         const selection = event.target.text
+        const reduxNPCData = this.props.campaign.NPCNumber
+
+        const newNPC = [...reduxNPCData].map(NPC => {
+            if (NPC.id === index) {
+                return {...NPC, lowAbility:selection}
+            } return NPC
+        })
         this.setState({
             NPCData: {...this.state.NPCData, lowAbility:selection}
         })
+
+        this.props.setNPCNumber("NPCNumber", newNPC)
     }
 
-    handleApperanceSelect = (eventKey, event) => {
+    handleApperanceSelect = (eventKey, event, index) => {
         const selection = event.target.text
+        const reduxNPCData = this.props.campaign.NPCNumber
+
+        const newNPC = [...reduxNPCData].map(NPC => {
+            if (NPC.id === index) {
+                return {...NPC, appearance:selection}
+            } return NPC
+        })
+        
         this.setState({
             NPCData: {...this.state.NPCData, appearance:selection}
         })
+
+        this.props.setNPCNumber("NPCNumber", newNPC)
     }
 
-    handleNPCTalent = (eventKey, event) => {
+    handleNPCTalent = (eventKey, event, index) => {
         const selection = event.target.text
+        const reduxNPCData = this.props.campaign.NPCNumber
+
+        const newNPC = [...reduxNPCData].map(NPC => {
+            if (NPC.id === index) {
+                return {...NPC, talent:selection}
+            } return NPC
+        })
+
         this.setState({
             NPCData: {...this.state.NPCData, talent:selection}
         })
+
+        this.props.setNPCNumber("NPCNumber", newNPC)
     }
 
-    handleNPCManner = (eventKey, event) => {
+    handleNPCManner = (eventKey, event, index) => {
         const selection = event.target.text
+        const reduxNPCData = this.props.campaign.NPCNumber
+
+        const newNPC = [...reduxNPCData].map(NPC => {
+            if (NPC.id === index) {
+                return {...NPC, manner:selection}
+            } return NPC
+        })
+
         this.setState({
             NPCData: {...this.state.NPCData, manner:selection}
         })
+
+        this.props.setNPCNumber("NPCNumber", newNPC)
     }
 
-    handleNPCTrait = (eventKey, event) => {
+    handleNPCTrait = (eventKey, event, index) => {
         const selection = event.target.text
+        const reduxNPCData = this.props.campaign.NPCNumber
+
+        const newNPC = [...reduxNPCData].map(NPC => {
+            if (NPC.id === index) {
+                return {...NPC, trait:selection}
+            } return NPC
+        })
+
         this.setState({
             NPCData: {...this.state.NPCData, trait:selection}
         })
+
+        this.props.setNPCNumber("NPCNumber", newNPC)
     }
 
-    handleNPCIdeal = (eventKey, event) => {
+    handleNPCIdeal = (eventKey, event, index) => {
         const choice = event.target.text.trim()
         const drilledChoices = this.state.NPCIdeals.find(item => item.main === choice)
         const idealsOptions = drilledChoices.list
+
+        console.log(idealsOptions)
+
+        const reduxNPCData = this.props.campaign.NPCNumber
+
+        const newNPC = [...reduxNPCData].map(NPC => {
+            if (NPC.id === index) {
+                return {...NPC, ideal:choice}
+            } return NPC
+        })
 
         this.setState({
             NPCData: {...this.state.NPCData, ideal:choice, finalIdeal:idealsOptions},
             isDisabled: false,
         })
+
+        this.props.setNPCNumber("NPCNumber", newNPC)
     }
 
-    handleDrilledIdeal = (eventKey, event) => {
+    handleDrilledIdeal = (eventKey, event, index) => {
         const choice = event.target.text
+        console.log(choice)
+        const reduxNPCData = this.props.campaign.NPCNumber
+
+        const newNPC = [...reduxNPCData].map(NPC => {
+            if (NPC.id === index) {
+                return {...NPC, drilledIdealChoice:choice}
+            } return NPC
+        })
+
         this.setState({
             NPCData: {...this.state.NPCData, drilledIdealChoice:choice},
         })
+
+        this.props.setNPCNumber("NPCNumber", newNPC)
     }
 
-    handleNPCBond = (eventKey, event) => {
+    handleNPCBond = (eventKey, event, index) => {
         const selection = event.target.text
+        const reduxNPCData = this.props.campaign.NPCNumber
+
+        const newNPC = [...reduxNPCData].map(NPC => {
+            if (NPC.id === index) {
+                return {...NPC, bond:selection}
+            } return NPC
+        })
+
         this.setState({
             NPCData: {...this.state.NPCData, bond:selection},
         })
+
+        this.props.setNPCNumber("NPCNumber", newNPC)
     }
 
-    handleNPCFlawSecret = (eventKey, event) => {
+    handleNPCFlawSecret = (eventKey, event, index) => {
         const selection = event.target.text
+        const reduxNPCData = this.props.campaign.NPCNumber
+
+        const newNPC = [...reduxNPCData].map(NPC => {
+            if (NPC.id === index) {
+                return {...NPC, flawOrSecret:selection}
+            } return NPC
+        })
+
         this.setState({
             NPCData: {...this.state.NPCData, flawOrSecret:selection},
         })
+
+        this.props.setNPCNumber("NPCNumber", newNPC)
     }
 
-    handleChange = (event) => {
-        const name = event.target.value
-        this.setState({
-            NPCData: {...this.state.NPCData, NPCName:name},
+    handleChange = (event, index) => {
+        const charName = event.target.value
+        const reduxNPCData = this.props.campaign.NPCNumber
+
+        const newNPC = [...reduxNPCData].map(NPC => {
+            if (NPC.id === index) {
+                return {...NPC, NPCName:charName}
+            } return NPC
         })
+
+        this.setState({
+            NPCData: {...this.state.NPCData, NPCName:charName},
+        })
+
+        this.props.setNPCNumber("NPCNumber", newNPC)
     }
 
     handleImageLink = (event) => {
@@ -275,7 +398,7 @@ class NPCCard extends Component {
         })
     }
 
-    handleImageSubmit = () => {
+    handleImageSubmit = (index) => {
         const image = this.state.imageLink.trim()
 
         if (image === "") {
@@ -283,18 +406,30 @@ class NPCCard extends Component {
                 setImageLink: "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg",
             })
         } else {
+            const reduxNPCData = this.props.campaign.NPCNumber
+
+            const newNPC = [...reduxNPCData].map(NPC => {
+                if (NPC.id === index) {
+                    return {...NPC, NPCImage:image}
+                } return NPC
+            })
+
             this.setState({
                 setImageLink: image,
                 NPCData: {...this.state.NPCData, NPCImage:image},
             })
+
+            this.props.setNPCNumber("NPCNumber", newNPC)
         }
+
         this.refs.overlay.hide();
     }
 
 
 
-render() {  
+render() { 
     return (
+        
         <div>
             <Card className="changeOverflow d-flex flex-column align-items-center color">
                 
@@ -308,8 +443,8 @@ render() {
                             <Popover.Title as="h3">Add Your Image!</Popover.Title>
                             <Popover.Content>
                                 <div className="centerMe">
-                                    <FormControl type="text" placeholder="Image Link" className="mr-sm-2" value={this.state.imageLink} onChange={this.handleImageLink}/>
-                                    <Button onClick={this.handleImageSubmit} className="imageSubmit">Submit</Button>
+                                    <FormControl type="text" placeholder="Image Link" className="mr-sm-2" value={this.state.value} onChange={this.handleImageLink}/>
+                                    <Button onClick={(index) => this.handleImageSubmit(index)} className="imageSubmit">Submit</Button>
                                 </div>
                             </Popover.Content>
                         </Popover>
@@ -323,7 +458,7 @@ render() {
                     <Card.Title>{!this.state.NPCData.NPCName ? `NPC # ${this.props.name}` : `${this.state.NPCData.NPCName}`}</Card.Title>
 
                     <Form inline className="giveMeNPCSpace">
-                        <FormControl type="text" placeholder="NPC Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
+                        <FormControl type="text" placeholder="NPC Name" className="mr-sm-2" value={this.state.value} onChange={(index) => this.handleChange(index)}/>
                         <div style={{paddingRight: "10px"}}>or</div> 
 
                         <OverlayTrigger overlay={
@@ -334,7 +469,7 @@ render() {
                         </OverlayTrigger>
                     </Form>
 
-                    <Dropdown onSelect={this.handleGenderSelect} className="giveMeNPCSpace">
+                    <Dropdown onSelect={(keyEvent, event) => this.handleGenderSelect(keyEvent, event, this.props.index)} className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
                         {this.state.NPCData.gender ?  `Gender: ${this.state.NPCData.gender}`: 'Choose your NPCs Gender'}
                         </Dropdown.Toggle>
@@ -345,7 +480,7 @@ render() {
                         </Dropdown.Menu>
                     </Dropdown>
 
-                    <Dropdown onSelect={this.handleApperanceSelect} className="giveMeNPCSpace">
+                    <Dropdown  onSelect={(keyEvent, event) => this.handleApperanceSelect(keyEvent, event, this.props.index)} className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
                         {this.state.NPCData.appearance ? `Appearance: ${this.state.NPCData.appearance}`: "Choose your NPC's Appearance"}
                         </Dropdown.Toggle>
@@ -354,7 +489,7 @@ render() {
                         </Dropdown.Menu>
                     </Dropdown>
 
-                    <Dropdown onSelect={this.handleHighAbilitySelect} className="giveMeNPCSpace">
+                    <Dropdown onSelect={(keyEvent, event) => this.handleHighAbilitySelect(keyEvent, event, this.props.index)} className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
                         {this.state.NPCData.highAbility ? `High Ability: ${this.state.NPCData.highAbility}`: "Choose your NPC's High Ability"}
                         </Dropdown.Toggle>
@@ -369,7 +504,7 @@ render() {
                     </Dropdown>
 
 
-                    <Dropdown onSelect={this.handleLowAbilitySelect} className="giveMeNPCSpace">
+                    <Dropdown onSelect={(keyEvent, event) => this.handleLowAbilitySelect(keyEvent, event, this.props.index)} className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
                         {this.state.NPCData.lowAbility ? `Low Ability: ${this.state.NPCData.lowAbility}`: "Choose your NPC's Low Ability"}
                         </Dropdown.Toggle>
@@ -383,81 +518,81 @@ render() {
                         </Dropdown.Menu>
                     </Dropdown>
 
-                    <Dropdown onSelect={this.handleNPCTalent} className="giveMeNPCSpace">
+                    <Dropdown onSelect={(keyEvent, event) => this.handleNPCTalent(keyEvent, event, this.props.index)} className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
                         {this.state.NPCData.talent ? `Talent: ${this.state.NPCData.talent}`: "Choose your NPC's Talent"}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             {this.state.NPCTalents.map(drop => {
-                                return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
+                                return <Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>
                             })}
                         </Dropdown.Menu>
                     </Dropdown>
 
-                    <Dropdown onSelect={this.handleNPCManner} className="giveMeNPCSpace">
+                    <Dropdown onSelect={(keyEvent, event) => this.handleNPCManner(keyEvent, event, this.props.index)} className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
                         {this.state.NPCData.manner? `Mannerism: ${this.state.NPCData.manner}`: "Choose your NPC's Mannerism"}
                         </Dropdown.Toggle>
                         <Dropdown.Menu className="bringToFront">
                             {this.state.NPCMannerisms.map(drop => {
-                                return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
+                                return <Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>
                             })}
                         </Dropdown.Menu>
                     </Dropdown>
 
-                    <Dropdown onSelect={this.handleNPCTrait} className="giveMeNPCSpace">
+                    <Dropdown onSelect={(keyEvent, event) => this.handleNPCTrait(keyEvent, event, this.props.index)} className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
                         {this.state.NPCData.trait ? `Trait: ${this.state.NPCData.trait}`: "Choose your NPC's Trait"}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             {this.state.NPCInteractionTraits.map(drop => {
-                                return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
+                                return <Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>
                             })}
                         </Dropdown.Menu>
                     </Dropdown>
 
                     <div className="center">
-                        <Dropdown onSelect={this.handleNPCIdeal} className="giveMeNPCSpace">
+                        <Dropdown onSelect={(keyEvent, event) => this.handleNPCIdeal(keyEvent, event, this.props.index)} className="giveMeNPCSpace">
                             <Dropdown.Toggle variant="outline-primary">
                             {this.state.NPCData.ideal ? this.state.NPCData.ideal: "Choose your NPC's Ideal"}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                                 {this.state.NPCIdeals.map(drop => {
-                                    return <Dropdown.Item name={drop.main}> {drop.main}</Dropdown.Item>
+                                    return <Dropdown.Item name={drop.main}>{drop.main}</Dropdown.Item>
                                 })}
                             </Dropdown.Menu>
                         </Dropdown>
 
-                        {this.state.NPCData.ideal && (<Dropdown onSelect={this.handleDrilledIdeal} className="giveMeNPCSpace">
+                        {this.state.NPCData.ideal && (<Dropdown onSelect={(keyEvent, event) => this.handleDrilledIdeal(keyEvent, event, this.props.index)} className="giveMeNPCSpace">
                             <Dropdown.Toggle variant="outline-primary" disabled={this.state.isDisabled}>
                             {this.state.NPCData.drilledIdealChoice ? this.state.NPCData.drilledIdealChoice: "Choose your NPC's Ideal"}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                                 {this.state.NPCData.finalIdeal.map(drop => {
-                                    return <Dropdown.Item name={drop}> {drop}</Dropdown.Item>
+                                    return <Dropdown.Item name={drop}>{drop}</Dropdown.Item>
                                 })}
                             </Dropdown.Menu>
                         </Dropdown>)}
                     </div>
 
-                    <Dropdown onSelect={this.handleNPCBond} className="giveMeNPCSpace">
+                    <Dropdown onSelect={(keyEvent, event) => this.handleNPCBond(keyEvent, event, this.props.index)} className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
                         {this.state.NPCData.bond ? `Bond: ${this.state.NPCData.bond}`: "Choose your NPC's Bond"}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             {this.state.NPCBonds.map(drop => {
-                                return <Dropdown.Item  key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
+                                return <Dropdown.Item  key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>
                             })}
                         </Dropdown.Menu>
                     </Dropdown>
 
-                    <Dropdown onSelect={this.handleNPCFlawSecret} className="giveMeNPCSpace">
+                    <Dropdown onSelect={(keyEvent, event) => this.handleNPCFlawSecret(keyEvent, event, this.props.index)} className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
                         {this.state.NPCData.flawOrSecret ? `Flaw/Secret: ${this.state.NPCData.flawOrSecret}`: "Choose your NPC's Flaw or Secret"}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             {this.state.NPCFlawsSecrets.map(drop => {
-                                return <Dropdown.Item  key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
+                                return <Dropdown.Item  key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>
                             })}
                         </Dropdown.Menu>
                     </Dropdown>

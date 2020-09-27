@@ -12,13 +12,14 @@ export const SET_PILLAR = "SET_PILLAR"
 export const SET_PATRON_DATA = "SET_PATRON_DATA"
 export const SET_VILLAIN_NAME ="SET_VILLAIN_NAME"
 export const SET_LOCAL_EVENTS = "SET_LOCAL_EVENTS"
+export const SET_NPC_NUMBER = "SET_NPC_NUMBER"
 
 export const SET_MONSTERS = "SET_MONSTERS"
 export const SET_ROOMS = "SET_ROOMS"
 export const SET_TREASURE_TYPE = "SET_TREASURE_TYPE"
 export const SET_TREASURE_NUMBER = "SET_TREASURE_NUMBER"
 
-// export const SET_NPC_NUMBER = "SET_NPC_NUMBER"
+
 // export const SET_SIDE_QUESTS = "SET_SIDE_QUESTS"
 // export const SET_SETBACKS = "SET_SETBACKS"
 
