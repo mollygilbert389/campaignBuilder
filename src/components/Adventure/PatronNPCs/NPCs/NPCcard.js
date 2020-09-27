@@ -9,7 +9,6 @@ class NPCCard extends Component {
         imageLink: "",
         setImageLink: "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg",
         NPCData: {},
-        // NPCReduxData: this.props.campaign.NPCData,
         isDisabled: true,
         NPCAppearance: [
             {id: 1, option: "Distinctive Jewelry: earrings, necklace, circlet, braclets"},
@@ -183,7 +182,7 @@ class NPCCard extends Component {
 
     handleGenderSelect = (eventKey, event, index) => {
         const selection = event.target.text
-        const reduxNPCData = this.props.campaign.NPCNumber
+        const reduxNPCData = this.props.campaign.NPCData
 
         const newNPC = [...reduxNPCData].map(NPC => {
             if (NPC.id === index) {
@@ -195,12 +194,12 @@ class NPCCard extends Component {
             NPCData: {...this.state.NPCData, gender:selection},
         })
 
-        this.props.setNPCNumber("NPCNumber", newNPC)
+        this.props.setNPCData("NPCData", newNPC)
     }
 
     handleHighAbilitySelect = (eventKey, event, index) => {
         const selection = event.target.text
-        const reduxNPCData = this.props.campaign.NPCNumber
+        const reduxNPCData = this.props.campaign.NPCData
 
         const newNPC = [...reduxNPCData].map(NPC => {
             if (NPC.id === index) {
@@ -212,12 +211,12 @@ class NPCCard extends Component {
             NPCData: {...this.state.NPCData, highAbility:selection}
         })
 
-        this.props.setNPCNumber("NPCNumber", newNPC)
+        this.props.setNPCData("NPCData", newNPC)
     }
 
     handleLowAbilitySelect = (eventKey, event, index) => {
         const selection = event.target.text
-        const reduxNPCData = this.props.campaign.NPCNumber
+        const reduxNPCData = this.props.campaign.NPCData
 
         const newNPC = [...reduxNPCData].map(NPC => {
             if (NPC.id === index) {
@@ -228,12 +227,12 @@ class NPCCard extends Component {
             NPCData: {...this.state.NPCData, lowAbility:selection}
         })
 
-        this.props.setNPCNumber("NPCNumber", newNPC)
+        this.props.setNPCData("NPCData", newNPC)
     }
 
     handleApperanceSelect = (eventKey, event, index) => {
         const selection = event.target.text
-        const reduxNPCData = this.props.campaign.NPCNumber
+        const reduxNPCData = this.props.campaign.NPCData
 
         const newNPC = [...reduxNPCData].map(NPC => {
             if (NPC.id === index) {
@@ -245,12 +244,12 @@ class NPCCard extends Component {
             NPCData: {...this.state.NPCData, appearance:selection}
         })
 
-        this.props.setNPCNumber("NPCNumber", newNPC)
+        this.props.setNPCData("NPCData", newNPC)
     }
 
     handleNPCTalent = (eventKey, event, index) => {
         const selection = event.target.text
-        const reduxNPCData = this.props.campaign.NPCNumber
+        const reduxNPCData = this.props.campaign.NPCData
 
         const newNPC = [...reduxNPCData].map(NPC => {
             if (NPC.id === index) {
@@ -262,12 +261,12 @@ class NPCCard extends Component {
             NPCData: {...this.state.NPCData, talent:selection}
         })
 
-        this.props.setNPCNumber("NPCNumber", newNPC)
+        this.props.setNPCData("NPCData", newNPC)
     }
 
     handleNPCManner = (eventKey, event, index) => {
         const selection = event.target.text
-        const reduxNPCData = this.props.campaign.NPCNumber
+        const reduxNPCData = this.props.campaign.NPCData
 
         const newNPC = [...reduxNPCData].map(NPC => {
             if (NPC.id === index) {
@@ -279,12 +278,12 @@ class NPCCard extends Component {
             NPCData: {...this.state.NPCData, manner:selection}
         })
 
-        this.props.setNPCNumber("NPCNumber", newNPC)
+        this.props.setNPCData("NPCData", newNPC)
     }
 
     handleNPCTrait = (eventKey, event, index) => {
         const selection = event.target.text
-        const reduxNPCData = this.props.campaign.NPCNumber
+        const reduxNPCData = this.props.campaign.NPCData
 
         const newNPC = [...reduxNPCData].map(NPC => {
             if (NPC.id === index) {
@@ -296,7 +295,7 @@ class NPCCard extends Component {
             NPCData: {...this.state.NPCData, trait:selection}
         })
 
-        this.props.setNPCNumber("NPCNumber", newNPC)
+        this.props.setNPCData("NPCData", newNPC)
     }
 
     handleNPCIdeal = (eventKey, event, index) => {
@@ -304,9 +303,7 @@ class NPCCard extends Component {
         const drilledChoices = this.state.NPCIdeals.find(item => item.main === choice)
         const idealsOptions = drilledChoices.list
 
-        console.log(idealsOptions)
-
-        const reduxNPCData = this.props.campaign.NPCNumber
+        const reduxNPCData = this.props.campaign.NPCData
 
         const newNPC = [...reduxNPCData].map(NPC => {
             if (NPC.id === index) {
@@ -319,13 +316,13 @@ class NPCCard extends Component {
             isDisabled: false,
         })
 
-        this.props.setNPCNumber("NPCNumber", newNPC)
+        this.props.setNPCData("NPCData", newNPC)
     }
 
     handleDrilledIdeal = (eventKey, event, index) => {
         const choice = event.target.text
         console.log(choice)
-        const reduxNPCData = this.props.campaign.NPCNumber
+        const reduxNPCData = this.props.campaign.NPCData
 
         const newNPC = [...reduxNPCData].map(NPC => {
             if (NPC.id === index) {
@@ -337,12 +334,12 @@ class NPCCard extends Component {
             NPCData: {...this.state.NPCData, drilledIdealChoice:choice},
         })
 
-        this.props.setNPCNumber("NPCNumber", newNPC)
+        this.props.setNPCData("NPCData", newNPC)
     }
 
     handleNPCBond = (eventKey, event, index) => {
         const selection = event.target.text
-        const reduxNPCData = this.props.campaign.NPCNumber
+        const reduxNPCData = this.props.campaign.NPCData
 
         const newNPC = [...reduxNPCData].map(NPC => {
             if (NPC.id === index) {
@@ -354,12 +351,12 @@ class NPCCard extends Component {
             NPCData: {...this.state.NPCData, bond:selection},
         })
 
-        this.props.setNPCNumber("NPCNumber", newNPC)
+        this.props.setNPCData("NPCData", newNPC)
     }
 
     handleNPCFlawSecret = (eventKey, event, index) => {
         const selection = event.target.text
-        const reduxNPCData = this.props.campaign.NPCNumber
+        const reduxNPCData = this.props.campaign.NPCData
 
         const newNPC = [...reduxNPCData].map(NPC => {
             if (NPC.id === index) {
@@ -371,12 +368,12 @@ class NPCCard extends Component {
             NPCData: {...this.state.NPCData, flawOrSecret:selection},
         })
 
-        this.props.setNPCNumber("NPCNumber", newNPC)
+        this.props.setNPCData("NPCData", newNPC)
     }
 
     handleChange = (event, index) => {
         const name = event.target.value
-        const reduxNPCData = this.props.campaign.NPCNumber
+        const reduxNPCData = this.props.campaign.NPCData
 
         const newNPC = [...reduxNPCData].map(NPC => {
             if (NPC.id === index) {
@@ -388,7 +385,7 @@ class NPCCard extends Component {
             NPCData: {...this.state.NPCData, NPCName:name},
         })
 
-        this.props.setNPCNumber("NPCNumber", newNPC)
+        this.props.setNPCData("NPCData", newNPC)
     }
 
     handleImageLink = (event) => {
@@ -402,7 +399,7 @@ class NPCCard extends Component {
     handleImageSubmit = (event, index) => {
         let image=this.state.NPCData.NPCImage
 
-        const reduxNPCData = this.props.campaign.NPCNumber
+        const reduxNPCData = this.props.campaign.NPCData
 
         if (image !== "") {
             image=image
@@ -421,7 +418,7 @@ class NPCCard extends Component {
             NPCData: {...this.state.NPCData, NPCImage:image},
         })
 
-        this.props.setNPCNumber("NPCNumber", newNPC)
+        this.props.setNPCData("NPCData", newNPC)
 
         this.refs.overlay.hide();
     }

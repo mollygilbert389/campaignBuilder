@@ -50,11 +50,10 @@ render() {
                     <div className="btnspace">
                         <Patron
                         campaign={this.props.campaign}
-                        // onClick={this.handleClose}
                         setPatronData={this.props.setPatronData}
                         ></Patron>
                         <NPCs
-                        setNPCNumber={this.props.setNPCNumber}
+                        setNPCData={this.props.setNPCData}
                         campaign={this.props.campaign}
                         ></NPCs>
                     </div>

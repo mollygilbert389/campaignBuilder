@@ -43,7 +43,7 @@ import {
     setMainGoal,
     setPillar,
     setPatronData,
-    setNPCNumber,
+    setNPCData,
 
     setVillainName,
     setLocalEvents,
@@ -212,9 +212,9 @@ setPatronData = (destination, value) => {
     onSetPatronData(destination, value)
 }
 
-setNPCNumber = (destination, value) => {
-    const{onSetNPCNumber}=this.props
-    onSetNPCNumber(destination, value)
+setNPCData = (destination, value) => {
+    const{onSetNPCData}=this.props
+    onSetNPCData(destination, value)
 }
 
 setVillainName = (name) => {
@@ -314,7 +314,7 @@ setTreasureNumber = (number) => {
                         <PatronNPCs
                         campaign={this.props.campaign}
                         setPatronData={this.setPatronData}
-                        setNPCNumber={this.setNPCNumber}
+                        setNPCData={this.setNPCData}
                         ></PatronNPCs>
                         <VillainSubVillain
                         setVillainName={this.setVillainName}
@@ -410,7 +410,7 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetMainGoal: bindActionCreators(setMainGoal, dispatch),
     onSetPillar: bindActionCreators(setPillar, dispatch),
     onSetPatronData: bindActionCreators(setPatronData, dispatch),
-    onSetNPCNumber: bindActionCreators(setNPCNumber, dispatch),
+    onSetNPCData: bindActionCreators(setNPCData, dispatch),
 
     onSetVillainName: bindActionCreators(setVillainName, dispatch),
     onSetLocalEvents: bindActionCreators(setLocalEvents, dispatch),

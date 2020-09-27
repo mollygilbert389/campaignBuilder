@@ -24,7 +24,7 @@ class NPCs extends Component {
             NPCData: NPCData
         })
 
-        this.props.setNPCNumber("NPCNumber", NPCData)
+        this.props.setNPCData("NPCData", NPCData)
     }
 
     handleClick = () => {
@@ -78,7 +78,7 @@ render() {
                                 key={item.id} 
                                 name={item.id}
                                 campaign={this.props.campaign}
-                                setNPCNumber={this.props.setNPCNumber}
+                                setNPCData={this.props.setNPCData}
                                 ></NPCCard></Carousel.Item>}
                         )}
                     </Carousel>)}

@@ -10,7 +10,7 @@ import {
     SET_MAIN_GOAL,
     SET_PILLAR,
     SET_PATRON_DATA,
-    SET_NPC_NUMBER,
+    SET_NPC_DATA,
 
     SET_VILLAIN_NAME,
     SET_LOCAL_EVENTS,
@@ -84,8 +84,8 @@ export const setPatronData = (destination, value) => ({
     value
 }) 
 
-export const setNPCNumber = (destination, value) => ({
-    type: SET_NPC_NUMBER,
+export const setNPCData = (destination, value) => ({
+    type: SET_NPC_DATA,
     destination,
     value
 }) 
