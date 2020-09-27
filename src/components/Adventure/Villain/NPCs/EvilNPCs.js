@@ -2,29 +2,29 @@ import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, CardGroup, Carousel, Popover} from 'react-bootstrap'
 import {FormControlLabel, Checkbox, FormGroup, Slider} from '@material-ui/core'
-import NPCCard from "./NPCcard"
+import EvilNPCCard from "./EvilNPCCard"
 import "../../style.css"
 
-class NPCs extends Component {
+class EvilNPCs extends Component {
     state ={
-        NPCNum: null,
-        NPCData: [],
+        evilNPCNum: null,
+        evilNPCData: [],
     }
 
     handleSlider = (event, value) => {
-        let NPCData = []
+        let evilNPCData = []
 
         for(let i=0; i < value; i++ ) {
             let newObj = {id:i}
-            NPCData.push(newObj)
+            evilNPCData.push(newObj)
         }
 
         this.setState({
-            NPCNum: value,
-            NPCData: NPCData
+            evilNPCNum: value,
+            evilNPCData: evilNPCData
         })
 
-        this.props.setNPCData("NPCData", NPCData)
+        // this.props.setNPCData("evilNPCData", evilNPCData)
     }
 
     handleClick = () => {
@@ -37,7 +37,7 @@ render() {
     return (
         <div>
             <div className="btns">
-                <Button variant="outline-success" size="lg" onClick={this.handleClick}>NPCs
+                <Button variant="outline-success" size="lg" onClick={this.handleClick}>Evil NPCs
                 </Button>
             </div>
             <Modal 
@@ -46,10 +46,10 @@ render() {
             enforceFocus={false}
             >
                 <Modal.Header closeButton>
-                    <Modal.Title>Let's get some NPCs added to your campaign.</Modal.Title>
+                    <Modal.Title>Let's get some Evil NPCs added to your campaign.</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="d-flex flex-column align-items-center">
-                    <p>Below are some buttons to help you pick some NPCs This modal is for NPCs that play a bigger part in your campaign, not necesarily the shopkeeper your characters will buy things from.</p>
+                    <p>Below are some buttons to help you pick some NPCs This modal is for your lieutenants for your villain that play a bigger part in your campaign.</p>
                     
                     <br></br>
 
@@ -62,18 +62,17 @@ render() {
                     valueLabelDisplay="on"
                     />
 
-                    {this.state.NPCData.length > 0 && (<Carousel className="center" interval={null}>
-                        {this.state.NPCData.map((item, index) => 
-                            {return <Carousel.Item><NPCCard 
-                                // NPCDataObj={this.state.NPCData} 
+                    {/* {this.state.evilNPCData.length > 0 && (<Carousel className="center" interval={null}>
+                        {this.state.evilNPCData.map((item, index) => 
+                            {return <Carousel.Item><EvilNPCCard 
                                 index={index} 
                                 key={item.id} 
                                 name={item.id}
-                                campaign={this.props.campaign}
-                                setNPCData={this.props.setNPCData}
-                                ></NPCCard></Carousel.Item>}
+                                // campaign={this.props.campaign}
+                                // setNPCData={this.props.setNPCData}
+                                ></EvilNPCCard></Carousel.Item>}
                         )}
-                    </Carousel>)}
+                    </Carousel>)} */}
 
                 </Modal.Body>
 
@@ -86,4 +85,4 @@ render() {
 }
 }
 
-export default NPCs;
+export default EvilNPCs;

@@ -321,7 +321,6 @@ class NPCCard extends Component {
 
     handleDrilledIdeal = (eventKey, event, index) => {
         const choice = event.target.text
-        console.log(choice)
         const reduxNPCData = this.props.campaign.NPCData
 
         const newNPC = [...reduxNPCData].map(NPC => {

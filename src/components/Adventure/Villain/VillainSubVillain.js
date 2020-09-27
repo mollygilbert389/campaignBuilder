@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Villain from "./Villain"
-import NPC from "../PatronNPCs/NPCs/NPCs"
+import EvilNPC from "./NPCs/EvilNPCs"
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "../style.css"
+import EvilNPCs from './NPCs/EvilNPCs'
 
-class PatronNPCs extends Component {
-
+class VillainSubVillain extends Component {
     state = {
         showModal: false
     }
@@ -19,8 +19,6 @@ class PatronNPCs extends Component {
 
 
 render() {  
-
-
     return (
         <div>
             <div className="btns">
@@ -45,8 +43,7 @@ render() {
                         <Villain
                         setVillainData={this.props.setVillainData}
                         ></Villain>
-                        <NPC></NPC>
-                        {/* <SubVillain></SubVillain> */}
+                        <EvilNPCs></EvilNPCs>
                     </div>
 
                 </Modal.Body>
@@ -60,4 +57,4 @@ render() {
 }
 }
 
-export default PatronNPCs;
+export default VillainSubVillain;
