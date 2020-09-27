@@ -66,6 +66,13 @@ class Encounters extends Component {
         })
     }
 
+    handleSave = () => {
+        this.setState({
+            showModal: !this.state.showModal,
+        })
+        this.props.setEncounters("encounters", this.state.encounterEvents)
+    }
+
 
 render() {  
 
@@ -124,7 +131,7 @@ render() {
                 </Modal.Body>
 
                 <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
+                    <Button variant="outline-success" onClick={this.handleSave} >Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>

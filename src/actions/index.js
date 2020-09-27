@@ -13,6 +13,7 @@ import {
     SET_NPC_DATA,
     SET_VILLAIN_DATA,
     SET_LOCAL_EVENTS,
+    SET_ENCOUNTERS,
 
     SET_ROOMS,
     SET_MONSTERS,
@@ -99,6 +100,12 @@ export const setVillainData = (destination, value) => ({
 export const setLocalEvents = (names) => ({
     type: SET_LOCAL_EVENTS,
     payload: names
+}) 
+
+export const setEncounters = (destination, value) => ({
+    type: SET_ENCOUNTERS,
+    destination,
+    value
 }) 
 
 export const setRooms = (number) => ({

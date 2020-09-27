@@ -36,10 +36,12 @@ render() {
                     <br></br>
 
                     <div className="btnspace">
-                        <Encounters></Encounters>
+                        <Encounters
+                        setEncounters={this.props.setEncounters}
+                        ></Encounters>
                         <RandomEvents
                         campaign={this.props.campaign}
-                        setRandomEncounterNumber={this.props.setRandomEncounterNumber}
+                        // setRandomEncounterNumber={this.props.setRandomEncounterNumber}
                         ></RandomEvents>
                     </div>
 

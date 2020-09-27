@@ -46,6 +46,7 @@ import {
     setNPCData,
     setVillainData,
     setLocalEvents,
+    setEncounters,
 
     setRooms, 
     setMonsters, 
@@ -226,6 +227,11 @@ setLocalEvents = (names) => {
     onSetLocalEvents(names)
 }
 
+setEncounters = (destination, value) => {
+    const{onSetEncounters}=this.props
+    onSetEncounters(destination, value)
+}
+
 setRooms = (rooms) => {
     const{onSetRooms}=this.props
     onSetRooms(rooms)
@@ -329,7 +335,8 @@ setTreasureNumber = (number) => {
                         setLocalEvents={this.setLocalEvents}
                         ></LocalEvents>
                         <EncountersAndEvents
-                        campaign={this.props.campaign} 
+                        campaign={this.props.campaign}
+                        setEncounters={this.setEncounters} 
                         ></EncountersAndEvents>
                         <ExtraAdventure></ExtraAdventure>
                         <Setback 
@@ -413,6 +420,7 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetNPCData: bindActionCreators(setNPCData, dispatch),
     onSetVillainData: bindActionCreators(setVillainData, dispatch),
     onSetLocalEvents: bindActionCreators(setLocalEvents, dispatch),
+    onSetEncounters: bindActionCreators(setEncounters, dispatch),
 
     onSetRooms: bindActionCreators(setRooms, dispatch),
     // onSetDungeonMonsterNum: bindActionCreators(setDungeonMonsterNum, dispatch),
