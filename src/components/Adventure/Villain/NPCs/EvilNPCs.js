@@ -37,7 +37,7 @@ render() {
     return (
         <div>
             <div className="btns">
-                <Button variant="outline-success" size="lg" onClick={this.handleClick}>Evil NPCs
+                <Button variant="outline-success" size="lg" onClick={this.handleClick} disabled>Evil NPCs
                 </Button>
             </div>
             <Modal 

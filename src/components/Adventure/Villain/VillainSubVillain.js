@@ -43,7 +43,14 @@ render() {
                         <Villain
                         setVillainData={this.props.setVillainData}
                         ></Villain>
-                        <EvilNPCs></EvilNPCs>
+
+                        <OverlayTrigger overlay={
+                            <Tooltip>Coming Soon!</Tooltip>}>
+                            <span className="d-inline-block">
+                                <EvilNPCs></EvilNPCs>
+                            </span>
+                        </OverlayTrigger>
+                        
                     </div>
 
                 </Modal.Body>
