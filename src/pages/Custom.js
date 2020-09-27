@@ -47,6 +47,7 @@ import {
     setVillainData,
     setLocalEvents,
     setEncounters,
+    setRandomEncounters,
 
     setRooms, 
     setMonsters, 
@@ -232,6 +233,11 @@ setEncounters = (destination, value) => {
     onSetEncounters(destination, value)
 }
 
+setRandomEncounters = (destination, value) => {
+    const{onSetRandomEncounters}=this.props
+    onSetRandomEncounters(destination, value)
+}
+
 setRooms = (rooms) => {
     const{onSetRooms}=this.props
     onSetRooms(rooms)
@@ -335,6 +341,7 @@ setTreasureNumber = (number) => {
                         setLocalEvents={this.setLocalEvents}
                         ></LocalEvents>
                         <EncountersAndEvents
+                        setRandomEncounters={this.setRandomEncounters}
                         campaign={this.props.campaign}
                         setEncounters={this.setEncounters} 
                         ></EncountersAndEvents>
@@ -421,6 +428,7 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetVillainData: bindActionCreators(setVillainData, dispatch),
     onSetLocalEvents: bindActionCreators(setLocalEvents, dispatch),
     onSetEncounters: bindActionCreators(setEncounters, dispatch),
+    onSetRandomEncounters: bindActionCreators(setRandomEncounters, dispatch),
 
     onSetRooms: bindActionCreators(setRooms, dispatch),
     // onSetDungeonMonsterNum: bindActionCreators(setDungeonMonsterNum, dispatch),

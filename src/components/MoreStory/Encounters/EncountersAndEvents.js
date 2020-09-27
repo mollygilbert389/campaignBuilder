@@ -40,8 +40,8 @@ render() {
                         setEncounters={this.props.setEncounters}
                         ></Encounters>
                         <RandomEvents
+                        setRandomEncounters={this.props.setRandomEncounters}
                         campaign={this.props.campaign}
-                        // setRandomEncounterNumber={this.props.setRandomEncounterNumber}
                         ></RandomEvents>
                     </div>
 

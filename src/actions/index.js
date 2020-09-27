@@ -14,6 +14,7 @@ import {
     SET_VILLAIN_DATA,
     SET_LOCAL_EVENTS,
     SET_ENCOUNTERS,
+    SET_RANDOM_ENCOUNTERS,
 
     SET_ROOMS,
     SET_MONSTERS,
@@ -104,6 +105,12 @@ export const setLocalEvents = (names) => ({
 
 export const setEncounters = (destination, value) => ({
     type: SET_ENCOUNTERS,
+    destination,
+    value
+}) 
+
+export const setRandomEncounters = (destination, value) => ({
+    type: SET_RANDOM_ENCOUNTERS,
     destination,
     value
 }) 

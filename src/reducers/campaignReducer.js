@@ -14,6 +14,7 @@ import {
   SET_VILLAIN_DATA,
   SET_LOCAL_EVENTS,
   SET_ENCOUNTERS,
+  SET_RANDOM_ENCOUNTERS,
 
   SET_ROOMS,
   SET_MONSTERS,
@@ -60,6 +61,7 @@ const initialState = {
     villainData: {},
     localEvents: [],
     encounters: [],
+    randomEncounters: [],
 
     rooms: "",
     monsters: [],
@@ -142,6 +144,11 @@ export default function(state = initialState, action) {
           localEvents: action.payload  
         }
         case SET_ENCOUNTERS: 
+        return {
+          ...state,
+          [action.destination]: action.value
+        }
+        case SET_RANDOM_ENCOUNTERS: 
         return {
           ...state,
           [action.destination]: action.value

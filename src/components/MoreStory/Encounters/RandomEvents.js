@@ -42,7 +42,7 @@ class RandomEvents extends Component {
         this.setState({
             randomEncounterNum: value,
             randomEncounterMonsters: randomMonsterObject
-        },() => this.props.setRandomEncounterNumber(this.state.randomEncounterNum))
+        })
     }
 
     handleMonsterShow = () => {
@@ -97,10 +97,15 @@ class RandomEvents extends Component {
         })
     }
 
+    handleSave = () => {
+        this.setState({
+            showModal: !this.state.showModal,
+        })
+        this.props.setRandomEncounters("randomEncounters", this.state.randomEncounterMonsters)
+    }
+
 
 render() {  
-
-
     return (
         <div>
             <div className="btns">
@@ -172,7 +177,7 @@ render() {
                 </Modal.Body>
 
                 <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
+                    <Button variant="outline-success" onClick={this.handleSave} >Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>
