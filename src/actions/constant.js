@@ -18,6 +18,7 @@ export const SET_RANDOM_ENCOUNTERS = "SET_RANDOM_ENCOUNTERS"
 export const SET_TWIST = "SET_TWIST"
 export const SET_SIDE_QUESTS = "SET_SIDE_QUESTS"
 export const SET_SETBACK = "SET_SETBACK"
+export const SET_DUNGEON_DATA = "SET_DUNGEONN_DATA"
 
 export const SET_MONSTERS = "SET_MONSTERS"
 export const SET_ROOMS = "SET_ROOMS"

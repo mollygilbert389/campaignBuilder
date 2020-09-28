@@ -18,6 +18,7 @@ import {
   SET_TWIST,
   SET_SIDE_QUESTS,
   SET_SETBACK,
+  SET_DUNGEON_DATA,
 
   SET_ROOMS,
   SET_MONSTERS,
@@ -68,6 +69,7 @@ const initialState = {
     twist: "",
     sideQuests: [],
     setBack: "",
+    dungeonData: {},
 
     rooms: "",
     monsters: [],
@@ -168,6 +170,11 @@ export default function(state = initialState, action) {
           [action.destination]: action.value
         }
         case SET_SETBACK: 
+        return {
+          ...state,
+          [action.destination]: action.value
+        }
+        case SET_DUNGEON_DATA: 
         return {
           ...state,
           [action.destination]: action.value

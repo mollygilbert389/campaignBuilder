@@ -18,6 +18,7 @@ import {
     SET_TWIST,
     SET_SIDE_QUESTS,
     SET_SETBACK,
+    SET_DUNGEON_DATA,
 
     SET_ROOMS,
     SET_MONSTERS,
@@ -131,6 +132,12 @@ export const setSideQuests = (destination, value) => ({
 
 export const setSetback = (destination, value) => ({
     type: SET_SETBACK,
+    destination,
+    value
+}) 
+
+export const setDungeonData = (destination, value) => ({
+    type: SET_DUNGEON_DATA,
     destination,
     value
 }) 

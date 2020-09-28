@@ -51,6 +51,7 @@ import {
     setTwist,
     setSideQuests,
     setSetback, 
+    setDungeonData,
 
     setRooms, 
     setMonsters, 
@@ -254,6 +255,11 @@ setSetback = (destination, value) => {
     onSetSetback(destination, value)
 }
 
+setDungeonData = (destination, value) => {
+    const{onSetDungeonData}=this.props
+    onSetDungeonData(destination, value)
+}
+
 setRooms = (rooms) => {
     const{onSetRooms}=this.props
     onSetRooms(rooms)
@@ -375,7 +381,10 @@ setTreasureNumber = (number) => {
                 <div>
                     <p>Dungeon time! What campaign is without a dungeon? Below you can plan your your dungeon details.</p>
                     <div className="btnspace">
-                        <AdventureStart></AdventureStart>
+                        <AdventureStart
+                        campaign={this.props.campaign} 
+                        setDungeonData={this.setDungeonData}
+                        ></AdventureStart>
                         <Rooms 
                         setRooms={this.setRooms}
                         ></Rooms>
@@ -451,6 +460,7 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetTwist: bindActionCreators(setTwist, dispatch),
     onSetSideQuests: bindActionCreators(setSideQuests, dispatch),
     onSetSetback: bindActionCreators(setSetback, dispatch),
+    onSetDungeonData: bindActionCreators(setDungeonData, dispatch),
 
     onSetRooms: bindActionCreators(setRooms, dispatch),
     onSetMonsters: bindActionCreators(setMonsters, dispatch),

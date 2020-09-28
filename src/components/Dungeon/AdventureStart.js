@@ -7,7 +7,7 @@ import "./style.css"
 class AdventureStart extends Component {
     state ={
         meetingSelected: "",
-        dungeonTypeLocationSelected: false, 
+        dungeonTypeLocationSelected: true, 
         nondungeonTypeLocationSelected: false,
         selectedPlace: "",
         meetingSelection: [
@@ -91,7 +91,7 @@ class AdventureStart extends Component {
         switch(choice) {
             case "dungeonLocatios":
                 this.setState({
-                    dungeonTypeLocationSelected: true,
+                    dungeonTypeLocationSelected: false,
                     nondungeonTypeLocationSelected: false,
                     selectedPlace: "",
                 })
@@ -99,7 +99,7 @@ class AdventureStart extends Component {
             case "nondungeonLocatios":
                 this.setState({
                     nondungeonTypeLocationSelected: true,
-                    dungeonTypeLocationSelected: false,
+                    dungeonTypeLocationSelected: true,
                     selectedPlace: "",
                 })
                 break;
@@ -109,9 +109,23 @@ class AdventureStart extends Component {
     }
 
     handleFinalEvent = (eventKey, event) => {
+        const choice = event.target.text
+        const currentDungeonData=this.props.campaign.dungeonData
+        const destructedData = {...currentDungeonData, dungeonLocation:choice}
+
         this.setState({
             selectedPlace: event.target.text
         })
+
+        this.props.setDungeonData("dungeonData", destructedData)
+    }
+
+    handleAdventureStartDetail = (event) => {
+        const choice = event.target.name
+        const currentDungeonData=this.props.campaign.dungeonData
+        const destructedData = {...currentDungeonData, dungeonDetail:choice}
+
+        this.props.setDungeonData("dungeonData", destructedData)
     }
 
 
@@ -123,15 +137,6 @@ render() {
         paddingTop: "10px",
         margin: "5px",
     }
-
-    // const smallerStyle = {
-    //     width: "350px",
-    //     height: "100px",
-    //     padding: "40px",
-    //     paddingTop: "10px",
-    //     margin: "5px",
-    // }
-
     
     return (
         <div>
@@ -151,12 +156,7 @@ render() {
                             <Button className="giveMeSpace" onClick={this.handleDungeonClick} name={"nondungeonLocatios"}>Exotic Loactions</Button>
                         </div>
 
-                        {this.state.dungeonTypeLocationSelected && (
-                        // <Carousel interval={null}>
-                        // {this.state.dungeonTypeLocation.map(drop => {
-                        //     return <Carousel.Item className="smallCaro"> <div className="d-block w-100"></div> <Button variant="primary" key={drop.id} style={smallerStyle} name={drop.option}>{drop.option}</Button> </Carousel.Item>
-                        // })}
-                        // </Carousel>
+                        {!this.state.dungeonTypeLocationSelected && (
                         <div className="giveMeSpace">
                             <Dropdown onSelect={this.handleFinalEvent}>
                                 <Dropdown.Toggle variant="outline-primary">
@@ -164,7 +164,7 @@ render() {
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
                                 {this.state.dungeonTypeLocation.map(drop => {
-                                    return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
+                                    return <Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>
                                 })}
                                 </Dropdown.Menu>
                             </Dropdown>
@@ -172,11 +172,6 @@ render() {
                         )}
                         
                         {this.state.nondungeonTypeLocationSelected && (
-                        // <Carousel interval={null}>
-                        // {this.state.nondungeonTypeLocation.map(drop => {
-                        //     return <Carousel.Item className="smallCaro"> <div className="d-block w-100"></div> <Button variant="primary" key={drop.id} style={smallerStyle} name={drop.option}>{drop.option}</Button> </Carousel.Item>
-                        // })}
-                        // </Carousel>
                         <div className="giveMeSpace">
                             <Dropdown onSelect={this.handleFinalEvent}>
                                 <Dropdown.Toggle variant="outline-primary">
@@ -184,7 +179,7 @@ render() {
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
                                 {this.state.nondungeonTypeLocation.map(drop => {
-                                    return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
+                                    return <Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>
                                 })}
                                 </Dropdown.Menu>
                             </Dropdown>
@@ -193,7 +188,7 @@ render() {
 
                         <Carousel interval={null}>
                         {this.state.meetingSelection.map(drop => {
-                            return <Carousel.Item> <div className="d-block w-100"></div> <Button variant="primary" key={drop.id} style={style} name={drop.goal}>{drop.goal}</Button> </Carousel.Item>
+                            return <Carousel.Item> <div className="d-block w-100"></div> <Button variant="primary" onClick={this.handleAdventureStartDetail} key={drop.id} style={style} name={drop.goal}>{drop.goal}</Button> </Carousel.Item>
                         })}
                         </Carousel>
 
