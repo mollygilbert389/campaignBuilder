@@ -9,43 +9,14 @@ import "./style.css"
 class MonsterCard extends Component {
     state = {
         showModal: false,
-        suggestedMonsterNum:0,
-        maxMonsterNum:0, 
         finalMonsterNum:0,
         monsterData: [],
         monsterCategories: [],
     }
 
-    componentDidMount() {
-        this.suggestMeMonsters()
-    }
-
     handleClick = () => {
         this.setState({
             showModal: !this.state.showModal,
-        })
-    }
-
-    suggestMeMonsters() {
-        let roomState = this.props.campaign.rooms
-        let suggestedMonsterNum = 0
-        let maxMonsterNum = 0
-
-        if (roomState <= 5) {
-            suggestedMonsterNum = 10
-            maxMonsterNum = 20
-        } else if (roomState <= 10) {
-            suggestedMonsterNum = 6
-            maxMonsterNum = 13
-        } else if (roomState > 10) {
-            suggestedMonsterNum = 4
-            maxMonsterNum = 10
-        }
-
-        this.setState({
-            roomNum: roomState,
-            suggestedMonsterNum: suggestedMonsterNum,
-            maxMonsterNum: maxMonsterNum
         })
     }
 
@@ -105,10 +76,16 @@ class MonsterCard extends Component {
         })
     }
 
-    handleClose = () => {
+    handleSave = () => {
+        const currentDungeonData=this.props.campaign.dungeonData
+        const currentMonsters = this.state.monsterData
+        const destructedData = {...currentDungeonData, monsterList:currentMonsters}
+        
         this.setState({
             showModal: !this.state.showModal,
         })
+
+        this.props.setDungeonData("dungeonData", destructedData)
     }
 
 render() {  
@@ -122,14 +99,16 @@ render() {
                 </Button>
             </div>
 
-            <Modal show={this.state.showModal} onHide={this.handleClose}>
-                <Modal.Header closeButtotn>
+            <Modal 
+            show={this.state.showModal} 
+            onHide={this.handleClick}>
+                <Modal.Header closeButton>
                     <Modal.Title>Monster Time!</Modal.Title>
                 </Modal.Header>
 
                 <Modal.Body>
                     <p>Now it's time to choose some monsters!</p>
-                    <p>Since you have chosen {campaign.rooms} rooms we reccomend chosing {this.state.suggestedMonsterNum} total monsters and no more than {this.state.maxMonsterNum}. How many monsters would you like in your dungeon?</p>
+                    <p>Since you have chosen {campaign.rooms} rooms we reccomend chosing {campaign.dungeonData.suggestedMonsterNum} total monsters and no more than {campaign.dungeonData.maxMonsterNum}. How many monsters would you like in your dungeon?</p>
                     <br></br>
                     <br></br>
 
@@ -137,7 +116,7 @@ render() {
                         <Slider
                         min={4}
                         max={20}
-                        defaultValue={this.state.suggestedMonsterNum}
+                        defaultValue={campaign.dungeonData.suggestedMonsterNum}
                         valueLabelDisplay="on"
                         onChangeCommitted={this.handleSlider}
                         />
@@ -172,12 +151,10 @@ render() {
                     })}
 
                     <br></br>
-
-                    <Modal.Footer>
-                        <Button variant="outline-success" onClick={this.handleClick}> Save</Button>
-                    </Modal.Footer>
-                    
                 </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="outline-success" onClick={this.handleSave}> Save</Button>
+                </Modal.Footer>
             </Modal>
         </div>
     );

@@ -113,7 +113,7 @@ render() {
 
             <br></br>
 
-            {campaign.monsters.length > 0 && (
+            {/* {campaign.monsters.length > 0 && (
               <div className="monsterInfo grouping">
                 <Card.Title>Monsters Chosen:</Card.Title>
                 {campaign.monsters.map(oneMonster => {
@@ -122,11 +122,11 @@ render() {
                       )
                   })}
               </div>
-            )}
+            )} */}
 
             <br></br>
 
-            {campaign.treasure.length > 0 && (
+            {/* {campaign.treasure.length > 0 && (
               <div className="treasureInfo grouping">
                 <Card.Title className="title">Treasure: {campaign.treasureNum}</Card.Title>
                     {campaign.treasure.map(oneTreasure => {
@@ -135,7 +135,7 @@ render() {
                           )
                       })}
               </div>
-            )}
+            )} */}
 
           </Card.Body>
           <Card.Footer className="text-muted"></Card.Footer>

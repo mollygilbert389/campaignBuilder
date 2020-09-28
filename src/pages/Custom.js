@@ -28,9 +28,6 @@ import Treasure from "../components/Treasure/Treasure"
 import StoryInfo from "../components/StoryInfo/StoryInfo";
 import FinalScreen from "../components/FinalCampaign/FinalScreen"
 
-// import Encounters from "../components/MoreStory/Encounters/Encounters";
-// import AdventureSite from "../components/WorldBuilder/Physical/AdventureSite";
-
 import {
     setCampaignName,
     setPlayers, 
@@ -52,16 +49,8 @@ import {
     setSideQuests,
     setSetback, 
     setDungeonData,
-
-    setRooms, 
-    setMonsters, 
-    setTreasureType, 
-    setTreasureNumber,    
-
-
+    setTreasureData, 
 } from "../actions/index"
-
-
 
 class Custom extends Component {
     state ={
@@ -260,24 +249,9 @@ setDungeonData = (destination, value) => {
     onSetDungeonData(destination, value)
 }
 
-setRooms = (rooms) => {
-    const{onSetRooms}=this.props
-    onSetRooms(rooms)
-}
-
-setMonsters = (type) => {
-    const{onSetMonsters}=this.props
-    onSetMonsters(type)
-}
-
-setTreasureType = (type) => {
-    const{onSetTreasureType}=this.props
-    onSetTreasureType(type)
-}
-
-setTreasureNumber = (number) => {
-    const{onSetTreasureNumber}=this.props
-    onSetTreasureNumber(number)
+setTreasureData = (destination, value) => {
+    const{onSetTreasureData}=this.props
+    onSetTreasureData(destination, value)
 }
 
     render() {
@@ -386,16 +360,16 @@ setTreasureNumber = (number) => {
                         setDungeonData={this.setDungeonData}
                         ></AdventureStart>
                         <Rooms 
-                        setRooms={this.setRooms}
+                        campaign={this.props.campaign} 
+                        setDungeonData={this.setDungeonData}
                         ></Rooms>
                         <MonsterCard 
                         campaign={this.props.campaign} 
-                        setMonsters={this.setMonsters}
+                        setDungeonData={this.setDungeonData}
                         >
                         </MonsterCard>
                         <Treasure
-                        setTreasureNumber={this.setTreasureNumber} 
-                        setTreasureType={this.setTreasureType} 
+                        setTreasureData={this.setTreasureData} 
                         campaign={this.props.campaign}
                         ></Treasure>
                     </div>
@@ -461,13 +435,7 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetSideQuests: bindActionCreators(setSideQuests, dispatch),
     onSetSetback: bindActionCreators(setSetback, dispatch),
     onSetDungeonData: bindActionCreators(setDungeonData, dispatch),
-
-    onSetRooms: bindActionCreators(setRooms, dispatch),
-    onSetMonsters: bindActionCreators(setMonsters, dispatch),
-    onSetTreasureType: bindActionCreators(setTreasureType, dispatch),
-    onSetTreasureNumber: bindActionCreators(setTreasureNumber, dispatch),
-
-
+    onSetTreasureData: bindActionCreators(setTreasureData, dispatch),
 })
 
 export default connect(mapStateToProps, mapDispatchtoProps)(Custom);

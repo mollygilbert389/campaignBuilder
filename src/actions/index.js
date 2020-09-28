@@ -19,13 +19,8 @@ import {
     SET_SIDE_QUESTS,
     SET_SETBACK,
     SET_DUNGEON_DATA,
+    SET_TREASURE_DATA, 
 
-    SET_ROOMS,
-    SET_MONSTERS,
-    SET_TREASURE_TYPE, 
-    SET_TREASURE_NUMBER,
-
-  
 } from './constant'
 
 export const setCampaignName = (name) => ({
@@ -140,25 +135,12 @@ export const setDungeonData = (destination, value) => ({
     type: SET_DUNGEON_DATA,
     destination,
     value
+})
+
+export const setTreasureData = (destination, value) => ({
+    type: SET_TREASURE_DATA,
+    destination,
+    value
 }) 
 
-export const setRooms = (number) => ({
-    type: SET_ROOMS,
-    payload: number
-}) 
-
-export const setMonsters = (name) => ({
-    type: SET_MONSTERS,
-    payload: name
-}) 
-
-export const setTreasureType = (type) => ({
-    type: SET_TREASURE_TYPE,
-    payload: type
-}) 
-
-export const setTreasureNumber = (number) => ({
-    type: SET_TREASURE_NUMBER,
-    payload: number
-}) 
 

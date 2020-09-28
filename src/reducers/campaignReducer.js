@@ -19,12 +19,7 @@ import {
   SET_SIDE_QUESTS,
   SET_SETBACK,
   SET_DUNGEON_DATA,
-
-  SET_ROOMS,
-  SET_MONSTERS,
-  SET_TREASURE_TYPE,
-  SET_TREASURE_NUMBER,
-
+  SET_TREASURE_DATA,
 
 } from '../actions/constant'
 
@@ -70,11 +65,7 @@ const initialState = {
     sideQuests: [],
     setBack: "",
     dungeonData: {},
-
-    rooms: "",
-    monsters: [],
-    treasure: [],
-    treasureNum: "",
+    treasureData: {},
 }
 
 export default function(state = initialState, action) {
@@ -179,25 +170,10 @@ export default function(state = initialState, action) {
           ...state,
           [action.destination]: action.value
         }
-        case SET_ROOMS: 
+        case SET_TREASURE_DATA: 
         return {
           ...state,
-          rooms: action.payload  
-        }
-        case SET_MONSTERS: 
-        return {
-          ...state,
-          monsters: action.payload  
-        }
-        case SET_TREASURE_TYPE: 
-        return {
-          ...state,
-          treasure: action.payload  
-        }
-        case SET_TREASURE_NUMBER: 
-        return {
-          ...state,
-          treasureNum: action.payload  
+          [action.destination]: action.value
         }
         default: 
             return state

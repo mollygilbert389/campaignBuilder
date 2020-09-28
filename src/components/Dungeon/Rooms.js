@@ -7,6 +7,7 @@ class Rooms extends Component {
     state ={
         showModal: false,
         roomNum: "",
+        roomOptions: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
     }
 
     handleClick = () => {
@@ -16,10 +17,40 @@ class Rooms extends Component {
     }
 
     handleActBtn = (event) => {
+        const choice = event.target.name
+        const currentDungeonData=this.props.campaign.dungeonData
+        const destructedData = {...currentDungeonData, rooms:choice}
+        
         this.setState({ 
             roomNum: event.target.name,
             showModal: !this.state.showModal
-        }, () => {this.props.setRooms(this.state.roomNum)})
+        },() => this.suggestMeMonsters())
+
+       
+        this.props.setDungeonData("dungeonData", destructedData)
+    }
+
+    suggestMeMonsters() {
+        let roomNum = this.state.roomNum
+        roomNum = parseInt(roomNum)
+
+        let suggestedMonsterNum=0
+        let maxMonsterNum=0
+
+        if (roomNum <= 5) {
+            suggestedMonsterNum = 10
+            maxMonsterNum = 20
+        } else if (roomNum <= 10) {
+            suggestedMonsterNum = 6
+            maxMonsterNum = 13
+        } else if (roomNum > 10) {
+            suggestedMonsterNum = 4
+            maxMonsterNum = 10
+        }
+
+        const currentDungeonData=this.props.campaign.dungeonData
+        const destructedData = {...currentDungeonData, suggestedMonsterNum:suggestedMonsterNum, maxMonsterNum: maxMonsterNum}
+        this.props.setDungeonData("dungeonData", destructedData)
     }
 
 render() {  
@@ -36,59 +67,12 @@ render() {
                 </Modal.Header>
                 <Modal.Body>
                     <p>How many rooms are in this dungeon.</p>
-                    <p>Since you have picked a short campaign we reccomend a minimum of 3 rooms and a max fo 5 rooms.</p>
+                    <p>This is your custom campaign, have as many rooms as you'd like!</p>
                     <div className="roomSpace">
-                        <div className="roomBtns">
-                            <Button name="3" variant="outline-primary" onClick={this.handleActBtn}>3</Button>
-                        </div>
-
-                        <div className="roomBtns">
-                            <Button name="4" variant="outline-primary" onClick={this.handleActBtn}>4</Button>
-                        </div>
-
-                        <div className="roomBtns">
-                            <Button name="5" variant="outline-primary" onClick={this.handleActBtn}>5</Button>
-                        </div>
-
-                        <div className="roomBtns">
-                            <Button name="6" variant="outline-primary" onClick={this.handleActBtn}>6</Button>
-                        </div>
-
-                        <div className="roomBtns">
-                            <Button name="7" variant="outline-primary" onClick={this.handleActBtn}>7</Button>
-                        </div>
-
-                        <div className="roomBtns">
-                            <Button name="8" variant="outline-primary" onClick={this.handleActBtn}>8</Button>
-                        </div>
-
-                        <div className="roomBtns">
-                            <Button name="9" variant="outline-primary" onClick={this.handleActBtn}>9</Button>
-                        </div>
-
-                        <div className="roomBtns">
-                            <Button name="10" variant="outline-primary" onClick={this.handleActBtn}>10</Button>
-                        </div>
-
-                        <div className="roomBtns">
-                            <Button name="11" variant="outline-primary" onClick={this.handleActBtn}>11</Button>
-                        </div>
-
-                        <div className="roomBtns">
-                            <Button name="12" variant="outline-primary" onClick={this.handleActBtn}>12</Button>
-                        </div>
-
-                        <div className="roomBtns">
-                            <Button name="13" variant="outline-primary" onClick={this.handleActBtn}>13</Button>
-                        </div>
-
-                        <div className="roomBtns">
-                            <Button name="14" variant="outline-primary" onClick={this.handleActBtn}>14</Button>
-                        </div>
-
-                        <div className="roomBtns">
-                            <Button name="15" variant="outline-primary" onClick={this.handleActBtn}>15</Button>
-                        </div>
+                        {this.state.roomOptions.map(item => {return <div className="roomBtns">
+                            <Button name={item} variant="outline-primary" onClick={this.handleActBtn}>{item}</Button>
+                        </div>}
+                        )}
                     </div>
                 </Modal.Body>
             </Modal>

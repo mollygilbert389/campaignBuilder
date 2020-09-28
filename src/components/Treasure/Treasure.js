@@ -62,26 +62,31 @@ class Treasure extends Component {
         this.setState({
             showModal: !this.state.showModal,
             treasues: treasueHolder,
-        }, () => {this.props.setTreasureType(this.state.treasues)})
+        })
+
+        const currentTrasureData=this.props.campaign.treasureData
+        const destructedData = {...currentTrasureData, treasureTypes:treasueHolder, treasureNumber: this.state.treasureNumber}
+        this.props.setTreasureData("treasureData", destructedData)
     }
 
     suggestMeTreasure = () =>{
-        let rooms = this.props.campaign.rooms
-        rooms = rooms / 2
-        rooms = Math.round(rooms)
+        let rooms = this.props.campaign.dungeonData.rooms
+        rooms = parseInt(rooms)
+        rooms = Math.round(rooms / 2)
         rooms = rooms -1 
 
         this.setState({
             suggestedTreasure: rooms,
             treasureNumber: rooms
-        }, () => this.props.setTreasureNumber(this.state.treasureNumber))
+        })
     }
 
     handleSlider = (event, value) => {
+        
         this.setState({
             treasureNumber: value
-        }, () => {this.props.setTreasureNumber(this.state.treasureNumber)}
-        )
+        })
+
     }
 
     handleModalClose = () => {
@@ -106,7 +111,7 @@ render() {
                 </Button>
             </div>
             <Modal show={this.state.showModal} onHide={this.handleModalClose}>
-                <Modal.Header>
+                <Modal.Header closeButton>
                     <Modal.Title>Let's talk Treasure!</Modal.Title>
                 </Modal.Header>
 
