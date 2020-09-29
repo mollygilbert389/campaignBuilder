@@ -25,6 +25,7 @@ class Languages extends Component {
         this.setState({
             suggestedTags: removedTag
         }, () => this.props.setLanguages(this.state.suggestedTags))
+        this.props.setLanguageShow("languageShow", true)
     }
 
     handleAddLanguage = (event) => {

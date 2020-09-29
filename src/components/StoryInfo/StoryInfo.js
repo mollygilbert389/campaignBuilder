@@ -32,7 +32,7 @@ render() {
                 </div>
               </div>)}
 
-              <div className="dualData cliamteImage"></div>
+              {campaign.world && (<div className="cliamteImage"></div>)}
 
               {campaign.world && (
                 <div className="grouping pair">
@@ -45,16 +45,18 @@ render() {
                   {campaign.mapScale && (<div><strong>Starting Size:</strong>{` ${campaign.mapScale}`}</div>)}
                   {campaign.uniqueFeature && (<div><strong>Unique Feature:</strong>{` ${campaign.uniqueFeature}`}</div>)}
                   {campaign.charMeeting && (<div><strong>Charaters Meet:</strong>{` ${campaign.charMeeting}`}</div>)}
-                  <div className="miniSection">
+                  {campaign.factionShow && (<div className="miniSection">
                     <div><strong>Factions and Organizations:</strong></div>
                     {campaign.factionOrgs.map(oneFaction => {
                       return (<div> {`-${oneFaction}`}</div>)
                       })}
-                    <div><strong>Languages:</strong></div>
-                    {campaign.languages.map(oneLanguage => {
-                      return (<div> {`-${oneLanguage}`}</div>)
-                      })}
-                  </div>
+                  </div>)}
+                  {campaign.languageShow && (<div>                    
+                      <div><strong>Languages:</strong></div>
+                      {campaign.languages.map(oneLanguage => {
+                        return (<div> {`-${oneLanguage}`}</div>)
+                        })}
+                    </div>)}
               </div>
               )}
             </div>
@@ -153,7 +155,10 @@ render() {
                   <Card.Title className="title">Planned Encouonters:</Card.Title>
                     <div>
                       {campaign.encounters.map(encounter => {
-                        return (<div> {`-${encounter}`}</div>)
+                        return (<div> 
+                          <div>{`${encounter.type}`}</div>
+                          <div>{`${encounter.difficulty}`}</div>
+                          </div>)
                         })}
                     </div>
                 </div>
@@ -198,7 +203,7 @@ render() {
               <div className="grouping dataBoxes">
                 <Card.Title className="title">Side Quests:</Card.Title>
                 {campaign.sideQuests.length > 0 && (
-                  <div>
+                  <div className="sideQuestTable">
                   {campaign.sideQuests.map(sidequest => {
                     return (<div className="sideQuestTableItem">
                         <strong>{`${sidequest.type}`}</strong>
@@ -210,7 +215,7 @@ render() {
             )}
 
             <div className="dualData">
-              {campaign.dungeonData.rooms && (
+              {campaign.dungeonData.dungeonLocation && (
                 <div className="grouping dataBoxes centerData">
                 <Card.Title className="title">Dungeon Info:</Card.Title>
                 {campaign.dungeonData.rooms && (<div><strong>Rooms:</strong>{` ${campaign.dungeonData.rooms }`}</div>)}
@@ -220,8 +225,10 @@ render() {
                   <div>
                     <div><strong>Monsters Chosen:</strong></div>
                     <div className="monsterSection"> 
-                      {campaign.dungeonData.monsterlist.map(monster => {
-                      return (<div className="monsterItem">{monster.type}</div>) 
+                      {console.log(campaign.dungeonData)}
+                      {campaign.dungeonData.map(monster => {
+                        console.log(monster.monsterList.monsterName)
+                      return (<div className="monsterItem">{monster.monsterList.monsterName}</div>) 
                       })}
                     </div>
                   </div>

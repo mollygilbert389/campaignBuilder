@@ -137,6 +137,7 @@ class Patron extends Component {
         }
 
         this.setState({
+            setImageLink: image,
             patronData: {...this.state.patronData, image:image},
         })
         

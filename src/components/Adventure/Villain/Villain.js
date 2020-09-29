@@ -407,6 +407,7 @@ class VillainModal extends Component {
         }
 
         this.setState({
+            setImageLink: image,
             villainData: {...this.state.villainData, image:image},
         })
         

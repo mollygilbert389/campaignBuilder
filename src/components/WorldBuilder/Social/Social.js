@@ -38,6 +38,7 @@ render() {
                     <div className="btnspace">
                         <FactionOrgs
                         setFactionOrgs={this.props.setFactionOrgs}
+                        setFactionShow={this.props.setFactionShow}
                         ></FactionOrgs>
                         <Renown
                         campaign={this.props.campaign}

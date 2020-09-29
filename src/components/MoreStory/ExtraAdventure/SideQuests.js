@@ -7,8 +7,7 @@ import "../style.css"
 class SideQuests extends Component {
     state = {
         showModal: false,
-        sideQuests: '',
-        sideQuestChoice: '',
+        yes: false, 
         sideQuests: [],
         sideQuestOptions: [
             {id: 1, option: "Find a specific item rumored to be in the area"},
@@ -34,13 +33,13 @@ class SideQuests extends Component {
         switch(choice) {
             case "Yes":
                 this.setState({
-                    sideQuests: choice
+                    yes: true,
                 })
             break;
             default: 
             this.setState({
-                sideQuests: '',
-                sideQuestChoice: '',
+                sideQuests: [],
+                showModal: false,
             })
         }
     }
@@ -106,7 +105,7 @@ render() {
                     <br></br>
                     <br></br>
 
-                    {this.state.sideQuests &&(<div>
+                    {this.state.yes &&(<div>
                         <Slider
                         min={1}
                         max={10}

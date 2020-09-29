@@ -97,6 +97,7 @@ render() {
 
                     <Languages
                     campaign={this.props.campaign}
+                    setLanguageShow={this.props.setLanguageShow}
                     setLanguages={this.props.setLanguages}
                     ></Languages>
 

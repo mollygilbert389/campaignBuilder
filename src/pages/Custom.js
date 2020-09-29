@@ -50,6 +50,8 @@ import {
     setSetback, 
     setDungeonData,
     setTreasureData, 
+    setFactionShow,
+    setLanguageShow,
 } from "../actions/index"
 
 class Custom extends Component {
@@ -254,6 +256,16 @@ setTreasureData = (destination, value) => {
     onSetTreasureData(destination, value)
 }
 
+setFactionShow = (destination, value) => {
+    const{onSetFactionShow}=this.props
+    onSetFactionShow(destination, value)
+}
+
+setLanguageShow = (destination, value) => {
+    const{onSetLanguageShow}=this.props
+    onSetLanguageShow(destination, value)
+}
+
     render() {
         return (
             
@@ -292,11 +304,13 @@ setTreasureData = (destination, value) => {
                         ></Physical>
                         <Social
                         setFactionOrgs={this.setFactionOrgs}
+                        setFactionShow={this.setFactionShow}
                         campaign={this.props.campaign}
                         ></Social>
                         <Government
                         campaign={this.props.campaign}
-                        setLanguages={this.setLanguages} 
+                        setLanguages={this.setLanguages}
+                        setLanguageShow={this.setLanguageShow} 
                         setGovernmentData={this.setGovernmentData}
                         ></Government>
                         <Religion
@@ -336,6 +350,9 @@ setTreasureData = (destination, value) => {
                         <LocalEvents 
                         setLocalEvents={this.setLocalEvents}
                         ></LocalEvents>
+                        <Setback
+                        setSetBack={this.setSetback}
+                        ></Setback>
                         <EncountersAndEvents
                         setRandomEncounters={this.setRandomEncounters}
                         campaign={this.props.campaign}
@@ -345,9 +362,6 @@ setTreasureData = (destination, value) => {
                         setTwist={this.setTwist}
                         setSideQuests={this.setSideQuests} 
                         ></ExtraAdventure>
-                        <Setback
-                        setSetBack={this.setSetback}
-                        ></Setback>
                     </div>
                 </div>)}
 
@@ -436,6 +450,8 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetSetback: bindActionCreators(setSetback, dispatch),
     onSetDungeonData: bindActionCreators(setDungeonData, dispatch),
     onSetTreasureData: bindActionCreators(setTreasureData, dispatch),
+    onSetFactionShow: bindActionCreators(setFactionShow, dispatch),
+    onSetLanguageShow: bindActionCreators(setLanguageShow, dispatch),
 })
 
 export default connect(mapStateToProps, mapDispatchtoProps)(Custom);

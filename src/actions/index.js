@@ -20,6 +20,8 @@ import {
     SET_SETBACK,
     SET_DUNGEON_DATA,
     SET_TREASURE_DATA, 
+    SET_FACTION_SHOW,
+    SET_LANGUAGE_SHOW,
 
 } from './constant'
 
@@ -139,6 +141,18 @@ export const setDungeonData = (destination, value) => ({
 
 export const setTreasureData = (destination, value) => ({
     type: SET_TREASURE_DATA,
+    destination,
+    value
+}) 
+
+export const setFactionShow = (destination, value) => ({
+    type: SET_FACTION_SHOW,
+    destination,
+    value
+}) 
+
+export const setLanguageShow = (destination, value) => ({
+    type: SET_LANGUAGE_SHOW,
     destination,
     value
 }) 

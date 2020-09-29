@@ -20,6 +20,8 @@ import {
   SET_SETBACK,
   SET_DUNGEON_DATA,
   SET_TREASURE_DATA,
+  SET_FACTION_SHOW,
+  SET_LANGUAGE_SHOW,
 
 } from '../actions/constant'
 
@@ -66,6 +68,8 @@ const initialState = {
     setBack: "",
     dungeonData: {},
     treasureData: {},
+    factionShow: false,
+    languageShow: false, 
 }
 
 export default function(state = initialState, action) {
@@ -171,6 +175,16 @@ export default function(state = initialState, action) {
           [action.destination]: action.value
         }
         case SET_TREASURE_DATA: 
+        return {
+          ...state,
+          [action.destination]: action.value
+        }
+        case SET_FACTION_SHOW: 
+        return {
+          ...state,
+          [action.destination]: action.value
+        }
+        case SET_LANGUAGE_SHOW: 
         return {
           ...state,
           [action.destination]: action.value

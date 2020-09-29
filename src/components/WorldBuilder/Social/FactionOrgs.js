@@ -55,6 +55,8 @@ class FactionOrgs extends Component {
         this.setState({
             showModal: !this.state.showModal,
         }, () => this.props.setFactionOrgs(this.state.suggestedTags))
+        
+        this.props.setFactionShow("factionShow", true)
     }
 
 
