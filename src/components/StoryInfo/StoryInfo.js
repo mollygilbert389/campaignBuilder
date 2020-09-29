@@ -216,19 +216,18 @@ render() {
 
             <div className="dualData">
               {campaign.dungeonData.dungeonLocation && (
-                <div className="grouping dataBoxes centerData">
+                <div className="grouping dataBoxes centerData dungeonSection">
                 <Card.Title className="title">Dungeon Info:</Card.Title>
                 {campaign.dungeonData.rooms && (<div><strong>Rooms:</strong>{` ${campaign.dungeonData.rooms }`}</div>)}
                 {campaign.dungeonData.dungeonLocation && (<div><strong>Location:</strong>{` ${campaign.dungeonData.dungeonLocation }`}</div>)}
                 {campaign.dungeonData.dungeonDetail && (<div><strong>Detail:</strong>{` ${campaign.dungeonData.dungeonDetail }`}</div>)}
-                {campaign.dungeonData.monsterList > 0 && (
+                {campaign.dungeonData.monsterList && (
                   <div>
                     <div><strong>Monsters Chosen:</strong></div>
                     <div className="monsterSection"> 
                       {console.log(campaign.dungeonData)}
-                      {campaign.dungeonData.map(monster => {
-                        console.log(monster.monsterList.monsterName)
-                      return (<div className="monsterItem">{monster.monsterList.monsterName}</div>) 
+                      {campaign.dungeonData.monsterList.map(monster => {
+                      return (<div className="monsterItem">{monster.monsterName}</div>) 
                       })}
                     </div>
                   </div>

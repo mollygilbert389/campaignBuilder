@@ -302,6 +302,9 @@ setLanguageShow = (destination, value) => {
                         <Physical
                         setWorldData={this.setWorldData}
                         ></Physical>
+                        <Religion
+                        setReligion={this.setReligion}
+                        ></Religion>
                         <Social
                         setFactionOrgs={this.setFactionOrgs}
                         setFactionShow={this.setFactionShow}
@@ -313,9 +316,7 @@ setLanguageShow = (destination, value) => {
                         setLanguageShow={this.setLanguageShow} 
                         setGovernmentData={this.setGovernmentData}
                         ></Government>
-                        <Religion
-                        setReligion={this.setReligion}
-                        ></Religion>
+
                     </div>
                 </div>)}
 
