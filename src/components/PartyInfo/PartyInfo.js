@@ -6,100 +6,24 @@ import "./style.css"
 
 class PartyInfo extends Component {
     state = {
-        partyMembers: 0,
-        partymemberData: {}
+        partymemberData: []
     }
 
-    handleClick = (e) => {
-        let partyMemberChoice = e.target.id
+    handleClick = (event) => {
+        let partyMemberChoice = event.target.id
         partyMemberChoice = parseInt(partyMemberChoice)
-        this.setState({
-            ...this.state,
-            partyMembers: partyMemberChoice
-    })
         
-    let playerData = {}
+        let playerData = []
 
-    switch(partyMemberChoice) {
-        case 3: 
-        playerData = [
-            {id: 1, name: "", raceClass: "", level:0},
-            {id: 2, name: "", raceClass: "", level:0},
-            {id: 3, name: "", raceClass: "", level:0},
-        ]
-            this.setState({
-                partymemberData: playerData
-            })
-        break;
-        case 4: 
-        playerData = [
-            {id: 1, name: "", raceClass: "", level:0},
-            {id: 2, name: "", raceClass: "", level:0},
-            {id: 3, name: "", raceClass: "", level:0},
-            {id: 4, name: "", raceClass: "", level:0},
-        ]
-            this.setState({
-                partymemberData: playerData
-            })
-        break;
-        case 5: 
-        playerData = [
-            {id: 1, name: "", raceClass: "", level:0},
-            {id: 2, name: "", raceClass: "", level:0},
-            {id: 3, name: "", raceClass: "", level:0},
-            {id: 4, name: "", raceClass: "", level:0},
-            {id: 5, name: "", raceClass: "", level:0},
-        ]
-            this.setState({
-                partymemberData: playerData
-            })
-        break;
-        case 6: 
-        playerData = [
-            {id: 1, name: "", raceClass: "", level:0},
-            {id: 2, name: "", raceClass: "", level:0},
-            {id: 3, name: "", raceClass: "", level:0},
-            {id: 4, name: "", raceClass: "", level:0},
-            {id: 5, name: "", raceClass: "", level:0},
-            {id: 6, name: "", raceClass: "", level:0},
-        ]
-            this.setState({
-                partymemberData: playerData
-            })
-        break;
-        case 7: 
-        playerData = [
-            {id: 1, name: "", raceClass: "", level:0},
-            {id: 2, name: "", raceClass: "", level:0},
-            {id: 3, name: "", raceClass: "", level:0},
-            {id: 4, name: "", raceClass: "", level:0},
-            {id: 5, name: "", raceClass: "", level:0},
-            {id: 6, name: "", raceClass: "", level:0},
-            {id: 7, name: "", raceClass: "", level:0},
-        ]
-            this.setState({
-                partymemberData: playerData
-            })
-        break;
-        case 8: 
-        playerData = [
-            {id: 1, name: "", raceClass: "", level:0},
-            {id: 2, name: "", raceClass: "", level:0},
-            {id: 3, name: "", raceClass: "", level:0},
-            {id: 4, name: "", raceClass: "", level:0},
-            {id: 5, name: "", raceClass: "", level:0},
-            {id: 6, name: "", raceClass: "", level:0},
-            {id: 7, name: "", raceClass: "", level:0},
-            {id: 8, name: "", raceClass: "", level:0},
-        ]
-            this.setState({
-                partymemberData: playerData
-            })
-        break;
-        default: 
-        return;
+        for (let i=0; i < partyMemberChoice; i++) {
+            let newObject = {id:i+1, name: "", raceClass: "", level: 0}
+            playerData.push(newObject)
+        }
+
+        this.setState({
+            partymemberData: playerData
+        }, () => console.log(this.state.partymemberData))
     } 
-    }
 
     handlePartySelect = (eventKey, event)=> {
         const index = event.target.id -1
@@ -149,7 +73,9 @@ class PartyInfo extends Component {
 render() {  
 
         const quantity = [3,4,5,6,7,8]
-        const{partymemberData, partyMembers} = this.state
+        const{partymemberData} = this.state
+        const classTypes = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sourcerer", "Warlock", "Wizard"]
+        const levels = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
         
     return (
         <div>
@@ -158,12 +84,12 @@ render() {
             <div className="partyBtnSpace">
                 {quantity.map(number => {
                     return <div key={number} className="prtyBtns">
-                    <Button id={number} variant="outline-primary" onClick={this.handleClick}>{number}</Button>
+                        <Button id={number} variant="outline-primary" onClick={this.handleClick}>{number}</Button>
                     </div>
                 })}
             </div>
 
-            {partyMembers > 2 && (
+            {partymemberData.length > 0 && (
                 <div>
                     <div className="forms">
                         {[...partymemberData].map((partyMember, index) => {
@@ -179,18 +105,7 @@ render() {
                                         {partymemberData[index].raceClass ? partymemberData[index].raceClass: 'Choose a Class for this Party Member'}
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
-                                    <Dropdown.Item id={partyMember.id} name="Barbarian">Barbarian</Dropdown.Item>
-                                    <Dropdown.Item id={partyMember.id} name="Bard">Bard</Dropdown.Item>
-                                    <Dropdown.Item id={partyMember.id} name="Cleric">Cleric</Dropdown.Item>
-                                    <Dropdown.Item id={partyMember.id} name="Druid">Druid</Dropdown.Item>
-                                    <Dropdown.Item id={partyMember.id} name="Fighter">Fighter</Dropdown.Item>
-                                    <Dropdown.Item id={partyMember.id} name="Monk">Monk</Dropdown.Item>
-                                    <Dropdown.Item id={partyMember.id} name="Paladin">Paladin</Dropdown.Item>
-                                    <Dropdown.Item id={partyMember.id} name="Ranger">Ranger</Dropdown.Item>
-                                    <Dropdown.Item id={partyMember.id} name="Rogue">Rogue</Dropdown.Item>
-                                    <Dropdown.Item id={partyMember.id} name="Sourcerer">Sourcerer</Dropdown.Item>
-                                    <Dropdown.Item id={partyMember.id} name="Warlock">Warlock</Dropdown.Item>
-                                    <Dropdown.Item id={partyMember.id} name="Wizard">Wizard</Dropdown.Item>
+                                        {classTypes.map(item => {return <Dropdown.Item id={partyMember.id} name={item}>{item}</Dropdown.Item>})}
                                     </Dropdown.Menu>
                                 </Dropdown>
 
@@ -199,26 +114,7 @@ render() {
                                         {partymemberData[index].level ? partymemberData[index].level: 'Choose a level for this party member'}
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
-                                        <Dropdown.Item id={partyMember.id} >1</Dropdown.Item>
-                                        <Dropdown.Item id={partyMember.id} >2</Dropdown.Item>
-                                        <Dropdown.Item id={partyMember.id} >3</Dropdown.Item>
-                                        <Dropdown.Item id={partyMember.id} >4</Dropdown.Item>
-                                        <Dropdown.Item id={partyMember.id} >5</Dropdown.Item>
-                                        <Dropdown.Item id={partyMember.id} >6</Dropdown.Item>
-                                        <Dropdown.Item id={partyMember.id} >7</Dropdown.Item>
-                                        <Dropdown.Item id={partyMember.id} >8</Dropdown.Item>
-                                        <Dropdown.Item id={partyMember.id} >9</Dropdown.Item>
-                                        <Dropdown.Item id={partyMember.id} >10</Dropdown.Item>
-                                        <Dropdown.Item id={partyMember.id} >11</Dropdown.Item>
-                                        <Dropdown.Item id={partyMember.id} >12</Dropdown.Item>
-                                        <Dropdown.Item id={partyMember.id} >13</Dropdown.Item>
-                                        <Dropdown.Item id={partyMember.id} >14</Dropdown.Item>
-                                        <Dropdown.Item id={partyMember.id} >15</Dropdown.Item>
-                                        <Dropdown.Item id={partyMember.id} >16</Dropdown.Item>
-                                        <Dropdown.Item id={partyMember.id} >17</Dropdown.Item>
-                                        <Dropdown.Item id={partyMember.id} >18</Dropdown.Item>
-                                        <Dropdown.Item id={partyMember.id} >19</Dropdown.Item>
-                                        <Dropdown.Item id={partyMember.id} >20</Dropdown.Item>
+                                        {levels.map(item => {return <Dropdown.Item id={partyMember.id}>{item}</Dropdown.Item>})}
                                     </Dropdown.Menu>
                                 </Dropdown>
                                 </FormGroup>
