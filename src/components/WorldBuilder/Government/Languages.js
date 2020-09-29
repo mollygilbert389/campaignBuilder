@@ -33,6 +33,7 @@ class Languages extends Component {
             suggestedTags: this.state.suggestedTags.concat(this.state.value),
             value: '',
         }, () => this.props.setLanguages(this.state.suggestedTags))
+        this.props.setLanguageShow("languageShow", true)
     }
 
     handleInputChange = (event) => {
@@ -60,7 +61,7 @@ render() {
             })}
                 
                 <div className="inputAndBtn factionButtons">
-                    <input className="factionInput" placeholder="Add Faction or Organization Here" type="text" value={this.state.value} onChange={this.handleInputChange} onKeyUp={(event) => this.onKeyDown(event)}></input>
+                    <input className="factionInput" placeholder="Language" type="text" value={this.state.value} onChange={this.handleInputChange} onKeyUp={(event) => this.onKeyDown(event)}></input>
                     <Button size="sm" variant="outline-success" onClick={this.handleAddLanguage}>Submit</Button>
                 </div>
             </div>

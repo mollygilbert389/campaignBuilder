@@ -125,7 +125,6 @@ class MainGoals extends Component {
 
     handleGoalCat = (event) => {
         let selection = event.target.value
-        console.log(selection)
 
         this.setState({
             mainGoal: "",
@@ -175,9 +174,12 @@ class MainGoals extends Component {
     }
 
     handleGoalClick = (keyevent, event) => {
+        const selection = event.target.text
         this.setState({
-            finalDungeonChoice: event.target.text
-        }, () => {this.props.setMainGoal(this.state.finalDungeonChoice)})
+            finalDungeonChoice: selection
+        })
+       
+        this.props.setMainGoal("mainGoal", selection)
     }
 
     handleRoll = (feedback, name) => {

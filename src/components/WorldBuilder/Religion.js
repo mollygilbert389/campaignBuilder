@@ -26,9 +26,11 @@ class Religion extends Component {
                 other: true,
             })
         } else {
+            const selection = event.target.text
             this.setState({
-                religion: event.target.text
-            }, () => this.props.setReligion(this.state.gods))
+                religion: selection
+            })
+            this.props.setReligion("religion", selection)
         }
     }
 
@@ -39,9 +41,10 @@ class Religion extends Component {
     }
 
     handleChange = (event) => {
+        const selection = event.target.value
         this.setState({
-            religion: event.target.value
-        }, () => this.props.setReligion(this.state.gods))
+            religion: selection
+        }, () => this.props.setReligion("religion", selection))
     }
 
     handleRoll = (feedback, name) => {
