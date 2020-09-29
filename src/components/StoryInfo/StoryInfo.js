@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-import {Card, CardGroup, Table} from 'react-bootstrap'
+import {Card, CardGroup, Table, Modal} from 'react-bootstrap'
+import NPCCards from "./NPCCards"
 import "./style.css"
 
 class StoryInfo extends Component {
@@ -80,10 +81,10 @@ render() {
                     <Card.Header className="fixedHeader">
                       <Card.Img src={campaign.patronData.image}/>
                       <Card.ImgOverlay className="bottom">
-                        <Card.Title><div>{campaign.patronData.name && (<div>{`Patron Name: ${campaign.patronData.name}`}</div>)}</div></Card.Title>
                       </Card.ImgOverlay>
                     </Card.Header>
                     <Card.Body>
+                      {campaign.patronData.name && (<div>{`Patron Name: ${campaign.patronData.name}`}</div>)}
                       {campaign.patronData.gender && (<div>{`Gender: ${campaign.patronData.gender}`}</div>)}
                       {campaign.patronData.manner && (<div>{`Manner: ${campaign.patronData.manner}`}</div>)}
                       {campaign.patronData.trait && (<div>{`Trait: ${campaign.patronData.trait}`}</div>)}
@@ -98,9 +99,24 @@ render() {
               <div className="grouping dataBoxes">
                 <Card.Title className="title">NPCs & Allies</Card.Title>
                   <CardGroup className="cardContainer">
-                    {/* <NPCStyleCard></NPCStyleCard>
-                    <NPCStyleCard></NPCStyleCard>
-                    <NPCStyleCard></NPCStyleCard> */}
+                    {campaign.NPCData.map(NPC => {return <div>
+                    <NPCCards
+                    image={NPC.NPCImage} 
+                    name={NPC.NPCName}
+                    gender={NPC.gender} 
+                    highAbility={NPC.highAbility}
+                    lowAbility={NPC.lowAbility}
+                    appearance={NPC.appearance}
+                    talent={NPC.talent}
+                    manner={NPC.manner}
+                    trait={NPC.trait}
+                    ideal={NPC.ideal}
+                    specificIdeal={NPC.drilledIdealChoice}
+                    bond={NPC.bond}
+                    flawOrSecret={NPC.flawOrSecret}
+                    ></NPCCards>
+                    </div>
+                    })}
                   </CardGroup>
               </div>
             )}
@@ -112,10 +128,10 @@ render() {
                     <Card.Header className="fixedHeader">
                       <Card.Img src={campaign.villainData.image}/>
                       <Card.ImgOverlay className="bottom">
-                        <Card.Title>{campaign.villainData.name && (<div>{`Villain Name: ${campaign.villainData.name}`}</div>)}</Card.Title>
                       </Card.ImgOverlay>
                     </Card.Header>
                     <Card.Body>
+                      {campaign.villainData.name && (<div>{`Villain Name: ${campaign.villainData.name}`}</div>)}
                       {campaign.villainData.type && (<div>{campaign.villainData.type}</div>)}
                     </Card.Body>
                   </Card>
@@ -216,7 +232,7 @@ render() {
 
             <div className="dualData">
               {campaign.dungeonData.dungeonLocation && (
-                <div className="grouping dataBoxes centerData dungeonSection">
+                <div className="grouping dataBoxes centerData">
                 <Card.Title className="title">Dungeon Info:</Card.Title>
                 {campaign.dungeonData.rooms && (<div><strong>Rooms:</strong>{` ${campaign.dungeonData.rooms }`}</div>)}
                 {campaign.dungeonData.dungeonLocation && (<div><strong>Location:</strong>{` ${campaign.dungeonData.dungeonLocation }`}</div>)}

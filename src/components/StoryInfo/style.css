@@ -26,8 +26,8 @@ width: 300px;
 .cards{
   display: flex;
   flex-flow: column wrap;
-  height: 300px;
-  overflow: scroll;
+  /* height: 300px;
+  overflow: scroll; */
   padding: 10px;
   margin: 5px;
 }
