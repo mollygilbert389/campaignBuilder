@@ -385,7 +385,7 @@ class VillainModal extends Component {
         const selection = event.target.text
         
         this.setState({
-            villainData: {...this.state.villainData, villainWeakness:selection},
+            villainData: {...this.state.villainData, weakness:selection},
         })
     }
 

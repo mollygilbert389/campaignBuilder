@@ -1,20 +1,127 @@
 .cardStyle {
-    margin-top: 10%;
-  }
-  
+  margin-top: 10%;
+}
+
+.dualData { 
+  display: flex;
+  justify-content: center;
+}
+
+.pair{
+  width: 400px;
+}
+
 .grouping {
-  border: solid 1px rgb(182, 177, 177);
+border: solid 1px rgb(182, 177, 177);
+padding: 10px;
+margin: 5px;
+}
+
+.playerCards {
+border: solid 1px rgb(182, 177, 177);
+margin: 5px;
+width: 300px;
+}
+
+.cards{
+  display: flex;
+  flex-flow: column wrap;
+  height: 300px;
+  overflow: scroll;
   padding: 10px;
   margin: 5px;
 }
 
-.playerCards {
-  border: solid 1px rgb(182, 177, 177);
-  margin: 5px;
-  width: 300px;
+.cardContainer {
+  justify-content: center;
 }
 
-.centerItems {
+/* CUSTOM CARD */
+.backgroundColor {
+  background-color: rgba(0, 0, 0, 0.514);
+}
+
+.bottom {
+  margin-top: 25%;
+}
+
+.patronCard {
+  position: relative;
+}
+
+.skinnyCard {
+  width: 250px;
+  border: none;
+}
+
+.fixedHeader {
+  width: 250px;
+  padding: 0px;
+}
+
+.roundBtn {
+  border-radius: 100%;
+  width: 40px;
+  z-index: 5;
+  margin-top: -20px;
+  margin-left: 110px;
+  box-shadow: 0 0 10px 5px rgba(0,0,0,0.6);
+}
+
+.treasure{
+  width: 250px;
+}
+
+.cliamteImage {
+  background-image: url("https://images.squarespace-cdn.com/content/v1/580fc948725e25ff5496284a/1485085312851-F9M3TKZWG2P7MURJIIRN/ke17ZwdGBToddI8pDm48kG87Sfbgg29A4BYEDq3OXvgUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcf4OxbJOyh_wHUnyc4kQLQ6SBshRGOku7c30Y_IRDNPta8R2IY5BHMaEj1zOWoDTZ/Taiga+Forest");
+  width: 200px;
+}
+
+.dungeonImage {
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8b88c10c-a190-46dc-b4f3-eeca31d5b6e3/d4q6895-d69d7aa0-fe93-43ac-8945-91221171da61.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvOGI4OGMxMGMtYTE5MC00NmRjLWI0ZjMtZWVjYTMxZDViNmUzXC9kNHE2ODk1LWQ2OWQ3YWEwLWZlOTMtNDNhYy04OTQ1LTkxMjIxMTcxZGE2MS5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.nIFGvqU3gg5_aYp7dASowlwEAe02zoCttKMiCHBRLVk");
+  width: 200px;
+}
+
+.eventImage {
+  background-image: url("https://images.theconversation.com/files/152548/original/image-20170112-16521-5iwg58.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop");
+  width: 200px;
+  background-position: center;
+  background-size: 300px;
+}
+
+.miniSection {
+  border: solid 1px rgb(182, 177, 177);
+}
+
+.centerData {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+}
+
+.sideQuestTable {
+  display: flex;
+  justify-content: center;
+}
+
+.sideQuestTableItem {
+  border: solid 1px rgb(182, 177, 177);
+  margin: 5px;
+  padding: 5px;
+  height: 150px;
+}
+
+.monsterSection{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 300px;
+  align-self: center;
+}
+
+.monsterItem {
+  margin: 2px;
+  padding: 3px;
+  background-color: rgba(205, 213, 219, 0.616);
+  box-shadow: inset  10px -10px 25px rgba(77, 54, 139, 0.74)
 }
