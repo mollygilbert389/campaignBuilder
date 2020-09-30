@@ -7,13 +7,42 @@ import "../style.css"
 
 class Renown extends Component {
     state ={
-        playerInfo: this.props.campaign.playerData
+        playerInfo: this.props.campaign.playerData,
+        playerOrgs: []
     }
 
     handleClick = () => {
         this.setState({
             showModal: !this.state.showModal,
         })
+    }
+
+    handleChange = (event, index) => {
+        let checked = event.target.checked
+        let name = event.target.name
+        
+        if(checked) {
+            const playerOrgs = [...this.state.playerOrgs, {name:name, playerNumId:index}]
+            
+            this.setState({
+                playerOrgs: playerOrgs
+            })
+        } else if (checked === false) {
+                const allPlayersFactions = this.state.playerOrgs.filter(item => (item.playerNumId !== index))
+                const playersFactions = this.state.playerOrgs.filter(item => (item.playerNumId === index))
+                const itemsByPlayerToKeep = playersFactions.filter(item => (item.name !== name))
+                const finalPlayerFactions = [...allPlayersFactions, ...itemsByPlayerToKeep]
+
+                this.setState({
+                    playerOrgs: finalPlayerFactions
+                })
+        }
+    }
+
+    handleSave = () => {
+        console.log(this.state.playerOrgs)
+
+
     }
 
 
@@ -34,9 +63,24 @@ render() {
                     <br></br>
 
                     {this.state.playerInfo.length > 0 && (<div className="characterRenownContainer">
-                        {this.state.playerInfo.map(item => {
-                            return <CharacterRenownCard campaign={this.props.campaign} key={item.id} charName={item.name}></CharacterRenownCard>
-                        })}
+                        {this.state.playerInfo.map((item, index) => {
+                            return <div>
+                                <div>{item.name}</div>
+                            {this.props.campaign.factionOrgs.map(item => {
+                                return <div>
+                                        <FormControlLabel
+                                        control={
+                                        <Checkbox
+                                        onChange={(event) => this.handleChange(event, index)} 
+                                        name={item.name}
+                                        value={item.name}
+                                        color="primary"/>}
+                                        label={item.name}
+                                        />
+                                 </div>
+                                 })}
+                            </div>
+                            })}
                     </div>)}
 
                     {this.state.playerInfo.length < 1 && (<div className="characterRenownContainer">

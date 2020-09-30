@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button, ButtonGroup, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Popover} from 'react-bootstrap'
-// import {FormControlLabel, Checkbox, FormGroup, Slider } from '@material-ui/core'
+import {Button, ButtonGroup} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBeer, faGem, faCrown, faDragon, faHatWizard, faShieldAlt, faChessKnight, faAnchor, faAnkh, faArchway, faBalanceScaleLeft, faAtlas, faAtom, faBook, faBookDead, faBookMedical, faCross, faDiceD20, faDollarSign, faDotCircle, faDove, faDraftingCompass, faEye, faFire, faFish, faGlassCheers, faHollyBerry, faHorse, faHourglassHalf, faLandmark, faOm, faRebel, faPallet, faPaw, faPenNib, faPlaceOfWorship, faSkull, faSpider, faStarOfDavid, faStar, faVihara} from '@fortawesome/free-solid-svg-icons'
 import "../style.css"

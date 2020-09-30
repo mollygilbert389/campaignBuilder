@@ -5,19 +5,16 @@ import {FormControlLabel, Checkbox} from '@material-ui/core'
 import "../style.css"
 
 class CharacterRenownCard extends Component {
-    state ={
-        suggestedTags: this.props.campaign.factionOrgs,
-    }
 
-    handleClick = () => {
-        this.setState({
-            showModal: !this.state.showModal,
-        })
-    }
-
+    // handleChange = (event) => {
+    //     console.log(event.target.checked)
+    //     console.log(event.target.name)
+    //     this.setState({
+    //         [event.target.name]: event.target.checked 
+    //     });
+    // }
 
 render() { 
-    // const{charName}=this.props
     return (
         <div>
             <div className="characterRenownContainer">
@@ -25,16 +22,16 @@ render() {
                     <div>
                         <h3>{this.props.charName}</h3>
                     </div>
-                    {this.state.suggestedTags.map(item => {
+                    {this.props.campaign.factionOrgs.map(item => {
                         return <div>
                                 <FormControlLabel
                                 control={
                                 <Checkbox
-                                onChange={this.handleChange} 
-                                name={item}
-                                value={item}
+                                onChange={this.props.onChange} 
+                                name={item.name}
+                                value={item.name}
                                 color="primary"/>}
-                                label={item}
+                                label={item.name}
                                 />
                          </div>})}
                 </div>
