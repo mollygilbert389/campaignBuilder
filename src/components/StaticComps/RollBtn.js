@@ -12,8 +12,6 @@ const diceRoller = function(props) {
         let randoNumber = Math.floor(Math.random() * Math.floor(diceMax))
 
         let finalItem = rollingArrary[randoNumber]
-
-        console.log(finalItem)
         props.handleRoll(finalItem, props.name)
     }
 

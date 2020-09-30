@@ -22,6 +22,7 @@ import {
     SET_TREASURE_DATA, 
     SET_FACTION_SHOW,
     SET_LANGUAGE_SHOW,
+    // SET_WORLD_STYLE,
 
 } from './constant'
 
@@ -157,4 +158,9 @@ export const setLanguageShow = (destination, value) => ({
     value
 }) 
 
+// export const setWorldStyle = (destination, value) => ({
+//     type: SET_WORLD_DATA,
+//     destination,
+//     value
+// }) 
 

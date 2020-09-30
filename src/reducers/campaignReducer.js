@@ -69,7 +69,8 @@ const initialState = {
     dungeonData: {},
     treasureData: {},
     factionShow: false,
-    languageShow: false, 
+    languageShow: false,
+    worldImage: "", 
 }
 
 export default function(state = initialState, action) {

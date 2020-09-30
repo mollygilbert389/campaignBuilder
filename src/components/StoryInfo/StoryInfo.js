@@ -4,10 +4,10 @@ import NPCCards from "./NPCCards"
 import "./style.css"
 
 class StoryInfo extends Component {
-render() {  
 
+  render() {  
     const{campaign}=this.props
- 
+    
     return (
       <div className="cardStyle d-flex flex-column align-items-center">
         <Card className="text-center" style={{ width: '800px' }}>
@@ -33,7 +33,7 @@ render() {
                 </div>
               </div>)}
 
-              {campaign.world && (<div className="cliamteImage"></div>)}
+              {campaign.world && (<div className="cliamteImage" style={{backgroundImage:campaign.worldStyle}}></div>)}
 
               {campaign.world && (
                 <div className="grouping pair">

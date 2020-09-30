@@ -14,6 +14,7 @@ class Physical extends Component {
         mapScale: "",
         charMeeting: "",
         rolledClicked: false,
+        worldStyle: "",
         worldOptions: [
             "Aquatic",
             "Desert",
@@ -84,15 +85,55 @@ class Physical extends Component {
         })
     }
 
+    handleWorldImage = () => {
+    let world = this.state.world
+    let worldStyle = ""
+        console.log(world)
+    
+    switch(world){
+        case "Aquatic": 
+        console.log("Aquatic")
+            worldStyle = `url("https://cdn.thinglink.me/api/image/751892544790462466/1240/10/scaletowidth")`
+        break;
+        case "Desert": 
+            worldStyle = `url(https://cdn.mos.cms.futurecdn.net/deaceNXy23NF8VsCrwZPgn.jpg)`
+        break;
+        case "Grassland": 
+            worldStyle = `url(https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_675,w_1200,x_0,y_0/dpr_2.0/c_limit,w_740/fl_lossy,q_auto/v1571433135/191020-patterson-grasslands-national-park-hero_hog9nh)`
+        break;
+        case "Savanna": 
+            worldStyle = `url(https://anthropocenemagazine.org/wp-content/uploads/2019/12/Kenyan-Savanna.jpg)`
+        break;
+        case "Taiga": 
+            worldStyle = `url(https://images.squarespace-cdn.com/content/v1/580fc948725e25ff5496284a/1485085312851-F9M3TKZWG2P7MURJIIRN/ke17ZwdGBToddI8pDm48kG87Sfbgg29A4BYEDq3OXvgUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcf4OxbJOyh_wHUnyc4kQLQ6SBshRGOku7c30Y_IRDNPta8R2IY5BHMaEj1zOWoDTZ/Taiga+Forest)`
+        break;
+        case "Temperate Forest": 
+            worldStyle = `url(https://i.pinimg.com/564x/4f/8b/5d/4f8b5dff3e22b7ca64b19587c292e70b.jpg)`
+        break;
+        case "Tropical Rainforest": 
+            worldStyle = `url(https://cdn.europosters.eu/image/1300/wall-murals/jungle-312x219-cm-premium-non-woven-130gsm-i79054.jpg)`
+        break;
+        case "Tundra": 
+            worldStyle = `url(https://cdn.zmescience.com/wp-content/uploads/2016/02/file6861342703862.jpg)`
+        break;
+        default: 
+            return;
+        }
+
+        this.props.setWorldData("worldStyle", worldStyle)
+        console.log(worldStyle)
+    }
+
     handleDropSelect = (keyEvent, event) => {
         const name = event.target.name
         const feedback = event.target.text
         this.setState({
             [event.target.name]: feedback
-        })
+        }, () =>this.handleWorldImage())
+        
         this.props.setWorldData(name, feedback)
-
         this.handleTravelPointState(feedback)
+        
     }
 
     handleTravelPointState =(feedback) => {
@@ -214,8 +255,9 @@ class Physical extends Component {
     handleRoll = (feedback, name) => {
         this.setState({
             [name]: feedback
-        })
+        }, () =>this.handleWorldImage())
         this.props.setWorldData(name, feedback)
+        this.props.setWorldData("worldStyle", feedback)
         this.handleTravelPointState(feedback)
     }
 
@@ -249,6 +291,7 @@ class Physical extends Component {
         this.setState({
             travelPointChoices: newChoiceList
         })
+        
         this.props.setWorldData("travelPointChoices", newChoiceList)
     }
 
