@@ -25,7 +25,6 @@ class Government extends Component {
         this.setState({
             [event.target.name]: event.target.text
         })
-        
         this.props.setGovernmentData(name, feedback)
     }
 
@@ -33,6 +32,13 @@ class Government extends Component {
         this.setState({
             showModal: !this.state.showModal,
         })
+    }
+
+    handleClose = () => {
+        this.setState({
+            showModal: !this.state.showModal,
+        })
+        this.props.setLanguageShow("languageShow", true)
     }
 
     handleRoll = (feedback, name) => {
@@ -104,7 +110,7 @@ render() {
                 </Modal.Body>
 
                 <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
+                    <Button variant="outline-success" onClick={this.handleClose} >Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>

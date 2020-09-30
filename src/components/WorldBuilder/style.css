@@ -38,3 +38,23 @@
     align-items: center;
     justify-content: center;
 }
+
+.iconBank {
+    height: 230px;
+    max-width: 500px;
+}
+
+.wrapIcons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.icons {
+    margin: 1px;
+
+}
+
+.iconImage {
+    pointer-events: none;
+}
