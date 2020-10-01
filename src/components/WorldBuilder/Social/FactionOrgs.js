@@ -9,7 +9,7 @@ class FactionOrgs extends Component {
     state ={
         value: "",
         showMiniModal: false,
-        index: null,
+        currentBtnId: null,
         suggestedTags: [
             {id: 1, name: "Harpers", icon:faBeer},
             {id: 2, name: "Order of the Guantlet", icon:faShieldAlt},
@@ -75,6 +75,7 @@ class FactionOrgs extends Component {
         this.setState({
             suggestedTags: removedFaction
         })
+        console.log(removedFaction)
     }
 
     handleAddFaction = (event) => {
@@ -84,6 +85,8 @@ class FactionOrgs extends Component {
         let icon = faDiceD20
 
         const updatedFactions = [...currentTags, {id: id, name: newName, icon:icon}]
+
+        console.log(updatedFactions)
 
         this.setState({
             suggestedTags: updatedFactions,
@@ -111,14 +114,16 @@ class FactionOrgs extends Component {
         this.props.setFactionShow("factionShow", true)
     }
 
-    handleIconSelect = (event, index) => {
+    handleIconSelect = (event) => {
+        const btnId = event.target.id 
+
         this.setState({
             showMiniModal: !this.state.showMiniModal,
-            currentIndex: index 
-        })
+            currentBtnId: btnId 
+        }, () => console.log(this.state.currentBtnId))
     }
 
-    handleMiniModalClose = (index) => {
+    handleMiniModalClose = () => {
         this.setState({
             showMiniModal: !this.state.showMiniModal,
             
@@ -126,15 +131,15 @@ class FactionOrgs extends Component {
     }
 
     hanleIconFinalSelection = (event) => {
-        const index = this.state.currentIndex
-    
+        const btnId = parseInt(this.state.currentBtnId)
+
         const iconId = event.target.id
 
         const updatedIcon = this.state.icons.filter(item => item.id == iconId)
         const finalIcon = updatedIcon[0].icon
         
         const factionIcons = [...this.state.suggestedTags].map(item => {
-            if (item.id-1===index) {
+            if (item.id===btnId) {
                 return {...item, icon:finalIcon}
             } return item
         })
@@ -180,8 +185,8 @@ render() {
                             </Tooltip>
                             }
                         >
-                            <Button  onClick={(event) => this.handleIconSelect(event, index)}>
-                                <FontAwesomeIcon icon={item.icon}></FontAwesomeIcon>
+                            <Button id={item.id} onClick={this.handleIconSelect}>
+                                <FontAwesomeIcon className="iconImage" icon={item.icon}></FontAwesomeIcon>
                             </Button>
                         </OverlayTrigger>
 

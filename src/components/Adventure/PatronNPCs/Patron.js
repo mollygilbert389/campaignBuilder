@@ -187,7 +187,7 @@ render() {
                     <Modal.Title>Let's Create A Patron!</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>Below are some buttons to help create your patron.</p>
+                    <p>Below are some buttons to help create your patron. Click the image to upload an image of your own.</p>
                     
                     <div className="d-flex flex-column align-items-center">
                         <Form inline>
