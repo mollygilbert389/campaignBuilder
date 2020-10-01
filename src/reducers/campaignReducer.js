@@ -83,7 +83,7 @@ export default function(state = initialState, action) {
         case SET_PLAYER_DATA:
         return {
             ...state,
-            playerData: action.payload
+            [action.destination]: action.value
           }
         case SET_WORLD_DATA: 
           return {

@@ -31,9 +31,10 @@ export const setCampaignName = (name) => ({
     payload: name
 })  
 
-export const setPlayers = (playerData) => ({
+export const setPlayers = (destination, value) => ({
     type: SET_PLAYER_DATA,
-    payload: playerData
+    destination,
+    value
 })
 
 export const setGovernmentData = (destination, value) => ({

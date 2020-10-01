@@ -122,3 +122,13 @@ width: 300px;
   background-color: rgba(205, 213, 219, 0.616);
   box-shadow: inset  10px -10px 25px rgba(77, 54, 139, 0.74)
 }
+
+.iconHolder{
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: center;
+}
+
+.iconSpace {
+  margin: 3px;
+}

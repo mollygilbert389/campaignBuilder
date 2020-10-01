@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Card, CardGroup, Table, Modal} from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import NPCCards from "./NPCCards"
 import "./style.css"
 
@@ -27,6 +28,14 @@ class StoryInfo extends Component {
                       <div>Player: {player.name}</div>
                       <div>Class: {player.raceClass}</div>
                       <div>Level: {player.level}</div>
+                      <div className="iconHolder">
+                        {player.factions && (
+                          player.factions[0].map(icon => {return <div className="iconSpace">
+                            <FontAwesomeIcon className="playerIcon" icon={icon.icon}/>
+                          </div>
+                          })
+                        )}
+                      </div>
                     </div>)
                     })}
                 </div>
@@ -49,7 +58,9 @@ class StoryInfo extends Component {
                   {campaign.factionShow && (<div className="miniSection">
                     <div><strong>Factions and Organizations:</strong></div>
                     {campaign.factionOrgs.map(oneFaction => {
-                      return (<div> {`-${oneFaction.name}`}</div>)
+                      return (<div className="iconHolder"> {`-${oneFaction.name}`}
+                        <FontAwesomeIcon className="iconSpace" icon={oneFaction.icon}/>
+                      </div>)
                       })}
                   </div>)}
                   {campaign.languageShow && (<div>                    

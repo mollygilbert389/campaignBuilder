@@ -211,8 +211,6 @@ render() {
                         </div>
                     </div>
 
-                    <FontAwesomeIcon icon={["fas","beer"]}></FontAwesomeIcon>
-                    
                 </Modal.Body>
 
                 <Modal.Footer>

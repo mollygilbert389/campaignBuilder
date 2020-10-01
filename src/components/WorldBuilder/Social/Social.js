@@ -41,6 +41,7 @@ render() {
                         setFactionShow={this.props.setFactionShow}
                         ></FactionOrgs>
                         <Renown
+                        setPlayers={this.props.setPlayers}
                         campaign={this.props.campaign}
                         ></Renown>
                     </div>

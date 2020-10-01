@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import CharacterRenownCard from "./ChracterRenownCard"
 import {Button, Dropdown, Form, FormControl} from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {FormControlLabel, Checkbox} from '@material-ui/core'
 import "../style.css"
 
@@ -17,12 +17,13 @@ class Renown extends Component {
         })
     }
 
-    handleChange = (event, index) => {
+    handleChange = (event, index, icon) => {
         let checked = event.target.checked
         let name = event.target.name
         
         if(checked) {
-            const playerOrgs = [...this.state.playerOrgs, {name:name, playerNumId:index}]
+            const playerOrgs = [...this.state.playerOrgs, {name:name, playerNumId:index, icon:icon}]
+            console.log(playerOrgs)
             
             this.setState({
                 playerOrgs: playerOrgs
@@ -40,10 +41,21 @@ class Renown extends Component {
     }
 
     handleSave = () => {
-        console.log(this.props.campaign.playerData)
-        console.log(this.props.campaign.factionOrgs)
-        console.log(this.state.playerOrgs)
+        const players = this.props.campaign.playerData
+        const playersByID = []
 
+        players.forEach((player, index) => {
+            player.factions = []
+            let playersFactions = this.state.playerOrgs.filter(item => (item.playerNumId === index))
+            player.factions.push(playersFactions)
+            playersByID.push(player) 
+        })
+
+        this.setState({
+            showModal: !this.state.showModal,
+        })
+
+        this.props.setPlayers("playerData", playersByID)
     }
 
 
@@ -69,15 +81,19 @@ render() {
                                 <div>{item.name}</div>
                             {this.props.campaign.factionOrgs.map(item => {
                                 return <div>
+                                        <FontAwesomeIcon className="iconSpace" icon={item.icon}></FontAwesomeIcon>
                                         <FormControlLabel
+                                        
                                         control={
                                         <Checkbox
-                                        onChange={(event) => this.handleChange(event, index)} 
+                                        onChange={(event) => this.handleChange(event, index, item.icon)} 
                                         name={item.name}
                                         value={item.name}
+                                        inputProps={item.icon}
                                         color="primary"/>}
                                         label={item.name}
                                         />
+                                        
                                  </div>
                                  })}
                             </div>
@@ -94,7 +110,7 @@ render() {
                 </Modal.Body>
 
                 <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
+                    <Button variant="outline-success" onClick={this.handleSave} >Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>

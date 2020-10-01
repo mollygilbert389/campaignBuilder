@@ -67,7 +67,7 @@ class PartyInfo extends Component {
       }
 
       handleReduxSave = () => {
-        this.props.setPlayers(this.state.partymemberData)
+        this.props.setPlayers("playerData", this.state.partymemberData)
       }
 
 render() {  

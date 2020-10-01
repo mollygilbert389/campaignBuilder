@@ -156,9 +156,9 @@ setCampaignName = (name) => {
     onSetCampaignName(name)
 }
 
-setPlayers = (playerData) => {
+setPlayers = (destination, value) => {
     const{onSetPlayers}=this.props
-    onSetPlayers(playerData)
+    onSetPlayers(destination, value)
 }
 
 setWorldData = (destination, value) => {
@@ -306,6 +306,7 @@ setLanguageShow = (destination, value) => {
                         setReligion={this.setReligion}
                         ></Religion>
                         <Social
+                        setPlayers={this.setPlayers}
                         setFactionOrgs={this.setFactionOrgs}
                         setFactionShow={this.setFactionShow}
                         campaign={this.props.campaign}
