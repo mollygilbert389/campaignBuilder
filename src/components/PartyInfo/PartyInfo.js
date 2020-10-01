@@ -22,7 +22,7 @@ class PartyInfo extends Component {
 
         this.setState({
             partymemberData: playerData
-        }, () => console.log(this.state.partymemberData))
+        })
     } 
 
     handlePartySelect = (eventKey, event)=> {

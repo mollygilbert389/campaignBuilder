@@ -23,7 +23,6 @@ class Renown extends Component {
         
         if(checked) {
             const playerOrgs = [...this.state.playerOrgs, {name:name, playerNumId:index, icon:icon}]
-            console.log(playerOrgs)
             
             this.setState({
                 playerOrgs: playerOrgs

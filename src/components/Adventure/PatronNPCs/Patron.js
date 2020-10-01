@@ -1,13 +1,16 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import CharacterRenownCard from "../../WorldBuilder/Social/ChracterRenownCard"
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Card, CardGroup, Popover} from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {FormControlLabel, Checkbox} from '@material-ui/core'
 import "../style.css"
 
 class Patron extends Component {
     state ={
         showModal: false,
-        patronData: {},
+        patronData: {
+            factions: []
+        },
         show: false,
         imageLink: "",
         setImageLink: "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg",
@@ -144,6 +147,28 @@ class Patron extends Component {
         this.refs.overlay.hide();
     }
 
+    handleCheckBoxChange = (event, icon) => {
+        let checked = event.target.checked
+        let name = event.target.name
+
+        if(checked) {
+            
+            let factions = [...this.state.patronData.factions]
+            factions.push({name, icon})
+
+            const newPatronData = {...this.state.patronData, factions:factions}
+            this.setState({
+                patronData: newPatronData
+            })
+        } else if (checked === false) {
+                const patronFactionsKeep = this.state.patronData.factions.filter(item => (item.name !== name))
+                
+                this.setState({
+                    patronData: {...this.state.patronData, factions:patronFactionsKeep}
+                })
+            }
+    }
+
 
 render() {  
     return (
@@ -255,10 +280,21 @@ render() {
                             </div>
 
                             <div>
-                                <CharacterRenownCard 
-                                    campaign={this.props.campaign} 
-                                    charName={this.props.name}>
-                                </CharacterRenownCard>
+                                {this.props.campaign.factionOrgs.map(item => {
+                                    return <div>
+                                        <FontAwesomeIcon className="iconSpace" icon={item.icon}></FontAwesomeIcon>
+                                        <FormControlLabel
+                                        control={
+                                        <Checkbox
+                                        onChange={(event) => this.handleCheckBoxChange(event, item.icon)} 
+                                        name={item.name}
+                                        value={item.name}
+                                        inputProps={item.icon}
+                                        color="primary"/>}
+                                        label={item.name}
+                                        />
+                                    </div>
+                                    })}
                             </div>
                         </div>
 

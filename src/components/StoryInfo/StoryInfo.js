@@ -100,6 +100,14 @@ class StoryInfo extends Component {
                       {campaign.patronData.manner && (<div>{`Manner: ${campaign.patronData.manner}`}</div>)}
                       {campaign.patronData.trait && (<div>{`Trait: ${campaign.patronData.trait}`}</div>)}
                       {campaign.patronData.type && (<div>{`Type: ${campaign.patronData.type}`}</div>)}
+                      {campaign.patronData.factions && (<div className="iconHolder">
+                          {campaign.patronData.factions.map(icon => { return <div>
+                            <FontAwesomeIcon className="iconSpace" icon={icon.icon}/>
+                            </div>
+                          })}
+
+                          </div>
+                          )}
                     </Card.Body>
                   </Card>
                 </div>
