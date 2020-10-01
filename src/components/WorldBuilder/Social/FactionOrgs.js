@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button, ButtonGroup} from 'react-bootstrap'
+import {Button, ButtonGroup, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBeer, faGem, faCrown, faDragon, faHatWizard, faShieldAlt, faChessKnight, faAnchor, faAnkh, faArchway, faBalanceScaleLeft, faAtlas, faAtom, faBook, faBookDead, faBookMedical, faCross, faDiceD20, faDollarSign, faDotCircle, faDove, faDraftingCompass, faEye, faFire, faFish, faGlassCheers, faHollyBerry, faHorse, faHourglassHalf, faLandmark, faOm, faRebel, faPallet, faPaw, faPenNib, faPlaceOfWorship, faSkull, faSpider, faStarOfDavid, faStar, faVihara} from '@fortawesome/free-solid-svg-icons'
 import "../style.css"
@@ -172,9 +172,20 @@ render() {
                     {this.state.suggestedTags.map((item, index) => {
                         return <ButtonGroup className="factionButtons">
                         
+                        <OverlayTrigger
+                        placement="left"
+                        overlay={
+                            <Tooltip>
+                                Change Me!
+                            </Tooltip>
+                            }
+                        >
                             <Button  onClick={(event) => this.handleIconSelect(event, index)}>
                                 <FontAwesomeIcon icon={item.icon}></FontAwesomeIcon>
                             </Button>
+                        </OverlayTrigger>
+
+
                             <Button name={item.name}>{item.name}</Button>
                             <Button name={item.name} onClick={this.handleRemove}>X</Button>
                             </ButtonGroup>
