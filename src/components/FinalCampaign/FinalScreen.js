@@ -53,7 +53,8 @@ render() {
                 variant="outline-danger" 
                 size="lg" 
                 onClick={this.handleGenerate}
-                disabled={this.state.clicked} 
+                // disabled={this.state.clicked} 
+                disabled
                 >Generate My Campaign
                 </Button>
             </div>

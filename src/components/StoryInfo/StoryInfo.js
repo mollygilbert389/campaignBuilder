@@ -49,7 +49,7 @@ class StoryInfo extends Component {
                   {campaign.factionShow && (<div className="miniSection">
                     <div><strong>Factions and Organizations:</strong></div>
                     {campaign.factionOrgs.map(oneFaction => {
-                      return (<div> {`-${oneFaction}`}</div>)
+                      return (<div> {`-${oneFaction.name}`}</div>)
                       })}
                   </div>)}
                   {campaign.languageShow && (<div>                    

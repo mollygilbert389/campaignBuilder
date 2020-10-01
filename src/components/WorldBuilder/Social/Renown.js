@@ -40,8 +40,9 @@ class Renown extends Component {
     }
 
     handleSave = () => {
+        console.log(this.props.campaign.playerData)
+        console.log(this.props.campaign.factionOrgs)
         console.log(this.state.playerOrgs)
-
 
     }
 
