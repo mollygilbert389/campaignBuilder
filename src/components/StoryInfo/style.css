@@ -120,7 +120,8 @@ width: 300px;
   margin: 2px;
   padding: 3px;
   background-color: rgba(205, 213, 219, 0.616);
-  box-shadow: inset  10px -10px 25px rgba(77, 54, 139, 0.74)
+  box-shadow: inset  10px -10px 25px rgba(77, 54, 139, 0.74);
+  border-radius: 20%;
 }
 
 .iconHolder{
