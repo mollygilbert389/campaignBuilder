@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
+import GenerateBtn from "../../../StaticComps/GenerateBtn"
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Card, CardGroup, Popover} from 'react-bootstrap'
 import {FormControlLabel, Checkbox, FormGroup, Slider} from '@material-ui/core'
 import "../../style.css"
@@ -422,6 +423,26 @@ class NPCCard extends Component {
         this.refs.overlay.hide();
     }
 
+    handleGenerateBtn = (index, name, feedback) => {
+        const reduxNPCData = this.props.campaign.NPCData
+        
+        console.log("index", index)
+        console.log("name", name)
+        console.log("feedback", feedback)
+
+        const newNPC = [...reduxNPCData].map(NPC => {
+            if (NPC.id === index) {
+                return {...NPC, NPCName:name}
+            } return NPC
+        })
+
+        this.setState({
+            NPCData: {...this.state.NPCData, NPCName:name},
+        })
+
+        this.props.setNPCData("NPCData", newNPC)
+    }
+
 
 
 render() { 
@@ -458,12 +479,14 @@ render() {
                         <FormControl type="text" placeholder="NPC Name" className="mr-sm-2" value={this.state.value} onChange={(event) => this.handleChange(event, this.props.index)}/>
                         <div style={{paddingRight: "10px"}}>or</div> 
 
-                        <OverlayTrigger overlay={
+                        {/* <OverlayTrigger overlay={
                             <Tooltip>Coming Soon!</Tooltip>}>
                             <span className="d-inline-block">
                                 <Button variant="outline-primary" style={{ pointerEvents: 'none' }} disabled>Generate</Button>
                             </span>
-                        </OverlayTrigger>
+                        </OverlayTrigger> */}
+
+                        <GenerateBtn name="NPCS" handleGenerate={(name, feedback) => this.handleGenerateBtn(this.props.index, name, feedback)}></GenerateBtn>
                     </Form>
 
                     <Dropdown onSelect={(keyEvent, event) => this.handleGenderSelect(keyEvent, event, this.props.index)} className="giveMeNPCSpace">

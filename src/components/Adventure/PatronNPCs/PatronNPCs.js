@@ -23,7 +23,6 @@ class PatronNPCs extends Component {
         })
     }
 
-
 render() {  
 
 

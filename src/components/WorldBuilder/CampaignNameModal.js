@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
+import GenerateBtn from "../StaticComps/GenerateBtn"
 import {Button, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "../home.css"
 
@@ -28,6 +29,14 @@ class CampaignNameModal extends Component {
         campaignName: event.target.value,
         disabled: false
     })
+    }
+
+    handleGenerateBtn = (feedback, name) => {
+        console.log(feedback)
+        console.log(name)
+        this.setState({
+            [name]: feedback
+        })
     }
 
     // onKeyDown = (event) => {

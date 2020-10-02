@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
+import GenerateBtn from "../../StaticComps/GenerateBtn"
 import ModalHeader from 'react-bootstrap/ModalHeader'
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Card, Popover} from 'react-bootstrap'
 import "../style.css"
@@ -414,6 +415,12 @@ class VillainModal extends Component {
         this.refs.overlay.hide();
     }
 
+    handleGenerateBtn = (feedback, name) => {
+        this.setState({
+            villainData: {...this.state.villainData, name:feedback}
+        })
+    }
+
     hanelSave = () => {
         this.setState({
             showModal: !this.state.showModal,
@@ -445,12 +452,14 @@ render() {
                         <FormControl type="text" placeholder="villain Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
                         <div style={{paddingRight: "10px"}}>or</div> 
 
-                        <OverlayTrigger overlay={
+                        {/* <OverlayTrigger overlay={
                         <Tooltip>Coming Soon!</Tooltip>}>
                         <span className="d-inline-block">
                         <Button variant="outline-primary" style={{ pointerEvents: 'none' }} disabled>Generate</Button>
                         </span>
-                        </OverlayTrigger>
+                        </OverlayTrigger> */}
+
+                        <GenerateBtn name="villainName" handleGenerate={this.handleGenerateBtn}></GenerateBtn>
 
                     </Form>
                     <br></br>

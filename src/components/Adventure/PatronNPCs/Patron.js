@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Card, CardGroup, Popover} from 'react-bootstrap'
+import GenerateBtn from "../../StaticComps/GenerateBtn"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {FormControlLabel, Checkbox} from '@material-ui/core'
 import "../style.css"
@@ -169,6 +170,12 @@ class Patron extends Component {
             }
     }
 
+    handleGenerateBtn = (feedback, name) => {
+        this.setState({
+            patronData: {...this.state.patronData, name:feedback}
+        })
+    }
+
 
 render() {  
     return (
@@ -194,12 +201,7 @@ render() {
                             <FormControl type="text" placeholder="Patron Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
                             <div style={{paddingRight: "10px"}}>or</div> 
 
-                            <OverlayTrigger overlay={
-                                <Tooltip>Coming Soon!</Tooltip>}>
-                                <span className="d-inline-block">
-                                    <Button variant="outline-primary" style={{ pointerEvents: 'none' }} disabled>Generate</Button>
-                                </span>
-                            </OverlayTrigger>
+                            <GenerateBtn name="patronName" handleGenerate={this.handleGenerateBtn}></GenerateBtn>
                         </Form>
 
                         <br></br>
