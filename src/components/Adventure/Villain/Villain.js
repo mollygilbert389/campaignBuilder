@@ -452,13 +452,6 @@ render() {
                         <FormControl type="text" placeholder="villain Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
                         <div style={{paddingRight: "10px"}}>or</div> 
 
-                        {/* <OverlayTrigger overlay={
-                        <Tooltip>Coming Soon!</Tooltip>}>
-                        <span className="d-inline-block">
-                        <Button variant="outline-primary" style={{ pointerEvents: 'none' }} disabled>Generate</Button>
-                        </span>
-                        </OverlayTrigger> */}
-
                         <GenerateBtn name="villainName" handleGenerate={this.handleGenerateBtn}></GenerateBtn>
 
                     </Form>

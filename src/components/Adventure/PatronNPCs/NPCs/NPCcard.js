@@ -426,10 +426,6 @@ class NPCCard extends Component {
     handleGenerateBtn = (index, name, feedback) => {
         const reduxNPCData = this.props.campaign.NPCData
         
-        console.log("index", index)
-        console.log("name", name)
-        console.log("feedback", feedback)
-
         const newNPC = [...reduxNPCData].map(NPC => {
             if (NPC.id === index) {
                 return {...NPC, NPCName:name}
@@ -442,7 +438,6 @@ class NPCCard extends Component {
 
         this.props.setNPCData("NPCData", newNPC)
     }
-
 
 
 render() { 
@@ -478,13 +473,6 @@ render() {
                     <Form inline className="giveMeNPCSpace">
                         <FormControl type="text" placeholder="NPC Name" className="mr-sm-2" value={this.state.value} onChange={(event) => this.handleChange(event, this.props.index)}/>
                         <div style={{paddingRight: "10px"}}>or</div> 
-
-                        {/* <OverlayTrigger overlay={
-                            <Tooltip>Coming Soon!</Tooltip>}>
-                            <span className="d-inline-block">
-                                <Button variant="outline-primary" style={{ pointerEvents: 'none' }} disabled>Generate</Button>
-                            </span>
-                        </OverlayTrigger> */}
 
                         <GenerateBtn name="NPCS" handleGenerate={(name, feedback) => this.handleGenerateBtn(this.props.index, name, feedback)}></GenerateBtn>
                     </Form>
