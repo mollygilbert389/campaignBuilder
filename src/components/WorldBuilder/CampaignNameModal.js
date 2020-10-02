@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import GenerateBtn from "../StaticComps/GenerateBtn"
 import {Button, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "../home.css"
 
@@ -31,12 +30,70 @@ class CampaignNameModal extends Component {
     })
     }
 
-    handleGenerateBtn = (feedback, name) => {
-        console.log(feedback)
-        console.log(name)
+    handleGenerateBtn = () => {
+
+        const animals = [
+            "Bear",
+            "Wolf",
+            "Cat", 
+            "Rhino",
+            "Lion",
+            "Elk",
+            "Moose",
+            "Zebra",
+            "Direwolf",
+            "Tiger", 
+            "Monkey",
+            "Horse",
+            "Unicorn", 
+            "Griffon",
+            "Dragon",
+            "Eagle",
+            "Hawk",
+            "Fox",
+            "Snake",
+            "Ox",
+            "Buffalo",
+            "Cheetah",
+            "Leopard",
+            "Gazelle",
+            "Boar",
+            "Hippo",
+            "Giraffe",
+            "Gorilla",
+            "Elephant",
+            "Badger" 
+        ]
+
+        const adjectives = [
+            "Impressive",
+            "Beautiful",
+            "Majestic",
+            "Magnificent",
+            "Rightious",
+            "Angelic",
+            "Courtly",
+            "Regal",
+            "Stunning",
+            "Marvelous",
+            "Gorgeus",
+            "Striking",
+            "Proud",
+            "Grand",
+            "Ambitious",
+            "Royal"
+        ]
+
+        const firstWord = adjectives[Math.floor(Math.random()*adjectives.length)]
+        const secondWord = animals[Math.floor(Math.random()*animals.length)]
+
+        const campaignName = `${firstWord} ${secondWord}`
+        
         this.setState({
-            [name]: feedback
+            campaignName: campaignName,
+            showModal: !this.state.showModal
         })
+        this.props.setCampaignName(campaignName)
     }
 
     // onKeyDown = (event) => {
@@ -63,16 +120,8 @@ render() {
                         <FormControl type="text" placeholder="Campaign Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
                         <div style={{paddingRight: "10px"}}>or</div> 
                         
-                        <OverlayTrigger overlay={
-                        <Tooltip>Coming Soon!</Tooltip>}>
-                        <span className="d-inline-block">
-                        <Button 
-                        variant="outline-primary"
-                        style={{ pointerEvents: 'none' }} 
-                        disabled>
-                            Generate</Button>
-                        </span>
-                        </OverlayTrigger>
+                        
+                        <Button variant="outline-primary" onClick={this.handleGenerateBtn}>Generate</Button>
 
                     </Form>
                 </Modal.Body>
@@ -83,7 +132,6 @@ render() {
                         type="submit" 
                         value="Submit" 
                         onClick={this.close}
-                        // disabled={this.state.campaignName ? false : true}
                         >
                             Save</Button>
                 </Modal.Footer>
