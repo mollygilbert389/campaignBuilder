@@ -12,7 +12,7 @@ The purpose of this application is to help D&D Dungeon Masters build fun and eng
 ## Deployed Application
 [Deployed Link](https://mollywoodcampaignbuilder.herokuapp.com/home)
 
-![CB-Theme](https://user-images.githubusercontent.com/29104770/91627049-fa6d4080-e979-11ea-9f0d-a2c231317570.gif)
+![FactionsIcons](https://user-images.githubusercontent.com/29104770/95135904-c8928b00-072a-11eb-98d7-9ad1854d1d3c.gif)
 
 
 ## Installation
