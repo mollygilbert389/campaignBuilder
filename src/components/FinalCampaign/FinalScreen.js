@@ -49,14 +49,23 @@ render() {
     return (
         <div className="d-flex flex-column align-items-center">
             <div className="d-flex flex-column align-items-center">
-                <Button 
-                variant="outline-danger" 
-                size="lg" 
-                onClick={this.handleGenerate}
-                // disabled={this.state.clicked} 
-                disabled
-                >Generate My Campaign
-                </Button>
+
+                <OverlayTrigger 
+                overlay={
+                    <Tooltip>Coming Soon!</Tooltip>}>
+                    <span className="d-inline-block">
+                        <Button 
+                        variant="outline-danger" 
+                        size="lg" 
+                        onClick={this.handleGenerate}
+                        // disabled={this.state.clicked} 
+                        href="/"
+                        disabled
+                        >Generate My Campaign
+                        </Button>
+                    </span>
+                </OverlayTrigger>
+
             </div>
             <br></br>
             {this.state.displayMap && (<div>
