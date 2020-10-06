@@ -191,7 +191,7 @@ render() {
                         </OverlayTrigger>
 
 
-                            <Button name={item.name}>{item.name}</Button>
+                            <Button className="iconImage" name={item.name}>{item.name}</Button>
                             <Button name={item.name} onClick={this.handleRemove}>X</Button>
                             </ButtonGroup>
                         })}
