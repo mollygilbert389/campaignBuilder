@@ -1,95 +1,83 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { RollBtn } from "../StaticComps";
 import { Button, Dropdown, Form, FormGroup } from 'react-bootstrap';
-import "../style.css"
+import "../style.css";
 
-class Physical extends Component {
+const  Physical = () => {
+    const [showModal, setShowModal] = useState(false);
+    const [eventCap, setEventCap] = useState(false);
+    const [world, setWorld] = useState("");
+    const [uniqueFeature, setUniqueFeatures] = useState("");
+    const [era, setEra] = useState("");
+    const [mapScale, setMapScale] = useState("");
+    const [charMeeting, setCharMeeting] = useState("");
+    const [rolledClicked, setRolledClicked] = useState(false);
+    const [worldStyle, setWorldStyle] = useState("");
+    const [worldOptions, setWorldOptions] = useState([
+        "Aquatic",
+        "Desert",
+        "Grassland",
+        "Savanna",
+        "Taiga",
+        "Temperate Forest",
+        "Tropical Rainforest",
+        "Tundra",
+    ]);
+    const [eraOptions, setEraOptions] = useState([
+        "Beowulf Adventure Trope (The age of heros magic is common)",
+        "Victorian Era (The time of romance magic is uncommon)",
+        "Present Day (Modern technology magic does not exist)",
+        "Steampunk Future (Technology & chivalry rule and magic is common)",
+        "Dystopian Post Appocolypse (Chaos magic is uncommon)",
+    ]);
+    const [featureOptions, setFeatureOptions] = useState([
+        "At the base of a dorment valcano",
+        "Extreme Weather",
+        "Architecutral building or Massive Statue",
+        "Many moons",
+        "Large Bodies of Water",
+        "Large Mountains",
+        "Local Ruins",
+        "Large Forest",
+        "Swamp or Delta",
+        "Religious Site",
+        "Deserted City",
+        "Canyon or Gorge",
+        "Northern Lights",
+    ]);
+    const [mapScaleOptions, setMapScaleOptions] = useState([
+        "Village",
+        "Town",
+        "City",
+    ]);
+    const [meetingOptions, setMeetingOptions] = useState([
+        "Meet in a tavern about a contract",
+        "Party has already adventured together",
+        "One member brings the group together",
+        "Meet at a party",
+        "Meet at school",
+        "Mysterious Circumstance",
+    ]);
+    const [travelPoints, setTravelPoints] = useState([
+        "Cave",
+        "Forest",
+        "Jungle",
+        "Lake",
+        "Meadow",
+        "Mountains",
+        "Oasis",
+        "Ocean",
+        "Plains",
+        "Ruins",
+        "Swamp",
+        "Tomb",
+        "Volcano"
+    ])
+    const [travelPointChoices, setTravelPointChoices] = useState([]);
 
-    state = {
-        showModal: false,
-        world: "",
-        uniqueFeature: "",
-        era:"",
-        mapScale: "",
-        charMeeting: "",
-        rolledClicked: false,
-        worldStyle: "",
-        worldOptions: [
-            "Aquatic",
-            "Desert",
-            "Grassland",
-            "Savanna",
-            "Taiga",
-            "Temperate Forest",
-            "Tropical Rainforest",
-            "Tundra",
-        ],
-        eraOptions: [
-            "Beowulf Adventure Trope (The age of heros magic is common)",
-            "Victorian Era (The time of romance magic is uncommon)",
-            "Present Day (Modern technology magic does not exist)",
-            "Steampunk Future (Technology & chivalry rule and magic is common)",
-            "Dystopian Post Appocolypse (Chaos magic is uncommon)",
-        ],
-        featureOptions: [
-            "At the base of a dorment valcano",
-            "Extreme Weather",
-            "Architecutral building or Massive Statue",
-            "Many moons",
-            "Large Bodies of Water",
-            "Large Mountains",
-            "Local Ruins",
-            "Large Forest",
-            "Swamp or Delta",
-            "Religious Site",
-            "Deserted City",
-            "Canyon or Gorge",
-            "Northern Lights",
-        ],
-        mapScaleOptions: [
-            "Village",
-            "Town",
-            "City",
-        ],
-        meetingOptions: [
-            "Meet in a tavern about a contract",
-            "Party has already adventured together",
-            "One member brings the group together",
-            "Meet at a party",
-            "Meet at school",
-            "Mysterious Circumstance",
-        ],
-        travelPoints: [
-            "Cave",
-            "Forest",
-            "Jungle",
-            "Lake",
-            "Meadow",
-            "Mountains",
-            "Oasis",
-            "Ocean",
-            "Plains",
-            "Ruins",
-            "Swamp",
-            "Tomb",
-            "Volcano"
-        ],
-        travelPointChoices: []
-
-    }
-
-    handleClick = () => {
-        this.setState({
-            showModal: !this.state.showModal,
-        })
-    }
-
-    handleWorldImage = () => {
-    let world = this.state.world
+    const handleWorldImage = () => {
     let worldStyle = ""
-        console.log(world)
-    
     switch(world){
         case "Aquatic": 
         console.log("Aquatic")
@@ -119,292 +107,263 @@ class Physical extends Component {
         default: 
             return;
         }
-
-        this.props.setWorldData("worldStyle", worldStyle)
-        console.log(worldStyle)
+        this.props.setWorldData("worldStyle", worldStyle);
     }
 
-    handleDropSelect = (keyEvent, event) => {
-        const name = event.target.name
-        const feedback = event.target.text
-        this.setState({
-            [event.target.name]: feedback
-        }, () =>this.handleWorldImage())
-        
-        this.props.setWorldData(name, feedback)
-        this.handleTravelPointState(feedback)
-        
+    const handleDropSelect = (keyEvent, e) => {
+        const name = e.target.name;
+        const feedback = e.target.text;
+        // this.setState({
+        //     [event.target.name]: feedback
+        // }, () =>this.handleWorldImage())
+        this.props.setWorldData(name, feedback);
+        this.handleTravelPointState(feedback);
     }
 
-    handleTravelPointState =(feedback) => {
+    const handleTravelPointState = (feedback) => {
         switch(feedback) {
             case "Aquatic":
-                this.setState({
-                    travelPointChoices: [],
-                    travelPoints: [
-                        "Cave",
-                        "Lake",
-                        "Mountains",
-                        "Ocean",
-                        "Ruins",
-                        "Tomb",
-                        "Volcano",
-                    ]
-                })
+                setTravelPointChoices([])
+                setTravelPoints([
+                    "Cave",
+                    "Lake",
+                    "Mountains",
+                    "Ocean",
+                    "Ruins",
+                    "Tomb",
+                    "Volcano",
+                ])
             break;
             case "Desert":
-                this.setState({
-                    travelPointChoices: [],
-                    travelPoints: [
-                        "Cave",
-                        "Mountains",
-                        "Oasis",
-                        "Ruins",
-                        "Tomb",
-                    ]
-                })
+                setTravelPointChoices([])
+                setTravelPoints([
+                    "Cave",
+                    "Mountains",
+                    "Oasis",
+                    "Ruins",
+                    "Tomb",
+                ])
             break;
             case "Grassland":
-                this.setState({
-                    travelPointChoices: [],
-                    travelPoints: [
-                        "Cave",
-                        "Forest",
-                        "Lake",
-                        "Meadow",
-                        "Plains",
-                        "Ruins",
-                        "Swamp",
-                        "Tomb",
-                    ]
-                })
+                setTravelPointChoices([])
+                setTravelPoints([
+                    "Cave",
+                    "Forest",
+                    "Lake",
+                    "Meadow",
+                    "Plains",
+                    "Ruins",
+                    "Swamp",
+                    "Tomb",
+                ])
             break;
             case "Savanna":
-                this.setState({
-                    travelPointChoices: [],
-                    travelPoints: [
-                        "Cave",
-                        "Oasis",
-                        "Ruins",
-                        "Tomb",
-                    ]
-                })
+                setTravelPointChoices([])
+                setTravelPoints([
+                    "Cave",
+                    "Oasis",
+                    "Ruins",
+                    "Tomb",
+                ])
             break;
             case "Taiga":
-                this.setState({
-                    travelPointChoices: [],
-                    travelPoints: [
-                        "Cave",
-                        "Forest",
-                        "Lake",
-                        "Meadow",
-                        "Mountains",
-                        "Rivers",
-                        "Ruins",
-                        "Tomb",
-                        "Volcano",
-                    ]
-                })
+                setTravelPointChoices([])
+                setTravelPoints([
+                    "Cave",
+                    "Forest",
+                    "Lake",
+                    "Meadow",
+                    "Mountains",
+                    "Rivers",
+                    "Ruins",
+                    "Tomb",
+                    "Volcano",
+                ])
             break;
             case "Temperate Forest":
-                this.setState({
-                    travelPointChoices: [],
-                    travelPoints: [
-                        "Cave",
-                        "Forest",
-                        "Lake",
-                        "Meadow",
-                        "Mountains",
-                        "Rivers",
-                        "Ruins",
-                        "Tomb",
-                        "Volcano",
-                    ]
-                })
+                setTravelPointChoices([])
+                setTravelPoints([
+                    "Cave",
+                    "Forest",
+                    "Lake",
+                    "Meadow",
+                    "Mountains",
+                    "Rivers",
+                    "Ruins",
+                    "Tomb",
+                    "Volcano",
+                ])
             break;
             case "Tropical Rainforest":
-                this.setState({
-                    travelPointChoices: [],
-                    travelPoints: [
-                        "Cave",
-                        "Jungle",
-                        "Rivers",
-                        "Ruins",
-                        "Swamp",
-                        "Tomb",
-                    ]
-                })
+                setTravelPointChoices([])
+                setTravelPoints([
+                    "Cave",
+                    "Jungle",
+                    "Rivers",
+                    "Ruins",
+                    "Swamp",
+                    "Tomb",
+                ])
             break;
             case "Tundra":
-                this.setState({
-                    travelPointChoices: [],
-                    travelPoints: [
-                        "Cave",
-                        "Forest",
-                        "Lake",
-                        "Mountains",
-                        "Ocean",
-                        "Ruins",
-                        "Tomb",
-                    ]
-                })
+                setTravelPointChoices([])
+                setTravelPoints([
+                    "Cave",
+                    "Forest",
+                    "Lake",
+                    "Mountains",
+                    "Ocean",
+                    "Ruins",
+                    "Tomb",
+                ])
+            break;
+            default: 
+                setTravelPointChoices([]);
+                setTravelPoints([]);
             break;
         }
     }
 
-    handleRoll = (feedback, name) => {
-        this.setState({
-            [name]: feedback
-        }, () =>this.handleWorldImage())
-        this.props.setWorldData(name, feedback)
-        this.props.setWorldData("worldStyle", feedback)
-        this.handleTravelPointState(feedback)
+    const handleRoll = (feedback, name) => {
+        // this.setState({
+        //     [name]: feedback
+        // }, () =>this.handleWorldImage())
+        this.props.setWorldData(name, feedback);
+        this.props.setWorldData("worldStyle", feedback);
+        handleTravelPointState(feedback);
     }
 
-    handleAddEvent = (event) => {
-        const currentChoices = this.state.travelPointChoices
-        const updatedChoiceList = currentChoices.concat(event.target.value)
-        const filteredChoiceList = updatedChoiceList.filter((item, index) => updatedChoiceList.indexOf(item) === index)
-        
-        if (this.state.travelPointChoices.length >= 3) {
-            this.setState({
-                eventCap: true
-            })
+    const handleAddEvent = (event) => {
+        const currentChoices = travelPointChoices;
+        const updatedChoiceList = currentChoices.concat(event.target.value);
+        const filteredChoiceList = updatedChoiceList.filter((item, index) => updatedChoiceList.indexOf(item) === index);
+        if (travelPointChoices.length >= 3) {
+            setEventCap(true);
+        } else {
+            setTravelPointChoices(filteredChoiceList);
         }
-
-        this.setState({
-            travelPointChoices: filteredChoiceList,
-        })
-        this.props.setWorldData("travelPointChoices", filteredChoiceList)
+        this.props.setWorldData("travelPointChoices", filteredChoiceList);
     }
 
-    removeEvent = (event) => {
-        let choices = this.state.travelPointChoices
+    const removeEvent = (event) => {
+        let choices = travelPointChoices;
         const newChoiceList = choices.filter(eventName => eventName !== event.target.value);
-
         if (this.state.travelPointChoices.length <= 5) {
-            this.setState({
-                eventCap: false
-            })
+            setEventCap(false);
+        } else {
+            setTravelPointChoices(newChoiceList);
         }
-
-        this.setState({
-            travelPointChoices: newChoiceList
-        })
-        
-        this.props.setWorldData("travelPointChoices", newChoiceList)
+        this.props.setWorldData("travelPointChoices", newChoiceList);
     }
 
-
-
-render() {  
     return (
         <div>
             <div className="btns">
-                <Button variant="outline-success" size="lg" onClick={this.handleClick}>The Physical
-                </Button>
+                <Button variant="outline-success" size="lg" onClick={() => setShowModal(!showModal)}>The Physical</Button>
             </div>
-            <Modal size="lg" show={this.state.showModal} onHide={this.handleClick}>
+            <Modal size="lg" show={showModal} onHide={() => setShowModal(!showModal)}>
                 <Modal.Header closeButton>
                     <Modal.Title>Paint with all the colors.</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="d-flex flex-column align-items-center">
-                    <p>Below are some buttons to help create your ideal world! The decisions you make now will help create a unique campaign down the line!</p>
-
+                    <p>
+                        Below are some buttons to help create your ideal world! 
+                        The decisions you make now will help create a unique campaign down the line!
+                    </p>
                     <FormGroup>
                         <Form inline>
-                            <Dropdown name="world" onSelect={this.handleDropSelect}>
+                            <Dropdown name="world" onSelect={handleDropSelect}>
                                 <Dropdown.Toggle variant="outline-primary" name="world">
-                                    {this.state.world ? `Setting: ${this.state.world}`: 'What is your setting?'}
+                                    {world ? `Setting: ${world}`: 'What is your setting?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu name="world">
-                                    {this.state.worldOptions.map(item => {return <Dropdown.Item name="world">{item}</Dropdown.Item>})}
+                                    {worldOptions.map(item => {return <Dropdown.Item name="world">{item}</Dropdown.Item>})}
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <RollBtn name="world" handleRoll={this.handleRoll} rollingArray={this.state.worldOptions}></RollBtn>
+                            <RollBtn name="world" handleRoll={handleRoll} rollingArray={worldOptions}/>
                         </Form>
                     </FormGroup>
-
                     <FormGroup>
                         <Form inline>
-                            <Dropdown name="era" onSelect={this.handleDropSelect}>
+                            <Dropdown name="era" onSelect={handleDropSelect}>
                                 <Dropdown.Toggle variant="outline-primary">
-                                    {this.state.era ? `Era: ${this.state.era}`: 'What era does this adventure take place?'}
+                                    {era ? `Era: ${era}`: 'What era does this adventure take place?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {this.state.eraOptions.map(item => {return <Dropdown.Item name="era">{item}</Dropdown.Item>})}
+                                    {eraOptions.map(item => {return <Dropdown.Item name="era">{item}</Dropdown.Item>})}
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <RollBtn name="era" handleRoll={this.handleRoll} rollingArray={this.state.eraOptions}></RollBtn>
+                            <RollBtn name="era" handleRoll={handleRoll} rollingArray={this.state.eraOptions}/>
                         </Form>
                     </FormGroup>
-
                     <FormGroup>
                         <Form inline>
-                            <Dropdown name="uniqueFeature" onSelect={this.handleDropSelect}>
+                            <Dropdown name="uniqueFeature" onSelect={handleDropSelect}>
                                 <Dropdown.Toggle variant="outline-primary">
-                                    {this.state.uniqueFeature ? `Feature: ${this.state.uniqueFeature}`: 'Does this world have a unique feature?'}
+                                    {uniqueFeature ? `Feature: ${uniqueFeature}`: 'Does this world have a unique feature?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {this.state.featureOptions.map(item => {return <Dropdown.Item name="uniqueFeature">{item}</Dropdown.Item>})}
+                                    {featureOptions.map(item => {return <Dropdown.Item name="uniqueFeature">{item}</Dropdown.Item>})}
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <RollBtn name="uniqueFeature" handleRoll={this.handleRoll} rollingArray={this.state.featureOptions}></RollBtn>
+                            <RollBtn name="uniqueFeature" handleRoll={handleRoll} rollingArray={featureOptions}/>
                         </Form>
                     </FormGroup>
-
                     <FormGroup>
                         <Form inline>
-                            <Dropdown name="mapScale" onSelect={this.handleDropSelect}>
+                            <Dropdown name="mapScale" onSelect={handleDropSelect}>
                                 <Dropdown.Toggle variant="outline-primary">
-                                    {this.state.mapScale ? `Size: ${this.state.mapScale}` : 'What kind of place are your adventurers starting?'}
+                                    {mapScale ? `Size: ${mapScale}` : 'What kind of place are your adventurers starting?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {this.state.mapScaleOptions.map(item => {return <Dropdown.Item name="mapScale">{item}</Dropdown.Item>})}
+                                    {mapScaleOptions.map(item => {return <Dropdown.Item name="mapScale">{item}</Dropdown.Item>})}
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <RollBtn name="mapScale" handleRoll={this.handleRoll} rollingArray={this.state.mapScaleOptions}></RollBtn>
+                            <RollBtn name="mapScale" handleRoll={handleRoll} rollingArray={mapScaleOptions}/>
                         </Form>
                     </FormGroup>
-
                     <FormGroup>
                         <Form inline>
-                            <Dropdown name="charMeeting" onSelect={this.handleDropSelect}>
+                            <Dropdown name="charMeeting" onSelect={handleDropSelect}>
                                 <Dropdown.Toggle variant="outline-primary">
-                                    {this.state.charMeeting ? `Meeting: ${this.state.charMeeting}`: 'How do your characters know each other?'}
+                                    {charMeeting ? `Meeting: ${charMeeting}`: 'How do your characters know each other?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {this.state.meetingOptions.map(item => {return <Dropdown.Item name="charMeeting">{item}</Dropdown.Item>})}
+                                    {meetingOptions.map(item => {return <Dropdown.Item name="charMeeting">{item}</Dropdown.Item>})}
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <RollBtn name="charMeeting" handleRoll={this.handleRoll} rollingArray={this.state.meetingOptions}></RollBtn>
+                            <RollBtn name="charMeeting" handleRoll={handleRoll} rollingArray={meetingOptions}/>
                         </Form>
                     </FormGroup>
-
                     <p>Consider some places your adventurers might travel through. Pick only 3.</p>
-
                     <div className="container">
                         <div className="side tags">
-                        {this.state.travelPoints.map(drop => {
-                            return <Button name="travelPointChoices" value={drop} className="eventbtns" onClick={this.handleAddEvent} disabled={this.state.travelPointChoices.length >= 3 ? true : false}> {drop}</Button>
+                            {travelPoints.map(drop => {
+                                return (
+                                    <Button 
+                                        name="travelPointChoices" 
+                                        value={drop} 
+                                        className="eventbtns" 
+                                        onClick={handleAddEvent} 
+                                        disabled={travelPointChoices.length >= 3 ? true : false}> 
+                                        {drop}
+                                    </Button>
+                                )
                             })}
                         </div>
                         <div className="side tags">
-                        {this.state.travelPointChoices.map(drop => {
-                            return <Button name="travelPointChoices" value={drop} className="eventbtns" onClick={this.removeEvent}> {drop}</Button>
+                        {travelPointChoices.map(drop => {
+                            return <Button name="travelPointChoices" value={drop} className="eventbtns" onClick={removeEvent}> {drop}</Button>
                             })}
                         </div>
                     </div>
-
                 </Modal.Body>
-
                 <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.handleClick} >Save</Button>
+                    <Button variant="outline-success" onClick={() => setShowModal(!showModal)} >Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>
     );
-}
 }
 
 export default Physical;
