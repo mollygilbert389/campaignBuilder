@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import Villain from "./Villain"
+import Villain from "../Villain"
 import EvilNPC from "./NPCs/EvilNPCs"
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "../style.css"

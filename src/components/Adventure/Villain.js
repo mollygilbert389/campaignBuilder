@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import GenerateBtn from "../../StaticComps/GenerateBtn"
+import GenerateBtn from "../StaticComps/GenerateBtn"
 import ModalHeader from 'react-bootstrap/ModalHeader'
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Card, Popover} from 'react-bootstrap'
 import "../style.css"

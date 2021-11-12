@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
-import RollBtn from "../../StaticComps/RollBtn"
+import RollBtn from "../StaticComps/RollBtn"
 import "../style.css"
 
 class MainGoals extends Component {
