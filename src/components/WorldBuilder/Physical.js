@@ -293,7 +293,7 @@ const  Physical = () => {
                                     {eraOptions.map(item => {return <Dropdown.Item name="era">{item}</Dropdown.Item>})}
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <RollBtn name="era" handleRoll={handleRoll} rollingArray={this.state.eraOptions}/>
+                            <RollBtn name="era" handleRoll={handleRoll} rollingArray={eraOptions}/>
                         </Form>
                     </FormGroup>
                     <FormGroup>
