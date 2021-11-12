@@ -1,10 +1,8 @@
-import React, {Component} from 'react'
-import Modal from 'react-bootstrap/Modal'
-import FactionOrgs from "./FactionOrgs"
-import Languages from "../Government/Languages"
-import Renown from "./Renown"
-import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
-import "../style.css"
+import React, { Component } from 'react';
+import Modal from 'react-bootstrap/Modal';
+import { Renown, FactionOrgs } from './components';
+import { Button } from 'react-bootstrap';
+import "../style.css";
 
 class Social extends Component {
 

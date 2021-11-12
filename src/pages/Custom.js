@@ -1,32 +1,19 @@
-import React, {Component} from "react";
-import {connect} from "react-redux"
-import {bindActionCreators} from "redux"
-import {Button, ProgressBar} from 'react-bootstrap'
-import './style.css'
-import "../scss/Custom.scss"
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { Button, ProgressBar } from 'react-bootstrap';
+import './style.css';
+import "../scss/Custom.scss";
 import '../components/home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CampaignNameModal from '../components/WorldBuilder/CampaignNameModal';
-import Government from "../components/WorldBuilder/Government/Government"
-import Religion from "../components/WorldBuilder/Religion"
-import Physical from "../components/WorldBuilder/Physical/Physical"
-import Social from "../components/WorldBuilder/Social/Social"
-import ActsClimax from "../components/Adventure/Climax/ActsClimax"
-import MainGoals from "../components/Adventure/Goals/MainGoals"
-import AdventureStart from "../components/Dungeon/AdventureStart"
-import LocalEvents from "../components/MoreStory/LocalEvents"
-import EncountersAndEvents from "../components/MoreStory/Encounters/EncountersAndEvents"
-import Pillar from "../components/Adventure/Goals/Pillar"
-import PatronNPCs from "../components/Adventure/PatronNPCs/PatronNPCs"
-import VillainSubVillain from "../components/Adventure/Villain/VillainSubVillain"
-import ExtraAdventure from "../components/MoreStory/ExtraAdventure/ExtraAdventure"
-import PartyInfo from "../components/PartyInfo/PartyInfo"
-import Rooms from "../components/Dungeon/Rooms"
-import Setback from "../components/MoreStory/SetbacksTraps/Setback"
-import MonsterCard from "../components/Dungeon/MonsterCard";
-import Treasure from "../components/Treasure/Treasure"
-import StoryInfo from "../components/StoryInfo/StoryInfo";
-import FinalScreen from "../components/FinalCampaign/FinalScreen"
+import { CampaignNameModal, Government, Religion, Physical, Social } from "../components/WorldBuilder";
+import { ActsClimax, MainGoals, Pillar, PatronNPCs, VillainSubVillain} from "../components/Adventure";
+import { AdventureStart, Rooms, MonsterCard } from "../components/Dungeon";
+import { LocalEvents, EncountersAndEvents, ExtraAdventure, Setback } from "../components/MoreStory";
+import { PartyInfo } from "../components/PartyInfo";
+import { Treasure } from "../components/Treasure";
+import { StoryInfo } from "../components/StoryInfo";
+import { FinalScreen } from "../components/FinalCampaign";
 
 import {
     setCampaignName,
@@ -54,376 +41,271 @@ import {
     setLanguageShow,
 } from "../actions/index"
 
-class Custom extends Component {
-    state ={
-        showDiv: false,
-        firstRoundBtns: true,
-        secondRoundBtns: false,
-        thirdRoundBtns: false,
-        fourthRoundBtns: false,
-        fifthRoundBtns: false,
-        sixthRoundBtns: false,
-        seventhRoundBtns: false,
-        progress: 15,
+const CustomCampaign = () => {
+    const [showDiv, setShowDiv] = useState(false);
+    const [firstRoundBtns, setFirstRoundBtns] = useState(false);
+    const [secondRoundBtns, setSecondRoundBtns] = useState(false);
+    const [thirdRoundBtns, setThirdRoundBtns] = useState(false);
+    const [fourthRoundBtns, setFourthRoundBtns] = useState(false);
+    const [fifthRoundBtns, setFifthRoundBtns] = useState(false);
+    const [sixthRoundBtns, setSixthRoundBtns] = useState(false);
+    const [seventhRoundBtns, setSeventhRoundBtns] = useState(false);
+    const [finalRoundBtn, setFinalRoundBtns] = useState(false);
+    const progress = 15
+
+    const handleNextBtn = () => {    
+        if(firstRoundBtns) {
+            setFirstRoundBtns(false);
+            setSecondRoundBtns(true);
+        } 
+        if(secondRoundBtns) {
+            setSecondRoundBtns(false);
+            setThirdRoundBtns(true);
+        } 
+        if(thirdRoundBtns) {
+            setThirdRoundBtns(false);
+            setFourthRoundBtns(true);
+        } 
+        if(fourthRoundBtns) {
+            setFourthRoundBtns(false);
+            setFifthRoundBtns(true);
+        } 
+        if(fifthRoundBtns) {
+            setFifthRoundBtns(false);
+            setSixthRoundBtns(true);
+        } 
+        if(sixthRoundBtns) {
+            setSixthRoundBtns(false);
+            setSeventhRoundBtns(true);
+        } 
     }
-    
-handleNextBtn = () => {    
-    if(this.state.firstRoundBtns) {
-        this.setState({
-            firstRoundBtns: false,
-            secondRoundBtns: true,
-            progress: 30,
-        })
-    } 
-    if(this.state.secondRoundBtns) {
-        this.setState({
-            secondRoundBtns: false,
-            thirdRoundBtns: true,
-            progress: 45
-        })
-    } 
-    if(this.state.thirdRoundBtns) {
-        this.setState({
-            thirdRoundBtns: false,
-            fourthRoundBtns: true,
-            progress: 57
-        })
-    } 
-    if(this.state.fourthRoundBtns) {
-        this.setState({
-            fourthRoundBtns: false,
-            fifthRoundBtns: true,
-            progress: 72
-        })
-    } 
-    if(this.state.fifthRoundBtns) {
-        this.setState({
-            fifthRoundBtns: false,
-            sixthRoundBtns: true,
-            progress: 84
-        })
-    } 
-    if(this.state.sixthRoundBtns) {
-        this.setState({
-            sixthRoundBtns: false,
-            seventhRoundBtns: true,
-            progress: 100
-        })
-    } 
-}
 
-handlePrevBtn = () => {
-    if(this.state.seventhRoundBtns) {
-        this.setState({
-            seventhRoundBtns: false,
-            sixthRoundBtns: true,
-        })
-    } 
-    if(this.state.sixthRoundBtns) {
-        this.setState({
-            sixthRoundBtns: false,
-            fifthRoundBtns: true,
-        })
-    } 
-    if(this.state.fifthRoundBtns) {
-        this.setState({
-            fifthRoundBtns: false,
-            fourthRoundBtns: true,
-        })
-    } 
-    if(this.state.fourthRoundBtns) {
-        this.setState({
-            fourthRoundBtns: false,
-            thirdRoundBtns: true,
-        })
-    } 
-    if(this.state.thirdRoundBtns) {
-        this.setState({
-            thirdRoundBtns: false,
-            secondRoundBtns: true,
-        })
-    } 
-    if(this.state.secondRoundBtns) {
-        this.setState({
-            secondRoundBtns: false,
-            firstRoundBtns: true,
-        })
-    } 
-}
+    const handlePrevBtn = () => {
+        //combine these functions and refactor
+    }
 
-setCampaignName = (name) => {
-    const{onSetCampaignName}=this.props
-    onSetCampaignName(name)
-}
+    const setCampaignName = (name) => {
+        const{onSetCampaignName}=this.props
+        onSetCampaignName(name)
+    }
 
-setPlayers = (destination, value) => {
-    const{onSetPlayers}=this.props
-    onSetPlayers(destination, value)
-}
+    const setPlayers = (destination, value) => {
+        const{onSetPlayers}=this.props
+        onSetPlayers(destination, value)
+    }
 
-setWorldData = (destination, value) => {
-    const{onSetWorldData}=this.props
-    onSetWorldData(destination, value)
-}
+    const setWorldData = (destination, value) => {
+        const{onSetWorldData}=this.props
+        onSetWorldData(destination, value)
+    }
 
-setGovernmentData = (destinaton, value) => {
-    const{onSetGovernmentData}=this.props
-    onSetGovernmentData(destinaton, value)
-}
+    const setGovernmentData = (destinaton, value) => {
+        const{onSetGovernmentData}=this.props
+        onSetGovernmentData(destinaton, value)
+    }
 
-setReligion = (destination, value) => {
-    const{onSetReligion}=this.props
-    onSetReligion(destination, value)
-}
+    const setReligion = (destination, value) => {
+        const{onSetReligion}=this.props
+        onSetReligion(destination, value)
+    }
 
-setLanguages = (type) => {
-    const{onSetLanguages}=this.props
-    onSetLanguages(type)
-}
+    const setLanguages = (type) => {
+        const{onSetLanguages}=this.props
+        onSetLanguages(type)
+    }
 
-setFactionOrgs = (names) => {
-    const{onSetFactionOrgs}=this.props
-    onSetFactionOrgs(names)
-}
+    const setFactionOrgs = (names) => {
+        const{onSetFactionOrgs}=this.props
+        onSetFactionOrgs(names)
+    }
 
-setActsAndClimax = (destination, value) => {
-    const{onSetActsAndClimx}=this.props
-    onSetActsAndClimx(destination, value)
-}
+    const setActsAndClimax = (destination, value) => {
+        const{onSetActsAndClimx}=this.props
+        onSetActsAndClimx(destination, value)
+    }
 
-setMainGoal = (destination, value) => {
-    const{onSetMainGoal}=this.props
-    onSetMainGoal(destination, value)
-}
+    const setMainGoal = (destination, value) => {
+        const{onSetMainGoal}=this.props
+        onSetMainGoal(destination, value)
+    }
 
-setPillar = (type) => {
-    const{onSetPillar}=this.props
-    onSetPillar(type)
-}
+    const setPillar = (type) => {
+        const{onSetPillar}=this.props
+        onSetPillar(type)
+    }
 
-setPatronData = (destination, value) => {
-    const{onSetPatronData}=this.props
-    onSetPatronData(destination, value)
-}
+    const setPatronData = (destination, value) => {
+        const{onSetPatronData}=this.props
+        onSetPatronData(destination, value)
+    }
 
-setNPCData = (destination, value) => {
-    const{onSetNPCData}=this.props
-    onSetNPCData(destination, value)
-}
+    const setNPCData = (destination, value) => {
+        const{onSetNPCData}=this.props
+        onSetNPCData(destination, value)
+    }
 
-setVillainData = (destination, value) => {
-    const{onSetVillainData}=this.props
-    onSetVillainData(destination, value)
-}
+    const setVillainData = (destination, value) => {
+        const{onSetVillainData}=this.props
+        onSetVillainData(destination, value)
+    }
 
-setLocalEvents = (names) => {
-    const{onSetLocalEvents}=this.props
-    onSetLocalEvents(names)
-}
+    const setLocalEvents = (names) => {
+        const{onSetLocalEvents}=this.props
+        onSetLocalEvents(names)
+    }
 
-setEncounters = (destination, value) => {
-    const{onSetEncounters}=this.props
-    onSetEncounters(destination, value)
-}
+    const setEncounters = (destination, value) => {
+        const{onSetEncounters}=this.props
+        onSetEncounters(destination, value)
+    }
 
-setRandomEncounters = (destination, value) => {
-    const{onSetRandomEncounters}=this.props
-    onSetRandomEncounters(destination, value)
-}
+    const setRandomEncounters = (destination, value) => {
+        const{onSetRandomEncounters}=this.props
+        onSetRandomEncounters(destination, value)
+    }
 
-setTwist = (destination, value) => {
-    const{onSetTwist}=this.props
-    onSetTwist(destination, value)
-}
+    const setTwist = (destination, value) => {
+        const{onSetTwist}=this.props
+        onSetTwist(destination, value)
+    }
 
-setSideQuests = (destination, value) => {
-    const{onSetSideQuests}=this.props
-    onSetSideQuests(destination, value)
-}
+    const setSideQuests = (destination, value) => {
+        const{onSetSideQuests}=this.props
+        onSetSideQuests(destination, value)
+    }
 
-setSetback = (destination, value) => {
-    const{onSetSetback}=this.props
-    onSetSetback(destination, value)
-}
+    const setSetback = (destination, value) => {
+        const{onSetSetback}=this.props
+        onSetSetback(destination, value)
+    }
 
-setDungeonData = (destination, value) => {
-    const{onSetDungeonData}=this.props
-    onSetDungeonData(destination, value)
-}
+    const setDungeonData = (destination, value) => {
+        const{onSetDungeonData}=this.props
+        onSetDungeonData(destination, value)
+    }
 
-setTreasureData = (destination, value) => {
-    const{onSetTreasureData}=this.props
-    onSetTreasureData(destination, value)
-}
+    const setTreasureData = (destination, value) => {
+        const{onSetTreasureData}=this.props
+        onSetTreasureData(destination, value)
+    }
 
-setFactionShow = (destination, value) => {
-    const{onSetFactionShow}=this.props
-    onSetFactionShow(destination, value)
-}
+    const setFactionShow = (destination, value) => {
+        const{onSetFactionShow}=this.props
+        onSetFactionShow(destination, value)
+    }
 
-setLanguageShow = (destination, value) => {
-    const{onSetLanguageShow}=this.props
-    onSetLanguageShow(destination, value)
-}
+    const setLanguageShow = (destination, value) => {
+        const{onSetLanguageShow}=this.props
+        onSetLanguageShow(destination, value)
+    }
 
-    render() {
-        return (
-            
+    return (
         <div>
-            <ProgressBar animated now={this.state.progress} />
+            <ProgressBar animated now={progress} />
             <div className="mainques">
                 <h1> Welcome to the Custom Campaign Builder</h1>
                 <p>A custom campaign is open ended and there are few limits on what you can add or not add here.</p>
-
-                {this.state.firstRoundBtns && (
-                <div>
-                    <p>We first need name this campaign!</p>
-                    <div className="btnspace">
-                        <CampaignNameModal 
-                        setCampaignName={this.setCampaignName}
-                        ></CampaignNameModal>
+                {firstRoundBtns && (
+                    <div>
+                        <p>We first need name this campaign!</p>
+                        <div className="btnspace">
+                            <CampaignNameModal setCampaignName={setCampaignName}/>
+                        </div>
                     </div>
-                </div>)}
-
-                {this.state.secondRoundBtns && (
-                <div>
-                    <p>Let's talk adventurers, do you already know who is in your party? If not you can skip this, but it will be harder to make other choices down the line.</p>
-                    <div className="btnspace">
-                        <PartyInfo 
-                        setPlayers={this.setPlayers}
-                        ></PartyInfo>
+                )}
+                {secondRoundBtns && (
+                    <div>
+                        <p>Let's talk adventurers, do you already know who is in your party? If not you can skip this, but it will be harder to make other choices down the line.</p>
+                        <div className="btnspace">
+                            <PartyInfo setPlayers={setPlayers}/>
+                        </div>
                     </div>
-                </div>)}
-
-                {this.state.thirdRoundBtns && (
-                <div>
-                    <p>Now we need to start planning your world. Use the buttons below to make some of those decsions.</p>
-                    <div className="btnspace">
-                        <Physical
-                        setWorldData={this.setWorldData}
-                        ></Physical>
-                        <Religion
-                        setReligion={this.setReligion}
-                        ></Religion>
-                        <Social
-                        setPlayers={this.setPlayers}
-                        setFactionOrgs={this.setFactionOrgs}
-                        setFactionShow={this.setFactionShow}
-                        campaign={this.props.campaign}
-                        ></Social>
-                        <Government
-                        campaign={this.props.campaign}
-                        setLanguages={this.setLanguages}
-                        setLanguageShow={this.setLanguageShow} 
-                        setGovernmentData={this.setGovernmentData}
-                        ></Government>
-
+                )}
+                {thirdRoundBtns && (
+                    <div>
+                        <p>Now we need to start planning your world. Use the buttons below to make some of those decsions.</p>
+                        <div className="btnspace">
+                            <Physical setWorldData={setWorldData}/>
+                            <Religion setReligion={setReligion}/>
+                            <Social
+                                setPlayers={setPlayers}
+                                setFactionOrgs={setFactionOrgs}
+                                setFactionShow={setFactionShow}
+                                campaign={this.props.campaign}/>
+                            <Government
+                                campaign={this.props.campaign}
+                                setLanguages={setLanguages}
+                                setLanguageShow={setLanguageShow} 
+                                setGovernmentData={setGovernmentData}/>
+                        </div>
                     </div>
-                </div>)}
-
-                {this.state.fourthRoundBtns && (
-                <div>
-                    <p>Now that we have some ideas rolling let's give your campaign some fundamentals and some characters.</p>
-                    <div className="btnspace">
-                        <Pillar
-                        setPillar={this.setPillar}
-                        ></Pillar>
-                        <ActsClimax
-                        setActsAndClimax={this.setActsAndClimax}
-                        ></ActsClimax>
-                        <MainGoals
-                        setMainGoal={this.setMainGoal}
-                        ></MainGoals>
-                        <PatronNPCs
-                        campaign={this.props.campaign}
-                        setPatronData={this.setPatronData}
-                        setNPCData={this.setNPCData}
-                        ></PatronNPCs>
-                        <VillainSubVillain
-                        setVillainData={this.setVillainData}
-                        ></VillainSubVillain>
+                )}
+                {fourthRoundBtns && (
+                    <div>
+                        <p>Now that we have some ideas rolling let's give your campaign some fundamentals and some characters.</p>
+                        <div className="btnspace">
+                            <Pillar setPillar={setPillar}/>
+                            <ActsClimax setActsAndClimax={setActsAndClimax}/>
+                            <MainGoals setMainGoal={setMainGoal}/>
+                            <PatronNPCs
+                                campaign={this.props.campaign}
+                                setPatronData={setPatronData}
+                                setNPCData={setNPCData}/>
+                            <VillainSubVillain setVillainData={setVillainData}/>
+                        </div>
                     </div>
-                </div>)}
-
-                {this.state.fifthRoundBtns && (
-                <div>
-                    <p>More world planning! Let's get some of the smaller details hammers out in here!</p>
-                    <div className="btnspace">
-                        <LocalEvents 
-                        setLocalEvents={this.setLocalEvents}
-                        ></LocalEvents>
-                        <Setback
-                        setSetBack={this.setSetback}
-                        ></Setback>
-                        <EncountersAndEvents
-                        setRandomEncounters={this.setRandomEncounters}
-                        campaign={this.props.campaign}
-                        setEncounters={this.setEncounters} 
-                        ></EncountersAndEvents>
-                        <ExtraAdventure
-                        setTwist={this.setTwist}
-                        setSideQuests={this.setSideQuests} 
-                        ></ExtraAdventure>
+                )}
+                {fifthRoundBtns && (
+                    <div>
+                        <p>More world planning! Let's get some of the smaller details hammers out in here!</p>
+                        <div className="btnspace">
+                            <LocalEvents setLocalEvents={setLocalEvents}/>
+                            <Setback setSetBack={setSetback}/>
+                            <EncountersAndEvents
+                                setRandomEncounters={setRandomEncounters}
+                                campaign={this.props.campaign}
+                                setEncounters={setEncounters}/>
+                            <ExtraAdventure setTwist={setTwist} setSideQuests={setSideQuests}/>
+                        </div>
                     </div>
-                </div>)}
-
-                {this.state.sixthRoundBtns && (
-                <div>
-                    <p>Dungeon time! What campaign is without a dungeon? Below you can plan your your dungeon details.</p>
-                    <div className="btnspace">
-                        <AdventureStart
-                        campaign={this.props.campaign} 
-                        setDungeonData={this.setDungeonData}
-                        ></AdventureStart>
-                        <Rooms 
-                        campaign={this.props.campaign} 
-                        setDungeonData={this.setDungeonData}
-                        ></Rooms>
-                        <MonsterCard 
-                        campaign={this.props.campaign} 
-                        setDungeonData={this.setDungeonData}
-                        >
-                        </MonsterCard>
-                        <Treasure
-                        setTreasureData={this.setTreasureData} 
-                        campaign={this.props.campaign}
-                        ></Treasure>
+                )}
+                {sixthRoundBtns && (
+                    <div>
+                        <p>Dungeon time! What campaign is without a dungeon? Below you can plan your your dungeon details.</p>
+                        <div className="btnspace">
+                            <AdventureStart campaign={this.props.campaign} setDungeonData={setDungeonData}/>
+                            <Rooms campaign={this.props.campaign} setDungeonData={setDungeonData}/>
+                            <MonsterCard campaign={this.props.campaign} setDungeonData={setDungeonData}/>
+                            <Treasure setTreasureData={setTreasureData} campaign={this.props.campaign}/>
+                        </div>
                     </div>
-                </div>)}
-
-                {this.state.seventhRoundBtns && (
-                <div>
-                    <p>Cool! You've made a campaign! Check ou the details below! These are meant to be suggestions. Feel free to edit this as you like! Happy Campaigning.</p>
-                    <div className="btnspace">
-                        <FinalScreen 
-                        campaign={this.props.campaign}
-                        ></FinalScreen>
+                )}
+                {seventhRoundBtns && (
+                    <div>
+                        <p>Cool! You've made a campaign! Check ou the details below! These are meant to be suggestions. Feel free to edit this as you like! Happy Campaigning.</p>
+                        <div className="btnspace">
+                            <FinalScreen campaign={this.props.campaign}/>
+                        </div>
                     </div>
-                </div>)}
+                )}
             </div>
-
             <div>
-            {!this.state.finalRoundBtn && (
+            {!finalRoundBtn && (
                 <div className="nextBtn">
-                    <Button variant="outline-primary" size="lg" onClick={this.handleNextBtn}>Next</Button>
+                    <Button variant="outline-primary" size="lg" onClick={handleNextBtn}>Next</Button>
                 </div>
-                )}
-
-                {!this.state.firstRoundBtns && (
+            )}
+            {!firstRoundBtns && (
                 <div className="previousBtn nextBtn">
-                    <Button variant="outline-primary" size="lg" onClick={this.handlePrevBtn}>Previous</Button>
+                    <Button variant="outline-primary" size="lg" onClick={handlePrevBtn}>Previous</Button>
                 </div>
-                )}
+            )}
             </div>
-
-            {/* //////////////////////////////////// */}
                 <div className="storyCards">
-                    <StoryInfo campaign={this.props.campaign}></StoryInfo>
+                    <StoryInfo campaign={this.props.campaign}/>
                 </div>
-
             </div>
     );
-  }
 }
 
 const mapStateToProps = (state) => {
@@ -456,4 +338,4 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetLanguageShow: bindActionCreators(setLanguageShow, dispatch),
 })
 
-export default connect(mapStateToProps, mapDispatchtoProps)(Custom);
+export default connect(mapStateToProps, mapDispatchtoProps)(CustomCampaign);

@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
-import Modal from 'react-bootstrap/Modal'
-import RollBtn from "../StaticComps/RollBtn"
-import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
-import "./style.css"
+import React, { Component } from 'react';
+import Modal from 'react-bootstrap/Modal';
+import { RollBtn } from "../StaticComps";
+import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap';
+import "./style.css";
 
 class Religion extends Component {
     state ={

@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
-import Modal from 'react-bootstrap/Modal'
-import RollBtn from "../StaticComps/RollBtn"
-import {Button, Dropdown, Form, FormControl, FormGroup, OverlayTrigger, Tooltip} from 'react-bootstrap'
+import React, { Component } from 'react';
+import Modal from 'react-bootstrap/Modal';
+import { RollBtn } from "../StaticComps";
+import { Button, Dropdown, Form, FormGroup } from 'react-bootstrap';
 import "../style.css"
 
 class Physical extends Component {
