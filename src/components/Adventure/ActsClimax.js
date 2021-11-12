@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Carousel from 'react-bootstrap/Carousel'
-import {Button, Form, Dropdown, FormControl } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import "../style.css"
 
 class Acts extends Component {
@@ -59,6 +59,14 @@ class Acts extends Component {
                     actsVarient2: "outline-primary", 
                     actsVarient3: "primary",
                     acts: event.target.name 
+                }, () => this.props.setActsAndClimax("acts", this.state.acts))
+                break;
+            default: 
+                this.setState({
+                    actsVarient1: "primary", 
+                    actsVarient2: "outline-primary", 
+                    actsVarient3: "outline-primary",
+                    acts: event.target.name
                 }, () => this.props.setActsAndClimax("acts", this.state.acts))
                 break;
         }

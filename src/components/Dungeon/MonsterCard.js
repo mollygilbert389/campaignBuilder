@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
+import React, { Component  } from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button, Form, Dropdown} from 'react-bootstrap'
-import {Slider} from '@material-ui/core'
-import Monsters from "./monster.json"
+import { Button, Form, Dropdown } from 'react-bootstrap'
+import { Slider  } from '@material-ui/core'
+import { monsters } from "./data";
 import "./style.css"
 
 
@@ -30,7 +30,7 @@ class MonsterCard extends Component {
     }
 
     createMonsterForm = () => {
-        const monsterCategories = Monsters.map(item => item.category)
+        const monsterCategories = monsters.map(item => item.category)
         const filterMonsterCategories = [...new Set(monsterCategories)]
         
         const monsterFormNumber = this.state.finalMonsterNum
@@ -49,7 +49,7 @@ class MonsterCard extends Component {
 
     handleSelect = (eventKey, event, index) => {
         const selection = event.target.text
-        const filteredMonsters = Monsters.filter(item => (item.category === selection))
+        const filteredMonsters = monsters.filter(item => (item.category === selection))
 
         const newMonsterDrops = [...this.state.monsterData].map(monster => {
             if (monster.id===index) {

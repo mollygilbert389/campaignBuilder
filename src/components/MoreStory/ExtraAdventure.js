@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import Twists from './Twists'
-import SideQuests from "./SideQuests"
+import Twists from './ExtraAdventure/Twists'
+import SideQuests from "./components/SideQuests"
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "../style.css"
 
