@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
-import {Button, Dropdown} from 'react-bootstrap'
-import {Form, Label, Input, FormGroup} from 'reactstrap'
+import React, { Component } from 'react'
+import { Button, Dropdown } from 'react-bootstrap'
+import { Form, Label, Input, FormGroup } from 'reactstrap'
 import update from 'immutability-helper';
 import "./style.css"
 

@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
-import {Card, CardGroup, Table, Modal} from 'react-bootstrap'
+import React, { Component } from 'react'
+import { Card, CardGroup, Table } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import NPCCards from "./NPCCards"
+import { NPCCards } from "."
 import "./style.css"
 
 class StoryInfo extends Component {

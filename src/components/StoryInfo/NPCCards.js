@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {Card, Button, Modal} from 'react-bootstrap'
+import React, { Component } from 'react'
+import { Card, Button, Modal } from 'react-bootstrap'
 import "./style.css"
 
 class NPCStyledCard extends Component {

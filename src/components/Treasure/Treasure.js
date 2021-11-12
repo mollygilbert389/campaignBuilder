@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button} from 'react-bootstrap'
-import {FormControlLabel, Checkbox, FormGroup, Slider} from '@material-ui/core'
+import { Button } from 'react-bootstrap'
+import { FormControlLabel, Checkbox, FormGroup, Slider } from '@material-ui/core'
 import "./style.css"
 
 class Treasure extends Component {

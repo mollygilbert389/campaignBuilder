@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import RollBtn from "../../StaticComps/RollBtn"
+import RollBtn from "../StaticComps/RollBtn"
 import {Button, Dropdown, Form, FormControl, FormGroup, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import "../style.css"
 

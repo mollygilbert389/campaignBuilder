@@ -1,9 +1,8 @@
-import React, {Component} from 'react'
-import Modal from 'react-bootstrap/Modal'
-import Languages from "./Languages"
-import governments from "./Govrenmnt.json";
-import RollBtn from "../../StaticComps/RollBtn"
-import {Button, Dropdown, FormControl, OverlayTrigger, Tooltip, Form} from 'react-bootstrap'
+import React, { Component } from 'react';
+import Modal from 'react-bootstrap/Modal';
+import { governmentData, Languages } from "./components";
+import { RollBtn } from "../StaticComps";
+import { Button, Dropdown, OverlayTrigger, Tooltip, Form } from 'react-bootstrap';
 import "../style.css"
 
 class Government extends Component {
@@ -73,7 +72,7 @@ render() {
                             {this.state.government ? this.state.government: 'Choose Your Government'}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                {governments.map(item => {
+                                {governmentData.map(item => {
                                     return <div>
                                         <OverlayTrigger overlay={
                                         <Tooltip>{item.description}</Tooltip>}>
@@ -85,7 +84,7 @@ render() {
                                     })}       
                             </Dropdown.Menu>
                         </Dropdown>
-                        <RollBtn name="government" handleRoll={this.handleRoll} rollingArray={governments.map(item => item.name)}></RollBtn>
+                        <RollBtn name="government" handleRoll={this.handleRoll} rollingArray={governmentData.map(item => item.name)}></RollBtn>
                     </Form>
                     <br></br>
 
