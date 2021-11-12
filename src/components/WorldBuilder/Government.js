@@ -1,120 +1,97 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { governmentData, Languages } from "./components";
 import { RollBtn } from "../StaticComps";
 import { Button, Dropdown, OverlayTrigger, Tooltip, Form } from 'react-bootstrap';
 import "../style.css"
 
-class Government extends Component {
-    state ={
-        government: "",
-        currency: "",
-        currencyOptions: [
-            "Common Coinage",
-            "Common Coinage (No Electum)",
-            "Trade Bars",
-            "Barter System",
-            "Odd Currency",
-        ],
-    }
+const Government = () => {
+    const [government, setGovernment] = useState("");
+    const [currency, setCurrency] = useState("");
+    const [showModal, setShowModal] = useState(false);
+    const [currencyOptions, setCurrencyOptions] = useState([
+        "Common Coinage",
+        "Common Coinage (No Electum)",
+        "Trade Bars",
+        "Barter System",
+        "Odd Currency",
+    ]);
 
-    handleDropSelect = (keyEvent, event) => {
-        const name = event.target.name
-        const feedback = event.target.text
-        this.setState({
-            [event.target.name]: event.target.text
-        })
+    const handleDropSelect = (e, type) => {
+        const name = e.target.name
+        const feedback = e.target.text
+        if(type ===  "government") {
+            setGovernment(e.target.text)
+        } else {
+            setCurrency(e.target.text)
+        }
         this.props.setGovernmentData(name, feedback)
     }
 
-    handleClick = () => {
-        this.setState({
-            showModal: !this.state.showModal,
-        })
+    const handleClose = () => {
+        setShowModal(!showModal);
+        this.props.setLanguageShow("languageShow", true);
     }
 
-    handleClose = () => {
-        this.setState({
-            showModal: !this.state.showModal,
-        })
-        this.props.setLanguageShow("languageShow", true)
-    }
-
-    handleRoll = (feedback, name) => {
-        this.setState({
-            [name]: feedback
-        })
+    const  handleRoll = (feedback, name) => {
+        //figure out this one
         this.props.setGovernmentData(name, feedback)
-    }
-
-
-render() {  
-
+    } 
 
     return (
         <div>
             <div className="btns">
-                <Button variant="outline-success" size="lg" onClick={this.handleClick}>Government
-                </Button>
+                <Button variant="outline-success" size="lg" onClick={() => setShowModal(!showModal)}>Government</Button>
             </div>
-            <Modal   size="lg" show={this.state.showModal} onHide={this.handleClick}>
+            <Modal   size="lg" show={showModal} onHide={() => setShowModal(!showModal)}>
                 <Modal.Header closeButton>
                     <Modal.Title>Let's pick a government some local languages and our world's currency.</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="d-flex flex-column align-items-center">
                     <p>Below are some buttons to help you make those decisions.</p>
-                    
-                    <br></br>
-
+                    <br/>
                     <Form inline>
-                        <Dropdown onSelect={this.handleDropSelect}>
+                        <Dropdown onSelect={handleDropSelect}>
                             <Dropdown.Toggle variant="outline-primary">
-                            {this.state.government ? this.state.government: 'Choose Your Government'}
+                                {government ? government: 'Choose Your Government'}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                                 {governmentData.map(item => {
                                     return <div>
-                                        <OverlayTrigger overlay={
-                                        <Tooltip>{item.description}</Tooltip>}>
-                                        <span className="d-inline-block">
-                                            <Dropdown.Item key={item.id} name="government">{item.name}</Dropdown.Item>
-                                        </span>
+                                        <OverlayTrigger overlay={<Tooltip>{item.description}</Tooltip>}>
+                                            <span className="d-inline-block">
+                                                <Dropdown.Item key={item.id} name="government">{item.name}</Dropdown.Item>
+                                            </span>
                                         </OverlayTrigger> 
                                     </div>
                                     })}       
                             </Dropdown.Menu>
                         </Dropdown>
-                        <RollBtn name="government" handleRoll={this.handleRoll} rollingArray={governmentData.map(item => item.name)}></RollBtn>
+                        <RollBtn name="government" handleRoll={handleRoll} rollingArray={governmentData.map(item => item.name)}/>
                     </Form>
-                    <br></br>
-
+                    <br/>
                     <Form inline>
-                        <Dropdown onSelect={this.handleDropSelect}>
+                        <Dropdown onSelect={handleDropSelect}>
                             <Dropdown.Toggle variant="outline-primary">
-                            {this.state.currency ? this.state.currency: 'Choose Your Currency'}
+                                {currency ? currency: 'Choose Your Currency'}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                {this.state.currencyOptions.map(item => {return <Dropdown.Item name="currency">{item}</Dropdown.Item>})}
+                                {currencyOptions.map(item => {return <Dropdown.Item name="currency">{item}</Dropdown.Item>})}
                             </Dropdown.Menu>
                         </Dropdown>
-                        <RollBtn name="currency" handleRoll={this.handleRoll} rollingArray={this.state.currencyOptions}></RollBtn>
+                        <RollBtn name="currency" handleRoll={handleRoll} rollingArray={currencyOptions}/>
                     </Form>
-
                     <Languages
-                    campaign={this.props.campaign}
-                    setLanguageShow={this.props.setLanguageShow}
-                    setLanguages={this.props.setLanguages}
-                    ></Languages>
-
+                        campaign={this.props.campaign}
+                        setLanguageShow={this.props.setLanguageShow}
+                        setLanguages={this.props.setLanguages}/>
                 </Modal.Body>
-
                 <Modal.Footer>
-                    <Button variant="outline-success" onClick={this.handleClose} >Save</Button>
+                    <Button variant="outline-success" onClick={handleClose}>Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>
     );
-}
 }
 
 export default Government;
