@@ -105,7 +105,7 @@ const CustomCampaign = () => {
     }
 
     const setReligion = (destination, value) => {
-        const{onSetReligion}=this.props
+        const {onSetReligion} = this.props
         onSetReligion(destination, value)
     }
 
