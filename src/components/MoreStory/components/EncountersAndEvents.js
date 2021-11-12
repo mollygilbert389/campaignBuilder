@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 import Modal from 'react-bootstrap/Modal'
-import Encounters from "../Encounters"
-import RandomEvents from "./RandomEvents"
-import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
+import { RandomEvents, Encounters } from "."
+import { Button } from 'react-bootstrap'
 import "../style.css"
 
 class EncountersAndEvents extends Component {

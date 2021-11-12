@@ -1,8 +1,6 @@
-import React, {Component} from 'react'
-import maps from "./jsonMaps/maps.json";
-import MapCard from "./MapCard"
-import {Button, OverlayTrigger, Tooltip} from 'react-bootstrap'
-import CampaignCard from './CampaignCard'
+import React, { Component } from 'react'
+import { MapCard, CampaignCard, maps } from "./components"
+import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import './style.css'
 
 

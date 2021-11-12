@@ -1,8 +1,7 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Modal from 'react-bootstrap/Modal'
-import Twists from './ExtraAdventure/Twists'
-import SideQuests from "./components/SideQuests"
-import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
+import { SideQuests, Twists } from "./components"
+import { Button } from 'react-bootstrap'
 import "../style.css"
 
 class ExtraAdventure extends Component {

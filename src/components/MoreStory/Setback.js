@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button, Dropdown, FormControl} from 'react-bootstrap'
+import { Button, Dropdown, FormControl } from 'react-bootstrap'
 import "../style.css"
 
 class Setback extends Component {

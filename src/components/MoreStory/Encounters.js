@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
-import {FormControlLabel, Slider} from '@material-ui/core'
+import { Button, Dropdown, Form } from 'react-bootstrap'
+import { Slider } from '@material-ui/core'
 import "../style.css"
 
 class Encounters extends Component {

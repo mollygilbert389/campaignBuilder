@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Modal from 'react-bootstrap/Modal'
-import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Carousel} from 'react-bootstrap'
+import { Button, Carousel } from 'react-bootstrap'
 import "../style.css"
 
 class Twists extends Component {

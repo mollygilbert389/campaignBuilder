@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
-import Modal from 'react-bootstrap/Modal'
-import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap'
-import Monsters from "../../Dungeon/monster.json"
-import {Slider} from '@material-ui/core'
+import React, { Component } from 'react';
+import Modal from 'react-bootstrap/Modal';
+import { Button, Dropdown, Form } from 'react-bootstrap';
+import { monsters } from "../../Dungeon";
+import { Slider } from '@material-ui/core'
 import "../style.css"
 
 class RandomEvents extends Component {
@@ -47,7 +47,7 @@ class RandomEvents extends Component {
 
     handleMonsterShow = () => {
         const choices = this.state.monsterCat
-        const newFilteredMonsters = Monsters.filter(monster => {
+        const newFilteredMonsters = monsters.filter(monster => {
             for(let i=0; i < monster.area.length; i++) {
                 for(let j=0; j < choices.length; j++) {
                     if (monster.area.includes(choices[j])) {
