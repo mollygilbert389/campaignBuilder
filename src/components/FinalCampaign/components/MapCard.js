@@ -1,8 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function MapCard(props) {
-
+const MapCard = ({ name, image }) => {
   const style = {
     "width":"500px",
     "height":"500px"
@@ -12,8 +11,8 @@ function MapCard(props) {
     <div>
       <div className="d-flex flex-column align-items-center">
         <div>Your Map:</div>
-        <div>{props.name}</div>
-        <img alt={props.name} src={props.image} style={style}></img>
+        <div>{name}</div>
+        <img alt={name} src={image} style={style}/>
       </div>
     </div>
   );

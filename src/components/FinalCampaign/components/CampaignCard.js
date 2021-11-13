@@ -1,17 +1,9 @@
-import React, {Component} from 'react'
-import "./style.css"
+import React, { useState } from 'react';
+import "./style.css";
 
-
-class CampaignCard extends Component {
-
-
-render() {  
-
-    const{campaign}=this.props
-    
+const CampaignCard = ({ campaign }) => {
     return (
         <div className="campaignCardWhole">
-
             <div className="main">
                 <div className="logoSpace">
                     {/* {campaign.campaignName} */}
@@ -181,7 +173,6 @@ render() {
                 </div>
         </div>
     );
-}
 }
 
 export default CampaignCard;
