@@ -6,7 +6,7 @@ const NPCCard = ({ setReduxNPCData, campaign, index, reduxNPCData }) => {
     const [imageLink, setImageLink] = useState("https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg");
     const [NPCData, setNPCData] = useState({});
     const [disabled, setDisabled] = useState(true);
-    const [NPCAppearance, setAppearance] = useState([
+    const NPCAppearance = [
         {id: 1, option: "Distinctive Jewelry: earrings, necklace, circlet, braclets"},
         {id: 2, option: "Piercings"},
         {id: 3, option: "Flamboyent or outlandish clothes"},
@@ -27,8 +27,8 @@ const NPCCard = ({ setReduxNPCData, campaign, index, reduxNPCData }) => {
         {id: 18, option: "Distinctive posture"},
         {id: 19, option: "Exceptionally beautiful"},
         {id: 20, option: "Exceptionally ugly"},
-    ]);
-    const [NPCTalents, setNPCTalents] = useState([
+    ];
+    const NPCTalents = [
         {id: 1, option: "Plays a musical instrument" },
         {id: 2, option: "Speaks several languages" },
         {id: 3, option: "Unbelievably lucky" },
@@ -49,8 +49,8 @@ const NPCCard = ({ setReduxNPCData, campaign, index, reduxNPCData }) => {
         {id: 18, option: "Skilled actor and master of disguise" },
         {id: 19, option: "Skilled dancer" },
         {id: 20, option: "Knows thieves' can't"},
-    ]);
-    const [NPCMannerisms, setNPCMannerisms] = useState([
+    ];
+    const NPCMannerisms = [
         {id: 1, option: "Prone to singing, whistling, or humming quietly" },
         {id: 2, option: "Speaks in rhyme or some other particular way" },
         {id: 3, option: "Particularly low or high voice" },
@@ -71,8 +71,8 @@ const NPCCard = ({ setReduxNPCData, campaign, index, reduxNPCData }) => {
         {id: 18, option: "Taps fingers" },
         {id: 19, option: "Bites Fingernails" },
         {id: 20, option: "Twirls hair or tugs beard"},
-    ]);
-    const [NPCInteractionTraits, setNPCInteractionTraits] = useState([
+    ];
+    const NPCInteractionTraits = [
         {id: 1, option: "Argumentative" },
         {id: 2, option: "Arrogant" },
         {id: 3, option: "Blustering" },
@@ -85,8 +85,8 @@ const NPCCard = ({ setReduxNPCData, campaign, index, reduxNPCData }) => {
         {id: 10, option: "Ponderous" },
         {id: 11, option: "Quiet" },
         {id: 12, option: "Suspicious" },
-    ]);
-    const [NPCIdeals, setNPCIdeals] =  useState([
+    ];
+    const NPCIdeals = [
         {id: 1,
         main: "Good Ideals", 
         list: [
@@ -147,8 +147,8 @@ const NPCCard = ({ setReduxNPCData, campaign, index, reduxNPCData }) => {
             "Redemption",
             "Self-knowledge",
         ]},
-    ]); 
-    const [NPCBonds, setNPCBonds] = useState([
+    ]; 
+    const NPCBonds = [
         {id: 1, option: "Dedication to fulfilling a personal life goal" },
         {id: 2, option: "Protective of close family members" },
         {id: 3, option: "Protective of colleagues or compatriots" },
@@ -158,8 +158,8 @@ const NPCCard = ({ setReduxNPCData, campaign, index, reduxNPCData }) => {
         {id: 7, option: "Protective of a sentimental keepsake" },
         {id: 8, option: "Protective of a valuable possession" },
         {id: 9, option: "Out for revenge" },
-    ]);
-    const [NPCFlawsSecrets, setNPCFlawsSecrets] = useState([
+    ];
+    const NPCFlawsSecrets = [
         {id: 1, option: "Forbidden love or suseptibility ro romance" },
         {id: 2, option: "Enjoys decadent pleasures" },
         {id: 3, option: "Arrogance" },
@@ -172,12 +172,12 @@ const NPCCard = ({ setReduxNPCData, campaign, index, reduxNPCData }) => {
         {id: 10, option: "Secret crime or misdeed" },
         {id: 11, option: "Possession of forbidden lore" },
         {id: 12, option: "Foolhardy bravery" },
-    ]);
+    ];
 
     const handleGenderSelect = (eventKey, event, index) => {
         const selection = event.target.text;
         const reduxNPCData = campaign.NPCData;
-        const newNPC = [...reduxNPCData].map(NPC => {
+        const newNPC = [...reduxNPCData].map((NPC) => {
             if (NPC.id === index) {
                 return {...NPC, gender:selection}
             } return NPC
@@ -330,16 +330,6 @@ const NPCCard = ({ setReduxNPCData, campaign, index, reduxNPCData }) => {
         setReduxNPCData("NPCData", newNPC);
         this.refs.overlay.hide();
     }
-
-    // const handleGenerateBtn = (index, name, feedback) => {
-    //     const reduxNPCData = campaign.NPCData;
-    //     const newNPC = [...reduxNPCData].map(NPC => {
-    //         if (NPC.id === index) {
-    //             return {...NPC, NPCName:name}
-    //         } return NPC
-    //     });
-    //     setReduxNPCData("NPCData", newNPC);
-    // }
  
     return (
         <div>

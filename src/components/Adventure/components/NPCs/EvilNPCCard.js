@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Card, Popover} from 'react-bootstrap';
 import "../../style.css";
 
-const EvilNPCCard = () => {
+const EvilNPCCard = ({ campaign, setReduxNPCData }) => {
     const [showModal, setShowModal] = useState(false);
     const [imageLink, setImageLink] = useState("https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg");
     const [evilNPCData, setEvilNPCData] = useState({});
-    const [subTypes, setSubTypes] = useState([
+    const subTypes = [
         "Beast or monstrosity with no particular agenda",
         "Abberation bent on corruption or desruction",
         "Dragon bent on domination and plunder",
@@ -22,38 +22,36 @@ const EvilNPCCard = () => {
         "Hummanoid under a curse",
         "Misguided hummanoid zealot",
         "Something else"
-    ]);
+    ];
     
     const handleChange = (event, index) => {
-        const name = event.target.value
-        const reduxNPCData = this.props.campaign.NPCData
-
-        const newNPC = [...reduxNPCData].map(NPC => {
+        const name = event.target.value;
+        const reduxNPCData = campaign.NPCData;
+        const newNPC = [...reduxNPCData].map((NPC) => {
             if (NPC.id === index) {
-                return {...NPC, NPCName:name}
+                return {...NPC, NPCName:name};
             } return NPC
         })
-
-        setEvilNPCData({...setEvilNPCData, NPCName:name})
-        this.props.setNPCData("NPCData", newNPC)
-    }
+        setEvilNPCData({...setEvilNPCData, NPCName:name});
+        setReduxNPCData("NPCData", newNPC);
+    };
 
     const handleImageLink = (event) => {
-        const image = event.target.value
-        setEvilNPCData({...setEvilNPCData, NPCName:image})
-    }
+        const image = event.target.value;
+        setEvilNPCData({...setEvilNPCData, NPCName:image});
+    };
 
     const handleImageSubmit = (event, index) => {
-        let image= setEvilNPCData.NPCImage
-        const reduxNPCData = this.props.campaign.NPCData
-        const newNPC = [...reduxNPCData].map(NPC => {
+        let image = setEvilNPCData.NPCImage;
+        const reduxNPCData = campaign.NPCData;
+        const newNPC = [...reduxNPCData].map((NPC) => {
             if (NPC.id === index) {
-                return {...NPC, NPCImage:image}
+                return {...NPC, NPCImage:image};
             } return NPC
         })
-        setEvilNPCData({...setEvilNPCData, NPCName:image})
-        this.props.setNPCData("NPCData", newNPC)
-        this.refs.overlay.hide();
+        setEvilNPCData({...setEvilNPCData, NPCName:image});
+        setReduxNPCData("NPCData", newNPC);
+        // this.refs.overlay.hide();
     }
 
     return (

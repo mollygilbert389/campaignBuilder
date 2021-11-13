@@ -53,7 +53,6 @@ const NPCs = ({ setReduxNPCData, campaign }) => {
                                     {return (
                                         <Carousel.Item>
                                             <NPCCard 
-                                                // NPCDataObj={this.state.NPCData} 
                                                 index={index} 
                                                 key={item.id} 
                                                 name={item.id}

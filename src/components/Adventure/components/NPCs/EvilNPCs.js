@@ -11,14 +11,14 @@ const EvilNPCs = () => {
     const [showModal, setShowModal] = useState(false);
 
     const handleSlider = (event, value) => {
-        let evilNPCData = []
+        let evilNPCData = [];
         for(let i=0; i < value; i++ ) {
             let newObj = {id:i}
-            evilNPCData.push(newObj)
+            evilNPCData.push(newObj);
         }
         setEvilNPCNum(value);
-        setEvilNPCData(evilNPCData)
-    }
+        setEvilNPCData(evilNPCData);
+    };
  
     return (
         <div>

@@ -14,7 +14,7 @@ const Patron = ({ setReduxPatronData, campaign }) => {
     const [show, setShow] = useState(false);
     const [imageLink, setImageLink] = useState("https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg");
     const [disabled, setDisabled] = useState(false);
-    const [patronMannerisms, setPatronMannerisms] = useState([
+    const patronMannerisms = [
         {id: 1, option: "Prone to singing, whistling, or humming quietly" },
         {id: 2, option: "Speaks in rhyme or some other particular way" },
         {id: 3, option: "Particularly low or high voice" },
@@ -35,8 +35,8 @@ const Patron = ({ setReduxPatronData, campaign }) => {
         {id: 18, option: "Taps fingers" },
         {id: 19, option: "Bites Fingernails" },
         {id: 20, option: "Twirls hair or tugs beard"},
-    ]);
-    const [patronInteractionTraits, setPatronInteractionTraits] = useState([
+    ];
+    const patronInteractionTraits = [
         {id: 1, option: "Argumentative" },
         {id: 2, option: "Arrogant" },
         {id: 3, option: "Blustering" },
@@ -52,8 +52,8 @@ const Patron = ({ setReduxPatronData, campaign }) => {
         {id: 12, option: "Beautiful" },
         {id: 12, option: "Humorous" },
         {id: 12, option: "Generous" },
-    ]); 
-    const [patronChoices, setPatronChoices] = useState([
+    ]; 
+    const patronChoices = [
         "Retired Adventurer",
         "Local Ruler",
         "Military Officer",
@@ -69,7 +69,7 @@ const Patron = ({ setReduxPatronData, campaign }) => {
         "Embattled Merchant",
         "Villain posing as a patron",
         "Something else",
-    ]);
+    ];
 
     const close = () =>  {
         setShowModal(false);
@@ -79,13 +79,12 @@ const Patron = ({ setReduxPatronData, campaign }) => {
     const handleImageSubmit = () => {
         let image = imageLink.trim();
         setPatronData(...patronData, image);        
-        this.refs.overlay.hide();
+        // this.refs.overlay.hide();
     };
 
     const handleCheckBoxChange = (event, icon) => {
         let checked = event.target.checked;
         let name = event.target.name;
-
         if(checked) {
             let factions = [...patronData.factions];
             factions.push({name, icon});
