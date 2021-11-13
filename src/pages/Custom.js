@@ -15,55 +15,15 @@ import { StoryInfo } from "../components/StoryInfo";
 import { FinalScreen } from "../components/FinalCampaign";
 
 const CustomCampaign = ({ campaign }) => {
-    const [showDiv, setShowDiv] = useState(false);
-    const [firstRoundBtns, setFirstRoundBtns] = useState(true);
-    const [secondRoundBtns, setSecondRoundBtns] = useState(false);
-    const [thirdRoundBtns, setThirdRoundBtns] = useState(false);
-    const [fourthRoundBtns, setFourthRoundBtns] = useState(false);
-    const [fifthRoundBtns, setFifthRoundBtns] = useState(false);
-    const [sixthRoundBtns, setSixthRoundBtns] = useState(false);
-    const [seventhRoundBtns, setSeventhRoundBtns] = useState(false);
-    const [finalRoundBtn, setFinalRoundBtns] = useState(false);
-    const progress = 15
-
-    const handleNextBtn = () => {    
-        if(firstRoundBtns) {
-            setFirstRoundBtns(false);
-            setSecondRoundBtns(true);
-        } 
-        if(secondRoundBtns) {
-            setSecondRoundBtns(false);
-            setThirdRoundBtns(true);
-        } 
-        if(thirdRoundBtns) {
-            setThirdRoundBtns(false);
-            setFourthRoundBtns(true);
-        } 
-        if(fourthRoundBtns) {
-            setFourthRoundBtns(false);
-            setFifthRoundBtns(true);
-        } 
-        if(fifthRoundBtns) {
-            setFifthRoundBtns(false);
-            setSixthRoundBtns(true);
-        } 
-        if(sixthRoundBtns) {
-            setSixthRoundBtns(false);
-            setSeventhRoundBtns(true);
-        } 
-    }
-
-    const handlePrevBtn = () => {
-        //combine these functions and refactor
-    }
+    const [index, setIndex] = useState(0);
 
     return (
         <div>
-            <ProgressBar animated now={progress} />
+            {/* <ProgressBar animated now={progress} /> */}
             <div className="mainques">
                 <h1> Welcome to the Custom Campaign Builder</h1>
                 <p>A custom campaign is open ended and there are few limits on what you can add or not add here.</p>
-                {firstRoundBtns && (
+                {index === 0 && (
                     <div>
                         <p>We first need name this campaign!</p>
                         <div className="btnspace">
@@ -71,7 +31,7 @@ const CustomCampaign = ({ campaign }) => {
                         </div>
                     </div>
                 )}
-                {secondRoundBtns && (
+                {index === 1 && (
                     <div>
                         <p>Let's talk adventurers, do you already know who is in your party? If not you can skip this, but it will be harder to make other choices down the line.</p>
                         <div className="btnspace">
@@ -79,7 +39,7 @@ const CustomCampaign = ({ campaign }) => {
                         </div>
                     </div>
                 )}
-                {thirdRoundBtns && (
+                {index === 2 && (
                     <div>
                         <p>Now we need to start planning your world. Use the buttons below to make some of those decsions.</p>
                         <div className="btnspace">
@@ -90,7 +50,7 @@ const CustomCampaign = ({ campaign }) => {
                         </div>
                     </div>
                 )}
-                {fourthRoundBtns && (
+                {index === 3 && (
                     <div>
                         <p>Now that we have some ideas rolling let's give your campaign some fundamentals and some characters.</p>
                         <div className="btnspace">
@@ -102,7 +62,7 @@ const CustomCampaign = ({ campaign }) => {
                         </div>
                     </div>
                 )}
-                {fifthRoundBtns && (
+                {index === 4 && (
                     <div>
                         <p>More world planning! Let's get some of the smaller details hammers out in here!</p>
                         <div className="btnspace">
@@ -113,7 +73,7 @@ const CustomCampaign = ({ campaign }) => {
                         </div>
                     </div>
                 )}
-                {sixthRoundBtns && (
+                {index === 5 && (
                     <div>
                         <p>Dungeon time! What campaign is without a dungeon? Below you can plan your your dungeon details.</p>
                         <div className="btnspace">
@@ -124,7 +84,7 @@ const CustomCampaign = ({ campaign }) => {
                         </div>
                     </div>
                 )}
-                {seventhRoundBtns && (
+                {index === 6 && (
                     <div>
                         <p>Cool! You've made a campaign! Check ou the details below! These are meant to be suggestions. Feel free to edit this as you like! Happy Campaigning.</p>
                         <div className="btnspace">
@@ -134,19 +94,19 @@ const CustomCampaign = ({ campaign }) => {
                 )}
             </div>
             <div>
-            {!finalRoundBtn && (
+            {index <= 6 && (
                 <div className="nextBtn">
-                    <Button variant="outline-primary" size="lg" onClick={handleNextBtn}>Next</Button>
+                    <Button variant="outline-primary" size="lg" onClick={() => setIndex(index+1)}>Next</Button>
                 </div>
             )}
-            {!firstRoundBtns && (
+            {index > 0 && (
                 <div className="previousBtn nextBtn">
-                    <Button variant="outline-primary" size="lg" onClick={handlePrevBtn}>Previous</Button>
+                    <Button variant="outline-primary" size="lg" onClick={() => setIndex(index-1)}>Previous</Button>
                 </div>
             )}
             </div>
                 <div className="storyCards">
-                    <StoryInfo/>
+                    {campaign.campaignName && (<StoryInfo/>)}
                 </div>
             </div>
     );
