@@ -1,8 +1,8 @@
-import React, { useState  } from 'react';
+import React, { useState } from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import "../style.css";
 
-const Languages = () => {
+const Languages = ({ setReduxLanguages,  setReduxLanguagesShow }) => {
     const [value, setValue] = useState("");
     const [suggestedTags, setSuggestedTags] = useState([
         "Celestial",
@@ -17,31 +17,31 @@ const Languages = () => {
     const handleRemove = (event) => {
         let removedItem = event.target.name;
         let currentTags = suggestedTags;
-        const removedTag = currentTags.filter(item => item !== removedItem);
+        const removedTag = currentTags.filter((item) => item !== removedItem);
         setSuggestedTags(removedTag);
-        this.props.setLanguages(suggestedTags);
-        this.props.setLanguageShow("languageShow", true);
-    }
+        setReduxLanguages(suggestedTags);
+        setReduxLanguagesShow("languageShow", true);
+    };
 
     const handleAddLanguage = (event) => {
         setSuggestedTags(suggestedTags.concat(value));
         setValue("");
-        this.props.setLanguages(suggestedTags);
-        this.props.setLanguageShow("languageShow", true);
-    }
+        setReduxLanguages(suggestedTags);
+        setReduxLanguagesShow("languageShow", true);
+    };
 
     const onKeyDown = (event) => {
         if (event.key === "Enter") {
             handleAddLanguage();
-            }
-    }
+        }
+    };
 
     return (
         <div className="d-flex flex-column align-items-center">
             <br/>
             <p>We have a few languages suggestions here. Feel free to add and remove as many or as little as you want.</p>
             <div className="tagsArea centeredItems">
-            {suggestedTags.map(item => {
+            {suggestedTags.map((item) => {
                 return (
                     <ButtonGroup className="factionButtons">
                         <Button name={item}>{item}</Button>

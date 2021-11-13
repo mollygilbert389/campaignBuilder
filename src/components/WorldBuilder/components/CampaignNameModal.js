@@ -4,29 +4,29 @@ import { Button, Form, FormControl } from 'react-bootstrap';
 import { campaignNameData } from '.';
 import "../home.css";
 
-const CampaignNameModal = () => {
+const CampaignNameModal = ({ campaign, setReduxCampaignName }) => {
     const [showModal, setShowModal] = useState(true);
     const [campaignName, setCampaignName] = useState("");
     const [disabled, setDisabled] = useState(true);
 
     const close = () =>  {
-        setShowModal(!showModal)
-        this.props.setCampaignName(campaignName)
-    }
+        setShowModal(!showModal);
+        setReduxCampaignName(campaignName);
+    };
     
     const handleChange = (event) => {
         setCampaignName(event.target.value);
         setDisabled(false);
-    }
+    };
 
     const handleGenerateBtn = () => {
-        const firstWord = campaignNameData.adjectives[Math.floor(Math.random()* campaignNameData.adjectives.length)]
-        const secondWord = campaignNameData.animals[Math.floor(Math.random()* campaignNameData.animals.length)]
-        const newCampaignName = `${firstWord} ${secondWord}`
-        setCampaignName(newCampaignName)
-        setShowModal(!showModal)
-        this.props.setCampaignName(newCampaignName)
-    }
+        const firstWord = campaignNameData.adjectives[Math.floor(Math.random()* campaignNameData.adjectives.length)];
+        const secondWord = campaignNameData.animals[Math.floor(Math.random()* campaignNameData.animals.length)];
+        const newCampaignName = `${firstWord} ${secondWord}`;
+        setCampaignName(newCampaignName);
+        setShowModal(!showModal);
+        setReduxCampaignName(newCampaignName);
+    };
     
     return (
         <div>

@@ -5,38 +5,33 @@ import { RollBtn } from "../StaticComps";
 import { Button, Dropdown, OverlayTrigger, Tooltip, Form } from 'react-bootstrap';
 import "../style.css"
 
-const Government = () => {
+const Government = ({ setReduxGovernmentData, setReduxLanguageShow }) => {
     const [government, setGovernment] = useState("");
     const [currency, setCurrency] = useState("");
     const [showModal, setShowModal] = useState(false);
-    const [currencyOptions, setCurrencyOptions] = useState([
+    const currencyOptions = [
         "Common Coinage",
         "Common Coinage (No Electum)",
         "Trade Bars",
         "Barter System",
         "Odd Currency",
-    ]);
+    ];
 
     const handleDropSelect = (e, type) => {
-        const name = e.target.name
-        const feedback = e.target.text
+        const name = e.target.name;
+        const feedback = e.target.text;
         if(type ===  "government") {
-            setGovernment(e.target.text)
+            setGovernment(e.target.text);
         } else {
-            setCurrency(e.target.text)
+            setCurrency(e.target.text);
         }
-        this.props.setGovernmentData(name, feedback)
-    }
+        setReduxGovernmentData(name, feedback);
+    };
 
     const handleClose = () => {
         setShowModal(!showModal);
-        this.props.setLanguageShow("languageShow", true);
-    }
-
-    const  handleRoll = (feedback, name) => {
-        //figure out this one
-        this.props.setGovernmentData(name, feedback)
-    } 
+        setReduxLanguageShow("languageShow", true);
+    };
 
     return (
         <div>
@@ -67,7 +62,7 @@ const Government = () => {
                                     })}       
                             </Dropdown.Menu>
                         </Dropdown>
-                        <RollBtn name="government" handleRoll={handleRoll} rollingArray={governmentData.map(item => item.name)}/>
+                        <RollBtn name="government" handleRoll={(name, feedback) => setReduxGovernmentData(name, feedback)} rollingArray={governmentData.map((item) => item.name)}/>
                     </Form>
                     <br/>
                     <Form inline>
@@ -79,7 +74,7 @@ const Government = () => {
                                 {currencyOptions.map(item => {return <Dropdown.Item name="currency">{item}</Dropdown.Item>})}
                             </Dropdown.Menu>
                         </Dropdown>
-                        <RollBtn name="currency" handleRoll={handleRoll} rollingArray={currencyOptions}/>
+                        <RollBtn name="currency" handleRoll={(name, feedback) => setReduxGovernmentData(name, feedback)} rollingArray={currencyOptions}/>
                     </Form>
                     <Languages
                         campaign={this.props.campaign}

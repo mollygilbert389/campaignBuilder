@@ -4,7 +4,7 @@ import { RollBtn } from "../StaticComps";
 import { Button, Dropdown, Form, FormGroup } from 'react-bootstrap';
 import "../style.css";
 
-const  Physical = () => {
+const  Physical = ({ setReduxWorldData }) => {
     const [showModal, setShowModal] = useState(false);
     const [eventCap, setEventCap] = useState(false);
     const [world, setWorld] = useState("");
@@ -14,7 +14,7 @@ const  Physical = () => {
     const [charMeeting, setCharMeeting] = useState("");
     const [rolledClicked, setRolledClicked] = useState(false);
     const [worldStyle, setWorldStyle] = useState("");
-    const [worldOptions, setWorldOptions] = useState([
+    const worldOptions = [
         "Aquatic",
         "Desert",
         "Grassland",
@@ -23,15 +23,15 @@ const  Physical = () => {
         "Temperate Forest",
         "Tropical Rainforest",
         "Tundra",
-    ]);
-    const [eraOptions, setEraOptions] = useState([
+    ];
+    const eraOptions = [
         "Beowulf Adventure Trope (The age of heros magic is common)",
         "Victorian Era (The time of romance magic is uncommon)",
         "Present Day (Modern technology magic does not exist)",
         "Steampunk Future (Technology & chivalry rule and magic is common)",
         "Dystopian Post Appocolypse (Chaos magic is uncommon)",
-    ]);
-    const [featureOptions, setFeatureOptions] = useState([
+    ];
+    const featureOptions = [
         "At the base of a dorment valcano",
         "Extreme Weather",
         "Architecutral building or Massive Statue",
@@ -45,20 +45,20 @@ const  Physical = () => {
         "Deserted City",
         "Canyon or Gorge",
         "Northern Lights",
-    ]);
-    const [mapScaleOptions, setMapScaleOptions] = useState([
+    ];
+    const mapScaleOptions = [
         "Village",
         "Town",
         "City",
-    ]);
-    const [meetingOptions, setMeetingOptions] = useState([
+    ];
+    const meetingOptions = [
         "Meet in a tavern about a contract",
         "Party has already adventured together",
         "One member brings the group together",
         "Meet at a party",
         "Meet at school",
         "Mysterious Circumstance",
-    ]);
+    ];
     const [travelPoints, setTravelPoints] = useState([
         "Cave",
         "Forest",
@@ -107,7 +107,7 @@ const  Physical = () => {
         default: 
             return;
         }
-        this.props.setWorldData("worldStyle", worldStyle);
+        setReduxWorldData("worldStyle", worldStyle);
     }
 
     const handleDropSelect = (keyEvent, e) => {
@@ -116,8 +116,9 @@ const  Physical = () => {
         // this.setState({
         //     [event.target.name]: feedback
         // }, () =>this.handleWorldImage())
-        this.props.setWorldData(name, feedback);
-        this.handleTravelPointState(feedback);
+        handleWorldImage();
+        setReduxWorldData(name, feedback);
+        handleTravelPointState(feedback);
     }
 
     const handleTravelPointState = (feedback) => {
@@ -228,8 +229,8 @@ const  Physical = () => {
         // this.setState({
         //     [name]: feedback
         // }, () =>this.handleWorldImage())
-        this.props.setWorldData(name, feedback);
-        this.props.setWorldData("worldStyle", feedback);
+        setReduxWorldData(name, feedback);
+        setReduxWorldData("worldStyle", feedback);
         handleTravelPointState(feedback);
     }
 
@@ -242,18 +243,18 @@ const  Physical = () => {
         } else {
             setTravelPointChoices(filteredChoiceList);
         }
-        this.props.setWorldData("travelPointChoices", filteredChoiceList);
+        setReduxWorldData("travelPointChoices", filteredChoiceList);
     }
 
     const removeEvent = (event) => {
         let choices = travelPointChoices;
-        const newChoiceList = choices.filter(eventName => eventName !== event.target.value);
+        const newChoiceList = choices.filter((eventName) => eventName !== event.target.value);
         if (this.state.travelPointChoices.length <= 5) {
             setEventCap(false);
         } else {
             setTravelPointChoices(newChoiceList);
         }
-        this.props.setWorldData("travelPointChoices", newChoiceList);
+        setReduxWorldData("travelPointChoices", newChoiceList);
     }
 
     return (
@@ -277,7 +278,7 @@ const  Physical = () => {
                                     {world ? `Setting: ${world}`: 'What is your setting?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu name="world">
-                                    {worldOptions.map(item => {return <Dropdown.Item name="world">{item}</Dropdown.Item>})}
+                                    {worldOptions.map((item) => (<Dropdown.Item name="world">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
                             <RollBtn name="world" handleRoll={handleRoll} rollingArray={worldOptions}/>
@@ -290,7 +291,7 @@ const  Physical = () => {
                                     {era ? `Era: ${era}`: 'What era does this adventure take place?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {eraOptions.map(item => {return <Dropdown.Item name="era">{item}</Dropdown.Item>})}
+                                    {eraOptions.map((item) => (<Dropdown.Item name="era">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
                             <RollBtn name="era" handleRoll={handleRoll} rollingArray={eraOptions}/>
@@ -303,7 +304,7 @@ const  Physical = () => {
                                     {uniqueFeature ? `Feature: ${uniqueFeature}`: 'Does this world have a unique feature?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {featureOptions.map(item => {return <Dropdown.Item name="uniqueFeature">{item}</Dropdown.Item>})}
+                                    {featureOptions.map((item) => (<Dropdown.Item name="uniqueFeature">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
                             <RollBtn name="uniqueFeature" handleRoll={handleRoll} rollingArray={featureOptions}/>
@@ -316,7 +317,7 @@ const  Physical = () => {
                                     {mapScale ? `Size: ${mapScale}` : 'What kind of place are your adventurers starting?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {mapScaleOptions.map(item => {return <Dropdown.Item name="mapScale">{item}</Dropdown.Item>})}
+                                    {mapScaleOptions.map((item) => (<Dropdown.Item name="mapScale">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
                             <RollBtn name="mapScale" handleRoll={handleRoll} rollingArray={mapScaleOptions}/>
@@ -329,7 +330,7 @@ const  Physical = () => {
                                     {charMeeting ? `Meeting: ${charMeeting}`: 'How do your characters know each other?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {meetingOptions.map(item => {return <Dropdown.Item name="charMeeting">{item}</Dropdown.Item>})}
+                                    {meetingOptions.map((item) => (<Dropdown.Item name="charMeeting">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
                             <RollBtn name="charMeeting" handleRoll={handleRoll} rollingArray={meetingOptions}/>
@@ -338,7 +339,7 @@ const  Physical = () => {
                     <p>Consider some places your adventurers might travel through. Pick only 3.</p>
                     <div className="container">
                         <div className="side tags">
-                            {travelPoints.map(drop => {
+                            {travelPoints.map((drop) => {
                                 return (
                                     <Button 
                                         name="travelPointChoices" 
@@ -352,9 +353,9 @@ const  Physical = () => {
                             })}
                         </div>
                         <div className="side tags">
-                        {travelPointChoices.map(drop => {
-                            return <Button name="travelPointChoices" value={drop} className="eventbtns" onClick={removeEvent}> {drop}</Button>
-                            })}
+                        {travelPointChoices.map((drop) => (
+                            <Button name="travelPointChoices" value={drop} className="eventbtns" onClick={removeEvent}> {drop}</Button>
+                        ))}
                         </div>
                     </div>
                 </Modal.Body>

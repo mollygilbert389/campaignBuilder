@@ -4,7 +4,7 @@ import { Renown, FactionOrgs } from './components';
 import { Button } from 'react-bootstrap';
 import "../style.css";
 
-const Social = () => {
+const Social = ({ setReduxFactionOrgs, setReduxFactionShow, setReduxPlayers, campaign }) => {
     const [showModal, setShowModal] = useState(false);
 
     return (
@@ -23,12 +23,8 @@ const Social = () => {
                     </p>
                     <br/>
                     <div className="btnspace">
-                        <FactionOrgs
-                            setFactionOrgs={this.props.setFactionOrgs}
-                            setFactionShow={this.props.setFactionShow}/>
-                        <Renown
-                            setPlayers={this.props.setPlayers}
-                            campaign={this.props.campaign}/>
+                        <FactionOrgs setReduxFactionOrgs={setReduxFactionOrgs} setReduxFactionShow={setReduxFactionShow}/>
+                        <Renown setReduxPlayers={setReduxPlayers}campaign={campaign}/>
                     </div>
                 </Modal.Body>
                 <Modal.Footer>

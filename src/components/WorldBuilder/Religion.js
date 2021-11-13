@@ -4,10 +4,10 @@ import { RollBtn } from "../StaticComps";
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import "./style.css";
 
-const Religion = () => {
+const Religion = ({ setReduxReligion }) => {
     const [religion, setReligion] = useState("");
     const [showModal, setShowModal] = useState(false);
-    const [godChoices, setGodCoices] = useState([
+    const godChoices = [
         {id: 1, option: "Loose Pantheons (Suggested)", toolTipData: "Most campaigns have a loose pantheos of gods. A multitude of deities rule the various aspects of your world in either peace or conflict. People gather in public shrines to worship gods of life and wisdom." },
         {id: 2, option: "Tight Pantheons", toolTipData: "In contrast to loose pantheos, a tight pantheos focuses on a single religion whose teachings and edicts embrace a small group of deities." },
         {id: 3, option: "Mystery Cults", toolTipData: "This is a secretive religious organization based on a ritutal initiation. Mystery cults are intensly personal." },
@@ -15,7 +15,7 @@ const Religion = () => {
         {id: 5, option: "Dualism", toolTipData: "This religion views the world as the stage for a conflict between two diametrically opposed deities or divine forces. Most often, the opposed forces are good and evil." },
         {id: 6, option: "Animism", toolTipData: "This is the belief that spirits inhabit every part of the natural world. In an animistic worldview, everything has a spirit." },
         {id: 7, option: "Other", toolTipData: "Any religious pathos you want to have!" }
-    ]);
+    ];
     const [other, setOther] = useState(false);
 
     const handleReligion = (eventKey, event) => {
@@ -24,15 +24,9 @@ const Religion = () => {
         } else {
             const selection = event.target.text;
             setReligion(selection);
-            this.props.setReligion("religion", selection);
+            setReduxReligion("religion", selection);
         }
     }
-
-    // const handleClick = () => {
-    //     this.setState({
-    //         showModal: !this.state.showModal,
-    //     })
-    // }
 
     const handleChange = (event) => {
         const selection = event.target.value;
@@ -41,8 +35,8 @@ const Religion = () => {
     }
 
     const handleRoll = (feedback, name) => {
-        setReligion(feedback)
-        this.props.setReligion("religion", feedback)
+        setReligion(feedback);
+        setReduxReligion("religion", feedback);
     }
 
     return (
@@ -76,7 +70,7 @@ const Religion = () => {
                                 })}
                             </Dropdown.Menu>
                         </Dropdown>
-                        <RollBtn name="religion" handleRoll={handleRoll} rollingArray={godChoices.map(item => item.option)}/>
+                        <RollBtn name="religion" handleRoll={handleRoll} rollingArray={godChoices.map((item) => item.option)}/>
                     </Form>
                     <br/>
                     {other && (

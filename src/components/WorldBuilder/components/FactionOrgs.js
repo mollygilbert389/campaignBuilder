@@ -48,7 +48,7 @@ const icons = [
     {id: 40, icon:faVihara}
 ];
 
-const FactionOrgs = () => {
+const FactionOrgs = ({ setReduxFactionOrgs, setReduxFactionShow }) => {
     const [value, setValue] = useState("");
     const [showModal, setShowModal] = useState(false);
     const [currentBtnId, setCurrentBtnId] = useState(null);
@@ -63,10 +63,10 @@ const FactionOrgs = () => {
 
     const handleRemove = (event) => {
         let removedItem = event.target.name;
-        let currentTags = this.state.suggestedTags;
+        let currentTags = suggestedTags;
         const removedFaction = currentTags.filter(item => item.name !== removedItem);
         setSuggestedTags(removedFaction);
-    }
+    };
 
     const handleAddFaction = (event) => {
         let currentTags = suggestedTags;
@@ -76,40 +76,40 @@ const FactionOrgs = () => {
         const updatedFactions = [...currentTags, {id: id, name: newName, icon:icon}];
         setSuggestedTags(updatedFactions);
         setValue("");
-    }
+    };
 
     const onKeyDown = (event) => {
         if (event.key === "Enter") {
             handleAddFaction();
-        }
-    }
+        };
+    };
 
     const handleSave = () => {
         setShowModal(!showModal);
-        this.props.setFactionOrgs(suggestedTags);
-        this.props.setFactionShow("factionShow", true);        
-    }
+        setReduxFactionOrgs(suggestedTags);
+        setReduxFactionShow("factionShow", true);        
+    };
 
     const handleIconSelect = (event) => {
         const btnId = event.target.id 
         setShowModal(!showModal);
         setCurrentBtnId(btnId);
-    }
+    };
 
     const hanleIconFinalSelection = (event) => {
         const btnId = parseInt(currentBtnId);
         const iconId = event.target.id;
-        const updatedIcon = icons.filter(item => item.id == iconId);
+        const updatedIcon = icons.filter((item) => item.id === iconId);
         const finalIcon = updatedIcon[0].icon;
         
-        const factionIcons = [...suggestedTags].map(item => {
-            if (item.id===btnId) {
+        const factionIcons = [...suggestedTags].map((item) => {
+            if (item.id === btnId) {
                 return {...item, icon:finalIcon}
             } return item
         });
         setSuggestedTags(factionIcons);
         setShowModal(!showModal);
-    }
+    };
 
     return (
         <div>
@@ -155,7 +155,7 @@ const FactionOrgs = () => {
                             </Modal.Header>
                             <Modal.Body>
                                 <div className="wrapIcons">
-                                    {icons.map(icon => {
+                                    {icons.map((icon) => {
                                         return (
                                             <Button 
                                                 className="icons"
@@ -181,7 +181,7 @@ const FactionOrgs = () => {
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="outline-success" onClick={handleSave} >Save</Button>
+                    <Button variant="outline-success" onClick={handleSave}>Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>

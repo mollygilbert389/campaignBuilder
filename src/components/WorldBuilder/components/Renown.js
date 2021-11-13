@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FormControlLabel, Checkbox } from '@material-ui/core';
 import "../style.css";
 
-const Renown = () => {
-    const [playerInfo, setPlayerInfo] = useState(this.props.campaign.playerData);
+const Renown = ({ campaign, setReduxPlayers }) => {
+    const playerInfo = campaign.playerData
     const [playerOrgs, setPlayerOrgs] = useState([]);
     const [showModal, setShowModal] = useState(false);
 
@@ -18,26 +18,25 @@ const Renown = () => {
             const newPlayerOrgs = [...playerOrgs, {name:name, playerNumId:index, icon:icon}];
             setPlayerOrgs(newPlayerOrgs);
         } else if (checked === false) {
-            const allPlayersFactions = playerOrgs.filter(item => (item.playerNumId !== index));
-            const playersFactions = playerOrgs.filter(item => (item.playerNumId === index));
-            const itemsByPlayerToKeep = playersFactions.filter(item => (item.name !== name));
+            const allPlayersFactions = playerOrgs.filter((item) => (item.playerNumId !== index));
+            const playersFactions = playerOrgs.filter((item) => (item.playerNumId === index));
+            const itemsByPlayerToKeep = playersFactions.filter((item) => (item.name !== name));
             const finalPlayerFactions = [...allPlayersFactions, ...itemsByPlayerToKeep];
             setPlayerOrgs(finalPlayerFactions);
         }
     }
 
     const handleSave = () => {
-        const players = this.props.campaign.playerData;
+        const players = campaign.playerData;
         const playersByID = [];
-
         players.forEach((player, index) => {
             player.factions = [];
-            let playersFactions = this.state.playerOrgs.filter(item => (item.playerNumId === index));
+            let playersFactions = playerOrgs.filter((item) => (item.playerNumId === index));
             player.factions.push(playersFactions);
-            playersByID.push(player) ;
+            playersByID.push(player);
         })
         setShowModal(!showModal);
-        this.props.setPlayers("playerData", playersByID);
+        setReduxPlayers("playerData", playersByID);
     }
 
     return (
@@ -58,7 +57,7 @@ const Renown = () => {
                                 return (
                                     <div>
                                         <div>{item.name}</div>
-                                        {this.props.campaign.factionOrgs.map(item => {
+                                        {campaign.factionOrgs.map(item => {
                                             return (
                                                 <div>
                                                     <FontAwesomeIcon className="iconSpace" icon={item.icon}/>
@@ -70,8 +69,7 @@ const Renown = () => {
                                                             name={item.name}
                                                             value={item.name}
                                                             inputProps={item.icon}
-                                                            color="primary"/>
-                                                        }/> 
+                                                            color="primary"/>}/> 
                                                 </div>
                                             )
                                         })}

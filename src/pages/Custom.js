@@ -41,7 +41,32 @@ import {
     setLanguageShow,
 } from "../actions/index"
 
-const CustomCampaign = () => {
+const CustomCampaign = ({
+    onSetCampaignName,
+    onSetPlayers,
+    onSetWorldData,
+    onSetGovernmentData,
+    onSetReligion,
+    onSetLanguages,
+    onSetFactionOrgs,
+    onSetActsAndClimx,
+    onSetMainGoal,
+    onSetPillar,
+    onSetPatronData,
+    onSetNPCData,
+    onSetVillainData,
+    onSetLocalEvents,
+    onSetEncounters,
+    onSetRandomEncounters,
+    onSetTwist,
+    onSetSideQuests,
+    onSetSetback,
+    onSetDungeonData,
+    onSetTreasureData,
+    onSetFactionShow,
+    onSetLanguageShow,
+    campaign
+}) => {
     const [showDiv, setShowDiv] = useState(false);
     const [firstRoundBtns, setFirstRoundBtns] = useState(false);
     const [secondRoundBtns, setSecondRoundBtns] = useState(false);
@@ -85,117 +110,94 @@ const CustomCampaign = () => {
     }
 
     const setCampaignName = (name) => {
-        const{onSetCampaignName}=this.props
         onSetCampaignName(name)
     }
 
     const setPlayers = (destination, value) => {
-        const{onSetPlayers}=this.props
         onSetPlayers(destination, value)
     }
 
     const setWorldData = (destination, value) => {
-        const{onSetWorldData}=this.props
         onSetWorldData(destination, value)
     }
 
     const setGovernmentData = (destinaton, value) => {
-        const{onSetGovernmentData}=this.props
         onSetGovernmentData(destinaton, value)
     }
 
     const setReligion = (destination, value) => {
-        const {onSetReligion} = this.props
         onSetReligion(destination, value)
     }
 
     const setLanguages = (type) => {
-        const{onSetLanguages}=this.props
         onSetLanguages(type)
     }
 
     const setFactionOrgs = (names) => {
-        const{onSetFactionOrgs}=this.props
         onSetFactionOrgs(names)
     }
 
     const setActsAndClimax = (destination, value) => {
-        const{onSetActsAndClimx}=this.props
         onSetActsAndClimx(destination, value)
     }
 
     const setMainGoal = (destination, value) => {
-        const{onSetMainGoal}=this.props
         onSetMainGoal(destination, value)
     }
 
     const setPillar = (type) => {
-        const{onSetPillar}=this.props
         onSetPillar(type)
     }
 
     const setPatronData = (destination, value) => {
-        const{onSetPatronData}=this.props
         onSetPatronData(destination, value)
     }
 
     const setNPCData = (destination, value) => {
-        const{onSetNPCData}=this.props
         onSetNPCData(destination, value)
     }
 
     const setVillainData = (destination, value) => {
-        const{onSetVillainData}=this.props
         onSetVillainData(destination, value)
     }
 
     const setLocalEvents = (names) => {
-        const{onSetLocalEvents}=this.props
         onSetLocalEvents(names)
     }
 
     const setEncounters = (destination, value) => {
-        const{onSetEncounters}=this.props
         onSetEncounters(destination, value)
     }
 
     const setRandomEncounters = (destination, value) => {
-        const{onSetRandomEncounters}=this.props
         onSetRandomEncounters(destination, value)
     }
 
     const setTwist = (destination, value) => {
-        const{onSetTwist}=this.props
         onSetTwist(destination, value)
     }
 
     const setSideQuests = (destination, value) => {
-        const{onSetSideQuests}=this.props
         onSetSideQuests(destination, value)
     }
 
     const setSetback = (destination, value) => {
-        const{onSetSetback}=this.props
         onSetSetback(destination, value)
     }
 
     const setDungeonData = (destination, value) => {
-        const{onSetDungeonData}=this.props
         onSetDungeonData(destination, value)
     }
 
     const setTreasureData = (destination, value) => {
-        const{onSetTreasureData}=this.props
         onSetTreasureData(destination, value)
     }
 
     const setFactionShow = (destination, value) => {
-        const{onSetFactionShow}=this.props
         onSetFactionShow(destination, value)
     }
 
     const setLanguageShow = (destination, value) => {
-        const{onSetLanguageShow}=this.props
         onSetLanguageShow(destination, value)
     }
 
@@ -231,9 +233,9 @@ const CustomCampaign = () => {
                                 setPlayers={setPlayers}
                                 setFactionOrgs={setFactionOrgs}
                                 setFactionShow={setFactionShow}
-                                campaign={this.props.campaign}/>
+                                campaign={campaign}/>
                             <Government
-                                campaign={this.props.campaign}
+                                campaign={campaign}
                                 setLanguages={setLanguages}
                                 setLanguageShow={setLanguageShow} 
                                 setGovernmentData={setGovernmentData}/>
@@ -248,7 +250,7 @@ const CustomCampaign = () => {
                             <ActsClimax setActsAndClimax={setActsAndClimax}/>
                             <MainGoals setMainGoal={setMainGoal}/>
                             <PatronNPCs
-                                campaign={this.props.campaign}
+                                campaign={campaign}
                                 setPatronData={setPatronData}
                                 setNPCData={setNPCData}/>
                             <VillainSubVillain setVillainData={setVillainData}/>
@@ -263,7 +265,7 @@ const CustomCampaign = () => {
                             <Setback setSetBack={setSetback}/>
                             <EncountersAndEvents
                                 setRandomEncounters={setRandomEncounters}
-                                campaign={this.props.campaign}
+                                campaign={campaign}
                                 setEncounters={setEncounters}/>
                             <ExtraAdventure setTwist={setTwist} setSideQuests={setSideQuests}/>
                         </div>
@@ -273,10 +275,10 @@ const CustomCampaign = () => {
                     <div>
                         <p>Dungeon time! What campaign is without a dungeon? Below you can plan your your dungeon details.</p>
                         <div className="btnspace">
-                            <AdventureStart campaign={this.props.campaign} setDungeonData={setDungeonData}/>
-                            <Rooms campaign={this.props.campaign} setDungeonData={setDungeonData}/>
-                            <MonsterCard campaign={this.props.campaign} setDungeonData={setDungeonData}/>
-                            <Treasure setTreasureData={setTreasureData} campaign={this.props.campaign}/>
+                            <AdventureStart campaign={campaign} setDungeonData={setDungeonData}/>
+                            <Rooms campaign={campaign} setDungeonData={setDungeonData}/>
+                            <MonsterCard campaign={campaign} setDungeonData={setDungeonData}/>
+                            <Treasure setTreasureData={setTreasureData} campaign={campaign}/>
                         </div>
                     </div>
                 )}
@@ -284,7 +286,7 @@ const CustomCampaign = () => {
                     <div>
                         <p>Cool! You've made a campaign! Check ou the details below! These are meant to be suggestions. Feel free to edit this as you like! Happy Campaigning.</p>
                         <div className="btnspace">
-                            <FinalScreen campaign={this.props.campaign}/>
+                            <FinalScreen campaign={campaign}/>
                         </div>
                     </div>
                 )}
@@ -302,7 +304,7 @@ const CustomCampaign = () => {
             )}
             </div>
                 <div className="storyCards">
-                    <StoryInfo campaign={this.props.campaign}/>
+                    <StoryInfo campaign={campaign}/>
                 </div>
             </div>
     );
