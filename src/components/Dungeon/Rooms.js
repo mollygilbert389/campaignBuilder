@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button } from 'react-bootstrap';
 import "./style.css";
+import { setDungeonData } from "../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const Rooms = ({ campaign, setReduxDungeonData }) => {
+const Rooms = ({ campaign, onSetDungeonData }) => {
+    const setReduxDungeonData = (destination, value) => {
+        onSetDungeonData(destination, value)
+    }
     const [showModal, setShowModal] = useState(false);
     const [roomNum, setRoomNum] = useState("");
     const roomOptions = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
@@ -64,4 +70,12 @@ const Rooms = ({ campaign, setReduxDungeonData }) => {
     );
 }
 
-export default Rooms;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetDungeonData: bindActionCreators(setDungeonData, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Rooms);

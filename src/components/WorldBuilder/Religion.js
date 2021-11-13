@@ -3,8 +3,15 @@ import Modal from 'react-bootstrap/Modal';
 import { RollBtn } from "../StaticComps";
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import "./style.css";
+import { setReligion } from "../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const Religion = ({ setReduxReligion }) => {
+const Religion = ({ onSetReligion }) => {
+    const setReduxReligion = (destination, value) => {
+        onSetReligion(destination, value)
+    }
+
     const [religion, setReligion] = useState("");
     const [showModal, setShowModal] = useState(false);
     const godChoices = [
@@ -85,4 +92,12 @@ const Religion = ({ setReduxReligion }) => {
     );
 }
 
-export default Religion;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetReligion: bindActionCreators(setReligion, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Religion);

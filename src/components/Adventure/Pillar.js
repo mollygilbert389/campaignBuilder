@@ -2,8 +2,15 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button } from 'react-bootstrap';
 import "./style.css";
+import { setPillar } from "../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const Pillar = ({ setReduxPillar }) => {
+const Pillar = ({ onSetPillar }) => {
+    const setReduxPillar = (type) => {
+        onSetPillar(type)
+    }
+
     const [pillar, setPillar] = useState("");
     const [showModal, setShowModal] = useState(false);
 
@@ -40,4 +47,13 @@ const Pillar = ({ setReduxPillar }) => {
     );
 }
 
-export default Pillar;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetPillar: bindActionCreators(setPillar, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Pillar);
+

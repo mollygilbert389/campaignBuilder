@@ -3,10 +3,18 @@ import Modal from 'react-bootstrap/Modal';
 import { SideQuests, Twists } from "./components";
 import { Button } from 'react-bootstrap';
 import "./style.css";
+import { setTwist, setSideQuests } from "../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const ExtraAdventure = ({ setReduxSideQuests, setReduxTwist }) => {
+const ExtraAdventure = ({ onSetSideQuests, onSetTwist }) => {
+    const setReduxTwist = (destination, value) => {
+        onSetTwist(destination, value)
+    }
+    const setReduxSideQuests = (destination, value) => {
+        onSetSideQuests(destination, value)
+    }
     const [showModal, setShowModal] = useState(false);
- 
     return (
         <div>
             <div className="btns">
@@ -32,4 +40,13 @@ const ExtraAdventure = ({ setReduxSideQuests, setReduxTwist }) => {
     );
 }
 
-export default ExtraAdventure;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetTwist: bindActionCreators(setTwist, dispatch),
+    onSetSideQuests: bindActionCreators(setSideQuests, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(ExtraAdventure);

@@ -3,8 +3,14 @@ import Modal from 'react-bootstrap/Modal';
 import { GenerateBtn } from "../StaticComps";
 import { Button, Dropdown, Form, FormControl, OverlayTrigger, Card, Popover } from 'react-bootstrap';
 import "./style.css";
+import { setVillainData } from "../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const VillainModal = ({ setReduxVillainData }) => {
+const VillainModal = ({ onSetVillainData }) => {
+    const setReduxVillainData = (destination, value) => {
+        onSetVillainData(destination, value)
+    }
     const [showModal, setShowModal] = useState(false);
     const [setImageLink, imageLink] = useState("https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg")
     const [villainData, setVillainData] = useState({});
@@ -491,4 +497,12 @@ const VillainModal = ({ setReduxVillainData }) => {
     );
 }
 
-export default VillainModal;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetVillainData: bindActionCreators(setVillainData, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(VillainModal);

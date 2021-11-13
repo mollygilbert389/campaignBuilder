@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown, FormControl } from 'react-bootstrap';
 import "./style.css";
+import { setSetback } from "../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const Setback = ({ setReduxSetback }) => {
+const Setback = ({ onSetSetback }) => {
+    const setReduxSetback = (destination, value) => {
+        onSetSetback(destination, value)
+    }
     const [showModal, setShowModal] = useState(false);
     const [setback, setSetback] = useState(false);
     const [bigSetback, setBigSetback] = useState(false);
@@ -237,4 +243,12 @@ const Setback = ({ setReduxSetback }) => {
     );
 }
 
-export default Setback;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetSetback: bindActionCreators(setSetback, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Setback);

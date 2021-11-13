@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button } from 'react-bootstrap';
 import "./style.css";
+import { setLocalEvents } from "../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const Religion = ({ setReduxLocalEvents }) => {
+const Religion = ({ onSetLocalEvents }) => {
+    const setReduxLocalEvents = (names) => {
+        onSetLocalEvents(names)
+    }
     const [showModal, setShowModal] = useState(false);
     const [localEventChoice, setLocalEventChoice] = useState([]);
     const [eventCap, setEventCap] = useState(false);
@@ -114,4 +120,12 @@ const Religion = ({ setReduxLocalEvents }) => {
     );
 }
 
-export default Religion;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetLocalEvents: bindActionCreators(setLocalEvents, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Religion);

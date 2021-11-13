@@ -3,8 +3,14 @@ import Modal from 'react-bootstrap/Modal';
 import { RollBtn } from "../StaticComps";
 import { Button, Dropdown, Form, FormGroup } from 'react-bootstrap';
 import "./style.css";
+import { setWorldData } from "../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const  Physical = ({ setReduxWorldData }) => {
+const  Physical = ({ onSetWorldData }) => {
+    const setReduxWorldData = (destination, value) => {
+        onSetWorldData(destination, value)
+    }
     const [showModal, setShowModal] = useState(false);
     const [eventCap, setEventCap] = useState(false);
     const [world, setWorld] = useState("");
@@ -367,4 +373,12 @@ const  Physical = ({ setReduxWorldData }) => {
     );
 }
 
-export default Physical;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetWorldData: bindActionCreators(setWorldData, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Physical);

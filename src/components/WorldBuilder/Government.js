@@ -4,8 +4,21 @@ import { governmentData, Languages } from "./components";
 import { RollBtn } from "../StaticComps";
 import { Button, Dropdown, OverlayTrigger, Tooltip, Form } from 'react-bootstrap';
 import "./style.css"
+import { setGovernmentData, setLanguages, setLanguageShow } from "../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const Government = ({ setReduxGovernmentData, setReduxLanguageShow }) => {
+const Government = ({ onSetGovernmentData, onSetLanguages, onSetLanguageShow, campaign }) => {
+    const setReduxGovernmentData = (destinaton, value) => {
+        onSetGovernmentData(destinaton, value)
+    }
+    const setReduxLanguages = (type) => {
+        onSetLanguages(type)
+    }
+    const setReduxLanguageShow = (destination, value) => {
+        onSetLanguageShow(destination, value)
+    }
+
     const [government, setGovernment] = useState("");
     const [currency, setCurrency] = useState("");
     const [showModal, setShowModal] = useState(false);
@@ -89,4 +102,14 @@ const Government = ({ setReduxGovernmentData, setReduxLanguageShow }) => {
     );
 }
 
-export default Government;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetGovernmentData: bindActionCreators(setGovernmentData, dispatch),
+    onSetLanguages: bindActionCreators(setLanguages, dispatch),
+    onSetLanguageShow: bindActionCreators(setLanguageShow, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Government);

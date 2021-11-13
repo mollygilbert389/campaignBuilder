@@ -3,8 +3,14 @@ import Modal from 'react-bootstrap/Modal';
 import { Button } from 'react-bootstrap';
 import { FormControlLabel, Checkbox, FormGroup, Slider } from '@material-ui/core';
 import "./style.css";
+import { setTreasureData } from "../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const Treasure = ({ campaign, setReduxTreasureData }) => {
+const Treasure = ({ campaign, onSetTreasureData }) => {
+    const setReduxTreasureData = (destination, value) => {
+        onSetTreasureData(destination, value)
+    }
     const [showModal, setShowModal] = useState(false);
     const [equipment, setEquipment] = useState(false);
     const [magicItem, setMagicItem] = useState(false);
@@ -157,4 +163,12 @@ const Treasure = ({ campaign, setReduxTreasureData }) => {
     );
 }
 
-export default Treasure;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetTreasureData: bindActionCreators(setTreasureData, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Treasure);

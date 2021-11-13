@@ -3,8 +3,14 @@ import Modal from 'react-bootstrap/Modal';
 import Carousel from 'react-bootstrap/Carousel';
 import { Button, Dropdown } from 'react-bootstrap';
 import "./style.css";
+import { setDungeonData } from "../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const AdventureStart = ({ campaign, setReduxDungeonData }) => {
+const AdventureStart = ({ campaign, onSetDungeonData }) => {
+    const setReduxDungeonData = (destination, value) => {
+        onSetDungeonData(destination, value)
+    }
     const [showModal, setShowModal] = useState(false);
     const [dungeonTypeLocationSelected, setDungeonTypeLocationSelected] = useState(true);
     const [nondungeonTypeLocationSelected, setNondungeonTypeLocationSelected] = useState(false);
@@ -185,4 +191,12 @@ const AdventureStart = ({ campaign, setReduxDungeonData }) => {
     );
 }
 
-export default AdventureStart;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetDungeonData: bindActionCreators(setDungeonData, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(AdventureStart);

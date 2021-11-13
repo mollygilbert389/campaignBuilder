@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import { Button, Dropdown } from 'react-bootstrap';
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import { Form, Label, Input, FormGroup } from 'reactstrap';
 import update from 'immutability-helper';
 import "./style.css";
+import { setPlayers } from "../../actions/index";
 
-const PartyInfo = ({ setReduxPlayers })  => {
+const PartyInfo = ({ onSetPlayers })  => {
+    const setReduxPlayers = (destination, value) => {
+        onSetPlayers(destination, value)
+    }
     const [partyMemberData, setPartyMemberData] = useState([]);
     const quantity = [3,4,5,6,7,8];
     const classTypes = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sourcerer", "Warlock", "Wizard"];
@@ -106,6 +112,14 @@ const PartyInfo = ({ setReduxPlayers })  => {
     );
 }
 
-export default PartyInfo;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetPlayers: bindActionCreators(setPlayers, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(PartyInfo);
 
  

@@ -3,8 +3,14 @@ import Modal from 'react-bootstrap/Modal';
 import Carousel from 'react-bootstrap/Carousel';
 import { Button } from 'react-bootstrap';
 import "./style.css";
+import { setActsAndClimax } from "../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const Acts = ({ setReduxActsAndClimax }) => {
+const Acts = ({ onSetActsAndClimx }) => {
+    const setReduxActsAndClimax = (destination, value) => {
+        onSetActsAndClimx(destination, value)
+    }
     const [showModal, setShowModal] = useState(false);
     const [acts, setActs] = useState("");
     const [climax, setClimax] = useState("");
@@ -97,4 +103,12 @@ const Acts = ({ setReduxActsAndClimax }) => {
     );
 }
 
-export default Acts;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetActsAndClimx: bindActionCreators(setActsAndClimax, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Acts);

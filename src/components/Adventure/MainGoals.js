@@ -3,8 +3,14 @@ import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown, Form } from 'react-bootstrap';
 import { RollBtn } from "../StaticComps";
 import "./style.css";
+import { setMainGoal } from "../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const MainGoals = ({ setReduxMainGoal }) => {
+const MainGoals = ({ onSetMainGoal }) => {
+    const setReduxMainGoal = (destination, value) => {
+        onSetMainGoal(destination, value)
+    }
     const [goalsCat, setGoalsCat] = useState("");
     const [showModal, setShowModal] = useState("");
     const [dungeonGoalsClicked, setDungeonGoalsClicked] = useState(true);
@@ -239,4 +245,12 @@ const MainGoals = ({ setReduxMainGoal }) => {
     );
 }
 
-export default MainGoals;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetMainGoal: bindActionCreators(setMainGoal, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(MainGoals);

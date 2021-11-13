@@ -4,8 +4,14 @@ import { Button, Form, Dropdown } from 'react-bootstrap';
 import { Slider } from '@material-ui/core';
 import { monsters } from "./data";
 import "./style.css";
+import { setDungeonData } from "../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const MonsterCard = ({ campaign, setReduxDungeonDate }) => {
+const MonsterCard = ({ campaign, onSetDungeonData }) => {
+    const setReduxDungeonData = (destination, value) => {
+        onSetDungeonData(destination, value)
+    }
     const [showModal, setShowModal] = useState(false);
     const [finalMonsterNum, setFinalMonsterNum] = useState(0);
     const [monsterData, setMonsterData] = useState([]);
@@ -55,7 +61,7 @@ const MonsterCard = ({ campaign, setReduxDungeonDate }) => {
         const currentMonsters = monsterData;
         const destructedData = {...currentDungeonData, monsterList: currentMonsters};
         setShowModal(!showModal);
-        setReduxDungeonDate("dungeonData", destructedData)
+        setReduxDungeonData("dungeonData", destructedData)
     };
 
     return (
@@ -126,4 +132,12 @@ const MonsterCard = ({ campaign, setReduxDungeonDate }) => {
     );
 }
 
-export default MonsterCard;
+const mapStateToProps = (state) => {
+return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetDungeonData: bindActionCreators(setDungeonData, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(MonsterCard);

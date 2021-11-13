@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 import { Button, Form, FormControl } from 'react-bootstrap';
 import { campaignNameData } from '.';
 import "../../home.css";
 import { setCampaignName } from "../../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const CampaignNameModal = ({ onSetCampaignName, campaign }) => {
+const CampaignNameModal = ({ onSetCampaignName }) => {
 
     const setReduxCampaignName = (name) => {
         onSetCampaignName(name)

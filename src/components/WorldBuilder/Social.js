@@ -3,8 +3,20 @@ import Modal from 'react-bootstrap/Modal';
 import { Renown, FactionOrgs } from './components';
 import { Button } from 'react-bootstrap';
 import "./style.css";
+import { setFactionOrgs, setFactionShow, setPlayers } from "../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const Social = ({ setReduxFactionOrgs, setReduxFactionShow, setReduxPlayers, campaign }) => {
+const Social = ({ onSetFactionOrgs, onSetFactionShow, onSetPlayers, campaign }) => {
+    const setReduxPlayers = (destination, value) => {
+        onSetPlayers(destination, value)
+    }
+    const setReduxFactionOrgs = (names) => {
+        onSetFactionOrgs(names)
+    }
+    const setReduxFactionShow = (destination, value) => {
+        onSetFactionShow(destination, value)
+    }
     const [showModal, setShowModal] = useState(false);
 
     return (
@@ -35,4 +47,14 @@ const Social = ({ setReduxFactionOrgs, setReduxFactionShow, setReduxPlayers, cam
     );
 }
 
-export default Social;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetFactionOrgs: bindActionCreators(setFactionOrgs, dispatch),
+    onSetFactionShow: bindActionCreators(setFactionShow, dispatch),
+    onSetPlayers: bindActionCreators(setPlayers, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Social);

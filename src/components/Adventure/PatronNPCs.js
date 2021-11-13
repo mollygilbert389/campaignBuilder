@@ -3,9 +3,19 @@ import Modal from 'react-bootstrap/Modal';
 import { NPCs, Patron} from "./components";
 import { Button } from 'react-bootstrap';
 import "./style.css";
+import { setNPCData, setPatronData } from "../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const PatronNPCs = ({ campaign, setReduxPatronData, setReduxNPCData }) => {
+const PatronNPCs = ({ campaign, onSetPatronData, onSetNPCData }) => {
     const [showModal, setShowModal] = useState(false);
+    const setReduxPatronData = (destination, value) => {
+        onSetPatronData(destination, value)
+    }
+
+    const setReduxNPCData = (destination, value) => {
+        onSetNPCData(destination, value)
+    }
 
     return (
         <div>
@@ -44,4 +54,13 @@ const PatronNPCs = ({ campaign, setReduxPatronData, setReduxNPCData }) => {
     );
 }
 
-export default PatronNPCs;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetPatronData: bindActionCreators(setPatronData, dispatch),
+    onSetNPCData: bindActionCreators(setNPCData, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(PatronNPCs);
