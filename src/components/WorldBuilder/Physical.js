@@ -114,7 +114,6 @@ const  Physical = ({ onSetWorldData }) => {
     }
 
     const handleDropSelect = (keyEvent, e, type) => {
-        const name = e?.target?.name || keyEvent;
         const feedback = e?.target?.text || keyEvent;
         switch(type) {
             case "world" :
@@ -135,7 +134,7 @@ const  Physical = ({ onSetWorldData }) => {
             default:
                 break;   
         }
-        handleWorldImage(name);
+        handleWorldImage(feedback);
         setReduxWorldData(type, feedback);
         if(type === "world") {
             handleTravelPointState(feedback);
