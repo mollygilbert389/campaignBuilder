@@ -4,21 +4,17 @@ import { governmentData, Languages } from "./components";
 import { RollBtn } from "../StaticComps";
 import { Button, Dropdown, OverlayTrigger, Tooltip, Form } from 'react-bootstrap';
 import "./style.css"
-import { setGovernmentData, setLanguages, setLanguageShow } from "../../actions/index";
+import { setGovernmentData, setLanguageShow } from "../../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-const Government = ({ onSetGovernmentData, onSetLanguages, onSetLanguageShow, campaign }) => {
+const Government = ({ onSetGovernmentData, onSetLanguageShow, campaign }) => {
     const setReduxGovernmentData = (destinaton, value) => {
         onSetGovernmentData(destinaton, value)
-    }
-    const setReduxLanguages = (type) => {
-        onSetLanguages(type)
     }
     const setReduxLanguageShow = (destination, value) => {
         onSetLanguageShow(destination, value)
     }
-
     const [government, setGovernment] = useState("");
     const [currency, setCurrency] = useState("");
     const [showModal, setShowModal] = useState(false);
@@ -89,10 +85,7 @@ const Government = ({ onSetGovernmentData, onSetLanguages, onSetLanguageShow, ca
                         </Dropdown>
                         <RollBtn name="currency" handleRoll={(name, feedback) => setReduxGovernmentData(name, feedback)} rollingArray={currencyOptions}/>
                     </Form>
-                    <Languages
-                        campaign={this.props.campaign}
-                        setLanguageShow={this.props.setLanguageShow}
-                        setLanguages={this.props.setLanguages}/>
+                    <Languages/>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="outline-success" onClick={handleClose}>Save</Button>
@@ -108,7 +101,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchtoProps = (dispatch) => ({
     onSetGovernmentData: bindActionCreators(setGovernmentData, dispatch),
-    onSetLanguages: bindActionCreators(setLanguages, dispatch),
     onSetLanguageShow: bindActionCreators(setLanguageShow, dispatch)
 });
 

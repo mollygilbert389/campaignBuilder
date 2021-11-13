@@ -18,8 +18,7 @@ const  Physical = ({ onSetWorldData }) => {
     const [era, setEra] = useState("");
     const [mapScale, setMapScale] = useState("");
     const [charMeeting, setCharMeeting] = useState("");
-    const [rolledClicked, setRolledClicked] = useState(false);
-    const [worldStyle, setWorldStyle] = useState("");
+    // const [worldStyle, setWorldStyle] = useState("");
     const worldOptions = [
         "Aquatic",
         "Desert",
@@ -116,15 +115,33 @@ const  Physical = ({ onSetWorldData }) => {
         setReduxWorldData("worldStyle", worldStyle);
     }
 
-    const handleDropSelect = (keyEvent, e) => {
-        const name = e.target.name;
-        const feedback = e.target.text;
-        // this.setState({
-        //     [event.target.name]: feedback
-        // }, () =>this.handleWorldImage())
+    const handleDropSelect = (keyEvent, e, type) => {
+        const name = e?.target?.name || keyEvent;
+        const feedback = e?.target?.text || keyEvent;
+        switch(type) {
+            case "world" :
+                setWorld(feedback);
+                break;
+            case "era": 
+                setEra(feedback);
+                break;
+            case "uniqueFeatures": 
+                setUniqueFeatures(feedback);
+                break;
+            case "charMeeting": 
+                setCharMeeting(feedback);
+                break;
+            case "mapScale": 
+                setMapScale(feedback);
+                break;
+            default:
+                break;   
+        }
         handleWorldImage();
         setReduxWorldData(name, feedback);
-        handleTravelPointState(feedback);
+        if(type === "world") {
+            handleTravelPointState(feedback);
+        }
     }
 
     const handleTravelPointState = (feedback) => {
@@ -231,35 +248,23 @@ const  Physical = ({ onSetWorldData }) => {
         }
     }
 
-    const handleRoll = (feedback, name) => {
-        // this.setState({
-        //     [name]: feedback
-        // }, () =>this.handleWorldImage())
-        setReduxWorldData(name, feedback);
-        setReduxWorldData("worldStyle", feedback);
-        handleTravelPointState(feedback);
-    }
-
     const handleAddEvent = (event) => {
-        const currentChoices = travelPointChoices;
-        const updatedChoiceList = currentChoices.concat(event.target.value);
+        const updatedChoiceList = travelPointChoices.concat(event.target.value);
         const filteredChoiceList = updatedChoiceList.filter((item, index) => updatedChoiceList.indexOf(item) === index);
+        setTravelPointChoices(filteredChoiceList);
         if (travelPointChoices.length >= 3) {
             setEventCap(true);
-        } else {
-            setTravelPointChoices(filteredChoiceList);
         }
         setReduxWorldData("travelPointChoices", filteredChoiceList);
     }
 
     const removeEvent = (event) => {
-        let choices = travelPointChoices;
-        const newChoiceList = choices.filter((eventName) => eventName !== event.target.value);
-        if (this.state.travelPointChoices.length <= 5) {
+        console.log(event.target.value);
+        const newChoiceList = travelPointChoices.filter((eventName) => eventName !== event.target.value);
+        setTravelPointChoices(newChoiceList);
+        if (travelPointChoices.length <= 5) {
             setEventCap(false);
-        } else {
-            setTravelPointChoices(newChoiceList);
-        }
+        } 
         setReduxWorldData("travelPointChoices", newChoiceList);
     }
 
@@ -279,7 +284,7 @@ const  Physical = ({ onSetWorldData }) => {
                     </p>
                     <FormGroup>
                         <Form inline>
-                            <Dropdown name="world" onSelect={handleDropSelect}>
+                            <Dropdown name="world" onSelect={(ek, e) => handleDropSelect(ek, e, "world")}>
                                 <Dropdown.Toggle variant="outline-primary" name="world">
                                     {world ? `Setting: ${world}`: 'What is your setting?'}
                                 </Dropdown.Toggle>
@@ -287,12 +292,12 @@ const  Physical = ({ onSetWorldData }) => {
                                     {worldOptions.map((item) => (<Dropdown.Item name="world">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <RollBtn name="world" handleRoll={handleRoll} rollingArray={worldOptions}/>
+                            <RollBtn name="world" handleRoll={(ek, e) => handleDropSelect(ek, e, "world")} rollingArray={worldOptions}/>
                         </Form>
                     </FormGroup>
                     <FormGroup>
                         <Form inline>
-                            <Dropdown name="era" onSelect={handleDropSelect}>
+                            <Dropdown name="era" onSelect={(ek, e) => handleDropSelect(ek, e, "era")}>
                                 <Dropdown.Toggle variant="outline-primary">
                                     {era ? `Era: ${era}`: 'What era does this adventure take place?'}
                                 </Dropdown.Toggle>
@@ -300,12 +305,12 @@ const  Physical = ({ onSetWorldData }) => {
                                     {eraOptions.map((item) => (<Dropdown.Item name="era">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <RollBtn name="era" handleRoll={handleRoll} rollingArray={eraOptions}/>
+                            <RollBtn name="era" handleRoll={(ek, e) => handleDropSelect(ek, e, "era")} rollingArray={eraOptions}/>
                         </Form>
                     </FormGroup>
                     <FormGroup>
                         <Form inline>
-                            <Dropdown name="uniqueFeature" onSelect={handleDropSelect}>
+                            <Dropdown name="uniqueFeature" onSelect={(ek, e) => handleDropSelect(ek, e, "uniqueFeatures")}>
                                 <Dropdown.Toggle variant="outline-primary">
                                     {uniqueFeature ? `Feature: ${uniqueFeature}`: 'Does this world have a unique feature?'}
                                 </Dropdown.Toggle>
@@ -313,12 +318,12 @@ const  Physical = ({ onSetWorldData }) => {
                                     {featureOptions.map((item) => (<Dropdown.Item name="uniqueFeature">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <RollBtn name="uniqueFeature" handleRoll={handleRoll} rollingArray={featureOptions}/>
+                            <RollBtn name="uniqueFeature" handleRoll={(ek, e) => handleDropSelect(ek, e, "uniqueFeatures")} rollingArray={featureOptions}/>
                         </Form>
                     </FormGroup>
                     <FormGroup>
                         <Form inline>
-                            <Dropdown name="mapScale" onSelect={handleDropSelect}>
+                            <Dropdown name="mapScale" onSelect={(ek, e) => handleDropSelect(ek, e, "mapScale")}>
                                 <Dropdown.Toggle variant="outline-primary">
                                     {mapScale ? `Size: ${mapScale}` : 'What kind of place are your adventurers starting?'}
                                 </Dropdown.Toggle>
@@ -326,12 +331,12 @@ const  Physical = ({ onSetWorldData }) => {
                                     {mapScaleOptions.map((item) => (<Dropdown.Item name="mapScale">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <RollBtn name="mapScale" handleRoll={handleRoll} rollingArray={mapScaleOptions}/>
+                            <RollBtn name="mapScale" handleRoll={(ek, e) => handleDropSelect(ek, e, "mapScale")} rollingArray={mapScaleOptions}/>
                         </Form>
                     </FormGroup>
                     <FormGroup>
                         <Form inline>
-                            <Dropdown name="charMeeting" onSelect={handleDropSelect}>
+                            <Dropdown name="charMeeting" onSelect={(ek, e) => handleDropSelect(ek, e, "charMeeting")}>
                                 <Dropdown.Toggle variant="outline-primary">
                                     {charMeeting ? `Meeting: ${charMeeting}`: 'How do your characters know each other?'}
                                 </Dropdown.Toggle>
@@ -339,7 +344,7 @@ const  Physical = ({ onSetWorldData }) => {
                                     {meetingOptions.map((item) => (<Dropdown.Item name="charMeeting">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <RollBtn name="charMeeting" handleRoll={handleRoll} rollingArray={meetingOptions}/>
+                            <RollBtn name="charMeeting" handleRoll={(ek, e) => handleDropSelect(ek, e, "charMeeting")} rollingArray={meetingOptions}/>
                         </Form>
                     </FormGroup>
                     <p>Consider some places your adventurers might travel through. Pick only 3.</p>
@@ -360,7 +365,7 @@ const  Physical = ({ onSetWorldData }) => {
                         </div>
                         <div className="side tags">
                         {travelPointChoices.map((drop) => (
-                            <Button name="travelPointChoices" value={drop} className="eventbtns" onClick={removeEvent}> {drop}</Button>
+                            <Button name="travelPointChoices" value={drop} className="eventbtns" onClick={removeEvent} disabled={eventCap}> {drop}</Button>
                         ))}
                         </div>
                     </div>

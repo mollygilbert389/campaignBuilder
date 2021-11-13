@@ -8,24 +8,21 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 const CampaignNameModal = ({ onSetCampaignName }) => {
-    const setReduxCampaignName = (name) => {
-        onSetCampaignName(name)
-    }
-
     const [showModal, setShowModal] = useState(true);
     const [campaignName, setCampaignName] = useState("");
     const [disabled, setDisabled] = useState(true);
 
+    const setReduxCampaignName = (name) => {
+        onSetCampaignName(name)
+    };
     const close = () =>  {
         setShowModal(!showModal);
         setReduxCampaignName(campaignName);
     };
-    
     const handleChange = (event) => {
         setCampaignName(event.target.value);
         setDisabled(false);
     };
-
     const handleGenerateBtn = () => {
         const firstWord = campaignNameData.adjectives[Math.floor(Math.random()* campaignNameData.adjectives.length)];
         const secondWord = campaignNameData.animals[Math.floor(Math.random()* campaignNameData.animals.length)];
@@ -55,6 +52,7 @@ const CampaignNameModal = ({ onSetCampaignName }) => {
                 <Modal.Footer>
                     <Button 
                         variant={disabled ? "outline-success" : "success" }
+                        disabled={!campaignName}
                         type="submit" 
                         value="Submit" 
                         onClick={close}>

@@ -1,8 +1,17 @@
 import React, { useState } from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import "../style.css";
+import { setLanguages, setLanguageShow } from "../../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const Languages = ({ setReduxLanguages,  setReduxLanguagesShow }) => {
+const Languages = ({ onSetLanguages,  onSetLanguageShow }) => {
+    const setReduxLanguages = (type) => {
+        onSetLanguages(type)
+    }
+    const setReduxLanguageShow = (destination, value) => {
+        onSetLanguageShow(destination, value)
+    }
     const [value, setValue] = useState("");
     const [suggestedTags, setSuggestedTags] = useState([
         "Celestial",
@@ -20,14 +29,14 @@ const Languages = ({ setReduxLanguages,  setReduxLanguagesShow }) => {
         const removedTag = currentTags.filter((item) => item !== removedItem);
         setSuggestedTags(removedTag);
         setReduxLanguages(suggestedTags);
-        setReduxLanguagesShow("languageShow", true);
+        setReduxLanguageShow("languageShow", true);
     };
 
     const handleAddLanguage = (event) => {
         setSuggestedTags(suggestedTags.concat(value));
         setValue("");
         setReduxLanguages(suggestedTags);
-        setReduxLanguagesShow("languageShow", true);
+        setReduxLanguageShow("languageShow", true);
     };
 
     const onKeyDown = (event) => {
@@ -64,4 +73,13 @@ const Languages = ({ setReduxLanguages,  setReduxLanguagesShow }) => {
     )
 }
 
-export default Languages;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetLanguages: bindActionCreators(setLanguages, dispatch),
+    onSetLanguageShow: bindActionCreators(setLanguageShow, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Languages);
