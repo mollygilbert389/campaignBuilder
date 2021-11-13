@@ -46,7 +46,7 @@ const icons = [
     {id: 38, icon:faStarOfDavid}, 
     {id: 39, icon:faStar}, 
     {id: 40, icon:faVihara}
-]
+];
 
 const FactionOrgs = () => {
     const [value, setValue] = useState("");

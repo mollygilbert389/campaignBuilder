@@ -1,52 +1,30 @@
-import React, {Component} from 'react'
-import Modal from 'react-bootstrap/Modal'
-import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Card, CardGroup, Popover} from 'react-bootstrap'
-import {FormControlLabel, Checkbox, FormGroup, Slider} from '@material-ui/core'
-import "../../style.css"
+import React, { useState } from 'react';
+import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Card, Popover} from 'react-bootstrap';
+import "../../style.css";
 
-class EvilNPCCard extends Component {
-    state ={
-        showModal: false,
-        imageLink: "",
-        setImageLink: "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg",
-        evilNPCData: {},
-        subTypes: [
-            "Beast or monstrosity with no particular agenda",
-            "Abberation bent on corruption or desruction",
-            "Dragon bent on domination and plunder",
-            "Giant bent on plunder",
-            "Undead with any agenda",
-            "Fey with a mysterious goal",
-            "Hummanoid cultist",
-            "Hummanoid conqueror",
-            "Hummanoid seeking revenge",
-            "Hummanoid schemer seeking to rule",
-            "Hummanoid criminal mastermind",
-            "Hummanoid raider or ravager",
-            "Hummanoid under a curse",
-            "Misguided hummanoid zealot",
-            "Something else"
-        ]
-    }
-
-    // handleGenderSelect = (eventKey, event, index) => {
-    //     const selection = event.target.text
-    //     const reduxNPCData = this.props.campaign.NPCData
-
-    //     const newNPC = [...reduxNPCData].map(NPC => {
-    //         if (NPC.id === index) {
-    //             return {...NPC, gender:selection}
-    //         } return NPC
-    //     })
-
-    //     this.setState({
-    //         NPCData: {...this.state.NPCData, gender:selection},
-    //     })
-
-    //     this.props.setNPCData("NPCData", newNPC)
-    // }
+const EvilNPCCard = () => {
+    const [showModal, setShowModal] = useState(false);
+    const [imageLink, setImageLink] = useState("https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg");
+    const [evilNPCData, setEvilNPCData] = useState({});
+    const [subTypes, setSubTypes] = useState([
+        "Beast or monstrosity with no particular agenda",
+        "Abberation bent on corruption or desruction",
+        "Dragon bent on domination and plunder",
+        "Giant bent on plunder",
+        "Undead with any agenda",
+        "Fey with a mysterious goal",
+        "Hummanoid cultist",
+        "Hummanoid conqueror",
+        "Hummanoid seeking revenge",
+        "Hummanoid schemer seeking to rule",
+        "Hummanoid criminal mastermind",
+        "Hummanoid raider or ravager",
+        "Hummanoid under a curse",
+        "Misguided hummanoid zealot",
+        "Something else"
+    ]);
     
-    handleChange = (event, index) => {
+    const handleChange = (event, index) => {
         const name = event.target.value
         const reduxNPCData = this.props.campaign.NPCData
 
@@ -56,81 +34,52 @@ class EvilNPCCard extends Component {
             } return NPC
         })
 
-        this.setState({
-            NPCData: {...this.state.NPCData, NPCName:name},
-        })
-
+        setEvilNPCData({...setEvilNPCData, NPCName:name})
         this.props.setNPCData("NPCData", newNPC)
     }
 
-    handleImageLink = (event) => {
+    const handleImageLink = (event) => {
         const image = event.target.value
-
-        this.setState({
-            NPCData: {...this.state.NPCData, NPCImage:image},
-        })
+        setEvilNPCData({...setEvilNPCData, NPCName:image})
     }
 
-    handleImageSubmit = (event, index) => {
-        let image=this.state.NPCData.NPCImage
-
+    const handleImageSubmit = (event, index) => {
+        let image= setEvilNPCData.NPCImage
         const reduxNPCData = this.props.campaign.NPCData
-
-        if (image !== "") {
-            image=image
-        } else {
-            image= "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg"
-        }
-
         const newNPC = [...reduxNPCData].map(NPC => {
             if (NPC.id === index) {
                 return {...NPC, NPCImage:image}
             } return NPC
         })
-
-        this.setState({
-            setImageLink: image,
-            NPCData: {...this.state.NPCData, NPCImage:image},
-        })
-
+        setEvilNPCData({...setEvilNPCData, NPCName:image})
         this.props.setNPCData("NPCData", newNPC)
-
         this.refs.overlay.hide();
     }
 
-
-
-render() { 
     return (
-        
         <div>
             <Card className="d-flex flex-column align-items-center villainPatronCard">
-
                 <OverlayTrigger 
-                trigger="click"
-                ref="overlay"
-                placement="top"
-                overlay={
-                    <Popover className="makeItBigger">
-                        <Popover.Title as="h3">Add Your Image!</Popover.Title>
-                        <Popover.Content>
-                            <div className="centerMe">
-                                <FormControl type="text" placeholder="Image Link" className="mr-sm-2" value={this.state.imageLink} onChange={this.handleImageLink}/>
-                                <Button onClick={this.handleImageSubmit} className="imageSubmit">Submit</Button>
-                            </div>
-                        </Popover.Content>
-                    </Popover>
-                    }
-                    >
-                    <Card.Img className="NPCimage" variant="top" src={this.state.setImageLink}/> 
+                    trigger="click"
+                    ref="overlay"
+                    placement="top"
+                    overlay={
+                        <Popover className="makeItBigger">
+                            <Popover.Title as="h3">Add Your Image!</Popover.Title>
+                            <Popover.Content>
+                                <div className="centerMe">
+                                    <FormControl type="text" placeholder="Image Link" className="mr-sm-2" value={imageLink} onChange={handleImageLink}/>
+                                    <Button onClick={handleImageSubmit} className="imageSubmit">Submit</Button>
+                                </div>
+                            </Popover.Content>
+                        </Popover>
+                    }>
+                    <Card.Img className="NPCimage" variant="top" src={imageLink}/> 
                 </OverlayTrigger>
-
-
                 <Card.Body className="d-flex flex-column align-items-center">
                     <Form inline>
-                        <FormControl type="text" placeholder="villain Name" className="mr-sm-2" value={this.state.value} onChange={this.handleChange}/>
+                        <FormControl type="text" placeholder="villain Name" className="mr-sm-2" value={evilNPCData?.name || ""} onChange={handleChange}/>
                         <div style={{paddingRight: "10px"}}>or</div> 
-
                         <OverlayTrigger overlay={
                             <Tooltip>Coming Soon!</Tooltip>}>
                             <span className="d-inline-block">
@@ -138,10 +87,8 @@ render() {
                             </span>
                         </OverlayTrigger>
                     </Form>
-
-                    <Card.Title>{this.state.villainData.name && (`Name: ${this.state.villainData.name}`)}</Card.Title>
+                    <Card.Title>{evilNPCData && (`Name: ${evilNPCData.name}`)}</Card.Title>
                 <div className="d-flex flex-column align-items-center">
-
                     <Dropdown className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
                             {'Choose your some evil NPC Types'}
@@ -163,7 +110,6 @@ render() {
                             <Dropdown.Item>Something else</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
-
                     <Dropdown className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
                             {'Choose your Adventure Villain'}
@@ -174,7 +120,6 @@ render() {
                             <Dropdown.Item>Non Binary</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
-
                     <div className="dualDrop giveMeNPCSpace">
                         <Dropdown className="giveMeNPCSpace">
                             <Dropdown.Toggle variant="outline-primary">
@@ -185,7 +130,6 @@ render() {
                                 return <Dropdown.Item key={item.id} name={item.objectiveCat}>{item.objectiveCat}</Dropdown.Item>})} */}
                             </Dropdown.Menu>
                         </Dropdown>
-
                         <Dropdown>
                             <Dropdown.Toggle variant="outline-primary">
                             {"Choose your Villain's Main Objective"}
@@ -196,7 +140,6 @@ render() {
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
-
                     <div className="dualDrop giveMeNPCSpace">
                         <Dropdown>
                             <Dropdown.Toggle variant="outline-primary">
@@ -207,8 +150,6 @@ render() {
                                 return <Dropdown.Item key={item.id} name={item.methodCat}>{item.methodCat}</Dropdown.Item>})} */}
                             </Dropdown.Menu>
                         </Dropdown>
-
-
                         <Dropdown>
                             <Dropdown.Toggle variant="outline-primary">
                             {"Choose your Villain's Method"}
@@ -219,7 +160,6 @@ render() {
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
-
                     <Dropdown className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
                             {"Choose your Villain's Weakness"}
@@ -234,7 +174,6 @@ render() {
             </Card>
         </div>
     );
-}
 }
 
 export default EvilNPCCard;
