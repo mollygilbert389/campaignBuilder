@@ -1,20 +1,14 @@
-import React from "react"
-import {Button} from "react-bootstrap"
-import "./style.css"
+import React from "react";
+import {Button} from "react-bootstrap";
+import "./style.css";
 
-
-const diceRoller = function(props) {
-    
+const diceRoller = function({ rollingArray, handleRoll, name }) {
     function rollIt() {
-        let rollingArrary = props.rollingArray
-
-        let diceMax = rollingArrary.length
-        let randoNumber = Math.floor(Math.random() * Math.floor(diceMax))
-
-        let finalItem = rollingArrary[randoNumber]
-        props.handleRoll(finalItem, props.name)
-    }
-
+        let diceMax = rollingArray.length;
+        let randoNumber = Math.floor(Math.random() * Math.floor(diceMax));
+        let finalItem = rollingArray[randoNumber]
+        handleRoll(finalItem, name);
+    };
 
     return (
         <Button className="giveMeSomeSpace" onClick={rollIt}>Roll it</Button>

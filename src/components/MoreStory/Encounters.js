@@ -18,12 +18,6 @@ const Encounters = ({ setReduxEncounters }) => {
         "Investiage an area",
     ];
 
-    // conhandleClick = () => {
-    //     this.setState({
-    //         showModal: !this.state.showModal,
-    //     })
-    // }
-
     const handleSlider = (event, value) => {
         let encounterEvents = [];
         for (let i=0; i < value; i++) {
