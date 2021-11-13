@@ -1,81 +1,60 @@
-import React, { Component } from 'react'
-import { MapCard, CampaignCard, maps } from "./components"
-import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap'
-import './style.css'
+import React, { useState } from 'react';
+import { MapCard, CampaignCard, maps } from "./components";
+import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import './style.css';
 
+const FinalScreen = ({ campaign }) =>  {
+    const [displayMap, setDisplayMap] = useState(false);
+    const [randomMapId, setRandomMapId] = useState(0);
+    const [clicked, setClicked] = useState(false);
 
-class FinalScreen extends Component {
-    state = {
-        displayMap: false,
-        randomMapId: 0,
-        clicked: false
-    }
+    const handleGenerate = () => {
+        setDisplayMap(true);
+        setClicked(true);
+        getMap();
+    };
 
-    handleGenerate = () => {
-        this.setState({
-            displayMap: true,
-            clicked: true
-        })
-
-        this.getMap()
-    }
-
-    getMap = () => {
-        const mapChoice = this.props.campaign.world || "Forest"
-
-        console.log(mapChoice)
-
-        let filteredMaps  = maps.filter(map => (map.world.includes(mapChoice)))
-        console.log(filteredMaps)
-        
-        const chosenMap = filteredMaps.map(map => map.id)
+    function getMap () {
+        const mapChoice = campaign.world || "Forest";
+        let filteredMaps  = maps.filter(map => (map.world.includes(mapChoice)));        
+        const chosenMap = filteredMaps.map(map => map.id);
         chosenMap.sort(function() {
             return .5 - Math.random();
-        })
-
-        let finalMapId = chosenMap[0]
-
-        this.setState({
-            randomMapId: finalMapId
-        })
-    }
-
-render() {  
-
-    const{campaign}=this.props
+        });
+        let finalMapId = chosenMap[0];
+        setRandomMapId(finalMapId);
+    };
     
     return (
         <div className="d-flex flex-column align-items-center">
             <div className="d-flex flex-column align-items-center">
-
                 <OverlayTrigger 
-                overlay={
-                    <Tooltip>Coming Soon!</Tooltip>}>
+                overlay={<Tooltip>Coming Soon!</Tooltip>}>
                     <span className="d-inline-block">
                         <Button 
-                        variant="outline-danger" 
-                        size="lg" 
-                        onClick={this.handleGenerate}
-                        // disabled={this.state.clicked} 
-                        href="/"
-                        disabled
-                        >Generate My Campaign
+                            variant="outline-danger" 
+                            size="lg" 
+                            onClick={handleGenerate}
+                            href="/"
+                            disabled>
+                            Generate My Campaign
                         </Button>
                     </span>
                 </OverlayTrigger>
-
             </div>
-            <br></br>
-            {this.state.displayMap && (<div>
-                <MapCard
-                    id={maps[this.state.randomMapId].id}
-                    key={maps[this.state.randomMapId].id}
-                    image={maps[this.state.randomMapId].image}
-                    name={maps[this.state.randomMapId].name}
-                ></MapCard>
-                <CampaignCard></CampaignCard>
-                </div>)}
+            <br/>
+            {displayMap && (
+                <div>
+                    <MapCard
+                        id={maps[randomMapId].id}
+                        key={maps[randomMapId].id}
+                        image={maps[randomMapId].image}
+                        name={maps[randomMapId].name}/>
+                    <CampaignCard/>
+                </div>
+            )}
         </div>
-    )}}
+    )
+}
 
 export default FinalScreen;
