@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown, Form } from 'react-bootstrap';
 import { RollBtn } from "../StaticComps";
-import "../style.css";
+import "./style.css";
 
 const MainGoals = ({ setReduxMainGoal }) => {
     const [goalsCat, setGoalsCat] = useState("");

@@ -1,5 +1,5 @@
-//CITY -7
-[
+{
+"city": [
     {
       "id": 2,
       "name": "Dungeon Jail",
@@ -49,11 +49,9 @@
       "rooms": "19",
       "world": ["City", "Villiage"]
     }   
-]
+],
 
-//COAST -4
-
-[
+"coast": [
     {
       "id": 7,
       "name": "Cave Dungeon",
@@ -82,11 +80,9 @@
       "rooms": "13",
       "world": ["Forest", "Villiage", "Jungle", "Island", "Coast"]
     }     
-]
+],
 
-//DESERT -8 
-
-[
+"desert": [
     {
       "id": 1,
       "name": "Damp Mine",
@@ -128,7 +124,7 @@
       "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ff727761-d6b1-4548-916b-3b9033c9149d/ddbvz3t-02a6fb39-0481-46c3-96c2-7eeea043447f.jpg/v1/fill/w_894,h_894,q_70,strp/empty_dungeon_map_by_zatnikotel_ddbvz3t-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xOTIwIiwicGF0aCI6IlwvZlwvZmY3Mjc3NjEtZDZiMS00NTQ4LTkxNmItM2I5MDMzYzkxNDlkXC9kZGJ2ejN0LTAyYTZmYjM5LTA0ODEtNDZjMy05NmMyLTdlZWVhMDQzNDQ3Zi5qcGciLCJ3aWR0aCI6Ijw9MTkyMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.cLV4Dlz3BMU8z6D7uGnV6HsL37wNFxNLYJOATxYmUDY",
       "rooms": "20",
       "world": ["Forest", "Desert", "Meadow", "Village", "Tundra", "Jungle"]
-    }
+    },
     {
       "id": 15,
       "name": "Abanodned Temple",
@@ -143,11 +139,9 @@
       "rooms": "6",
       "world": ["City", "Desert", "Tundra", "Jungle", "Forest"]
     }    
-]
+],
 
-//FOREST - 11
-
-[
+"forest": [
     {
       "id": 5,
       "name": "Forgotten Crypt",
@@ -225,11 +219,9 @@
       "rooms": "6",
       "world": ["City", "Desert", "Tundra", "Jungle", "Forest"]
     }     
-]
+],
 
-//ISLAND - 10
-
-[
+"island": [
     {
       "id": 1,
       "name": "Damp Mine",
@@ -300,11 +292,9 @@
       "rooms": "7",
       "world": ["Island", "Jungle", "Village"]
     }     
-]
+],
 
-//JUNGLE - 15 
-
-[
+"jungle": [
     {
       "id": 1,
       "name": "Damp Mine",
@@ -410,11 +400,9 @@
       "rooms": "6",
       "world": ["City", "Desert", "Tundra", "Jungle", "Forest"]
     }  
-]
+],
 
-//MEADOW - 5
-
-[
+"meadow": [
     {
       "id": 9,
       "name": "Caveren of the Venom Queen",
@@ -450,11 +438,8 @@
       "rooms": "13",
       "world": ["Forest", "Villiage", "Meadow", "Island"]
     }      
-]
-
-//SWAMP - 4
-
-[
+],
+"swamp": [
     {
       "id": 5,
       "name": "Forgotten Crypt",
@@ -483,11 +468,9 @@
       "rooms": "8",
       "world": ["Meadow", "Forest", "Jungle", "Swamp"]
     }      
-]
+],
 
-//TUNDRA -7 
-
-[
+"tundra": [
     {
       "id": 1,
       "name": "Damp Mine",
@@ -537,11 +520,9 @@
       "rooms": "6",
       "world": ["City", "Desert", "Tundra", "Jungle", "Forest"]
     }      
-]
+],
 
-//VILLIAGE -6 
-
-[
+"village": [
     {
       "id": 1,
       "name": "Damp Mine",
@@ -585,3 +566,4 @@
       "world": ["Island", "Jungle", "Village"]
     }    
 ]
+}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { NPCs, Patron} from "./components";
 import { Button } from 'react-bootstrap';
-import "../style.css";
+import "./style.css";
 
 const PatronNPCs = ({ campaign, setReduxPatronData, setReduxNPCData }) => {
     const [showModal, setShowModal] = useState(false);

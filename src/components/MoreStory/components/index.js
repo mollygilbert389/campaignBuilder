@@ -1,11 +1,11 @@
 import RandomEvents from "./RandomEvents";
 import SideQuests from "./SideQuests";
 import Twists from "./Twists";
-import EncountersAndEvents from "./EncountersAndEvents";
+import Encounters from "./Encounters";
 
 export {
     RandomEvents,
     SideQuests,
     Twists,
-    EncountersAndEvents
+    Encounters
 }

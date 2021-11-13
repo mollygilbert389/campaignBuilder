@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Carousel } from 'react-bootstrap';
 import { Slider } from '@material-ui/core';
-import NPCCard from ".";
+import { NPCCard } from ".";
 import "../../style.css";
 
 const NPCs = ({ setReduxNPCData, campaign }) => {

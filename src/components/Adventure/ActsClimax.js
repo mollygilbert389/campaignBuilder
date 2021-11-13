@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Carousel from 'react-bootstrap/Carousel';
 import { Button } from 'react-bootstrap';
-import "../style.css";
+import "./style.css";
 
 const Acts = ({ setReduxActsAndClimax }) => {
     const [showModal, setShowModal] = useState(false);

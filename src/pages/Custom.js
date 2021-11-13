@@ -42,7 +42,6 @@ import {
 } from "../actions/index"
 
 const CustomCampaign = ({
-    onSetCampaignName,
     onSetPlayers,
     onSetWorldData,
     onSetGovernmentData,
@@ -107,10 +106,6 @@ const CustomCampaign = ({
 
     const handlePrevBtn = () => {
         //combine these functions and refactor
-    }
-
-    const setCampaignName = (name) => {
-        onSetCampaignName(name)
     }
 
     const setPlayers = (destination, value) => {
@@ -211,7 +206,7 @@ const CustomCampaign = ({
                     <div>
                         <p>We first need name this campaign!</p>
                         <div className="btnspace">
-                            <CampaignNameModal setCampaignName={setCampaignName}/>
+                            <CampaignNameModal/>
                         </div>
                     </div>
                 )}

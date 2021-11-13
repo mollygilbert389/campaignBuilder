@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { GenerateBtn } from "../StaticComps";
 import { Button, Dropdown, Form, FormControl, OverlayTrigger, Card, Popover } from 'react-bootstrap';
-import "../style.css";
+import "./style.css";
 
 const VillainModal = ({ setReduxVillainData }) => {
     const [showModal, setShowModal] = useState(false);

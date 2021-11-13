@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import { governmentData, Languages } from "./components";
 import { RollBtn } from "../StaticComps";
 import { Button, Dropdown, OverlayTrigger, Tooltip, Form } from 'react-bootstrap';
-import "../style.css"
+import "./style.css"
 
 const Government = ({ setReduxGovernmentData, setReduxLanguageShow }) => {
     const [government, setGovernment] = useState("");

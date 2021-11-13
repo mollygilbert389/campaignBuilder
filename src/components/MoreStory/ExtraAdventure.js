@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { SideQuests, Twists } from "./components";
 import { Button } from 'react-bootstrap';
-import "../style.css";
+import "./style.css";
 
 const ExtraAdventure = ({ setReduxSideQuests, setReduxTwist }) => {
     const [showModal, setShowModal] = useState(false);

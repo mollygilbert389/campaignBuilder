@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button } from 'react-bootstrap';
 import { Slider  } from '@material-ui/core';
-import { EvilNPCCard } from ".";
 import "../../style.css";
 
 const EvilNPCs = () => {

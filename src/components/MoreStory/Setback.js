@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown, FormControl } from 'react-bootstrap';
-import "../style.css";
+import "./style.css";
 
 const Setback = ({ setReduxSetback }) => {
     const [showModal, setShowModal] = useState(false);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Button, Dropdown, Form, FormControl, OverlayTrigger, Card, Popover} from 'react-bootstrap';
+import { Button, Dropdown, Form, FormControl, OverlayTrigger, Card, Popover } from 'react-bootstrap';
 import "../../style.css";
 
 const NPCCard = ({ setReduxNPCData, campaign, index, reduxNPCData }) => {

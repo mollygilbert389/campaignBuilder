@@ -1,10 +1,10 @@
-import Encounters from "./Encounters";
+import EncountersAndEvents from "./EncountersAndEvents";
 import ExtraAdventure from "./ExtraAdventure";
 import LocalEvents from "./LocalEvents";
 import Setback from "./Setback";
 
 export {
-    Encounters,
+    EncountersAndEvents,
     ExtraAdventure,
     LocalEvents,
     Setback

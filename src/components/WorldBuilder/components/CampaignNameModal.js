@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import { Button, Form, FormControl } from 'react-bootstrap';
 import { campaignNameData } from '.';
-import "../home.css";
+import "../../home.css";
+import { setCampaignName } from "../../../actions/index";
 
-const CampaignNameModal = ({ campaign, setReduxCampaignName }) => {
+const CampaignNameModal = ({ onSetCampaignName, campaign }) => {
+
+    const setReduxCampaignName = (name) => {
+        onSetCampaignName(name)
+    }
+
     const [showModal, setShowModal] = useState(true);
     const [campaignName, setCampaignName] = useState("");
     const [disabled, setDisabled] = useState(true);
@@ -59,4 +67,12 @@ const CampaignNameModal = ({ campaign, setReduxCampaignName }) => {
     );
 }
 
-export default CampaignNameModal;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetCampaignName: bindActionCreators(setCampaignName, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(CampaignNameModal);

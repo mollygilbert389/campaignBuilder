@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { RollBtn } from "../StaticComps";
 import { Button, Dropdown, Form, FormGroup } from 'react-bootstrap';
-import "../style.css";
+import "./style.css";
 
 const  Physical = ({ setReduxWorldData }) => {
     const [showModal, setShowModal] = useState(false);
