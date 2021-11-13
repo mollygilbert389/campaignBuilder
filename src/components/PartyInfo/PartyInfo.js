@@ -17,44 +17,37 @@ const PartyInfo = ({ onSetPlayers })  => {
     const levels = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 
     const handleClick = (event) => {
-        let partyMemberChoice = event.target.id;
-        partyMemberChoice = parseInt(partyMemberChoice);
         let playerData = [];
-        for (let i=0; i < partyMemberChoice; i++) {
-            let newObject = {id:i+1, name: "", raceClass: "", level: 0}
+        Array.from(Array(parseInt(event.target.id)).keys()).forEach((member, index) => {
+            const newObject = { id: index+1, name: "", raceClass: "", level: 0 }
             playerData.push(newObject)
-        }
+        });
         setPartyMemberData(playerData)
     }; 
 
-    const handlePartySelect = (eventKey, event) => {
-        const index = event.target.id -1;
-        const newRaceClass = event.target.name;
+    const handlePartyDetails = (eventKey, event, type) => {
+        const jsEvent = event || eventKey;
+        const index = jsEvent.target.id -1;
         const oldData = partyMemberData;
-        const newPartyMemberData = update(oldData, 
-            {[index]: {$set: {id: index+1, name: this.state.partymemberData[index].name, raceClass: newRaceClass, level:0}}}
-          );
-        setPartyMemberData(newPartyMemberData);
-    };
-
-    const playerNameChange = (event) => {
-        const index = event.target.id -1;
-        const playerName = event.target.value;
-        const oldData = partyMemberData;
-        const newPartyMemberData = update(oldData, 
-            {[index]: {$set: {id: index+1, name: playerName, raceClass: this.state.partymemberData[index].raceClass, level:0}}}
-            );
-        setPartyMemberData(newPartyMemberData);
-    };
-
-    const handlePartyLevel = (eventKey, event) => {
-        const index = event.target.id -1
-        const newlevel = event.target.text;
-        const oldData = partyMemberData;
-        const newPartyMemberData = update(oldData, 
-            {[index]: {$set: {id: index+1, name: this.state.partymemberData[index].name, raceClass: this.state.partymemberData[index].raceClass, level: newlevel}}},
-          );
-        setPartyMemberData(newPartyMemberData);
+        if(type === "name"){
+            const newName = jsEvent.target.value;
+            const newPartyMemberData = update(oldData, 
+                {[index]: {$set: {id: index+1, name: newName, raceClass: partyMemberData[index].raceClass, level: partyMemberData[index].level}}}
+                );
+            setPartyMemberData(newPartyMemberData);
+        } else if (type === "level") {
+            const newLevel = jsEvent.target.text;
+            const newPartyMemberData = update(oldData, 
+                {[index]: {$set: {id: index+1, name: partyMemberData[index].name, raceClass: partyMemberData[index].raceClass, level: newLevel}}},
+              );
+            setPartyMemberData(newPartyMemberData);
+        } else if (type === "race") {
+            const newRace = jsEvent.target.name;
+            const newPartyMemberData = update(oldData, 
+                {[index]: {$set: {id: index+1, name: partyMemberData[index].name, raceClass: newRace, level: partyMemberData[index].level}}}
+              );
+            setPartyMemberData(newPartyMemberData);
+        }
     };
 
     const handleReduxSave = () => {
@@ -79,10 +72,10 @@ const PartyInfo = ({ onSetPlayers })  => {
                             <Form inline>
                                 <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                                     <Label className="mr-sm-2">{`Party Member ${partyMember.id}`}</Label>
-                                    <Input type="names" placeholder="Name" id={partyMember.id} onChange={playerNameChange}/>
+                                    <Input type="names" placeholder="Name" id={partyMember.id} onChange={(ek, e) => handlePartyDetails(ek, e, "name")}/>
                                 </FormGroup>
                                 <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                                    <Dropdown onSelect={handlePartySelect} id={partyMember.id}>
+                                    <Dropdown onSelect={(ek, e) => handlePartyDetails(ek, e, "race")} id={partyMember.id}>
                                         <Dropdown.Toggle variant="outline-primary">
                                             {partyMemberData[index].raceClass ? partyMemberData[index].raceClass: 'Choose a Class for this Party Member'}
                                         </Dropdown.Toggle>
@@ -90,7 +83,7 @@ const PartyInfo = ({ onSetPlayers })  => {
                                             {classTypes.map((item) => (<Dropdown.Item id={partyMember.id} name={item}>{item}</Dropdown.Item>))}
                                         </Dropdown.Menu>
                                     </Dropdown>
-                                    <Dropdown className="someSpace" onSelect={handlePartyLevel} id={partyMember.id}>
+                                    <Dropdown className="someSpace" onSelect={(ek, e) => handlePartyDetails(ek, e, "level")} id={partyMember.id}>
                                         <Dropdown.Toggle variant="outline-primary">
                                             {partyMemberData[index].level ? partyMemberData[index].level: 'Choose a level for this party member'}
                                         </Dropdown.Toggle>
