@@ -3,6 +3,7 @@ import { Card, CardGroup, Table } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NPCCards } from ".";
 import "./style.css";
+import { connect } from "react-redux";
 
 const StoryInfo = ({ campaign }) => {    
     return (
@@ -283,4 +284,8 @@ const StoryInfo = ({ campaign }) => {
     );
 }
 
-export default StoryInfo;
+const mapStateToProps = (state) => {
+  return {campaign: state.campaignReducer}
+}
+
+export default connect(mapStateToProps)(StoryInfo);

@@ -128,7 +128,7 @@ const CustomCampaign = ({ campaign }) => {
                     <div>
                         <p>Cool! You've made a campaign! Check ou the details below! These are meant to be suggestions. Feel free to edit this as you like! Happy Campaigning.</p>
                         <div className="btnspace">
-                            <FinalScreen campaign={campaign}/>
+                            <FinalScreen/>
                         </div>
                     </div>
                 )}
@@ -146,7 +146,7 @@ const CustomCampaign = ({ campaign }) => {
             )}
             </div>
                 <div className="storyCards">
-                    <StoryInfo campaign={campaign}/>
+                    <StoryInfo/>
                 </div>
             </div>
     );

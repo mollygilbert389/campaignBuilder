@@ -8,7 +8,6 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 const CampaignNameModal = ({ onSetCampaignName }) => {
-
     const setReduxCampaignName = (name) => {
         onSetCampaignName(name)
     }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MapCard, CampaignCard, maps } from "./components";
 import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import './style.css';
+import { connect } from "react-redux";
 
 const FinalScreen = ({ campaign }) =>  {
     const [displayMap, setDisplayMap] = useState(false);
@@ -57,4 +58,8 @@ const FinalScreen = ({ campaign }) =>  {
     )
 }
 
-export default FinalScreen;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+export default connect(mapStateToProps)(FinalScreen);
