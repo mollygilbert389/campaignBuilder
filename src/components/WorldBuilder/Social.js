@@ -3,19 +3,13 @@ import Modal from 'react-bootstrap/Modal';
 import { Renown, FactionOrgs } from './components';
 import { Button } from 'react-bootstrap';
 import "./style.css";
-import { setFactionOrgs, setFactionShow, setPlayers } from "../../actions/index";
+import { setPlayers } from "../../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-const Social = ({ onSetFactionOrgs, onSetFactionShow, onSetPlayers, campaign }) => {
+const Social = ({ onSetPlayers, campaign }) => {
     const setReduxPlayers = (destination, value) => {
         onSetPlayers(destination, value)
-    }
-    const setReduxFactionOrgs = (names) => {
-        onSetFactionOrgs(names)
-    }
-    const setReduxFactionShow = (destination, value) => {
-        onSetFactionShow(destination, value)
     }
     const [showModal, setShowModal] = useState(false);
 
@@ -35,7 +29,7 @@ const Social = ({ onSetFactionOrgs, onSetFactionShow, onSetPlayers, campaign }) 
                     </p>
                     <br/>
                     <div className="btnspace">
-                        <FactionOrgs setReduxFactionOrgs={setReduxFactionOrgs} setReduxFactionShow={setReduxFactionShow}/>
+                        <FactionOrgs/>
                         <Renown setReduxPlayers={setReduxPlayers}campaign={campaign}/>
                     </div>
                 </Modal.Body>
@@ -52,8 +46,6 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchtoProps = (dispatch) => ({
-    onSetFactionOrgs: bindActionCreators(setFactionOrgs, dispatch),
-    onSetFactionShow: bindActionCreators(setFactionShow, dispatch),
     onSetPlayers: bindActionCreators(setPlayers, dispatch)
 });
 

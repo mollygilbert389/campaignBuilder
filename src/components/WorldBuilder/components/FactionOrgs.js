@@ -4,51 +4,60 @@ import { Button, ButtonGroup, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBeer, faGem, faCrown, faDragon, faHatWizard, faShieldAlt, faChessKnight, faAnchor, faAnkh, faArchway, faBalanceScaleLeft, faAtlas, faAtom, faBook, faBookDead, faBookMedical, faCross, faDiceD20, faDollarSign, faDotCircle, faDove, faDraftingCompass, faEye, faFire, faFish, faGlassCheers, faHollyBerry, faHorse, faHourglassHalf, faLandmark, faOm, faRebel, faPallet, faPaw, faPenNib, faPlaceOfWorship, faSkull, faSpider, faStarOfDavid, faStar, faVihara} from '@fortawesome/free-solid-svg-icons';
 import "../style.css";
+import { setFactionOrgs, setFactionShow } from "../../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const icons = [
-    {id: 1, icon:faBeer}, 
-    {id: 2, icon:faGem}, 
-    {id: 3, icon:faCrown}, 
-    {id: 4, icon:faDragon}, 
-    {id: 5, icon:faHatWizard}, 
-    {id: 6, icon:faShieldAlt}, 
-    {id: 7, icon:faChessKnight}, 
-    {id: 8, icon:faAnchor}, 
-    {id: 9, icon:faAnkh}, 
-    {id: 10, icon:faArchway},
-    {id: 11, icon:faBalanceScaleLeft},
-    {id: 12, icon:faAtlas}, 
-    {id: 13, icon:faAtom}, 
-    {id: 14, icon:faBook}, 
-    {id: 15, icon:faBookDead}, 
-    {id: 16, icon:faBookMedical}, 
-    {id: 17, icon:faCross}, 
-    {id: 18, icon:faDiceD20}, 
-    {id: 19, icon:faDollarSign}, 
-    {id: 20, icon:faDotCircle}, 
-    {id: 21, icon:faDove}, 
-    {id: 22, icon:faDraftingCompass}, 
-    {id: 23, icon:faEye}, 
-    {id: 24, icon:faFire}, 
-    {id: 25, icon:faFish}, 
-    {id: 26, icon:faGlassCheers}, 
-    {id: 27, icon:faHollyBerry}, 
-    {id: 28, icon:faHorse}, 
-    {id: 29, icon:faHourglassHalf}, 
-    {id: 30, icon:faLandmark}, 
-    {id: 31, icon:faOm}, 
-    {id: 32, icon:faPallet}, 
-    {id: 33, icon:faPaw}, 
-    {id: 34, icon:faPenNib}, 
-    {id: 35, icon:faPlaceOfWorship}, 
-    {id: 36, icon:faSkull}, 
-    {id: 37, icon:faSpider}, 
-    {id: 38, icon:faStarOfDavid}, 
-    {id: 39, icon:faStar}, 
-    {id: 40, icon:faVihara}
-];
+const FactionOrgs = ({ onSetFactionOrgs, onSetFactionShow }) => {
+    const icons = [
+        {id: 1, icon:faBeer}, 
+        {id: 2, icon:faGem}, 
+        {id: 3, icon:faCrown}, 
+        {id: 4, icon:faDragon}, 
+        {id: 5, icon:faHatWizard}, 
+        {id: 6, icon:faShieldAlt}, 
+        {id: 7, icon:faChessKnight}, 
+        {id: 8, icon:faAnchor}, 
+        {id: 9, icon:faAnkh}, 
+        {id: 10, icon:faArchway},
+        {id: 11, icon:faBalanceScaleLeft},
+        {id: 12, icon:faAtlas}, 
+        {id: 13, icon:faAtom}, 
+        {id: 14, icon:faBook}, 
+        {id: 15, icon:faBookDead}, 
+        {id: 16, icon:faBookMedical}, 
+        {id: 17, icon:faCross}, 
+        {id: 18, icon:faDiceD20}, 
+        {id: 19, icon:faDollarSign}, 
+        {id: 20, icon:faDotCircle}, 
+        {id: 21, icon:faDove}, 
+        {id: 22, icon:faDraftingCompass}, 
+        {id: 23, icon:faEye}, 
+        {id: 24, icon:faFire}, 
+        {id: 25, icon:faFish}, 
+        {id: 26, icon:faGlassCheers}, 
+        {id: 27, icon:faHollyBerry}, 
+        {id: 28, icon:faHorse}, 
+        {id: 29, icon:faHourglassHalf}, 
+        {id: 30, icon:faLandmark}, 
+        {id: 31, icon:faOm}, 
+        {id: 32, icon:faPallet}, 
+        {id: 33, icon:faPaw}, 
+        {id: 34, icon:faPenNib}, 
+        {id: 35, icon:faPlaceOfWorship}, 
+        {id: 36, icon:faSkull}, 
+        {id: 37, icon:faSpider}, 
+        {id: 38, icon:faStarOfDavid}, 
+        {id: 39, icon:faStar}, 
+        {id: 40, icon:faVihara}
+    ];
 
-const FactionOrgs = ({ setReduxFactionOrgs, setReduxFactionShow }) => {
+    const setReduxFactionOrgs = (names) => {
+        onSetFactionOrgs(names)
+    }
+    const setReduxFactionShow = (destination, value) => {
+        onSetFactionShow(destination, value)
+    }
     const [value, setValue] = useState("");
     const [showModal, setShowModal] = useState(false);
     const [currentBtnId, setCurrentBtnId] = useState(null);
@@ -87,28 +96,27 @@ const FactionOrgs = ({ setReduxFactionOrgs, setReduxFactionShow }) => {
     const handleSave = () => {
         setShowModal(!showModal);
         setReduxFactionOrgs(suggestedTags);
-        setReduxFactionShow("factionShow", true);        
+        setReduxFactionShow("factionShow", true);
     };
 
     const handleIconSelect = (event) => {
         const btnId = event.target.id 
-        setShowModal(!showModal);
+        setShowMiniModal(!showMiniModal);
         setCurrentBtnId(btnId);
     };
 
     const hanleIconFinalSelection = (event) => {
         const btnId = parseInt(currentBtnId);
-        const iconId = event.target.id;
+        const iconId = parseInt(event.target.id);
         const updatedIcon = icons.filter((item) => item.id === iconId);
         const finalIcon = updatedIcon[0].icon;
-        
         const factionIcons = [...suggestedTags].map((item) => {
             if (item.id === btnId) {
                 return {...item, icon:finalIcon}
             } return item
         });
         setSuggestedTags(factionIcons);
-        setShowModal(!showModal);
+        setShowMiniModal(!showMiniModal);
     };
 
     return (
@@ -188,4 +196,13 @@ const FactionOrgs = ({ setReduxFactionOrgs, setReduxFactionShow }) => {
     )
 }
 
-export default FactionOrgs;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetFactionOrgs: bindActionCreators(setFactionOrgs, dispatch),
+    onSetFactionShow: bindActionCreators(setFactionShow, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(FactionOrgs);
