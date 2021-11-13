@@ -18,7 +18,6 @@ const  Physical = ({ onSetWorldData }) => {
     const [era, setEra] = useState("");
     const [mapScale, setMapScale] = useState("");
     const [charMeeting, setCharMeeting] = useState("");
-    // const [worldStyle, setWorldStyle] = useState("");
     const worldOptions = [
         "Aquatic",
         "Desert",
@@ -81,11 +80,10 @@ const  Physical = ({ onSetWorldData }) => {
     ])
     const [travelPointChoices, setTravelPointChoices] = useState([]);
 
-    const handleWorldImage = () => {
+    const handleWorldImage = (name) => {
     let worldStyle = ""
-    switch(world){
+    switch(name){
         case "Aquatic": 
-        console.log("Aquatic")
             worldStyle = `url("https://cdn.thinglink.me/api/image/751892544790462466/1240/10/scaletowidth")`
         break;
         case "Desert": 
@@ -137,8 +135,8 @@ const  Physical = ({ onSetWorldData }) => {
             default:
                 break;   
         }
-        handleWorldImage();
-        setReduxWorldData(name, feedback);
+        handleWorldImage(name);
+        setReduxWorldData(type, feedback);
         if(type === "world") {
             handleTravelPointState(feedback);
         }
