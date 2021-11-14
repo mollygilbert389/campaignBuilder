@@ -53,22 +53,23 @@ const Renown = ({ campaign, setReduxPlayers }) => {
                     <br/>
                     {playerInfo.length > 0 && (
                         <div className="characterRenownContainer">
-                            {playerInfo.map((item, index) => {
+                            {playerInfo.map((player, pidx) => {
                                 return (
                                     <div>
-                                        <div>{item.name}</div>
-                                        {campaign.factionOrgs.map(item => {
+                                        <div>{player.name}</div>
+                                        {campaign.factionOrgs.map((faction) => {
                                             return (
                                                 <div>
-                                                    <FontAwesomeIcon className="iconSpace" icon={item.icon}/>
+                                                    <FontAwesomeIcon className="iconSpace" icon={faction.icon}/>
                                                     <FormControlLabel
-                                                        label={item.name} 
+                                                        label={faction.name} 
                                                         control={
                                                             <Checkbox
-                                                            onChange={(event) => handleChange(event, index, item.icon)} 
-                                                            name={item.name}
-                                                            value={item.name}
-                                                            inputProps={item.icon}
+                                                            onChange={(event) => handleChange(event, pidx, faction.icon)} 
+                                                            name={faction.name}
+                                                            defaultChecked={player?.factions?.flat()?.find(item => item.name === faction.name) || false }
+                                                            value={faction.name}
+                                                            inputProps={faction.icon}
                                                             color="primary"/>}/> 
                                                 </div>
                                             )
