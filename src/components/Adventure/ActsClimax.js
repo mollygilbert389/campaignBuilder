@@ -8,9 +8,6 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 const Acts = ({ onSetActsAndClimx }) => {
-    const setReduxActsAndClimax = (destination, value) => {
-        onSetActsAndClimx(destination, value)
-    }
     const [showModal, setShowModal] = useState(false);
     const [acts, setActs] = useState("");
     const [climax, setClimax] = useState("");
@@ -29,10 +26,14 @@ const Acts = ({ onSetActsAndClimx }) => {
         {id:12, option: "The adventurers must discover the main villains's secret weakness before they can hope to defeat that villain"}
     ];
 
+    const setReduxActsAndClimax = (destination, value) => {
+        onSetActsAndClimx(destination, value)
+    };
+
     const handleActBtn = (e) => {
         let choice = e.target.name;
-        setReduxActsAndClimax(choice);
-        setActs('acts', choice);
+        setReduxActsAndClimax('acts', choice);
+        setActs(choice);
     };
 
     const handleClimax = (e) => {
@@ -51,7 +52,7 @@ const Acts = ({ onSetActsAndClimx }) => {
     return (
         <div>
             <div className="btns">
-                <Button variant="outline-success" size="lg" onClick={handleActBtn}>Acts</Button>
+                <Button variant="outline-success" size="lg" onClick={() => setShowModal(!showModal)}>Acts</Button>
             </div>
             <Modal show={showModal} onHide={() => setShowModal(!showModal)}>
                     <Modal.Header closeButton>

@@ -5,8 +5,14 @@ import { GenerateBtn } from "../../StaticComps";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FormControlLabel, Checkbox } from '@material-ui/core';
 import "../style.css";
+import { setPatronData } from "../../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const Patron = ({ setReduxPatronData, campaign }) => {
+const Patron = ({ onSetPatronData, campaign }) => {
+    const setReduxPatronData = (destination, value) => {
+        onSetPatronData(destination, value)
+    };
     const [showModal, setShowModal] = useState(false);
     const [patronData, setPatronData] = useState({
         factions: []
@@ -224,4 +230,12 @@ const Patron = ({ setReduxPatronData, campaign }) => {
     );
 }
 
-export default Patron;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetPatronData: bindActionCreators(setPatronData, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Patron);

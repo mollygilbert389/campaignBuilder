@@ -4,12 +4,18 @@ import { Button, Carousel } from 'react-bootstrap';
 import { Slider } from '@material-ui/core';
 import { NPCCard } from ".";
 import "../../style.css";
+import { setNPCData } from "../../../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const NPCs = ({ setReduxNPCData, campaign }) => {
+const NPCs = ({ onSetNPCData, campaign }) => {
     const [NPCNum, setNPCNum] = useState(null);
     const [NPCData, setNPCData] = useState([]);
     const [showModal, setShowModal] = useState(false);
 
+    const setReduxNPCData = (destination, value) => {
+        onSetNPCData(destination, value)
+    };
     const handleSlider = (event, value) => {
         let NPCData = []
         for(let i=0; i < value; i++ ) {
@@ -72,4 +78,12 @@ const NPCs = ({ setReduxNPCData, campaign }) => {
     );
 }
 
-export default NPCs;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetPatronData: bindActionCreators(setNPCData, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(NPCs);

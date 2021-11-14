@@ -7,16 +7,17 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 const Pillar = ({ onSetPillar }) => {
+    const [pillar, setPillar] = useState("");
+    const [showModal, setShowModal] = useState(false);
+
     const setReduxPillar = (type) => {
         onSetPillar(type)
     }
 
-    const [pillar, setPillar] = useState("");
-    const [showModal, setShowModal] = useState(false);
-
     const handlePillarBtn = (event) =>  {
         setPillar(event.target.name);
         setReduxPillar(event.target.name);
+        setShowModal(!showModal);
     };
 
     return (
