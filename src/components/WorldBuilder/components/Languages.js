@@ -28,21 +28,22 @@ const Languages = ({ onSetLanguages,  onSetLanguageShow }) => {
         let currentTags = suggestedTags;
         const removedTag = currentTags.filter((item) => item !== removedItem);
         setSuggestedTags(removedTag);
-        setReduxLanguages(suggestedTags);
+        setReduxLanguages(removedTag);
         setReduxLanguageShow("languageShow", true);
     };
 
     const handleAddLanguage = (event) => {
         setSuggestedTags(suggestedTags.concat(value));
-        setValue("");
-        setReduxLanguages(suggestedTags);
+        setReduxLanguages(suggestedTags.concat(value));
         setReduxLanguageShow("languageShow", true);
+        setValue("");
     };
 
     const onKeyDown = (event) => {
         if (event.key === "Enter") {
             handleAddLanguage();
         }
+        setReduxLanguageShow("languageShow", true);
     };
 
     return (

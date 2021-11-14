@@ -9,7 +9,7 @@ import { bindActionCreators } from "redux";
 
 const CampaignNameModal = ({ onSetCampaignName }) => {
     const [showModal, setShowModal] = useState(true);
-    const [campaignName, setCampaignName] = useState("");
+    const [campaignName, setCampaignName] = useState(null);
     const [disabled, setDisabled] = useState(true);
 
     const setReduxCampaignName = (name) => {
@@ -35,7 +35,7 @@ const CampaignNameModal = ({ onSetCampaignName }) => {
     return (
         <div>
             <div className="btns">
-                <Button variant="outline-success" size="lg" onClick={() => setShowModal(!showModal)}>Campaign Name</Button>
+                <Button variant="outline-success" size="lg" onClick={() => setShowModal(campaignName || !showModal)}>Campaign Name</Button>
             </div>
             <Modal show={showModal} onHide={() => setShowModal(!showModal)}>
                 <Modal.Header closeButton>

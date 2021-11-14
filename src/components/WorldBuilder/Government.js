@@ -8,7 +8,7 @@ import { setGovernmentData, setLanguageShow } from "../../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-const Government = ({ onSetGovernmentData, onSetLanguageShow, campaign }) => {
+const Government = ({ onSetGovernmentData, onSetLanguageShow }) => {
     const setReduxGovernmentData = (destinaton, value) => {
         onSetGovernmentData(destinaton, value)
     }
@@ -26,20 +26,29 @@ const Government = ({ onSetGovernmentData, onSetLanguageShow, campaign }) => {
         "Odd Currency",
     ];
 
-    const handleDropSelect = (e, type) => {
-        const name = e.target.name;
-        const feedback = e.target.text;
+    const handleDropSelect = (ek, e, type) => {
+        const feedback = e?.target?.text;
         if(type ===  "government") {
             setGovernment(e.target.text);
+            setReduxGovernmentData(type, feedback);
         } else {
             setCurrency(e.target.text);
+            setReduxGovernmentData(type, feedback);
         }
-        setReduxGovernmentData(name, feedback);
     };
 
     const handleClose = () => {
         setShowModal(!showModal);
-        setReduxLanguageShow("languageShow", true);
+    };
+
+    const handleRoll = (name, feedback, type) => {
+      if(type ===  "government") {
+        setGovernment(name);
+        setReduxGovernmentData(type, name)
+      } else {
+        setCurrency(name);
+        setReduxGovernmentData(type, name)
+      }
     };
 
     return (
@@ -55,7 +64,7 @@ const Government = ({ onSetGovernmentData, onSetLanguageShow, campaign }) => {
                     <p>Below are some buttons to help you make those decisions.</p>
                     <br/>
                     <Form inline>
-                        <Dropdown onSelect={handleDropSelect}>
+                        <Dropdown onSelect={(ek, e) => handleDropSelect(ek, e, "government")}>
                             <Dropdown.Toggle variant="outline-primary">
                                 {government ? government: 'Choose Your Government'}
                             </Dropdown.Toggle>
@@ -71,11 +80,11 @@ const Government = ({ onSetGovernmentData, onSetLanguageShow, campaign }) => {
                                     })}       
                             </Dropdown.Menu>
                         </Dropdown>
-                        <RollBtn name="government" handleRoll={(name, feedback) => setReduxGovernmentData(name, feedback)} rollingArray={governmentData.map((item) => item.name)}/>
+                        <RollBtn name="government" handleRoll={(name, feedback) => handleRoll(name, feedback, "government")} rollingArray={governmentData.map((item) => item.name)}/>
                     </Form>
                     <br/>
                     <Form inline>
-                        <Dropdown onSelect={handleDropSelect}>
+                        <Dropdown onSelect={(ek, e) => handleDropSelect(ek, e, "currency")}>
                             <Dropdown.Toggle variant="outline-primary">
                                 {currency ? currency: 'Choose Your Currency'}
                             </Dropdown.Toggle>
@@ -83,7 +92,7 @@ const Government = ({ onSetGovernmentData, onSetLanguageShow, campaign }) => {
                                 {currencyOptions.map(item => {return <Dropdown.Item name="currency">{item}</Dropdown.Item>})}
                             </Dropdown.Menu>
                         </Dropdown>
-                        <RollBtn name="currency" handleRoll={(name, feedback) => setReduxGovernmentData(name, feedback)} rollingArray={currencyOptions}/>
+                        <RollBtn name="currency" handleRoll={(name, feedback) => handleRoll(name, feedback, "currency")} rollingArray={currencyOptions}/>
                     </Form>
                     <Languages/>
                 </Modal.Body>

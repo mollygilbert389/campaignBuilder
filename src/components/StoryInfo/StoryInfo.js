@@ -5,7 +5,8 @@ import { NPCCards } from ".";
 import "./style.css";
 import { connect } from "react-redux";
 
-const StoryInfo = ({ campaign }) => {    
+const StoryInfo = ({ campaign }) => {  
+  const worldData = campaign.world || campaign.era || campaign.religion || campaign.government || campaign.currency || campaign.mapScale || campaign.uniqueFeature || campaign.charMeeting || campaign.factionShow || campaign.languageShow;
     return (
       <div className="cardStyle d-flex flex-column align-items-center">
         <Card className="text-center" style={{ width: '800px' }}>
@@ -39,20 +40,20 @@ const StoryInfo = ({ campaign }) => {
                   </div>
                 </div>
               )}
-              {campaign.world && (
+              {campaign.worldStyle && (
                 <div className="cliamteImage" style={{backgroundImage:campaign.worldStyle}}></div>
                 )}
-              {campaign.world && (
+              {worldData && (
                 <div className="grouping pair">
                   <Card.Title className="title">World Info:</Card.Title>
                   {campaign.world && (<div><strong>World Type:</strong>{` ${campaign.world}`}</div>)}
                   {campaign.era && (<div><strong>Era:</strong>{` ${campaign.era}`}</div>)}
-                  {campaign.religion && (<div><strong>Religion:</strong>{` ${campaign.religion}`}</div>)}
                   {campaign.government && (<div><strong>Government:</strong>{` ${campaign.government}`}</div>)}
                   {campaign.currency && (<div><strong>Currency:</strong>{` ${campaign.currency}`}</div>)}
                   {campaign.mapScale && (<div><strong>Starting Size:</strong>{` ${campaign.mapScale}`}</div>)}
                   {campaign.uniqueFeature && (<div><strong>Unique Feature:</strong>{` ${campaign.uniqueFeature}`}</div>)}
                   {campaign.charMeeting && (<div><strong>Charaters Meet:</strong>{` ${campaign.charMeeting}`}</div>)}
+                  {campaign.religion && (<div><strong>Religion:</strong>{` ${campaign.religion}`}</div>)}
                   {campaign.factionShow && (
                     <div className="miniSection">
                       <div><strong>Factions and Organizations:</strong></div>
@@ -75,7 +76,7 @@ const StoryInfo = ({ campaign }) => {
               )}
             </div>
             <div className="dualData dataBoxes">
-              {campaign.pillar && (
+              {(campaign.pillar || campaign.acts || campaign.climax || campaign.mainGoal) && (
                 <div className="grouping dataBoxes">
                   <Card.Title className="title">General Campaign Info:</Card.Title>
                   <div>
@@ -86,7 +87,7 @@ const StoryInfo = ({ campaign }) => {
                   </div>
                 </div>
               )}
-                {campaign.patronData.name && (
+              {(campaign.patronData.name || campaign.patronData.gender || campaign.patronData.manner || campaign.patronData.trait || campaign.patronData.type || campaign.patronData.factions) && (
                 <div className="grouping dataBoxes">
                   <Card className="bg-dark text-white skinnyCard">
                     <Card.Header className="fixedHeader">
@@ -133,19 +134,18 @@ const StoryInfo = ({ campaign }) => {
                         ideal={NPC.ideal}
                         specificIdeal={NPC.drilledIdealChoice}
                         bond={NPC.bond}
-                        flawOrSecret={NPC.flawOrSecret}
-                        />
+                        flawOrSecret={NPC.flawOrSecret}/>
                       </div>
                     ))}
                   </CardGroup>
               </div>
             )}
-            {campaign.villainData.name && (
+            {(campaign.villainData.name || campaign.villainData.type) && (
               <div className="dualData">
                 <div className="grouping dataBoxes">
                   <Card className="bg-dark text-white skinnyCard">
                     <Card.Header className="fixedHeader">
-                      <Card.Img src={campaign.villainData.image}/>
+                      {campaign.villainData.image && (<Card.Img src={campaign.villainData.image}/>)}
                       <Card.ImgOverlay className="bottom">
                       </Card.ImgOverlay>
                     </Card.Header>
@@ -156,10 +156,10 @@ const StoryInfo = ({ campaign }) => {
                   </Card>
                 </div>
                 <div className="centerData">
-                  {campaign.villainData.gender && (<div><strong>Gender:</strong>{` ${campaign.villainData.gender}`}</div>)}
-                  {campaign.villainData.finalVillainObjectiveChoice && (<div><strong>Objective:</strong>{` ${campaign.villainData.finalVillainObjectiveChoice}`}</div>)}
-                  {campaign.villainData.finalVillainMethodChoice && (<div><strong>Method:</strong>{` ${campaign.villainData.finalVillainMethodChoice}`}</div>)}
-                  {campaign.villainData.weakness && (<div><strong>Weakness:</strong>{` ${campaign.villainData.weakness}`}</div>)}
+                  {campaign.villainData.gender && (<div><strong>Gender:</strong>{`${campaign.villainData.gender}`}</div>)}
+                  {campaign.villainData.finalVillainObjectiveChoice && (<div><strong>Objective:</strong>{`${campaign.villainData.finalVillainObjectiveChoice}`}</div>)}
+                  {campaign.villainData.finalVillainMethodChoice && (<div><strong>Method:</strong>{`${campaign.villainData.finalVillainMethodChoice}`}</div>)}
+                  {campaign.villainData.weakness && (<div><strong>Weakness:</strong>{`${campaign.villainData.weakness}`}</div>)}
                 </div>
               </div>
             )}
@@ -249,12 +249,12 @@ const StoryInfo = ({ campaign }) => {
               </div>
             )}
             <div className="dualData">
-              {campaign.dungeonData.dungeonLocation && (
+              {(campaign.dungeonData.rooms || campaign.dungeonData.dungeonLocation || campaign.dungeonData.dungeonDetail || campaign.dungeonData.monsterList) && (
                 <div className="grouping dataBoxes centerData">
                 <Card.Title className="title">Dungeon Info:</Card.Title>
-                {campaign.dungeonData.rooms && (<div><strong>Rooms:</strong>{` ${campaign.dungeonData.rooms }`}</div>)}
-                {campaign.dungeonData.dungeonLocation && (<div><strong>Location:</strong>{` ${campaign.dungeonData.dungeonLocation }`}</div>)}
-                {campaign.dungeonData.dungeonDetail && (<div><strong>Detail:</strong>{` ${campaign.dungeonData.dungeonDetail }`}</div>)}
+                {campaign.dungeonData.rooms && (<div><strong>Rooms:</strong>{`${campaign.dungeonData.rooms }`}</div>)}
+                {campaign.dungeonData.dungeonLocation && (<div><strong>Location:</strong>{`${campaign.dungeonData.dungeonLocation }`}</div>)}
+                {campaign.dungeonData.dungeonDetail && (<div><strong>Detail:</strong>{`${campaign.dungeonData.dungeonDetail }`}</div>)}
                 {campaign.dungeonData.monsterList && (
                   <div>
                     <div><strong>Monsters Chosen:</strong></div>
