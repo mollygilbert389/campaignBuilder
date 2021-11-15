@@ -5,7 +5,7 @@ import { Villain } from "..";
 import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import "../style.css";
 
-const VillainSubVillain = ({ setVillainData }) => {
+const VillainSubVillain = () => {
     const [showModal, setShowModal] = useState(false);
 
     return (
@@ -25,7 +25,7 @@ const VillainSubVillain = ({ setVillainData }) => {
                     <p>Now let's plan our your villain, their drives and goals, and who is on their team.</p>
                     <br/>
                     <div className="btnspace">
-                        <Villain setVillainData={setVillainData}/>
+                        <Villain/>
                         <OverlayTrigger overlay={
                             <Tooltip>Coming Soon!</Tooltip>}>
                             <span className="d-inline-block">

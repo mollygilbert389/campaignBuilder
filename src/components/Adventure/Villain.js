@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { GenerateBtn } from "../StaticComps";
 import { Button, Dropdown, Form, FormControl, OverlayTrigger, Card, Popover } from 'react-bootstrap';
@@ -8,11 +8,9 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 const VillainModal = ({ onSetVillainData }) => {
-    const setReduxVillainData = (destination, value) => {
-        onSetVillainData(destination, value)
-    }
+    const overlay = useRef(null);
     const [showModal, setShowModal] = useState(false);
-    const [setImageLink, imageLink] = useState("https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg")
+    const imageLink = "https://st3.depositphotos.com/9998432/13335/v/600/depositphotos_133351974-stock-illustration-default-placeholder-woman.jpg";
     const [villainData, setVillainData] = useState({});
     const villainObjectives = [
         {
@@ -307,7 +305,7 @@ const VillainModal = ({ onSetVillainData }) => {
             ]
         },
     ];
-    
+
     const villainWeaknessChoices = [
         {id: 1, option: "A hidden object that holds the villain's soul"},
         {id: 2, option: "The villain's power is broken if the death of its true love is avenged"},
@@ -318,6 +316,10 @@ const VillainModal = ({ onSetVillainData }) => {
         {id: 7, option: "The villain falls when an ancient enemy forgives its past actions"},
         {id: 8, option: "The villain loses its power if a mystic bargain it struck long ago os completed"},
     ];
+
+    const setReduxVillainData = (destination, value) => {
+        onSetVillainData(destination, value)
+    };
 
     const handleVillainObjectiveCatSelect = (eventkey, event) => {
         let choice = event.target.text
@@ -333,10 +335,8 @@ const VillainModal = ({ onSetVillainData }) => {
         setVillainData({...villainData, villainMethodCatChoice:selection, villainMethodPossible:drilledMethods});
     };
 
-    const handleImageSubmit = () => {
-        let image = this.state.imageLink.trim();
-        setVillainData({...villainData, image});
-        // this.refs.overlay.hide();
+    const handleCloseOverlay = () => {
+        overlay.current.hide();
     };
 
     const hanelSave = () => {
@@ -353,7 +353,7 @@ const VillainModal = ({ onSetVillainData }) => {
                 size="lg" 
                 show={showModal} 
                 onHide={() => setShowModal(!showModal)}
-                enforcefocus={false}>
+                enforceFocus={false}>
                 <Modal.Header closeButton>
                     <Modal.Title>Let's Create Yor villain!</Modal.Title>
                 </Modal.Header>
@@ -364,7 +364,7 @@ const VillainModal = ({ onSetVillainData }) => {
                             type="text" 
                             placeholder="villain Name" 
                             className="mr-sm-2" 
-                            value={villainData?.name || ""} 
+                            value={villainData?.name} 
                             onChange={(e) => setVillainData({...villainData, name: e.target.value})}/>
                         <div style={{paddingRight: "10px"}}>or</div> 
                         <GenerateBtn name="villainName" handleGenerate={(feedback, name) => setVillainData({...villainData, name: feedback})}/>
@@ -373,7 +373,7 @@ const VillainModal = ({ onSetVillainData }) => {
                     <Card className="d-flex flex-column align-items-center villainPatronCard">   
                         <OverlayTrigger 
                             trigger="click"
-                            ref="overlay"
+                            ref={overlay}
                             placement="top"
                             overlay={
                                 <Popover className="makeItBigger">
@@ -384,13 +384,13 @@ const VillainModal = ({ onSetVillainData }) => {
                                                 type="text" 
                                                 placeholder="Image Link" 
                                                 className="mr-sm-2" 
-                                                value={villainData?.imageLink || ""} 
+                                                value={villainData?.imageLink} 
                                                 onChange={(e) => setVillainData({...villainData, image: e.target.value})}/>
-                                            <Button onClick={(e) => setVillainData({...villainData, image: e.target.value})} className="imageSubmit">Submit</Button>
+                                            <Button onClick={handleCloseOverlay} className="imageSubmit">Submit</Button>
                                         </div>
                                     </Popover.Content>
                                 </Popover>}>
-                            <Card.Img className="NPCimage" variant="top" src={villainData?.imageLink || ""}/> 
+                            <Card.Img className="NPCimage" variant="top" src={villainData?.imageLink || imageLink}/> 
                         </OverlayTrigger>
                         <Card.Body className="d-flex flex-column align-items-center">
                         <Card.Title>{villainData.name && (`Name: ${villainData.name}`)}</Card.Title>

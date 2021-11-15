@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Button, Dropdown, Form, FormControl, OverlayTrigger, Card, Popover } from 'react-bootstrap';
+import { GenerateBtn } from "../../../StaticComps";
 import "../../style.css";
 import { setNPCData } from "../../../../actions/index";
 import { connect } from "react-redux";
@@ -193,12 +194,14 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
     }; 
 
     const handleNameorImageChange = (e, index, type) => {
+        const name = e?.target?.value || e
+        console.log(name)
         const newNPC = [...campaign.NPCData].map((NPC) => {
             if (NPC.id === index) {
-                return {...NPC, [type]: e.target.value}
+                return {...NPC, [type]: name}
             } return NPC
         })
-        setNPCData({...NPCData, [type]: e.target.value});
+        setNPCData({...NPCData, [type]: name});
         setReduxNPCData("NPCData", newNPC);
     };
 
@@ -243,7 +246,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
                             value={NPCData?.NPCName} 
                             onChange={(e) => handleNameorImageChange(e, index, "NPCName")}/>
                         <div style={{paddingRight: "10px"}}>or</div> 
-                        {/* <GenerateBtn name={NPCData[index].NPCName} handleGenerate={(feedback) => setPatronData({...patronData, name:feedback})}/> */}
+                        <GenerateBtn name={NPCData?.NPCName} handleGenerate={(feedback) => handleNameorImageChange(feedback, index, "NPCName")}/>
                     </Form>
                     <Dropdown onSelect={(ek, e) => handleSelections(ek, e, index, "gender")} className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
