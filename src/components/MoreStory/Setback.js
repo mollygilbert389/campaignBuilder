@@ -7,18 +7,14 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 const Setback = ({ onSetSetback }) => {
-    const setReduxSetback = (destination, value) => {
-        onSetSetback(destination, value)
-    }
     const [showModal, setShowModal] = useState(false);
     const [setback, setSetback] = useState(false);
-    const [bigSetback, setBigSetback] = useState(false);
+    const [largeSetback, setLargeSetback] = useState(false);
     const [smallSetback, setSmallSetback] = useState(false);
-    const [setbackCatChoice, setSetbackCatChoice] = useState("");
-    const [setbackTypes, setSetbackTypes] = useState([]);
-    const [finalSetbackType, setFinalSetbackType] = useState("");
-    const [eventName, setEventName] = useState("");
-    const [trapChoice, setTrapChoice] = useState("");
+    const [setbackCat, setSetbackCat] = useState("");
+    const [largeSetBackOptions, setLargeSetbackOptions] = useState([]);
+    const [finalSetback, setFinalSetback] = useState("");
+    const [showInput, setShowInput] = useState(false);
     const traps = [
         {id: 1, option: "Collapsing Roof",},
         {id: 1, option: "Falling Net",},
@@ -85,74 +81,88 @@ const Setback = ({ onSetSetback }) => {
         }, 
     ];
 
-    const setbackFunc = (event) => {
-        let choice = event.target.name;
-        switch (choice) {
+    const setReduxSetback = (destination, value) => {
+        onSetSetback(destination, value);
+    };
+
+    const setbackFunc = (e) => {
+        switch (e.target.name) {
             case "Yes":
                 setSetback(true);
                 break;
             case "No":
-                setSetback(false);
-                setFinalSetbackType("");
+                setSetbackCat(null);
+                setFinalSetback(null);
+                setShowInput(false);
+                setLargeSetback(false);
                 setSmallSetback(false);
-                setBigSetback(false);
-                setbackCatChoice("");
-                setSetbackTypes([]);
-                setTrapChoice("");
+                setReduxSetback("setback", "");
+                setSetback(false);
                 setShowModal(!showModal);
                 break;
             default: 
                 setSetback(false);
-                setFinalSetbackType("");
-                setSmallSetback(false);
-                setBigSetback(false);
-                setbackCatChoice("");
-                setSetbackTypes([]);
-                setTrapChoice("");
                 setShowModal(!showModal);
                 break;
         } 
-    }
-
-    const handleSetbackCategorySelect = (keyevent, event) => {
-        let setbackCatChoice = event.target.name;
-        let setbackTypes = worldShakingEvents.find(event => event.title === setbackCatChoice);
-        setSetbackCatChoice(setbackCatChoice);
-        setSetbackTypes(setbackTypes.possible)
     };
 
-    const  handleFinalEvent = (keyevent, event) => {
-        let choice = event.target.name;
-        let choiceCat = setbackCatChoice;
-        setFinalSetbackType(choice);
-        setTrapChoice("");
-        const finalChoice = choiceCat + " " + choice;
-        setReduxSetback("setback", finalChoice);
+    const handleSetbackSelect = (ek, e, type) => {
+        let name = e.target.name;
+        setShowInput(false);
+        setFinalSetback(null);
+        if(type === "large") {
+            const largeEventOptions = worldShakingEvents.find((event) => event.title === name);
+            setSetbackCat(name);
+            setLargeSetbackOptions(largeEventOptions.possible);
+            setShowInput(largeEventOptions.possible.length > 0 ? false : true);
+        } else if(type === "small") {
+            setSetbackCat(name);
+            setFinalSetback(name);
+        } else if (type === "subLarge") {
+            setFinalSetback(name);
+        }
+    };
+
+    const handleInput = (e) => {
+        setFinalSetback(e.target.value)
     }
 
-    const handleSetbackBtn = (event) => {
-        let choice = event.target.name;
+    const handleSave = () => {
+        if(finalSetback) {
+            let type;
+            if (largeSetback) {
+                type = "large"
+            } else if (smallSetback) {
+                type = "small"
+            }
+            const setbackObj = {
+                type: type,
+                category: setbackCat,
+                name: finalSetback
+            };
+            setReduxSetback("setback", setbackObj);
+        }
+        setShowModal(!showModal);
+    };
+
+    const handleSetbackBtn = (e) => {
+        let choice = e.target.name;
+        setSetbackCat(null);
+        setFinalSetback(null);
+        setShowInput(false);
+        setLargeSetback(false);
+        setSmallSetback(false);
         switch(choice) {
             case "large":
-                setBigSetback(true);
-                setSmallSetback(false);
+                setLargeSetback(true);
                 break;
             case "small":
-                setBigSetback(false);
                 setSmallSetback(true);
                 break;
             default:  
-                setBigSetback(false);
-                setSmallSetback(false);
                 break;
         };
-    };
-
-    const handleTrapSelect = (keyEvent, event) => {
-        const choice = event.target.text;
-        setTrapChoice(choice);
-        setFinalSetbackType("");
-        setReduxSetback("setback", choice)
     };
 
     return (
@@ -181,52 +191,46 @@ const Setback = ({ onSetSetback }) => {
                             <div className="setbackContainer">
                                 <div className="setBackItem d-flex flex-column align-items-center"> 
                                     <Button onClick={handleSetbackBtn} name="large">Large Setback Options</Button>
-                                    {bigSetback && (
+                                    {largeSetback && (
                                         <div>
-                                            <Dropdown className="setBackItemchild" onSelect={handleSetbackCategorySelect}>
+                                            <Dropdown className="setBackItemchild" onSelect={(ek, e) => handleSetbackSelect(ek, e, "large")}>
                                             <Dropdown.Toggle variant="outline-primary">
-                                                {setbackCatChoice ? setbackCatChoice: 'Choose Your Setback Category'}
+                                                {setbackCat ? setbackCat: 'Choose Your Setback Category'}
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                {worldShakingEvents.map(drop => { 
-                                                    return <Dropdown.Item key={drop.id} name={drop.title}>{drop.title}</Dropdown.Item>
-                                                })}
+                                                {worldShakingEvents.map((drop) => (<Dropdown.Item key={drop.id} name={drop.title}>{drop.title}</Dropdown.Item>))}
                                             </Dropdown.Menu>
                                         </Dropdown>
-                                        {setbackTypes.length > 0 && (
+                                        {largeSetBackOptions.length > 0 && (
                                             <div className="d-flex flex-column align-items-center">
-                                                <Dropdown onSelect={handleFinalEvent}>
+                                                <Dropdown onSelect={(ek, e) => handleSetbackSelect(ek, e, "subLarge")}>
                                                     <Dropdown.Toggle variant="outline-primary">
-                                                        {finalSetbackType ? finalSetbackType: 'Choose your event'}
+                                                        {finalSetback ? finalSetback: 'Choose your event'}
                                                     </Dropdown.Toggle>
                                                     <Dropdown.Menu>
-                                                    {setbackTypes.map(drop => {
-                                                        return <Dropdown.Item name={drop}> {drop}</Dropdown.Item>
-                                                    })}
+                                                        {largeSetBackOptions.map((drop, idx) => (<Dropdown.Item key={idx} name={drop}> {drop}</Dropdown.Item>))}
                                                     </Dropdown.Menu>
                                                 </Dropdown>
                                             </div>
                                             )}
                                         </div>
                                     )}
-                                    {setbackCatChoice && setbackTypes.length <= 0 &&  (
+                                    {showInput && (
                                         <div>
-                                            <FormControl type="text" placeholder="Name Your Event" className="mr-sm-2" value={eventName || ""} onChange={(e) => setEventName(e.target.value)}/>
+                                            <FormControl type="text" placeholder="Name Your Event" value={finalSetback || null} className="mr-sm-2" onChange={handleInput}/>
                                         </div>
                                     )}
                                 </div>
                                 <div className="setBackItem d-flex flex-column align-items-center">
                                     <Button onClick={handleSetbackBtn} name="small">Small Setback Options</Button>
-                                    {smallSetback &&(
+                                    {smallSetback && (
                                         <div>
-                                            <Dropdown className="setBackItemchild" onSelect={handleTrapSelect}>
+                                            <Dropdown className="setBackItemchild" onSelect={(ek, e) => handleSetbackSelect(ek, e, "small")}>
                                                 <Dropdown.Toggle variant="outline-primary">
-                                                    {trapChoice ? trapChoice: 'Choose Your Trap'}
+                                                    {setbackCat ? setbackCat: 'Choose Your Trap'}
                                                 </Dropdown.Toggle>
                                                 <Dropdown.Menu>
-                                                    {traps.map(drop => { 
-                                                        return <Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>
-                                                    })}
+                                                    {traps.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>))}
                                                 </Dropdown.Menu>
                                             </Dropdown>
                                         </div>
@@ -236,7 +240,7 @@ const Setback = ({ onSetSetback }) => {
                         )}
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="outline-success" onClick={() => setShowModal(!showModal)} >Save</Button>
+                    <Button variant="outline-success" onClick={handleSave} >Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>

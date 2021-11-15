@@ -6,10 +6,7 @@ import { setLocalEvents } from "../../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-const Religion = ({ onSetLocalEvents }) => {
-    const setReduxLocalEvents = (names) => {
-        onSetLocalEvents(names)
-    }
+const LocalEvents = ({ onSetLocalEvents }) => {
     const [showModal, setShowModal] = useState(false);
     const [localEventChoice, setLocalEventChoice] = useState([]);
     const [eventCap, setEventCap] = useState(false);
@@ -63,25 +60,25 @@ const Religion = ({ onSetLocalEvents }) => {
         {id: 47, eventName: "Wedding or wedding anniversary"},
     ];
 
-    const handleAddEvent = (event) => {
-        const currentChoices = localEventChoice;
-        const updatedChoiceList = currentChoices.concat(event.target.name);
-        const filteredChoiceList = updatedChoiceList.filter((item, index) => updatedChoiceList.indexOf(item) === index);
-        if (localEventChoice.length >= 4) {
+    const setReduxLocalEvents = (names) => {
+        onSetLocalEvents(names)
+    };
+
+    const handleAddEvent = (e) => {
+        const updatedChoiceList = localEventChoice;
+        updatedChoiceList.push(e.target.name);
+        if (localEventChoice.length === 5) {
             setEventCap(true);
         } else {
-            setLocalEventChoice(filteredChoiceList);
-            setReduxLocalEvents(filteredChoiceList);
+            setLocalEventChoice(updatedChoiceList);
+            setReduxLocalEvents(updatedChoiceList);
         }
     };
 
     const removeEvent = (event) => {
-        let choices = localEventChoice;
-        const newChoiceList = choices.filter(eventName => eventName !== event.target.name);
-
-        if (this.state.localEventChoice.length <= 5) {
+        const newChoiceList = localEventChoice.filter((eventName) => eventName !== event.target.name);
+        if (newChoiceList.length < 5) {
             setEventCap(false);
-        } else {
             setLocalEventChoice(newChoiceList);
             setReduxLocalEvents(newChoiceList);
         }
@@ -102,13 +99,12 @@ const Religion = ({ onSetLocalEvents }) => {
                     <div className="container staticModal">
                         <div className="side">
                         {localEventOptions.map((drop) => {
-                            return <Button name={drop.eventName} className="eventbtns" onClick={handleAddEvent} disabled={localEventChoice.length >= 5 ? true : false}> {drop.eventName}</Button>
+                            const localEventTrue = localEventChoice?.find((item) => item === drop.eventName) || false;
+                            return <Button name={drop.eventName} className="eventbtns" onClick={handleAddEvent} disabled={eventCap || localEventTrue}> {drop.eventName}</Button>
                             })}
                         </div>
                         <div className="side">
-                        {localEventChoice.map((drop) => {
-                            return <Button name={drop} className="eventbtns" onClick={removeEvent}> {drop}</Button>
-                            })}
+                        {localEventChoice.map((drop) => (<Button name={drop} className="eventbtns" onClick={removeEvent}> {drop}</Button>))}
                         </div>
                     </div>
                 </Modal.Body>
@@ -128,4 +124,4 @@ const mapDispatchtoProps = (dispatch) => ({
     onSetLocalEvents: bindActionCreators(setLocalEvents, dispatch)
 });
 
-export default connect(mapStateToProps, mapDispatchtoProps)(Religion);
+export default connect(mapStateToProps, mapDispatchtoProps)(LocalEvents);
