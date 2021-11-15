@@ -3,61 +3,17 @@ import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown, Form, FormControl, OverlayTrigger, Popover, Card } from 'react-bootstrap';
 import { GenerateBtn } from "../../StaticComps";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBeer, faGem, faCrown, faDragon, faHatWizard, faShieldAlt, faChessKnight, faAnchor, faAnkh, faArchway, faBalanceScaleLeft, faAtlas, faAtom, faBook, faBookDead, faBookMedical, faCross, faDiceD20, faDollarSign, faDotCircle, faDove, faDraftingCompass, faEye, faFire, faFish, faGlassCheers, faHollyBerry, faHorse, faHourglassHalf, faLandmark, faOm, faRebel, faPallet, faPaw, faPenNib, faPlaceOfWorship, faSkull, faSpider, faStarOfDavid, faStar, faVihara} from '@fortawesome/free-solid-svg-icons';
 import { FormControlLabel, Checkbox } from '@material-ui/core';
 import "../style.css";
 import { setPatronData } from "../../../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-const icons = [
-    {id: 1, icon:faBeer}, 
-    {id: 2, icon:faGem}, 
-    {id: 3, icon:faCrown}, 
-    {id: 4, icon:faDragon}, 
-    {id: 5, icon:faHatWizard}, 
-    {id: 6, icon:faShieldAlt}, 
-    {id: 7, icon:faChessKnight}, 
-    {id: 8, icon:faAnchor}, 
-    {id: 9, icon:faAnkh}, 
-    {id: 10, icon:faArchway},
-    {id: 11, icon:faBalanceScaleLeft},
-    {id: 12, icon:faAtlas}, 
-    {id: 13, icon:faAtom}, 
-    {id: 14, icon:faBook}, 
-    {id: 15, icon:faBookDead}, 
-    {id: 16, icon:faBookMedical}, 
-    {id: 17, icon:faCross}, 
-    {id: 18, icon:faDiceD20}, 
-    {id: 19, icon:faDollarSign}, 
-    {id: 20, icon:faDotCircle}, 
-    {id: 21, icon:faDove}, 
-    {id: 22, icon:faDraftingCompass}, 
-    {id: 23, icon:faEye}, 
-    {id: 24, icon:faFire}, 
-    {id: 25, icon:faFish}, 
-    {id: 26, icon:faGlassCheers}, 
-    {id: 27, icon:faHollyBerry}, 
-    {id: 28, icon:faHorse}, 
-    {id: 29, icon:faHourglassHalf}, 
-    {id: 30, icon:faLandmark}, 
-    {id: 31, icon:faOm}, 
-    {id: 32, icon:faPallet}, 
-    {id: 33, icon:faPaw}, 
-    {id: 34, icon:faPenNib}, 
-    {id: 35, icon:faPlaceOfWorship}, 
-    {id: 36, icon:faSkull}, 
-    {id: 37, icon:faSpider}, 
-    {id: 38, icon:faStarOfDavid}, 
-    {id: 39, icon:faStar}, 
-    {id: 40, icon:faVihara}
-];
-
 const Patron = ({ onSetPatronData, campaign }) => {
     const overlay = useRef(null);
+    const imageLink = "https://st3.depositphotos.com/9998432/13335/v/600/depositphotos_133351974-stock-illustration-default-placeholder-woman.jpg";
     const [showModal, setShowModal] = useState(false);
-    const [patronData, setPatronData] = useState({factions: []});
-    const imageLink = "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg";
+    const [patronData, setPatronData] = useState({ imageLink: "", factions: []});
     const patronMannerisms = [
         {id: 1, option: "Prone to singing, whistling, or humming quietly" },
         {id: 2, option: "Speaks in rhyme or some other particular way" },
@@ -124,11 +80,9 @@ const Patron = ({ onSetPatronData, campaign }) => {
         setReduxPatronData("patronData", patronData);
     };
 
-    const handleImageSubmit = () => {
-        let image = imageLink.trim();
-        setPatronData(...patronData, image);  
+    const handleCloseOverlay = () => {
         overlay.current.hide();
-    };
+    }
 
     const handleCheckBoxChange = (event, icon) => {
         let checked = event.target.checked;
@@ -153,7 +107,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                 size="lg" 
                 show={showModal} 
                 onHide={() => setShowModal(!showModal)}
-                enforcefocus={false}>
+                enforceFocus={false}>
                 <Modal.Header closeButton>
                     <Modal.Title>Let's Create A Patron!</Modal.Title>
                 </Modal.Header>
@@ -175,7 +129,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                             <div>
                                 <Card 
                                     className="d-flex flex-column align-items-center villainPatronCard"
-                                    enforcefocus={false}>
+                                    enforceFocus={false}>
                                     <div>
                                         <OverlayTrigger 
                                             trigger="click"
@@ -190,13 +144,13 @@ const Patron = ({ onSetPatronData, campaign }) => {
                                                                 type="text" 
                                                                 placeholder="Image Link" 
                                                                 className="mr-sm-2" 
-                                                                value={patronData?.imageLink} 
+                                                                value={patronData?.imageLink}  
                                                                 onChange={(e) => setPatronData({...patronData, imageLink: e.target.value})}/>
-                                                            <Button onClick={handleImageSubmit} className="imageSubmit">Submit</Button>
+                                                            <Button onClick={handleCloseOverlay} className="imageSubmit">Submit</Button>
                                                         </div>
                                                     </Popover.Content>
                                                 </Popover>}>
-                                            <Card.Img className="NPCimage" variant="top" src={patronData?.imageLink || ""}/> 
+                                            <Card.Img className="NPCimage" variant="top" src={patronData.imageLink === ""  ? imageLink : patronData.imageLink}/> 
                                         </OverlayTrigger>
                                     </div>
                                     <Card.Body className="d-flex flex-column align-items-center">

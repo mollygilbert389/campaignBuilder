@@ -9,7 +9,6 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 const NPCs = ({ onSetNPCData }) => {
-    const [NPCNum, setNPCNum] = useState(null);
     const [NPCData, setNPCData] = useState([]);
     const [showModal, setShowModal] = useState(false);
 
@@ -23,7 +22,6 @@ const NPCs = ({ onSetNPCData }) => {
             let newObj = {id:i}
             NPCData.push(newObj)
         }
-        setNPCNum(value);
         setNPCData(NPCData);
         setReduxNPCData("NPCData", NPCData)
     };
@@ -60,10 +58,7 @@ const NPCs = ({ onSetNPCData }) => {
                                 {NPCData.map((item, index) => 
                                     {return (
                                         <Carousel.Item key={index}>
-                                            <NPCCard 
-                                                index={index} 
-                                                key={item.id} 
-                                                name={item.id}/>
+                                            <NPCCard index={index} key={item.id} name={item.id}/>
                                         </Carousel.Item>
                                     )}
                                 )}

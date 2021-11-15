@@ -194,26 +194,15 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
         setReduxNPCData("NPCData", newNPC);
     }   
 
-    const handleNameChange = (e, index) => {
+    const handleNameorImageChange = (e, index, type) => {
+        console.log(e, index, type)
         const newNPC = [...campaign.NPCData].map((NPC) => {
             if (NPC.id === index) {
-                return {...NPC, NPCName: e.target.value}
+                return {...NPC, [type]: e.target.value}
             } return NPC
         })
-        setNPCData({...NPCData, NPCName: e.target.value});
+        setNPCData({...NPCData, [type]: e.target.value});
         setReduxNPCData("NPCData", newNPC);
-    };
-
-    const handleImageSubmit = (e, index) => {
-        let image= NPCData.NPCImage;
-        const newNPC = [...campaign.NPCData].map((NPC) => {
-            if (NPC.id === index) {
-                return {...NPC, NPCImage:image}
-            } return NPC
-        })
-        setNPCData({...NPCData, NPCImage:image});
-        setReduxNPCData("NPCData", newNPC);
-        overlay.current.hide();
     };
  
     return (
@@ -222,7 +211,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
                 <div>
                     <OverlayTrigger 
                         trigger="click"
-                        ref={overlay}
+                        // ref={overlay}
                         placement="top"
                         overlay={
                             <Popover className="makeItBigger">
@@ -233,13 +222,13 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
                                             type="text" 
                                             placeholder="Image Link" 
                                             className="mr-sm-2" 
-                                            value={NPCData?.image} 
-                                            onChange={(e) => setNPCData({...NPCData, NPCImage: e.target.value})}/>
-                                        <Button onClick={(event) => handleImageSubmit(event, index)} className="imageSubmit">Submit</Button>
+                                            value={NPCData[index]?.NPCImage} 
+                                            onChange={(e, index) => handleNameorImageChange(e, index, "NPCImage")}/>
+                                        <Button onClick={overlay.current.hide()} className="imageSubmit">Submit</Button>
                                     </div>
                                 </Popover.Content>
                             </Popover>}>
-                        <Card.Img className="NPCimage" variant="top" src={NPCData.NPCImage}/> 
+                        <Card.Img className="NPCimage" variant="top" src={NPCData?.NPCImage || imageLink}/> 
                     </OverlayTrigger>
                 </div>
                 <Card.Body className="d-flex flex-column align-items-center">
@@ -249,9 +238,10 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
                             type="text" 
                             placeholder="NPC Name" 
                             className="mr-sm-2" 
-                            value={index} 
-                            onChange={(e) => handleNameChange(e, index)}/>
+                            value={NPCData[index]?.NPCName} 
+                            onChange={(e) => handleNameorImageChange(e, index, "NPCName")}/>
                         <div style={{paddingRight: "10px"}}>or</div> 
+                        {/* <GenerateBtn name={NPCData[index].NPCName} handleGenerate={(feedback) => setPatronData({...patronData, name:feedback})}/> */}
                     </Form>
                     <Dropdown onSelect={(ek, e) => handleSelections(ek, e, index, "gender")} className="giveMeNPCSpace">
                         <Dropdown.Toggle variant="outline-primary">
