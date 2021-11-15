@@ -321,16 +321,16 @@ const VillainModal = ({ onSetVillainData }) => {
         onSetVillainData(destination, value)
     };
 
-    const handleVillainObjectiveCatSelect = (eventkey, event) => {
+    const handleVillainObjectiveCatSelect = (ek, event) => {
         let choice = event.target.text
-        const newVillainObjectiveChoices = villainObjectives.find(event => event.objectiveCat === choice);
+        const newVillainObjectiveChoices = villainObjectives.find((event) => event.objectiveCat === choice);
         const objectivesList = newVillainObjectiveChoices.objectives;
         setVillainData({...villainData, villainObjectiveCatChoice:choice, villainObjectivesPossible:objectivesList});
     };
 
-    const handleVillainMethodCatSelect = (eventkey, event) => {
+    const handleVillainMethodCatSelect = (ek, event) => {
         const selection = event.target.text;
-        const newVillainMethodChoices = villainMethods.find(event => event.methodCat === selection);
+        const newVillainMethodChoices = villainMethods.find((event) => event.methodCat === selection);
         const drilledMethods = newVillainMethodChoices.methods;
         setVillainData({...villainData, villainMethodCatChoice:selection, villainMethodPossible:drilledMethods});
     };
@@ -367,7 +367,7 @@ const VillainModal = ({ onSetVillainData }) => {
                             value={villainData?.name} 
                             onChange={(e) => setVillainData({...villainData, name: e.target.value})}/>
                         <div style={{paddingRight: "10px"}}>or</div> 
-                        <GenerateBtn name="villainName" handleGenerate={(feedback, name) => setVillainData({...villainData, name: feedback})}/>
+                        <GenerateBtn name="villainName" handleGenerate={(feedback) => setVillainData({...villainData, name: feedback})}/>
                     </Form>
                     <br/>
                     <Card className="d-flex flex-column align-items-center villainPatronCard">   
@@ -384,18 +384,18 @@ const VillainModal = ({ onSetVillainData }) => {
                                                 type="text" 
                                                 placeholder="Image Link" 
                                                 className="mr-sm-2" 
-                                                value={villainData?.imageLink} 
+                                                value={villainData?.image} 
                                                 onChange={(e) => setVillainData({...villainData, image: e.target.value})}/>
                                             <Button onClick={handleCloseOverlay} className="imageSubmit">Submit</Button>
                                         </div>
                                     </Popover.Content>
                                 </Popover>}>
-                            <Card.Img className="NPCimage" variant="top" src={villainData?.imageLink || imageLink}/> 
+                            <Card.Img className="NPCimage" variant="top" src={villainData?.image || imageLink}/> 
                         </OverlayTrigger>
                         <Card.Body className="d-flex flex-column align-items-center">
                         <Card.Title>{villainData.name && (`Name: ${villainData.name}`)}</Card.Title>
                             <div className="d-flex flex-column align-items-center">
-                                <Dropdown onSelect={(e)  => setVillainData({...villainData, type: e.target.text})} className="giveMeNPCSpace">
+                                <Dropdown onSelect={(ek, e)  => setVillainData({...villainData, type: e.target.text})} className="giveMeNPCSpace">
                                     <Dropdown.Toggle variant="outline-primary">
                                         {villainData.type ? `Type: ${villainData.type }`: 'Choose your Adventure Villain'}
                                     </Dropdown.Toggle>
@@ -417,7 +417,7 @@ const VillainModal = ({ onSetVillainData }) => {
                                         <Dropdown.Item>Something else</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
-                                <Dropdown onSelect={(e) => setVillainData({...villainData, gender: e.target.text})} className="giveMeNPCSpace">
+                                <Dropdown onSelect={(ek, e) => setVillainData({...villainData, gender: e.target.text})} className="giveMeNPCSpace">
                                     <Dropdown.Toggle variant="outline-primary">
                                         {villainData.gender ? `Gender: ${villainData.gender}`: 'Choose your Adventure Villain'}
                                     </Dropdown.Toggle>
@@ -427,62 +427,52 @@ const VillainModal = ({ onSetVillainData }) => {
                                         <Dropdown.Item>Non Binary</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
-                                <div className="dualDrop giveMeNPCSpace">
+                                <div className="dualDrop">
                                     <Dropdown onSelect={handleVillainObjectiveCatSelect} className="giveMeNPCSpace">
                                         <Dropdown.Toggle variant="outline-primary">
                                             {villainData.villainObjectiveCatChoice ? `Objective Category: ${villainData.villainObjectiveCatChoice}`: "Choose your Villain's Main Objective"}
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
-                                            {villainObjectives.map(item => {
-                                                return <Dropdown.Item key={item.id} name={item.objectiveCat}>{item.objectiveCat}</Dropdown.Item>
-                                            })}
+                                            {villainObjectives.map((item) => (<Dropdown.Item key={item.id} name={item.objectiveCat}>{item.objectiveCat}</Dropdown.Item>))}
                                         </Dropdown.Menu>
                                     </Dropdown>
-                                    {villainData.villainObjectivesPossible && (
-                                        <Dropdown onSelect={(e) => villainData({...villainData, finalVillainObjectiveChoice: e.target.text})}>
+                                    {villainData?.villainObjectivesPossible?.length > 0 && (
+                                        <Dropdown onSelect={(ek, e) => setVillainData({...villainData, finalVillainObjectiveChoice: e.target.text})} className="giveMeNPCSpace">
                                             <Dropdown.Toggle variant="outline-primary">
                                                 {villainData.finalVillainObjectiveChoice ? `Objective: ${villainData.finalVillainObjectiveChoice}`: "Choose your Villain's Main Objective"}
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                {villainData.villainObjectivesPossible.map(item => {
-                                                    return <Dropdown.Item name={item}>{item}</Dropdown.Item>
-                                                })}
+                                                {villainData.villainObjectivesPossible.map((item) => (<Dropdown.Item name={item}>{item}</Dropdown.Item>))}
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     )}
                                 </div>
-                                <div className="dualDrop giveMeNPCSpace">
-                                    <Dropdown onSelect={handleVillainMethodCatSelect}>
+                                <div className="dualDrop">
+                                    <Dropdown onSelect={handleVillainMethodCatSelect} className="giveMeNPCSpace">
                                         <Dropdown.Toggle variant="outline-primary">
                                             {villainData.villainMethodCatChoice ? `Method Category: ${villainData.villainMethodCatChoice}`: "Choose your Villain's Method"}
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
-                                            {villainMethods.map(item => {
-                                                return <Dropdown.Item key={item.id} name={item.methodCat}>{item.methodCat}</Dropdown.Item>
-                                            })}
+                                            {villainMethods.map((item) => (<Dropdown.Item key={item.id} name={item.methodCat}>{item.methodCat}</Dropdown.Item>))}
                                         </Dropdown.Menu>
                                     </Dropdown>
-                                    {villainData.villainMethodPossible && (
-                                        <Dropdown onSelect={(e) => villainData({...villainData, finalVillainMethodChoice: e.target.text})}>
+                                    {villainData?.villainMethodPossible?.length > 0 && (
+                                        <Dropdown onSelect={(ek, e) => setVillainData({...villainData, finalVillainMethodChoice: e.target.text})} className="giveMeNPCSpace">
                                             <Dropdown.Toggle variant="outline-primary">
                                                 {villainData.finalVillainMethodChoice ? `Method: ${villainData.finalVillainMethodChoice}`: "Choose your Villain's Method"}
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                {villainData.villainMethodPossible.map(item => {
-                                                    return <Dropdown.Item name={item}>{item}</Dropdown.Item>
-                                                })}
+                                                {villainData.villainMethodPossible.map((item) => (<Dropdown.Item name={item}>{item}</Dropdown.Item>))}
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     )}
                                 </div>
-                                <Dropdown onSelect={(e) => villainData({...villainData, weakness: e.target.text})} className="giveMeNPCSpace">
+                                <Dropdown onSelect={(ek, e) => setVillainData({...villainData, weakness: e.target.text})} className="giveMeNPCSpace">
                                     <Dropdown.Toggle variant="outline-primary">
-                                        {villainData.villainWeakness ? `Weakness: ${villainData.villainWeakness}`: "Choose your Villain's Weakness"}
+                                        {villainData.weakness ? `Weakness: ${villainData.weakness}`: "Choose your Villain's Weakness"}
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
-                                        {villainWeaknessChoices.map(item => {
-                                            return <Dropdown.Item key={item.id} name={item.option}>{item.option}</Dropdown.Item>
-                                        })}
+                                        {villainWeaknessChoices.map((item) => (<Dropdown.Item key={item.id} name={item.option}>{item.option}</Dropdown.Item>))}
                                     </Dropdown.Menu>
                                 </Dropdown>
                             </div>
