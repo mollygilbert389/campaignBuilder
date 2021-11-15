@@ -353,7 +353,7 @@ const VillainModal = ({ onSetVillainData }) => {
                 size="lg" 
                 show={showModal} 
                 onHide={() => setShowModal(!showModal)}
-                enforceFocus={false}>
+                enforcefocus={false}>
                 <Modal.Header closeButton>
                     <Modal.Title>Let's Create Yor villain!</Modal.Title>
                 </Modal.Header>

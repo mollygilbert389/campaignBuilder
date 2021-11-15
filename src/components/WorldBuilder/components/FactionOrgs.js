@@ -129,7 +129,7 @@ const FactionOrgs = ({ onSetFactionOrgs, onSetFactionShow }) => {
             <Modal 
                 size="lg" show={showModal} 
                 onHide={() => setShowModal(!showModal)} 
-                enforceFocus={false}>
+                enforcefocus={false}>
                 <Modal.Header closeButton>
                     <Modal.Title>Let's add some organizations to your world.</Modal.Title>
                 </Modal.Header>

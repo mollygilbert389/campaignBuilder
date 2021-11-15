@@ -17,7 +17,7 @@ const VillainSubVillain = ({ setVillainData }) => {
                 size="lg" 
                 show={showModal} 
                 onHide={() => setShowModal(!showModal)}
-                enforceFocus={false}>
+                enforcefocus={false}>
                 <Modal.Header closeButton>
                     <Modal.Title>Let's talk about the main villain and the mini bosses.</Modal.Title>
                 </Modal.Header>

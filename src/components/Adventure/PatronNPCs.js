@@ -16,7 +16,7 @@ const PatronNPCs = ({ campaign }) => {
                 size="lg" 
                 show={showModal} 
                 onHide={() => setShowModal(!showModal)}
-                enforceFocus={false}>
+                enforcefocus={false}>
                 <Modal.Header closeButton>
                     <Modal.Title>Who's On Your Team?</Modal.Title>
                 </Modal.Header>

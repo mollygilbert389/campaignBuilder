@@ -153,7 +153,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                 size="lg" 
                 show={showModal} 
                 onHide={() => setShowModal(!showModal)}
-                enforceFocus={false}>
+                enforcefocus={false}>
                 <Modal.Header closeButton>
                     <Modal.Title>Let's Create A Patron!</Modal.Title>
                 </Modal.Header>
@@ -165,7 +165,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                                 type="text" 
                                 placeholder="Patron Name" 
                                 className="mr-sm-2" 
-                                value={patronData?.name || ""} 
+                                value={patronData?.name} 
                                 onChange={(e) => setPatronData({...patronData, name: e.target.value})}/>
                             <div style={{paddingRight: "10px"}}>or</div> 
                             <GenerateBtn name="patronName" handleGenerate={(feedback) => setPatronData({...patronData, name:feedback})}/>
@@ -175,7 +175,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                             <div>
                                 <Card 
                                     className="d-flex flex-column align-items-center villainPatronCard"
-                                    enforceFocus={false}>
+                                    enforcefocus={false}>
                                     <div>
                                         <OverlayTrigger 
                                             trigger="click"
@@ -190,7 +190,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                                                                 type="text" 
                                                                 placeholder="Image Link" 
                                                                 className="mr-sm-2" 
-                                                                value={patronData?.imageLink || ""} 
+                                                                value={patronData?.imageLink} 
                                                                 onChange={(e) => setPatronData({...patronData, imageLink: e.target.value})}/>
                                                             <Button onClick={handleImageSubmit} className="imageSubmit">Submit</Button>
                                                         </div>
@@ -201,7 +201,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                                     </div>
                                     <Card.Body className="d-flex flex-column align-items-center">
                                         <Card.Title>{patronData.name && (`Name: ${patronData.name}`)}</Card.Title>
-                                        <Dropdown onSelect={(e) => setPatronData({...patronData, gender: e.target.text})} className="giveMeNPCSpace">
+                                        <Dropdown onSelect={(ek, e) => setPatronData({...patronData, gender: e.target.text})} className="giveMeNPCSpace">
                                             <Dropdown.Toggle variant="outline-primary">
                                                 {patronData.gender ?  `Gender: ${patronData.gender}`: "Choose your Patron's Gender"}
                                             </Dropdown.Toggle>
@@ -211,7 +211,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                                                 <Dropdown.Item>Non Binary</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
-                                        <Dropdown onSelect={(e) => setPatronData({...patronData, type: e.target.text})} className="giveMeNPCSpace">
+                                        <Dropdown onSelect={(ek, e) => setPatronData({...patronData, type: e.target.text})} className="giveMeNPCSpace">
                                             <Dropdown.Toggle variant="outline-primary">
                                                 {patronData.type ? `Type: ${patronData.type}` : "Choose your Patron's Type"}
                                             </Dropdown.Toggle>
@@ -219,7 +219,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                                                 {patronChoices.map((item, idx) => (<Dropdown.Item key={idx} name={item}>{item}</Dropdown.Item>))}
                                             </Dropdown.Menu>
                                         </Dropdown>
-                                        <Dropdown onSelect={(e) => setPatronData({...patronData, manner: e.target.text})} className="giveMeNPCSpace">
+                                        <Dropdown onSelect={(ek, e) => setPatronData({...patronData, manner: e.target.text})} className="giveMeNPCSpace">
                                             <Dropdown.Toggle variant="outline-primary">
                                                 {patronData.manner ? `Mannerism: ${patronData.manner}`: "Choose your Patron's Mannerism"}
                                             </Dropdown.Toggle>
@@ -227,7 +227,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                                                 {patronMannerisms.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>))}
                                             </Dropdown.Menu>
                                         </Dropdown>
-                                        <Dropdown onSelect={(e) => setPatronData({...patronData, trait: e.target.text})} className="giveMeNPCSpace">
+                                        <Dropdown onSelect={(ek, e) => setPatronData({...patronData, trait: e.target.text})} className="giveMeNPCSpace">
                                             <Dropdown.Toggle variant="outline-primary">
                                                 {patronData.trait ? `Trait: ${patronData.trait }`: "Choose your Patron's Trait"}
                                             </Dropdown.Toggle>

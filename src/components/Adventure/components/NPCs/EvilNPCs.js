@@ -27,7 +27,7 @@ const EvilNPCs = () => {
             <Modal 
                 size="lg" show={showModal} 
                 onHide={() => setShowModal(!showModal)}
-                enforceFocus={false}>
+                enforcefocus={false}>
                 <Modal.Header closeButton>
                     <Modal.Title>Let's get some Evil NPCs added to your campaign.</Modal.Title>
                 </Modal.Header>

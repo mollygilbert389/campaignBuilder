@@ -8,7 +8,7 @@ import { setNPCData } from "../../../../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-const NPCs = ({ onSetNPCData, campaign }) => {
+const NPCs = ({ onSetNPCData }) => {
     const [NPCNum, setNPCNum] = useState(null);
     const [NPCData, setNPCData] = useState([]);
     const [showModal, setShowModal] = useState(false);
@@ -16,6 +16,7 @@ const NPCs = ({ onSetNPCData, campaign }) => {
     const setReduxNPCData = (destination, value) => {
         onSetNPCData(destination, value)
     };
+
     const handleSlider = (event, value) => {
         let NPCData = []
         for(let i=0; i < value; i++ ) {
@@ -25,7 +26,7 @@ const NPCs = ({ onSetNPCData, campaign }) => {
         setNPCNum(value);
         setNPCData(NPCData);
         setReduxNPCData("NPCData", NPCData)
-    }
+    };
 
     return (
         <div>
@@ -36,20 +37,21 @@ const NPCs = ({ onSetNPCData, campaign }) => {
                 size="lg" 
                 show={showModal} 
                 onHide={() => setShowModal(!showModal)}
-                enforceFocus={false}>
+                enforcefocus={false}>
                 <Modal.Header closeButton>
                     <Modal.Title>Let's get some NPCs added to your campaign.</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="d-flex flex-column align-items-center">
                     <p>
                         Below are some buttons to help you pick some NPCs. 
-                        This modal is for NPCs that play a bigger part in your campaign, not necesarily the shopkeeper your characters will buy things from.
+                        This modal is for NPCs that play a bigger part in your campaign, 
+                        not necesarily the shopkeeper your characters will buy things from.
                     </p>
                     <br/>
                     <Slider
-                        min={1}
+                        min={0}
                         max={5}
-                        defaultValue={3}
+                        defaultValue={0}
                         className="sliderclass"
                         onChangeCommitted={handleSlider}
                         valueLabelDisplay="on"/>
@@ -57,13 +59,11 @@ const NPCs = ({ onSetNPCData, campaign }) => {
                             <Carousel className="center" interval={null}>
                                 {NPCData.map((item, index) => 
                                     {return (
-                                        <Carousel.Item>
+                                        <Carousel.Item key={index}>
                                             <NPCCard 
                                                 index={index} 
                                                 key={item.id} 
-                                                name={item.id}
-                                                campaign={campaign}
-                                                setNPCData={setNPCData}/>
+                                                name={item.id}/>
                                         </Carousel.Item>
                                     )}
                                 )}
@@ -83,7 +83,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchtoProps = (dispatch) => ({
-    onSetPatronData: bindActionCreators(setNPCData, dispatch)
+    onSetNPCData: bindActionCreators(setNPCData, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchtoProps)(NPCs);
