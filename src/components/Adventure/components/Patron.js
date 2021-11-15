@@ -88,14 +88,14 @@ const Patron = ({ onSetPatronData, campaign }) => {
         let checked = event.target.checked;
         let name = event.target.name;
         if(checked) {
-            let factions = [...patronData.factions];
-            factions.push({name, icon});
-            const newPatronData = {...patronData, factions}
-            setPatronData({patronData: newPatronData});
-        } else if (checked === false) {
-                const patronFactionsKeep = patronData.factions.filter(item => (item.name !== name));
-                setPatronData({...patronData, factions: patronFactionsKeep});
-            }
+            const updatedArr = patronData.factions;
+            const factionOrg = campaign.factionOrgs.find((facObj) => facObj.name === name);
+            updatedArr.push(factionOrg);
+            setPatronData({...patronData, factions: updatedArr});
+        } else {
+            const updatedFactions = patronData.factions.filter((item) => (item.name !== name));
+            setPatronData({...patronData, factions: updatedFactions});
+        }
     };
 
     return (
@@ -201,7 +201,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                                                 <Checkbox
                                                     onChange={(event) => handleCheckBoxChange(event, item.icon)} 
                                                     name={item.name}
-                                                    value={item.name}
+                                                    defaultChecked={patronData.factions.find((facName) => facName.name === item.name)?.id ? true : false}
                                                     inputProps={item.icon}
                                                     color="primary"/>}
                                             label={item.name}/>
