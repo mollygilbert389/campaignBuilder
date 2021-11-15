@@ -57,6 +57,7 @@ const Languages = ({ onSetLanguages,  onSetLanguageShow }) => {
                         <Button name={item} onClick={handleRemove}>X</Button>
                     </ButtonGroup>
                 ))}
+            </div>
             <div className="inputAndBtn factionButtons">
                 <input 
                     className="factionInput" 
@@ -66,7 +67,6 @@ const Languages = ({ onSetLanguages,  onSetLanguageShow }) => {
                     onChange={(e) => setValue(e.target.value)} 
                     onKeyUp={(event) => onKeyDown(event)}/>
                 <Button size="sm" variant="outline-success" onClick={handleAddLanguage}>Submit</Button>
-            </div>
             </div>
         </div>
     )

@@ -52,13 +52,6 @@ const icons = [
 ];
 
 const FactionOrgs = ({ onSetFactionOrgs, onSetFactionShow }) => {
-
-    const setReduxFactionOrgs = (names) => {
-        onSetFactionOrgs(names)
-    }
-    const setReduxFactionShow = (destination, value) => {
-        onSetFactionShow(destination, value)
-    }
     const [value, setValue] = useState("");
     const [showModal, setShowModal] = useState(false);
     const [currentBtnId, setCurrentBtnId] = useState(null);
@@ -70,6 +63,14 @@ const FactionOrgs = ({ onSetFactionOrgs, onSetFactionShow }) => {
         {id: 4, name: "Lord's Alliance", icon:faCrown},
         {id: 5, name: "Zhentarim", icon:faDragon},
     ]);
+
+    const setReduxFactionOrgs = (names) => {
+        onSetFactionOrgs(names);
+    }
+
+    const setReduxFactionShow = (destination, value) => {
+        onSetFactionShow(destination, value);
+    }
 
     const handleRemove = (event) => {
         let removedItem = event.target.name;
