@@ -286,7 +286,7 @@ const  Physical = ({ onSetWorldData }) => {
                                     {world ? `Setting: ${world}`: 'What is your setting?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu name="world">
-                                    {worldOptions.map((item) => (<Dropdown.Item name="world">{item}</Dropdown.Item>))}
+                                    {worldOptions.map((item, idx) => (<Dropdown.Item key={idx} name="world">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
                             <RollBtn name="world" handleRoll={(ek, e) => handleDropSelect(ek, e, "world")} rollingArray={worldOptions}/>
@@ -299,7 +299,7 @@ const  Physical = ({ onSetWorldData }) => {
                                     {era ? `Era: ${era}`: 'What era does this adventure take place?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {eraOptions.map((item) => (<Dropdown.Item name="era">{item}</Dropdown.Item>))}
+                                    {eraOptions.map((item, idx) => (<Dropdown.Item key={idx} name="era">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
                             <RollBtn name="era" handleRoll={(ek, e) => handleDropSelect(ek, e, "era")} rollingArray={eraOptions}/>
@@ -312,7 +312,7 @@ const  Physical = ({ onSetWorldData }) => {
                                     {uniqueFeature ? `Feature: ${uniqueFeature}`: 'Does this world have a unique feature?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {featureOptions.map((item) => (<Dropdown.Item name="uniqueFeature">{item}</Dropdown.Item>))}
+                                    {featureOptions.map((item, idx) => (<Dropdown.Item key={idx} name="uniqueFeature">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
                             <RollBtn name="uniqueFeature" handleRoll={(ek, e) => handleDropSelect(ek, e, "uniqueFeatures")} rollingArray={featureOptions}/>
@@ -325,7 +325,7 @@ const  Physical = ({ onSetWorldData }) => {
                                     {mapScale ? `Size: ${mapScale}` : 'What kind of place are your adventurers starting?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {mapScaleOptions.map((item) => (<Dropdown.Item name="mapScale">{item}</Dropdown.Item>))}
+                                    {mapScaleOptions.map((item, idx) => (<Dropdown.Item key={idx} name="mapScale">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
                             <RollBtn name="mapScale" handleRoll={(ek, e) => handleDropSelect(ek, e, "mapScale")} rollingArray={mapScaleOptions}/>
@@ -338,7 +338,7 @@ const  Physical = ({ onSetWorldData }) => {
                                     {charMeeting ? `Meeting: ${charMeeting}`: 'How do your characters know each other?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {meetingOptions.map((item) => (<Dropdown.Item name="charMeeting">{item}</Dropdown.Item>))}
+                                    {meetingOptions.map((item, idx) => (<Dropdown.Item key={idx} name="charMeeting">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
                             <RollBtn name="charMeeting" handleRoll={(ek, e) => handleDropSelect(ek, e, "charMeeting")} rollingArray={meetingOptions}/>
@@ -347,9 +347,10 @@ const  Physical = ({ onSetWorldData }) => {
                     <p>Consider some places your adventurers might travel through. Pick only 3.</p>
                     <div className="container">
                         <div className="side tags">
-                            {travelPoints.map((drop) => {
+                            {travelPoints.map((drop, idx) => {
                                 return (
                                     <Button 
+                                        key={idx}
                                         name="travelPointChoices" 
                                         value={drop} 
                                         className="eventbtns" 
@@ -361,8 +362,16 @@ const  Physical = ({ onSetWorldData }) => {
                             })}
                         </div>
                         <div className="side tags">
-                        {travelPointChoices.map((drop) => (
-                            <Button name="travelPointChoices" value={drop} className="eventbtns" onClick={removeEvent} disabled={eventCap}> {drop}</Button>
+                        {travelPointChoices.map((drop, idx) => (
+                            <Button 
+                                key={idx}
+                                name="travelPointChoices" 
+                                value={drop} 
+                                className="eventbtns" 
+                                onClick={removeEvent} 
+                                disabled={eventCap}> 
+                                {drop}
+                            </Button>
                         ))}
                         </div>
                     </div>

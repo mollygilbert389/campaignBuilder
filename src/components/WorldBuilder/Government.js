@@ -69,15 +69,15 @@ const Government = ({ onSetGovernmentData, onSetLanguageShow }) => {
                                 {government ? government: 'Choose Your Government'}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                {governmentData.map(item => {
-                                    return <div>
-                                        <OverlayTrigger overlay={<Tooltip>{item.description}</Tooltip>}>
-                                            <span className="d-inline-block">
-                                                <Dropdown.Item key={item.id} name="government">{item.name}</Dropdown.Item>
-                                            </span>
-                                        </OverlayTrigger> 
-                                    </div>
-                                    })}       
+                                {governmentData.map((item, idx) => (
+                                        <div key={idx}>
+                                            <OverlayTrigger overlay={<Tooltip>{item.description}</Tooltip>}>
+                                                <span className="d-inline-block">
+                                                    <Dropdown.Item key={item.id} name="government">{item.name}</Dropdown.Item>
+                                                </span>
+                                            </OverlayTrigger> 
+                                        </div>
+                                    ))}       
                             </Dropdown.Menu>
                         </Dropdown>
                         <RollBtn name="government" handleRoll={(name, feedback) => handleRoll(name, feedback, "government")} rollingArray={governmentData.map((item) => item.name)}/>
@@ -89,7 +89,7 @@ const Government = ({ onSetGovernmentData, onSetLanguageShow }) => {
                                 {currency ? currency: 'Choose Your Currency'}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                {currencyOptions.map(item => {return <Dropdown.Item name="currency">{item}</Dropdown.Item>})}
+                                {currencyOptions.map((item, idx) => (<Dropdown.Item key={idx} name="currency">{item}</Dropdown.Item>))}
                             </Dropdown.Menu>
                         </Dropdown>
                         <RollBtn name="currency" handleRoll={(name, feedback) => handleRoll(name, feedback, "currency")} rollingArray={currencyOptions}/>

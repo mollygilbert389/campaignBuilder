@@ -58,42 +58,46 @@ const PartyInfo = ({ onSetPlayers })  => {
         <div>
             <p>Click on the number of party members you plan to have. Must be at least 3 (exluding the DM) and the max is 8.</p>
             <div className="partyBtnSpace">
-                {quantity.map(number => {
-                    return <div key={number} className="prtyBtns">
-                        <Button id={number} variant="outline-primary" onClick={handleClick}>{number}</Button>
-                    </div>
+                {quantity.map((number, idx) => {
+                    return (
+                        <div key={idx} className="prtyBtns">
+                            <Button id={number} variant="outline-primary" onClick={handleClick}>{number}</Button>
+                        </div>
+                    );
                 })}
             </div>
             {partyMemberData.length > 0 && (
                 <div>
                     <div className="forms">
                         {[...partyMemberData].map((partyMember, index) => {
-                            return <div key={partyMember.id} className="partyFormSpace">
-                            <Form inline>
-                                <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                                    <Label className="mr-sm-2">{`Party Member ${partyMember.id}`}</Label>
-                                    <Input type="names" placeholder="Name" id={partyMember.id} onChange={(ek, e) => handlePartyDetails(ek, e, "name")}/>
-                                </FormGroup>
-                                <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                                    <Dropdown onSelect={(ek, e) => handlePartyDetails(ek, e, "race")} id={partyMember.id}>
-                                        <Dropdown.Toggle variant="outline-primary">
-                                            {partyMemberData[index].raceClass ? partyMemberData[index].raceClass: 'Choose a Class for this Party Member'}
-                                        </Dropdown.Toggle>
-                                        <Dropdown.Menu>
-                                            {classTypes.map((item) => (<Dropdown.Item id={partyMember.id} name={item}>{item}</Dropdown.Item>))}
-                                        </Dropdown.Menu>
-                                    </Dropdown>
-                                    <Dropdown className="someSpace" onSelect={(ek, e) => handlePartyDetails(ek, e, "level")} id={partyMember.id}>
-                                        <Dropdown.Toggle variant="outline-primary">
-                                            {partyMemberData[index].level ? partyMemberData[index].level: 'Choose a level for this party member'}
-                                        </Dropdown.Toggle>
-                                        <Dropdown.Menu>
-                                            {levels.map((item) => (<Dropdown.Item id={partyMember.id}>{item}</Dropdown.Item>))}
-                                        </Dropdown.Menu>
-                                    </Dropdown>
-                                </FormGroup>
-                            </Form>
-                        </div>
+                            return (
+                                <div key={partyMember.id} className="partyFormSpace">
+                                <Form inline>
+                                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                                        <Label className="mr-sm-2">{`Party Member ${partyMember.id}`}</Label>
+                                        <Input type="names" placeholder="Name" id={partyMember.id} onChange={(ek, e) => handlePartyDetails(ek, e, "name")}/>
+                                    </FormGroup>
+                                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                                        <Dropdown onSelect={(ek, e) => handlePartyDetails(ek, e, "race")} id={partyMember.id}>
+                                            <Dropdown.Toggle variant="outline-primary">
+                                                {partyMemberData[index].raceClass ? partyMemberData[index].raceClass: 'Choose a Class for this Party Member'}
+                                            </Dropdown.Toggle>
+                                            <Dropdown.Menu>
+                                                {classTypes.map((item, idx) => (<Dropdown.Item key={idx} id={partyMember.id} name={item}>{item}</Dropdown.Item>))}
+                                            </Dropdown.Menu>
+                                        </Dropdown>
+                                        <Dropdown className="someSpace" onSelect={(ek, e) => handlePartyDetails(ek, e, "level")} id={partyMember.id}>
+                                            <Dropdown.Toggle variant="outline-primary">
+                                                {partyMemberData[index].level ? partyMemberData[index].level: 'Choose a level for this party member'}
+                                            </Dropdown.Toggle>
+                                            <Dropdown.Menu>
+                                                {levels.map((item, idx) => (<Dropdown.Item key={idx} id={partyMember.id}>{item}</Dropdown.Item>))}
+                                            </Dropdown.Menu>
+                                        </Dropdown>
+                                    </FormGroup>
+                                </Form>
+                            </div>
+                        )
                         })}
                     </div>
                     <div className="saveBtn">

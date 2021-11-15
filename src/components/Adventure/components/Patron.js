@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown, Form, FormControl, OverlayTrigger, Popover, Card } from 'react-bootstrap';
 import { GenerateBtn } from "../../StaticComps";
@@ -10,16 +10,10 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 const Patron = ({ onSetPatronData, campaign }) => {
-    const setReduxPatronData = (destination, value) => {
-        onSetPatronData(destination, value)
-    };
+    const overlay = useRef(null);
     const [showModal, setShowModal] = useState(false);
-    const [patronData, setPatronData] = useState({
-        factions: []
-    })
-    const [show, setShow] = useState(false);
-    const [imageLink, setImageLink] = useState("https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg");
-    const [disabled, setDisabled] = useState(false);
+    const [patronData, setPatronData] = useState({factions: []});
+    const imageLink = "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg";
     const patronMannerisms = [
         {id: 1, option: "Prone to singing, whistling, or humming quietly" },
         {id: 2, option: "Speaks in rhyme or some other particular way" },
@@ -77,6 +71,10 @@ const Patron = ({ onSetPatronData, campaign }) => {
         "Something else",
     ];
 
+    const setReduxPatronData = (destination, value) => {
+        onSetPatronData(destination, value);
+    };
+
     const close = () =>  {
         setShowModal(false);
         setReduxPatronData("patronData", patronData);
@@ -84,8 +82,8 @@ const Patron = ({ onSetPatronData, campaign }) => {
 
     const handleImageSubmit = () => {
         let image = imageLink.trim();
-        setPatronData(...patronData, image);        
-        // this.refs.overlay.hide();
+        setPatronData(...patronData, image);  
+        overlay.current.hide();
     };
 
     const handleCheckBoxChange = (event, icon) => {
@@ -137,7 +135,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                                     <div>
                                         <OverlayTrigger 
                                             trigger="click"
-                                            ref="overlay"
+                                            ref={overlay}
                                             placement="top"
                                             overlay={
                                                 <Popover className="makeItBigger">
@@ -174,8 +172,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                                                 {patronData.type ? `Type: ${patronData.type}` : "Choose your Patron's Type"}
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                {patronChoices.map(item => {
-                                                    return <Dropdown.Item name={item}>{item}</Dropdown.Item>})}
+                                                {patronChoices.map((item, idx) => (<Dropdown.Item key={idx} name={item}>{item}</Dropdown.Item>))}
                                             </Dropdown.Menu>
                                         </Dropdown>
                                         <Dropdown onSelect={(e) => setPatronData({...patronData, manner: e.target.text})} className="giveMeNPCSpace">
@@ -183,9 +180,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                                                 {patronData.manner ? `Mannerism: ${patronData.manner}`: "Choose your Patron's Mannerism"}
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                {patronMannerisms.map(drop => {
-                                                    return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
-                                                })}
+                                                {patronMannerisms.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>))}
                                             </Dropdown.Menu>
                                         </Dropdown>
                                         <Dropdown onSelect={(e) => setPatronData({...patronData, trait: e.target.text})} className="giveMeNPCSpace">
@@ -193,18 +188,16 @@ const Patron = ({ onSetPatronData, campaign }) => {
                                                 {patronData.trait ? `Trait: ${patronData.trait }`: "Choose your Patron's Trait"}
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                {patronInteractionTraits.map(drop => {
-                                                    return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
-                                                })}
+                                                {patronInteractionTraits.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>))}
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </Card.Body>
                                 </Card>
                             </div>
                             <div>
-                                {campaign.factionOrgs.map(item => {
+                                {campaign.factionOrgs.map((item, idx) => {
                                     return (
-                                        <div>
+                                        <div key={idx}>
                                             <FontAwesomeIcon className="iconSpace" icon={item.icon}/>
                                                 <FormControlLabel
                                                 control={

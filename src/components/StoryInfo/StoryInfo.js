@@ -20,15 +20,15 @@ const StoryInfo = ({ campaign }) => {
                   <Card.Title className="title">Player Info:</Card.Title>
                   <div>
                     <div className="d-flex flex-column align-items-center">
-                      {campaign.playerData.map((player) => (
-                        <div className="playerCards">
+                      {campaign.playerData.map((player, idx) => (
+                        <div key={idx} className="playerCards">
                           <div>Player: {player.name}</div>
                           <div>Class: {player.raceClass}</div>
                           <div>Level: {player.level}</div>
                           <div className="iconHolder">
                             {player.factions && (
-                              player.factions[0].map((icon) => (
-                                <div className="iconSpace">
+                              player.factions[0].map((icon, index) => (
+                                <div key={index} className="iconSpace">
                                   <FontAwesomeIcon className="playerIcon" icon={icon.icon}/>
                                 </div>
                               ))
@@ -57,8 +57,8 @@ const StoryInfo = ({ campaign }) => {
                   {campaign.factionShow && (
                     <div className="miniSection">
                       <div><strong>Factions and Organizations:</strong></div>
-                      {campaign.factionOrgs.map(oneFaction => (
-                        <div className="iconHolder"> {`-${oneFaction.name}`}
+                      {campaign.factionOrgs.map((oneFaction, idx) => (
+                        <div key={idx} className="iconHolder"> {`-${oneFaction.name}`}
                           <FontAwesomeIcon className="iconSpace" icon={oneFaction.icon}/>
                         </div>
                         ))}
@@ -67,9 +67,9 @@ const StoryInfo = ({ campaign }) => {
                   {campaign.languageShow && (
                     <div>                    
                         <div><strong>Languages:</strong></div>
-                          {campaign.languages.map(oneLanguage => (
-                            <div> {`-${oneLanguage}`}</div>
-                            ))}
+                          {campaign.languages.map((oneLanguage, idx) => (
+                            <div key={idx}> {`-${oneLanguage}`}</div>
+                          ))}
                       </div>
                     )}
               </div>
@@ -103,8 +103,8 @@ const StoryInfo = ({ campaign }) => {
                       {campaign.patronData.type && (<div>{`Type: ${campaign.patronData.type}`}</div>)}
                       {campaign.patronData.factions && (
                         <div className="iconHolder">
-                          {campaign.patronData.factions.map((icon) => (
-                              <div>
+                          {campaign.patronData.factions.map((icon, idx) => (
+                              <div key={idx}>
                                 <FontAwesomeIcon className="iconSpace" icon={icon.icon}/>
                               </div>
                             ))}
@@ -119,8 +119,8 @@ const StoryInfo = ({ campaign }) => {
               <div className="grouping dataBoxes">
                 <Card.Title className="title">NPCs & Allies</Card.Title>
                   <CardGroup className="cardContainer">
-                    {campaign.NPCData.map((NPC) => (
-                      <div>
+                    {campaign.NPCData.map((NPC, idx) => (
+                      <div key={idx}>
                         <NPCCards
                         image={NPC.NPCImage} 
                         name={NPC.NPCName}
@@ -172,8 +172,8 @@ const StoryInfo = ({ campaign }) => {
                     {campaign.setback && (<div><strong>Setback:</strong>{`${campaign.setback}`}</div>)}
                     <div className="miniSection">
                       {campaign.localEvents && (<div><strong>Local Events:</strong></div>)}
-                      {campaign.localEvents.map((localEvent) => (
-                        <div> {`-${localEvent}`}</div>
+                      {campaign.localEvents.map((localEvent, idx) => (
+                        <div key={idx}> {`-${localEvent}`}</div>
                       ))}
                     </div>
                   </div>
@@ -184,8 +184,8 @@ const StoryInfo = ({ campaign }) => {
                 <div className="grouping pair dataBoxes">
                   <Card.Title className="title">Planned Encouonters:</Card.Title>
                     <div>
-                      {campaign.encounters.map((encounter) => (
-                        <div> 
+                      {campaign.encounters.map((encounter, idx) => (
+                        <div key={idx}> 
                           <div>{`${encounter.type}`}</div>
                           <div>{`${encounter.difficulty}`}</div>
                         </div>
@@ -232,8 +232,8 @@ const StoryInfo = ({ campaign }) => {
                 <Card.Title className="title">Side Quests:</Card.Title>
                 {campaign.sideQuests.length > 0 && (
                   <div className="sideQuestTable">
-                  {campaign.sideQuests.map((sidequest) => (
-                    <div className="sideQuestTableItem">
+                  {campaign.sideQuests.map((sidequest, idx) => (
+                    <div key={idx} className="sideQuestTableItem">
                       <strong>{`${sidequest.type}`}</strong>
                       <p>
                         To succeed you must believe. 
@@ -259,8 +259,8 @@ const StoryInfo = ({ campaign }) => {
                   <div>
                     <div><strong>Monsters Chosen:</strong></div>
                     <div className="monsterSection"> 
-                      {campaign.dungeonData.monsterList.map((monster) => (
-                        <div className="monsterItem">{monster.monsterName}</div>
+                      {campaign.dungeonData.monsterList.map((monster, idx) => (
+                        <div key={idx} className="monsterItem">{monster.monsterName}</div>
                       ))}
                     </div>
                   </div>
@@ -271,8 +271,8 @@ const StoryInfo = ({ campaign }) => {
               {campaign.treasureData.treasureTypes && (
                 <div className="grouping treasure dataBoxes">
                   <Card.Title className="title">Treasure: {campaign.treasureData.treasureNumber}</Card.Title>
-                  {campaign.treasureData.treasureTypes.map((oneTreasure) => (
-                    <div> {`-${oneTreasure}`}</div>
+                  {campaign.treasureData.treasureTypes.map((oneTreasure, idx) => (
+                    <div key={idx}> {`-${oneTreasure}`}</div>
                   ))}
                 </div>
               )}

@@ -78,9 +78,8 @@ const Acts = ({ onSetActsAndClimx }) => {
                         <div className="d-flex flex-column align-items-center">
                             <p>Let's also plan your end goal. Click one of the boxes in the slider below.</p>
                             <Carousel interval={null}>
-                                {climaxOptions.map(drop => {
-                                    return (
-                                        <Carousel.Item> 
+                                {climaxOptions.map((drop, idx) => (
+                                        <Carousel.Item key={idx}> 
                                             <div className="d-block w-100"></div> 
                                             <Button 
                                                 variant="primary" 
@@ -91,8 +90,7 @@ const Acts = ({ onSetActsAndClimx }) => {
                                                     {drop.option}
                                             </Button>
                                         </Carousel.Item>
-                                    )
-                                })}
+                                    ))}
                             </Carousel>
                         </div>
                     </Modal.Body>

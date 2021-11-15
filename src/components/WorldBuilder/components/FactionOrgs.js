@@ -139,9 +139,8 @@ const FactionOrgs = ({ onSetFactionOrgs, onSetFactionShow }) => {
                     </p>
                     <br/>
                     <div className="tagsArea centeredItems">
-                    {suggestedTags.map((item) => {
-                        return (
-                            <ButtonGroup className="factionButtons">
+                    {suggestedTags.map((item, idx) => (
+                            <ButtonGroup key={idx} className="factionButtons">
                                 <OverlayTrigger
                                     placement="left"
                                     overlay={<Tooltip>Change Me!</Tooltip>}>
@@ -152,8 +151,7 @@ const FactionOrgs = ({ onSetFactionOrgs, onSetFactionShow }) => {
                                 <Button className="iconImage" name={item.name}>{item.name}</Button>
                                 <Button name={item.name} onClick={handleRemove}>X</Button>
                             </ButtonGroup>
-                        )
-                    })}
+                        ))}
                         <Modal
                             size="sm"
                             aria-labelledby="example-modal-sizes-title-sm"
@@ -164,17 +162,16 @@ const FactionOrgs = ({ onSetFactionOrgs, onSetFactionShow }) => {
                             </Modal.Header>
                             <Modal.Body>
                                 <div className="wrapIcons">
-                                    {icons.map((icon) => {
-                                        return (
+                                    {icons.map((icon, idx) => (
                                             <Button 
+                                                key={idx}
                                                 className="icons"
                                                 id={icon.id}
                                                 iconObject={icon.icon}
                                                 onClick={hanleIconFinalSelection}>
                                                 <FontAwesomeIcon className="iconImage" icon={icon.icon}/>
                                             </Button>
-                                        )
-                                    })}
+                                        ))}
                                 </div>
                             </Modal.Body>
                         </Modal>

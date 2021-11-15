@@ -87,7 +87,7 @@ const eventGoals = [
 
 const MainGoals = ({ onSetMainGoal }) => {
     const [goalsCat, setGoalsCat] = useState("");
-    const [showModal, setShowModal] = useState("");
+    const [showModal, setShowModal] = useState(false);
     const [dungeonGoalsClicked, setDungeonGoalsClicked] = useState(true);
     const [mainGoal, setMainGoal] = useState("");
     const [wildernessGoalsClickd, setWildernessGoalsClickd] = useState(false);
@@ -180,9 +180,7 @@ const MainGoals = ({ onSetMainGoal }) => {
                                             {mainGoal ? `Goal: ${mainGoal}`: 'Choose Overal Campaign Goal'}
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
-                                            {dungeonGoals.map(drop => {
-                                                return <Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>
-                                            })}
+                                            {dungeonGoals.map((drop) => (<Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>))}
                                         </Dropdown.Menu>
                                     </Dropdown>
                                 </div>
@@ -194,9 +192,7 @@ const MainGoals = ({ onSetMainGoal }) => {
                                             {mainGoal ? `Goal: ${mainGoal}`: 'Choose Overal Campaign Goal'}
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
-                                            {wildernessGoals.map(drop => {
-                                                return <Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>
-                                            })}
+                                            {wildernessGoals.map((drop) => (<Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>))}
                                         </Dropdown.Menu>
                                     </Dropdown>
                                 </div>
@@ -208,9 +204,7 @@ const MainGoals = ({ onSetMainGoal }) => {
                                             {mainGoal ? `Goal: ${mainGoal}`: 'Choose Overal Campaign Goal'}
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
-                                            {otherGoals.map(drop => {
-                                                return <Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>
-                                            })}
+                                            {otherGoals.map((drop) => (<Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>))}
                                         </Dropdown.Menu>
                                     </Dropdown>
                                 </div>
@@ -222,9 +216,7 @@ const MainGoals = ({ onSetMainGoal }) => {
                                         {mainGoal ? `Goal: ${mainGoal}`: 'Choose Overal Campaign Goal'}
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
-                                            {eventGoals.map(drop => {
-                                                return <Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>
-                                            })}
+                                            {eventGoals.map((drop) => (<Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>))}
                                         </Dropdown.Menu>
                                     </Dropdown>
                                 </div>

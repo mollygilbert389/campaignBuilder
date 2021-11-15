@@ -53,22 +53,21 @@ const Renown = ({ campaign, setReduxPlayers }) => {
                     <br/>
                     {playerInfo.length > 0 && (
                         <div className="characterRenownContainer">
-                            {playerInfo.map((player, pidx) => {
+                            {playerInfo.map((player, idx) => {
                                 return (
-                                    <div>
+                                    <div key={idx}>
                                         <div>{player.name}</div>
-                                        {campaign.factionOrgs.map((faction) => {
+                                        {campaign.factionOrgs.map((faction, index) => {
                                             return (
-                                                <div>
+                                                <div key={index}>
                                                     <FontAwesomeIcon className="iconSpace" icon={faction.icon}/>
                                                     <FormControlLabel
                                                         label={faction.name} 
                                                         control={
                                                             <Checkbox
-                                                            onChange={(event) => handleChange(event, pidx, faction.icon)} 
+                                                            onChange={(event) => handleChange(event, idx, faction.icon)} 
                                                             name={faction.name}
-                                                            defaultChecked={player?.factions?.flat()?.find(item => item.name === faction.name) || false }
-                                                            value={faction.name}
+                                                            defaultChecked={player?.factions?.flat()?.find((item) => item.name === faction.name)?.name ? true : false}
                                                             inputProps={faction.icon}
                                                             color="primary"/>}/> 
                                                 </div>

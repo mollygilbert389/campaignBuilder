@@ -64,9 +64,9 @@ const Religion = ({ onSetReligion }) => {
                                 {religion ? `Religion: ${religion}`: 'Choose Your Religious Philosophy'}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                {godChoices.map( item => {
+                                {godChoices.map((item, idx) => {
                                     return (
-                                        <div>
+                                        <div key={idx}>
                                             <OverlayTrigger overlay={<Tooltip>{item.toolTipData}</Tooltip>}>
                                                 <span className="d-inline-block">
                                                     <Dropdown.Item key={item.id} name={item.option}>{item.option}</Dropdown.Item>

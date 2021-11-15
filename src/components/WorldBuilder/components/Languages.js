@@ -51,14 +51,12 @@ const Languages = ({ onSetLanguages,  onSetLanguageShow }) => {
             <br/>
             <p>We have a few languages suggestions here. Feel free to add and remove as many or as little as you want.</p>
             <div className="tagsArea centeredItems">
-            {suggestedTags.map((item) => {
-                return (
-                    <ButtonGroup className="factionButtons">
+            {suggestedTags.map((item, idx) => (
+                    <ButtonGroup key={idx} className="factionButtons">
                         <Button name={item}>{item}</Button>
                         <Button name={item} onClick={handleRemove}>X</Button>
                     </ButtonGroup>
-                )
-            })}
+                ))}
             <div className="inputAndBtn factionButtons">
                 <input 
                     className="factionInput" 
