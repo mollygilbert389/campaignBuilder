@@ -6,11 +6,9 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 const NPCCard = ({ onSetNPCData, campaign, index }) => {
-    const imageLink = "https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg";
+    const imageLink = "https://st3.depositphotos.com/9998432/13335/v/600/depositphotos_133351974-stock-illustration-default-placeholder-woman.jpg";
     const overlay = useRef(null);
     const [NPCData, setNPCData] = useState({});
-    const [finalIdeal, setFinalIdeal] = useState([]);
-    const [disabled, setDisabled] = useState(true);
     const NPCAppearance = [
         {id: 1, option: "Distinctive Jewelry: earrings, necklace, circlet, braclets"},
         {id: 2, option: "Piercings"},
@@ -192,10 +190,9 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
         });
         setNPCData({...NPCData, [type]: selection});
         setReduxNPCData("NPCData", newNPC);
-    }   
+    }; 
 
     const handleNameorImageChange = (e, index, type) => {
-        console.log(e, index, type)
         const newNPC = [...campaign.NPCData].map((NPC) => {
             if (NPC.id === index) {
                 return {...NPC, [type]: e.target.value}
@@ -204,14 +201,18 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
         setNPCData({...NPCData, [type]: e.target.value});
         setReduxNPCData("NPCData", newNPC);
     };
+
+    const handleCloseOverlay = () => {
+        overlay.current.hide();
+    };
  
     return (
         <div>
-            <Card className="changeOverflow d-flex flex-column align-items-center color">
+            <Card enforceFocus={false} className="changeOverflow d-flex flex-column align-items-center color">
                 <div>
                     <OverlayTrigger 
                         trigger="click"
-                        // ref={overlay}
+                        ref={overlay}
                         placement="top"
                         overlay={
                             <Popover className="makeItBigger">
@@ -222,12 +223,13 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
                                             type="text" 
                                             placeholder="Image Link" 
                                             className="mr-sm-2" 
-                                            value={NPCData[index]?.NPCImage} 
-                                            onChange={(e, index) => handleNameorImageChange(e, index, "NPCImage")}/>
-                                        <Button onClick={overlay.current.hide()} className="imageSubmit">Submit</Button>
+                                            value={NPCData?.NPCImage} 
+                                            onChange={(e) => handleNameorImageChange(e, index, "NPCImage")}/>
+                                        <Button onClick={handleCloseOverlay} className="imageSubmit">Submit</Button>
                                     </div>
                                 </Popover.Content>
                             </Popover>}>
+
                         <Card.Img className="NPCimage" variant="top" src={NPCData?.NPCImage || imageLink}/> 
                     </OverlayTrigger>
                 </div>
@@ -238,7 +240,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
                             type="text" 
                             placeholder="NPC Name" 
                             className="mr-sm-2" 
-                            value={NPCData[index]?.NPCName} 
+                            value={NPCData?.NPCName} 
                             onChange={(e) => handleNameorImageChange(e, index, "NPCName")}/>
                         <div style={{paddingRight: "10px"}}>or</div> 
                         {/* <GenerateBtn name={NPCData[index].NPCName} handleGenerate={(feedback) => setPatronData({...patronData, name:feedback})}/> */}

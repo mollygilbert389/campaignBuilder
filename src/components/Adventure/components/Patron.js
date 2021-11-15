@@ -13,7 +13,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
     const overlay = useRef(null);
     const imageLink = "https://st3.depositphotos.com/9998432/13335/v/600/depositphotos_133351974-stock-illustration-default-placeholder-woman.jpg";
     const [showModal, setShowModal] = useState(false);
-    const [patronData, setPatronData] = useState({ imageLink: "", factions: []});
+    const [patronData, setPatronData] = useState({factions: []});
     const patronMannerisms = [
         {id: 1, option: "Prone to singing, whistling, or humming quietly" },
         {id: 2, option: "Speaks in rhyme or some other particular way" },
@@ -93,8 +93,8 @@ const Patron = ({ onSetPatronData, campaign }) => {
             const newPatronData = {...patronData, factions}
             setPatronData({patronData: newPatronData});
         } else if (checked === false) {
-                const patronFactionsKeep = this.state.patronData.factions.filter(item => (item.name !== name));
-                setPatronData({...patronData, factions:patronFactionsKeep});
+                const patronFactionsKeep = patronData.factions.filter(item => (item.name !== name));
+                setPatronData({...patronData, factions: patronFactionsKeep});
             }
     };
 
@@ -144,13 +144,13 @@ const Patron = ({ onSetPatronData, campaign }) => {
                                                                 type="text" 
                                                                 placeholder="Image Link" 
                                                                 className="mr-sm-2" 
-                                                                value={patronData?.imageLink}  
-                                                                onChange={(e) => setPatronData({...patronData, imageLink: e.target.value})}/>
+                                                                value={patronData?.image}  
+                                                                onChange={(e) => setPatronData({...patronData, image: e.target.value})}/>
                                                             <Button onClick={handleCloseOverlay} className="imageSubmit">Submit</Button>
                                                         </div>
                                                     </Popover.Content>
                                                 </Popover>}>
-                                            <Card.Img className="NPCimage" variant="top" src={patronData.imageLink === ""  ? imageLink : patronData.imageLink}/> 
+                                            <Card.Img className="NPCimage" variant="top" src={patronData?.image || imageLink}/> 
                                         </OverlayTrigger>
                                     </div>
                                     <Card.Body className="d-flex flex-column align-items-center">

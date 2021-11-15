@@ -35,7 +35,7 @@ const NPCs = ({ onSetNPCData }) => {
                 size="lg" 
                 show={showModal} 
                 onHide={() => setShowModal(!showModal)}
-                enforcefocus={false}>
+                enforceFocus={false}>
                 <Modal.Header closeButton>
                     <Modal.Title>Let's get some NPCs added to your campaign.</Modal.Title>
                 </Modal.Header>
