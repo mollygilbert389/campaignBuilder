@@ -20,25 +20,25 @@ const Rooms = ({ campaign, onSetDungeonData }) => {
         const currentDungeonData = campaign.dungeonData;
         setRoomNumber(roomNumber);
         setShowModal(!showModal);
-        const { maxMonsterNum,  suggestedMonsterNum } = suggestMeMonsters(choice);
-        const destructedData = {...currentDungeonData, suggestedMonsterNum: suggestedMonsterNum, maxMonsterNum: maxMonsterNum, rooms: choice};
+        const { maxMonsterNum,  monsterNum } = suggestMeMonsters(choice);
+        const destructedData = {...currentDungeonData, monsterNum: monsterNum, maxMonsterNum: maxMonsterNum, rooms: choice};
         setReduxDungeonData("dungeonData", destructedData);
     };
 
      function suggestMeMonsters(roomNum) {
-        let suggestedMonsterNum = 0
+        let monsterNum = 0
         let maxMonsterNum = 0
         if (roomNum <= 5) {
-            suggestedMonsterNum = 10
+            monsterNum = 10
             maxMonsterNum = 20
         } else if (roomNum <= 10) {
-            suggestedMonsterNum = 6
+            monsterNum = 6
             maxMonsterNum = 13
         } else if (roomNum > 10) {
-            suggestedMonsterNum = 4
+            monsterNum = 4
             maxMonsterNum = 10
         }
-        return { maxMonsterNum, suggestedMonsterNum }
+        return { maxMonsterNum, monsterNum }
     };
 
     return (
