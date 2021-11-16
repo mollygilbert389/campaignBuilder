@@ -101,6 +101,12 @@ const typeDefs = gql`
     treasureTypes: [String]
     treasureNumber: Int
   }
+
+  type Setback {
+    type: String
+    category: String
+    name: String
+  }
  
   type Campaign {
     _id: ID
@@ -129,7 +135,7 @@ const typeDefs = gql`
     randomEncounters: [Monster]
     twist: String
     sideQuests: [Quest]
-    setBack: String
+    setback: SetBack
     dungeonData: Dungeon
     treasureData: Treasure
     factionShow: Boolean
