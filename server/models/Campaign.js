@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 const CampaignSchema = new Schema({
-  title: {
+  campaignName: {
     type: String,
     required: true,
   },
@@ -9,15 +9,20 @@ const CampaignSchema = new Schema({
     id: { type: Number },
     name: { type: String },
     raceClass: { type: String },
-    factions: {
+    level: { type: Number },
+    factions: [{
       name: { type: String },
       playerNumId: { type: Number },
       icon: {
         prefix: { type: String },
         iconName: { type: String },
-        icon: { type: [Schema.Types.Mixed] },
+        icon: [{
+          prefix: { type: String },
+          iconName: { type: String },
+          icon: { type: [Schema.Types.Mixed] },
+         }]
       }
-    }
+    }]
   }],
   government: {
     type: String,
@@ -40,15 +45,15 @@ const CampaignSchema = new Schema({
   era: {
     type: String,
   },
-  uniqueFeatures: {
+  uniqueFeature: {
     type: String,
   },
   travelPointChoices: {
     type: [String],
   },
-  languages: {
+  languages: [{
     type: String,
-  }, 
+  }], 
   factionOrgs: [{
     id: { type: Number },
     name: { type: String },
@@ -99,7 +104,9 @@ const CampaignSchema = new Schema({
     ideal: { type: String },
     drilledIdealChoice:  { type: String },
     bond:  { type: String },
-    flawOrSecret: { type: String }
+    flawOrSecret: { type: String },
+    manner: { type: String },
+    trait: { type: String }
   }],
   villainData: {
     image: { type: String },
@@ -119,7 +126,7 @@ const CampaignSchema = new Schema({
     type: { type: String },
     difficulty: { type: String }
   }],
-  randomEncouonters: [{
+  randomEncounters: [{
     id: { type: Number },
     category: { type: String },
     finalSelection: { type: String },
@@ -136,7 +143,7 @@ const CampaignSchema = new Schema({
     category: { type: String },
     name: { type: String }
   },
-  DungeonData: {
+  dungeonData: {
     dungeonLocation: { type: String },
     dungeonDetail: { type: String },
     monsterNum: { type: Number },

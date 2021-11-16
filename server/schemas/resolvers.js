@@ -5,8 +5,8 @@ const resolvers = {
     campaigns: async () => {
       return Campaign.find();
     },
-    // campaign: async (parent, { title }) => {
-    //   return Campaign.findOne({ title });
+    // campaign: async (parent, { campaignName }) => {
+    //   return Campaign.findOne({ campaignName });
     // }
   },
   Mutation: {

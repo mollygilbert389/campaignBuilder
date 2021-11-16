@@ -4,10 +4,10 @@ const typeDefs = gql`
   type  Icon {
     prefix: String
     iconName: String
-    icon: [String | Int]
+    icon: [String]
   }  
 
-  type PlayerFactins {
+  type PlayerFactions {
     id: ID
     name: String
     playerNumId: Int
@@ -60,8 +60,9 @@ const typeDefs = gql`
     name: String
     type: String
     gender: String
-    villainObjectiveCatChoice: String
-    finalVillainMethodChoioce: String
+    villainCatChoice: String
+    villainMethodCatChoice: String
+    finalVillainObjectiveChoice: String
     weakness: String
   }
 
@@ -135,7 +136,7 @@ const typeDefs = gql`
     randomEncounters: [Monster]
     twist: String
     sideQuests: [Quest]
-    setback: SetBack
+    setback: Setback
     dungeonData: Dungeon
     treasureData: Treasure
     factionShow: Boolean

@@ -8,12 +8,13 @@ db.once('open', async () => {
   const campaignData = [];
 
   for (let i = 0; i < 3; i++) {
-    const title = faker.company.catchPhrase();
+    const campaignName = faker.company.catchPhrase();
     const playerData = [
       {
       id: 0,
       name: faker.name.firstName(),
       raceClass: faker.animal.cat(),
+      level: faker.datatype.number(),
       factions: [
         [
           {
@@ -53,6 +54,7 @@ db.once('open', async () => {
       id: 1,
       name: faker.name.firstName(),
       raceClass: faker.animal.cat(),
+      level: faker.datatype.number(),
       factions: [
         [
           {
@@ -92,6 +94,7 @@ db.once('open', async () => {
       id: 2,
       name: faker.name.firstName(),
       raceClass: faker.animal.cat(),
+      level: faker.datatype.number(),
       factions: [
         [
           {
@@ -272,7 +275,9 @@ db.once('open', async () => {
       ideal: faker.lorem.word(),
       drilledIdealChoice: faker.lorem.word(),
       bond:  faker.lorem.word(),
-      flawOrSecret: faker.lorem.word()
+      flawOrSecret: faker.lorem.word(),
+      manner: faker.lorem.word(),
+      trait: faker.lorem.word()
     },{
       id: 1,
       NPCImage: faker.image.animals(),
@@ -285,7 +290,9 @@ db.once('open', async () => {
       ideal: faker.lorem.word(),
       drilledIdealChoice: faker.lorem.word(),
       bond:  faker.lorem.word(),
-      flawOrSecret: faker.lorem.word()
+      flawOrSecret: faker.lorem.word(),
+      manner: faker.lorem.word(),
+      trait: faker.lorem.word()
     },{
       id: 2,
       NPCImage: faker.image.animals(),
@@ -297,8 +304,10 @@ db.once('open', async () => {
       talent: faker.lorem.word(),
       ideal: faker.lorem.word(),
       drilledIdealChoice: faker.lorem.word(),
-      bond:  faker.lorem.word(),
-      flawOrSecret: faker.lorem.word()
+      bond: faker.lorem.word(),
+      flawOrSecret: faker.lorem.word(),
+      manner: faker.lorem.word(),
+      trait: faker.lorem.word()
     }];
     const villainData = {
       image: faker.image.animals(),
@@ -324,7 +333,7 @@ db.once('open', async () => {
       type: faker.lorem.sentence(),
       difficulty: "Easy"
     }];
-    const randomEncouonters = [{
+    const randomEncounters = [{
       id: 0,
       category: faker.commerce.productName(),
       finalSelection: faker.commerce.productName(),
@@ -353,7 +362,7 @@ db.once('open', async () => {
       category: faker.commerce.productName(),
       name: faker.lorem.sentence()
     };
-    const DungeonData = {
+    const dungeonData = {
       dungeonLocation: faker.address.state(),
       dungeonDetail: faker.lorem.sentence(),
       monsterNum: faker.datatype.number(),
@@ -383,10 +392,10 @@ db.once('open', async () => {
     const worldStyle = faker.lorem.word();
 
     campaignData.push({ 
-      title, playerData, government, currency, world, mapScale, 
+      campaignName, playerData, government, currency, world, mapScale, 
       charMeeting, religion, era, uniqueFeature, travelPointChoices, languages,
       factionOrgs, acts, climax, mainGoal, pillar, patronData, NPCData, villainData, localEvents,
-      encounters, randomEncouonters, twist, setback, sideQuests, DungeonData, treasureData, factionShow, languageShow,
+      encounters, randomEncounters, twist, setback, sideQuests, dungeonData, treasureData, factionShow, languageShow,
       worldImage, worldStyle
     });
 
