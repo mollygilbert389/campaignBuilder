@@ -163,12 +163,9 @@ const CampaignSchema = new Schema({
   },
   worldStyle: {
     type: String,
-  },
-  factionShow: {
-    type: Boolean,
-  },
+  }
 });
 
-const Book = model('Book', BookSchema);
+const Campaign = model('Campaign', CampaignSchema);
 
-module.exports = Book;
+module.exports = Campaign;

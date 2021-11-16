@@ -1,3 +1,3 @@
-const Campaign = require('./Book');
+const Campaign = require('./Campaign');
 
 module.exports = { Campaign };
