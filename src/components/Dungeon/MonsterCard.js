@@ -14,7 +14,7 @@ const MonsterCard = ({ campaign, onSetDungeonData }) => {
     const [monsterCategories, setMonsterCategories] = useState([]);
 
     const setReduxDungeonData = (destination, value) => {
-        onSetDungeonData(destination, value)
+        onSetDungeonData(destination, value);
     };
 
     const createMonsterForm = () => {
@@ -30,37 +30,33 @@ const MonsterCard = ({ campaign, onSetDungeonData }) => {
     };
 
     const handleSelect = (e, index) => {
-        const selection = e.target.text;
-        const filteredMonsters = monsters.filter((item) => (item.category === selection));
+        const filteredMonsters = monsters.filter((item) => (item.category === e.target.text));
         const newMonsterDrops = [...monsterData].map((monster) => {
             if (monster.id === index) {
-                return {...monster, category: selection, monsterTypes: filteredMonsters}
+                return {...monster, category: e.target.text, monsterTypes: filteredMonsters}
             } return monster
         });
         setMonsterData(newMonsterDrops);
     };
 
     const handleMonsterTypeSelect = (e, index) => {
-        const finalSelection = e.target.text;
         const newMonsterDrops = [...monsterData].map((monster) => {
             if (monster.id === index) {
-                return {...monster, monsterName: finalSelection}
+                return {...monster, monsterName: e.target.text}
             } return monster
         });
         setMonsterData(newMonsterDrops);
     };
 
     const handleSave = () => {
-        const currentDungeonData = campaign.dungeonData;
-        const currentMonsters = monsterData;
-        const destructedData = {...currentDungeonData, monsterList: currentMonsters};
+        setReduxDungeonData("dungeonData", {...campaign.dungeonData, monsterList: monsterData})
         setShowModal(!showModal);
-        setReduxDungeonData("dungeonData", destructedData)
     };
 
     React.useEffect(() => {
-        if(campaign.dungeonData.monsterNum !== undefined)
-        createMonsterForm();
+        if(campaign.dungeonData.monsterNum !== undefined) {
+            createMonsterForm();
+        }
     }, [campaign]);
 
     return (

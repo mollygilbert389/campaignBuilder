@@ -8,9 +8,6 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 const Treasure = ({ campaign, onSetTreasureData }) => {
-    const setReduxTreasureData = (destination, value) => {
-        onSetTreasureData(destination, value)
-    }
     const [showModal, setShowModal] = useState(false);
     const [equipment, setEquipment] = useState(false);
     const [magicItem, setMagicItem] = useState(false);
@@ -18,29 +15,18 @@ const Treasure = ({ campaign, onSetTreasureData }) => {
     const [money, setMoney] = useState(false);
     const [tradeGoods, setTradeGoods] = useState(false);
     const [justXp, setJustXp] = useState(false);
-    const [treasures, setTreasures] = useState([]);
     const [treasureNumber, setTreasureNumber] = useState(0);
     const [suggestedTreasure, setSuggestedTreasure] = useState(0);
 
-    // const handleChange = (event) => {
-    //     this.setState({
-    //         [event.target.name]: event.target.checked 
-    //     });
-    // }
-
-    const suggestMeTreasure = () =>{
-        let rooms = campaign.dungeonData.rooms;
-        rooms = parseInt(rooms);
-        rooms = Math.round(rooms / 2);
-        rooms = rooms -1;
-        setSuggestedTreasure(rooms);
-        setTreasureNumber(rooms);
+    const setReduxTreasureData = (destination, value) => {
+        onSetTreasureData(destination, value)
     };
 
-    const handleClick = () => {
-        setShowModal(!showModal);
-        suggestMeTreasure();
-    }
+    const suggestMeTreasure = () =>{
+        const treasureNum = Math.round(campaign.dungeonData.rooms / 2) - 1;
+        setSuggestedTreasure(treasureNum);
+        setTreasureNumber(treasureNum);
+    };
 
     const close = () => {
         let treasueHolder = [];
@@ -62,23 +48,20 @@ const Treasure = ({ campaign, onSetTreasureData }) => {
         if (justXp) {
             treasueHolder = treasueHolder.concat("XP Points");
         }
+        setReduxTreasureData("treasureData", {...campaign.treasureData, treasureTypes: treasueHolder, treasureNumber: treasureNumber});
         setShowModal(!showModal);
-        setTreasures(treasueHolder);
-        const currentTrasureData=campaign.treasureData;
-        const destructedData = {...currentTrasureData, treasureTypes: treasueHolder, treasureNumber: treasureNumber}
-        setReduxTreasureData("treasureData", destructedData);
     };
 
-    // handleModalClose = () => {
-    //     this.setState({
-    //         showModal: !this.state.showModal,
-    //     })
-    // }
+    React.useEffect(()  => {
+        if(campaign.dungeonData.rooms !== undefined) {
+            suggestMeTreasure();
+        }
+    }, [campaign])
 
     return (
         <div>
             <div className="btns">
-                <Button variant="outline-success" size="lg" onClick={handleClick}>Treasure</Button>
+                <Button variant="outline-success" size="lg" onClick={() => setShowModal(!showModal)}>Treasure</Button>
             </div>
             <Modal show={showModal} onHide={() => setShowModal(!showModal)}>
                 <Modal.Header closeButton>
@@ -93,7 +76,7 @@ const Treasure = ({ campaign, onSetTreasureData }) => {
                     </p>
                     <br/>
                     <Slider
-                    min={1}
+                    min={0}
                     max={10}
                     defaultValue={suggestedTreasure}
                     onChangeCommitted={(e,  value) => treasureNumber(value)}
