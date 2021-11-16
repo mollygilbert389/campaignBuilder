@@ -1,6 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { CampaignNameModal } from "../components/WorldBuilder";
+import { CampaignNameModal } from "../components/components";
 import '../components/home.css';
 
 function Long() {

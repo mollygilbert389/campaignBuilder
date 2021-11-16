@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown, Form } from 'react-bootstrap';
-import { monsters } from "../Dungeon";
+import { monsterData } from "./index";
 import { Slider } from '@material-ui/core';
-import "../style.css";
+import "../../../home.css";
 import { setRandomEncounters } from "../../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -38,7 +38,7 @@ const RandomEvents = ({ campaign, onSetRandomEncounters }) => {
 
     const handleMonsterShow = () => {
         const choices = campaign.travelPointChoices;
-        const newFilteredMonsters = monsters.filter((monster) => {
+        const newFilteredMonsters = monsterData.filter((monster) => {
             for(let i=0; i < monster.area.length; i++) {
                 for(let j=0; j < choices.length; j++) {
                     if (monster.area.includes(choices[j])) {

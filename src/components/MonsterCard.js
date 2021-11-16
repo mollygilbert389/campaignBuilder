@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Form, Dropdown } from 'react-bootstrap';
 import { Slider } from '@material-ui/core';
-import { monsters } from "./Adventure/components/data";
-import "./style.css";
+import { monsterData } from "./components/data";
+import "./home.css";
 import { setDungeonData } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 const MonsterCard = ({ campaign, onSetDungeonData }) => {
     const [showModal, setShowModal] = useState(false);
-    const [monsterData, setMonsterData] = useState([]);
+    const [monsters, setMonsters] = useState([]);
     const [monsterCategories, setMonsterCategories] = useState([]);
 
     const setReduxDungeonData = (destination, value) => {
@@ -18,34 +18,34 @@ const MonsterCard = ({ campaign, onSetDungeonData }) => {
     };
 
     const createMonsterForm = () => {
-        const monsterCategories = monsters.map((item) => item.category);
+        const monsterCategories = monsterData.map((item) => item.category);
         const filterMonsterCategories = [...new Set(monsterCategories)];
         let sideMonsterObject = [];
         Array.from(Array(campaign.dungeonData.monsterNum).keys()).forEach((ev, index) => {
             const newObject = { id: index }
             sideMonsterObject.push(newObject);
         });
-        setMonsterData(sideMonsterObject);
+        setMonsters(sideMonsterObject);
         setMonsterCategories(filterMonsterCategories);
     };
 
     const handleSelect = (e, index) => {
-        const filteredMonsters = monsters.filter((item) => (item.category === e.target.text));
-        const newMonsterDrops = [...monsterData].map((monster) => {
+        const filteredMonsters = monsterData.filter((item) => (item.category === e.target.text));
+        const newMonsterDrops = [...monsters].map((monster) => {
             if (monster.id === index) {
                 return {...monster, category: e.target.text, monsterTypes: filteredMonsters}
             } return monster
         });
-        setMonsterData(newMonsterDrops);
+        setMonsters(newMonsterDrops);
     };
 
     const handleMonsterTypeSelect = (e, index) => {
-        const newMonsterDrops = [...monsterData].map((monster) => {
+        const newMonsterDrops = [...monsters].map((monster) => {
             if (monster.id === index) {
                 return {...monster, monsterName: e.target.text}
             } return monster
         });
-        setMonsterData(newMonsterDrops);
+        setMonsters(newMonsterDrops);
     };
 
     const handleSave = () => {
@@ -92,7 +92,7 @@ const MonsterCard = ({ campaign, onSetDungeonData }) => {
                             <Form inline className="mb-2 mr-sm-2 mb-sm-0">
                                 <Dropdown onSelect={(ek, e) => handleSelect(e, index)} name={space.id} className="giveDropSpace">
                                     <Dropdown.Toggle variant="outline-primary">
-                                        {monsterData[index].category ? monsterData[index].category : 'Monster Categories'}
+                                        {monsters[index].category ? monsters[index].category : 'Monster Categories'}
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
                                         {monsterCategories.map((item) => (<Dropdown.Item>{item}</Dropdown.Item>))}
@@ -101,10 +101,10 @@ const MonsterCard = ({ campaign, onSetDungeonData }) => {
                                 {monsterData[index].monsterTypes && (
                                     <Dropdown onSelect={(ek, e) => handleMonsterTypeSelect(e, index)} className="giveDropSpace">
                                         <Dropdown.Toggle variant="outline-primary">
-                                            {monsterData[index].monsterName ? monsterData[index].monsterName : 'Monster Type'}
+                                            {monsters[index].monsterName ? monsters[index].monsterName : 'Monster Type'}
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
-                                            {monsterData[index].monsterTypes.map((item) => (<Dropdown.Item name={item.name} key={item.id}>{item.name}</Dropdown.Item>))}
+                                            {monsters[index].monsterTypes.map((item) => (<Dropdown.Item name={item.name} key={item.id}>{item.name}</Dropdown.Item>))}
                                         </Dropdown.Menu>
                                     </Dropdown>
                                 )}

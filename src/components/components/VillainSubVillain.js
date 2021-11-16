@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import { EvilNPCs } from ".";
 import { Villain } from "..";
 import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import "../style.css";
+import "../../../home.css";
 
 const VillainSubVillain = () => {
     const [showModal, setShowModal] = useState(false);

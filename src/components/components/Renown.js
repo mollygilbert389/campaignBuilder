@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FormControlLabel, Checkbox } from '@material-ui/core';
-import "../style.css";
+import "../../../home.css";
 
 const Renown = ({ campaign, setReduxPlayers }) => {
     const playerInfo = campaign.playerData

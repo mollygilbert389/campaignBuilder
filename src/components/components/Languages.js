@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap';
-import "../style.css";
+import "../../../home.css";
 
 const Languages = ({ setReduxLanguages,  setReduxLanguageShow, value, setValue,  suggestedTags, setSuggestedTags }) => {
 

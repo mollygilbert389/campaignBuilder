@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip, Card, Popover} from 'react-bootstrap';
-import "../../style.css";
+import "../../home.css";
 
 const EvilNPCCard = ({ campaign, setReduxNPCData }) => {
     const [showModal, setShowModal] = useState(false);

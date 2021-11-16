@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import { RollBtn } from "../StaticComps";
+import { RollBtn } from "./components";
 import { Button, Dropdown, Form, FormGroup } from 'react-bootstrap';
-import "./style.css";
+import "./home.css";
 import { setWorldData } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";

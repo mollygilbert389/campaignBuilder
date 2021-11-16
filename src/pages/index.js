@@ -3,15 +3,15 @@ import Short from "./Short";
 import Long from "./Long";
 import Medium from "./Medium";
 import Custom from "./Custom";
-import Navtabs from "../components/StaticComps/Navtabs";
-import Footer from "../components/StaticComps/Footer";
+// import Navtabs from "../components";
+// import Footer from "../components";
 
 export {
   Home,
   Short,
   Long,
   Medium,
-  Custom,
-  Navtabs,
-  Footer
+  Custom
+  // Navtabs,
+  // Footer
 };

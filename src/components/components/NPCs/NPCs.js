@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import { Button, Carousel } from 'react-bootstrap';
 import { Slider } from '@material-ui/core';
 import { NPCCard } from ".";
-import "../../style.css";
+import "../../home.css";
 import { setNPCData } from "../../../../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";

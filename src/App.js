@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Home, Short, Long, Medium, Custom, Navtabs, Footer } from "./pages";
+import { Home, Short, Long, Medium, Custom } from "./pages";
+import { Navtabs, Footer } from "./components/components";
 import './App.css';
 import "./scss/Custom.scss";
 import { Provider } from "react-redux";

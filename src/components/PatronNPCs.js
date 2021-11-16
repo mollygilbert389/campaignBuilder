@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import { NPCs, Patron} from "./Adventure/components";
+import { NPCs, Patron} from "./components";
 import { Button } from 'react-bootstrap';
-import "./style.css";
+import "./home.css";
 import { connect } from "react-redux";
 
 const PatronNPCs = ({ campaign }) => {

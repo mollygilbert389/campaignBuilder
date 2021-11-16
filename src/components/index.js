@@ -9,12 +9,11 @@ import FinalScreen from "./FinalScreen";
 import AdventureStart from "./AdventureStart";
 import MonsterCard from "./MonsterCard";
 import Rooms from "./Rooms";
-import monsters from "./data/monsters.json";
 import ActsClimax from "./ActsClimax";
 import MainGoals from "./MainGoals";
 import PatronNPCs from "./PatronNPCs";
-import Villain from "../Villain";
-import Pillar from "../Pillar";
+import Villain from "./Villain";
+import Pillar from "./Pillar";
 import { VillainSubVillain } from "./components";
 import Government from "./Government";
 import Physical from "./Physical";
@@ -34,7 +33,6 @@ export {
     AdventureStart,
     MonsterCard,
     Rooms,
-    monsters,
     ActsClimax,
     Pillar,
     VillainSubVillain,

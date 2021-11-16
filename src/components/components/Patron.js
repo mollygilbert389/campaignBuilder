@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown, Form, FormControl, OverlayTrigger, Popover, Card } from 'react-bootstrap';
-import { GenerateBtn } from "../index";
+import { GenerateBtn } from ".";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FormControlLabel, Checkbox } from '@material-ui/core';
-import "../style.css";
+import "../../../home.css";
 import { setPatronData } from "../../../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";

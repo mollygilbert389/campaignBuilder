@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Form, FormControl } from 'react-bootstrap';
-import { campaignNameData } from '../WorldBuilder/components';
-import "../../home.css";
+import { campaignNameData } from './components';
+import "../home.css";
 import { setCampaignName } from "../../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button } from 'react-bootstrap';
 import { Slider  } from '@material-ui/core';
-import "../../style.css";
+import "../../home.css";
 
 const EvilNPCs = () => {
     const [evilNPCNum, setEvilNPCNum] = useState(null);
