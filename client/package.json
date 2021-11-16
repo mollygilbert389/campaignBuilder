@@ -2,6 +2,7 @@
   "name": "campaignbuilder",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.31",
     "@fortawesome/free-solid-svg-icons": "^5.15.0",
@@ -20,7 +21,9 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "reactstrap": "^8.4.1",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "@apollo/client": "^3.3.8",
+    "graphql": "^15.3.0"
   },
   "scripts": {
     "start": "react-scripts start",

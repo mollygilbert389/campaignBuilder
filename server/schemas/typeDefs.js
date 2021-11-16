@@ -146,11 +146,11 @@ const typeDefs = gql`
 
   type Query {
     campaigns: [Campaign]
-    campaign (title: String!): Campaign
+    campaign (campaignName: String!): Campaign
   }
 
   type Mutation {
-    addCampaign(title: String!): Campaign
+    addCampaign(campaignName: String!): Campaign
   }
 `;
 

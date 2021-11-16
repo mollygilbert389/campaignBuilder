@@ -2,6 +2,8 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import "../components/home.css";
+import { SavedCampaigns } from "../components"
+
 
 function Home() {
   return (
@@ -35,6 +37,8 @@ function Home() {
                 </div>
             </div>
         </div>
+
+        <SavedCampaigns/>
     </div>
 
   );

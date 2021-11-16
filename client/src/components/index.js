@@ -20,6 +20,7 @@ import Physical from "./Physical";
 import Religion from "./Religion";
 import Social from "./Social";
 import Treasure from "./Treasure";
+import SavedCampaigns from "./SavedCampaigns";
 
 export {
     NPCCards,
@@ -43,5 +44,6 @@ export {
     Physical,
     Religion,
     Social,
-    Treasure
+    Treasure,
+    SavedCampaigns
 }

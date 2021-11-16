@@ -5,9 +5,9 @@ const resolvers = {
     campaigns: async () => {
       return Campaign.find();
     },
-    // campaign: async (parent, { campaignName }) => {
-    //   return Campaign.findOne({ campaignName });
-    // }
+    campaign: async (parent, { campaignName }) => {
+      return Campaign.findOne({ campaignName });
+    }
   },
   Mutation: {
     addCampaign: async (parent, args) => {
