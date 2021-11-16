@@ -49,7 +49,7 @@ const MonsterCard = ({ campaign, onSetDungeonData }) => {
     };
 
     const handleSave = () => {
-        setReduxDungeonData("dungeonData", {...campaign.dungeonData, monsterList: monsterData})
+        setReduxDungeonData("dungeonData", {...campaign.dungeonData, monsterList: monsters})
         setShowModal(!showModal);
     };
 
@@ -87,7 +87,7 @@ const MonsterCard = ({ campaign, onSetDungeonData }) => {
                             valueLabelDisplay="on"
                             onChangeCommitted={(e, value) => setReduxDungeonData("dungeonData",  {...campaign.dungeonData, monsterNum: value})}/>
                     </div>
-                    {monsterData.map((space, index) => (
+                    {monsters.map((space, index) => (
                         <div>
                             <Form inline className="mb-2 mr-sm-2 mb-sm-0">
                                 <Dropdown onSelect={(ek, e) => handleSelect(e, index)} name={space.id} className="giveDropSpace">
@@ -98,7 +98,7 @@ const MonsterCard = ({ campaign, onSetDungeonData }) => {
                                         {monsterCategories.map((item) => (<Dropdown.Item>{item}</Dropdown.Item>))}
                                     </Dropdown.Menu>
                                 </Dropdown>
-                                {monsterData[index].monsterTypes && (
+                                {monsters[index].monsterTypes && (
                                     <Dropdown onSelect={(ek, e) => handleMonsterTypeSelect(e, index)} className="giveDropSpace">
                                         <Dropdown.Toggle variant="outline-primary">
                                             {monsters[index].monsterName ? monsters[index].monsterName : 'Monster Type'}

@@ -79,7 +79,7 @@ const Treasure = ({ campaign, onSetTreasureData }) => {
                     min={0}
                     max={10}
                     defaultValue={suggestedTreasure}
-                    onChangeCommitted={(e,  value) => treasureNumber(value)}
+                    onChangeCommitted={(e,  value) => setTreasureNumber(value)}
                     valueLabelDisplay="on"/>
                     <FormGroup>
                         <FormControlLabel disabled={(justXp) ? true: false}
