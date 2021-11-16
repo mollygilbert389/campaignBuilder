@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Carousel } from 'react-bootstrap';
 import "../style.css";
-import { setTwist } from "../../actions/index";
+import { setTwist } from "../../../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
@@ -23,7 +23,7 @@ const Twists = ({ onSetTwist }) => {
     ];
 
     const setReduxTwist = (destination, value) => {
-        onSetTwist(destination, value)
+        onSetTwist(destination, value);
     };
 
     const style = {
@@ -48,10 +48,10 @@ const Twists = ({ onSetTwist }) => {
                     <br/>
                     <div className="sideQuestBtnSpace">
                         <div className="sideQuestBtns">
-                            <Button name="Yes" variant="outline-success" onClick={setTwistYesNo(true)}>Yes</Button>
+                            <Button name="Yes" variant="outline-success" onClick={() => setTwistYesNo(true)}>Yes</Button>
                         </div>
                         <div className="sideQuestBtns">
-                            <Button name="No" variant="outline-danger" onClick={setTwistYesNo(false)}>No</Button>
+                            <Button name="No" variant="outline-danger" onClick={() => setTwistYesNo(false)}>No</Button>
                         </div>
                     </div>
                     {twistYesNo && (
@@ -59,18 +59,18 @@ const Twists = ({ onSetTwist }) => {
                             <div className="d-flex flex-column align-items-center">
                                 <p>Click through these to add a fun twist to your story.</p>
                                 <Carousel interval={null}>
-                                {twists.map((drop) => (
-                                    <Carousel.Item> 
-                                        <div className="d-block w-100"></div> 
-                                        <Button 
-                                            variant="primary" 
-                                            onClick={(e) => setReduxTwist(e.target.name)} 
-                                            style={style} 
-                                            key={drop.id} 
-                                            name={drop.option}>
-                                            {drop.option}
-                                        </Button> 
-                                    </Carousel.Item>
+                                    {twists.map((drop) => (
+                                        <Carousel.Item> 
+                                            <div className="d-block w-100"></div> 
+                                            <Button 
+                                                variant="primary" 
+                                                onClick={(e) => setReduxTwist(e.target.name)} 
+                                                style={style} 
+                                                key={drop.id} 
+                                                name={drop.option}>
+                                                {drop.option}
+                                            </Button> 
+                                        </Carousel.Item>
                                     ))}
                                 </Carousel>
                             </div>

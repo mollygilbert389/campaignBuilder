@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown } from 'react-bootstrap';
 import { Slider } from '@material-ui/core';
 import "../style.css";
-import { setSideQuests } from "../../actions/index";
+import { setSideQuests } from "../../../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
@@ -26,9 +26,8 @@ const SideQuests = ({ onSetSideQuests })  => {
         onSetSideQuests(destination, value)
     };
 
-    const handleYesNoSideQuest = (event) => {
-        let choice = event.target.name
-        switch(choice) {
+    const handleYesNoSideQuest = (e) => {
+        switch(e.target.name) {
             case "Yes":
                 setYes(true);
             break;
@@ -39,25 +38,27 @@ const SideQuests = ({ onSetSideQuests })  => {
         }
     };
 
-    const handleSideQuestChoice = (keyEvent, event, index) => {
-        const selection = event.target.text;
-        const newSideQuest = [...this.state.sideQuests].map(item => {
-            if (item.id===index) {
-                return {...item, type:selection}
+    const handleSideQuestChoice = (ek, e, index) => {
+        const selection = e.target.text.trim();
+        const newSideQuest = [...sideQuests].map((item) => {
+            if (item.id === index) {
+                return {...item, type: selection}
             } return item
         });
         setSideQuests(newSideQuest);
         setReduxSideQuests("sideQuests", newSideQuest);
     };
 
-    const handleSlider = (event, value) => {
+    const handleSlider = (e, value) => {
         let sideQuests = [];
-        for (let i=0; i < value; i++) {
-            let newObject = {id:i};
+        Array.from(Array(value).keys()).forEach((ev, index) => {
+            const newObject = { id: index }
             sideQuests.push(newObject);
-        }
+        });
         setSideQuests(sideQuests);
     };
+
+    const filteredArr = sideQuestOptions.filter((quest) => sideQuests.every((currQuest) => currQuest.type !== quest.option));
 
     return (
         <div>
@@ -72,7 +73,7 @@ const SideQuests = ({ onSetSideQuests })  => {
                     <Modal.Title>This is optional, do you want to add a side quest to your story?</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>Use the buttons below</p>
+                    <p>Use the buttons below to add a side quest to your campaign.</p>
                     <br/>
                     <div className="sideQuestBtnSpace">
                         <div className="sideQuestBtns">
@@ -87,33 +88,25 @@ const SideQuests = ({ onSetSideQuests })  => {
                     {yes && (
                         <div>
                             <Slider
-                                min={1}
+                                min={0}
                                 max={10}
-                                defaultValue={5}
+                                defaultValue={0}
                                 onChangeCommitted={handleSlider}
                                 valueLabelDisplay="on"/>
                         </div>
                     )}
-                    {sideQuests.length > 0 && (
+                    {sideQuests.length > 0 && (sideQuests.map((space, index) => (
                         <div>
-                            {sideQuests.map((space , index) => {
-                                return (
-                                    <div>
-                                        <Dropdown onSelect={(keyEvent, event) => handleSideQuestChoice(keyEvent, event, index)}>
-                                            <Dropdown.Toggle variant="outline-primary">
-                                                {sideQuests[index].type ? sideQuests[index].type: 'Choose your Side Quest Goal'}
-                                            </Dropdown.Toggle>
-                                            <Dropdown.Menu>
-                                                {sideQuestOptions.map(drop => {
-                                                    return <Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>
-                                                })}
-                                            </Dropdown.Menu>
-                                        </Dropdown>
-                                    </div>
-                                )
-                            })}
+                            <Dropdown onSelect={(ek, e) => handleSideQuestChoice(ek, e, index)} className="sideQuestBtns">
+                                <Dropdown.Toggle variant="outline-primary">
+                                    {sideQuests[index].type ? sideQuests[index].type: 'Choose your Side Quest Goal'}
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    {filteredArr.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>))}
+                                </Dropdown.Menu>
+                            </Dropdown>
                         </div>
-                    )}
+                    )))}
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="outline-success" onClick={() => setShowModal(!showModal)} >Save</Button>
