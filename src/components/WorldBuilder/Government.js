@@ -4,20 +4,24 @@ import { governmentData, Languages } from "./components";
 import { RollBtn } from "../StaticComps";
 import { Button, Dropdown, OverlayTrigger, Tooltip, Form } from 'react-bootstrap';
 import "./style.css"
-import { setGovernmentData, setLanguageShow } from "../../actions/index";
+import { setGovernmentData, setLanguageShow, setLanguages } from "../../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-const Government = ({ onSetGovernmentData, onSetLanguageShow }) => {
-    const setReduxGovernmentData = (destinaton, value) => {
-        onSetGovernmentData(destinaton, value)
-    }
-    const setReduxLanguageShow = (destination, value) => {
-        onSetLanguageShow(destination, value)
-    }
+const Government = ({ campaign, onSetGovernmentData, onSetLanguages, onSetLanguageShow }) => {
     const [government, setGovernment] = useState("");
     const [currency, setCurrency] = useState("");
     const [showModal, setShowModal] = useState(false);
+    const [value, setValue] = useState("");
+    const [suggestedTags, setSuggestedTags] = useState([
+        "Celestial",
+        "Common",
+        "Draconic",
+        "Druidic",
+        "Dwarvish",
+        "Elvish",
+        "Infernal",
+    ]);
     const currencyOptions = [
         "Common Coinage",
         "Common Coinage (No Electum)",
@@ -26,18 +30,30 @@ const Government = ({ onSetGovernmentData, onSetLanguageShow }) => {
         "Odd Currency",
     ];
 
+    const setReduxLanguages = (type) => {
+        onSetLanguages(type);
+    };
+    const setReduxLanguageShow = (destination, value) => {
+        onSetLanguageShow(destination, value);
+    };
+    const setReduxGovernmentData = (destinaton, value) => {
+        onSetGovernmentData(destinaton, value);
+    };
+
     const handleDropSelect = (ek, e, type) => {
-        const feedback = e?.target?.text;
         if(type ===  "government") {
             setGovernment(e.target.text);
-            setReduxGovernmentData(type, feedback);
+            setReduxGovernmentData(type, e?.target?.text);
         } else {
             setCurrency(e.target.text);
-            setReduxGovernmentData(type, feedback);
+            setReduxGovernmentData(type, e?.target?.text);
         }
     };
 
     const handleClose = () => {
+        if(campaign.languages.length === 0) {
+            setReduxLanguages(suggestedTags)
+        }
         setShowModal(!showModal);
     };
 
@@ -94,7 +110,13 @@ const Government = ({ onSetGovernmentData, onSetLanguageShow }) => {
                         </Dropdown>
                         <RollBtn name="currency" handleRoll={(name, feedback) => handleRoll(name, feedback, "currency")} rollingArray={currencyOptions}/>
                     </Form>
-                    <Languages/>
+                    <Languages 
+                        setReduxLanguages={setReduxLanguages} 
+                        setReduxLanguageShow={setReduxLanguageShow} 
+                        suggestedTags={suggestedTags}
+                        setSuggestedTags={setSuggestedTags}
+                        value={value} 
+                        setValue={setValue} />
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="outline-success" onClick={handleClose}>Save</Button>
@@ -110,7 +132,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchtoProps = (dispatch) => ({
     onSetGovernmentData: bindActionCreators(setGovernmentData, dispatch),
-    onSetLanguageShow: bindActionCreators(setLanguageShow, dispatch)
+    onSetLanguageShow: bindActionCreators(setLanguageShow, dispatch),
+    onSetLanguages: bindActionCreators(setLanguages, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchtoProps)(Government);

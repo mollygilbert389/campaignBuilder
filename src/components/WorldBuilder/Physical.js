@@ -348,6 +348,8 @@ const  Physical = ({ onSetWorldData }) => {
                     <div className="container">
                         <div className="side tags">
                             {travelPoints.map((drop, idx) => {
+                                const travelPoint = travelPointChoices?.find((item) => item === drop) || false;
+                                const eventCap = travelPointChoices.length >= 3 ? true : false;
                                 return (
                                     <Button 
                                         key={idx}
@@ -355,7 +357,7 @@ const  Physical = ({ onSetWorldData }) => {
                                         value={drop} 
                                         className="eventbtns" 
                                         onClick={handleAddEvent} 
-                                        disabled={travelPointChoices.length >= 3 ? true : false}> 
+                                        disabled={eventCap || travelPoint}> 
                                         {drop}
                                     </Button>
                                 )
@@ -368,8 +370,7 @@ const  Physical = ({ onSetWorldData }) => {
                                 name="travelPointChoices" 
                                 value={drop} 
                                 className="eventbtns" 
-                                onClick={removeEvent} 
-                                disabled={eventCap}> 
+                                onClick={removeEvent}> 
                                 {drop}
                             </Button>
                         ))}

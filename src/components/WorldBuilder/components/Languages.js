@@ -1,46 +1,25 @@
 import React, { useState } from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import "../style.css";
-import { setLanguages, setLanguageShow } from "../../../actions/index";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 
-const Languages = ({ onSetLanguages,  onSetLanguageShow }) => {
-    const setReduxLanguages = (type) => {
-        onSetLanguages(type)
-    }
-    const setReduxLanguageShow = (destination, value) => {
-        onSetLanguageShow(destination, value)
-    }
-    const [value, setValue] = useState("");
-    const [suggestedTags, setSuggestedTags] = useState([
-        "Celestial",
-        "Common",
-        "Draconic",
-        "Druidic",
-        "Dwarvish",
-        "Elvish",
-        "Infernal",
-    ]);
+const Languages = ({ setReduxLanguages,  setReduxLanguageShow, value, setValue,  suggestedTags, setSuggestedTags }) => {
 
-    const handleRemove = (event) => {
-        let removedItem = event.target.name;
-        let currentTags = suggestedTags;
-        const removedTag = currentTags.filter((item) => item !== removedItem);
+    const handleRemove = (e) => {
+        const removedTag = suggestedTags.filter((item) => item !== e.target.name);
         setSuggestedTags(removedTag);
         setReduxLanguages(removedTag);
         setReduxLanguageShow("languageShow", true);
     };
 
-    const handleAddLanguage = (event) => {
+    const handleAddLanguage = () => {
         setSuggestedTags(suggestedTags.concat(value));
         setReduxLanguages(suggestedTags.concat(value));
         setReduxLanguageShow("languageShow", true);
         setValue("");
     };
 
-    const onKeyDown = (event) => {
-        if (event.key === "Enter") {
+    const onKeyDown = (e) => {
+        if (e.key === "Enter") {
             handleAddLanguage();
         }
         setReduxLanguageShow("languageShow", true);
@@ -65,20 +44,11 @@ const Languages = ({ onSetLanguages,  onSetLanguageShow }) => {
                     type="text" 
                     value={value} 
                     onChange={(e) => setValue(e.target.value)} 
-                    onKeyUp={(event) => onKeyDown(event)}/>
+                    onKeyUp={(e) => onKeyDown(e)}/>
                 <Button size="sm" variant="outline-success" onClick={handleAddLanguage}>Submit</Button>
             </div>
         </div>
     )
 }
 
-const mapStateToProps = (state) => {
-    return {campaign: state.campaignReducer}
-}
-
-const mapDispatchtoProps = (dispatch) => ({
-    onSetLanguages: bindActionCreators(setLanguages, dispatch),
-    onSetLanguageShow: bindActionCreators(setLanguageShow, dispatch)
-});
-
-export default connect(mapStateToProps, mapDispatchtoProps)(Languages);
+export default Languages;

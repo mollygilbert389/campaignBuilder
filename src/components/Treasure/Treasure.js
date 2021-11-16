@@ -19,7 +19,7 @@ const Treasure = ({ campaign, onSetTreasureData }) => {
     const [suggestedTreasure, setSuggestedTreasure] = useState(0);
 
     const setReduxTreasureData = (destination, value) => {
-        onSetTreasureData(destination, value)
+        onSetTreasureData(destination, value);
     };
 
     const suggestMeTreasure = () =>{
