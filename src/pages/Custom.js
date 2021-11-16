@@ -5,14 +5,29 @@ import './style.css';
 import "../scss/Custom.scss";
 import '../components/home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { CampaignNameModal, Government, Religion, Physical, Social } from "../components/WorldBuilder";
-import { ActsClimax, MainGoals, Pillar, PatronNPCs, VillainSubVillain} from "../components/Adventure";
-import { AdventureStart, Rooms, MonsterCard } from "../components/Dungeon";
-import { LocalEvents, EncountersAndEvents, ExtraAdventure, Setback } from "../components/MoreStory";
-import { PartyInfo } from "../components/PartyInfo";
-import { Treasure } from "../components/Treasure";
-import { StoryInfo } from "../components/StoryInfo";
-import { FinalScreen } from "../components/FinalCampaign";
+import { 
+    Government, 
+    Religion, 
+    Physical, 
+    Social, 
+    ActsClimax, 
+    MainGoals, 
+    Pillar, 
+    PatronNPCs, 
+    VillainSubVillain,
+    AdventureStart, 
+    Rooms, 
+    MonsterCard,
+    LocalEvents, 
+    EncountersAndEvents, 
+    ExtraAdventure, 
+    Setback,
+    PartyInfo,
+    Treasure,
+    StoryInfo,
+    FinalScreen 
+} from "../components";
+import { CampaignNameModal } from "../components/components";
 
 const CustomCampaign = ({ campaign }) => {
     const [index, setIndex] = useState(0);
