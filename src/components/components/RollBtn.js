@@ -1,6 +1,6 @@
 import React from "react";
-import {Button} from "react-bootstrap";
-import "./style.css";
+import { Button } from "react-bootstrap";
+import "../home.css";
 
 const diceRoller = function({ rollingArray, handleRoll, name }) {
     function rollIt() {

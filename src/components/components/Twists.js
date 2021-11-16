@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Carousel } from 'react-bootstrap';
-import "../../../home.css";
-import { setTwist } from "../../actions/index";
+import "../home.css";
+import { setTwist } from "../../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 

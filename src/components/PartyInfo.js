@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Form, Label, Input, FormGroup } from 'reactstrap';
 import update from 'immutability-helper';
-import "./style.css";
+import "./home.css";
 import { setPlayers } from "../actions/index";
 
 const PartyInfo = ({ onSetPlayers })  => {

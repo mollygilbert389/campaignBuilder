@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button } from 'react-bootstrap';
 import { FormControlLabel, Checkbox, FormGroup, Slider } from '@material-ui/core';
-import "./style.css";
+import "./home.css";
 import { setTreasureData } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";

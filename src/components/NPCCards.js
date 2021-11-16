@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Button, Modal } from 'react-bootstrap';
-import "./style.css";
+import "./home.css";
 
 const NPCStyledCard = ({ 
     image, 

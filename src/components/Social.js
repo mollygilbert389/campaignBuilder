@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Renown, FactionOrgs } from './components';
 import { Button } from 'react-bootstrap';
-import "./style.css";
+import "./home.css";
 import { setPlayers } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";

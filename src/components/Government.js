@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { RollBtn, governmentData, Languages } from "./components";
 import { Button, Dropdown, OverlayTrigger, Tooltip, Form } from 'react-bootstrap';
-import "./style.css"
+import "./home.css"
 import { setGovernmentData, setLanguageShow, setLanguages } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";

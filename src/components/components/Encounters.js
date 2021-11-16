@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown, Form } from 'react-bootstrap';
 import { Slider } from '@material-ui/core';
-import "../../../home.css";
-import { setEncounters } from "../../actions/index";
+import "../home.css";
+import { setEncounters } from "../../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import { SideQuests, Twists } from "./MoreStory/components";
+import { SideQuests, Twists } from "./components";
 import { Button } from 'react-bootstrap';
-import "./style.css";
+import "./home.css";
 
 const ExtraAdventure = () => {
     const [showModal, setShowModal] = useState(false);

@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import "./style.css";
+import "../home.css";
 
 const generateBtn = ({ name, index, handleGenerate }) => {
     const firstNameBank = [

@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Button, Dropdown, Form, FormControl, OverlayTrigger, Card, Popover } from 'react-bootstrap';
 import { GenerateBtn } from "..";
 import "../../home.css";
-import { setNPCData } from "../../../../actions/index";
+import { setNPCData } from "../../../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 

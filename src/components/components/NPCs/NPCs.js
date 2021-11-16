@@ -4,7 +4,7 @@ import { Button, Carousel } from 'react-bootstrap';
 import { Slider } from '@material-ui/core';
 import { NPCCard } from ".";
 import "../../home.css";
-import { setNPCData } from "../../../../actions/index";
+import { setNPCData } from "../../../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 

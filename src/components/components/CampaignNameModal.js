@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Form, FormControl } from 'react-bootstrap';
-import { campaignNameData } from './components';
+import { campaignNameData } from '.';
 import "../home.css";
 import { setCampaignName } from "../../actions/index";
 import { connect } from "react-redux";

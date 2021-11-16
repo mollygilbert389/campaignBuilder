@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown, FormControl } from 'react-bootstrap';
-import "./style.css";
+import "./home.css";
 import { setSetback } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";

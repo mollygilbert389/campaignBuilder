@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Carousel from 'react-bootstrap/Carousel';
 import { Button, Dropdown } from 'react-bootstrap';
-import "./style.css";
+import "./home.css";
 import { setDungeonData } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";

@@ -3,8 +3,8 @@ import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown, Form } from 'react-bootstrap';
 import { monsterData } from "./index";
 import { Slider } from '@material-ui/core';
-import "../../../home.css";
-import { setRandomEncounters } from "../../actions/index";
+import "../home.css";
+import { setRandomEncounters } from "../../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 

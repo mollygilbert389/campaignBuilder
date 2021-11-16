@@ -474,3 +474,93 @@ p {
   .giveMeSomeSpace {
     margin-left: 5px;;
   }
+
+  .mainques {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.btnspace {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.btns {
+    margin: 10px;
+}
+
+.dropDownSpace {
+    margin: 5px;
+}
+
+.actBtnSpace {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.actBtns {
+    margin: 2px;
+}
+
+.adventureBtns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dunTypeBtns {
+    margin: 5px;
+}
+
+.dualDrop {
+    display: flex;
+}
+
+.color {
+    background-color: #D9CDDF;
+    width: 500px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border: none;
+}
+
+.giveMeNPCSpace {
+    margin: 2px;
+    /* z-index: 10; */
+}
+
+.sliderclass {
+   color: #576490
+}
+
+.villainPatronCard {
+    border: none;
+}
+
+.patronContainer {
+    display: flex;
+}
+
+.changeOverflow {
+    overflow: auto;
+}
+
+.makeItBigger {
+    width: 650px;
+    height: 120px;
+}
+
+.imageLink{
+    width: 200px;
+}
+
+.imageSubmit {
+    margin-left: 5px;
+}
+
+.centerMe {
+    display: flex;
+    justify-content: center;
+}

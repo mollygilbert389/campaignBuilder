@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown, Form } from 'react-bootstrap';
-import { RollBtn } from "./StaticComps";
-import "./style.css";
+import { RollBtn } from "./components";
+import "./home.css";
 import { setMainGoal } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";

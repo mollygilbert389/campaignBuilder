@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import { RandomEvents, Encounters } from "./MoreStory/components";
+import { RandomEvents, Encounters } from "./components";
 import { Button } from 'react-bootstrap';
-import "./style.css";
+import "./home.css";
 
 const EncountersAndEvents = () => {
     const [showModal, setShowModal] = useState(false);

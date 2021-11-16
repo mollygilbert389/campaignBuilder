@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardGroup, Table } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NPCCards } from ".";
-import "./style.css";
+import "./home.css";
 import { connect } from "react-redux";
 
 const StoryInfo = ({ campaign }) => {  

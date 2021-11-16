@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import { GenerateBtn } from "./StaticComps";
+import { GenerateBtn } from "./components";
 import { Button, Dropdown, Form, FormControl, OverlayTrigger, Card, Popover } from 'react-bootstrap';
-import "./style.css";
+import "./home.css";
 import { setVillainData } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../home.css";
+import "../home.css";
 
 const MapCard = ({ name, image }) => {
   const style = {
