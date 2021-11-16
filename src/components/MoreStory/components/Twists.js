@@ -8,7 +8,7 @@ import { bindActionCreators } from "redux";
 
 const Twists = ({ onSetTwist }) => {
     const [showModal, setShowModal] = useState(false);
-    const [twistYesNo, setTwistYesNo] = useState(true);
+    const [twistYesNo, setTwistYesNo] = useState(false);
     const twists = [
         {id: 1, option: "The adventurers are racing against other creatures with the same or opposite goals"},
         {id: 2, option: "The adventurers become responsible for the safety of a noncombatant NPC"},
@@ -24,6 +24,12 @@ const Twists = ({ onSetTwist }) => {
 
     const setReduxTwist = (destination, value) => {
         onSetTwist(destination, value);
+    };
+
+    const handleNo = () => {
+        setTwistYesNo(false);
+        setReduxTwist("");
+        setShowModal(!showModal);
     };
 
     const style = {
@@ -51,7 +57,7 @@ const Twists = ({ onSetTwist }) => {
                             <Button name="Yes" variant="outline-success" onClick={() => setTwistYesNo(true)}>Yes</Button>
                         </div>
                         <div className="sideQuestBtns">
-                            <Button name="No" variant="outline-danger" onClick={() => setTwistYesNo(false)}>No</Button>
+                            <Button name="No" variant="outline-danger" onClick={handleNo}>No</Button>
                         </div>
                     </div>
                     {twistYesNo && (

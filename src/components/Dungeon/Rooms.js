@@ -7,25 +7,25 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 const Rooms = ({ campaign, onSetDungeonData }) => {
-    const setReduxDungeonData = (destination, value) => {
-        onSetDungeonData(destination, value)
-    }
     const [showModal, setShowModal] = useState(false);
-    const [roomNum, setRoomNum] = useState("");
+    const [roomNumber, setRoomNumber] = useState(0);
     const roomOptions = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 
-    const handleActBtn = (event) => {
-        const choice = event.target.name;
+    const setReduxDungeonData = (destination, value) => {
+        onSetDungeonData(destination, value)
+    };
+
+    const handleActBtn = (e) => {
+        const choice = parseInt(e.target.name);
         const currentDungeonData = campaign.dungeonData;
-        const destructedData = {...currentDungeonData, rooms: choice};
-        setRoomNum(choice);
+        setRoomNumber(roomNumber);
         setShowModal(!showModal);
-        suggestMeMonsters();       
+        const { maxMonsterNum,  suggestedMonsterNum } = suggestMeMonsters(choice);
+        const destructedData = {...currentDungeonData, suggestedMonsterNum: suggestedMonsterNum, maxMonsterNum: maxMonsterNum, rooms: choice};
         setReduxDungeonData("dungeonData", destructedData);
     };
 
-    function suggestMeMonsters() {
-        let roomNum = parseInt(roomNum)
+     function suggestMeMonsters(roomNum) {
         let suggestedMonsterNum = 0
         let maxMonsterNum = 0
         if (roomNum <= 5) {
@@ -38,10 +38,8 @@ const Rooms = ({ campaign, onSetDungeonData }) => {
             suggestedMonsterNum = 4
             maxMonsterNum = 10
         }
-        const currentDungeonData = campaign.dungeonData;
-        const destructedData = {...currentDungeonData, suggestedMonsterNum:suggestedMonsterNum, maxMonsterNum: maxMonsterNum};
-        setReduxDungeonData("dungeonData", destructedData);
-    }
+        return { maxMonsterNum, suggestedMonsterNum }
+    };
 
     return (
         <div>
@@ -56,13 +54,11 @@ const Rooms = ({ campaign, onSetDungeonData }) => {
                     <p>How many rooms are in this dungeon.</p>
                     <p>This is your custom campaign, have as many rooms as you'd like!</p>
                     <div className="roomSpace">
-                        {roomOptions.map(item => {
-                            return (
-                                <div className="roomBtns">
-                                    <Button name={item} variant="outline-primary" onClick={handleActBtn}>{item}</Button>
-                                </div>
-                            )}
-                        )}
+                        {roomOptions.map((item) => (
+                            <div className="roomBtns">
+                                <Button name={item} variant="outline-primary" onClick={handleActBtn}>{item}</Button>
+                            </div>
+                        ))}
                     </div>
                 </Modal.Body>
             </Modal>

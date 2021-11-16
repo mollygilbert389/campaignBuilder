@@ -9,15 +9,16 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 const MonsterCard = ({ campaign, onSetDungeonData }) => {
-    const setReduxDungeonData = (destination, value) => {
-        onSetDungeonData(destination, value)
-    }
     const [showModal, setShowModal] = useState(false);
     const [finalMonsterNum, setFinalMonsterNum] = useState(0);
     const [monsterData, setMonsterData] = useState([]);
     const [monsterCategories, setMonsterCategories] = useState([]);
 
-    const handleSlider = (event, value) => {
+    const setReduxDungeonData = (destination, value) => {
+        onSetDungeonData(destination, value)
+    };
+
+    const handleSlider = (e, value) => {
         setFinalMonsterNum(value);
         createMonsterForm();
     };
