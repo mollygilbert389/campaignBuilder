@@ -7,6 +7,13 @@ query campaign {
       name
       level
       raceClass
+      factions {
+        name
+				playerNumId
+        icon{
+          iconName
+        }  
+      }
     }
     government
     currency
@@ -64,8 +71,9 @@ query campaign {
       name
       type
       gender
-      villainObjectiveCatChoice
-      finalVillainMethodChoioce
+      villainCatChoice
+      villainMethodCatChoice
+      finalVillainObjectiveChoice
       weakness
     }
     localEvents
@@ -110,5 +118,3 @@ query campaign {
     worldImage
   }
 }
-
-TO DO: 
