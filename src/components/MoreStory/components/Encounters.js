@@ -3,10 +3,12 @@ import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown, Form } from 'react-bootstrap';
 import { Slider } from '@material-ui/core';
 import "../style.css";
+import { setEncounters } from "../../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const Encounters = ({ setReduxEncounters }) => {
+const Encounters = ({ onSetEncounters }) => {
     const [showModal, setShowModal] = useState(false);
-    const [encounterNum, setEncounterNum] = useState(0);
     const [encounterEvents, setEncounterEvents] = useState([]);
     const encounterOptions = [
         "Protect an NPC or Object",
@@ -18,30 +20,33 @@ const Encounters = ({ setReduxEncounters }) => {
         "Investiage an area",
     ];
 
-    const handleSlider = (event, value) => {
+    const setReduxEncounters = (destination, value) => {
+        onSetEncounters(destination, value)
+    };
+
+    const handleSlider = (e, value) => {
         let encounterEvents = [];
-        for (let i=0; i < value; i++) {
-            let newObject = {id:i}
+        Array.from(Array(value).keys()).forEach((ev, index) => {
+            const newObject = { id: index }
             encounterEvents.push(newObject)
-        };
-        setEncounterNum(value);
+        });
         setEncounterEvents(encounterEvents);
     };
 
-    const handleSelect = (eventKey, event, index) => {
-        const selection = event.target.text;
-        const encounterObject = [...this.state.encounterEvents].map(item => {
-            if (item.id===index) {
+    const handleSelect = (ek, e, index) => {
+        const selection = e.target.text;
+        const encounterObject = [...encounterEvents].map((item) => {
+            if (item.id === index) {
                 return {...item, type:selection};
             } return item
         });
         setEncounterEvents(encounterObject);
     };
 
-    const handleDifficultySelect = (eventKey, event, index) => {
-        const selection = event.target.text;
-        const encounterObject = [...this.state.encounterEvents].map(item => {
-            if (item.id===index) {
+    const handleDifficultySelect = (ek, e, index) => {
+        const selection = e.target.text;
+        const encounterObject = [...encounterEvents].map((item) => {
+            if (item.id === index) {
                 return {...item, difficulty: selection};
             } return item
         });
@@ -49,9 +54,9 @@ const Encounters = ({ setReduxEncounters }) => {
     };
 
     const handleSave = () => {
-        setShowModal(!showModal)
-        setReduxEncounters("encounters", this.state.encounterEvents)
-    }
+        setShowModal(!showModal);
+        setReduxEncounters("encounters", encounterEvents);
+    };
 
     return (
         <div>
@@ -70,40 +75,38 @@ const Encounters = ({ setReduxEncounters }) => {
                     </p>
                     <br/>
                     <Slider
-                        min={1}
+                        min={0}
                         max={5}
-                        defaultValue={3}
+                        defaultValue={0}
                         onChangeCommitted={handleSlider}
                         valueLabelDisplay="on"/>
                     {encounterEvents.length > 0 && (
                         <div>
-                            {encounterEvents.map((space , index)=> {
-                                return (
-                                    <div>
-                                        <Form inline>
-                                            <Dropdown onSelect={(keyEvent, event) => handleSelect(keyEvent, event, index)} name={space.id}>
-                                                <Dropdown.Toggle variant="outline-primary">
-                                                    {encounterEvents[index].type ? encounterEvents[index].type : 'Choose an Encounter Goal'}
-                                                </Dropdown.Toggle>
-                                                <Dropdown.Menu>
-                                                    {encounterOptions.map(item => {return <Dropdown.Item name={item}>{item}</Dropdown.Item>})} 
-                                                </Dropdown.Menu>
-                                            </Dropdown>
-                                            <Dropdown onSelect={(keyEvent, event) => handleDifficultySelect(keyEvent, event, index)}>
-                                                <Dropdown.Toggle variant="outline-primary">
-                                                    {encounterEvents[index].difficulty ? encounterEvents[index].difficulty : 'Choose the Difficulty'}
-                                                </Dropdown.Toggle>
-                                                <Dropdown.Menu>
-                                                    <Dropdown.Item>Easy</Dropdown.Item>
-                                                    <Dropdown.Item>Medium</Dropdown.Item>
-                                                    <Dropdown.Item>Hard</Dropdown.Item>
-                                                    <Dropdown.Item>Deadly</Dropdown.Item>  
-                                                </Dropdown.Menu>
-                                            </Dropdown>
-                                        </Form>
-                                    </div>
-                                )
-                            })}
+                            {encounterEvents.map((space , idx) => (
+                                <div>
+                                    <Form inline>
+                                        <Dropdown onSelect={(ek, e) => handleSelect(ek, e, idx)} name={space.id} className="sideQuestBtns">
+                                            <Dropdown.Toggle variant="outline-primary">
+                                                {encounterEvents[idx].type ? encounterEvents[idx].type : 'Choose an Encounter Goal'}
+                                            </Dropdown.Toggle>
+                                            <Dropdown.Menu>
+                                                {encounterOptions.map((item) => (<Dropdown.Item name={item}>{item}</Dropdown.Item>))} 
+                                            </Dropdown.Menu>
+                                        </Dropdown>
+                                        <Dropdown onSelect={(ek, e) => handleDifficultySelect(ek, e, idx)} className="sideQuestBtns">
+                                            <Dropdown.Toggle variant="outline-primary">
+                                                {encounterEvents[idx].difficulty ? encounterEvents[idx].difficulty : 'Choose the Difficulty'}
+                                            </Dropdown.Toggle>
+                                            <Dropdown.Menu>
+                                                <Dropdown.Item>Easy</Dropdown.Item>
+                                                <Dropdown.Item>Medium</Dropdown.Item>
+                                                <Dropdown.Item>Hard</Dropdown.Item>
+                                                <Dropdown.Item>Deadly</Dropdown.Item>  
+                                            </Dropdown.Menu>
+                                        </Dropdown>
+                                    </Form>
+                                </div>
+                            ))}
                         </div>
                     )}
                 </Modal.Body>
@@ -115,4 +118,12 @@ const Encounters = ({ setReduxEncounters }) => {
     );
 }
 
-export default Encounters;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetEncounters: bindActionCreators(setEncounters, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Encounters);

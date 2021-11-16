@@ -3,8 +3,11 @@ import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown } from 'react-bootstrap';
 import { Slider } from '@material-ui/core';
 import "../style.css";
+import { setSideQuests } from "../../actions/index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-const SideQuests = ({ setReduxSideQuests })  => {
+const SideQuests = ({ onSetSideQuests })  => {
     const [showModal, setShowModal] = useState(false);
     const [yes, setYes] = useState(false);
     const [sideQuests, setSideQuests] = useState([]);
@@ -18,6 +21,10 @@ const SideQuests = ({ setReduxSideQuests })  => {
         {id: 7, option: "Secure the aid of a character or creatue in the area"},
         {id: 8, option: "Retrieve a stolen item in the villain's possession"},
     ];
+
+    const setReduxSideQuests = (destination, value) => {
+        onSetSideQuests(destination, value)
+    };
 
     const handleYesNoSideQuest = (event) => {
         let choice = event.target.name
@@ -116,4 +123,12 @@ const SideQuests = ({ setReduxSideQuests })  => {
     );
 }
 
-export default SideQuests;
+const mapStateToProps = (state) => {
+    return {campaign: state.campaignReducer}
+}
+
+const mapDispatchtoProps = (dispatch) => ({
+    onSetSideQuests: bindActionCreators(setSideQuests, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchtoProps)(SideQuests);

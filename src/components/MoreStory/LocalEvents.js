@@ -98,13 +98,13 @@ const LocalEvents = ({ onSetLocalEvents }) => {
                     <br/>
                     <div className="container staticModal">
                         <div className="side">
-                        {localEventOptions.map((drop) => {
+                        {localEventOptions.map((drop, idx) => {
                             const localEventTrue = localEventChoice?.find((item) => item === drop.eventName) || false;
-                            return <Button name={drop.eventName} className="eventbtns" onClick={handleAddEvent} disabled={eventCap || localEventTrue}> {drop.eventName}</Button>
+                            return <Button name={drop.eventName} key={idx} className="eventbtns" onClick={handleAddEvent} disabled={eventCap || localEventTrue}> {drop.eventName}</Button>
                             })}
                         </div>
                         <div className="side">
-                        {localEventChoice.map((drop) => (<Button name={drop} className="eventbtns" onClick={removeEvent}> {drop}</Button>))}
+                        {localEventChoice.map((drop, idx) => (<Button name={drop} key={idx} className="eventbtns" onClick={removeEvent}> {drop}</Button>))}
                         </div>
                     </div>
                 </Modal.Body>

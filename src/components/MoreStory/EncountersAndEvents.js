@@ -3,19 +3,10 @@ import Modal from 'react-bootstrap/Modal';
 import { RandomEvents, Encounters } from "./components";
 import { Button } from 'react-bootstrap';
 import "./style.css";
-import { setEncounters, setRandomEncounters } from "../../actions/index";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 
-const EncountersAndEvents = ({ onSetEncounters, campaign, onSetRandomEncounters }) => {
+const EncountersAndEvents = () => {
     const [showModal, setShowModal] = useState(false);
-    const setReduxEncounters = (destination, value) => {
-        onSetEncounters(destination, value)
-    }
 
-    const setReduxRandomEncounters = (destination, value) => {
-        onSetRandomEncounters(destination, value)
-    }
     return (
         <div>
             <div className="btns">
@@ -33,8 +24,8 @@ const EncountersAndEvents = ({ onSetEncounters, campaign, onSetRandomEncounters 
                     </p>
                     <br/>
                     <div className="btnspace">
-                        <Encounters setEncounters={setReduxEncounters}/>
-                        <RandomEvents setRandomEncounters={setReduxRandomEncounters} campaign={campaign}/>
+                        <Encounters/>
+                        <RandomEvents/>
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
@@ -45,13 +36,4 @@ const EncountersAndEvents = ({ onSetEncounters, campaign, onSetRandomEncounters 
     );
 }
 
-const mapStateToProps = (state) => {
-    return {campaign: state.campaignReducer}
-}
-
-const mapDispatchtoProps = (dispatch) => ({
-    onSetEncounters: bindActionCreators(setEncounters, dispatch),
-    onSetRandomEncounters: bindActionCreators(setRandomEncounters, dispatch),
-});
-
-export default connect(mapStateToProps, mapDispatchtoProps)(EncountersAndEvents);
+export default EncountersAndEvents;
