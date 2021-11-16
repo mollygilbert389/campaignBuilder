@@ -21,13 +21,6 @@ const Government = ({ campaign, onSetGovernmentData, onSetLanguages, onSetLangua
         "Elvish",
         "Infernal",
     ]);
-    const currencyOptions = [
-        "Common Coinage",
-        "Common Coinage (No Electum)",
-        "Trade Bars",
-        "Barter System",
-        "Odd Currency",
-    ];
 
     const setReduxLanguages = (type) => {
         onSetLanguages(type);

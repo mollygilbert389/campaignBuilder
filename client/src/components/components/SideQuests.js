@@ -11,16 +11,6 @@ const SideQuests = ({ onSetSideQuests })  => {
     const [showModal, setShowModal] = useState(false);
     const [yes, setYes] = useState(false);
     const [sideQuests, setSideQuests] = useState([]);
-    const sideQuestOptions = [
-        {id: 1, option: "Find a specific item rumored to be in the area"},
-        {id: 2, option: "Retrieve information from an NPC in the area"},
-        {id: 3, option: "Rescue a captive"},
-        {id: 4, option: "Discover the fate of a missing NPC"},
-        {id: 5, option: "Slay a specific monster"},
-        {id: 6, option: "Discover the nature and origin of a strange phenpmenon in the area"},
-        {id: 7, option: "Secure the aid of a character or creatue in the area"},
-        {id: 8, option: "Retrieve a stolen item in the villain's possession"},
-    ];
 
     const setReduxSideQuests = (destination, value) => {
         onSetSideQuests(destination, value)

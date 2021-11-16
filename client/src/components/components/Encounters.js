@@ -10,15 +10,6 @@ import { bindActionCreators } from "redux";
 const Encounters = ({ onSetEncounters }) => {
     const [showModal, setShowModal] = useState(false);
     const [encounterEvents, setEncounterEvents] = useState([]);
-    const encounterOptions = [
-        "Protect an NPC or Object",
-        "Retrieve an object",
-        "Run a guantlet",
-        "Sneak In",
-        "Stop a ritual",
-        "Take out a single target",
-        "Investiage an area",
-    ];
 
     const setReduxEncounters = (destination, value) => {
         onSetEncounters(destination, value)

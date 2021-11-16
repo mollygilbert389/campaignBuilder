@@ -6,23 +6,6 @@ const EvilNPCCard = ({ campaign, setReduxNPCData }) => {
     const [showModal, setShowModal] = useState(false);
     const [imageLink, setImageLink] = useState("https://journeypurebowlinggreen.com/wp-content/uploads/2018/05/placeholder-person-300x300.jpg");
     const [evilNPCData, setEvilNPCData] = useState({});
-    const subTypes = [
-        "Beast or monstrosity with no particular agenda",
-        "Abberation bent on corruption or desruction",
-        "Dragon bent on domination and plunder",
-        "Giant bent on plunder",
-        "Undead with any agenda",
-        "Fey with a mysterious goal",
-        "Hummanoid cultist",
-        "Hummanoid conqueror",
-        "Hummanoid seeking revenge",
-        "Hummanoid schemer seeking to rule",
-        "Hummanoid criminal mastermind",
-        "Hummanoid raider or ravager",
-        "Hummanoid under a curse",
-        "Misguided hummanoid zealot",
-        "Something else"
-    ];
     
     const handleChange = (event, index) => {
         const name = event.target.value;

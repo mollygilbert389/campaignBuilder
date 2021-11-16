@@ -1,0 +1,19 @@
+{
+  "subTypes": [
+    "Beast or monstrosity with no particular agenda",
+    "Abberation bent on corruption or desruction",
+    "Dragon bent on domination and plunder",
+    "Giant bent on plunder",
+    "Undead with any agenda",
+    "Fey with a mysterious goal",
+    "Hummanoid cultist",
+    "Hummanoid conqueror",
+    "Hummanoid seeking revenge",
+    "Hummanoid schemer seeking to rule",
+    "Hummanoid criminal mastermind",
+    "Hummanoid raider or ravager",
+    "Hummanoid under a curse",
+    "Misguided hummanoid zealot",
+    "Something else"
+  ] 
+}

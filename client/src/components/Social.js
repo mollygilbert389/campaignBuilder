@@ -8,10 +8,11 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 const Social = ({ onSetPlayers, campaign }) => {
+    const [showModal, setShowModal] = useState(false);
+
     const setReduxPlayers = (destination, value) => {
         onSetPlayers(destination, value)
-    }
-    const [showModal, setShowModal] = useState(false);
+    };
 
     return (
         <div>

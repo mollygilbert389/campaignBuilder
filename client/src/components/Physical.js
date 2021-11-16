@@ -16,51 +16,6 @@ const  Physical = ({ onSetWorldData }) => {
     const [mapScale, setMapScale] = useState("");
     const [charMeeting, setCharMeeting] = useState("");
     const [travelPointChoices, setTravelPointChoices] = useState([]);
-    const worldOptions = [
-        "Aquatic",
-        "Desert",
-        "Grassland",
-        "Savanna",
-        "Taiga",
-        "Temperate Forest",
-        "Tropical Rainforest",
-        "Tundra",
-    ];
-    const eraOptions = [
-        "Beowulf Adventure Trope (The age of heros magic is common)",
-        "Victorian Era (The time of romance magic is uncommon)",
-        "Present Day (Modern technology magic does not exist)",
-        "Steampunk Future (Technology & chivalry rule and magic is common)",
-        "Dystopian Post Appocolypse (Chaos magic is uncommon)",
-    ];
-    const featureOptions = [
-        "At the base of a dorment valcano",
-        "Extreme Weather",
-        "Architecutral building or Massive Statue",
-        "Many moons",
-        "Large Bodies of Water",
-        "Large Mountains",
-        "Local Ruins",
-        "Large Forest",
-        "Swamp or Delta",
-        "Religious Site",
-        "Deserted City",
-        "Canyon or Gorge",
-        "Northern Lights",
-    ];
-    const mapScaleOptions = [
-        "Village",
-        "Town",
-        "City",
-    ];
-    const meetingOptions = [
-        "Meet in a tavern about a contract",
-        "Party has already adventured together",
-        "One member brings the group together",
-        "Meet at a party",
-        "Meet at school",
-        "Mysterious Circumstance",
-    ];
     const [travelPoints, setTravelPoints] = useState([
         "Cave",
         "Forest",
