@@ -16,16 +16,6 @@ import FactionOrgs from "./FactionOrgs";
 import Languages from "./Languages";
 import Renown from "./Renown";
 
-import {     
-    miniBossData,
-    monsterData,
-    sideMonsterData,
-    campaignNameData,
-    mapData,
-    roomData,
-    governmentData 
-}  from "./data";
-
 export {
     Patron,
     VillainSubVillain,
@@ -44,13 +34,6 @@ export {
     GenerateBtn,
     Navtabs,
     RollBtn,
-    miniBossData,
-    monsterData,
-    sideMonsterData,
-    campaignNameData,
-    governmentData,
-    mapData,
-    roomData ,
     FactionOrgs,
     Languages,
     Renown
