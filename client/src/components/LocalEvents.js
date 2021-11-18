@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button } from 'react-bootstrap';
 import "./home.css";
+import { local_event_data } from "./components/data";
 import { setLocalEvents } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -49,7 +50,7 @@ const LocalEvents = ({ onSetLocalEvents }) => {
                     <br/>
                     <div className="container staticModal">
                         <div className="side">
-                        {localEventOptions.map((drop, idx) => {
+                        {local_event_data.localEventOptions.map((drop, idx) => {
                             const localEventTrue = localEventChoice?.find((item) => item === drop.eventName) || false;
                             return <Button name={drop.eventName} key={idx} className="eventbtns" onClick={handleAddEvent} disabled={eventCap || localEventTrue}> {drop.eventName}</Button>
                             })}

@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import { GenerateBtn } from "./components";
 import { Button, Dropdown, Form, FormControl, OverlayTrigger, Card, Popover } from 'react-bootstrap';
 import "./home.css";
+import { villain_data } from "./components/data";
 import { setVillainData } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -19,14 +20,14 @@ const VillainModal = ({ onSetVillainData }) => {
 
     const handleVillainObjectiveCatSelect = (ek, event) => {
         let choice = event.target.text
-        const newVillainObjectiveChoices = villainObjectives.find((event) => event.objectiveCat === choice);
+        const newVillainObjectiveChoices = villain_data.villainObjectives.find((event) => event.objectiveCat === choice);
         const objectivesList = newVillainObjectiveChoices.objectives;
         setVillainData({...villainData, villainObjectiveCatChoice:choice, villainObjectivesPossible:objectivesList});
     };
 
     const handleVillainMethodCatSelect = (ek, event) => {
         const selection = event.target.text;
-        const newVillainMethodChoices = villainMethods.find((event) => event.methodCat === selection);
+        const newVillainMethodChoices = villain_data.villainMethods.find((event) => event.methodCat === selection);
         const drilledMethods = newVillainMethodChoices.methods;
         setVillainData({...villainData, villainMethodCatChoice:selection, villainMethodPossible:drilledMethods});
     };
@@ -129,7 +130,7 @@ const VillainModal = ({ onSetVillainData }) => {
                                             {villainData.villainObjectiveCatChoice ? `Objective Category: ${villainData.villainObjectiveCatChoice}`: "Choose your Villain's Main Objective"}
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
-                                            {villainObjectives.map((item) => (<Dropdown.Item key={item.id} name={item.objectiveCat}>{item.objectiveCat}</Dropdown.Item>))}
+                                            {villain_data.villainObjectives.map((item) => (<Dropdown.Item key={item.id} name={item.objectiveCat}>{item.objectiveCat}</Dropdown.Item>))}
                                         </Dropdown.Menu>
                                     </Dropdown>
                                     {villainData?.villainObjectivesPossible?.length > 0 && (
@@ -149,7 +150,7 @@ const VillainModal = ({ onSetVillainData }) => {
                                             {villainData.villainMethodCatChoice ? `Method Category: ${villainData.villainMethodCatChoice}`: "Choose your Villain's Method"}
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
-                                            {villainMethods.map((item) => (<Dropdown.Item key={item.id} name={item.methodCat}>{item.methodCat}</Dropdown.Item>))}
+                                            {villain_data.villainMethods.map((item) => (<Dropdown.Item key={item.id} name={item.methodCat}>{item.methodCat}</Dropdown.Item>))}
                                         </Dropdown.Menu>
                                     </Dropdown>
                                     {villainData?.villainMethodPossible?.length > 0 && (
@@ -168,7 +169,7 @@ const VillainModal = ({ onSetVillainData }) => {
                                         {villainData.weakness ? `Weakness: ${villainData.weakness}`: "Choose your Villain's Weakness"}
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
-                                        {villainWeaknessChoices.map((item) => (<Dropdown.Item key={item.id} name={item.option}>{item.option}</Dropdown.Item>))}
+                                        {villain_data.villainWeaknessChoices.map((item) => (<Dropdown.Item key={item.id} name={item.option}>{item.option}</Dropdown.Item>))}
                                     </Dropdown.Menu>
                                 </Dropdown>
                             </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Form, Dropdown } from 'react-bootstrap';
 import { Slider } from '@material-ui/core';
-import { monsterData } from "./components/data";
+import { monster_data } from "./components/data";
 import "./home.css";
 import { setDungeonData } from "../actions/index";
 import { connect } from "react-redux";
@@ -18,7 +18,7 @@ const MonsterCard = ({ campaign, onSetDungeonData }) => {
     };
 
     const createMonsterForm = () => {
-        const monsterCategories = monsterData.map((item) => item.category);
+        const monsterCategories = monster_data.map((item) => item.category);
         const filterMonsterCategories = [...new Set(monsterCategories)];
         let sideMonsterObject = [];
         Array.from(Array(campaign.dungeonData.monsterNum).keys()).forEach((ev, index) => {
@@ -30,7 +30,7 @@ const MonsterCard = ({ campaign, onSetDungeonData }) => {
     };
 
     const handleSelect = (e, index) => {
-        const filteredMonsters = monsterData.filter((item) => (item.category === e.target.text));
+        const filteredMonsters = monster_data.filter((item) => (item.category === e.target.text));
         const newMonsterDrops = [...monsters].map((monster) => {
             if (monster.id === index) {
                 return {...monster, category: e.target.text, monsterTypes: filteredMonsters}

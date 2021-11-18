@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import { RollBtn } from "./components";
 import { Button, Dropdown, Form, FormGroup } from 'react-bootstrap';
 import "./home.css";
+import { world_data } from "./components/data";
 import { setWorldData } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -242,10 +243,10 @@ const  Physical = ({ onSetWorldData }) => {
                                     {world ? `Setting: ${world}`: 'What is your setting?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu name="world">
-                                    {worldOptions.map((item, idx) => (<Dropdown.Item key={idx} name="world">{item}</Dropdown.Item>))}
+                                    {world_data.worldOptions.map((item, idx) => (<Dropdown.Item key={idx} name="world">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <RollBtn name="world" handleRoll={(ek, e) => handleDropSelect(ek, e, "world")} rollingArray={worldOptions}/>
+                            <RollBtn name="world" handleRoll={(ek, e) => handleDropSelect(ek, e, "world")} rollingArray={world_data.worldOptions}/>
                         </Form>
                     </FormGroup>
                     <FormGroup>
@@ -255,10 +256,10 @@ const  Physical = ({ onSetWorldData }) => {
                                     {era ? `Era: ${era}`: 'What era does this adventure take place?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {eraOptions.map((item, idx) => (<Dropdown.Item key={idx} name="era">{item}</Dropdown.Item>))}
+                                    {world_data.eraOptions.map((item, idx) => (<Dropdown.Item key={idx} name="era">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <RollBtn name="era" handleRoll={(ek, e) => handleDropSelect(ek, e, "era")} rollingArray={eraOptions}/>
+                            <RollBtn name="era" handleRoll={(ek, e) => handleDropSelect(ek, e, "era")} rollingArray={world_data.eraOptions}/>
                         </Form>
                     </FormGroup>
                     <FormGroup>
@@ -268,10 +269,10 @@ const  Physical = ({ onSetWorldData }) => {
                                     {uniqueFeature ? `Feature: ${uniqueFeature}`: 'Does this world have a unique feature?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {featureOptions.map((item, idx) => (<Dropdown.Item key={idx} name="uniqueFeature">{item}</Dropdown.Item>))}
+                                    {world_data.featureOptions.map((item, idx) => (<Dropdown.Item key={idx} name="uniqueFeature">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <RollBtn name="uniqueFeature" handleRoll={(ek, e) => handleDropSelect(ek, e, "uniqueFeatures")} rollingArray={featureOptions}/>
+                            <RollBtn name="uniqueFeature" handleRoll={(ek, e) => handleDropSelect(ek, e, "uniqueFeatures")} rollingArray={world_data.featureOptions}/>
                         </Form>
                     </FormGroup>
                     <FormGroup>
@@ -281,10 +282,10 @@ const  Physical = ({ onSetWorldData }) => {
                                     {mapScale ? `Size: ${mapScale}` : 'What kind of place are your adventurers starting?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {mapScaleOptions.map((item, idx) => (<Dropdown.Item key={idx} name="mapScale">{item}</Dropdown.Item>))}
+                                    {world_data.mapScaleOptions.map((item, idx) => (<Dropdown.Item key={idx} name="mapScale">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <RollBtn name="mapScale" handleRoll={(ek, e) => handleDropSelect(ek, e, "mapScale")} rollingArray={mapScaleOptions}/>
+                            <RollBtn name="mapScale" handleRoll={(ek, e) => handleDropSelect(ek, e, "mapScale")} rollingArray={world_data.mapScaleOptions}/>
                         </Form>
                     </FormGroup>
                     <FormGroup>
@@ -294,10 +295,10 @@ const  Physical = ({ onSetWorldData }) => {
                                     {charMeeting ? `Meeting: ${charMeeting}`: 'How do your characters know each other?'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {meetingOptions.map((item, idx) => (<Dropdown.Item key={idx} name="charMeeting">{item}</Dropdown.Item>))}
+                                    {world_data.meetingOptions.map((item, idx) => (<Dropdown.Item key={idx} name="charMeeting">{item}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <RollBtn name="charMeeting" handleRoll={(ek, e) => handleDropSelect(ek, e, "charMeeting")} rollingArray={meetingOptions}/>
+                            <RollBtn name="charMeeting" handleRoll={(ek, e) => handleDropSelect(ek, e, "charMeeting")} rollingArray={world_data.meetingOptions}/>
                         </Form>
                     </FormGroup>
                     <p>Consider some places your adventurers might travel through. Pick only 3.</p>

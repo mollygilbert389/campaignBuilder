@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Button, Dropdown, Form, FormControl, OverlayTrigger, Card, Popover } from 'react-bootstrap';
 import { GenerateBtn } from "..";
 import "../../home.css";
+import { NPC_data } from "../data";
 import { setNPCData } from "../../../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -96,7 +97,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
                             {NPCData.appearance ? `Appearance: ${NPCData.appearance}`: "Choose your NPC's Appearance"}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                            {NPCAppearance.map((item, idx) => (<Dropdown.Item key={idx}>{item.option}</Dropdown.Item>))}
+                            {NPC_data.NPCAppearance.map((item, idx) => (<Dropdown.Item key={idx}>{item.option}</Dropdown.Item>))}
                         </Dropdown.Menu>
                     </Dropdown>
                     <Dropdown onSelect={(ek, e) => handleSelections(ek, e, index, "highAbility")} className="giveMeNPCSpace">
@@ -130,7 +131,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
                             {NPCData.talent ? `Talent: ${NPCData.talent}`: "Choose your NPC's Talent"}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                            {NPCTalents.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>))}
+                            {NPC_data.NPCTalents.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>))}
                         </Dropdown.Menu>
                     </Dropdown>
                     <Dropdown onSelect={(ek, e) => handleSelections(ek, e, index, "manner")} className="giveMeNPCSpace">
@@ -138,7 +139,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
                             {NPCData.manner? `Mannerism: ${NPCData.manner}`: "Choose your NPC's Mannerism"}
                         </Dropdown.Toggle>
                         <Dropdown.Menu className="bringToFront">
-                            {NPCMannerisms.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>))}
+                            {NPC_data.NPCMannerisms.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>))}
                         </Dropdown.Menu>
                     </Dropdown>
                     <Dropdown onSelect={(ek, e) => handleSelections(ek, e, index, "trait")} className="giveMeNPCSpace">
@@ -146,7 +147,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
                         {NPCData.trait ? `Trait: ${NPCData.trait}`: "Choose your NPC's Trait"}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                            {NPCInteractionTraits.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>))}
+                            {NPC_data.NPCInteractionTraits.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>))}
                         </Dropdown.Menu>
                     </Dropdown>
                     <div className="center">
@@ -155,7 +156,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
                                 {NPCData.ideal ? NPCData.ideal: "Choose your NPC's Ideal"}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                {NPCIdeals.map((drop, idx) => (<Dropdown.Item key={idx} name={drop.main}>{drop.main}</Dropdown.Item>))}
+                                {NPC_data.NPCIdeals.map((drop, idx) => (<Dropdown.Item key={idx} name={drop.main}>{drop.main}</Dropdown.Item>))}
                             </Dropdown.Menu>
                         </Dropdown>
                         {NPCData.ideal && (
@@ -164,7 +165,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
                                     {NPCData.drilledIdealChoice ? NPCData.drilledIdealChoice: "Choose your NPC's Ideal"}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {NPCIdeals.find((item) => item.main ===  NPCData.ideal).list.map((drop, idx) => (<Dropdown.Item key={idx} name={drop}>{drop}</Dropdown.Item>))}
+                                    {NPC_data.NPCIdeals.find((item) => item.main ===  NPCData.ideal).list.map((drop, idx) => (<Dropdown.Item key={idx} name={drop}>{drop}</Dropdown.Item>))}
                                 </Dropdown.Menu>
                             </Dropdown>
                         )}
@@ -174,7 +175,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
                             {NPCData.bond ? `Bond: ${NPCData.bond}`: "Choose your NPC's Bond"}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                            {NPCBonds.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>))}
+                            {NPC_data.NPCBonds.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>))}
                         </Dropdown.Menu>
                     </Dropdown>
                     <Dropdown onSelect={(ek, e) => handleSelections(ek, e, index, "flawOrSecret")} className="giveMeNPCSpace">
@@ -182,7 +183,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
                             {NPCData.flawOrSecret ? `Flaw/Secret: ${NPCData.flawOrSecret}`: "Choose your NPC's Flaw or Secret"}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                            {NPCFlawsSecrets.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>))}
+                            {NPC_data.NPCFlawsSecrets.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>))}
                         </Dropdown.Menu>
                     </Dropdown>
                 </Card.Body>

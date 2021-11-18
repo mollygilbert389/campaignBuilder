@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import { RollBtn } from "./components";
 import {Button, Dropdown, Form, FormControl, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import "./home.css";
+import { religion_data } from "./components/data";
 import { setReligion } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -55,7 +56,7 @@ const Religion = ({ onSetReligion }) => {
                                 {religion ? `Religion: ${religion}`: 'Choose Your Religious Philosophy'}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                {godChoices.map((item, idx) => {
+                                {religion_data.godChoices.map((item, idx) => {
                                     return (
                                         <div key={idx}>
                                             <OverlayTrigger overlay={<Tooltip>{item.toolTipData}</Tooltip>}>
@@ -68,7 +69,7 @@ const Religion = ({ onSetReligion }) => {
                                 })}
                             </Dropdown.Menu>
                         </Dropdown>
-                        <RollBtn name="religion" handleRoll={handleRoll} rollingArray={godChoices.map((item) => item.option)}/>
+                        <RollBtn name="religion" handleRoll={handleRoll} rollingArray={religion_data.godChoices.map((item) => item.option)}/>
                     </Form>
                     <br/>
                     {other && (

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Carousel from 'react-bootstrap/Carousel';
 import { Button, Dropdown } from 'react-bootstrap';
+import { adventure_data } from "./components/data";
 import "./home.css";
 import { setDungeonData } from "../actions/index";
 import { connect } from "react-redux";
@@ -85,7 +86,7 @@ const AdventureStart = ({ campaign, onSetDungeonData }) => {
                                     {selectedPlace ? selectedPlace: 'Choose your Dungeon Location'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {dungeonTypeLocation.map(drop => {
+                                    {adventure_data.dungeonTypeLocation.map(drop => {
                                         return <Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>
                                     })}
                                 </Dropdown.Menu>
@@ -99,7 +100,7 @@ const AdventureStart = ({ campaign, onSetDungeonData }) => {
                                     {selectedPlace ? selectedPlace: 'Choose your Exotic Location'}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    {nondungeonTypeLocation.map(drop => {
+                                    {adventure_data.nondungeonTypeLocation.map(drop => {
                                         return <Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>
                                     })}
                                 </Dropdown.Menu>
@@ -107,7 +108,7 @@ const AdventureStart = ({ campaign, onSetDungeonData }) => {
                         </div>
                     )}
                     <Carousel interval={null}>
-                        {meetingSelection.map(drop => {
+                        {adventure_data.meetingSelection.map(drop => {
                             return (
                                 <Carousel.Item> 
                                     <div className="d-block w-100"></div> 

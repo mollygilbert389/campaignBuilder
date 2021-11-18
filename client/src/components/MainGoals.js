@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown, Form } from 'react-bootstrap';
 import { RollBtn } from "./components";
 import "./home.css";
+import { goal_data } from "./components/data";
 import { setMainGoal } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -15,10 +16,10 @@ const MainGoals = ({ onSetMainGoal }) => {
     const [wildernessGoalsClickd, setWildernessGoalsClickd] = useState(false);
     const [otherGoalsClicked, setOtherGoalsClicked] = useState(false);
     const [eventGoalsClicked, setEventGoalsClicked] = useState(false);
-    const allDungeonGoals = dungeonGoals.map((item) => item.goal);
-    const allWildernessGoals = wildernessGoals.map((item) => item.goal);
-    const allEventGoals = eventGoals.map((item) => item.goal);
-    const allOtherGoals = otherGoals.map((item) => item.goal);
+    const allDungeonGoals = goal_data.dungeonGoals.map((item) => item.goal);
+    const allWildernessGoals = goal_data.wildernessGoals.map((item) => item.goal);
+    const allEventGoals = goal_data.eventGoals.map((item) => item.goal);
+    const allOtherGoals = goal_data.otherGoals.map((item) => item.goal);
     const allGoals = [...allDungeonGoals, ...allWildernessGoals, ...allEventGoals, ...allOtherGoals];
 
     const setReduxMainGoal = (destination, value) => {
@@ -102,7 +103,7 @@ const MainGoals = ({ onSetMainGoal }) => {
                                             {mainGoal ? `Goal: ${mainGoal}`: 'Choose Overal Campaign Goal'}
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
-                                            {dungeonGoals.map((drop) => (<Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>))}
+                                            {goal_data.dungeonGoals.map((drop) => (<Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>))}
                                         </Dropdown.Menu>
                                     </Dropdown>
                                 </div>
@@ -111,10 +112,10 @@ const MainGoals = ({ onSetMainGoal }) => {
                                 <div>
                                     <Dropdown onSelect={handleGoalClick}>
                                         <Dropdown.Toggle variant="outline-primary">
-                                            {mainGoal ? `Goal: ${mainGoal}`: 'Choose Overal Campaign Goal'}
+                                            {goal_data.mainGoal ? `Goal: ${mainGoal}`: 'Choose Overal Campaign Goal'}
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
-                                            {wildernessGoals.map((drop) => (<Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>))}
+                                            {goal_data.wildernessGoals.map((drop) => (<Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>))}
                                         </Dropdown.Menu>
                                     </Dropdown>
                                 </div>
@@ -126,7 +127,7 @@ const MainGoals = ({ onSetMainGoal }) => {
                                             {mainGoal ? `Goal: ${mainGoal}`: 'Choose Overal Campaign Goal'}
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
-                                            {otherGoals.map((drop) => (<Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>))}
+                                            {goal_data.otherGoals.map((drop) => (<Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>))}
                                         </Dropdown.Menu>
                                     </Dropdown>
                                 </div>
@@ -138,7 +139,7 @@ const MainGoals = ({ onSetMainGoal }) => {
                                         {mainGoal ? `Goal: ${mainGoal}`: 'Choose Overal Campaign Goal'}
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu>
-                                            {eventGoals.map((drop) => (<Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>))}
+                                            {goal_data.eventGoals.map((drop) => (<Dropdown.Item key={drop.id} name={drop.goal}> {drop.goal}</Dropdown.Item>))}
                                         </Dropdown.Menu>
                                     </Dropdown>
                                 </div>

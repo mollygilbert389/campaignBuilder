@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { MapCard, CampaignCard, mapData } from "./components";
+import { MapCard, CampaignCard } from "./components";
+import { map_data } from './components/data';
 import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import './home.css';
 import { connect } from "react-redux";
@@ -17,7 +18,7 @@ const FinalScreen = ({ campaign }) =>  {
 
     function getMap () {
         const mapChoice = campaign.world || "Forest";
-        let filteredMaps  = mapData.filter(map => (map.world.includes(mapChoice)));        
+        let filteredMaps  = map_data.filter(map => (map.world.includes(mapChoice)));        
         const chosenMap = filteredMaps.map(map => map.id);
         chosenMap.sort(function() {
             return .5 - Math.random();
@@ -47,10 +48,10 @@ const FinalScreen = ({ campaign }) =>  {
             {displayMap && (
                 <div>
                     <MapCard
-                        id={mapData[randomMapId].id}
-                        key={mapData[randomMapId].id}
-                        image={mapData[randomMapId].image}
-                        name={mapData[randomMapId].name}/>
+                        id={map_data[randomMapId].id}
+                        key={map_data[randomMapId].id}
+                        image={map_data[randomMapId].image}
+                        name={map_data[randomMapId].name}/>
                     <CampaignCard/>
                 </div>
             )}

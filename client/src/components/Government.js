@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import { RollBtn, governmentData, Languages } from "./components";
+import { RollBtn, Languages } from "./components";
+import { government_data } from "./components/data";
 import { Button, Dropdown, OverlayTrigger, Tooltip, Form } from 'react-bootstrap';
 import "./home.css"
 import { setGovernmentData, setLanguageShow, setLanguages } from "../actions/index";
@@ -77,7 +78,7 @@ const Government = ({ campaign, onSetGovernmentData, onSetLanguages, onSetLangua
                                 {government ? government: 'Choose Your Government'}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                {governmentData.map((item, idx) => (
+                                {government_data.governments.map((item, idx) => (
                                         <div key={idx}>
                                             <OverlayTrigger overlay={<Tooltip>{item.description}</Tooltip>}>
                                                 <span className="d-inline-block">
@@ -88,7 +89,7 @@ const Government = ({ campaign, onSetGovernmentData, onSetLanguages, onSetLangua
                                     ))}       
                             </Dropdown.Menu>
                         </Dropdown>
-                        <RollBtn name="government" handleRoll={(name, feedback) => handleRoll(name, feedback, "government")} rollingArray={governmentData.map((item) => item.name)}/>
+                        <RollBtn name="government" handleRoll={(name, feedback) => handleRoll(name, feedback, "government")} rollingArray={government_data.governments.map((item) => item.name)}/>
                     </Form>
                     <br/>
                     <Form inline>
@@ -97,10 +98,10 @@ const Government = ({ campaign, onSetGovernmentData, onSetLanguages, onSetLangua
                                 {currency ? currency: 'Choose Your Currency'}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                {currencyOptions.map((item, idx) => (<Dropdown.Item key={idx} name="currency">{item}</Dropdown.Item>))}
+                                {government_data.currencyOptions.map((item, idx) => (<Dropdown.Item key={idx} name="currency">{item}</Dropdown.Item>))}
                             </Dropdown.Menu>
                         </Dropdown>
-                        <RollBtn name="currency" handleRoll={(name, feedback) => handleRoll(name, feedback, "currency")} rollingArray={currencyOptions}/>
+                        <RollBtn name="currency" handleRoll={(name, feedback) => handleRoll(name, feedback, "currency")} rollingArray={government_data.currencyOptions}/>
                     </Form>
                     <Languages 
                         setReduxLanguages={setReduxLanguages} 

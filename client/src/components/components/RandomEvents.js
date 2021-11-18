@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown, Form } from 'react-bootstrap';
-import { monsterData } from "./index";
+import { monster_data } from "../components/data";
 import { Slider } from '@material-ui/core';
 import "../home.css";
 import { setRandomEncounters } from "../../actions";
@@ -38,7 +38,7 @@ const RandomEvents = ({ campaign, onSetRandomEncounters }) => {
 
     const handleMonsterShow = () => {
         const choices = campaign.travelPointChoices;
-        const newFilteredMonsters = monsterData.filter((monster) => {
+        const newFilteredMonsters = monster_data.filter((monster) => {
             for(let i=0; i < monster.area.length; i++) {
                 for(let j=0; j < choices.length; j++) {
                     if (monster.area.includes(choices[j])) {

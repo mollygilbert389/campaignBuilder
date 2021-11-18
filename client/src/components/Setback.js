@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown, FormControl } from 'react-bootstrap';
 import "./home.css";
+import { setback_data } from "./components/data";
 import { setSetback } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -47,7 +48,7 @@ const Setback = ({ onSetSetback }) => {
         setShowInput(false);
         setFinalSetback(null);
         if(type === "large") {
-            const largeEventOptions = worldShakingEvents.find((event) => event.title === name);
+            const largeEventOptions = setback_data.worldShakingEvents.find((event) => event.title === name);
             setSetbackCat(name);
             setLargeSetbackOptions(largeEventOptions.possible);
             setShowInput(largeEventOptions.possible.length > 0 ? false : true);
@@ -133,7 +134,7 @@ const Setback = ({ onSetSetback }) => {
                                                 {setbackCat ? setbackCat: 'Choose Your Setback Category'}
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                {worldShakingEvents.map((drop) => (<Dropdown.Item key={drop.id} name={drop.title}>{drop.title}</Dropdown.Item>))}
+                                                {setback_data.worldShakingEvents.map((drop) => (<Dropdown.Item key={drop.id} name={drop.title}>{drop.title}</Dropdown.Item>))}
                                             </Dropdown.Menu>
                                         </Dropdown>
                                         {largeSetBackOptions.length > 0 && (
@@ -165,7 +166,7 @@ const Setback = ({ onSetSetback }) => {
                                                     {setbackCat ? setbackCat: 'Choose Your Trap'}
                                                 </Dropdown.Toggle>
                                                 <Dropdown.Menu>
-                                                    {traps.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>))}
+                                                    {setback_data.traps.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}>{drop.option}</Dropdown.Item>))}
                                                 </Dropdown.Menu>
                                             </Dropdown>
                                         </div>

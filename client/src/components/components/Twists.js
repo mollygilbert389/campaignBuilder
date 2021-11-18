@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Carousel } from 'react-bootstrap';
 import "../home.css";
+import { twist_data } from "../components/data";
 import { setTwist } from "../../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -53,7 +54,7 @@ const Twists = ({ onSetTwist }) => {
                             <div className="d-flex flex-column align-items-center">
                                 <p>Click through these to add a fun twist to your story.</p>
                                 <Carousel interval={null}>
-                                    {twists.map((drop) => (
+                                    {twist_data.twists.map((drop) => (
                                         <Carousel.Item> 
                                             <div className="d-block w-100"></div> 
                                             <Button 

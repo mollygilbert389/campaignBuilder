@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown, Form, FormControl, OverlayTrigger, Popover, Card } from 'react-bootstrap';
 import { GenerateBtn } from ".";
+import { patron_data } from "../components/data";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FormControlLabel, Checkbox } from '@material-ui/core';
 import "../home.css";
@@ -114,7 +115,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                                                 {patronData.type ? `Type: ${patronData.type}` : "Choose your Patron's Type"}
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                {patronChoices.map((item, idx) => (<Dropdown.Item key={idx} name={item}>{item}</Dropdown.Item>))}
+                                                {patron_data.patronChoices.map((item, idx) => (<Dropdown.Item key={idx} name={item}>{item}</Dropdown.Item>))}
                                             </Dropdown.Menu>
                                         </Dropdown>
                                         <Dropdown onSelect={(ek, e) => setPatronData({...patronData, manner: e.target.text})} className="giveMeNPCSpace">
@@ -122,7 +123,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                                                 {patronData.manner ? `Mannerism: ${patronData.manner}`: "Choose your Patron's Mannerism"}
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                {patronMannerisms.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>))}
+                                                {patron_data.patronMannerisms.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>))}
                                             </Dropdown.Menu>
                                         </Dropdown>
                                         <Dropdown onSelect={(ek, e) => setPatronData({...patronData, trait: e.target.text})} className="giveMeNPCSpace">
@@ -130,7 +131,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                                                 {patronData.trait ? `Trait: ${patronData.trait }`: "Choose your Patron's Trait"}
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                {patronInteractionTraits.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>))}
+                                                {patron_data.patronInteractionTraits.map((drop) => (<Dropdown.Item key={drop.id} name={drop.option}> {drop.option}</Dropdown.Item>))}
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </Card.Body>

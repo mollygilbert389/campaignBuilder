@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import Carousel from 'react-bootstrap/Carousel';
 import { Button } from 'react-bootstrap';
 import "./home.css";
+import { climax_data } from "./components/data";
 import { setActsAndClimax } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -64,7 +65,7 @@ const Acts = ({ onSetActsAndClimx }) => {
                         <div className="d-flex flex-column align-items-center">
                             <p>Let's also plan your end goal. Click one of the boxes in the slider below.</p>
                             <Carousel interval={null}>
-                                {climaxOptions.map((drop, idx) => (
+                                {climax_data.climaxOptions.map((drop, idx) => (
                                         <Carousel.Item key={idx}> 
                                             <div className="d-block w-100"></div> 
                                             <Button 

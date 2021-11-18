@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Form, FormControl } from 'react-bootstrap';
-import { campaignNameData } from '.';
+import { name_data } from "../components/data";
 import "../home.css";
 import { setCampaignName } from "../../actions/index";
 import { connect } from "react-redux";
@@ -24,8 +24,8 @@ const CampaignNameModal = ({ onSetCampaignName }) => {
         setDisabled(false);
     };
     const handleGenerateBtn = () => {
-        const firstWord = campaignNameData.adjectives[Math.floor(Math.random()* campaignNameData.adjectives.length)];
-        const secondWord = campaignNameData.animals[Math.floor(Math.random()* campaignNameData.animals.length)];
+        const firstWord = name_data.adjectives[Math.floor(Math.random()* name_data.adjectives.length)];
+        const secondWord = name_data.animals[Math.floor(Math.random()* name_data.animals.length)];
         const newCampaignName = `${firstWord} ${secondWord}`;
         setCampaignName(newCampaignName);
         setShowModal(!showModal);

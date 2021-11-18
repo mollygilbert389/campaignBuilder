@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown } from 'react-bootstrap';
 import { Slider } from '@material-ui/core';
 import "../home.css";
+import { side_quest_data } from "./data";
 import { setSideQuests } from "../../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -48,7 +49,7 @@ const SideQuests = ({ onSetSideQuests })  => {
         setSideQuests(sideQuests);
     };
 
-    const filteredArr = sideQuestOptions.filter((quest) => sideQuests.every((currQuest) => currQuest.type !== quest.option));
+    const filteredArr = side_quest_data.sideQuestOptions.filter((quest) => sideQuests.every((currQuest) => currQuest.type !== quest.option));
 
     return (
         <div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Dropdown, Form } from 'react-bootstrap';
 import { Slider } from '@material-ui/core';
+import { encounter_data } from "../components/data";
 import "../home.css";
 import { setEncounters } from "../../actions";
 import { connect } from "react-redux";
@@ -81,7 +82,7 @@ const Encounters = ({ onSetEncounters }) => {
                                                 {encounterEvents[idx].type ? encounterEvents[idx].type : 'Choose an Encounter Goal'}
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu>
-                                                {encounterOptions.map((item) => (<Dropdown.Item name={item}>{item}</Dropdown.Item>))} 
+                                                {encounter_data.encounterOptions.map((item) => (<Dropdown.Item name={item}>{item}</Dropdown.Item>))} 
                                             </Dropdown.Menu>
                                         </Dropdown>
                                         <Dropdown onSelect={(ek, e) => handleDifficultySelect(ek, e, idx)} className="sideQuestBtns">
