@@ -1,4 +1,4 @@
-const { Campaign } = require('../models');
+const { Campaign, Adventure } = require('../models');
 
 const resolvers = {
   Query: {
@@ -7,7 +7,10 @@ const resolvers = {
     },
     campaign: async (parent, { campaignName }) => {
       return Campaign.findOne({ campaignName });
-    }
+    },
+    adventure: async () => {
+      return Adventure.find();
+    },
   },
   Mutation: {
     addCampaign: async (parent, args) => {

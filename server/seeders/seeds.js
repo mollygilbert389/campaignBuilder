@@ -1,7 +1,8 @@
 const faker = require('faker');
-
+const { adventure_data } = require("./data")
 const db = require('../config/connection');
-const { Campaign } = require('../models');
+const { Campaign, Adventure } = require('../models');
+
 
 db.once('open', async () => {
   await Campaign.deleteMany({});
@@ -394,6 +395,7 @@ db.once('open', async () => {
 
   }
   await Campaign.collection.insertMany(campaignData);
+  await Adventure.collection.insertMany(adventure_data);
 
   console.log('all done!');
   process.exit(0);
