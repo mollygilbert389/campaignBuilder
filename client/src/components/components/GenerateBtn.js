@@ -5,8 +5,8 @@ import "../home.css";
 
 const generateBtn = ({ name, index, handleGenerate }) => {
     function generateName() {
-        const firstName = name_data.firstNameBank[Math.floor(Math.random()*name_data.firstNameBank.length)];
-        const lastName = name_data.lastNameBank[Math.floor(Math.random()*name_data.lastNameBank.length)];
+        const firstName = name_data.firstNames[Math.floor(Math.random()*name_data.firstNames.length)];
+        const lastName = name_data.lastNames[Math.floor(Math.random()*name_data.lastNames.length)];
         const finalName = `${firstName.name} ${lastName.name}`;
         handleGenerate(finalName, name, index)
     }
