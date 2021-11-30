@@ -1,4 +1,4 @@
-const { Campaign, Adventure } = require('../models');
+const { Campaign, MeetingLocations, NonDungeonLocations, DungeonLocations, Climax } = require('../models');
 
 const resolvers = {
   Query: {
@@ -8,9 +8,18 @@ const resolvers = {
     campaign: async (parent, { campaignName }) => {
       return Campaign.findOne({ campaignName });
     },
-    adventure: async () => {
-      return Adventure.find();
+    meetingLocations: async () => {
+      return MeetingLocations.find();
     },
+    nonDungeonLocations: async () => {
+      return NonDungeonLocations.find();
+    },
+    dungeonLocations: async () => {
+      return DungeonLocations.find();
+    },
+    climaxes: async () => {
+      return Climax.find();
+    }
   },
   Mutation: {
     addCampaign: async (parent, args) => {

@@ -144,24 +144,18 @@ const typeDefs = gql`
     worldImage: String
   }
 
-  type Locations {
-    id: ID
+  type IDOptions {
+    id: Int
     option: String
-  }
-
-  type Adventures {
-    meetingSelection: [Locations]
-    dungeonTypeLocation: [Locations]
-    nonDungeonTypeLocation: [Locations]
   }
 
   type Query {
     campaigns: [Campaign]
     campaign (campaignName: String!): Campaign
-  }
-
-  type Query {
-    adventure: Adventures
+    meetingLocations: [IDOptions]
+    climaxes: [IDOptions]
+    nonDungeonLocations: [IDOptions]
+    dungeonLocations: [IDOptions]
   }
 
   type Mutation {

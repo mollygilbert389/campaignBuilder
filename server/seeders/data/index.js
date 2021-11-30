@@ -1,38 +1,39 @@
-import mini_boss_data from "./miniBoss.json";
-import monster_data from "./monsters.json";
-import side_monster_data from "./sideMonster.json";
-import campaign_name_data from "./campaignNameData.json";
-import map_data from "./maps.json";
-import room_data from "./rooms.json";
-import government_data from "./govrenmentData.json";
-import world_data from "./physicalData.json";
-import adventure_data from "./adventureData.json";
-import climax_data from "./climaxData.json";
-import encounter_data from "./encounterData.json";
-import evil_NPC_data from "./evilNPCSubTypes.json";
-import faction_data from "./factionData.json";
-import goals_data from "./goalsData.json";
-import local_events_data from "./localEventData.json";
-import name_data from "./nameData.json";
-import NPC_data from "./NPCData.json";
-import patron_data from "./patronData.json";
-import physical_data from "./physicalData.json";
-import religion_data from "./religionData.json";
-import setback_data from "./setbackData.json";
-import side_quest_data from "./sideQuestData.json";
-import twist_data from "./twistData.json";
-import villain_data from "./villainData.json";
+const dungeon_locations_data = require("./dungeonTypeLocationData.json");
+const non_dungeon_locations_data = require("./nonDungeonTypeLocationData.json");
+const meeting_selection_data = require("./meetingSelectionData.json");
+const climax_data = require("./climaxData.json");
+const encounter_data = require("./encounterData.json");
+const evil_NPC_data = require("./evilNPCSubTypes.json");
+const faction_data = require("./factionData.json");
+const goals_data = require("./goalsData.json");
+const government_data = require("./govrenmentData.json");
+const local_events_data = require("./localEventData.json");
+const map_data = require("./mapData.json");
+const mini_boss_data = require("./miniBossData.json");
+const monster_data = require("./monsterData.json");
+const name_data = require("./nameData.json");
+const NPC_data = require("./NPCData.json");
+const patron_data = require("./patronData.json");
+const world_data = require("./physicalData.json");
+const religion_data = require("./religionData.json");
+const setback_data = require("./setbackData.json");
+const side_quest_data = require("./sideQuestData.json");
+const twist_data = require("./twistData.json");
+const villain_data = require("./villainData.json");
+const side_monster_data = require("./sideMonsterData.json");
+const room_data = require("./roomsData.json");
 
-export {
+module.exports = {
     mini_boss_data,
     monster_data,
     side_monster_data,
-    campaign_name_data,
     map_data,
     room_data,
     government_data,
     world_data,
-    adventure_data,
+    dungeon_locations_data,
+    non_dungeon_locations_data,
+    meeting_selection_data,
     climax_data,
     encounter_data,
     evil_NPC_data,
@@ -40,7 +41,6 @@ export {
     name_data,
     NPC_data,
     patron_data,
-    physical_data,
     religion_data,
     setback_data,
     side_quest_data,

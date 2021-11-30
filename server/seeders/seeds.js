@@ -1,11 +1,20 @@
 const faker = require('faker');
-const { adventure_data } = require("./data")
+const { meeting_selection_data, climax_data, non_dungeon_locations_data } = require("./data")
 const db = require('../config/connection');
-const { Campaign, Adventure } = require('../models');
-
+const { Campaign, MeetingLocations, NonDungeonLocations, Climax } = require('../models');
 
 db.once('open', async () => {
   await Campaign.deleteMany({});
+  await Climax.deleteMany({});
+  await MeetingLocations.deleteMany({});
+  await NonDungeonLocations.deleteMany({});
+
+  await Campaign.collection.insertMany(campaignData);
+  await Climax.collection.insertMany(climax_data);
+  await MeetingLocations.collection.insertMany(meeting_selection_data);
+  await NonDungeonLocations.collection.insertMany(non_dungeon_locations_data);
+
+
   const campaignData = [];
 
   for (let i = 0; i < 3; i++) {
@@ -394,8 +403,6 @@ db.once('open', async () => {
     });
 
   }
-  await Campaign.collection.insertMany(campaignData);
-  await Adventure.collection.insertMany(adventure_data);
 
   console.log('all done!');
   process.exit(0);

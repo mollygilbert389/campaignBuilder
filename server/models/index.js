@@ -1,5 +1,6 @@
 const Campaign = require('./Campaign');
-const Adventure = require("./Adventure");
+const MeetingLocations = require("./MeetingLocations");
+const NonDungeonLocations = require("./NonDungeonLocations")
 const Climax = require("./Climax");
 const Encounter = require("./Encounter");
 const EvilNPC = require("./EvilNPC");
@@ -22,7 +23,6 @@ const Villain = require("./Villain");
 
 module.exports = { 
     Campaign, 
-    Adventure, 
     Climax, 
     Encounter, 
     EvilNPC, 
@@ -41,5 +41,7 @@ module.exports = {
     Setback, 
     SideQuest, 
     Twists,
-    Villain
+    Villain,
+    MeetingLocations,
+    NonDungeonLocations
 };
