@@ -1,1 +1,9 @@
-[{ "id": 1, "option": "Protect an NPC or Object"},{"id": 2, "option": "Retrieve an object"},{"id": 3, "option": "Run a guantlet"}, {"id": 4, "option": "Sneak In"}, {"id": 5, "option":"Stop a ritual"}, {"id": 6, "option":"Take out a single target"},{"id": 7, "option":"Investiage an area"}]
+[
+  { "id": 1, "option": "Protect an NPC or Object" },
+  { "id": 2, "option": "Retrieve an object" },
+  { "id": 3, "option": "Run a guantlet" },
+  { "id": 4, "option": "Sneak In" },
+  { "id": 5, "option": "Stop a ritual" },
+  { "id": 6, "option": "Take out a single target" },
+  { "id": 7, "option": "Investiage an area" }
+]

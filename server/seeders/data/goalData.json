@@ -1,71 +1,243 @@
 [
-{"id":1,"option":"Stop the dungeon's monstrous inhabitants from raiding the surface world", "type": "dungeon"},
-{"id":2,"option":"Foil a villain's evil plan", "type": "dungeon"},
-{"id":3,"option":"Destroy a magical threat inside the dungeon", "type": "dungeon"},
-{"id":4,"option":"Acquire treasue", "type": "dungeon"},
-{"id":5,"option":"Find a particular item for a specefic purpose", "type": "dungeon"},
-{"id":6,"option":"Retrieve a stolen item hidden in the dungeon", "type": "dungeon"},
-{"id":7,"option":"Find information needed for a special purpose", "type": "dungeon"},
-{"id":8,"option":"Rescue a captive", "type": "dungeon"},
-{"id":9,"option":"Discover the fate of a previous adventuring party", "type": "dungeon"},
-{"id":10,"option":"Find an NPC who disappeared in the area", "type": "dungeon"},
-{"id":11,"option":"Slay a dragon or some other challenging monster", "type": "dungeon"},
-{"id":12,"option":"Discover the nature or origin of a strange location or phenomenon", "type": "dungeon"},
-{"id":13,"option":"Pursue fleeing foes taking refuge in the dungeon", "type": "dungeon"},
-{"id":14,"option":"Escape from captivity in the dungeon", "type": "dungeon"},
-{"id":15,"option":"Clear a ruin so it can be rebuilt of reoccupied", "type": "dungeon"},
-{"id":16,"option":"Discover why a villain is interested in the dungeon", "type": "dungeon"},
-{"id":17,"option":"Win a bet or complete a rite of passage by surviving the dungeon for a certain amount of time", "type": "dungeon"},
-{"id":18,"option":"Parley with the villain in the dungeon", "type": "dungeon"},
-{"id":19,"option":"Hide from a threat outside the dungeon", "type": "dungeon"},
-{"id":20,"option":"Locate a dungeon or other site of interest", "type": "wilderness"},
-{"id":21,"option":"Assess the scope of a natural or unnatural disaster", "type": "wilderness"},
-{"id":22,"option":"Escort an NPC to a destination", "type": "wilderness"},
-{"id":23,"option":"Arrive at a destination without being seen by the villain's forces", "type": "wilderness"},
-{"id":24,"option":"Stop monsters from raiding caravans and farms", "type": "wilderness"},
-{"id":25,"option":"Establish trade with a distant town", "type": "wilderness"},
-{"id":26,"option":"Protect a caravan traveling to a distant town", "type": "wilderness"},
-{"id":27,"option":"Map a new land", "type": "wilderness"},
-{"id":28,"option":"Find a new place and establish a colony", "type": "wilderness"},
-{"id":29,"option":"Find a natural resource", "type": "wilderness"},
-{"id":30,"option":"Hunt a specific monster", "type": "wilderness"},
-{"id":31,"option":"Return home from a distant place", "type": "wilderness"},
-{"id":32,"option":"Obtain information from a reclusive hermit", "type": "wilderness"},
-{"id":33,"option":"Find an object that was lost in the wilds", "type": "wilderness"},
-{"id":34,"option":"Discover the fate of a missing group of explorers", "type": "wilderness"},
-{"id":35,"option":"Pursue fleeing foes", "type": "wilderness"},
-{"id":36,"option":"Assess the size of an approaching army", "type": "wilderness"},
-{"id":37,"option":"Escape the reign of a tyrant", "type": "wilderness"},
-{"id":38,"option":"Protect a wilderness site from attackers", "type": "wilderness"},
-{"id":39,"option":"Seize control of a fortified location such as a fortress, town, or ship", "type": "other"},
-{"id":40,"option":"Defend o location from attackers", "type": "other"},
-{"id":41,"option":"Retrieeve an object fro inside a secure location in a settlement", "type": "other"},
-{"id":42,"option":"Retrieve an object from a caravan", "type": "other"},
-{"id":43,"option":"Salvage an object or goods from a lost vessel or caravan", "type": "other"},
-{"id":44,"option":"Break a prisoner out of jail or prison camp", "type": "other"},
-{"id":45,"option":"Escape from a jail or prison camp", "type": "other"},
-{"id":46,"option":"Successfully travel through an obstacle course to gain recognition or reward", "type": "other"},
-{"id":47,"option":"Infiltrate a fortified location", "type": "other"},
-{"id":48,"option":"Find the source of strange occurrences in a haunted house or other location", "type": "other"},
-{"id":49,"option":"Interfere with the operation of a business", "type": "other"},
-{"id":50,"option":"Rescue a character, monster, or object from a natural or unnatural disaster", "type": "other"},
-{"id":51,"option":"Bring the villain to justice", "type": "event"},
-{"id":52,"option":"Clear the name of an innocent NPC",  "type": "event"},
-{"id":53,"option":"Protect or hide an NPC", "type": "event"},
-{"id":54,"option":"Protect an object", "type": "event"},
-{"id":55,"option":"Discover the nature and origin of a strange phenomenon that might be the villain's doing", "type": "event"},
-{"id":56,"option":"Find a wanted fugitive", "type": "event"},
-{"id":57,"option":"Overthrow a tyrant", "type": "event"},
-{"id":58,"option":"Uncover a consiracy theory to overthrow a ruler", "type": "event"},
-{"id":59,"option":"Negotiate peace between enemy nations or feuding families", "type": "event"},
-{"id":60,"option":"Secure aid from a ruler or council", "type": "event"},
-{"id":61,"option":"Help a villain find redemption", "type": "event"},
-{"id":62,"option":"Parlay with a villain", "type": "event"},
-{"id":63,"option":"Smuggle weapons to rebel forces", "type": "event"},
-{"id":64,"option":"Stop a band of smugglers", "type": "event"},
-{"id":65,"option":"Gather intellegence on an enemy force", "type": "event"},
-{"id":66,"option":"Win a tournament", "type": "event"},
-{"id":67,"option":"Determine the villain's identity", "type": "event"},
-{"id":68,"option":"Locate a stolen item", "type": "event"},
-{"id":69,"option":"Make sure a wedding goes off without a hitch", "type": "event"}
+  {
+    "id": 1,
+    "option": "Stop the dungeon's monstrous inhabitants from raiding the surface world",
+    "type": "dungeon"
+  },
+  { "id": 2, "option": "Foil a villain's evil plan", "type": "dungeon" },
+  {
+    "id": 3,
+    "option": "Destroy a magical threat inside the dungeon",
+    "type": "dungeon"
+  },
+  { "id": 4, "option": "Acquire treasue", "type": "dungeon" },
+  {
+    "id": 5,
+    "option": "Find a particular item for a specefic purpose",
+    "type": "dungeon"
+  },
+  {
+    "id": 6,
+    "option": "Retrieve a stolen item hidden in the dungeon",
+    "type": "dungeon"
+  },
+  {
+    "id": 7,
+    "option": "Find information needed for a special purpose",
+    "type": "dungeon"
+  },
+  { "id": 8, "option": "Rescue a captive", "type": "dungeon" },
+  {
+    "id": 9,
+    "option": "Discover the fate of a previous adventuring party",
+    "type": "dungeon"
+  },
+  {
+    "id": 10,
+    "option": "Find an NPC who disappeared in the area",
+    "type": "dungeon"
+  },
+  {
+    "id": 11,
+    "option": "Slay a dragon or some other challenging monster",
+    "type": "dungeon"
+  },
+  {
+    "id": 12,
+    "option": "Discover the nature or origin of a strange location or phenomenon",
+    "type": "dungeon"
+  },
+  {
+    "id": 13,
+    "option": "Pursue fleeing foes taking refuge in the dungeon",
+    "type": "dungeon"
+  },
+  {
+    "id": 14,
+    "option": "Escape from captivity in the dungeon",
+    "type": "dungeon"
+  },
+  {
+    "id": 15,
+    "option": "Clear a ruin so it can be rebuilt of reoccupied",
+    "type": "dungeon"
+  },
+  {
+    "id": 16,
+    "option": "Discover why a villain is interested in the dungeon",
+    "type": "dungeon"
+  },
+  {
+    "id": 17,
+    "option": "Win a bet or complete a rite of passage by surviving the dungeon for a certain amount of time",
+    "type": "dungeon"
+  },
+  {
+    "id": 18,
+    "option": "Parley with the villain in the dungeon",
+    "type": "dungeon"
+  },
+  {
+    "id": 19,
+    "option": "Hide from a threat outside the dungeon",
+    "type": "dungeon"
+  },
+  {
+    "id": 20,
+    "option": "Locate a dungeon or other site of interest",
+    "type": "wilderness"
+  },
+  {
+    "id": 21,
+    "option": "Assess the scope of a natural or unnatural disaster",
+    "type": "wilderness"
+  },
+  {
+    "id": 22,
+    "option": "Escort an NPC to a destination",
+    "type": "wilderness"
+  },
+  {
+    "id": 23,
+    "option": "Arrive at a destination without being seen by the villain's forces",
+    "type": "wilderness"
+  },
+  {
+    "id": 24,
+    "option": "Stop monsters from raiding caravans and farms",
+    "type": "wilderness"
+  },
+  {
+    "id": 25,
+    "option": "Establish trade with a distant town",
+    "type": "wilderness"
+  },
+  {
+    "id": 26,
+    "option": "Protect a caravan traveling to a distant town",
+    "type": "wilderness"
+  },
+  { "id": 27, "option": "Map a new land", "type": "wilderness" },
+  {
+    "id": 28,
+    "option": "Find a new place and establish a colony",
+    "type": "wilderness"
+  },
+  { "id": 29, "option": "Find a natural resource", "type": "wilderness" },
+  { "id": 30, "option": "Hunt a specific monster", "type": "wilderness" },
+  {
+    "id": 31,
+    "option": "Return home from a distant place",
+    "type": "wilderness"
+  },
+  {
+    "id": 32,
+    "option": "Obtain information from a reclusive hermit",
+    "type": "wilderness"
+  },
+  {
+    "id": 33,
+    "option": "Find an object that was lost in the wilds",
+    "type": "wilderness"
+  },
+  {
+    "id": 34,
+    "option": "Discover the fate of a missing group of explorers",
+    "type": "wilderness"
+  },
+  { "id": 35, "option": "Pursue fleeing foes", "type": "wilderness" },
+  {
+    "id": 36,
+    "option": "Assess the size of an approaching army",
+    "type": "wilderness"
+  },
+  { "id": 37, "option": "Escape the reign of a tyrant", "type": "wilderness" },
+  {
+    "id": 38,
+    "option": "Protect a wilderness site from attackers",
+    "type": "wilderness"
+  },
+  {
+    "id": 39,
+    "option": "Seize control of a fortified location such as a fortress, town, or ship",
+    "type": "other"
+  },
+  { "id": 40, "option": "Defend o location from attackers", "type": "other" },
+  {
+    "id": 41,
+    "option": "Retrieeve an object fro inside a secure location in a settlement",
+    "type": "other"
+  },
+  { "id": 42, "option": "Retrieve an object from a caravan", "type": "other" },
+  {
+    "id": 43,
+    "option": "Salvage an object or goods from a lost vessel or caravan",
+    "type": "other"
+  },
+  {
+    "id": 44,
+    "option": "Break a prisoner out of jail or prison camp",
+    "type": "other"
+  },
+  { "id": 45, "option": "Escape from a jail or prison camp", "type": "other" },
+  {
+    "id": 46,
+    "option": "Successfully travel through an obstacle course to gain recognition or reward",
+    "type": "other"
+  },
+  { "id": 47, "option": "Infiltrate a fortified location", "type": "other" },
+  {
+    "id": 48,
+    "option": "Find the source of strange occurrences in a haunted house or other location",
+    "type": "other"
+  },
+  {
+    "id": 49,
+    "option": "Interfere with the operation of a business",
+    "type": "other"
+  },
+  {
+    "id": 50,
+    "option": "Rescue a character, monster, or object from a natural or unnatural disaster",
+    "type": "other"
+  },
+  { "id": 51, "option": "Bring the villain to justice", "type": "event" },
+  { "id": 52, "option": "Clear the name of an innocent NPC", "type": "event" },
+  { "id": 53, "option": "Protect or hide an NPC", "type": "event" },
+  { "id": 54, "option": "Protect an object", "type": "event" },
+  {
+    "id": 55,
+    "option": "Discover the nature and origin of a strange phenomenon that might be the villain's doing",
+    "type": "event"
+  },
+  { "id": 56, "option": "Find a wanted fugitive", "type": "event" },
+  { "id": 57, "option": "Overthrow a tyrant", "type": "event" },
+  {
+    "id": 58,
+    "option": "Uncover a consiracy theory to overthrow a ruler",
+    "type": "event"
+  },
+  {
+    "id": 59,
+    "option": "Negotiate peace between enemy nations or feuding families",
+    "type": "event"
+  },
+  { "id": 60, "option": "Secure aid from a ruler or council", "type": "event" },
+  { "id": 61, "option": "Help a villain find redemption", "type": "event" },
+  { "id": 62, "option": "Parlay with a villain", "type": "event" },
+  { "id": 63, "option": "Smuggle weapons to rebel forces", "type": "event" },
+  { "id": 64, "option": "Stop a band of smugglers", "type": "event" },
+  {
+    "id": 65,
+    "option": "Gather intellegence on an enemy force",
+    "type": "event"
+  },
+  { "id": 66, "option": "Win a tournament", "type": "event" },
+  { "id": 67, "option": "Determine the villain's identity", "type": "event" },
+  { "id": 68, "option": "Locate a stolen item", "type": "event" },
+  {
+    "id": 69,
+    "option": "Make sure a wedding goes off without a hitch",
+    "type": "event"
+  }
 ]

@@ -1,15 +1,15 @@
 [
-  {"id": 1 ,"option": "Cave"},
-  {"id": 2 ,"option": "Forest"},
-  {"id": 3 ,"option": "Jungle"},
-  {"id": 4 ,"option": "Lake"},
-  {"id": 5 ,"option": "Meadow"},
-  {"id": 6 ,"option": "Mountains"},
-  {"id": 7 ,"option": "Oasis"},
-  {"id": 8 ,"option": "Ocean"},
-  {"id": 9 ,"option": "Plains"},
-  {"id": 10 ,"option": "Ruins"},
-  {"id": 11 ,"option": "Swamp"},
-  {"id": 12 ,"option": "Tomb"},
-  {"id": 13 ,"option": "Volcano"}
+  { "id": 1, "option": "Cave" },
+  { "id": 2, "option": "Forest" },
+  { "id": 3, "option": "Jungle" },
+  { "id": 4, "option": "Lake" },
+  { "id": 5, "option": "Meadow" },
+  { "id": 6, "option": "Mountains" },
+  { "id": 7, "option": "Oasis" },
+  { "id": 8, "option": "Ocean" },
+  { "id": 9, "option": "Plains" },
+  { "id": 10, "option": "Ruins" },
+  { "id": 11, "option": "Swamp" },
+  { "id": 12, "option": "Tomb" },
+  { "id": 13, "option": "Volcano" }
 ]

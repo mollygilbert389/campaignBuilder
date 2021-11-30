@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "option": "Good Ideals",
+    "list": [
+      "Beauty",
+      "Charity",
+      "Greater Good",
+      "Life",
+      "Respect",
+      "Self-sacrafice"
+    ]
+  },
+  {
+    "id": 2,
+    "option": "Evil Ideals",
+    "list": ["Domination", "Greed", "Might", "Pain", "Retribution", "Slaughter"]
+  },
+  {
+    "id": 3,
+    "option": "Lawful Ideals",
+    "list": [
+      "Community",
+      "Fairness",
+      "Honor",
+      "Logic",
+      "Responsibility",
+      "Tradition"
+    ]
+  },
+  {
+    "id": 4,
+    "option": "Chaotic Ideals",
+    "list": [
+      "Change",
+      "Creativity",
+      "Freedom",
+      "Independence",
+      "No limits",
+      "Whimsey"
+    ]
+  },
+  {
+    "id": 5,
+    "option": "Neutral Ideals",
+    "list": [
+      "Balance",
+      "Knowledge",
+      "Live and let live",
+      "Moderation",
+      "Neutrality",
+      "People"
+    ]
+  },
+  {
+    "id": 6,
+    "option": "Other Ideals",
+    "list": [
+      "Aspiration",
+      "Discovery",
+      "Glory",
+      "Nation",
+      "Redemption",
+      "Self-knowledge"
+    ]
+  }
+]

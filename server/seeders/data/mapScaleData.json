@@ -1,5 +1,5 @@
 [
-  {"id": 1 ,"option": "Village"},
-  {"id": 2 ,"option": "Town"},
-  {"id": 3 ,"option": "City"}
+  { "id": 1, "option": "Village" },
+  { "id": 2, "option": "Town" },
+  { "id": 3, "option": "City" }
 ]

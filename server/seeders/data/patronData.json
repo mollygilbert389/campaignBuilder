@@ -1,5 +1,68 @@
-{
-  "patronMannerisms": [{"id":1,"option":"Prone to singing, whistling, or humming quietly"},{"id":2,"option":"Speaks in rhyme or some other particular way"},{"id":3,"option":"Particularly low or high voice"},{"id":4,"option":"Slurs words, lisps, or stutters"},{"id":5,"option":"Enunciateas overly clearly"},{"id":6,"option":"Speaks loudly"},{"id":7,"option":"Whispers"},{"id":8,"option":"Uses flowery speech or long words"},{"id":9,"option":"Frequently uses the wrong word"},{"id":10,"option":"Uses colorful oaths and exclaimations"},{"id":11,"option":"Makes constant jokes or puns"},{"id":12,"option":"Prone to predictions of doom"},{"id":13,"option":"Fidgets"},{"id":14,"option":"Squints"},{"id":15,"option":"Stares into the distance"},{"id":16,"option":"Chews something"},{"id":17,"option":"Paces"},{"id":18,"option":"Taps fingers"},{"id":19,"option":"Bites Fingernails"},{"id":20,"option":"Twirls hair or tugs beard"}],
-  "patronTraits": [{"id":1,"option":"Argumentative"},{"id":2,"option":"Arrogant"},{"id":3,"option":"Blustering"},{"id":4,"option":"Rude"},{"id":5,"option":"Cautious"},{"id":6,"option":"Friendly"},{"id":7,"option":"Honest"},{"id":8,"option":"Hot Tempered"},{"id":9,"option":"Irritable"},{"id":10,"option":"Ponderous"},{"id":11,"option":"Quiet"},{"id":12,"option":"Suspicious"},{"id":12,"option":"Beautiful"},{"id":12,"option":"Humorous"},{"id":12,"option":"Generous"}],
-  "patronChoices": ["Retired Adventurer","Local Ruler","Military Officer","Temple Official","Sage","Respected Elder","Deity or Celestial","Mysterious Fey","Old Friend","Former Teacher","Parent or Family Member","Desprate Commoner","Embattled Merchant","Villain posing as a patron","Something else"]
-}
+[
+  {
+    "id": 1,
+    "option": "Prone to singing, whistling, or humming quietly",
+    "type": "mannerism"
+  },
+  {
+    "id": 2,
+    "option": "Speaks in rhyme or some other particular way",
+    "type": "mannerism"
+  },
+  { "id": 3, "option": "Particularly low or high voice", "type": "mannerism" },
+  { "id": 4, "option": "Slurs words, lisps, or stutters", "type": "mannerism" },
+  { "id": 5, "option": "Enunciateas overly clearly", "type": "mannerism" },
+  { "id": 6, "option": "Speaks loudly", "type": "mannerism" },
+  { "id": 7, "option": "Whispers", "type": "mannerism" },
+  {
+    "id": 8,
+    "option": "Uses flowery speech or long words",
+    "type": "mannerism"
+  },
+  { "id": 9, "option": "Frequently uses the wrong word", "type": "mannerism" },
+  {
+    "id": 10,
+    "option": "Uses colorful oaths and exclaimations",
+    "type": "mannerism"
+  },
+  { "id": 11, "option": "Makes constant jokes or puns", "type": "mannerism" },
+  { "id": 12, "option": "Prone to predictions of doom", "type": "mannerism" },
+  { "id": 13, "option": "Fidgets", "type": "mannerism" },
+  { "id": 14, "option": "Squints", "type": "mannerism" },
+  { "id": 15, "option": "Stares into the distance", "type": "mannerism" },
+  { "id": 16, "option": "Chews something", "type": "mannerism" },
+  { "id": 17, "option": "Paces", "type": "mannerism" },
+  { "id": 18, "option": "Taps fingers", "type": "mannerism" },
+  { "id": 19, "option": "Bites Fingernails", "type": "mannerism" },
+  { "id": 20, "option": "Twirls hair or tugs beard", "type": "mannerism" },
+  { "id": 21, "option": "Argumentative", "type": "trait" },
+  { "id": 22, "option": "Arrogant", "type": "trait" },
+  { "id": 23, "option": "Blustering", "type": "trait" },
+  { "id": 24, "option": "Rude", "type": "trait" },
+  { "id": 25, "option": "Cautious", "type": "trait" },
+  { "id": 26, "option": "Friendly", "type": "trait" },
+  { "id": 27, "option": "Honest", "type": "trait" },
+  { "id": 28, "option": "Hot Tempered", "type": "trait" },
+  { "id": 29, "option": "Irritable", "type": "trait" },
+  { "id": 30, "option": "Ponderous", "type": "trait" },
+  { "id": 31, "option": "Quiet", "type": "trait" },
+  { "id": 32, "option": "Suspicious", "type": "trait" },
+  { "id": 33, "option": "Beautiful", "type": "trait" },
+  { "id": 34, "option": "Humorous", "type": "trait" },
+  { "id": 35, "option": "Generous", "type": "trait" },
+  { "id": 36, "option": "Retired Adventurer", "type": "choice" },
+  { "id": 37, "option": "Local Ruler", "type": "choice" },
+  { "id": 38, "option": "Military Officer", "type": "choice" },
+  { "id": 39, "option": "Temple Official", "type": "choice" },
+  { "id": 40, "option": "Sage", "type": "choice" },
+  { "id": 41, "option": "Respected Elder", "type": "choice" },
+  { "id": 42, "option": "Deity or Celestial", "type": "choice" },
+  { "id": 43, "option": "Mysterious Fey", "type": "choice" },
+  { "id": 44, "option": "Old Friend", "type": "choice" },
+  { "id": 45, "option": "Former Teacher", "type": "choice" },
+  { "id": 46, "option": "Parent or Family Member", "type": "choice" },
+  { "id": 47, "option": "Desprate Commoner", "type": "choice" },
+  { "id": 48, "option": "Embattled Merchant", "type": "choice" },
+  { "id": 49, "option": "Villain posing as a patron", "type": "choice" },
+  { "id": 50, "option": "Something else", "type": "choice" }
+]

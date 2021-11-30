@@ -1,9 +1,9 @@
-[ 
-  {"id": 1, "option": "Celestial"},
-  {"id": 2, "option": "Common"},
-  {"id": 3, "option": "Draconic"},
-  {"id": 4, "option": "Druidic"},
-  {"id": 5, "option": "Dwarvish"},
-  {"id": 6, "option": "Elvish"},
-  {"id": 7, "option": "Infernal"}
+[
+  { "id": 1, "option": "Celestial" },
+  { "id": 2, "option": "Common" },
+  { "id": 3, "option": "Draconic" },
+  { "id": 4, "option": "Druidic" },
+  { "id": 5, "option": "Dwarvish" },
+  { "id": 6, "option": "Elvish" },
+  { "id": 7, "option": "Infernal" }
 ]

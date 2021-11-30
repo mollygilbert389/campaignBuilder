@@ -1,1 +1,36 @@
-[{"id":1,"option":"The adventurers are racing against other creatures with the same or opposite goals"},{"id":2,"option":"The adventurers become responsible for the safety of a noncombatant NPC"},{"id":3,"option":"The adventurers are prohibited from killing the villain, but the villain has no compunctions about killing them"},{"id":4,"option":"The adventurers have a time limit"},{"id":5,"option":"The adventurers have received false or extraneous information"},{"id":6,"option":"Completeting an adventure goal fulfills a prophecy or prevents the fulfillment of a prophecy"},{"id":7,"option":"The adventurers have two different goals, but they can only complete one"},{"id":8,"option":"Completing the goal secretly helps the villain"},{"id":9,"option":"The adventurers must cooperate with a known enemy to achieve a goal"},{"id":10,"option":"The adventurers are under magical compulsion to complete their goal"}]
+[
+  {
+    "id": 1,
+    "option": "The adventurers are racing against other creatures with the same or opposite goals"
+  },
+  {
+    "id": 2,
+    "option": "The adventurers become responsible for the safety of a noncombatant NPC"
+  },
+  {
+    "id": 3,
+    "option": "The adventurers are prohibited from killing the villain, but the villain has no compunctions about killing them"
+  },
+  { "id": 4, "option": "The adventurers have a time limit" },
+  {
+    "id": 5,
+    "option": "The adventurers have received false or extraneous information"
+  },
+  {
+    "id": 6,
+    "option": "Completeting an adventure goal fulfills a prophecy or prevents the fulfillment of a prophecy"
+  },
+  {
+    "id": 7,
+    "option": "The adventurers have two different goals, but they can only complete one"
+  },
+  { "id": 8, "option": "Completing the goal secretly helps the villain" },
+  {
+    "id": 9,
+    "option": "The adventurers must cooperate with a known enemy to achieve a goal"
+  },
+  {
+    "id": 10,
+    "option": "The adventurers are under magical compulsion to complete their goal"
+  }
+]

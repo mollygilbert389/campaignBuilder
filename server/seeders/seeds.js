@@ -27,7 +27,14 @@ const {
   world_shaking_event_data,
   name_data,
   campaign_name_data,
-  side_quest_data
+  room_data,
+  evil_NPC_suptype_data,
+  NPC_data,
+  NPC_ideal_data,
+  patron_data,
+  villain_weakness_data,
+  villain_objective_data,
+  villain_method_data
 } = require("./data")
 const db = require('../config/connection');
 const { 
@@ -58,7 +65,15 @@ const {
   Traps,
   WorldShakingEvents,
   Names,
-  CampaignNames
+  CampaignNames,
+  Rooms,
+  EvilNPCSubtypes,
+  NPCs,
+  NPCIdeals,
+  Patron,
+  VillainWeaknesses,
+  VillainObjectives,
+  VillainMethods
 } = require('../models');
 
 db.once('open', async () => {
@@ -90,6 +105,14 @@ db.once('open', async () => {
   await WorldShakingEvents.deleteMany({});
   await Names.deleteMany({});
   await CampaignNames.deleteMany({});
+  await Rooms.deleteMany({});
+  await EvilNPCSubtypes.deleteMany({});
+  await NPCs.deleteMany({});
+  await NPCIdeals.deleteMany({});
+  await Patron.deleteMany({});
+  await VillainWeaknesses.deleteMany({});
+  await VillainObjectives.deleteMany({});
+  await VillainMethods.deleteMany({});
  
   await Climax.collection.insertMany(climax_data);
   await MeetingLocations.collection.insertMany(meeting_location_data);
@@ -118,6 +141,14 @@ db.once('open', async () => {
   await WorldShakingEvents.collection.insertMany(world_shaking_event_data);
   await Names.collection.insertMany(name_data);
   await CampaignNames.collection.insertMany(campaign_name_data);
+  await Rooms.collection.insertMany(room_data);
+  await EvilNPCSubtypes.collection.insertMany(evil_NPC_suptype_data);
+  await NPCs.collection.insertMany(NPC_data);
+  await NPCIdeals.collection.insertMany(NPC_ideal_data);
+  await Patron.collection.insertMany(patron_data);
+  await VillainWeaknesses.collection.insertMany(villain_weakness_data);
+  await VillainObjectives.collection.insertMany(villain_objective_data);
+  await VillainMethods.collection.insertMany(villain_method_data);
 
   const campaignData = [];
 

@@ -27,7 +27,15 @@ const {
   Traps,
   WorldShakingEvents,
   Names,
-  CampaignNames
+  CampaignNames,
+  Rooms,
+  EvilNPCSubtypes,
+  NPCs,
+  NPCIdeals,
+  Patron,
+  VillainWeaknesses,
+  VillainObjectives,
+  VillainMethods
 } = require('../models');
 
 const resolvers = {
@@ -121,6 +129,30 @@ const resolvers = {
     },
     campaignNames: async () => {
       return CampaignNames.find();
+    },
+    rooms: async () => {
+      return Rooms.find();
+    },
+    evilNPCSubtypes: async () => {
+      return EvilNPCSubtypes.find();
+    },
+    npcs: async () => {
+      return NPCs.find();
+    },
+    npcIdeals: async () => {
+      return NPCIdeals.find();
+    },
+    patron: async () => {
+      return Patron.find();
+    },
+    villainWeaknesses: async () => {
+      return VillainWeaknesses.find();
+    },
+    villainObjectives: async () => {
+      return VillainObjectives.find();
+    },
+    villainMethods: async () => {
+      return VillainMethods.find();
     },
   },
   Mutation: {

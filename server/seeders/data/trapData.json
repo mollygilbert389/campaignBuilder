@@ -1,13 +1,13 @@
 [
-  {"id":1,"option":"Collapsing Roof", "type": "trap"},
-  {"id":2,"option":"Falling Net", "type": "trap"},
-  {"id":3,"option":"Fire-Breathing Statue", "type": "trap"},
-  {"id":4,"option":"Simple Pit", "type": "trap"},
-  {"id":5,"option":"Hidden Pit", "type": "trap"},
-  {"id":6,"option":"Locking Pit", "type": "trap"},
-  {"id":7,"option":"Spiked Pit", "type": "trap"},
-  {"id":8,"option":"Poison Darts", "type": "trap"},
-  {"id":9,"option":"Poison Needle", "type": "trap"},
-  {"id":10,"option":"Rolling Sphere", "type": "trap"},
-  {"id":11,"option":"Sphere of Annihilation", "type": "trap"}
+  { "id": 1, "option": "Collapsing Roof", "type": "trap" },
+  { "id": 2, "option": "Falling Net", "type": "trap" },
+  { "id": 3, "option": "Fire-Breathing Statue", "type": "trap" },
+  { "id": 4, "option": "Simple Pit", "type": "trap" },
+  { "id": 5, "option": "Hidden Pit", "type": "trap" },
+  { "id": 6, "option": "Locking Pit", "type": "trap" },
+  { "id": 7, "option": "Spiked Pit", "type": "trap" },
+  { "id": 8, "option": "Poison Darts", "type": "trap" },
+  { "id": 9, "option": "Poison Needle", "type": "trap" },
+  { "id": 10, "option": "Rolling Sphere", "type": "trap" },
+  { "id": 11, "option": "Sphere of Annihilation", "type": "trap" }
 ]

@@ -1,10 +1,10 @@
 [
-  {"id": 1 ,"option": "Aquatic"},
-  {"id": 2 ,"option": "Desert"},
-  {"id": 3 ,"option": "Grassland"},
-  {"id": 4 ,"option": "Savanna"},
-  {"id": 5 ,"option": "Taiga"},
-  {"id": 6 ,"option": "Temperate Forest"},
-  {"id": 7 ,"option": "Tropical Rainforest"},
-  {"id": 8 ,"option": "Tundra"}
+  { "id": 1, "option": "Aquatic" },
+  { "id": 2, "option": "Desert" },
+  { "id": 3, "option": "Grassland" },
+  { "id": 4, "option": "Savanna" },
+  { "id": 5, "option": "Taiga" },
+  { "id": 6, "option": "Temperate Forest" },
+  { "id": 7, "option": "Tropical Rainforest" },
+  { "id": 8, "option": "Tundra" }
 ]

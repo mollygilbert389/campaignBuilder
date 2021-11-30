@@ -1,0 +1,157 @@
+[
+  {
+    "id": 1,
+    "category": "Agricultural Devistation",
+    "methods": ["Blight", "Crop Failure", "Drought", "Famine"]
+  },
+  { "id": 2, "category": "Assult or Beatings", "methods": [] },
+  { "id": 3, "category": "Bounty Hunting or Assassination", "methods": [] },
+  {
+    "id": 4,
+    "category": "Captivity or coercion",
+    "methods": [
+      "Briberey",
+      "Enticement",
+      "Eviction",
+      "Imprisionment",
+      "Kidnapping",
+      "Legal intimidation",
+      "Press gangs",
+      "Shackling",
+      "Slavery",
+      "Threats or harassment"
+    ]
+  },
+  {
+    "id": 5,
+    "category": "Confidence scams",
+    "methods": [
+      "Briberey",
+      "Enticement",
+      "Eviction",
+      "Imprisionment",
+      "Kidnapping",
+      "Legal intimidation",
+      "Press gangs",
+      "Shackling",
+      "Slavery",
+      "Threats or harassment"
+    ]
+  },
+  {
+    "id": 6,
+    "category": "Deflamation",
+    "methods": [
+      "Framing",
+      "Gossiping or Slander",
+      "Humiliation",
+      "Libel or insults",
+      "Kidnapping",
+      "Legal intimidation"
+    ]
+  },
+  { "id": 7, "category": "Deuling", "methods": [] },
+  {
+    "id": 8,
+    "category": "Execution",
+    "methods": [
+      "Beheading",
+      "Burning at the stake",
+      "Burying alive",
+      "Crucifixion",
+      "Drawing and quartering",
+      "Hanging",
+      "Impalement",
+      "Sacrafice"
+    ]
+  },
+  { "id": 9, "category": "Impresonation or disguise", "methods": [] },
+  { "id": 10, "category": "Lying or perjury", "methods": [] },
+  {
+    "id": 11,
+    "category": "Magical mayhem",
+    "methods": [
+      "Hauntings",
+      "Illusions",
+      "Infernal bargins",
+      "Mind control",
+      "Petrification",
+      "Raising or animating the dead",
+      "Summoning monsters",
+      "Weather control"
+    ]
+  },
+  {
+    "id": 12,
+    "category": "Murder",
+    "methods": [
+      "Assassination",
+      "Cannibalism",
+      "Dismemberment",
+      "Drowning",
+      "Electrocution",
+      "Euthanasia",
+      "Disease",
+      "Poisoning",
+      "Stabbing",
+      "Strangulation or suffocation"
+    ]
+  },
+  { "id": 13, "category": "Neglect", "methods": [] },
+  {
+    "id": 14,
+    "category": "Politics",
+    "methods": [
+      "Betrayal or treason",
+      "Conspiracy",
+      "Espionage or spying",
+      "Genocide",
+      "Oppression",
+      "Raising Taxes"
+    ]
+  },
+  {
+    "id": 15,
+    "category": "Religion",
+    "methods": ["Curses", "Desecration", "False Gods", "Heresy or cults"]
+  },
+  { "id": 16, "category": "Stalking", "methods": [] },
+  {
+    "id": 17,
+    "category": "Theft of Property or Crime",
+    "methods": [
+      "Arson",
+      "Blackmail or extortion",
+      "Burglary",
+      "Counterfeiting",
+      "Highway robbery",
+      "Looting",
+      "Mugging",
+      "Poaching",
+      "Seizing property",
+      "Smuggling"
+    ]
+  },
+  {
+    "id": 18,
+    "category": "Torture",
+    "methods": ["Acid", "Blinding", "Racking", "Thumbscrews", "Whipping"]
+  },
+  {
+    "id": 19,
+    "category": "Vice",
+    "methods": ["Adultery", "Drugs or alcohol", "Gambling", "Seduction"]
+  },
+  {
+    "id": 20,
+    "category": "Warfare",
+    "methods": [
+      "Ambush",
+      "Invasion",
+      "Massacre",
+      "Mercenaries",
+      "Rebellion",
+      "Terrorism"
+    ]
+  }
+]

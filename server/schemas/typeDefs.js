@@ -214,6 +214,33 @@ const typeDefs = gql`
     possible: [IDOptions]
   }
 
+  type RoomData {
+    id: Int
+    name: String
+    image: String
+    rooms: String
+    world: [String]
+    type: String
+  }
+
+  type NPCIdealData {
+    id: Int
+    option: String
+    list: [String]
+  }
+
+  type VillainObjectiveData {
+    id: Int
+    category: String
+    objectives: [String]
+  }
+
+  type VillainMethodData {
+    id: Int
+    category: String
+    methods: [String]
+  }
+
   type Query {
     campaigns: [Campaign]
     campaign (campaignName: String!): Campaign
@@ -245,6 +272,14 @@ const typeDefs = gql`
     worldShakingEvents: [WorldShakingEventData]
     names: [IDOptionType]
     campaignNames: [IDOptionType]
+    rooms: [RoomData]
+    evilNPCSubtypes: [IDOptions]
+    npcs: [IDOptionType]
+    npcIdeals: [NPCIdealData]
+    patron: [IDOptionType]
+    villainWeaknesses: [IDOptions]
+    villainObjectives: [VillainObjectiveData]
+    villainMethods: [VillainMethodData]
   }
 
   type Mutation {

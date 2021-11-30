@@ -1,1 +1,7 @@
-[{"id":1,"name":"Harpers","icon":"faBeer"},{"id":2,"name":"Order of the Guantlet","icon":"faShieldAlt"},{"id":3,"name":"Emerald Enclave","icon":"faGem"},{"id":4,"name":"Lord's Alliance","icon":"faCrown"},{"id":5,"name":"Zhentarim","icon":"faDragon"}]
+[
+  { "id": 1, "name": "Harpers", "icon": "faBeer" },
+  { "id": 2, "name": "Order of the Guantlet", "icon": "faShieldAlt" },
+  { "id": 3, "name": "Emerald Enclave", "icon": "faGem" },
+  { "id": 4, "name": "Lord's Alliance", "icon": "faCrown" },
+  { "id": 5, "name": "Zhentarim", "icon": "faDragon" }
+]

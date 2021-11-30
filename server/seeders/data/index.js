@@ -3,7 +3,7 @@ const non_dungeon_locations_data = require("./nonDungeonTypeLocationData.json");
 const meeting_selection_data = require("./meetingSelectionData.json");
 const climax_data = require("./climaxData.json");
 const encounter_data = require("./encounterData.json");
-const evil_NPC_data = require("./evilNPCSubTypes.json");
+const evil_NPC_suptype_data = require("./evilNPCSubTypeData.json");
 const faction_data = require("./factionData.json");
 const goal_data = require("./goalData.json");
 const government_data = require("./govrenmentData.json");
@@ -29,9 +29,12 @@ const trap_data = require("./trapData.json");
 const world_shaking_event_data = require("./worldShakingEventData.json");
 const side_quest_data = require("./sideQuestData.json");
 const twist_data = require("./twistData.json");
-const villain_data = require("./villainData.json");
+const villain_weakness_data = require("./villainWeaknessData.json");
+const villain_method_data = require("./villainMethodData.json");
+const villain_objective_data = require("./villainObjectiveData.json");
 const side_monster_data = require("./sideMonsterData.json");
 const room_data = require("./roomsData.json");
+const NPC_ideal_data = require("./NPCIdealData.json");
 
 module.exports = {
     mini_boss_data,
@@ -54,7 +57,7 @@ module.exports = {
     meeting_selection_data,
     climax_data,
     encounter_data,
-    evil_NPC_data,
+    evil_NPC_suptype_data,
     faction_data,
     name_data,
     campaign_name_data,
@@ -65,7 +68,10 @@ module.exports = {
     world_shaking_event_data,
     side_quest_data,
     twist_data,
-    villain_data,
+    villain_weakness_data,
+    villain_objective_data,
+    villain_method_data,
     goal_data,
-    local_event_data
+    local_event_data,
+    NPC_ideal_data,
 }

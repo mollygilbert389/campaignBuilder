@@ -1,0 +1,28 @@
+[
+  { "id": 1, "option": "A hidden object that holds the villain's soul" },
+  {
+    "id": 2,
+    "option": "The villain's power is broken if the death of its true love is avenged"
+  },
+  {
+    "id": 3,
+    "option": "The villain is weakened in the presence of a particular artifact"
+  },
+  {
+    "id": 4,
+    "option": "A special weapon deals extra damage when used against the villain"
+  },
+  { "id": 5, "option": "The villain is destroy if it speaks its true name" },
+  {
+    "id": 6,
+    "option": "An ancient prophecy or riddle reveals how the villain can be overthrown"
+  },
+  {
+    "id": 7,
+    "option": "The villain falls when an ancient enemy forgives its past actions"
+  },
+  {
+    "id": 8,
+    "option": "The villain loses its power if a mystic bargain it struck long ago os completed"
+  }
+]

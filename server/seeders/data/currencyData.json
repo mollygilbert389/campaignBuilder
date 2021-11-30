@@ -1,7 +1,7 @@
 [
-  {"id": 1, "option": "Common Coinage"},
-  {"id": 2, "option": "Common Coinage (No Electum)"},
-  {"id": 3, "option": "Trade Bars"},
-  {"id": 4, "option": "Barter System"},
-  {"id": 5, "option": "Odd Currency"}
+  { "id": 1, "option": "Common Coinage" },
+  { "id": 2, "option": "Common Coinage (No Electum)" },
+  { "id": 3, "option": "Trade Bars" },
+  { "id": 4, "option": "Barter System" },
+  { "id": 5, "option": "Odd Currency" }
 ]

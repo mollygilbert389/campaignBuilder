@@ -1,97 +1,97 @@
 [
-        {
-        "id": 1,
-        "name": "Bureaucracy",
-        "description": "Various departments compose the government, each responsible for an aspect of rule. the department heads, ministers, or secretaries answer to a figurehead autocrat or council."
-        },
-        {
-        "id": 2,
-        "name": "Autocracy",
-        "description": "One hereditary ruler wields absolute they promise to protect their citizens from threats power. The autocrat either is supported by a well-developed bureaucracy or military or stands as the only authority in an otherwise anarchic society. The dynastic ruler could be immortal or unded."
-        },
-        {
-        "id": 3,
-        "name": "Confederacy",
-        "description": "Each individual city or town within the confederacy governs itself, but all contribute to a league or federation that promotes (at least in theory) the common good of all member states. Conditions and attitudes toward the central government vary from place to place within the confederacy."
-        },
-        {
-        "id": 4,
-        "name": "Democracy",
-        "description": "Citizens or their elected representatives determine the laws in a democracy. A bureaucracy or military carries out the day-to-day work of government with positions filled through open elections."
-        },
-        {
-        "id": 5,
-        "name": "Dictatorship",
-        "description": "One supreme ruler holds absolute authority, but his or her rule isn't necessarily dynastic. In other respects this resembles an autocracy."
-        },
-        {
-        "id": 6,
-        "name": "Feudalism",
-        "description": "The typical government of Europe in the Middle Ages, a feudalistic society consists of layers of lords and vassals. The vassals provide soldiers or scutage (payment in lieu of military service) to the lords, who in turn promise protection to their vassals."
-        },
-        {
-        "id": 7,
-        "name": "Gerontocracy",
-        "description": "Elders preside over this society. In some cases, long-lived races such as elves or dragons are entrusted with the leadership of the land."
-        },
-        {
-        "id": 8,
-        "name": "Hierarchy",
-        "description": "A feudal or bureaucratic government where every member, except one, is subordinate to another memeber."
-        },
-        {
-        "id": 9,
-        "name": "Kleptocracy",
-        "description": "This government is composed of groups of individuals primarily seeking wealth for themselves, often at the expense of their subjects."
-        },
-        {
-        "id": 10,
-        "name": "Magocracy",
-        "description": "The governing body is composed of spellcasters who rule directly as oligarchs or feudal lords, or participate in a democracy or bureaucracy."
-        },
-        {
-        "id": 11,
-        "name": "Matriarchy/Patriarchy",
-        "description": " This society is governed by the eldest or most important members of one gender."
-        },
-        {
-        "id": 12,
-        "name": "Mritocracy",
-        "description": "The most intelligent and educated people oversee the society, often with a bureaucracy to handle the day-to-day work of government."
-        },
-        {
-        "id": 13,
-        "name": "Militocracy",
-        "description": "Military leaders run the nation under martial law, using the army and other armed forces. A militocracy might be based on an elite group of soldiers, an order of dragon riders , or a league of sea princes."
-        },
-        {
-        "id": 14,
-        "name": "Monarchy",
-        "description": "A single hereditary sovereign wears the crown. Unlike the autocrat, the monarch's powers are limited by law, and the ruler serves as the head of democracy, feudal state, or militocracy."
-        },
-        {
-        "id": 15,
-        "name": "Oligarchy",
-        "description": "A small number of absolute rulers share power, possibly dividing the land into districts provinces under their control, or jointly ruling together. A group of adventurers who take control of a nation together might form an oligarchy."
-        },
-        {
-        "id": 16,
-        "name": "Plutocracy",
-        "description": "Society is governed by the wealthy. The elite form a ruling council, purchase representation at the court of a figurehead monarch, or rule by default rules because money is the true power in the realm."
-        },
-        {
-        "id": 17,
-        "name": "Republic",
-        "description": "Government is entrusted to representatives of an established electorate who rule on behalf of the electors. Any democracy in which only landowners or certain classes can vote could be considered a republic."
-        },
-        {
-        "id": 18,
-        "name": "Satrapy",
-        "description": "Conquerors and representatives of another government wield power ruling the settlement or region as part of a larger empire. The satraps are bureaucrats and military officers, or unusual characters or monsters."
-        },
-        {
-        "id": 19,
-        "name": "Theocracy",
-        "description": "Rulership falls to a direct representative or a collection of agents of a deity. The centers of power in a theocracy are usually located on sacred sites."
-        }
+  {
+    "id": 1,
+    "name": "Bureaucracy",
+    "description": "Various departments compose the government, each responsible for an aspect of rule. the department heads, ministers, or secretaries answer to a figurehead autocrat or council."
+  },
+  {
+    "id": 2,
+    "name": "Autocracy",
+    "description": "One hereditary ruler wields absolute they promise to protect their citizens from threats power. The autocrat either is supported by a well-developed bureaucracy or military or stands as the only authority in an otherwise anarchic society. The dynastic ruler could be immortal or unded."
+  },
+  {
+    "id": 3,
+    "name": "Confederacy",
+    "description": "Each individual city or town within the confederacy governs itself, but all contribute to a league or federation that promotes (at least in theory) the common good of all member states. Conditions and attitudes toward the central government vary from place to place within the confederacy."
+  },
+  {
+    "id": 4,
+    "name": "Democracy",
+    "description": "Citizens or their elected representatives determine the laws in a democracy. A bureaucracy or military carries out the day-to-day work of government with positions filled through open elections."
+  },
+  {
+    "id": 5,
+    "name": "Dictatorship",
+    "description": "One supreme ruler holds absolute authority, but his or her rule isn't necessarily dynastic. In other respects this resembles an autocracy."
+  },
+  {
+    "id": 6,
+    "name": "Feudalism",
+    "description": "The typical government of Europe in the Middle Ages, a feudalistic society consists of layers of lords and vassals. The vassals provide soldiers or scutage (payment in lieu of military service) to the lords, who in turn promise protection to their vassals."
+  },
+  {
+    "id": 7,
+    "name": "Gerontocracy",
+    "description": "Elders preside over this society. In some cases, long-lived races such as elves or dragons are entrusted with the leadership of the land."
+  },
+  {
+    "id": 8,
+    "name": "Hierarchy",
+    "description": "A feudal or bureaucratic government where every member, except one, is subordinate to another memeber."
+  },
+  {
+    "id": 9,
+    "name": "Kleptocracy",
+    "description": "This government is composed of groups of individuals primarily seeking wealth for themselves, often at the expense of their subjects."
+  },
+  {
+    "id": 10,
+    "name": "Magocracy",
+    "description": "The governing body is composed of spellcasters who rule directly as oligarchs or feudal lords, or participate in a democracy or bureaucracy."
+  },
+  {
+    "id": 11,
+    "name": "Matriarchy/Patriarchy",
+    "description": " This society is governed by the eldest or most important members of one gender."
+  },
+  {
+    "id": 12,
+    "name": "Mritocracy",
+    "description": "The most intelligent and educated people oversee the society, often with a bureaucracy to handle the day-to-day work of government."
+  },
+  {
+    "id": 13,
+    "name": "Militocracy",
+    "description": "Military leaders run the nation under martial law, using the army and other armed forces. A militocracy might be based on an elite group of soldiers, an order of dragon riders , or a league of sea princes."
+  },
+  {
+    "id": 14,
+    "name": "Monarchy",
+    "description": "A single hereditary sovereign wears the crown. Unlike the autocrat, the monarch's powers are limited by law, and the ruler serves as the head of democracy, feudal state, or militocracy."
+  },
+  {
+    "id": 15,
+    "name": "Oligarchy",
+    "description": "A small number of absolute rulers share power, possibly dividing the land into districts provinces under their control, or jointly ruling together. A group of adventurers who take control of a nation together might form an oligarchy."
+  },
+  {
+    "id": 16,
+    "name": "Plutocracy",
+    "description": "Society is governed by the wealthy. The elite form a ruling council, purchase representation at the court of a figurehead monarch, or rule by default rules because money is the true power in the realm."
+  },
+  {
+    "id": 17,
+    "name": "Republic",
+    "description": "Government is entrusted to representatives of an established electorate who rule on behalf of the electors. Any democracy in which only landowners or certain classes can vote could be considered a republic."
+  },
+  {
+    "id": 18,
+    "name": "Satrapy",
+    "description": "Conquerors and representatives of another government wield power ruling the settlement or region as part of a larger empire. The satraps are bureaucrats and military officers, or unusual characters or monsters."
+  },
+  {
+    "id": 19,
+    "name": "Theocracy",
+    "description": "Rulership falls to a direct representative or a collection of agents of a deity. The centers of power in a theocracy are usually located on sacred sites."
+  }
 ]

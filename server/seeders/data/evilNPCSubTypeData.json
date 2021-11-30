@@ -1,0 +1,17 @@
+[
+  { "id": 1, "option": "Beast or monstrosity with no particular agenda" },
+  { "id": 2, "option": "Abberation bent on corruption or desruction" },
+  { "id": 3, "option": "Dragon bent on domination and plunder" },
+  { "id": 4, "option": "Giant bent on plunder" },
+  { "id": 5, "option": "Undead with any agenda" },
+  { "id": 6, "option": "Fey with a mysterious goal" },
+  { "id": 7, "option": "Hummanoid cultist" },
+  { "id": 8, "option": "Hummanoid conqueror" },
+  { "id": 9, "option": "Hummanoid seeking revenge" },
+  { "id": 10, "option": "Hummanoid schemer seeking to rule" },
+  { "id": 11, "option": "Hummanoid criminal mastermind" },
+  { "id": 12, "option": "Hummanoid raider or ravager" },
+  { "id": 13, "option": "Hummanoid under a curse" },
+  { "id": 14, "option": "Misguided hummanoid zealot" },
+  { "id": 15, "option": "Something else" }
+]
