@@ -7,6 +7,8 @@ const evil_NPC_data = require("./evilNPCSubTypes.json");
 const faction_data = require("./factionData.json");
 const goal_data = require("./goalData.json");
 const government_data = require("./govrenmentData.json");
+const language_data = require("./languageData.json");
+const currency_data = require("./currencyData.json");
 const local_event_data = require("./localEventData.json");
 const map_data = require("./mapData.json");
 const mini_boss_data = require("./miniBossData.json");
@@ -14,7 +16,13 @@ const monster_data = require("./monsterData.json");
 const name_data = require("./nameData.json");
 const NPC_data = require("./NPCData.json");
 const patron_data = require("./patronData.json");
-const world_data = require("./physicalData.json");
+const world_data = require("./worldData.json");
+const era_data = require("./eraData.json");
+const feature_data = require("./featureData.json");
+const map_scale_data = require("./mapScaleData.json");
+const meeting_location_data = require("./meetingLocationData.json");
+const travel_point_data = require("./travelPointsData.json");
+const world_style_data = require("./worldStyleData.json");
 const religion_data = require("./religionData.json");
 const setback_data = require("./setbackData.json");
 const side_quest_data = require("./sideQuestData.json");
@@ -30,7 +38,15 @@ module.exports = {
     map_data,
     room_data,
     government_data,
+    language_data,
+    currency_data,
     world_data,
+    era_data,
+    feature_data,
+    map_scale_data,
+    meeting_location_data,
+    travel_point_data,
+    world_style_data,
     dungeon_locations_data,
     non_dungeon_locations_data,
     meeting_selection_data,

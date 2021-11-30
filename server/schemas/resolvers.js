@@ -13,7 +13,17 @@ const {
   Religion,
   SideQuests,
   Twists,
-  Goals
+  Goals,
+  Languages,
+  Currency,
+  Governments,
+  Eras,
+  Features,
+  MapScales,
+  MeetingSelections,
+  TravelPoints,
+  Worlds,
+  WorldStyles
 } = require('../models');
 
 const resolvers = {
@@ -65,6 +75,36 @@ const resolvers = {
     },
     goals: async () => {
       return Goals.find();
+    },
+    languages: async () => {
+      return Languages.find();
+    },
+    currency: async () => {
+      return Currency.find();
+    },
+    governments: async () => {
+      return Governments.find();
+    },
+    eras: async () => {
+      return Eras.find();
+    },
+    features: async () => {
+      return Features.find();
+    },
+    mapScales: async () => {
+      return MapScales.find();
+    },
+    meetingSelections: async () => {
+      return MeetingSelections.find();
+    },
+    travelPoints: async () => {
+      return TravelPoints.find();
+    },
+    worlds: async () => {
+      return Worlds.find();
+    },
+    worldStyles: async () => {
+      return WorldStyles.find();
     },
   },
   Mutation: {

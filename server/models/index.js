@@ -6,7 +6,9 @@ const Encounters = require("./Encounters");
 const EvilNPC = require("./EvilNPC");
 const Factions = require("./Factions");
 const Goals = require("./Goals");
-const Government = require("./Government");
+const Governments = require("./Governments");
+const Languages = require("./Languages");
+const Currency = require("./Currency");
 const LocalEvents = require("./LocalEvents");
 const Maps = require("./Maps");
 const MiniBosses = require("./MiniBosses");
@@ -14,7 +16,13 @@ const Monsters = require("./Monsters");
 const Name = require("./Name");
 const NPC = require("./NPC");
 const Patron = require("./Patron");
-const Physical = require("./Physical");
+const Eras = require("./Eras");
+const Features = require("./Features");
+const MapScales = require("./MapScales");
+const MeetingSelections = require("./MeetingSelections");
+const TravelPoints = require("./TravelPoints");
+const Worlds = require("./Worlds");
+const WorldStyles = require("./WorldStyles");
 const Religion = require("./Religion");
 const Setback = require("./Setback");
 const SideQuests = require("./SideQuests");
@@ -28,7 +36,9 @@ module.exports = {
     EvilNPC, 
     Factions, 
     Goals, 
-    Government, 
+    Governments,
+    Languages,
+    Currency, 
     LocalEvents, 
     Maps, 
     MiniBosses,  
@@ -36,7 +46,13 @@ module.exports = {
     Name, 
     NPC, 
     Patron, 
-    Physical, 
+    Eras,
+    Features,
+    MapScales,
+    MeetingSelections,
+    TravelPoints,
+    Worlds,
+    WorldStyles, 
     Religion, 
     Setback, 
     SideQuests, 

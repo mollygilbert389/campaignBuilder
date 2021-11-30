@@ -1,21 +1,4 @@
-{
-    "currencyOptions": [
-        "Common Coinage",
-        "Common Coinage (No Electum)",
-        "Trade Bars",
-        "Barter System",
-        "Odd Currency"
-    ],
-    "languages": [ 
-        "Celestial",
-        "Common",
-        "Draconic",
-        "Druidic",
-        "Dwarvish",
-        "Elvish",
-        "Infernal"
-    ],
-    "governments": [
+[
         {
         "id": 1,
         "name": "Bureaucracy",
@@ -111,5 +94,4 @@
         "name": "Theocracy",
         "description": "Rulership falls to a direct representative or a collection of agents of a deity. The centers of power in a theocracy are usually located on sacred sites."
         }
-    ]
-}
+]

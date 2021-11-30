@@ -1,6 +1,6 @@
 const faker = require('faker');
 const { 
-  meeting_selection_data, 
+  meeting_location_data, 
   climax_data, 
   non_dungeon_locations_data,
   encounter_data,
@@ -12,7 +12,17 @@ const {
   religion_data,
   side_quest_data,
   twist_data,
-  goal_data
+  goal_data,
+  language_data,
+  currency_data,
+  government_data,
+  era_data,
+  feature_data,
+  map_scale_data,
+  meeting_selection_data,
+  travel_point_data,
+  world_data,
+  world_style_data
 } = require("./data")
 const db = require('../config/connection');
 const { 
@@ -29,7 +39,17 @@ const {
   Religion,
   SideQuests,
   Twists,
-  Goals
+  Goals,
+  Languages,
+  Currency,
+  Governments,
+  Eras,
+  Features,
+  MapScales,
+  MeetingSelections,
+  TravelPoints,
+  Worlds,
+  WorldStyles
 } = require('../models');
 
 db.once('open', async () => {
@@ -47,9 +67,20 @@ db.once('open', async () => {
   await SideQuests.deleteMany({});
   await Twists.deleteMany({});
   await Goals.deleteMany({});
+  await Languages.deleteMany({});
+  await Currency.deleteMany({});
+  await Governments.deleteMany({});
+  await Eras.deleteMany({});
+  await Features.deleteMany({});
+  await MapScales.deleteMany({});
+  await MeetingSelections.deleteMany({});
+  await TravelPoints.deleteMany({});
+  await Worlds.deleteMany({});
+  await WorldStyles.deleteMany({});
+ 
 
   await Climax.collection.insertMany(climax_data);
-  await MeetingLocations.collection.insertMany(meeting_selection_data);
+  await MeetingLocations.collection.insertMany(meeting_location_data);
   await NonDungeonLocations.collection.insertMany(non_dungeon_locations_data);
   await Encounters.collection.insertMany(encounter_data);
   await Factions.collection.insertMany(faction_data);
@@ -61,6 +92,16 @@ db.once('open', async () => {
   await SideQuests.collection.insertMany(side_quest_data);
   await Twists.collection.insertMany(twist_data);
   await Goals.collection.insertMany(goal_data);
+  await Languages.collection.insertMany(language_data);
+  await Currency.collection.insertMany(currency_data);
+  await Governments.collection.insertMany(government_data);
+  await Eras.collection.insertMany(era_data);
+  await Features.collection.insertMany(feature_data);
+  await MapScales.collection.insertMany(map_scale_data);
+  await MeetingSelections.collection.insertMany(meeting_selection_data);
+  await TravelPoints.collection.insertMany(travel_point_data);
+  await Worlds.collection.insertMany(world_data);
+  await WorldStyles.collection.insertMany(world_style_data);
 
   const campaignData = [];
 

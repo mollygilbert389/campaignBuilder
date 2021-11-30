@@ -196,6 +196,18 @@ const typeDefs = gql`
     type: String
   }
 
+  type GovernmentData {
+    id: Int
+    name: String
+    description: String
+  }
+
+  type WorldStylesData {
+    id: Int
+    type: String
+    image: String
+  }
+
   type Query {
     campaigns: [Campaign]
     campaign (campaignName: String!): Campaign
@@ -213,6 +225,16 @@ const typeDefs = gql`
     sideQuests: [IDOptions]
     twists: [IDOptions]
     goals: [GoalsData]
+    languages: [IDOptions]
+    currency: [IDOptions]
+    governments: [GovernmentData]
+    eras: [IDOptions]
+    features: [IDOptions]
+    mapScales: [IDOptions]
+    meetingSelections: [IDOptions]
+    travelPoints: [IDOptions]
+    worlds: [IDOptions]
+    worldStyles: [WorldStylesData]
   }
 
   type Mutation {
