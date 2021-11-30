@@ -1,7 +1,6 @@
 const { Schema, model } = require('mongoose');
 
 const MiniBossSchema = new Schema({
-  maps: [{ 
     id: { type: Number },
     name: { type: String },
     category: { type: String },
@@ -10,7 +9,6 @@ const MiniBossSchema = new Schema({
     area: { type: [String] },
     ideal: { type: String },
     bossTypes: { type: [String] }
-  }]
 });
 
 const MiniBoss = model('MiniBoss', MiniBossSchema);

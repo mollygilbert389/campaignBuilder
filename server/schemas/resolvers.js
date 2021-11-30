@@ -1,4 +1,4 @@
-const { Campaign, MeetingLocations, NonDungeonLocations, DungeonLocations, Climax } = require('../models');
+const { Campaign, MeetingLocations, NonDungeonLocations, DungeonLocations, Climax, Encounters, Factions } = require('../models');
 
 const resolvers = {
   Query: {
@@ -19,6 +19,12 @@ const resolvers = {
     },
     climaxes: async () => {
       return Climax.find();
+    },
+    factions: async () => {
+      return Factions.find();
+    },
+    encounters: async () => {
+      return Encounters.find();
     }
   },
   Mutation: {

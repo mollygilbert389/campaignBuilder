@@ -1,5 +1,4 @@
-{
-  "maps": [
+[
     {
       "id": 1,
       "name": "Damp Mine",
@@ -148,4 +147,3 @@
       "world": ["City", "Villiage"]
     }        
 ]
-}

@@ -1,10 +1,8 @@
 const { Schema, model } = require('mongoose');
 
 const LocalEventsSchema = new Schema({
-  localEventOptions: [{ 
-    id: { type: Number },
-    eventName: { type: String }
-  }]
+  id: { type: Number },
+  option: { type: String }
 });
 
 const LocalEvents = model('LocalEvents', LocalEventsSchema);

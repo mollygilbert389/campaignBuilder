@@ -1,19 +1,34 @@
 const faker = require('faker');
-const { meeting_selection_data, climax_data, non_dungeon_locations_data } = require("./data")
+const { 
+  meeting_selection_data, 
+  climax_data, 
+  non_dungeon_locations_data,
+  encounter_data,
+  faction_data 
+} = require("./data")
 const db = require('../config/connection');
-const { Campaign, MeetingLocations, NonDungeonLocations, Climax } = require('../models');
+const { 
+  Campaign, 
+  MeetingLocations, 
+  NonDungeonLocations, 
+  Climax,
+  Encounters,
+  Factions 
+} = require('../models');
 
 db.once('open', async () => {
   await Campaign.deleteMany({});
   await Climax.deleteMany({});
   await MeetingLocations.deleteMany({});
   await NonDungeonLocations.deleteMany({});
+  await Encounters.deleteMany({});
+  await Factions.deleteMany({});
 
-  await Campaign.collection.insertMany(campaignData);
   await Climax.collection.insertMany(climax_data);
   await MeetingLocations.collection.insertMany(meeting_selection_data);
   await NonDungeonLocations.collection.insertMany(non_dungeon_locations_data);
-
+  await Encounters.collection.insertMany(encounter_data);
+  await Factions.collection.insertMany(faction_data);
 
   const campaignData = [];
 
@@ -403,6 +418,7 @@ db.once('open', async () => {
     });
 
   }
+  await Campaign.collection.insertMany(campaignData);
 
   console.log('all done!');
   process.exit(0);

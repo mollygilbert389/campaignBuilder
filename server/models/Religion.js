@@ -1,11 +1,9 @@
 const { Schema, model } = require('mongoose');
 
 const ReligionSchema = new Schema({
-  godChoices: [{
-    id: { type: Number },
-    option: { type: String },
-    toolTipData: { type: String }
-  }]
+  id: { type: Number },
+  option: { type: String },
+  toolTipData: { type: String }
 });
 
 const Religion = model('Religion', ReligionSchema);

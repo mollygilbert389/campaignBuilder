@@ -149,6 +149,12 @@ const typeDefs = gql`
     option: String
   }
 
+  type FactionData {
+    id: Int
+    name: String
+    icon: String
+  }
+
   type Query {
     campaigns: [Campaign]
     campaign (campaignName: String!): Campaign
@@ -156,6 +162,8 @@ const typeDefs = gql`
     climaxes: [IDOptions]
     nonDungeonLocations: [IDOptions]
     dungeonLocations: [IDOptions]
+    encounters: [IDOptions]
+    factions: [FactionData]
   }
 
   type Mutation {
