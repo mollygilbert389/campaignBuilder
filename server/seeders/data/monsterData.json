@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Aarakocra",
     "category": "Humanoid",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Humanoid",
     "area" : ["Forest", "Mountains","Ruins","Tomb"],
     "ideal": "neutal good"
@@ -12,7 +12,7 @@
     "id": 2,
     "name": "Aboleth",
     "category": "Aberration",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Aberration",
     "area" : ["Cave","Oasis","Ocean","Swamp"],
     "ideal": "lawful evil"
@@ -21,7 +21,7 @@
     "id": 3,
     "name": "Deva",
     "category": "Celestial",
-    "subCategory": "Angel",
+    "subcategory": "Angel",
     "type" : "Medium Celestial",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp","Tomb"],
     "ideal": "lawful good"
@@ -30,7 +30,7 @@
     "id": 4,
     "name": "Planetar",
     "category": "Celestial",
-    "subCategory": "Angel",
+    "subcategory": "Angel",
     "type" : "Large Celestial",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp","Tomb"],
     "ideal": "lawful good"
@@ -39,7 +39,7 @@
     "id": 5,
     "name": "Solar",
     "category": "Celestial",
-    "subCategory": "Angel",
+    "subcategory": "Angel",
     "type" : "Large Celestial",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp","Tomb"],
     "ideal": "lawful good"
@@ -48,7 +48,7 @@
     "id": 6,
     "name": "Animated Armor",
     "category": "Construct",
-    "subCategory": "Animated Object",
+    "subcategory": "Animated Object",
     "type" : "Medium Construct",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
@@ -57,7 +57,7 @@
     "id": 7,
     "name": "Flying Sword",
     "category": "Construct",
-    "subCategory": "Animated Object",
+    "subcategory": "Animated Object",
     "type" : "Small Construct",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
@@ -66,7 +66,7 @@
     "id": 8,
     "name": "Rug of Smothering",
     "category": "Construct",
-    "subCategory": "Animated Object",
+    "subcategory": "Animated Object",
     "type" : "Large Construct",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
@@ -75,7 +75,7 @@
     "id": 9,
     "name": "Ankheg",
     "category": "Monstrocity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrocity",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Ruins"],
     "ideal": "unaligned"
@@ -84,7 +84,7 @@
     "id": 10,
     "name": "Azer",
     "category": "Elemental",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Elemental",
     "area" : ["Volcano"],
     "ideal": "lawful neutral"
@@ -93,7 +93,7 @@
     "id": 11,
     "name": "Banshee",
     "category": "Undead",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Undead",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -102,7 +102,7 @@
     "id": 12,
     "name": "Basilisk",
     "category": "Monstrocity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Monstrocity",
     "area" : ["Cave","Forest","Jungle","Mountains","Ruins","Swamp", "Tomb"],
     "ideal": "unaligned"
@@ -111,7 +111,7 @@
     "id": 13,
     "name": "Behir",
     "category": "Monstrocity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Huge Monstrocity",
     "area" : ["Cave","Ruins","Tomb", "Volcano"],
     "ideal": "neutral evil"
@@ -120,7 +120,7 @@
     "id": 14,
     "name": "Beholder",
     "category": "Abberation",
-    "subCategory": "Beholder",
+    "subcategory": "Beholder",
     "type" : "Large Abberation",
     "area" : ["Cave", "Tomb", "Volcano"],
     "ideal": "lawful evil"
@@ -129,7 +129,7 @@
     "id": 15,
     "name": "Death Tyrant",
     "category": "Undead",
-    "subCategory": "Beholder",
+    "subcategory": "Beholder",
     "type" : "Large Undead",
     "area" : ["Cave", "Tomb", "Volcano"],
     "ideal": "lawful evil"
@@ -138,7 +138,7 @@
     "id": 16,
     "name": "Spectator",
     "category": "Abberation",
-    "subCategory": "Beholder",
+    "subcategory": "Beholder",
     "type" : "Medium Abberation",
     "area" : ["Cave", "Tomb", "Volcano"],
     "ideal": "lawful neutral"
@@ -147,7 +147,7 @@
     "id": 17,
     "name": "Needle Blight",
     "category": "Plant",
-    "subCategory": "Blight",
+    "subcategory": "Blight",
     "type" : "Medium Plant",
     "area" : ["Forest","Jungle","Meadow","Mountains","Ruins"],
     "ideal": "neutral evil"
@@ -156,7 +156,7 @@
     "id": 18,
     "name": "Twig Blight",
     "category": "Plant",
-    "subCategory": "Blight",
+    "subcategory": "Blight",
     "type" : "Small Plant",
     "area" : ["Forest","Jungle","Meadow","Mountains", "Swamp","Ruins"],
     "ideal": "Neutral Evil"
@@ -165,7 +165,7 @@
     "id": 19,
     "name": "Vine Blight",
     "category": "Plant",
-    "subCategory": "Blight",
+    "subcategory": "Blight",
     "type" : "Medium Plant",
     "area" : ["Forest","Jungle","Meadow","Swamp","Ruins"],
     "ideal": "neutral evil"
@@ -174,7 +174,7 @@
     "id": 20,
     "name": "Bugbear",
     "category": "Humanoid",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "Chaotic Evil"
@@ -183,7 +183,7 @@
     "id": 22,
     "name": "Bulette",
     "category": "Monstrocity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrocity",
     "area" : ["Cave","Forest","Jungle","Mountains","Ruins","Swamp", "Tomb"],
     "ideal": "unaligned"
@@ -192,7 +192,7 @@
     "id": 23,
     "name": "Bullywug",
     "category": "Humanoid",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Humanoid",
     "area" : ["Jungle","Meadow","Oasis","Ruins","Swamp"],
     "ideal": "neutral evil"
@@ -202,7 +202,7 @@
     "id": 24,
     "name": "Cambion",
     "category": "Fiend",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Fiend",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any evil alignement"
@@ -212,7 +212,7 @@
     "id": 25,
     "name": "Carrion Crawler",
     "category": "Monstrocity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrocity",
     "area" : ["Cave","Forest","Meadow","Ruins","Swamp", "Tomb"],
     "ideal": "unaligned"
@@ -222,7 +222,7 @@
     "id": 26,
     "name": "Centaur",
     "category": "Monstrocity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrocity",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp"],
     "ideal": "neutral good"
@@ -232,7 +232,7 @@
     "id": 27,
     "name": "Chimera",
     "category": "Monstrocity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrocity",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -241,7 +241,7 @@
     "id": 28,
     "name": "Chuul",
     "category": "Abberation",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Abberation",
     "area" : ["Cave","Ocean"],
     "ideal": "chaotic evil"
@@ -251,7 +251,7 @@
     "id": 29,
     "name": "Cloaker",
     "category": "Abberation",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Abberation",
     "area" : ["Cave","Ruins","Tomb"],
     "ideal": "chaotic neutral"
@@ -261,7 +261,7 @@
     "id": 30,
     "name": "Cockatrice",
     "category": "Monstrocity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Small Monstrocity",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Plains","Ruins","Swamp", "Tomb"],
     "ideal": "unaligned"
@@ -271,7 +271,7 @@
     "id": 31,
     "name": "Couatl",
     "category": "Celestial",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Celestial",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Plains","Ruins","Tomb"],
     "ideal": "lawful good"
@@ -281,7 +281,7 @@
     "id": 32,
     "name": "Crawling Claw",
     "category": "Undead",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Tiny Undead",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "neutral evil"
@@ -290,7 +290,7 @@
     "id": 33,
     "name": "Cyclops",
     "category": "Giant",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Huge Giant",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb"],
     "ideal": "chaotic neutral"
@@ -300,7 +300,7 @@
     "id": 34,
     "name": "Darkmantle",
     "category": "Monstrocity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Small Monstrocity",
     "area" : ["Cave","Tomb","Volcano"],
     "ideal": "unaligned"
@@ -310,7 +310,7 @@
     "id": 35,
     "name": "Death Knight",
     "category": "Undead",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Undead",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -320,7 +320,7 @@
     "id": 36,
     "name": "Demilich",
     "category": "Undead",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Tiny Undead",
     "area" : ["Tomb", "Cave", "Ruins", "Ocean"],
     "ideal": "neutral evil"
@@ -330,7 +330,7 @@
     "id": 37,
     "name": "Balor",
     "category": "Fiend",
-    "subCategory": "Demon",
+    "subcategory": "Demon",
     "type" : "Huge Fiend",
     "area" : ["Valcano"],
     "ideal": "chaotic evil"
@@ -339,7 +339,7 @@
     "id": 38,
     "name": "Balgura",
     "category": "Fiend",
-    "subCategory": "Demon",
+    "subcategory": "Demon",
     "type" : "Lard Fiend",
     "area" : ["Valcano"],
     "ideal": "chaotic evil"
@@ -348,7 +348,7 @@
     "id": 39,
     "name": "Chasme",
     "category": "Fiend",
-    "subCategory": "Demon",
+    "subcategory": "Demon",
     "type" : "Large Fiend",
     "area" : ["Valcano", "Ruins", "Tomb"],
     "ideal": "chaotic evil"
@@ -357,7 +357,7 @@
     "id": 40,
     "name": "Dretch",
     "category": "Fiend",
-    "subCategory": "Demon",
+    "subcategory": "Demon",
     "type" : "Small Fiend",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -366,7 +366,7 @@
     "id": 41,
     "name": "Glabrezu",
     "category": "Fiend",
-    "subCategory": "Demon",
+    "subcategory": "Demon",
     "type" : "Large Fiend",
     "area" : ["Volcano", "Ruins", "Tomb", "Cave"],
     "ideal": "chaotic evil"
@@ -375,7 +375,7 @@
     "id": 42,
     "name": "Goristro",
     "category": "Fiend",
-    "subCategory": "Demon",
+    "subcategory": "Demon",
     "type" : "Huge Fiend",
     "area" : ["Volcano", "Ruins", "Tomb", "Cave"],
     "ideal": "chaotic evil"
@@ -384,7 +384,7 @@
     "id": 43,
     "name": "Hezrou",
     "category": "Fiend",
-    "subCategory": "Demon",
+    "subcategory": "Demon",
     "type" : "Large Fiend",
     "area" : ["Volcano", "Ruins", "Tomb", "Cave"],
     "ideal": "chaotic evil"
@@ -393,7 +393,7 @@
     "id": 44,
     "name": "Manes",
     "category": "Fiend",
-    "subCategory": "Demon",
+    "subcategory": "Demon",
     "type" : "Small Fiend",
     "area" : ["Volcano", "Ruins", "Tomb", "Cave"],
     "ideal": "chaotic evil"
@@ -402,7 +402,7 @@
     "id": 45,
     "name": "Marlilith",
     "category": "Fiend",
-    "subCategory": "Demon",
+    "subcategory": "Demon",
     "type" : "Large Fiend",
     "area" : ["Valcano", "Ruins", "Tomb","Cave"],
     "ideal": "chaotic evil"
@@ -411,7 +411,7 @@
     "id": 46,
     "name": "Nalfeshnee",
     "category": "Fiend",
-    "subCategory": "Demon",
+    "subcategory": "Demon",
     "type" : "Large Fiend",
     "area" : ["Volcano", "Ruins", "Tomb", "Mountains", "Cave"],
     "ideal": "Chaotic Evil"
@@ -420,7 +420,7 @@
     "id": 47,
     "name": "Quasit",
     "category": "Fiend",
-    "subCategory": "Demon",
+    "subcategory": "Demon",
     "type" : "Tiny Fiend",
     "area" : ["Volcano", "Ruins", "Tomb", "Mountains", "Cave"],
     "ideal": "chaotic evil"
@@ -429,7 +429,7 @@
     "id": 48,
     "name": "Shadow Demon",
     "category": "Fiend",
-    "subCategory": "Demon",
+    "subcategory": "Demon",
     "type" : "Medium Fiend",
     "area" : ["Volcano", "Ruins", "Tomb", "Mountains", "Cave"],
     "ideal": "chaotic evil"
@@ -438,7 +438,7 @@
     "id": 49,
     "name": "Vrock",
     "category": "Fiend",
-    "subCategory": "Demon",
+    "subcategory": "Demon",
     "type" : "Large Fiend",
     "area" : ["Volcano", "Ruins", "Tomb", "Mountains", "Cave"],
     "ideal": "chaotic evil"
@@ -447,7 +447,7 @@
     "id": 50,
     "name": "Yochlol",
     "category": "Fiend",
-    "subCategory": "Demon",
+    "subcategory": "Demon",
     "type" : "Medium Fiend",
     "area" : ["Volcano", "Ruins", "Tomb", "Mountains", "Cave"],
     "ideal": "chaotic evil"
@@ -456,7 +456,7 @@
     "id": 51,
     "name": "Barbed Devil",
     "category": "Fiend",
-    "subCategory": "Devil",
+    "subcategory": "Devil",
     "type" : "Medium Fiend",
     "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
@@ -465,7 +465,7 @@
     "id": 52,
     "name": "Bearded Devil",
     "category": "Fiend",
-    "subCategory": "Devil",
+    "subcategory": "Devil",
     "type" : "Medium Fiend",
     "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
@@ -474,7 +474,7 @@
     "id": 53,
     "name": "Bone Devil",
     "category": "Fiend",
-    "subCategory": "Devil",
+    "subcategory": "Devil",
     "type" : "Large Fiend",
     "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
@@ -483,7 +483,7 @@
     "id": 54,
     "name": "Chain Devil",
     "category": "Fiend",
-    "subCategory": "Devil",
+    "subcategory": "Devil",
     "type" : "Medium Fiend",
     "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
@@ -492,7 +492,7 @@
     "id": 55,
     "name": "Erinyes",
     "category": "Fiend",
-    "subCategory": "Devil",
+    "subcategory": "Devil",
     "type" : "Medium Fiend",
     "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
@@ -501,7 +501,7 @@
     "id": 56,
     "name": "Horned Devil",
     "category": "Fiend",
-    "subCategory": "Devil",
+    "subcategory": "Devil",
     "type" : "Large Fiend",
     "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
@@ -510,7 +510,7 @@
     "id": 57,
     "name": "Ice Devil",
     "category": "Fiend",
-    "subCategory": "Devil",
+    "subcategory": "Devil",
     "type" : "Large Fiend",
     "area" : ["Cave","Mountains","Ruins","Tomb"],
     "ideal": "lawful evil"
@@ -519,7 +519,7 @@
     "id": 58,
     "name": "Imp",
     "category": "Fiend",
-    "subCategory": "Devil",
+    "subcategory": "Devil",
     "type" : "Tiny Fiend",
     "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
@@ -528,7 +528,7 @@
     "id": 59,
     "name": "Lemure",
     "category": "Fiend",
-    "subCategory": "Devil",
+    "subcategory": "Devil",
     "type" : "Medium Fiend",
     "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
@@ -537,7 +537,7 @@
     "id": 60,
     "name": "Pit Fiend",
     "category": "Fiend",
-    "subCategory": "Devil",
+    "subcategory": "Devil",
     "type" : "Large Fiend",
     "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
@@ -546,7 +546,7 @@
     "id": 61,
     "name": "Spined Devil",
     "category": "Fiend",
-    "subCategory": "Devil",
+    "subcategory": "Devil",
     "type" : "Small Fiend",
     "area" : ["Cave","Mountains","Ruins","Tomb","Volcano"],
     "ideal": "lawful evil"
@@ -555,7 +555,7 @@
     "id": 61,
     "name": "Allosaurus",
     "category": "Beast",
-    "subCategory": "Dinosaur",
+    "subcategory": "Dinosaur",
     "type" : "Large Beast",
     "area" : ["Cave","Forest","Jungle","Volcano"],
     "ideal": "Unaligned"
@@ -564,7 +564,7 @@
     "id": 63,
     "name": "Ankylosaurus",
     "category": "Beast",
-    "subCategory": "Dinosaur",
+    "subcategory": "Dinosaur",
     "type" : "Huge Beast",
     "area" : ["Cave","Forest","Jungle","Volcano"],
     "ideal": "Unaligned"
@@ -573,7 +573,7 @@
     "id": 64,
     "name": "Plesiosaurus",
     "category": "Beast",
-    "subCategory": "Dinosaur",
+    "subcategory": "Dinosaur",
     "type" : "Large Beast",
     "area" : ["Ocean", "Lake"],
     "ideal": "Unaligned"
@@ -582,7 +582,7 @@
     "id": 65,
     "name": "Triceratops",
     "category": "Beast",
-    "subCategory": "Dinosaur",
+    "subcategory": "Dinosaur",
     "type" : "Huge Beast",
     "area" : ["Cave","Forest","Jungle","Volcano"],
     "ideal": "Unaligned"
@@ -591,7 +591,7 @@
     "id": 66,
     "name": "Pteranodon",
     "category": "Beast",
-    "subCategory": "Dinosaur",
+    "subcategory": "Dinosaur",
     "type" : "Medium Beast",
     "area" : ["Cave","Forest","Jungle","Volcano"],
     "ideal": "Unaligned"
@@ -600,7 +600,7 @@
     "id": 67,
     "name": "Tyrannosaurus Rex",
     "category": "Beast",
-    "subCategory": "Dinosaur",
+    "subcategory": "Dinosaur",
     "type" : "Huge Beast",
     "area" : ["Cave","Forest","Jungle","Volcano"],
     "ideal": "Unaligned"
@@ -609,7 +609,7 @@
     "id": 68,
     "name": "Displacer Beast",
     "category": "Monstrocity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrocity",
     "area" : ["Cave","Jungle","Oasis","Ruins"],
     "ideal": "lawful evil"
@@ -618,7 +618,7 @@
     "id": 69,
     "name": "Doppleganger",
     "category": "Monstrocity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Monstrocity",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "neutral"
@@ -627,7 +627,7 @@
     "id": 70,
     "name": "Adult Blue Dracolich",
     "category": "Undead",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Huge Undead",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful evil"
@@ -636,7 +636,7 @@
     "id": 71,
     "name": "Young Red Shadow Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Large Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -645,7 +645,7 @@
     "id": 72,
     "name": "Ancient Black Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Gargantuan Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -654,7 +654,7 @@
     "id": 73,
     "name": "Adult Black Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Huge Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -663,7 +663,7 @@
     "id": 74,
     "name": "Young Black Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Large Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -672,7 +672,7 @@
     "id": 75,
     "name": "Black Dragon Wyrmling",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Medium Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -681,7 +681,7 @@
     "id": 76,
     "name": "Ancient Blue Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Gargantuan Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful evil"
@@ -690,7 +690,7 @@
     "id": 77,
     "name": "Adult Blue Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Huge Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful evil"
@@ -699,7 +699,7 @@
     "id": 78,
     "name": "Young Blue Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Large Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful evil"
@@ -708,7 +708,7 @@
     "id": 79,
     "name": "Blue Dragon Wyrmling",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Medium Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful evil"
@@ -717,7 +717,7 @@
     "id": 80,
     "name": "Ancient Green Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Gargantuan Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful evil"
@@ -726,7 +726,7 @@
     "id": 81,
     "name": "Adult Green Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Huge Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful evil"
@@ -735,7 +735,7 @@
     "id": 82,
     "name": "Young Green Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Large Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful evil"
@@ -744,7 +744,7 @@
     "id": 83,
     "name": "Green Dragon Wyrmling",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Medium Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful evil"
@@ -753,7 +753,7 @@
     "id": 84,
     "name": "Ancient Red Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Gargantuan Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -762,7 +762,7 @@
     "id": 85,
     "name": "Adult Red Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Huge Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -771,7 +771,7 @@
     "id": 86,
     "name": "Young Red Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Large Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -780,7 +780,7 @@
     "id": 87,
     "name": "Red Dragon Wyrmling",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Medium Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -789,7 +789,7 @@
     "id": 88,
     "name": "Ancient White Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Gargantuan Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -798,7 +798,7 @@
     "id": 89,
     "name": "Adult White Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Huge Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -807,7 +807,7 @@
     "id": 90,
     "name": "Young White Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Large Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -816,7 +816,7 @@
     "id": 91,
     "name": "White Dragon Wyrmling",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Medium Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -825,7 +825,7 @@
     "id": 92,
     "name": "Ancient Brass Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Gargantuan Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic good"
@@ -834,7 +834,7 @@
     "id": 93,
     "name": "Adult Brass Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Huge Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic good"
@@ -843,7 +843,7 @@
     "id": 94,
     "name": "Young Brass Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Large Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic good"
@@ -852,7 +852,7 @@
     "id": 95,
     "name": "Brass Dragon Wyrmling",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Medium Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic good"
@@ -861,7 +861,7 @@
     "id": 96,
     "name": "Ancient Bronze Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Gargantuan Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
@@ -870,7 +870,7 @@
     "id": 97,
     "name": "Adult Bronze Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Huge Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
@@ -879,7 +879,7 @@
     "id": 98,
     "name": "Young Bronze Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Large Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
@@ -888,7 +888,7 @@
     "id": 99,
     "name": "Bronze Dragon Wyrmling",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Medium Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
@@ -897,7 +897,7 @@
     "id": 100,
     "name": "Ancient Copper Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Gargantuan Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic good"
@@ -906,7 +906,7 @@
     "id": 101,
     "name": "Adult Copper Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Huge Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic good"
@@ -915,7 +915,7 @@
     "id": 102,
     "name": "Young Copper Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Large Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic good"
@@ -924,7 +924,7 @@
     "id": 103,
     "name": "Copper Dragon Wyrmling",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Medium Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "chaotic good"
@@ -933,7 +933,7 @@
     "id": 104,
     "name": "Ancient Gold Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Gargantuan Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
@@ -942,7 +942,7 @@
     "id": 105,
     "name": "Adult Gold Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Huge Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
@@ -951,7 +951,7 @@
     "id": 106,
     "name": "Young Gold Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Large Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
@@ -960,7 +960,7 @@
     "id": 107,
     "name": "Gold Dragon Wyrmling",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Medium Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
@@ -969,7 +969,7 @@
     "id": 108,
     "name": "Ancient Silver Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Gargantuan Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
@@ -978,7 +978,7 @@
     "id": 109,
     "name": "Adult Silver Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Huge Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
@@ -987,7 +987,7 @@
     "id": 110,
     "name": "Young Silver Dragon",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Large Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
@@ -996,7 +996,7 @@
     "id": 111,
     "name": "Silver Dragon Wyrmling",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Medium Dragon",
     "area" : ["Cave","Mountains","Ruins","Tomb", "Volcano"],
     "ideal": "lawful good"
@@ -1005,7 +1005,7 @@
     "id": 112,
     "name": "Dragon Turtle",
     "category": "Dragon",
-    "subCategory": "Dragon",
+    "subcategory": "Dragon",
     "type" : "Gargantuan Dragon",
     "area" : ["Ocean", "Lake"],
     "ideal": "neutral"
@@ -1014,7 +1014,7 @@
     "id": 113,
     "name": "Drider",
     "category": "Monstrocity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrocity",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "chaotic evil"
@@ -1023,7 +1023,7 @@
     "id": 114,
     "name": "Dryad",
     "category": "Fey",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Fey",
     "area" : ["Forest","Jungle","Meadow","Mountains","Ruins"],
     "ideal": "neutral"
@@ -1032,7 +1032,7 @@
     "id": 115,
     "name": "Dueragr",
     "category": "Humanoid",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Mountains","Ruins", "Tomb"],
     "ideal": "lawful evil"
@@ -1041,7 +1041,7 @@
     "id": 116,
     "name": "Air Elemental",
     "category": "Elemental",
-    "subCategory": "Elemental",
+    "subcategory": "Elemental",
     "type" : "Large Elemental",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp"],
     "ideal": "neutral"
@@ -1050,7 +1050,7 @@
     "id": 117,
     "name": "Earth Elemental",
     "category": "Elemental",
-    "subCategory": "Elemental",
+    "subcategory": "Elemental",
     "type" : "Large Elemental",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Plains","Ruins","Swamp","Volcano"],
     "ideal": "neutral"
@@ -1059,7 +1059,7 @@
     "id": 118,
     "name": "Fire Elemental",
     "category": "Elemental",
-    "subCategory": "Elemental",
+    "subcategory": "Elemental",
     "type" : "Large Elemental",
     "area" : ["Cave","Mountains","Ruins", "Tomb", "Volcano"],
     "ideal": "neutral"
@@ -1068,7 +1068,7 @@
     "id": 119,
     "name": "Water Elemental",
     "category": "Elemental",
-    "subCategory": "Elemental",
+    "subcategory": "Elemental",
     "type" : "Large Elemental",
     "area" : ["Ocean","Lake","Oasis"],
     "ideal": "neutral"
@@ -1077,7 +1077,7 @@
     "id": 120,
     "name": "Drow",
     "category": "Humanoid",
-    "subCategory": "Elf",
+    "subcategory": "Elf",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Mountains","Ruins","Swamp", "Tomb"],
     "ideal": "neutral evil"
@@ -1086,7 +1086,7 @@
     "id": 121,
     "name": "Drow Elite Warrior",
     "category": "Humanoid",
-    "subCategory": "Elf",
+    "subcategory": "Elf",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Mountains","Ruins","Swamp", "Tomb"],
     "ideal": "neutral evil"
@@ -1095,7 +1095,7 @@
     "id": 122,
     "name": "Drow Mage",
     "category": "Humanoid",
-    "subCategory": "Elf",
+    "subcategory": "Elf",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Mountains","Ruins","Swamp", "Tomb"],
     "ideal": "neutral evil"
@@ -1104,7 +1104,7 @@
     "id": 123,
     "name": "Drow Priestess of Lolth",
     "category": "Humanoid",
-    "subCategory": "Elf",
+    "subcategory": "Elf",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Mountains","Ruins","Swamp", "Tomb"],
     "ideal": "neutral evil"
@@ -1113,7 +1113,7 @@
     "id": 124,
     "name": "Empyrean",
     "category": "Celestial",
-    "subCategory": "Titan",
+    "subcategory": "Titan",
     "type" : "Huge Celestial",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Tomb","Volcano"],
     "ideal": "chaotic good"
@@ -1122,7 +1122,7 @@
     "id": 125,
     "name": "Ettercap",
     "category": "Monstrocity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Monstrocity",
     "area" : ["Cave","Forest","Jungle"],
     "ideal": "neutral evil"
@@ -1131,7 +1131,7 @@
     "id": 126,
     "name": "Ettin",
     "category": "Giant",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Giant",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Tomb","Volcano"],
     "ideal": ""
@@ -1140,7 +1140,7 @@
     "id": 127,
     "name": "Faerie Dragon",
     "category": "Dragon",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Tiny Dragon",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Tomb","Volcano"],
     "ideal": "chaotic good"
@@ -1149,7 +1149,7 @@
     "id": 128,
     "name": "Flameskull",
     "category": "Undead",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Tiny Undead",
     "area" : ["Cave","Tomb"],
     "ideal": "neutral evil"
@@ -1158,7 +1158,7 @@
     "id": 129,
     "name": "Flumph",
     "category": "Abberation",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Small Abberation",
     "area" : ["Cave","Tomb"],
     "ideal": "lawful good"
@@ -1167,7 +1167,7 @@
     "id": 130,
     "name": "Fomorian",
     "category": "Giant",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Huge Giant",
     "area" : ["Cave","Tomb"],
     "ideal": "chaotic evil"
@@ -1176,7 +1176,7 @@
     "id": 130,
     "name": "Gas Spore",
     "category": "Plant",
-    "subCategory": "Fungi",
+    "subcategory": "Fungi",
     "type" : "Large Plant",
     "area" : ["Cave","Forest","Jungle","Mountains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
@@ -1185,7 +1185,7 @@
     "id": 131,
     "name": "Shrieker",
     "category": "Plant",
-    "subCategory": "Fungi",
+    "subcategory": "Fungi",
     "type" : "Medium Plant",
     "area" : ["Cave","Forest","Jungle","Mountains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
@@ -1194,7 +1194,7 @@
     "id": 132,
     "name": "Violet Fungus",
     "category": "Plant",
-    "subCategory": "Fungi",
+    "subcategory": "Fungi",
     "type" : "Medium Plant",
     "area" : ["Cave","Forest","Jungle","Mountains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
@@ -1203,7 +1203,7 @@
     "id": 133,
     "name": "Galeb Duhr",
     "category": "Elemental",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Elemental",
     "area" : ["Cave","Forest","Jungle","Lake","Mountains","Ocean","Ruins","Swamp","Tomb","Volcano"],
 
@@ -1213,7 +1213,7 @@
     "id": 134,
     "name": "Gargoyle",
     "category": "Elemental",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Elemental",
     "area" : ["Cave","Forest","Jungle","Lake","Mountains","Ocean","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "chaotic evil"
@@ -1222,7 +1222,7 @@
     "id": 135,
     "name": "Dao",
     "category": "Elemtnal",
-    "subCategory": "Genie",
+    "subcategory": "Genie",
     "type" : "Large Elemental",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "neutral evil"
@@ -1231,7 +1231,7 @@
     "id": 136,
     "name": "Djinni",
     "category": "Elemtnal",
-    "subCategory": "Genie",
+    "subcategory": "Genie",
     "type" : "Large Elemental",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic good"
@@ -1240,7 +1240,7 @@
     "id": 137,
     "name": "Efreeti",
     "category": "Elemtnal",
-    "subCategory": "Genie",
+    "subcategory": "Genie",
     "type" : "Large Elemental",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "lawful evil"
@@ -1249,7 +1249,7 @@
     "id": 138,
     "name": "Marid",
     "category": "Elemtnal",
-    "subCategory": "Genie",
+    "subcategory": "Genie",
     "type" : "Large Elemental",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic neutral"
@@ -1258,7 +1258,7 @@
     "id": 139,
     "name": "Ghost",
     "category": "Undead",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Undead",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -1267,7 +1267,7 @@
     "id": 140,
     "name": "Ghast",
     "category": "Undead",
-    "subCategory": "Ghoul",
+    "subcategory": "Ghoul",
     "type" : "Medium Undead",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp"],
     "ideal": "chaotic evil"
@@ -1276,7 +1276,7 @@
     "id": 141,
     "name": "Ghoul",
     "category": "Undead",
-    "subCategory": "Ghoul",
+    "subcategory": "Ghoul",
     "type" : "Medium Undead",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp"],
     "ideal": "chaotic evil"
@@ -1285,7 +1285,7 @@
     "id": 142,
     "name": "Cloud Giant",
     "category": "Giant",
-    "subCategory": "Giant",
+    "subcategory": "Giant",
     "type" : "Huge Giant",
     "area" : ["Cave","Forest","Mountains","Ruins"],
     "ideal": "neutral good"
@@ -1294,7 +1294,7 @@
     "id": 143,
     "name": "Fire Giant",
     "category": "Giant",
-    "subCategory": "Giant",
+    "subcategory": "Giant",
     "type" : "Huge Giant",
     "area" : ["Volcano"],
     "ideal": "lawful evil"
@@ -1303,7 +1303,7 @@
     "id": 144,
     "name": "Frost Giant",
     "category": "Giant",
-    "subCategory": "Giant",
+    "subcategory": "Giant",
     "type" : "Huge Giant",
     "area" : ["Cave","Forest","Mountains","Ruins"],
     "ideal": "neutral evil"
@@ -1312,7 +1312,7 @@
     "id": 145,
     "name": "Hill Giant",
     "category": "Giant",
-    "subCategory": "Giant",
+    "subcategory": "Giant",
     "type" : "Huge Giant",
     "area" : ["Cave","Forest","Mountains","Ruins"],
     "ideal": "chaotic evil"
@@ -1321,7 +1321,7 @@
     "id": 146,
     "name": "Stone Giant",
     "category": "Giant",
-    "subCategory": "Giant",
+    "subcategory": "Giant",
     "type" : "Huge Giant",
     "area" : ["Cave","Forest","Mountains","Ruins"],
     "ideal": "neutral"
@@ -1330,7 +1330,7 @@
     "id": 147,
     "name": "Storm Giant",
     "category": "Giant",
-    "subCategory": "Giant",
+    "subcategory": "Giant",
     "type" : "Huge Giant",
     "area" : ["Ocean", "Lake"],
     "ideal": "chaotic good"
@@ -1339,7 +1339,7 @@
     "id": 148,
     "name": "Gibberubg Mouther",
     "category": "Aberration",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Abberation",
     "area" : ["Cave", "Tomb"],
     "ideal": "neutral"
@@ -1348,7 +1348,7 @@
     "id": 149,
     "name": "Githyanki Warrior",
     "category": "Humanoid",
-    "subCategory": "Gith",
+    "subcategory": "Gith",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Swamp"],
     "ideal": "lawful evil"
@@ -1357,7 +1357,7 @@
     "id": 150,
     "name": "Githyanki Knight",
     "category": "Humanoid",
-    "subCategory": "Gith",
+    "subcategory": "Gith",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Swamp"],
     "ideal": "lawful evil"
@@ -1366,7 +1366,7 @@
     "id": 151,
     "name": "Githyanki Monk",
     "category": "Humanoid",
-    "subCategory": "Gith",
+    "subcategory": "Gith",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Swamp"],
     "ideal": "lawful neutral"
@@ -1375,7 +1375,7 @@
     "id": 152,
     "name": "Githyanki Zerth",
     "category": "Humanoid",
-    "subCategory": "Gith",
+    "subcategory": "Gith",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Swamp"],
     "ideal": "lawful neutral"
@@ -1384,7 +1384,7 @@
     "id": 153,
     "name": "Gnoll",
     "category": "Humanoid",
-    "subCategory": "Gnoll",
+    "subcategory": "Gnoll",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Ruins"],
     "ideal": "chaotic evil"
@@ -1393,7 +1393,7 @@
     "id": 154,
     "name": "Gnoll Pack Lord",
     "category": "Humanoid",
-    "subCategory": "Gnoll",
+    "subcategory": "Gnoll",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Ruins"],
     "ideal": "chaotic evil"
@@ -1402,7 +1402,7 @@
     "id": 155,
     "name": "Gnoll Fang of Yeenoghu",
     "category": "Fiend",
-    "subCategory": "Gnoll",
+    "subcategory": "Gnoll",
     "type" : "Medium Fiend",
     "area" : ["Cave","Forest","Jungle","Ruins"],
     "ideal": "chaotic evil"
@@ -1411,7 +1411,7 @@
     "id": 156,
     "name": "Deep Gnome",
     "category": "Humanoid",
-    "subCategory": "Gnome",
+    "subcategory": "Gnome",
     "type" : "Small Humanoid",
     "area" : ["Cave","Mountains","Tomb","Volcano"],
     "ideal": "neutral good"
@@ -1420,7 +1420,7 @@
     "id": 157,
     "name": "Goblin",
     "category": "Humanoid",
-    "subCategory": "Goblin",
+    "subcategory": "Goblin",
     "type" : "Small Humanoid",
     "area" : ["Cave","Forest","Jungle","Meadow","Ruins","Swamp","Tomb"],
     "ideal": "neutral evil"
@@ -1429,7 +1429,7 @@
     "id": 158,
     "name": "Goblin Boss",
     "category": "Humanoid",
-    "subCategory": "Goblin",
+    "subcategory": "Goblin",
     "type" : "Small Humanoid",
     "area" : ["Cave","Forest","Jungle","Meadow","Ruins","Swamp","Tomb"],
     "ideal": "neutral evil"
@@ -1438,7 +1438,7 @@
     "id": 159,
     "name": "Clay Golem",
     "category": "Construct",
-    "subCategory": "Golem",
+    "subcategory": "Golem",
     "type" : "Large Construct",
     "area" : ["Cave","Forest","Jungle","Mountains","Oasis","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
@@ -1447,7 +1447,7 @@
     "id": 160,
     "name": "Flesh Golem",
     "category": "Construct",
-    "subCategory": "Golem",
+    "subcategory": "Golem",
     "type" : "Medium Construct",
     "area" : ["Cave","Forest","Jungle","Mountains","Oasis","Ruins","Swamp","Tomb"],
     "ideal": "neutral"
@@ -1456,7 +1456,7 @@
     "id": 161,
     "name": "Iron Golem",
     "category": "Construct",
-    "subCategory": "Golem",
+    "subcategory": "Golem",
     "type" : "Large Construct",
     "area" : ["Cave","Forest","Jungle","Mountains","Oasis","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
@@ -1465,7 +1465,7 @@
     "id": 162,
     "name": "Stone Golem",
     "category": "Construct",
-    "subCategory": "Golem",
+    "subcategory": "Golem",
     "type" : "Large Construct",
     "area" : ["Cave","Forest","Jungle","Mountains","Oasis","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
@@ -1474,7 +1474,7 @@
     "id": 163,
     "name": "Gorgon",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrosity",
     "area" : ["Plains","Ruins"],
     "ideal": "unaligned"
@@ -1483,7 +1483,7 @@
     "id": 164,
     "name": "Grell",
     "category": "Abberation",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Abberation",
     "area" : ["Cave","Tomb","Volcano"],
     "ideal": "neutral evil"
@@ -1492,7 +1492,7 @@
     "id": 165,
     "name": "Grick",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Monstrosity",
     "area" : ["Cave","Tomb","Volcano"],
     "ideal": "neutral"
@@ -1501,7 +1501,7 @@
     "id": 166,
     "name": "Grick Alpha",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrosity",
     "area" : ["Cave","Tomb","Volcano"],
     "ideal": "neutral"
@@ -1510,7 +1510,7 @@
     "id": 167,
     "name": "Griffon",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrosity",
     "area" : ["Cave","Forest","Jungle","Mountains","Oasis","Ruins"],
     "ideal": "unaligned"
@@ -1519,7 +1519,7 @@
     "id": 168,
     "name": "Grimlock",
     "category": "Humanoid",
-    "subCategory": "Grimlock",
+    "subcategory": "Grimlock",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Tomb","Volcano"],
     "ideal": "neutral evil"
@@ -1528,7 +1528,7 @@
     "id": 169,
     "name": "Green Hag",
     "category": "Fey",
-    "subCategory": "Hag",
+    "subcategory": "Hag",
     "type" : "Medium Fey",
     "area" : ["Lake","Oasis","Ocean","Swamp"],
     "ideal": "neutral evil"
@@ -1537,7 +1537,7 @@
     "id": 170,
     "name": "Night Hag",
     "category": "Fiend",
-    "subCategory": "Hag",
+    "subcategory": "Hag",
     "type" : "Medium Fey",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Ruins","Swamp","Tomb"],
     "ideal": "neutral evil"
@@ -1546,7 +1546,7 @@
     "id": 171,
     "name": "Sea Hag",
     "category": "Fey",
-    "subCategory": "Hag",
+    "subcategory": "Hag",
     "type" : "Medium Fey",
     "area" : ["Cave","Ocean","Tomb"],
     "ideal": "chaotic evil"
@@ -1555,7 +1555,7 @@
     "id": 172,
     "name": "Half-Dragon",
     "category": "Humanoid",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Humanoid",
     "area" : ["Desert", "Volcano"],
     "ideal": " "
@@ -1564,7 +1564,7 @@
     "id": 173,
     "name": "Harpy",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Monstrosity",
     "area" : ["Lake", "Ocean"],
     "ideal": "chaotic evil"
@@ -1573,7 +1573,7 @@
     "id": 174,
     "name": "Hell Hound",
     "category": "Fiend",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Fiend",
     "area" : ["Cave","Forest","Jungle","Volcano"],
     "ideal": "lawful evil"
@@ -1582,7 +1582,7 @@
     "id": 175,
     "name": "Helmed Horror",
     "category": "Construct",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Construct",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "neutral"
@@ -1591,7 +1591,7 @@
     "id": 176,
     "name": "Hippogriff",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrosity",
     "area" : ["Cave","Forest","Jungle","Mountains","Ruins"],
     "ideal": "unaligned"
@@ -1600,7 +1600,7 @@
     "id": 177,
     "name": "Hobgoblin",
     "category": "Humanoid",
-    "subCategory": "Goblinoid",
+    "subcategory": "Goblinoid",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "lawful evil"
@@ -1609,7 +1609,7 @@
     "id": 178,
     "name": "Hobgoblin Captain",
     "category": "Humanoid",
-    "subCategory": "Goblinoid",
+    "subcategory": "Goblinoid",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "lawful evil"
@@ -1618,7 +1618,7 @@
     "id": 179,
     "name": "Hobgoblin Warlord",
     "category": "Humanoid",
-    "subCategory": "Goblinoid",
+    "subcategory": "Goblinoid",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "lawful evil"
@@ -1627,7 +1627,7 @@
     "id": 180,
     "name": "Homunculus",
     "category": "Construct",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Tiny Construct",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "neutral"
@@ -1636,7 +1636,7 @@
     "id": 181,
     "name": "Hook Horror",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrosity",
     "area" : ["Cave", "Tomb", "Volcano"],
     "ideal": "neutral"
@@ -1645,7 +1645,7 @@
     "id": 182,
     "name": "Hydra",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Huge Monstrosity",
     "area" : ["Cave","Swamp", "Tomb"],
     "ideal": "unaligned"
@@ -1654,7 +1654,7 @@
     "id": 183,
     "name": "Intellect Devourer",
     "category": "Abberation",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Tiny Abberation",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp"],
     "ideal": "lawful evil"
@@ -1663,7 +1663,7 @@
     "id": 184,
     "name": "Invisible Stalker",
     "category": "Elemental",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Elemental",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb"],
     "ideal": "neutral"
@@ -1672,7 +1672,7 @@
     "id": 185,
     "name": "Jackalwere",
     "category": "Humanoid",
-    "subCategory": "Shapechanger",
+    "subcategory": "Shapechanger",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "chaotic evil"
@@ -1681,7 +1681,7 @@
     "id": 186,
     "name": "Kenku",
     "category": "Humanoid",
-    "subCategory": "kenku",
+    "subcategory": "kenku",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic neutral"
@@ -1690,7 +1690,7 @@
     "id": 187,
     "name": "Winged Kobold",
     "category": "Humanoid",
-    "subCategory": "Kobold",
+    "subcategory": "Kobold",
     "type" : "Small Humanoid",
     "area" : ["Cave","Mountains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "lawful evil"
@@ -1699,7 +1699,7 @@
     "id": 188,
     "name": "Kobold",
     "category": "Humanoid",
-    "subCategory": "Kobold",
+    "subcategory": "Kobold",
     "type" : "Small Humanoid",
     "area" : ["Cave","Mountains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "lawful evil"
@@ -1708,7 +1708,7 @@
     "id": 189,
     "name": "Kraken",
     "category": "Monstrosity",
-    "subCategory": "Titan",
+    "subcategory": "Titan",
     "type" : "Gargantuan Monstrosity",
     "area" : ["Ocean"],
     "ideal": "chaotic evil"
@@ -1717,7 +1717,7 @@
     "id": 190,
     "name": "Kuo-Toa",
     "category": "Humanoid",
-    "subCategory": "Kuo-Toa",
+    "subcategory": "Kuo-Toa",
     "type" : "Medium Humanoid",
     "area" : ["Jungle","Meadow","Oasis","Swamp"],
     "ideal": "neutral evil"
@@ -1726,7 +1726,7 @@
     "id": 191,
     "name": "Kuo-Toa Archpriest",
     "category": "Humanoid",
-    "subCategory": "Kuo-Toa",
+    "subcategory": "Kuo-Toa",
     "type" : "Medium Humanoid",
     "area" : ["Jungle","Meadow","Oasis","Swamp"],
     "ideal": "neutral evil"
@@ -1735,7 +1735,7 @@
     "id": 192,
     "name": "Kuo-Toa Whip",
     "category": "Humanoid",
-    "subCategory": "Kuo-Toa",
+    "subcategory": "Kuo-Toa",
     "type" : "Medium Humanoid",
     "area" : ["Jungle","Meadow","Oasis","Swamp"],
     "ideal": "neutral evil"
@@ -1744,7 +1744,7 @@
     "id": 193,
     "name": "Lamia",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrosity",
     "area" : ["Ruins","Tomb"],
     "ideal": "chaotic evil"
@@ -1753,7 +1753,7 @@
     "id": 194,
     "name": "Lich",
     "category": "Undead",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Undead",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "lawful evil"
@@ -1762,7 +1762,7 @@
     "id": 195,
     "name": "Lizardfolk",
     "category": "Humanoid",
-    "subCategory": "Lizardfolk",
+    "subcategory": "Lizardfolk",
     "type" : "Medium Monstrosity",
     "area" : ["Forest","Jungle","Oasis","Swamp"],
     "ideal": "neutral"
@@ -1771,7 +1771,7 @@
     "id": 196,
     "name": "Lizardfolk Shaman",
     "category": "Humanoid",
-    "subCategory": "Lizardfolk",
+    "subcategory": "Lizardfolk",
     "type" : "Medium Monstrosity",
     "area" : ["Forest","Jungle","Oasis","Swamp"],
     "ideal": "neutral"
@@ -1780,7 +1780,7 @@
     "id": 197,
     "name": "Lizardfolk King or Queen",
     "category": "Humanoid",
-    "subCategory": "Lizardfolk",
+    "subcategory": "Lizardfolk",
     "type" : "Medium Monstrosity",
     "area" : ["Forest","Jungle","Oasis","Swamp"],
     "ideal": "chaotic evil"
@@ -1789,7 +1789,7 @@
     "id": 198,
     "name": "Werebear",
     "category": "Humanoid",
-    "subCategory": "Human, Shapechanger",
+    "subcategory": "Human, Shapechanger",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "neutral good"
@@ -1798,7 +1798,7 @@
     "id": 199,
     "name": "Wereboar",
     "category": "Humanoid",
-    "subCategory": "Human, Shapechanger",
+    "subcategory": "Human, Shapechanger",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "neutral evil"
@@ -1807,7 +1807,7 @@
     "id": 200,
     "name": "Wererat",
     "category": "Humanoid",
-    "subCategory": "Human, Shapechanger",
+    "subcategory": "Human, Shapechanger",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "lawful evil"
@@ -1816,7 +1816,7 @@
     "id": 201,
     "name": "Weretiger",
     "category": "Humanoid",
-    "subCategory": "Human, Shapechanger",
+    "subcategory": "Human, Shapechanger",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "neutral"
@@ -1825,7 +1825,7 @@
     "id": 202,
     "name": "Werewolf",
     "category": "Humanoid",
-    "subCategory": "Human, Shapechanger",
+    "subcategory": "Human, Shapechanger",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "chaotic evil"
@@ -1834,7 +1834,7 @@
     "id": 203,
     "name": "Magmin",
     "category": "Elemental",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Small Elemental",
     "area" : ["Volcano"],
     "ideal": "chaotic neutral"
@@ -1843,7 +1843,7 @@
     "id": 204,
     "name": "Manticore",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrosity",
     "area" : ["Cave","Jungle","Oasis","Ruins"],
     "ideal": "lawful evil"
@@ -1852,7 +1852,7 @@
     "id": 205,
     "name": "Medusa",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Monstrosity",
     "area" : ["Cave","Ruins","Tomb"],
     "ideal": "lawful evil"
@@ -1861,7 +1861,7 @@
     "id": 206,
     "name": "Dust Mephit",
     "category": "Elemental",
-    "subCategory": "Mephit",
+    "subcategory": "Mephit",
     "type" : "Small Elemental",
     "area" : ["Cave","Mountains","Oasis","Plains","Ruins","Tomb"],
     "ideal": "neutral evil"
@@ -1870,7 +1870,7 @@
     "id": 207,
     "name": "Ice Mephit",
     "category": "Elemental",
-    "subCategory": "Mephit",
+    "subcategory": "Mephit",
     "type" : "Small Elemental",
     "area" : ["Cave","Mountains","Ruins","Tomb"],
     "ideal": "neutral evil"
@@ -1879,7 +1879,7 @@
     "id": 208,
     "name": "Magma Mephit",
     "category": "Elemental",
-    "subCategory": "Mephit",
+    "subcategory": "Mephit",
     "type" : "Small Elemental",
     "area" : ["Volcano"],
     "ideal": "neutral evil"
@@ -1888,7 +1888,7 @@
     "id": 209,
     "name": "Mud Mephit",
     "category": "Elemental",
-    "subCategory": "Mephit",
+    "subcategory": "Mephit",
     "type" : "Small Elemental",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Plains","Ruins","Swamp"],
     "ideal": "neutral evil"
@@ -1897,7 +1897,7 @@
     "id": 210,
     "name": "Smoke Mephit",
     "category": "Elemental",
-    "subCategory": "Mephit",
+    "subcategory": "Mephit",
     "type" : "Small Elemental",
     "area" : ["Cave","Forest","Jungle","Mountains","Plains","Ruins","Swamp", "Tomb","Volcano"],
     "ideal": "neutral evil"
@@ -1906,7 +1906,7 @@
     "id": 211,
     "name": "Steam Mephit",
     "category": "Elemental",
-    "subCategory": "Mephit",
+    "subcategory": "Mephit",
     "type" : "Small Elemental",
     "area" : ["Cave","Forest","Jungle","Mountains","Plains","Ruins","Swamp", "Tomb","Volcano"],
     "ideal": "neutral evil"
@@ -1915,7 +1915,7 @@
     "id": 212,
     "name": "Merfolk",
     "category": "Humanoid",
-    "subCategory": "Merfolk",
+    "subcategory": "Merfolk",
     "type" : "Medium Humanoid",
     "area" : ["Ocean", "Lake"],
     "ideal": "neutral"
@@ -1924,7 +1924,7 @@
     "id": 213,
     "name": "Merrow",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrosity",
     "area" : ["Ocean", "Lake"],
     "ideal": "chaotic evil"
@@ -1933,7 +1933,7 @@
     "id": 214,
     "name": "Mimic",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Monstrosity",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "neutral"
@@ -1942,7 +1942,7 @@
     "id": 215,
     "name": "Mind Flayer",
     "category": "Abberation",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Abberation",
     "area" : ["Cave","Ruins","Tomb"],
     "ideal": "lawful evil"
@@ -1951,7 +1951,7 @@
     "id": 216,
     "name": "Minotaur",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrosity",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp"],
     "ideal": "chaotic evil"
@@ -1960,7 +1960,7 @@
     "id": 217,
     "name": "Monodrone",
     "category": "Construct",
-    "subCategory": "Modrons",
+    "subcategory": "Modrons",
     "type" : "Medium Construct",
     "area" : ["Future"],
     "ideal": "lawful neutral"
@@ -1969,7 +1969,7 @@
     "id": 218,
     "name": "Duodrone",
     "category": "Construct",
-    "subCategory": "Modrons",
+    "subcategory": "Modrons",
     "type" : "Medium Construct",
     "area" : ["Future"],
     "ideal": "lawful neutral"
@@ -1978,7 +1978,7 @@
     "id": 219,
     "name": "Tridrone",
     "category": "Construct",
-    "subCategory": "Modrons",
+    "subcategory": "Modrons",
     "type" : "Medium Construct",
     "area" : ["Future"],
     "ideal": "lawful neutral"
@@ -1987,7 +1987,7 @@
     "id": 220,
     "name": "Quadrone",
     "category": "Construct",
-    "subCategory": "Modrons",
+    "subcategory": "Modrons",
     "type" : "Medium Construct",
     "area" : ["Future"],
     "ideal": "lawful neutral"
@@ -1996,7 +1996,7 @@
     "id": 221,
     "name": "Pentadrone",
     "category": "Construct",
-    "subCategory": "Modrons",
+    "subcategory": "Modrons",
     "type" : "Medium Construct",
     "area" : ["Future"],
     "ideal": "lawful neutral"
@@ -2005,7 +2005,7 @@
     "id": 222,
     "name": "Mummy",
     "category": "Undead",
-    "subCategory": "Mummy",
+    "subcategory": "Mummy",
     "type" : "Medium Undead",
     "area" : ["Tomb"],
     "ideal": "lawful evil"
@@ -2014,7 +2014,7 @@
     "id": 223,
     "name": "Mummy Lord",
     "category": "Undead",
-    "subCategory": "Mummy",
+    "subcategory": "Mummy",
     "type" : "Medium Undead",
     "area" : ["Tomb"],
     "ideal": "lawful evil"
@@ -2023,7 +2023,7 @@
     "id": 224,
     "name": "Myconid Sprout",
     "category": "Plant",
-    "subCategory": "Myconids",
+    "subcategory": "Myconids",
     "type" : "Small Plant",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Ruins","Swamp","Tomb"],
     "ideal": "laeful neutral"
@@ -2032,7 +2032,7 @@
     "id": 225,
     "name": "Quaggoth Spore Servant",
     "category": "Plant",
-    "subCategory": "Myconids",
+    "subcategory": "Myconids",
     "type" : "Medium Plant",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
@@ -2041,7 +2041,7 @@
     "id": 226,
     "name": "Myconid Adult",
     "category": "Plant",
-    "subCategory": "Myconids",
+    "subcategory": "Myconids",
     "type" : "Medium Plant",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Ruins","Swamp","Tomb"],
     "ideal": "lawful neutral"
@@ -2050,7 +2050,7 @@
     "id": 227,
     "name": "Myconid Sovereign",
     "category": "Plant",
-    "subCategory": "Myconids",
+    "subcategory": "Myconids",
     "type" : "Large Plant",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Ruins","Swamp","Tomb"],
     "ideal": "lawful neutral"
@@ -2059,7 +2059,7 @@
     "id": 228,
     "name": "Bone Naga",
     "category": "Undead",
-    "subCategory": "Naga",
+    "subcategory": "Naga",
     "type" : "Large Undead",
     "area" : ["Tomb", "Ruins"],
     "ideal": "lawful evil"
@@ -2068,7 +2068,7 @@
     "id": 229,
     "name": "Spirit Naga",
     "category": "Monstrosity",
-    "subCategory": "Naga",
+    "subcategory": "Naga",
     "type" : "Large Monstrosity",
     "area" : ["Tomb", "Ruins"],
     "ideal": "chaotic evil"
@@ -2077,7 +2077,7 @@
     "id": 230,
     "name": "Guardian Naga",
     "category": "Monstrosity",
-    "subCategory": "Naga",
+    "subcategory": "Naga",
     "type" : "Large Monstrosity",
     "area" : ["Tomb", "Ruins"],
     "ideal": "lawful good"
@@ -2086,7 +2086,7 @@
     "id": 231,
     "name": "Nightmare",
     "category": "Fiend",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Fiend",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Plains","Ruins","Tomb","Volcano"],
     "ideal": "neutral evil"
@@ -2095,7 +2095,7 @@
     "id": 232,
     "name": "Nothic",
     "category": "Abberation",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Abberation",
     "area" : ["Cave","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "neutral evil"
@@ -2104,7 +2104,7 @@
     "id": 233,
     "name": "Ogre",
     "category": "Giant",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Giant",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "chaotic evil"
@@ -2113,7 +2113,7 @@
     "id": 234,
     "name": "Half-Ogre",
     "category": "Giant",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Giant",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "chaotic neutral"
@@ -2122,7 +2122,7 @@
     "id": 235,
     "name": "Oni",
     "category": "Giant",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Giant",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "lawful evil"
@@ -2131,7 +2131,7 @@
     "id": 236,
     "name": "Black Pudding",
     "category": "Ooze",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Ooze",
     "area" : ["Cave","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
@@ -2140,7 +2140,7 @@
     "id": 237,
     "name": "Gelatinous Cube",
     "category": "Ooze",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Ooze",
     "area" : ["Cave","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
@@ -2149,7 +2149,7 @@
     "id": 238,
     "name": "Gray Ooze",
     "category": "Ooze",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Ooze",
     "area" : ["Cave","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
@@ -2158,7 +2158,7 @@
     "id": 239,
     "name": "Ochre Jelly",
     "category": "Ooze",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Ooze",
     "area" : ["Cave","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
@@ -2167,7 +2167,7 @@
     "id": 240,
     "name": "Orc",
     "category": "Humanoid",
-    "subCategory": "Orc",
+    "subcategory": "Orc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb","Volcano"],
     "ideal": "chaotic evil"
@@ -2176,7 +2176,7 @@
     "id": 241,
     "name": "Orc War Chief",
     "category": "Humanoid",
-    "subCategory": "Orc",
+    "subcategory": "Orc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb","Volcano"],
     "ideal": "chaotic evil"
@@ -2185,7 +2185,7 @@
     "id": 242,
     "name": "Orc Eye of Gruumsh",
     "category": "Humanoid",
-    "subCategory": "Orc",
+    "subcategory": "Orc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb","Volcano"],
     "ideal": "chaotic evil"
@@ -2194,7 +2194,7 @@
     "id": 243,
     "name": "Orog",
     "category": "Humanoid",
-    "subCategory": "Orc",
+    "subcategory": "Orc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb","Volcano"],
     "ideal": "chaotic evil"
@@ -2203,7 +2203,7 @@
     "id": 244,
     "name": "Otyugh",
     "category": "Abberation",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Abberation",
     "area" : ["Cave","Swamp","Tomb","Volcano"],
     "ideal": "neutral"
@@ -2212,7 +2212,7 @@
     "id": 245,
     "name": "Owlbear",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrosity",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Ruins"],
     "ideal": "unaligned"
@@ -2221,7 +2221,7 @@
     "id": 246,
     "name": "Pegasus",
     "category": "Celestial",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Celestial",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Ruins"],
     "ideal": "chaotic good"
@@ -2230,7 +2230,7 @@
     "id": 247,
     "name": "Peryton",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Monstrosity",
     "area" : ["Cave","Forest","Mountains","Ruins"],
     "ideal": "chaotic evil"
@@ -2239,7 +2239,7 @@
     "id": 248,
     "name": "Piercer",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Monstrosity",
     "area" : ["Cave","Ruins","Tomb","Volcano"],
     "ideal": "unaligned"
@@ -2248,7 +2248,7 @@
     "id": 249,
     "name": "Pixie",
     "category": "Fey",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Tiny Fey",
     "area" : ["Forest","Jungle","Meadow","Oasis","Ruins"],
     "ideal": "natural good"
@@ -2257,7 +2257,7 @@
     "id": 250,
     "name": "Pseudogragon",
     "category": "Dragon",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Tiny Dragon",
     "area" : ["Forest","Jungle","Meadow","Oasis","Ruins"],
     "ideal": "neutral good"
@@ -2266,7 +2266,7 @@
     "id": 251,
     "name": "Purple Worm",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Gargantuan Monstrosity",
     "area" : ["Cave","Ruins","Tomb","Volcano"],
     "ideal": "unaligned"
@@ -2275,7 +2275,7 @@
     "id": 252,
     "name": "Quaggoth",
     "category": "Humanoid",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Ruins","Tomb","Volcano"],
     "ideal": "chaotic neutral"
@@ -2284,7 +2284,7 @@
     "id": 253,
     "name": "Rakshasa",
     "category": "Fiend",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Fiend",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Tomb"],
     "ideal": "lawful evil"
@@ -2293,7 +2293,7 @@
     "id": 254,
     "name": "Young Remorhaz",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrosity",
     "area" : ["Cave","Forest","Mountains","Ruins"],
     "ideal": "unaligned"
@@ -2302,7 +2302,7 @@
     "id": 256,
     "name": "Remorhaz",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Huge Monstrosity",
     "area" : ["Cave","Forest","Mountains","Ruins"],
     "ideal": "unaligned"
@@ -2311,7 +2311,7 @@
     "id": 257,
     "name": "Revenant",
     "category": "Undead",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Undead",
     "area" : ["Cave","Forest","Mountains","Ruins","Tomb"],
     "ideal": "neutral"
@@ -2320,7 +2320,7 @@
     "id": 258,
     "name": "Rog",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Gargantuan Monstrosity",
     "area" : ["Mountains"],
     "ideal": "unaligned"
@@ -2329,7 +2329,7 @@
     "id": 259,
     "name": "Roper",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrosity",
     "area" : ["Cave","Ruins","Tomb","Volcano"],
     "ideal": "neutral evil"
@@ -2338,7 +2338,7 @@
     "id": 260,
     "name": "Rust Monster",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Monstrosity",
     "area" : ["Cave","Ruins","Tomb","Volcano"],
     "ideal": "unaligned"
@@ -2347,7 +2347,7 @@
     "id": 261,
     "name": "Sahuagin",
     "category": "Humanoid",
-    "subCategory": "Sahuagin",
+    "subcategory": "Sahuagin",
     "type" : "Medium Humanoid",
     "area" : ["Ocean", "Lake"],
     "ideal": "lawful evil"
@@ -2356,7 +2356,7 @@
     "id": 262,
     "name": "Sahuagin Priestess",
     "category": "Humanoid",
-    "subCategory": "Sahuagin",
+    "subcategory": "Sahuagin",
     "type" : "Medium Humanoid",
     "area" : ["Ocean", "Lake"],
     "ideal": "lawful evil"
@@ -2365,7 +2365,7 @@
     "id": 263,
     "name": "Sahuagin Baron",
     "category": "Humanoid",
-    "subCategory": "Sahuagin",
+    "subcategory": "Sahuagin",
     "type" : "Large Humanoid",
     "area" : ["Ocean", "Lake"],
     "ideal": "lawful evil"
@@ -2374,7 +2374,7 @@
     "id": 264,
     "name": "Fire Snake",
     "category": "Elemental",
-    "subCategory": "Salamander",
+    "subcategory": "Salamander",
     "type" : "Medium Elemental",
     "area" : ["Volcano"],
     "ideal": "neutral evil"
@@ -2383,7 +2383,7 @@
     "id": 265,
     "name": "Salamander",
     "category": "Elemental",
-    "subCategory": "Salamander",
+    "subcategory": "Salamander",
     "type" : "Large Elemental",
     "area" : ["Volcano"],
     "ideal": "neutral evil"
@@ -2392,7 +2392,7 @@
     "id": 266,
     "name": "Satyr",
     "category": "Fey",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Fey",
     "area" : ["Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins"],
     "ideal": "chaotic neutral"
@@ -2401,7 +2401,7 @@
     "id": 267,
     "name": "Scarecrow",
     "category": "Construct",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Construct",
     "area" : ["Forest","Jungle","Meadow","Plains","Ruins","Swamp"],
     "ideal": "chaotic evil"
@@ -2410,7 +2410,7 @@
     "id": 268,
     "name": "Shadow",
     "category": "Undead",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Undead",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -2419,7 +2419,7 @@
     "id": 269,
     "name": "Shambling Mound",
     "category": "Plant",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Plant",
     "area" : ["Forest","Jungle","Meadow","Ruins","Swamp"],
     "ideal": "unaligned"
@@ -2428,7 +2428,7 @@
     "id": 270,
     "name": "Shield Guardian",
     "category": "Construct",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Construct",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "unaligned"
@@ -2437,7 +2437,7 @@
     "id": 271,
     "name": "Skeleton",
     "category": "Undead",
-    "subCategory": "Skeleton",
+    "subcategory": "Skeleton",
     "type" : "Medium Undead",
     "area" : ["Tomb", "Ruins"],
     "ideal": "lawful evil"
@@ -2446,7 +2446,7 @@
     "id": 272,
     "name": "Minotaur Skeleton",
     "category": "Undead",
-    "subCategory": "Skeleton",
+    "subcategory": "Skeleton",
     "type" : "Large Undead",
     "area" : ["Tomb", "Ruins"],
     "ideal": "lawful evil"
@@ -2455,7 +2455,7 @@
     "id": 273,
     "name": "Warhorse Skeleton",
     "category": "Undead",
-    "subCategory": "Skeleton",
+    "subcategory": "Skeleton",
     "type" : "Large Undead",
     "area" : ["Tomb", "Ruins"],
     "ideal": "lawful evil"
@@ -2464,7 +2464,7 @@
     "id": 274,
     "name": "Slaad Tadpole",
     "category": "Abberation",
-    "subCategory": "Slaad",
+    "subcategory": "Slaad",
     "type" : "Tiny Abberation",
     "area" : ["Swamp"],
     "ideal": "chaotic neutral"
@@ -2473,7 +2473,7 @@
     "id": 275,
     "name": "Blue Slaad",
     "category": "Abberation",
-    "subCategory": "Slaad",
+    "subcategory": "Slaad",
     "type" : "Large Abberation",
     "area" : ["Swamp"],
     "ideal": "chaotic neutral"
@@ -2482,7 +2482,7 @@
     "id": 276,
     "name": "Red Slaad",
     "category": "Abberation",
-    "subCategory": "Slaad",
+    "subcategory": "Slaad",
     "type" : "Large Abberation",
     "area" : ["Swamp"],
     "ideal": "chaotic neutral"
@@ -2491,7 +2491,7 @@
     "id": 278,
     "name": "Green Slaad",
     "category": "Abberation",
-    "subCategory": "Slaad",
+    "subcategory": "Slaad",
     "type" : "Large Abberation",
     "area" : ["Swamp"],
     "ideal": "chaotic neutral"
@@ -2500,7 +2500,7 @@
     "id": 279,
     "name": "Grey Slaad",
     "category": "Abberation",
-    "subCategory": "Slaad",
+    "subcategory": "Slaad",
     "type" : "Medium Abberation",
     "area" : ["Swamp"],
     "ideal": "chaotic neutral"
@@ -2509,7 +2509,7 @@
     "id": 280,
     "name": "Death Slaad",
     "category": "Abberation",
-    "subCategory": "Slaad",
+    "subcategory": "Slaad",
     "type" : "Medium Abberation",
     "area" : ["Swamp"],
     "ideal": "chaotic neutral"
@@ -2518,7 +2518,7 @@
     "id": 281,
     "name": "Specter",
     "category": "Undead",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Undead",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -2527,7 +2527,7 @@
     "id": 282,
     "name": "Androphinx",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrosity",
     "area" : ["Oasis"],
     "ideal": "lawful neutral"
@@ -2536,7 +2536,7 @@
     "id": 283,
     "name": "Gynosphinx",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrosity",
     "area" : ["Oasis"],
     "ideal": "lawful neutral"
@@ -2545,7 +2545,7 @@
     "id": 284,
     "name": "Sprite",
     "category": "Fey",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Tiny Fey",
     "area" : ["Forest","Jungle","Meadow","Oasis"],
     "ideal": "neutral good"
@@ -2554,7 +2554,7 @@
     "id": 285,
     "name": "Stirge",
     "category": "Beast",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Tiny Beast",
     "area" : ["Cave", "Tomb"],
     "ideal": "unaligned"
@@ -2563,7 +2563,7 @@
     "id": 286,
     "name": "Succubus/Incubus",
     "category": "Fiend",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Fiend",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp"],
     "ideal": "neutral evil"
@@ -2572,7 +2572,7 @@
     "id": 287,
     "name": "Tarrasque",
     "category": "Monstrosity",
-    "subCategory": "Titan",
+    "subcategory": "Titan",
     "type" : "Gargantuan Monstrosity",
     "area" : ["Cave"],
     "ideal": "unaligned"
@@ -2581,7 +2581,7 @@
     "id": 288,
     "name": "Thri-Kreen",
     "category": "Humanoid",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Humanoid",
     "area" : ["Oasis"],
     "ideal": "chaotic neutral"
@@ -2590,7 +2590,7 @@
     "id": 289,
     "name": "Treant",
     "category": "Plant",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Huge Plant",
     "area" : ["Forest","Jungle","Meadow","Ruins","Swamp"],
     "ideal": "chaotic good"
@@ -2599,7 +2599,7 @@
     "id": 290,
     "name": "Troglodyte",
     "category": "Humanoid",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Humanoid",
     "area" : ["Ocean", "Lake"],
     "ideal": "chaotic evil"
@@ -2608,7 +2608,7 @@
     "id": 291,
     "name": "Troll",
     "category": "Giant",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Giant",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "chaotic evil"
@@ -2617,7 +2617,7 @@
     "id": 292,
     "name": "Umber Hulk",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrosity",
     "area" : ["Cave","Tomb","Volcano"],
     "ideal": ""
@@ -2626,7 +2626,7 @@
     "id": 293,
     "name": "Unicorn",
     "category": "Celestial",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Celestial",
     "area" : ["Forest","Jungle","Meadow","Plains"],
     "ideal": "lawful good"
@@ -2635,7 +2635,7 @@
     "id": 294,
     "name": "Vampire",
     "category": "Undead",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Undead",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "lawful evil"
@@ -2644,7 +2644,7 @@
     "id": 295,
     "name": "Vampire Spawn",
     "category": "Undead",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Undead",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "neutral evil"
@@ -2653,7 +2653,7 @@
     "id": 296,
     "name": "Water Weird",
     "category": "Elemental",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Elemental",
     "area" : ["Ocean", "Lake"],
     "ideal": "neutral"
@@ -2662,7 +2662,7 @@
     "id": 297,
     "name": "Wight",
     "category": "Undead",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Undead",
     "area" : ["Cave","Forest","Jungle","Mountains","Ruins","Tomb"],
     "ideal": "neutral evil"
@@ -2671,7 +2671,7 @@
     "id": 298,
     "name": "Will-o'-Whisp",
     "category": "Undead",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Tiny Undead",
     "area" : ["Forest","Jungle","Meadow","Oasis","Ruins","Swamp"],
     "ideal": "chaotic evil"
@@ -2680,7 +2680,7 @@
     "id": 299,
     "name": "Wraith",
     "category": "Undead",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Undead",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "neutral evil"
@@ -2689,7 +2689,7 @@
     "id": 300,
     "name": "Wyvern",
     "category": "Dragon",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Dragon",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins"],
     "ideal": "unaligned"
@@ -2698,7 +2698,7 @@
     "id": 301,
     "name": "Xorn",
     "category": "Elemental",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Medium Elemental",
     "area" : ["Volcano","Mountains"],
     "ideal": "neutral"
@@ -2707,7 +2707,7 @@
     "id": 302,
     "name": "Yeti",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Large Monstrosity",
     "area" : ["Cave","Forest","Mountains","Ruins"],
     "ideal": "chaotic evil"
@@ -2716,7 +2716,7 @@
     "id": 303,
     "name": "Abominable Yeti",
     "category": "Monstrosity",
-    "subCategory": "",
+    "subcategory": "",
     "type" : "Huge Monstrosity",
     "area" : ["Cave","Forest","Mountains","Ruins"],
     "ideal": "chaotic evil"
@@ -2725,7 +2725,7 @@
     "id": 304,
     "name": "Yuan-Ti Abomination",
     "category": "Monstrosity",
-    "subCategory": "Yuan-Ti",
+    "subcategory": "Yuan-Ti",
     "type" : "Large Monstrosity",
     "area" : ["Oasis"],
     "ideal": "neutral evil"
@@ -2734,7 +2734,7 @@
     "id": 305,
     "name": "Yuan-Ti Malison",
     "category": "Monstrosity",
-    "subCategory": "Yuan-Ti",
+    "subcategory": "Yuan-Ti",
     "type" : "Medium Monstrosity",
     "area" : ["Oasis"],
     "ideal": "neutral evil"
@@ -2743,7 +2743,7 @@
     "id": 306,
     "name": "Yuan-Ti Pureblood",
     "category": "Humanoid",
-    "subCategory": "Yuan-Ti",
+    "subcategory": "Yuan-Ti",
     "type" : "Medium Humanoid",
     "area" : ["Oasis"],
     "ideal": "neutral evil"
@@ -2752,7 +2752,7 @@
     "id": 307,
     "name": "Arcanaloth",
     "category": "Fiend",
-    "subCategory": "Yugoloth",
+    "subcategory": "Yugoloth",
     "type" : "Medium Fiend",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains"],
     "ideal": "neutral evil"
@@ -2761,7 +2761,7 @@
     "id": 308,
     "name": "Mezzoloth",
     "category": "Fiend",
-    "subCategory": "Yugoloth",
+    "subcategory": "Yugoloth",
     "type" : "Medium Fiend",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis"],
     "ideal": "neutral evil"
@@ -2770,7 +2770,7 @@
     "id": 309,
     "name": "Nycaloth",
     "category": "Fiend",
-    "subCategory": "Yugoloth",
+    "subcategory": "Yugoloth",
     "type" : "Large Fiend",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Volcano"],
     "ideal": "neutral evil"
@@ -2779,7 +2779,7 @@
     "id": 310,
     "name": "Ultroloth",
     "category": "Fiend",
-    "subCategory": "Yugoloth",
+    "subcategory": "Yugoloth",
     "type" : "Medium Fiend",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Volcano"],
     "ideal": "neutral evil"
@@ -2788,7 +2788,7 @@
     "id": 311,
     "name": "Zombie",
     "category": "Undead",
-    "subCategory": "Zombie",
+    "subcategory": "Zombie",
     "type" : "Medium Undead",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb"],
     "ideal": "natural evil"
@@ -2797,7 +2797,7 @@
     "id": 312,
     "name": "Ogre Zombie",
     "category": "Undead",
-    "subCategory": "Zombie",
+    "subcategory": "Zombie",
     "type" : "Large Undead",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb"],
     "ideal": "natural evil"
@@ -2806,7 +2806,7 @@
     "id": 313,
     "name": "Beholder Zombie",
     "category": "Undead",
-    "subCategory": "Zombie",
+    "subcategory": "Zombie",
     "type" : "Large Undead",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb"],
     "ideal": "natural evil"
@@ -2815,7 +2815,7 @@
     "id": 314,
     "name": "Ape",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Jungle"],
     "ideal": "unaligned"
@@ -2824,7 +2824,7 @@
     "id": 315,
     "name": "Awakened Shrub",
     "category": "Plant",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Small Plant",
     "area" : ["Forest","Jungle","Meadow","Plains","Ruins","Swamp"],
     "ideal": "unaligned"
@@ -2833,7 +2833,7 @@
     "id": 316,
     "name": "Awakened Tree",
     "category": "Plant",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Huge Plant",
     "area" : ["Forest","Jungle","Meadow","Plains","Ruins","Swamp"],
     "ideal": "unaligned"
@@ -2842,7 +2842,7 @@
     "id": 317,
     "name": "Axe Beak",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Mountains"],
     "ideal": "unaligned"
@@ -2851,7 +2851,7 @@
     "id": 318,
     "name": "Baboon",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Small Beast",
     "area" : ["Jungle"],
     "ideal": "unalgined"
@@ -2860,7 +2860,7 @@
     "id": 319,
     "name": "Badger",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Tiny Beast",
     "area" : ["Forest","Jungle","Meadow","Plains","Ruins"],
     "ideal": "unaligned"
@@ -2869,7 +2869,7 @@
     "id": 320,
     "name": "Bat",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Tiny Beast",
     "area" : ["Cave","Tomb","Volcano"],
     "ideal": "unaligned"
@@ -2878,7 +2878,7 @@
     "id": 321,
     "name": "Black Bear",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Forest","Mountains","Cave"],
     "ideal": "unaligned"
@@ -2887,7 +2887,7 @@
     "id": 332,
     "name": "Blink Dog",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Oasis"],
     "ideal": "unaligned"
@@ -2896,7 +2896,7 @@
     "id": 333,
     "name": "Blood Hawk",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Small Beast",
     "area" : ["Mountains"],
     "ideal": "unaligned"
@@ -2905,7 +2905,7 @@
     "id": 334,
     "name": "Boar",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Cave","Forest","Jungle","Meadow","Plains","Swamp"],
     "ideal": "unaligned"
@@ -2914,7 +2914,7 @@
     "id": 335,
     "name": "Brown Bear",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Forest","Mountains","Cave"],
     "ideal": "unaligned"
@@ -2923,7 +2923,7 @@
     "id": 336,
     "name": "Camel",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Oasis"],
     "ideal": "unaligned"
@@ -2932,7 +2932,7 @@
     "id": 337,
     "name": "Cat",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Tiny Beasts",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains"],
     "ideal": "unaligned"
@@ -2941,7 +2941,7 @@
     "id": 338,
     "name": "Constrictor Snake",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Jungle","Meadow"],
     "ideal": "unaligned"
@@ -2950,7 +2950,7 @@
     "id": 339,
     "name": "Crab",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Tiny Beast",
     "area" : ["Ocean"],
     "ideal": "unaligned"
@@ -2959,7 +2959,7 @@
     "id": 340,
     "name": "Crocodile",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Swamp"],
     "ideal": "unaligned"
@@ -2968,7 +2968,7 @@
     "id": 341,
     "name": "Death Dog",
     "category": "Monstrosity",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Meadium Monstrosity",
     "area" : ["Cave","Tomb","Volcano"],
     "ideal": "neutral evil"
@@ -2977,7 +2977,7 @@
     "id": 342,
     "name": "Deer",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Forest","Mountains","Meadow","Plains"],
     "ideal": "unaligned"
@@ -2986,7 +2986,7 @@
     "id": 343,
     "name": "Dire Wolf",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Forest","Mountains"],
     "ideal": "unaligned"
@@ -2995,7 +2995,7 @@
     "id": 344,
     "name": "Draft Horse",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Forest","Jungle","Meadow","Mountains","Plains"],
     "ideal": "unaligned"
@@ -3004,7 +3004,7 @@
     "id": 345,
     "name": "Eagle",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Small Beast",
     "area" : ["Moutains","Forest"],
     "ideal": "unaligned"
@@ -3013,7 +3013,7 @@
     "id": 346,
     "name": "Elephant",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Huge Beast",
     "area" : ["Jungle","Oasis"],
     "ideal": "unaligned"
@@ -3022,7 +3022,7 @@
     "id": 347,
     "name": "Elk",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Forest","Mountains"],
     "ideal": "unaligned"
@@ -3031,7 +3031,7 @@
     "id": 348,
     "name": "Flying Snake",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Tiny Beast",
     "area" : ["Jungle"],
     "ideal": "unaligned"
@@ -3040,7 +3040,7 @@
     "id": 349,
     "name": "Frog",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Tiny Beast",
     "area" : ["Swamp"],
     "ideal": "unaligned"
@@ -3049,7 +3049,7 @@
     "id": 350,
     "name": "Giant Ape",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Huge Beast",
     "area" : ["Jungle"],
     "ideal": "unaligned"
@@ -3058,7 +3058,7 @@
     "id": 351,
     "name": "Giant Badger",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Plains"],
     "ideal": "unaligned"
@@ -3067,7 +3067,7 @@
     "id": 352,
     "name": "Giant Bat",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Cave","Tomb","Volcano"],
     "ideal": "unaligned"
@@ -3076,7 +3076,7 @@
     "id": 353,
     "name": "Giant Boar",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Plains","Swamp"],
     "ideal": "unaligned"
@@ -3085,7 +3085,7 @@
     "id": 354,
     "name": "Giant Centipede",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "small Beast",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Plains","Swamp","Oasis"],
     "ideal": "unaligned"
@@ -3094,7 +3094,7 @@
     "id": 355,
     "name": "Giant Constrictor Snake",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Huge Beast",
     "area" : ["Jungle"],
     "ideal": "unaligned"
@@ -3103,7 +3103,7 @@
     "id": 356,
     "name": "Giant Crab",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Ocean"],
     "ideal": "unaligned"
@@ -3112,7 +3112,7 @@
     "id": 357,
     "name": "Giant Crocodile",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Huge Beast",
     "area" : ["Swamp"],
     "ideal": "unaligned"
@@ -3121,7 +3121,7 @@
     "id": 358,
     "name": "Giant Eagle",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Mountains"],
     "ideal": "neutral good"
@@ -3130,7 +3130,7 @@
     "id": 359,
     "name": "Giant Elk",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Huge Beast",
     "area" : ["Forest","Mountains"],
     "ideal": "unaligned"
@@ -3139,7 +3139,7 @@
     "id": 360,
     "name": "Giant Fire Beetle",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Small Beast",
     "area" : ["Oasis"],
     "ideal": "unaligned"
@@ -3148,7 +3148,7 @@
     "id": 361,
     "name": "Giant Frog",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Swamp"],
     "ideal": "unaligned"
@@ -3157,7 +3157,7 @@
     "id": 362,
     "name": "Giant Goat",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Mountains","Forest"],
     "ideal": "unaligned"
@@ -3166,7 +3166,7 @@
     "id": 363,
     "name": "Giant Hyena",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Oasis"],
     "ideal": "unaligned"
@@ -3175,7 +3175,7 @@
     "id": 364,
     "name": "Giant Lizard",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Forest", "Jungle"],
     "ideal": "unaligned"
@@ -3184,7 +3184,7 @@
     "id": 365,
     "name": "Giant Octopus",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Ocean"],
     "ideal": "unaligned"
@@ -3193,7 +3193,7 @@
     "id": 366,
     "name": "Giant Owl",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Forest"],
     "ideal": "unaligned"
@@ -3202,7 +3202,7 @@
     "id": 367,
     "name": "Giant Poisonous Snake",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Forest", "Jungle"],
     "ideal": "unaligned"
@@ -3211,7 +3211,7 @@
     "id": 368,
     "name": "Giant Rat",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Small Beast",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
@@ -3220,7 +3220,7 @@
     "id": 361,
     "name": "Giant Scorpion",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Oasis"],
     "ideal": "unaligned"
@@ -3229,7 +3229,7 @@
     "id": 369,
     "name": "Giant Sea Horse",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Ocean"],
     "ideal": "unaligned"
@@ -3238,7 +3238,7 @@
     "id": 370,
     "name": "Giant Shark",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Ocean"],
     "ideal": "unaligned"
@@ -3247,7 +3247,7 @@
     "id": 371,
     "name": "Giant Spider",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
@@ -3256,7 +3256,7 @@
     "id": 372,
     "name": "Giant Toad",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Forest","Meadow","Swamp"],
     "ideal": "unaligned"
@@ -3265,7 +3265,7 @@
     "id": 373,
     "name": "Giant Vulture",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Oasis"],
     "ideal": "neutral evil"
@@ -3274,7 +3274,7 @@
     "id": 374,
     "name": "Giant Wasp",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Cave","Forest","Jungle","Mountains","Oasis","Ruins","Tomb","Volcano"],
     "ideal": "unaligned"
@@ -3283,7 +3283,7 @@
     "id": 375,
     "name": "Giant Weasel",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Forest","Jungle","Meadow","Mountains"],
     "ideal": "unaligned"
@@ -3292,7 +3292,7 @@
     "id": 376,
     "name": "Giant Wolf Spider",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Cave","Forest","Jungle","Mountains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
@@ -3301,7 +3301,7 @@
     "id": 377,
     "name": "Goat",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Forest","Mountains"],
     "ideal": "unaligned"
@@ -3310,7 +3310,7 @@
     "id": 378,
     "name": "Hawk",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Tiny Beast",
     "area" : ["Mountains","Forest","Meadow","Plains"],
     "ideal": "unaligned"
@@ -3319,7 +3319,7 @@
     "id": 379,
     "name": "Hunter Shark",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Ocean"],
     "ideal": "unaligned"
@@ -3328,7 +3328,7 @@
     "id": 380,
     "name": "Hyena",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Oasis"],
     "ideal": "unaligned"
@@ -3337,7 +3337,7 @@
     "id": 381,
     "name": "Jackal",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Small Beast",
     "area" : ["Oasis"],
     "ideal": "unaligned"
@@ -3346,7 +3346,7 @@
     "id": 382,
     "name": "Killer Whale",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Huge Beast",
     "area" : ["Ocean"],
     "ideal": "unaligned"
@@ -3355,7 +3355,7 @@
     "id": 383,
     "name": "Lion",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Oasis"],
     "ideal": "unaligned"
@@ -3364,7 +3364,7 @@
     "id": 384,
     "name": "Lizard",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Tiny Beast",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Ruins","Swamp"],
     "ideal": "unaligned"
@@ -3373,7 +3373,7 @@
     "id": 385,
     "name": "Mammoth",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Huge Beast",
     "area" : ["Forest","Cave"],
     "ideal": "unaligned"
@@ -3382,7 +3382,7 @@
     "id": 386,
     "name": "Mastiff",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins"],
     "ideal": "unaligned"
@@ -3391,7 +3391,7 @@
     "id": 387,
     "name": "Mule",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Forest","Meadow","Mountains","Plains"],
     "ideal": "unaligned"
@@ -3400,7 +3400,7 @@
     "id": 388,
     "name": "Ocotopus",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Small Beast",
     "area" : ["Ocean"],
     "ideal": "unaligned"
@@ -3409,7 +3409,7 @@
     "id": 389,
     "name": "Owl",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Tiny Beast",
     "area" : ["Forest","Mountains","Plains"],
     "ideal": "unaligned"
@@ -3418,7 +3418,7 @@
     "id": 390,
     "name": "Panther",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Jungle"],
     "ideal": "unaligned"
@@ -3427,7 +3427,7 @@
     "id": 391,
     "name": "Phase Spider",
     "category": "Monstrosity",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Monstrosity",
     "area" : ["Tomb","Ruins","Cave","Mountains"],
     "ideal": "unaligned"
@@ -3436,7 +3436,7 @@
     "id": 392,
     "name": "Poisonous Snake",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Tiny Beast",
     "area" : ["Jungle"],
     "ideal": "unaligned"
@@ -3445,7 +3445,7 @@
     "id": 393,
     "name": "Polar Bear",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Mountains","Ocean"],
     "ideal": "unaligned"
@@ -3454,7 +3454,7 @@
     "id": 394,
     "name": "Pony",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Forest","Plains"],
     "ideal": "unaligned"
@@ -3463,7 +3463,7 @@
     "id": 395,
     "name": "Quipper",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Tiny Beast",
     "area" : ["Lake"],
     "ideal": "unaligned"
@@ -3472,7 +3472,7 @@
     "id": 396,
     "name": "Rat",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Tiny Beast",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
@@ -3481,7 +3481,7 @@
     "id": 397,
     "name": "Raven",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Tiny Beast",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
@@ -3490,7 +3490,7 @@
     "id": 398,
     "name": "Reef Shark",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Tiny Beast",
     "area" : ["Ocean"],
     "ideal": "unaligned"
@@ -3499,7 +3499,7 @@
     "id": 399,
     "name": "Rhinoceros",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Oasis"],
     "ideal": "unaligned"
@@ -3508,7 +3508,7 @@
     "id": 400,
     "name": "Riding Horse",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Forest","Plains"],
     "ideal": "unaligned"
@@ -3517,7 +3517,7 @@
     "id": 401,
     "name": "Saber-Toothed Tiger",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Jungle"],
     "ideal": "unaligned"
@@ -3526,7 +3526,7 @@
     "id": 402,
     "name": "Scorpion",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Tiny Beast",
     "area" : ["Oasis"],
     "ideal": "unaligned"
@@ -3535,7 +3535,7 @@
     "id": 403,
     "name": "Sea Horse",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Tiny Beast",
     "area" : ["Ocean"],
     "ideal": "unaligned"
@@ -3544,7 +3544,7 @@
     "id": 404,
     "name": "Spider",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Tiny Beast",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp", "Tomb","Volcano"],
     "ideal": "unaligned"
@@ -3553,7 +3553,7 @@
     "id": 405,
     "name": "Swarm of Bats",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Cave","Tomb","Volcano"],
     "ideal": "unaligned"
@@ -3562,7 +3562,7 @@
     "id": 406,
     "name": "Swarm of Insects",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
@@ -3571,7 +3571,7 @@
     "id": 407,
     "name": "Swarm of Poisonous Snakes",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Jungle"],
     "ideal": "unaligned"
@@ -3580,7 +3580,7 @@
     "id": 408,
     "name": "Swarm of Quippers",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Ocean"],
     "ideal": "unaligned"
@@ -3589,7 +3589,7 @@
     "id": 409,
     "name": "Swarm of Rats",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb","Volcano"],
     "ideal": "unaligned"
@@ -3598,7 +3598,7 @@
     "id": 410,
     "name": "Swarm of Ravens",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins","Swamp","Tomb"],
     "ideal": "unaligned"
@@ -3607,7 +3607,7 @@
     "id": 411,
     "name": "Tiger",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Jungle"],
     "ideal": "unaligned"
@@ -3616,7 +3616,7 @@
     "id": 412,
     "name": "Vulture",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Oasis"],
     "ideal": "unaligned"
@@ -3625,7 +3625,7 @@
     "id": 413,
     "name": "Warhorse",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Beast",
     "area" : ["Forest","Plains"],
     "ideal": "unaligned"
@@ -3634,7 +3634,7 @@
     "id": 414,
     "name": "Weasel",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Tiny Beast",
     "area" : ["Cave","Forest","Jungle","Meadow","Mountains","Oasis","Plains","Ruins"],
     "ideal": "unaligned"
@@ -3643,7 +3643,7 @@
     "id": 415,
     "name": "Winter Wolf",
     "category": "Monstrosity",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Monstrosity",
     "area" : ["Mountains","Forest"],
     "ideal": "neutral evil"
@@ -3652,7 +3652,7 @@
     "id": 416,
     "name": "Wolf",
     "category": "Beast",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Beast",
     "area" : ["Mountains","Forest"],
     "ideal": "unaligned"
@@ -3661,7 +3661,7 @@
     "id": 417,
     "name": "Worg",
     "category": "Monstrosity",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Large Monstrosity",
     "area" : ["Mountains","Forest"],
     "ideal": "neutral evil"
@@ -3670,7 +3670,7 @@
     "id": 418,
     "name": "Acolyte",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3679,7 +3679,7 @@
     "id": 419,
     "name": "Archmage",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3688,7 +3688,7 @@
     "id": 420,
     "name": "Assassin",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3697,7 +3697,7 @@
     "id": 421,
     "name": "Bandit",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3706,7 +3706,7 @@
     "id": 422,
     "name": "Bandit Captain",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3715,7 +3715,7 @@
     "id": 423,
     "name": "Berserker",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3724,7 +3724,7 @@
     "id": 424,
     "name": "Commoner",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3733,7 +3733,7 @@
     "id": 425,
     "name": "Cult Fanatic",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3742,7 +3742,7 @@
     "id": 426,
     "name": "Cultist",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3751,7 +3751,7 @@
     "id": 427,
     "name": "Druid",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3760,7 +3760,7 @@
     "id": 428,
     "name": "Gladiator",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3769,7 +3769,7 @@
     "id": 429,
     "name": "Guard",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3778,7 +3778,7 @@
     "id": 430,
     "name": "Knight",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3787,7 +3787,7 @@
     "id": 431,
     "name": "Mage",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3796,7 +3796,7 @@
     "id": 432,
     "name": "Noble",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3805,7 +3805,7 @@
     "id": 433,
     "name": "Priest",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3814,7 +3814,7 @@
     "id": 434,
     "name": "Scout",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3823,7 +3823,7 @@
     "id": 435,
     "name": "Spy",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3832,7 +3832,7 @@
     "id": 436,
     "name": "Thug",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3841,7 +3841,7 @@
     "id": 437,
     "name": "Tribal Warrior",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"
@@ -3850,7 +3850,7 @@
     "id": 438,
     "name": "Veteran",
     "category": "Humanoid",
-    "subCategory": "Misc",
+    "subcategory": "Misc",
     "type" : "Medium Humanoid",
     "area" : ["Cave","Forest","Jungle","Lake","Meadow","Mountains","Oasis","Ocean","Plains","Ruins","Swamp", "Tomb", "Volcano"],
     "ideal": "any"

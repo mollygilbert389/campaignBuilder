@@ -5,9 +5,9 @@ const climax_data = require("./climaxData.json");
 const encounter_data = require("./encounterData.json");
 const evil_NPC_data = require("./evilNPCSubTypes.json");
 const faction_data = require("./factionData.json");
-const goals_data = require("./goalsData.json");
+const goal_data = require("./goalData.json");
 const government_data = require("./govrenmentData.json");
-const local_events_data = require("./localEventData.json");
+const local_event_data = require("./localEventData.json");
 const map_data = require("./mapData.json");
 const mini_boss_data = require("./miniBossData.json");
 const monster_data = require("./monsterData.json");
@@ -46,6 +46,6 @@ module.exports = {
     side_quest_data,
     twist_data,
     villain_data,
-    goals_data,
-    local_events_data
+    goal_data,
+    local_event_data
 }

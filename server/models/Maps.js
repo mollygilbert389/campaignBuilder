@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const MapSchema = new Schema({
+const MapsSchema = new Schema({
   id: { type: Number },
   name: { type: String },
   image: { type: String },
@@ -8,6 +8,6 @@ const MapSchema = new Schema({
   world: { type: [String] }
 });
 
-const Map = model('Map', MapSchema);
+const Maps = model('Maps', MapsSchema);
 
-module.exports = Map;
+module.exports = Maps;

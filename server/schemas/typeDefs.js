@@ -155,6 +155,47 @@ const typeDefs = gql`
     icon: String
   }
 
+  type MapData {
+    id: Int
+    name: String
+    image: String
+    rooms: String
+    world: [String]
+  }
+
+  type MiniBossData {
+    id: Int
+    name: String
+    category: String
+    subcategory: String
+    type: String
+    area: [String]
+    ideal: String
+    bossTypes: [String]
+  }
+
+  type MonsterData {
+    id: Int
+    name: String
+    category: String
+    subcategory: String
+    type: String
+    area: [String]
+    ideal: String
+  }
+
+  type ReligionData {
+    id: Int
+    option: String
+    toolTipData: String
+  }
+
+  type GoalsData {
+    id: Int
+    option: String
+    type: String
+  }
+
   type Query {
     campaigns: [Campaign]
     campaign (campaignName: String!): Campaign
@@ -164,6 +205,14 @@ const typeDefs = gql`
     dungeonLocations: [IDOptions]
     encounters: [IDOptions]
     factions: [FactionData]
+    localEvents: [IDOptions]
+    maps: [MapData]
+    miniBosses: [MiniBossData]
+    monsters: [MonsterData]
+    religion: [ReligionData]
+    sideQuests: [IDOptions]
+    twists: [IDOptions]
+    goals: [GoalsData]
   }
 
   type Mutation {

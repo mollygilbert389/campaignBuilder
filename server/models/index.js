@@ -8,16 +8,16 @@ const Factions = require("./Factions");
 const Goals = require("./Goals");
 const Government = require("./Government");
 const LocalEvents = require("./LocalEvents");
-const Map = require("./Map");
-const MiniBoss = require("./MiniBoss");
-const Monster = require("./Monster");
+const Maps = require("./Maps");
+const MiniBosses = require("./MiniBosses");
+const Monsters = require("./Monsters");
 const Name = require("./Name");
 const NPC = require("./NPC");
 const Patron = require("./Patron");
 const Physical = require("./Physical");
 const Religion = require("./Religion");
 const Setback = require("./Setback");
-const SideQuest = require("./SideQuest");
+const SideQuests = require("./SideQuests");
 const Twists = require("./Twists");
 const Villain = require("./Villain");
 
@@ -30,16 +30,16 @@ module.exports = {
     Goals, 
     Government, 
     LocalEvents, 
-    Map, 
-    MiniBoss,  
-    Monster, 
+    Maps, 
+    MiniBosses,  
+    Monsters, 
     Name, 
     NPC, 
     Patron, 
     Physical, 
     Religion, 
     Setback, 
-    SideQuest, 
+    SideQuests, 
     Twists,
     Villain,
     MeetingLocations,

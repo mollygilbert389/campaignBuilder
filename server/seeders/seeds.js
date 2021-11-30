@@ -4,7 +4,15 @@ const {
   climax_data, 
   non_dungeon_locations_data,
   encounter_data,
-  faction_data 
+  faction_data,
+  local_event_data,
+  map_data,
+  mini_boss_data,
+  monster_data,
+  religion_data,
+  side_quest_data,
+  twist_data,
+  goal_data
 } = require("./data")
 const db = require('../config/connection');
 const { 
@@ -13,7 +21,15 @@ const {
   NonDungeonLocations, 
   Climax,
   Encounters,
-  Factions 
+  Factions,
+  LocalEvents,
+  Maps,
+  MiniBosses,
+  Monsters,
+  Religion,
+  SideQuests,
+  Twists,
+  Goals
 } = require('../models');
 
 db.once('open', async () => {
@@ -23,12 +39,28 @@ db.once('open', async () => {
   await NonDungeonLocations.deleteMany({});
   await Encounters.deleteMany({});
   await Factions.deleteMany({});
+  await LocalEvents.deleteMany({});
+  await Maps.deleteMany({});
+  await MiniBosses.deleteMany({});
+  await Monsters.deleteMany({});
+  await Religion.deleteMany({});
+  await SideQuests.deleteMany({});
+  await Twists.deleteMany({});
+  await Goals.deleteMany({});
 
   await Climax.collection.insertMany(climax_data);
   await MeetingLocations.collection.insertMany(meeting_selection_data);
   await NonDungeonLocations.collection.insertMany(non_dungeon_locations_data);
   await Encounters.collection.insertMany(encounter_data);
   await Factions.collection.insertMany(faction_data);
+  await LocalEvents.collection.insertMany(local_event_data);
+  await Maps.collection.insertMany(map_data);
+  await MiniBosses.collection.insertMany(mini_boss_data);
+  await Monsters.collection.insertMany(monster_data);
+  await Religion.collection.insertMany(religion_data);
+  await SideQuests.collection.insertMany(side_quest_data);
+  await Twists.collection.insertMany(twist_data);
+  await Goals.collection.insertMany(goal_data);
 
   const campaignData = [];
 
