@@ -13,7 +13,8 @@ const LocalEvents = require("./LocalEvents");
 const Maps = require("./Maps");
 const MiniBosses = require("./MiniBosses");
 const Monsters = require("./Monsters");
-const Name = require("./Name");
+const Names = require("./Names");
+const CampaignNames = require("./CampaignNames");
 const NPC = require("./NPC");
 const Patron = require("./Patron");
 const Eras = require("./Eras");
@@ -44,7 +45,8 @@ module.exports = {
     Maps, 
     MiniBosses,  
     Monsters, 
-    Name, 
+    Names,
+    CampaignNames, 
     NPC, 
     Patron, 
     Eras,

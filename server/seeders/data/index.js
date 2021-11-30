@@ -14,6 +14,7 @@ const map_data = require("./mapData.json");
 const mini_boss_data = require("./miniBossData.json");
 const monster_data = require("./monsterData.json");
 const name_data = require("./nameData.json");
+const campaign_name_data = require("./campaignNameData.json");
 const NPC_data = require("./NPCData.json");
 const patron_data = require("./patronData.json");
 const world_data = require("./worldData.json");
@@ -56,6 +57,7 @@ module.exports = {
     evil_NPC_data,
     faction_data,
     name_data,
+    campaign_name_data,
     NPC_data,
     patron_data,
     religion_data,

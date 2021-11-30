@@ -190,7 +190,7 @@ const typeDefs = gql`
     toolTipData: String
   }
 
-  type GoalsData {
+  type IDOptionType {
     id: Int
     option: String
     type: String
@@ -230,7 +230,7 @@ const typeDefs = gql`
     religion: [ReligionData]
     sideQuests: [IDOptions]
     twists: [IDOptions]
-    goals: [GoalsData]
+    goals: [IDOptionType]
     languages: [IDOptions]
     currency: [IDOptions]
     governments: [GovernmentData]
@@ -243,6 +243,8 @@ const typeDefs = gql`
     worldStyles: [WorldStylesData]
     traps: [IDOptions]
     worldShakingEvents: [WorldShakingEventData]
+    names: [IDOptionType]
+    campaignNames: [IDOptionType]
   }
 
   type Mutation {

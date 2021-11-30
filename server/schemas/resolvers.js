@@ -25,7 +25,9 @@ const {
   Worlds,
   WorldStyles,
   Traps,
-  WorldShakingEvents
+  WorldShakingEvents,
+  Names,
+  CampaignNames
 } = require('../models');
 
 const resolvers = {
@@ -113,6 +115,12 @@ const resolvers = {
     },
     worldShakingEvents: async () => {
       return WorldShakingEvents.find();
+    },
+    names: async () => {
+      return Names.find();
+    },
+    campaignNames: async () => {
+      return CampaignNames.find();
     },
   },
   Mutation: {
