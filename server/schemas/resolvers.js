@@ -23,7 +23,9 @@ const {
   MeetingSelections,
   TravelPoints,
   Worlds,
-  WorldStyles
+  WorldStyles,
+  Traps,
+  WorldShakingEvents
 } = require('../models');
 
 const resolvers = {
@@ -105,6 +107,12 @@ const resolvers = {
     },
     worldStyles: async () => {
       return WorldStyles.find();
+    },
+    traps: async () => {
+      return Traps.find();
+    },
+    worldShakingEvents: async () => {
+      return WorldShakingEvents.find();
     },
   },
   Mutation: {

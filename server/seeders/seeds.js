@@ -22,7 +22,9 @@ const {
   meeting_selection_data,
   travel_point_data,
   world_data,
-  world_style_data
+  world_style_data,
+  trap_data,
+  world_shaking_event_data
 } = require("./data")
 const db = require('../config/connection');
 const { 
@@ -49,7 +51,9 @@ const {
   MeetingSelections,
   TravelPoints,
   Worlds,
-  WorldStyles
+  WorldStyles,
+  Traps,
+  WorldShakingEvents
 } = require('../models');
 
 db.once('open', async () => {
@@ -77,8 +81,9 @@ db.once('open', async () => {
   await TravelPoints.deleteMany({});
   await Worlds.deleteMany({});
   await WorldStyles.deleteMany({});
+  await Traps.deleteMany({});
+  await WorldShakingEvents.deleteMany({});
  
-
   await Climax.collection.insertMany(climax_data);
   await MeetingLocations.collection.insertMany(meeting_location_data);
   await NonDungeonLocations.collection.insertMany(non_dungeon_locations_data);
@@ -102,6 +107,8 @@ db.once('open', async () => {
   await TravelPoints.collection.insertMany(travel_point_data);
   await Worlds.collection.insertMany(world_data);
   await WorldStyles.collection.insertMany(world_style_data);
+  await Traps.collection.insertMany(trap_data);
+  await WorldShakingEvents.collection.insertMany(world_shaking_event_data);
 
   const campaignData = [];
 

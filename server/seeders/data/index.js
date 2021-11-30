@@ -24,7 +24,8 @@ const meeting_location_data = require("./meetingLocationData.json");
 const travel_point_data = require("./travelPointsData.json");
 const world_style_data = require("./worldStyleData.json");
 const religion_data = require("./religionData.json");
-const setback_data = require("./setbackData.json");
+const trap_data = require("./trapData.json");
+const world_shaking_event_data = require("./worldShakingEventData.json");
 const side_quest_data = require("./sideQuestData.json");
 const twist_data = require("./twistData.json");
 const villain_data = require("./villainData.json");
@@ -58,7 +59,8 @@ module.exports = {
     NPC_data,
     patron_data,
     religion_data,
-    setback_data,
+    trap_data,
+    world_shaking_event_data,
     side_quest_data,
     twist_data,
     villain_data,

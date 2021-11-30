@@ -208,6 +208,12 @@ const typeDefs = gql`
     image: String
   }
 
+  type WorldShakingEventData {
+    id: Int
+    option: String
+    possible: [IDOptions]
+  }
+
   type Query {
     campaigns: [Campaign]
     campaign (campaignName: String!): Campaign
@@ -235,6 +241,8 @@ const typeDefs = gql`
     travelPoints: [IDOptions]
     worlds: [IDOptions]
     worldStyles: [WorldStylesData]
+    traps: [IDOptions]
+    worldShakingEvents: [WorldShakingEventData]
   }
 
   type Mutation {

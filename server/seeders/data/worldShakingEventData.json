@@ -1,0 +1,77 @@
+[
+  {"id":1,"option":"Rise of a Leader or an Era","possible":[
+    {"id": 1, "option": "Political"},
+    {"id": 2, "option": "Religious"},
+    {"id": 3, "option": "Military"},
+    {"id": 4, "option": "Crime/Underworld"},
+    {"id": 5, "option": "Art/Culture"},
+    {"id": 6, "option": "Philosphy/Learning/Magic"}
+    ]},
+  {"id":2,"option":"Fall of a leader or an era","possible":[
+    {"id": 1, "option": "Political"},
+    {"id": 2, "option": "Religious"},
+    {"id": 3, "option": "Military"},
+    {"id": 4, "option": "Crime/Underworld"},
+    {"id": 5, "option": "Art/Culture"},
+    {"id": 6, "option": "Philosphy/Learning/Magic"}
+    ]},
+  {"id":3,"option":"Cataclysmic Disaster","possible":[
+    {"id": 1, "option":"Earthquake"},
+    {"id": 2, "option":"Famine/Drought"},
+    {"id": 3, "option":"Fire"},
+    {"id": 4, "option":"Flood"},
+    {"id": 5, "option":"Plague/Disease"},
+    {"id": 6, "option":"Rain of Fire (meteors)"},
+    {"id": 7, "option":"Storm (Hurricane, Tornado, Tsunami)"},
+    {"id": 8, "option":"Volcanic Eruption"},
+    {"id": 9, "option":"Bad Magic or Planar Warp"},
+    {"id": 10, "option":"Divine Judgement"}
+    ]},
+  {"id":4,"option":"Assult or Invasion","possible":[
+    {"id": 1, "option":"Criminal Enterprise"},
+    {"id": 2, "option":"Monsters or Unique Monsters"},
+    {"id": 3, "option":"A Planar Threat"},
+    {"id": 4, "option":"A Past Adversary reawakened, reborn, or resurgent"},
+    {"id": 5, "option":"A Splinter Faction"},
+    {"id": 6, "option":"A Savage Tribe"},
+    {"id": 7, "option":"A Secret Society"},
+    {"id": 8, "option":"A traitorous Ally"}
+    ]},
+  {"id":5,"option":"Extinction or Depletion","possible":[
+    {"id": 1, "option":"A kind of Animal (insect, bird, fish, or livestock)"},
+    {"id": 2, "option":"Habitable Land"},
+    {"id": 3, "option":"Magic or Magic Users"},
+    {"id": 4, "option":"A Mineral Resource (gems, metals, ores)"},
+    {"id": 5, "option":"A type of monster (unicorn, manitcore, dragon)"},
+    {"id": 6, "option":"A people (family line, clan, culture, race)"},
+    {"id": 7, "option":"A kind of Plant (crop, tree, herb, forest)"},
+    {"id": 8, "option":"A waterway (river, lake, ocean)"}
+    ]},
+  {"id":6,"option":"Rebllion, Revolution, or Overthrow","possible":[]},
+  {"id":7,"option":"New Organization","possible":[
+    {"id": 1, "option":"Crime syndicate/bandit confederacy"},
+    {"id": 2, "option":"Guild (masons, apothecaries, goldsmiths)"},
+    {"id": 3, "option":"Magical circle/Society"},
+    {"id": 4, "option":"Military/Knightly Order"},
+    {"id": 5, "option":"New Family Dynasty/Tribe/Clan"},
+    {"id": 6, "option":"Philosophy/Discipline Dedicated to a Principle or Ideal"},
+    {"id": 7, "option":"Realm (Village, Town, Duchy, Kingdom)"},
+    {"id": 8, "option":"Religion/Sect/Denomination"},
+    {"id": 9, "option":"School/University"},
+    {"id": 10, "option":"Secret Society/Cult/Cabal"}
+    ]},
+  {"id":8,"option":"Discovrey, Expansion, Invention","possible":[
+    {"id": 1, "option":"Ancient Ruin/Lost City of a Legendary Race"},
+    {"id": 2, "option":"Animal/Monster/Magical Mutation"},
+    {"id": 3, "option":"Invention/Technology/Magic"},
+    {"id": 4, "option":"New (or forgotten) God or Planar Entity"},
+    {"id": 5, "option":"New (or rediscovered) Artifact or Religious Relic"},
+    {"id": 6, "option":"New Land (Island, Continent, Lost World, Demiplane)"},
+    {"id": 7, "option":"Otherworldly Object (Planar Portal, Alien Spacecraft)"},
+    {"id": 8, "option":"People (Race, Tribe, Lost Civilization, Colony)"},
+    {"id": 9, "option":"Plant (Miracle Herb, Fungal Parasite, Sentint Plant)"},
+    {"id": 10, "option":"Resource or Wealth (Gold, Gems, Mithral)"}
+    ]},
+  {"id":9,"option":"Prediction, Omen, Prophecy","possible":[]},
+  {"id":10,"option":"Myth and Legend","possible":[]}
+]

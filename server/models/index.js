@@ -24,7 +24,8 @@ const TravelPoints = require("./TravelPoints");
 const Worlds = require("./Worlds");
 const WorldStyles = require("./WorldStyles");
 const Religion = require("./Religion");
-const Setback = require("./Setback");
+const Traps = require("./Traps");
+const WorldShakingEvents = require("./WorldShakingEvents");
 const SideQuests = require("./SideQuests");
 const Twists = require("./Twists");
 const Villain = require("./Villain");
@@ -54,7 +55,8 @@ module.exports = {
     Worlds,
     WorldStyles, 
     Religion, 
-    Setback, 
+    Traps,
+    WorldShakingEvents, 
     SideQuests, 
     Twists,
     Villain,
