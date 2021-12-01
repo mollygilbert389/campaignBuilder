@@ -1,6 +1,7 @@
 const Campaign = require('./Campaign');
 const MeetingLocations = require("./MeetingLocations");
 const NonDungeonLocations = require("./NonDungeonLocations")
+const DungeonLocations = require("./DungeonLocations")
 const Climax = require("./Climax");
 const Encounters = require("./Encounters");
 const EvilNPCSubtypes = require("./EvilNPCSubtypes");
@@ -71,5 +72,6 @@ module.exports = {
     VillainMethods,
     MeetingLocations,
     NonDungeonLocations,
+    DungeonLocations,
     Rooms
 };

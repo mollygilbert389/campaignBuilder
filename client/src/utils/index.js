@@ -14,6 +14,7 @@ import { QUERY_ENCOUNTER_DATA } from "./encountersQuery";
 import { QUERY_MONSTER_DATA } from "./monsterQuery";
 import { QUERY_TWIST_DATA } from "./twistData";
 import { QUERY_SIDE_QUEST_DATA } from "./sideQuestData";
+import { QUERY_ADVENTURE_DATA } from "./adventureData";
 
 export { 
   QUERY_CAMPAIGN_NAME_DATA, 
@@ -31,5 +32,6 @@ export {
   QUERY_ENCOUNTER_DATA,
   QUERY_MONSTER_DATA,
   QUERY_TWIST_DATA,
-  QUERY_SIDE_QUEST_DATA
+  QUERY_SIDE_QUEST_DATA,
+  QUERY_ADVENTURE_DATA
 };

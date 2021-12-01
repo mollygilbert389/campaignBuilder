@@ -3,6 +3,7 @@ const {
   meeting_location_data, 
   climax_data, 
   non_dungeon_locations_data,
+  dungeon_locations_data,
   encounter_data,
   faction_data,
   local_event_data,
@@ -40,7 +41,8 @@ const db = require('../config/connection');
 const { 
   Campaign, 
   MeetingLocations, 
-  NonDungeonLocations, 
+  NonDungeonLocations,
+  DungeonLocations, 
   Climax,
   Encounters,
   Factions,
@@ -81,6 +83,7 @@ db.once('open', async () => {
   await Climax.deleteMany({});
   await MeetingLocations.deleteMany({});
   await NonDungeonLocations.deleteMany({});
+  await DungeonLocations.deleteMany({});
   await Encounters.deleteMany({});
   await Factions.deleteMany({});
   await LocalEvents.deleteMany({});
@@ -117,6 +120,7 @@ db.once('open', async () => {
   await Climax.collection.insertMany(climax_data);
   await MeetingLocations.collection.insertMany(meeting_location_data);
   await NonDungeonLocations.collection.insertMany(non_dungeon_locations_data);
+  await DungeonLocations.collection.insertMany(dungeon_locations_data);
   await Encounters.collection.insertMany(encounter_data);
   await Factions.collection.insertMany(faction_data);
   await LocalEvents.collection.insertMany(local_event_data);
