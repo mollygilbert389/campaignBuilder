@@ -4,6 +4,7 @@ import { QUERY_PHYSICAL_DATA } from "./physicalQuery";
 import { QUERY_RELIGION_DATA } from "./religionQuery";
 import { QUERY_GOVERNMENT_DATA } from "./governmentQuery";
 import { QUERY_CLIMAX_DATA } from "./climaxQuery";
+import { QUERY_GOAL_DATA } from "./goalsQuery";
 
 export { 
   QUERY_CAMPAIGN_NAME_DATA, 
@@ -11,5 +12,6 @@ export {
   QUERY_PHYSICAL_DATA,
   QUERY_RELIGION_DATA,
   QUERY_GOVERNMENT_DATA,
-  QUERY_CLIMAX_DATA
+  QUERY_CLIMAX_DATA,
+  QUERY_GOAL_DATA
 };

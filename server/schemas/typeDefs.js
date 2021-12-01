@@ -278,6 +278,7 @@ const typeDefs = gql`
   type GoalData {
     id: Int
     option: String
+    type: String
   }
 
   type LanguageData {
