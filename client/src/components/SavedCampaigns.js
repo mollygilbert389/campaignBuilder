@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, CardGroup } from 'react-bootstrap';
 import { useQuery } from '@apollo/client';
-import { QUERY_CAMPAIGNS } from '../utils/queries';
+import { QUERY_CAMPAIGNS } from '../utils';
 import "./home.css"
 
 const SavedCampaigns = () => {
@@ -13,8 +13,6 @@ const SavedCampaigns = () => {
   } else if (error) {
     return <div>Error</div>
   } else {
-    console.log(campaigns)
-
       return (
           <div>
             {campaigns.length > 0 && (

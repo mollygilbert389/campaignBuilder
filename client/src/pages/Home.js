@@ -37,7 +37,6 @@ function Home() {
                 </div>
             </div>
         </div>
-
         <SavedCampaigns/>
     </div>
 

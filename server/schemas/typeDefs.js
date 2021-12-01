@@ -144,7 +144,7 @@ const typeDefs = gql`
     worldImage: String
   }
 
-  type IDOptions {
+  type MeetingLocationData {
     id: Int
     option: String
   }
@@ -190,12 +190,6 @@ const typeDefs = gql`
     toolTipData: String
   }
 
-  type IDOptionType {
-    id: Int
-    option: String
-    type: String
-  }
-
   type GovernmentData {
     id: Int
     name: String
@@ -208,10 +202,15 @@ const typeDefs = gql`
     image: String
   }
 
+  type Possible {
+    id: Int
+    option: String
+  }
+
   type WorldShakingEventData {
     id: Int
     option: String
-    possible: [IDOptions]
+    possible: [Possible]
   }
 
   type RoomData {
@@ -241,43 +240,163 @@ const typeDefs = gql`
     methods: [String]
   }
 
+  type ClimaxData {
+    id: Int
+    option: String
+  }
+
+  type NonDungeonLocationData {
+    id: Int
+    option: String
+  }
+
+  type DungeonLocationData {
+    id: Int
+    option: String
+  }
+
+  type EncounterData {
+    id: Int
+    option: String
+  }
+
+  type LocalEventData {
+    id: Int
+    option: String
+  }
+
+  type SideQuestData {
+    id: Int
+    option: String
+  }
+
+  type TwistData {
+    id: Int
+    option: String
+  }
+
+  type GoalData {
+    id: Int
+    option: String
+  }
+
+  type LanguageData {
+    id: Int
+    option: String
+  }
+
+  type CurrencyData {
+    id: Int
+    option: String
+  }
+
+  type EraData {
+    id: Int
+    option: String
+  }
+
+  type FeatureData {
+    id: Int
+    option: String
+  }
+
+  type MapScaleData {
+    id: Int
+    option: String
+  }
+
+  type MeetingSelectionData {
+    id: Int
+    option: String
+  }
+
+  type TravelPointData {
+    id: Int
+    option: String
+    type: [String]
+  }
+
+  type WorldData {
+    id: Int
+    option: String
+  }
+
+  type TrapData {
+    id: Int
+    option: String
+  }
+
+  type NameData {
+    id: Int
+    option: String
+    type: String
+  }
+
+  type CampaignNameData {
+    id: Int
+    option: String
+    type: String
+  }
+
+  type EvilNPCData {
+    id: Int
+    option: String
+  }
+
+  type NPCData {
+    id: Int
+    option: String
+    type: String
+  }
+
+  type PatronData {
+    id: Int
+    option: String
+    type: String
+  }
+
+  type VillainWeaknessData {
+    id: Int
+    option: String
+  }
+
   type Query {
     campaigns: [Campaign]
     campaign (campaignName: String!): Campaign
-    meetingLocations: [IDOptions]
-    climaxes: [IDOptions]
-    nonDungeonLocations: [IDOptions]
-    dungeonLocations: [IDOptions]
-    encounters: [IDOptions]
+    meetingLocations: [MeetingLocationData]
+    climaxes: [ClimaxData]
+    nonDungeonLocations: [NonDungeonLocationData]
+    dungeonLocations: [DungeonLocationData]
+    encounters: [EncounterData]
     factions: [FactionData]
-    localEvents: [IDOptions]
+    localEvents: [LocalEventData]
     maps: [MapData]
     miniBosses: [MiniBossData]
     monsters: [MonsterData]
     religion: [ReligionData]
-    sideQuests: [IDOptions]
-    twists: [IDOptions]
-    goals: [IDOptionType]
-    languages: [IDOptions]
-    currency: [IDOptions]
+    sideQuests: [SideQuestData]
+    twists: [TwistData]
+    goals: [GoalData]
+    languages: [LanguageData]
+    currency: [CurrencyData]
     governments: [GovernmentData]
-    eras: [IDOptions]
-    features: [IDOptions]
-    mapScales: [IDOptions]
-    meetingSelections: [IDOptions]
-    travelPoints: [IDOptions]
-    worlds: [IDOptions]
+    eras: [EraData]
+    features: [FeatureData]
+    mapScales: [MapScaleData]
+    meetingSelections: [MeetingSelectionData]
+    travelPoints: [TravelPointData]
+    worlds: [WorldData]
     worldStyles: [WorldStylesData]
-    traps: [IDOptions]
+    traps: [TrapData]
     worldShakingEvents: [WorldShakingEventData]
-    names: [IDOptionType]
-    campaignNames: [IDOptionType]
+    names: [NameData]
+    campaignNames: [CampaignNameData]
     rooms: [RoomData]
-    evilNPCSubtypes: [IDOptions]
-    npcs: [IDOptionType]
+    evilNPCSubtypes: [EvilNPCData]
+    npcs: [NPCData]
     npcIdeals: [NPCIdealData]
-    patron: [IDOptionType]
-    villainWeaknesses: [IDOptions]
+    patron: [PatronData]
+    villainWeaknesses: [VillainWeaknessData]
     villainObjectives: [VillainObjectiveData]
     villainMethods: [VillainMethodData]
   }

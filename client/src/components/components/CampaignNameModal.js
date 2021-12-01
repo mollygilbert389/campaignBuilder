@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Button, Form, FormControl } from 'react-bootstrap';
-import { name_data } from "../components/data";
 import "../home.css";
 import { setCampaignName } from "../../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { useQuery } from '@apollo/client';
+import { QUERY_CAMPAIGN_NAME_DATA } from '../../utils';
 
 const CampaignNameModal = ({ onSetCampaignName }) => {
     const [showModal, setShowModal] = useState(true);
     const [campaignName, setCampaignName] = useState(null);
     const [disabled, setDisabled] = useState(true);
+    const { data } = useQuery(QUERY_CAMPAIGN_NAME_DATA);
+    const campaigns = data?.campaignNames || [];
 
     const setReduxCampaignName = (name) => {
         onSetCampaignName(name)
@@ -24,9 +27,11 @@ const CampaignNameModal = ({ onSetCampaignName }) => {
         setDisabled(false);
     };
     const handleGenerateBtn = () => {
-        const firstWord = name_data.adjectives[Math.floor(Math.random()* name_data.adjectives.length)];
-        const secondWord = name_data.animals[Math.floor(Math.random()* name_data.animals.length)];
-        const newCampaignName = `${firstWord} ${secondWord}`;
+        const adjectives = (campaigns || []).filter((word) => word.type === "adjective")
+        const animals = (campaigns || []).filter((word) => word.type === "animal")
+        const firstWord = adjectives[Math.floor(Math.random()* adjectives.length)];
+        const secondWord = animals[Math.floor(Math.random()* animals.length)];
+        const newCampaignName = `${firstWord.option} ${secondWord.option}`;
         setCampaignName(newCampaignName);
         setShowModal(!showModal);
         setReduxCampaignName(newCampaignName);
@@ -46,7 +51,7 @@ const CampaignNameModal = ({ onSetCampaignName }) => {
                     <Form inline>
                         <FormControl type="text" placeholder="Campaign Name" className="mr-sm-2" onChange={handleChange}/>
                         <div style={{paddingRight: "10px"}}>or</div> 
-                        <Button variant="outline-primary" onClick={handleGenerateBtn}>Generate</Button>
+                        <Button variant="outline-primary" onClick={handleGenerateBtn} disabled={campaigns.length === 0}>Generate</Button>
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>

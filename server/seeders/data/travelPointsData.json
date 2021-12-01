@@ -1,15 +1,74 @@
 [
-  { "id": 1, "option": "Cave" },
-  { "id": 2, "option": "Forest" },
-  { "id": 3, "option": "Jungle" },
-  { "id": 4, "option": "Lake" },
-  { "id": 5, "option": "Meadow" },
-  { "id": 6, "option": "Mountains" },
-  { "id": 7, "option": "Oasis" },
-  { "id": 8, "option": "Ocean" },
-  { "id": 9, "option": "Plains" },
-  { "id": 10, "option": "Ruins" },
-  { "id": 11, "option": "Swamp" },
-  { "id": 12, "option": "Tomb" },
-  { "id": 13, "option": "Volcano" }
+  {
+    "id": 1,
+    "option": "Cave",
+    "type": [
+      "Aquatic",
+      "Desert",
+      "Grassland",
+      "Savanna",
+      "Taiga",
+      "Temperate Forest",
+      "Tropical Rainforest",
+      "Tundra"
+    ]
+  },
+  {
+    "id": 2,
+    "option": "Forest",
+    "type": ["Grassland", "Taiga", "Temperate Forest", "Tundra"]
+  },
+  { "id": 3, "option": "Jungle", "type": ["Tropical Rainforest"] },
+  {
+    "id": 4,
+    "option": "Lake",
+    "type": ["Aquatic", "Grassland", "Taiga", "Temperate Forest", "Tundra"]
+  },
+  {
+    "id": 5,
+    "option": "Meadow",
+    "type": ["Grassland", "Taiga", "Temperate Forest"]
+  },
+  {
+    "id": 6,
+    "option": "Mountains",
+    "type": ["Aquatic", "Desert", "Taiga", "Temperate Forest", "Tundra"]
+  },
+  { "id": 7, "option": "Oasis", "type": ["Desert", "Savanna"] },
+  { "id": 8, "option": "Ocean", "type": ["Aquatic", "Tundra"] },
+  { "id": 9, "option": "Plains", "type": ["Grassland"] },
+  {
+    "id": 10,
+    "option": "Ruins",
+    "type": [
+      "Aquatic",
+      "Desert",
+      "Grassland",
+      "Savanna",
+      "Taiga",
+      "Temperate Forest",
+      "Tropical Rainforest",
+      "Tundra"
+    ]
+  },
+  { "id": 11, "option": "Swamp", "type": ["Grassland", "Tropical Rainforest"] },
+  {
+    "id": 12,
+    "option": "Tomb",
+    "type": [
+      "Aquatic",
+      "Desert",
+      "Grassland",
+      "Savanna",
+      "Taiga",
+      "Temperate Forest",
+      "Tropical Rainforest",
+      "Tundra"
+    ]
+  },
+  {
+    "id": 13,
+    "option": "Volcano",
+    "type": ["Aquatic", "Taiga", "Temperate Forest"]
+  }
 ]
