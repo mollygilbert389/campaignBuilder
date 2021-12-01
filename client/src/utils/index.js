@@ -12,6 +12,8 @@ import { QUERY_LOCAL_EVENT_DATA } from "./localEventData";
 import { QUERY_SETBACK_DATA } from "./setbackData";
 import { QUERY_ENCOUNTER_DATA } from "./encountersQuery";
 import { QUERY_MONSTER_DATA } from "./monsterQuery";
+import { QUERY_TWIST_DATA } from "./twistData";
+import { QUERY_SIDE_QUEST_DATA } from "./sideQuestData";
 
 export { 
   QUERY_CAMPAIGN_NAME_DATA, 
@@ -27,5 +29,7 @@ export {
   QUERY_LOCAL_EVENT_DATA,
   QUERY_SETBACK_DATA,
   QUERY_ENCOUNTER_DATA,
-  QUERY_MONSTER_DATA
+  QUERY_MONSTER_DATA,
+  QUERY_TWIST_DATA,
+  QUERY_SIDE_QUEST_DATA
 };
