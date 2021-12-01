@@ -7,6 +7,7 @@ import { QUERY_CLIMAX_DATA } from "./climaxQuery";
 import { QUERY_GOAL_DATA } from "./goalsQuery";
 import { QUERY_PATRON_DATA } from "./patronData";
 import { QUERY_NPC_DATA } from "./npcQuery";
+import { QUERY_VILLAIN_DATA } from "./villainQuery";
 
 export { 
   QUERY_CAMPAIGN_NAME_DATA, 
@@ -17,5 +18,6 @@ export {
   QUERY_CLIMAX_DATA,
   QUERY_GOAL_DATA,
   QUERY_PATRON_DATA,
-  QUERY_NPC_DATA
+  QUERY_NPC_DATA,
+  QUERY_VILLAIN_DATA
 };

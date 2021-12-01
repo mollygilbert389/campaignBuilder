@@ -12,9 +12,8 @@ import Rooms from "./Rooms";
 import ActsClimax from "./ActsClimax";
 import MainGoals from "./MainGoals";
 import PatronNPCs from "./PatronNPCs";
-import Villain from "./Villain";
 import Pillar from "./Pillar";
-import { VillainSubVillain } from "./components";
+import VillainSubVillain from "./VillainSubVillain";
 import Government from "./Government";
 import Physical from "./Physical";
 import Religion from "./Religion";
@@ -39,7 +38,6 @@ export {
     VillainSubVillain,
     MainGoals,
     PatronNPCs,
-    Villain,
     Government,
     Physical,
     Religion,

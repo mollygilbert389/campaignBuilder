@@ -1,5 +1,5 @@
 import Patron from "./Patron";
-import VillainSubVillain from "./VillainSubVillain";
+import Villain from "./Villain";
 import { EvilNPCCard, EvilNPCs, NPCCard, NPCs } from "./NPCs";
 import RandomEvents from "./RandomEvents";
 import SideQuests from "./SideQuests";
@@ -18,7 +18,7 @@ import Renown from "./Renown";
 
 export {
     Patron,
-    VillainSubVillain,
+    Villain,
     EvilNPCCard,
     EvilNPCs,
     CampaignNameModal,
