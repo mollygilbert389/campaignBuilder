@@ -11,8 +11,8 @@ const Renown = ({ campaign, setReduxPlayers }) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleChange = (e, index, icon) => {
-    let checked = e.target.checked;
-    let name = e.target.name;
+    const checked = e.target.checked;
+    const name = e.target.name;
 
     if (checked) {
       const newPlayerOrgs = [...playerOrgs, { name: name, playerNumId: index, icon: icon }];
