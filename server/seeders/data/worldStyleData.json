@@ -2,41 +2,41 @@
   {
     "id": 1,
     "type": "Aquatic",
-    "image": "https://cdn.thinglink.me/api/image/751892544790462466/1240/10/scaletowidth"
+    "image": "url(https://cdn.thinglink.me/api/image/751892544790462466/1240/10/scaletowidth)"
   },
   {
     "id": 2,
     "type": "Desert",
-    "image": "https://cdn.mos.cms.futurecdn.net/deaceNXy23NF8VsCrwZPgn.jpg"
+    "image": "url(https://cdn.mos.cms.futurecdn.net/deaceNXy23NF8VsCrwZPgn.jpg)"
   },
   {
     "id": 3,
     "type": "Grassland",
-    "image": "https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_675,w_1200,x_0,y_0/dpr_2.0/c_limit,w_740/fl_lossy,q_auto/v1571433135/191020-patterson-grasslands-national-park-hero_hog9nh"
+    "image": "url(https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_675,w_1200,x_0,y_0/dpr_2.0/c_limit,w_740/fl_lossy,q_auto/v1571433135/191020-patterson-grasslands-national-park-hero_hog9nh)"
   },
   {
     "id": 4,
     "type": "Savanna",
-    "image": "https://anthropocenemagazine.org/wp-content/uploads/2019/12/Kenyan-Savanna.jpg"
+    "image": "url(https://anthropocenemagazine.org/wp-content/uploads/2019/12/Kenyan-Savanna.jpg)"
   },
   {
     "id": 5,
     "type": "Taiga",
-    "image": "https://images.squarespace-cdn.com/content/v1/580fc948725e25ff5496284a/1485085312851-F9M3TKZWG2P7MURJIIRN/ke17ZwdGBToddI8pDm48kG87Sfbgg29A4BYEDq3OXvgUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcf4OxbJOyh_wHUnyc4kQLQ6SBshRGOku7c30Y_IRDNPta8R2IY5BHMaEj1zOWoDTZ/Taiga+Forest"
+    "image": "url(https://images.squarespace-cdn.com/content/v1/580fc948725e25ff5496284a/1485085312851-F9M3TKZWG2P7MURJIIRN/ke17ZwdGBToddI8pDm48kG87Sfbgg29A4BYEDq3OXvgUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcf4OxbJOyh_wHUnyc4kQLQ6SBshRGOku7c30Y_IRDNPta8R2IY5BHMaEj1zOWoDTZ/Taiga+Forest)"
   },
   {
     "id": 6,
     "type": "Temperate Forest",
-    "image": "https://i.pinimg.com/564x/4f/8b/5d/4f8b5dff3e22b7ca64b19587c292e70b.jpg"
+    "image": "url(https://i.pinimg.com/564x/4f/8b/5d/4f8b5dff3e22b7ca64b19587c292e70b.jpg)"
   },
   {
     "id": 7,
     "type": "Tropical Rainforest",
-    "image": "https://cdn.europosters.eu/image/1300/wall-murals/jungle-312x219-cm-premium-non-woven-130gsm-i79054.jpg"
+    "image": "url(https://cdn.europosters.eu/image/1300/wall-murals/jungle-312x219-cm-premium-non-woven-130gsm-i79054.jpg)"
   },
   {
     "id": 8,
     "type": "Tundra",
-    "image": "https://cdn.zmescience.com/wp-content/uploads/2016/02/file6861342703862.jpg"
+    "image": "url(https://cdn.zmescience.com/wp-content/uploads/2016/02/file6861342703862.jpg)"
   }
 ]
