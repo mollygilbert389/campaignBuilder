@@ -33,8 +33,6 @@ const Physical = ({ onSetWorldData }) => {
   };
 
   const handleWorldImage = (name) => {
-
-    console.log(name)
     const img = (physicalData?.worldStyles || []).find((item) => item.type === name).image
     setReduxWorldData("worldStyle", img);
   };
@@ -66,7 +64,6 @@ const Physical = ({ onSetWorldData }) => {
   };
 
   const handleTravelPointState = (feedback) => {
-      console.log(travelPoints)
     setTravelPointChoices([]);
     setTravelPoints((physicalData?.travelPoints || []).map((item) => item.type.includes(feedback) ? item : null).filter((obj) => obj !== null));
   };
