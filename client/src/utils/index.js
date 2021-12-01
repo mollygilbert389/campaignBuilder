@@ -11,6 +11,7 @@ import { QUERY_VILLAIN_DATA } from "./villainQuery";
 import { QUERY_LOCAL_EVENT_DATA } from "./localEventData";
 import { QUERY_SETBACK_DATA } from "./setbackData";
 import { QUERY_ENCOUNTER_DATA } from "./encountersQuery";
+import { QUERY_MONSTER_DATA } from "./monsterQuery";
 
 export { 
   QUERY_CAMPAIGN_NAME_DATA, 
@@ -25,5 +26,6 @@ export {
   QUERY_VILLAIN_DATA,
   QUERY_LOCAL_EVENT_DATA,
   QUERY_SETBACK_DATA,
-  QUERY_ENCOUNTER_DATA
+  QUERY_ENCOUNTER_DATA,
+  QUERY_MONSTER_DATA
 };

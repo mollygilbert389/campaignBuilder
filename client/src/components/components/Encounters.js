@@ -90,7 +90,7 @@ const Encounters = ({ onSetEncounters }) => {
             {encounterEvents.length > 0 && (
               <div>
                 {encounterEvents.map((space, idx) => (
-                  <div>
+                  <div key={idx}>
                     <Form inline>
                       <Dropdown
                         onSelect={(ek, e) => handleSelect(ek, e, idx)}
