@@ -16,7 +16,7 @@ const StoryInfo = ({ campaign }) => {
     campaign.uniqueFeature ||
     campaign.charMeeting ||
     campaign.factionShow ||
-    campaign.languageShow;
+    campaign.languages.length > 0;
   return (
     <div className="cardStyle d-flex flex-column align-items-center">
       <Card className="text-center" style={{ width: "800px" }}>
@@ -128,7 +128,7 @@ const StoryInfo = ({ campaign }) => {
                     ))}
                   </div>
                 )}
-                {campaign.languageShow && (
+                {campaign.languages.length > 0 && (
                   <div>
                     <div>
                       <strong>Languages:</strong>

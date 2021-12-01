@@ -31,7 +31,7 @@ const Government = ({
   const [value, setValue] = useState({});
   const [suggestedTags, setSuggestedTags] = useState([]);
   const { loading, data, error } = useQuery(QUERY_GOVERNMENT_DATA);
-  const governmentData = data || []
+  const governmentData = data || [];
 
   React.useEffect(() => {
     if((governmentData?.languages || []).length > 0 ) {
