@@ -9,12 +9,12 @@ import {
   OverlayTrigger,
   Tooltip,
 } from "react-bootstrap";
-import "./home.css";
 import { setReligion } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { useQuery } from "@apollo/client";
 import { QUERY_RELIGION_DATA } from "../utils";
+import "./home.css";
 
 const Religion = ({ onSetReligion }) => {
   const [religion, setReligion] = useState("");

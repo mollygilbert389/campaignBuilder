@@ -8,6 +8,7 @@ import { QUERY_GOAL_DATA } from "./goalsQuery";
 import { QUERY_PATRON_DATA } from "./patronData";
 import { QUERY_NPC_DATA } from "./npcQuery";
 import { QUERY_VILLAIN_DATA } from "./villainQuery";
+import { QUERY_LOCAL_EVENT_DATA } from "./localEventData";
 
 export { 
   QUERY_CAMPAIGN_NAME_DATA, 
@@ -19,5 +20,6 @@ export {
   QUERY_GOAL_DATA,
   QUERY_PATRON_DATA,
   QUERY_NPC_DATA,
-  QUERY_VILLAIN_DATA
+  QUERY_VILLAIN_DATA,
+  QUERY_LOCAL_EVENT_DATA
 };
