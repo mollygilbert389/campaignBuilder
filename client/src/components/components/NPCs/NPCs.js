@@ -60,13 +60,11 @@ const NPCs = ({ onSetNPCData }) => {
             valueLabelDisplay="on"/>
           {NPCData.length > 0 && (
             <Carousel className="center" interval={null}>
-              {NPCData.map((item, index) => {
-                return (
+              {NPCData.map((item, index) => (
                   <Carousel.Item key={index}>
                     <NPCCard index={index} key={item.id} name={item.id} />
                   </Carousel.Item>
-                );
-              })}
+                ))}
             </Carousel>
           )}
         </Modal.Body>

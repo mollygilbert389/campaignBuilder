@@ -8,7 +8,6 @@ import {
   Tooltip,
   Form,
 } from "react-bootstrap";
-import "./home.css";
 import {
   setGovernmentData,
   setLanguageShow,
@@ -18,6 +17,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { useQuery } from '@apollo/client';
 import { QUERY_GOVERNMENT_DATA } from '../utils';
+import "./home.css";
 
 const Government = ({
   campaign,
