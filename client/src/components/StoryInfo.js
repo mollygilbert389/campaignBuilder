@@ -308,10 +308,10 @@ const StoryInfo = ({ campaign }) => {
                       {`${campaign.twist}`}
                     </div>
                   )}
-                  {campaign.setback && (
+                  {campaign.setback.name && (
                     <div>
                       <strong>Setback:</strong>
-                      {`${campaign.setback}`}
+                      {`${campaign.setback.name}`}
                     </div>
                   )}
                   <div className="miniSection">
