@@ -302,18 +302,24 @@ const StoryInfo = ({ campaign }) => {
               <div className="grouping pair">
                 <Card.Title className="title">More Story Info:</Card.Title>
                 <div>
-                  {campaign.twist && (
+                  {campaign?.twist && (
                     <div>
                       <strong>Twist:</strong>
                       {`${campaign.twist}`}
                     </div>
                   )}
-                  {campaign.setback.name && (
-                    <div>
-                      <strong>Setback:</strong>
-                      {`${campaign.setback.name}`}
-                    </div>
-                  )}
+                  {campaign.setback.type === "large" && (
+                      <div>
+                        <strong>Setback: </strong>
+                          {`${campaign.setback.category} - ${campaign.setback.name}`}
+                      </div>
+                    )}
+                    {campaign.setback.type === "small" && (
+                      <div>
+                        <strong>Setback: </strong>
+                          {`${campaign.setback.name}`}
+                      </div>
+                    )}
                   <div className="miniSection">
                     {campaign.localEvents && (
                       <div>

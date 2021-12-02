@@ -23,7 +23,7 @@ const EvilNPCCard = ({ campaign, setReduxNPCData }) => {
       }
       return NPC;
     });
-    setEvilNPCData({ ...setEvilNPCData, NPCName: name });
+    setEvilNPCData({ ...setEvilNPCData, NPCName: e.target.value });
     setReduxNPCData("NPCData", newNPC);
   };
 

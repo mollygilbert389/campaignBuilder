@@ -19,7 +19,7 @@ const Twists = ({ onSetTwist }) => {
 
   const handleNo = () => {
     setTwistYesNo(false);
-    setReduxTwist("");
+    setReduxTwist("twist", "");
     setShowModal(!showModal);
   };
 
@@ -83,7 +83,7 @@ const Twists = ({ onSetTwist }) => {
                         <div className="d-block w-100"></div>
                         <Button
                           variant="primary"
-                          onClick={(e) => setReduxTwist(e.target.name)}
+                          onClick={(e) => setReduxTwist("twist", e.target.name)}
                           style={style}
                           key={drop.id}
                           name={drop.option}>
