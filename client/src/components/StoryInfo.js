@@ -17,6 +17,32 @@ const StoryInfo = ({ campaign }) => {
     campaign.charMeeting ||
     campaign.factionShow ||
     campaign.languages.length > 0;
+
+    const moreAdventureData = 
+    campaign.localEvents.length > 0 ||
+    campaign.twist || 
+    campaign.setback.category;
+
+    const playerData = 
+    campaign.patronData.name ||
+    campaign.patronData.gender ||
+    campaign.patronData.manner ||
+    campaign.patronData.trait ||
+    campaign.patronData.type ||
+    campaign.patronData.factions;
+
+    const generalData = 
+    campaign.pillar ||
+    campaign.acts ||
+    campaign.climax ||
+    campaign.mainGoal;
+
+    const dungeonData = 
+    campaign.dungeonData.rooms ||
+    campaign.dungeonData.dungeonLocation ||
+    campaign.dungeonData.dungeonDetail ||
+    campaign.dungeonData.monsterList;
+
   return (
     <div className="cardStyle d-flex flex-column align-items-center">
       <Card className="text-center" style={{ width: "800px" }}>
@@ -57,8 +83,7 @@ const StoryInfo = ({ campaign }) => {
             {campaign.worldStyle && (
               <div
                 className="cliamteImage"
-                style={{ backgroundImage: campaign.worldStyle }}
-              ></div>
+                style={{ backgroundImage: campaign.worldStyle }}/>
             )}
             {worldData && (
               <div className="grouping pair">
@@ -142,10 +167,7 @@ const StoryInfo = ({ campaign }) => {
             )}
           </div>
           <div className="dualData dataBoxes">
-            {(campaign.pillar ||
-              campaign.acts ||
-              campaign.climax ||
-              campaign.mainGoal) && (
+            {generalData && (
               <div className="grouping dataBoxes">
                 <Card.Title className="title">
                   General Campaign Info:
@@ -178,12 +200,7 @@ const StoryInfo = ({ campaign }) => {
                 </div>
               </div>
             )}
-            {(campaign.patronData.name ||
-              campaign.patronData.gender ||
-              campaign.patronData.manner ||
-              campaign.patronData.trait ||
-              campaign.patronData.type ||
-              campaign.patronData.factions) && (
+            {playerData && (
               <div className="grouping dataBoxes">
                 <Card className="bg-dark text-white skinnyCard">
                   <Card.Header className="fixedHeader">
@@ -298,7 +315,7 @@ const StoryInfo = ({ campaign }) => {
             </div>
           )}
           <div className="dualData">
-            {campaign.localEvents.length > 0 && (
+            {moreAdventureData && (
               <div className="grouping pair">
                 <Card.Title className="title">More Story Info:</Card.Title>
                 <div>
@@ -411,10 +428,7 @@ const StoryInfo = ({ campaign }) => {
             </div>
           )}
           <div className="dualData">
-            {(campaign.dungeonData.rooms ||
-              campaign.dungeonData.dungeonLocation ||
-              campaign.dungeonData.dungeonDetail ||
-              campaign.dungeonData.monsterList) && (
+            {dungeonData && (
               <div className="grouping dataBoxes centerData">
                 <Card.Title className="title">Dungeon Info:</Card.Title>
                 {campaign.dungeonData.rooms && (
