@@ -16,8 +16,6 @@ const Languages = ({
   };
 
   const handleAddLanguage = () => {
-    console.log("value", value)
-    console.log("suggested tags", suggestedTags)
     const newArr = [...suggestedTags]
     newArr.push(value)
     setSuggestedTags(newArr);
@@ -53,7 +51,7 @@ const Languages = ({
           className="factionInput"
           placeholder="Language"
           type="text"
-          value={value.option}
+          value={value?.option || ""}
           onChange={(e) => setValue({id: suggestedTags.length, option: e.target.value})}
           onKeyUp={(e) => onKeyDown(e)}/>
         <Button size="sm" variant="outline-success" onClick={handleAddLanguage}>
