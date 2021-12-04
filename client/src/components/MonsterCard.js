@@ -75,7 +75,7 @@ const MonsterCard = ({ campaign, onSetDungeonData }) => {
   } else {
     return (
       <div>
-        <div style={{ margin: 10}}>
+        <div style={{ margin: 10 }}>
           <Button
             variant="outline-success"
             size="lg"

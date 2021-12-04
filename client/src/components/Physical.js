@@ -93,7 +93,7 @@ const Physical = ({ onSetWorldData }) => {
   } else {
     return (
       <div>
-        <div style={{ margin: 10}}>
+        <div style={{ margin: 10 }}>
           <Button
             variant="outline-success"
             size="lg"
@@ -237,7 +237,7 @@ const Physical = ({ onSetWorldData }) => {
               only 3.
             </p>
             <div style={{ display: "flex" }}>
-              <div style={{ width: 500 }} className="tags">
+              <div className="tags">
                 {(travelPoints || []).map((drop, idx) => {
                   const travelPoint = travelPointChoices?.find((item) => item === drop.option) || false;
                   const eventCap = travelPointChoices.length >= 3 ? true : false;
@@ -254,7 +254,7 @@ const Physical = ({ onSetWorldData }) => {
                   );
                 })}
               </div>
-              <div style={{ width: 500 }} className="tags">
+              <div className="tags">
                 {(travelPointChoices || []).map((drop, idx) => (
                   <Button
                     key={idx}

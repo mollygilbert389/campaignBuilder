@@ -73,7 +73,7 @@ const LocalEvents = ({ onSetLocalEvents }) => {
                     <Button
                       name={drop.option}
                       key={idx}
-                      style={{  margin: 1 }}
+                      style={{ margin: 1 }}
                       onClick={handleAddEvent}
                       disabled={eventCap || localEventTrue}>
                       {drop.option}
@@ -86,7 +86,7 @@ const LocalEvents = ({ onSetLocalEvents }) => {
                   <Button
                     name={drop}
                     key={idx}
-                    style={{  margin: 1 }}
+                    style={{ margin: 1 }}
                     onClick={removeEvent}>
                     {drop}
                   </Button>

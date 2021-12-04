@@ -28,6 +28,7 @@ p {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  width: 500px;
 }
 
 .wrapIcons {
@@ -186,12 +187,6 @@ p {
 .actBtnSpace {
   padding: 10px;
   display: flex;
-  justify-content: center;
-}
-
-.adventureBtns {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 

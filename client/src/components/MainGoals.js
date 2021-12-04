@@ -97,30 +97,30 @@ const MainGoals = ({ onSetMainGoal }) => {
               button represents a different goal category.
             </p>
             <br />
-            <div style={{ display: "flex" }} className="adventureBtns">
+            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
               <Button
-                style={{ margin: 5}}
+                style={{ margin: 5 }}
                 variant={dungeonGoalsClicked ? "primary" : "outline-primary" }
                 onClick={handleGoalCat}
                 value={"dungeon"}>
                 Dungeon Type Goals
               </Button>
               <Button
-                style={{ margin: 5}}
+                style={{ margin: 5 }}
                 variant={wildernessGoalsClickd ? "primary" : "outline-primary" }
                 onClick={handleGoalCat}
                 value={"wilderness"}>
                 Wilderness Type Goals
               </Button>
               <Button
-                style={{ margin: 5}}
+                style={{ margin: 5 }}
                 variant={eventGoalsClicked ? "primary" : "outline-primary" }
                 onClick={handleGoalCat}
                 value={"event"}>
                 Event Type Goals
               </Button>
               <Button
-                style={{ margin: 5}}
+                style={{ margin: 5 }}
                 variant={otherGoalsClicked ? "primary" : "outline-primary" }
                 onClick={handleGoalCat}
                 value={"other"}>

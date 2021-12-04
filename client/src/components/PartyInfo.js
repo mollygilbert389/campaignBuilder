@@ -130,7 +130,7 @@ const PartyInfo = ({ onSetPlayers }) => {
           <div style={{ textAlign: "center" }}>
             {partyMemberData.map((partyMember, index) => (
               <div key={partyMember.id}>
-                <Form style={{ marginBottom: 5}}>
+                <Form style={{ marginBottom: 5 }}>
                   <Row>
                     <Col align-self-center>
                         <Form.Control sm placeholder={`Party Member ${partyMember.id}`} id={partyMember.id} onChange={(ek, e) => handlePartyDetails(ek, e, "name")}/>
