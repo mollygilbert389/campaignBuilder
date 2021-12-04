@@ -25,8 +25,7 @@ const MainGoals = ({ onSetMainGoal }) => {
 
   const handleGoalCat = (e) => {
     setMainGoal("");
-    const selection = e.target.value;
-    switch (selection) {
+    switch (e.target.value) {
       case "dungeon":
         setDungeonGoalsClicked(true);
         setWildernessGoalsClickd(false);
@@ -56,10 +55,9 @@ const MainGoals = ({ onSetMainGoal }) => {
     }
   };
 
-  const handleGoalClick = (keyevent, event) => {
-    const selection = event.target.text;
-    setMainGoal(selection);
-    setReduxMainGoal("mainGoal", selection);
+  const handleGoalClick = (ek, e) => {
+    setMainGoal(e.target.text);
+    setReduxMainGoal("mainGoal", e.target.text);
   };
 
   const handleRoll = (feedback) => {
@@ -103,28 +101,28 @@ const MainGoals = ({ onSetMainGoal }) => {
             <div className="container adventureBtns">
               <Button
                 className="dunTypeBtns"
-                variant="outline-primary"
+                variant={dungeonGoalsClicked ? "primary" : "outline-primary" }
                 onClick={handleGoalCat}
                 value={"dungeon"}>
                 Dungeon Type Goals
               </Button>
               <Button
                 className="dunTypeBtns"
-                variant="outline-primary"
+                variant={wildernessGoalsClickd ? "primary" : "outline-primary" }
                 onClick={handleGoalCat}
                 value={"wilderness"}>
                 Wilderness Type Goals
               </Button>
               <Button
                 className="dunTypeBtns"
-                variant="outline-primary"
+                variant={eventGoalsClicked ? "primary" : "outline-primary" }
                 onClick={handleGoalCat}
                 value={"event"}>
                 Event Type Goals
               </Button>
               <Button
                 className="dunTypeBtns"
-                variant="outline-primary"
+                variant={otherGoalsClicked ? "primary" : "outline-primary" }
                 onClick={handleGoalCat}
                 value={"other"}>
                 Other Type Goals

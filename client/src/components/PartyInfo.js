@@ -25,7 +25,6 @@ const PartyInfo = ({ onSetPlayers }) => {
     "Wizard",
   ];
   const levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-  const [defaultValue, setDefaultValue] = useState(null);
   const [firstDrop, setFirstDrop] = useState(true);
 
   const setReduxPlayers = (destination, value) => {
@@ -62,7 +61,6 @@ const PartyInfo = ({ onSetPlayers }) => {
     } else if (type === "level") {
         const newLevel = jsEvent.target.text;
         if(firstDrop) {
-            setDefaultValue(jsEvent.target.text)
             setFirstDrop(false);
             const defaultLevels = partyMemberData.map((item, idx) => {
                 return {
