@@ -34,6 +34,8 @@ const VillainModal = ({ onSetVillainData }) => {
       ...villainData,
       villainObjectiveCatChoice: e.target.text,
       villainObjectivesPossible: objectives,
+      finalVillainObjectiveChoice: ""
+
     });
   };
 
@@ -43,6 +45,7 @@ const VillainModal = ({ onSetVillainData }) => {
       ...villainData,
       villainMethodCatChoice: e.target.text,
       villainMethodPossible: methods,
+      finalVillainMethodChoice: ""
     });
   };
 
@@ -76,14 +79,14 @@ const VillainModal = ({ onSetVillainData }) => {
           onHide={() => setShowModal(!showModal)}
           enforceFocus={false}>
           <Modal.Header closeButton>
-            <Modal.Title>Let's Create Yor villain!</Modal.Title>
+            <Modal.Title>Let's Create Your Villain!</Modal.Title>
           </Modal.Header>
           <Modal.Body className="d-flex flex-column align-items-center">
             <p>Below are some buttons to create your villain</p>
             <Form inline>
               <FormControl
                 type="text"
-                placeholder="villain Name"
+                placeholder="Villain Name"
                 className="mr-sm-2"
                 value={villainData?.name}
                 onChange={(e) => setVillainData({ ...villainData, name: e.target.value })}/>
