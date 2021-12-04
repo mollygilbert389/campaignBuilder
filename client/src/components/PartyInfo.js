@@ -25,6 +25,8 @@ const PartyInfo = ({ onSetPlayers }) => {
     "Wizard",
   ];
   const levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+  const [defaultValue, setDefaultValue] = useState(null);
+  const [firstDrop, setFirstDrop] = useState(true);
 
   const setReduxPlayers = (destination, value) => {
     onSetPlayers(destination, value);
@@ -32,8 +34,7 @@ const PartyInfo = ({ onSetPlayers }) => {
 
   const handleClick = (e) => {
     let playerData = [];
-    Array.from(Array(parseInt(e.target.id)).keys()).forEach(
-      (m, index) => {
+    Array.from(Array(parseInt(e.target.id)).keys()).forEach((m, index) => {
         const newObject = { id: index + 1, name: "", raceClass: "", level: 0 };
         playerData.push(newObject);
       }
@@ -44,10 +45,10 @@ const PartyInfo = ({ onSetPlayers }) => {
   const handlePartyDetails = (ek, e, type) => {
     const jsEvent = e || ek;
     const index = jsEvent.target.id - 1;
-    const oldData = partyMemberData;
+    console.log(partyMemberData)
     if (type === "name") {
       const newName = jsEvent.target.value;
-      const newPartyMemberData = update(oldData, {
+      const newPartyMemberData = update(partyMemberData, {
         [index]: {
           $set: {
             id: index + 1,
@@ -59,21 +60,35 @@ const PartyInfo = ({ onSetPlayers }) => {
       });
       setPartyMemberData(newPartyMemberData);
     } else if (type === "level") {
-      const newLevel = jsEvent.target.text;
-      const newPartyMemberData = update(oldData, {
-        [index]: {
-          $set: {
-            id: index + 1,
-            name: partyMemberData[index].name,
-            raceClass: partyMemberData[index].raceClass,
-            level: newLevel,
-          },
-        },
-      });
-      setPartyMemberData(newPartyMemberData);
+        const newLevel = jsEvent.target.text;
+        if(firstDrop) {
+            setDefaultValue(jsEvent.target.text)
+            setFirstDrop(false);
+            const defaultLevels = partyMemberData.map((item, idx) => {
+                return {
+                    id: partyMemberData[idx].id,
+                    level: newLevel,
+                    name: partyMemberData[idx].name,
+                    raceClass: partyMemberData[idx].raceClass
+                }
+            })
+            setPartyMemberData(defaultLevels)
+        } else {
+            const newPartyMemberData = update(partyMemberData, {
+                [index]: {
+                  $set: {
+                    id: index + 1,
+                    name: partyMemberData[index].name,
+                    raceClass: partyMemberData[index].raceClass,
+                    level: newLevel,
+                  },
+                },
+              });
+              setPartyMemberData(newPartyMemberData);
+        }
     } else if (type === "race") {
       const newRace = jsEvent.target.name;
-      const newPartyMemberData = update(oldData, {
+      const newPartyMemberData = update(partyMemberData, {
         [index]: {
           $set: {
             id: index + 1,
@@ -150,7 +165,9 @@ const PartyInfo = ({ onSetPlayers }) => {
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                           {levels.map((item, idx) => (
-                            <Dropdown.Item key={idx} id={partyMember.id}>
+                            <Dropdown.Item 
+                                key={idx} 
+                                id={partyMember.id}>
                               {item}
                             </Dropdown.Item>
                           ))}

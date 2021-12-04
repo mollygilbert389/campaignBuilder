@@ -21,7 +21,7 @@ const StoryInfo = ({ campaign }) => {
     const moreAdventureData = 
     campaign.localEvents.length > 0 ||
     campaign.twist || 
-    campaign.setback.category;
+    campaign.setback;
 
     const playerData = 
     campaign.patronData.name ||
