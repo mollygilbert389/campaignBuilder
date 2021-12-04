@@ -4,8 +4,6 @@ import { bindActionCreators } from "redux";
 import update from "immutability-helper";
 import {
   Form,
-  FloatingLabel,
-  Container,
   Row,
   Col,
   Button,
@@ -130,7 +128,7 @@ const PartyInfo = ({ onSetPlayers }) => {
       {partyMemberData.length > 0 && (
         <div>
           <div className="forms">
-            {[...partyMemberData].map((partyMember, index) => (
+            {partyMemberData.map((partyMember, index) => (
               <div key={partyMember.id}>
                 <Form style={{ marginBottom: 5}}>
                   <Row>
