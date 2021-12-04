@@ -1,4 +1,7 @@
 import React, { useState, useRef } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { useQuery } from "@apollo/client";
 import {
   Button,
   Dropdown,
@@ -10,9 +13,6 @@ import {
 } from "react-bootstrap";
 import { GenerateBtn } from "..";
 import { setNPCData } from "../../../actions";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { useQuery } from "@apollo/client";
 import { QUERY_NPC_DATA } from "../../../utils";
 import "../../home.css";
 

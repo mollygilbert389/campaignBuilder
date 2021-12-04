@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
+import { Button, Modal} from "react-bootstrap";
 import { NPCs, Patron } from "./components";
-import { Button } from "react-bootstrap";
-import { connect } from "react-redux";
 import "./home.css";
 
 const PatronNPCs = () => {

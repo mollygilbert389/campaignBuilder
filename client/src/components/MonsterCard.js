@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
-import { Button, Form, Dropdown } from "react-bootstrap";
-import { Slider } from "@material-ui/core";
-import { setDungeonData } from "../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { useQuery } from "@apollo/client";
+import { Button, Form, Dropdown, Modal } from "react-bootstrap";
+import { Slider } from "@material-ui/core";
+import { setDungeonData } from "../actions";
 import { QUERY_MONSTER_DATA } from "../utils";
 import "./home.css";
 

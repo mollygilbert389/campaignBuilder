@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
+import { Button, Modal } from "react-bootstrap";
 import { SideQuests, Twists } from "./components";
-import { Button } from "react-bootstrap";
 import "./home.css";
 
 const ExtraAdventure = () => {

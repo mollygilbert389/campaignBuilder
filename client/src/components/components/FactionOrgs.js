@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
-import { Button, ButtonGroup, OverlayTrigger, Tooltip } from "react-bootstrap";
-import { setFactionOrgs, setFactionShow } from "../../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { icons } from "./Icons";
+import { Button, ButtonGroup, OverlayTrigger, Tooltip, Modal } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBeer, faGem, faCrown, faDragon, faDiceD20, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
+import { setFactionOrgs, setFactionShow } from "../../actions";
+import { icons } from "./Icons";
 import "../home.css";
 
 const FactionOrgs = ({ onSetFactionOrgs, onSetFactionShow }) => {

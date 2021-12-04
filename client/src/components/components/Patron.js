@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
-import Modal from "react-bootstrap/Modal";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { useQuery } from "@apollo/client";
 import {
   Button,
   Dropdown,
@@ -8,14 +10,12 @@ import {
   OverlayTrigger,
   Popover,
   Card,
+  Modal
 } from "react-bootstrap";
-import { GenerateBtn } from ".";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FormControlLabel, Checkbox } from "@material-ui/core";
+import { GenerateBtn } from ".";
 import { setPatronData } from "../../actions";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { useQuery } from "@apollo/client";
 import { QUERY_PATRON_DATA } from "../../utils";
 import "../home.css";
 

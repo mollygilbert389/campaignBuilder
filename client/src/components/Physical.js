@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
-import { RollBtn } from "./components";
-import { Button, Dropdown, Form, FormGroup } from "react-bootstrap";
-import "./home.css";
-import { setWorldData } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { useQuery } from "@apollo/client";
+import { Button, Dropdown, Form, FormGroup, Modal } from "react-bootstrap";
+import { RollBtn } from "./components";
+import { setWorldData } from "../actions";
 import { QUERY_PHYSICAL_DATA } from "../utils";
+import "./home.css";
 
 const Physical = ({ onSetWorldData }) => {
   const [showModal, setShowModal] = useState(false);

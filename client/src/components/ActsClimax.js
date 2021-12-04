@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
-import Carousel from "react-bootstrap/Carousel";
-import { Button } from "react-bootstrap";
-import { setActsAndClimax } from "../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { useQuery } from '@apollo/client';
+import { Button, Carousel, Modal } from "react-bootstrap";
+import { setActsAndClimax } from "../actions";
 import { QUERY_CLIMAX_DATA } from '../utils';
 import "./home.css";
 

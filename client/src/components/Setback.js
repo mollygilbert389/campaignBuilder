@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import Modal from "react-bootstrap/Modal";
-import { Button, Dropdown, FormControl } from "react-bootstrap";
-import { setSetback } from "../actions";
 import { useQuery } from "@apollo/client";
+import { Button, Dropdown, FormControl, Modal } from "react-bootstrap";
+import { setSetback } from "../actions";
 import { QUERY_SETBACK_DATA } from "../utils";
 import "./home.css";
 

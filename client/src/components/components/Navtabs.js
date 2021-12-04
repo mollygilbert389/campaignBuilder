@@ -1,7 +1,6 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { connect } from "react-redux";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function Navtabs({ campaign }) {
   return (

@@ -1,9 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Card, CardGroup, Table } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NPCCards } from ".";
 import "./home.css";
-import { connect } from "react-redux";
 
 const StoryInfo = ({ campaign }) => {
   const worldData =

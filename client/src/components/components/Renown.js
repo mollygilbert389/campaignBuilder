@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
-import { Button } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FormControlLabel, Checkbox } from "@material-ui/core";
 import "../home.css";

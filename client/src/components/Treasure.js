@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
-import { Button } from "react-bootstrap";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { Button, Modal } from "react-bootstrap";
 import {
   FormControlLabel,
   Checkbox,
@@ -8,8 +9,6 @@ import {
   Slider,
 } from "@material-ui/core";
 import { setTreasureData } from "../actions";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 import "./home.css";
 
 const Treasure = ({ campaign, onSetTreasureData }) => {

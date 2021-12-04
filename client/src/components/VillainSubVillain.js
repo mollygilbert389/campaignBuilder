@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
 import { EvilNPCs, Villain } from "./components";
-import { Button, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Button, OverlayTrigger, Tooltip, Modal } from "react-bootstrap";
 import "./home.css";
 
 const VillainSubVillain = () => {

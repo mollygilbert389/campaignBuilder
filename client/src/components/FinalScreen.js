@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { MapCard, CampaignCard } from "./components";
-import { Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { connect } from "react-redux";
+import { Button, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { MapCard, CampaignCard } from "./components";
 import "./home.css";
 
 const FinalScreen = ({ campaign }) => {

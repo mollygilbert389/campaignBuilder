@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
-import { Button, Dropdown } from "react-bootstrap";
-import { Slider } from "@material-ui/core";
-import { setSideQuests } from "../../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { useQuery } from "@apollo/client";
+import { Button, Dropdown, Modal } from "react-bootstrap";
+import { Slider } from "@material-ui/core";
+import { setSideQuests } from "../../actions";
 import { QUERY_SIDE_QUEST_DATA } from "../../utils";
 import "../home.css";
 

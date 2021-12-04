@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
-import { Button } from "react-bootstrap";
-import { setPillar } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { Button, Modal } from "react-bootstrap";
+import { setPillar } from "../actions";
 import "./home.css";
 
 const Pillar = ({ onSetPillar }) => {

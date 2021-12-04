@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, ButtonGroup } from "react-bootstrap";
+import { Button, ButtonGroup, FloatingLabel, Form } from "react-bootstrap";
 import "../home.css";
 
 const Languages = ({
@@ -47,6 +47,9 @@ const Languages = ({
         ))}
       </div>
       <div className="inputAndBtn factionButtons">
+      <FloatingLabel label="Language">
+        <Form.Control type="text" placeholder="Language" />
+      </FloatingLabel>
         <input
           className="factionInput"
           placeholder="Language"

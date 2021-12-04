@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
-import { Renown, FactionOrgs } from "./components";
-import { Button } from "react-bootstrap";
-import "./home.css";
-import { setPlayers } from "../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { Button, Modal } from "react-bootstrap";
+import { setPlayers } from "../actions";
+import { Renown, FactionOrgs } from "./components";
+import "./home.css";
 
 const Social = ({ onSetPlayers, campaign }) => {
   const [showModal, setShowModal] = useState(false);

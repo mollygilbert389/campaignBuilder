@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
-import { Button, Carousel } from "react-bootstrap";
-import { setTwist } from "../../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { useQuery } from "@apollo/client";
+import { Button, Carousel, Modal } from "react-bootstrap";
+import { setTwist } from "../../actions";
 import { QUERY_TWIST_DATA } from "../../utils";
 import "../home.css";
 

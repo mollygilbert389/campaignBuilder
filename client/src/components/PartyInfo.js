@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Button, Dropdown } from "react-bootstrap";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Form, Label, Input, FormGroup } from "reactstrap";
 import update from "immutability-helper";
+import { Form, FloatingLabel, Container, Row, Col, Button, Dropdown } from "react-bootstrap";
 import { setPlayers } from "../actions";
 import "./home.css";
 
@@ -126,17 +125,16 @@ const PartyInfo = ({ onSetPlayers }) => {
         <div>
           <div className="forms">
             {[...partyMemberData].map((partyMember, index) => (
-                <div key={partyMember.id} className="partyFormSpace">
+                <div key={partyMember.id}>
                   <Form inline>
-                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                      <Label className="mr-sm-2">{`Party Member ${partyMember.id}`}</Label>
-                      <Input
-                        type="names"
-                        placeholder="Name"
-                        id={partyMember.id}
-                        onChange={(ek, e) => handlePartyDetails(ek, e, "name")}/>
-                    </FormGroup>
-                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                    <Container md className="justify-content-center" style={{ margin: 5}}>
+                      <Row>
+                      <Col className="align-self-center">
+                      <FloatingLabel sm label={`Party Member ${partyMember.id}`}>
+                        <Form.Control sm placeholder="Name" id={partyMember.id} onChange={(ek, e) => handlePartyDetails(ek, e, "name")}/>
+                      </FloatingLabel>
+                      </Col>
+                      <Col md className="align-self-center">
                       <Dropdown
                         onSelect={(ek, e) => handlePartyDetails(ek, e, "race")}
                         id={partyMember.id}>
@@ -154,8 +152,9 @@ const PartyInfo = ({ onSetPlayers }) => {
                           ))}
                         </Dropdown.Menu>
                       </Dropdown>
+                      </Col>
+                      <Col md className="align-self-center">
                       <Dropdown
-                        className="someSpace"
                         onSelect={(ek, e) => handlePartyDetails(ek, e, "level")}
                         id={partyMember.id}>
                         <Dropdown.Toggle variant="outline-primary">
@@ -171,7 +170,9 @@ const PartyInfo = ({ onSetPlayers }) => {
                           ))}
                         </Dropdown.Menu>
                       </Dropdown>
-                    </FormGroup>
+                      </Col>
+                    </Row>
+                    </Container>
                   </Form>
                 </div>
               ))}

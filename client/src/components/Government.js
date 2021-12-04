@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
-import { RollBtn, Languages } from "./components";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { useQuery } from '@apollo/client';
 import {
   Button,
   Dropdown,
   OverlayTrigger,
   Tooltip,
   Form,
+  Modal
 } from "react-bootstrap";
 import {
   setGovernmentData,
   setLanguageShow,
   setLanguages,
-} from "../actions/index";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { useQuery } from '@apollo/client';
+} from "../actions";
+import { RollBtn, Languages } from "./components";
 import { QUERY_GOVERNMENT_DATA } from '../utils';
 import "./home.css";
 

@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
-import Carousel from "react-bootstrap/Carousel";
-import { Button, Dropdown } from "react-bootstrap";
-import { setDungeonData } from "../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { useQuery } from "@apollo/client";
+import { Button, Dropdown, Carousel, Modal } from "react-bootstrap";
+import { setDungeonData } from "../actions";
 import { QUERY_ADVENTURE_DATA } from "../utils";
 import "./home.css";
 

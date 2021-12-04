@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import Modal from 'react-bootstrap/Modal';
-import { Button, Form, FormControl } from 'react-bootstrap';
-import "../home.css";
-import { setCampaignName } from "../../actions/index";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { useQuery } from '@apollo/client';
+import { Button, Form, FormControl, FloatingLabel, Modal } from 'react-bootstrap';
+import { setCampaignName } from "../../actions/index";
 import { QUERY_CAMPAIGN_NAME_DATA } from '../../utils';
+import "../home.css";
 
 const CampaignNameModal = ({ onSetCampaignName }) => {
     const [showModal, setShowModal] = useState(true);
@@ -49,7 +48,9 @@ const CampaignNameModal = ({ onSetCampaignName }) => {
                 <Modal.Body className="d-flex flex-column align-items-center">
                     <p>Enter your campaign name here.</p>
                     <Form inline>
-                        <FormControl type="text" placeholder="Campaign Name" className="mr-sm-2" onChange={handleChange}/>
+                        <FloatingLabel label="Campaign Name">
+                            <Form.Control type="text" placeholder="Campaign Name" onChange={handleChange}/>
+                        </FloatingLabel>
                         <div style={{paddingRight: "10px"}}>or</div> 
                         <Button variant="outline-primary" onClick={handleGenerateBtn} disabled={campaigns.length === 0}>Generate</Button>
                     </Form>

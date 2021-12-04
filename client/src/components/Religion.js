@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
-import { RollBtn } from "./components";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { useQuery } from "@apollo/client";
 import {
   Button,
   Dropdown,
@@ -8,11 +9,10 @@ import {
   FormControl,
   OverlayTrigger,
   Tooltip,
+  Modal
 } from "react-bootstrap";
-import { setReligion } from "../actions/index";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { useQuery } from "@apollo/client";
+import { setReligion } from "../actions";
+import { RollBtn } from "./components";
 import { QUERY_RELIGION_DATA } from "../utils";
 import "./home.css";
 
