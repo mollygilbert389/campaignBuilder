@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { useQuery } from '@apollo/client';
-import { Button, Form, FormControl, FloatingLabel, Modal } from 'react-bootstrap';
+import { Button, Form, Modal, Row, Col } from 'react-bootstrap';
 import { setCampaignName } from "../../actions/index";
 import { QUERY_CAMPAIGN_NAME_DATA } from '../../utils';
 import "../home.css";
@@ -45,14 +45,20 @@ const CampaignNameModal = ({ onSetCampaignName }) => {
                 <Modal.Header closeButton>
                     <Modal.Title>Let's start with what you want your campaign to be named.</Modal.Title>
                 </Modal.Header>
-                <Modal.Body className="d-flex flex-column align-items-center">
+                <Modal.Body>
                     <p>Enter your campaign name here.</p>
-                    <Form inline>
-                        <FloatingLabel label="Campaign Name">
-                            <Form.Control type="text" placeholder="Campaign Name" onChange={handleChange}/>
-                        </FloatingLabel>
-                        <div style={{paddingRight: "10px"}}>or</div> 
-                        <Button variant="outline-primary" onClick={handleGenerateBtn} disabled={campaigns.length === 0}>Generate</Button>
+                    <Form>
+                        <Row style={{ display: "flex", alignItems: "center"}}>
+                            <Col align-self-center>
+                                <Form.Control type="text" placeholder="Campaign Name" onChange={handleChange}/>
+                            </Col>
+                            <Col xs={1} style={{textAlign: "center"}}>
+                                or
+                            </Col>
+                            <Col align-self-center>
+                                <Button variant="outline-primary" onClick={handleGenerateBtn} disabled={campaigns.length === 0}>Generate</Button>
+                            </Col>
+                        </Row>
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
