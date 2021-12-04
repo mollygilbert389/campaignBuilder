@@ -44,7 +44,7 @@ const StoryInfo = ({ campaign }) => {
     campaign.dungeonData.monsterList;
 
   return (
-    <div style={{ marginTop: "10%" }} d-flex flex-column align-items-center>
+    <div style={{ marginTop: "10%" }} className="d-flex flex-column align-items-center">
       <Card className="text-center" style={{ width: "800px" }}>
         <Card.Header>
           {campaign.campaignName && (
