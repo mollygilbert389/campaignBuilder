@@ -67,7 +67,7 @@ const AdventureStart = ({ campaign, onSetDungeonData }) => {
   } else {
     return (
       <div>
-        <div className="btns">
+        <div style={{ margin: 10}}>
           <Button variant="outline-success" size="lg" onClick={handleClick}>
             Dungeon Start
           </Button>
@@ -83,20 +83,20 @@ const AdventureStart = ({ campaign, onSetDungeonData }) => {
             </p>
             <div>
               <Button
-                className="giveMeSpace"
+                style={{ margin: 10}}
                 onClick={handleDungeonClick}
                 name={"dungeonLocatios"}>
                 Dungeon Locations
               </Button>
               <Button
-                className="giveMeSpace"
+                style={{ margin: 10}}
                 onClick={handleDungeonClick}
                 name={"nondungeonLocatios"}>
                 Exotic Loactions
               </Button>
             </div>
             {!dungeonTypeLocationSelected && (
-              <div className="giveMeSpace">
+              <div style={{ margin: 10}}>
                 <Dropdown onSelect={handleFinalEvent}>
                   <Dropdown.Toggle variant="outline-primary">
                     {selectedPlace ? selectedPlace : "Choose your Dungeon Location"}
@@ -112,7 +112,7 @@ const AdventureStart = ({ campaign, onSetDungeonData }) => {
               </div>
             )}
             {nondungeonTypeLocationSelected && (
-              <div className="giveMeSpace">
+              <div style={{ margin: 10}}>
                 <Dropdown onSelect={handleFinalEvent}>
                   <Dropdown.Toggle variant="outline-primary">
                     {selectedPlace ? selectedPlace : "Choose your Exotic Location"}

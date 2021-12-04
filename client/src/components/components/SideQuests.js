@@ -60,7 +60,7 @@ const SideQuests = ({ onSetSideQuests }) => {
 
     return (
       <div>
-        <div className="btns">
+        <div style={{ margin: 10}}>
           <Button
             variant="outline-success"
             size="lg"
@@ -81,7 +81,7 @@ const SideQuests = ({ onSetSideQuests }) => {
             <p>Use the buttons below to add a side quest to your campaign.</p>
             <br />
             <div className="sideQuestBtnSpace">
-              <div className="sideQuestBtns">
+              <div style={{ margin: 2 }}>
                 <Button
                   name="Yes"
                   variant="outline-success"
@@ -89,7 +89,7 @@ const SideQuests = ({ onSetSideQuests }) => {
                   Yes
                 </Button>
               </div>
-              <div className="sideQuestBtns">
+              <div style={{ margin: 2 }}>
                 <Button
                   name="No"
                   variant="outline-danger"
@@ -114,7 +114,7 @@ const SideQuests = ({ onSetSideQuests }) => {
                 <div key={index}>
                     <Dropdown
                     onSelect={(ek, e) => handleSideQuestChoice(ek, e, index)}
-                    className="sideQuestBtns">
+                    style={{ margin: 2 }}>
                     <Dropdown.Toggle variant="outline-primary">
                         {sideQuests[index].type ? sideQuests[index].type : "Choose your Side Quest Goal"}
                     </Dropdown.Toggle>

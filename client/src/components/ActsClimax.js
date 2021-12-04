@@ -40,7 +40,7 @@ const Acts = ({ onSetActsAndClimx }) => {
   } else {
     return (
         <div>
-        <div className="btns">
+        <div style={{ margin: 10}}>
             <Button
             variant="outline-success"
             size="lg"
@@ -60,17 +60,17 @@ const Acts = ({ onSetActsAndClimx }) => {
                 goal.
             </p>
             <div className="actBtnSpace">
-                <div className="actBtns">
+                <div style={{ margin: 2 }}>
                 <Button name="3" variant="outline-primary" onClick={handleActBtn}>
                     3
                 </Button>
                 </div>
-                <div className="actBtns">
+                <div style={{ margin: 2 }}>
                 <Button name="4" variant="outline-primary" onClick={handleActBtn}>
                     4
                 </Button>
                 </div>
-                <div className="actBtns">
+                <div style={{ margin: 2 }}>
                 <Button name="5" variant="outline-primary" onClick={handleActBtn}>
                     5
                 </Button>

@@ -37,7 +37,7 @@ const Twists = ({ onSetTwist }) => {
   } else {
     return (
       <div>
-        <div className="btns">
+        <div style={{ margin: 10}}>
           <Button
             variant="outline-success"
             size="lg"
@@ -58,7 +58,7 @@ const Twists = ({ onSetTwist }) => {
             <p>Do you want to add a twist?</p>
             <br />
             <div className="sideQuestBtnSpace">
-              <div className="sideQuestBtns">
+              <div style={{ margin: 2 }}>
                 <Button
                   name="Yes"
                   variant="outline-success"
@@ -66,7 +66,7 @@ const Twists = ({ onSetTwist }) => {
                   Yes
                 </Button>
               </div>
-              <div className="sideQuestBtns">
+              <div style={{ margin: 2 }}>
                 <Button name="No" variant="outline-danger" onClick={handleNo}>
                   No
                 </Button>

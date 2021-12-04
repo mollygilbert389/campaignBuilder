@@ -45,7 +45,7 @@ const Rooms = ({ campaign, onSetDungeonData }) => {
 
   return (
     <div>
-      <div className="btns">
+      <div style={{ margin: 10}}>
         <Button
           variant="outline-success"
           size="lg"
@@ -62,7 +62,7 @@ const Rooms = ({ campaign, onSetDungeonData }) => {
           <p>This is your custom campaign, have as many rooms as you'd like!</p>
           <div className="roomSpace">
             {roomOptions.map((item, idx) => (
-              <div className="roomBtns" key={idx}>
+              <div style={{ margin: 2, display: "inline-block" }} key={idx}>
                 <Button
                   name={item}
                   variant="outline-primary"

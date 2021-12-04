@@ -38,7 +38,7 @@ const CampaignNameModal = ({ onSetCampaignName }) => {
     
     return (
         <div>
-            <div className="btns">
+            <div style={{ margin: 10}}>
                 <Button variant="outline-success" size="lg" onClick={() => setShowModal(campaignName || !showModal)}>Campaign Name</Button>
             </div>
             <Modal show={showModal} onHide={() => setShowModal(!showModal)}>

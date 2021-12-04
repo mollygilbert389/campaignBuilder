@@ -35,7 +35,7 @@ const CustomCampaign = ({ campaign }) => {
     return (
         <div>
             {/* <ProgressBar animated now={progress} /> */}
-            <div className="mainques">
+            <div style={{ paddingTop: 10, paddingLeft: 10 }}>
                 <h1> Welcome to the Custom Campaign Builder</h1>
                 <p>A custom campaign is open ended and there are few limits on what you can add or not add here.</p>
                 {index === 0 && (
@@ -120,7 +120,7 @@ const CustomCampaign = ({ campaign }) => {
                 </div>
             )}
             </div>
-                <div className="storyCards">
+                <div style={{ margin: 30 }}>
                     {campaign.campaignName && (<StoryInfo/>)}
                 </div>
             </div>

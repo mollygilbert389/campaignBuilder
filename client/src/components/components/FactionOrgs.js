@@ -81,7 +81,7 @@ const FactionOrgs = ({ onSetFactionOrgs, onSetFactionShow }) => {
 
   return (
     <div>
-      <div className="btns">
+      <div style={{ margin: 10}}>
         <Button
           variant="outline-success"
           size="lg"
@@ -103,17 +103,17 @@ const FactionOrgs = ({ onSetFactionOrgs, onSetFactionShow }) => {
             add and remove as many or as little as you want.
           </p>
           <br />
-          <div className="tagsArea centeredItems">
+          <div style={{ width: 500 }} className="centeredItems">
             {suggestedTags.map((item, idx) => (
-              <ButtonGroup key={idx} className="factionButtons">
+              <ButtonGroup key={idx} style={{ margin: 2 }}>
                 <OverlayTrigger
                   placement="left"
                   overlay={<Tooltip>Change Me!</Tooltip>}>
                   <Button id={item.id} onClick={handleIconSelect}>
-                    <FontAwesomeIcon className="iconImage" icon={item.icon} />
+                    <FontAwesomeIcon style={{ pointerEvents: "none" }} icon={item.icon} />
                   </Button>
                 </OverlayTrigger>
-                <Button className="iconImage" name={item.name}>
+                <Button style={{ pointerEvents: "none" }} name={item.name}>
                   {item.name}
                 </Button>
                 <Button name={item.name} onClick={handleRemove}>
@@ -134,19 +134,19 @@ const FactionOrgs = ({ onSetFactionOrgs, onSetFactionShow }) => {
                   {icons.map((icon, idx) => (
                     <Button
                       key={idx}
-                      className="icons"
+                      style={{ margin: 1 }}
                       id={icon.id}
                       iconObject={icon.icon}
                       onClick={hanleIconFinalSelection}>
-                      <FontAwesomeIcon className="iconImage" icon={icon.icon} />
+                      <FontAwesomeIcon style={{ pointerEvents: "none" }} icon={icon.icon} />
                     </Button>
                   ))}
                 </div>
               </Modal.Body>
             </Modal>
-            <div className="inputAndBtn factionButtons">
+            <div style={{ margin: 2 }} className="inputAndBtn">
               <input
-                className="factionInput"
+                style={{ border: "none", width: 300 }}
                 placeholder="Add Faction or Organization Here"
                 type="text"
                 value={value}

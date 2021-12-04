@@ -75,7 +75,7 @@ const MonsterCard = ({ campaign, onSetDungeonData }) => {
   } else {
     return (
       <div>
-        <div className="btns">
+        <div style={{ margin: 10}}>
           <Button
             variant="outline-success"
             size="lg"
@@ -113,7 +113,7 @@ const MonsterCard = ({ campaign, onSetDungeonData }) => {
                   <Dropdown
                     onSelect={(ek, e) => handleSelect(e, index)}
                     name={space.id}
-                    className="giveDropSpace">
+                    style={{ margin: 2 }}>
                     <Dropdown.Toggle variant="outline-primary">
                       {monsters[index].category ? monsters[index].category : "Monster Categories"}
                     </Dropdown.Toggle>
@@ -126,7 +126,7 @@ const MonsterCard = ({ campaign, onSetDungeonData }) => {
                   {monsters[index].monsterTypes && (
                     <Dropdown
                       onSelect={(ek, e) => handleMonsterTypeSelect(e, index)}
-                      className="giveDropSpace">
+                      style={{ margin: 2 }}>
                       <Dropdown.Toggle variant="outline-primary">
                         {monsters[index].monsterName ? monsters[index].monsterName : "Monster Type"}
                       </Dropdown.Toggle>

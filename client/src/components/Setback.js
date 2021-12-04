@@ -105,7 +105,7 @@ const Setback = ({ onSetSetback }) => {
   } else {
     return (
       <div>
-        <div className="btns">
+        <div style={{ margin: 10}}>
           <Button
             variant="outline-success"
             size="lg"
@@ -126,7 +126,7 @@ const Setback = ({ onSetSetback }) => {
               adding a setback. Would you like to throw a wrench in their plans?
             </p>
             <div className="sideQuestBtnSpace">
-              <div className="sideQuestBtns">
+              <div style={{ margin: 2 }}>
                 <Button
                   name="Yes"
                   variant="outline-success"
@@ -135,7 +135,7 @@ const Setback = ({ onSetSetback }) => {
                   Yes
                 </Button>
               </div>
-              <div className="sideQuestBtns">
+              <div style={{ margin: 2 }}>
                 <Button
                   name="No"
                   variant="outline-danger"
@@ -146,7 +146,7 @@ const Setback = ({ onSetSetback }) => {
               </div>
             </div>
             {setback && (
-              <div className="setbackContainer">
+              <div style={{ display: "flex", justifyContent: "center" }}>
                 <div className="setBackItem d-flex flex-column align-items-center">
                   <Button onClick={handleSetbackBtn} name="large">
                     Large Setback Options
@@ -154,7 +154,7 @@ const Setback = ({ onSetSetback }) => {
                   {largeSetback && (
                     <div>
                       <Dropdown
-                        className="setBackItemchild"
+                        style={{ margin: 5}}
                         onSelect={(ek, e) => handleSetbackSelect(ek, e, "large")}>
                         <Dropdown.Toggle variant="outline-primary">
                           {setbackCat ? setbackCat : "Choose Your Setback Category"}
@@ -204,7 +204,7 @@ const Setback = ({ onSetSetback }) => {
                   {smallSetback && (
                     <div>
                       <Dropdown
-                        className="setBackItemchild"
+                        style={{ margin: 5}}
                         onSelect={(ek, e) => handleSetbackSelect(ek, e, "small")}>
                         <Dropdown.Toggle variant="outline-primary">
                           {setbackCat ? setbackCat : "Choose Your Trap"}

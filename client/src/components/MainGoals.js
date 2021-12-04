@@ -76,7 +76,7 @@ const MainGoals = ({ onSetMainGoal }) => {
 
     return (
       <div>
-        <div className="btns">
+        <div style={{ margin: 10}}>
           <Button
             variant="outline-success"
             size="lg"
@@ -97,30 +97,30 @@ const MainGoals = ({ onSetMainGoal }) => {
               button represents a different goal category.
             </p>
             <br />
-            <div className="container adventureBtns">
+            <div style={{ display: "flex" }} className="adventureBtns">
               <Button
-                className="dunTypeBtns"
+                style={{ margin: 5}}
                 variant={dungeonGoalsClicked ? "primary" : "outline-primary" }
                 onClick={handleGoalCat}
                 value={"dungeon"}>
                 Dungeon Type Goals
               </Button>
               <Button
-                className="dunTypeBtns"
+                style={{ margin: 5}}
                 variant={wildernessGoalsClickd ? "primary" : "outline-primary" }
                 onClick={handleGoalCat}
                 value={"wilderness"}>
                 Wilderness Type Goals
               </Button>
               <Button
-                className="dunTypeBtns"
+                style={{ margin: 5}}
                 variant={eventGoalsClicked ? "primary" : "outline-primary" }
                 onClick={handleGoalCat}
                 value={"event"}>
                 Event Type Goals
               </Button>
               <Button
-                className="dunTypeBtns"
+                style={{ margin: 5}}
                 variant={otherGoalsClicked ? "primary" : "outline-primary" }
                 onClick={handleGoalCat}
                 value={"other"}>

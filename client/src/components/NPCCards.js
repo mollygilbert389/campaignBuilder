@@ -20,10 +20,10 @@ const NPCStyledCard = ({
 
   return (
     <div className="cards">
-      <Card className="bg-dark text-white skinnyCard">
-        <Card.Header className="fixedHeader">
+      <Card style={{ width: 250, border: "none" }} className="bg-dark text-white">
+        <Card.Header style={{ width: 250, padding: 0 }}>
           <Card.Img src={image} />
-          <Card.ImgOverlay className="bottom"></Card.ImgOverlay>
+          <Card.ImgOverlay style={{ marginTop: "35%" }}/>
         </Card.Header>
         <Button className="roundBtn" onClick={() => setShowModal(!showModal)}>
           +

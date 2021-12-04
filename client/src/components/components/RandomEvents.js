@@ -97,7 +97,7 @@ const RandomEvents = ({ campaign, onSetRandomEncounters }) => {
   } else {
     return (
       <div>
-        <div className="btns">
+        <div style={{ margin: 10}}>
           <Button
             variant="outline-success"
             size="lg"
@@ -117,7 +117,7 @@ const RandomEvents = ({ campaign, onSetRandomEncounters }) => {
             </p>
             <br />
             <div className="sideQuestBtnSpace">
-              <div className="sideQuestBtns">
+              <div style={{ margin: 2 }}>
                 <Button
                   name="Yes"
                   variant="outline-success"
@@ -125,7 +125,7 @@ const RandomEvents = ({ campaign, onSetRandomEncounters }) => {
                   Yes
                 </Button>
               </div>
-              <div className="sideQuestBtns">
+              <div style={{ margin: 2 }}>
                 <Button
                   name="No"
                   variant="outline-danger"
@@ -163,7 +163,7 @@ const RandomEvents = ({ campaign, onSetRandomEncounters }) => {
                       <Dropdown
                         onSelect={(ek, e) => handleSelect(ek, e, index)}
                         name={space.id}
-                        className="sideQuestBtns">
+                        style={{ margin: 2 }}>
                         <Dropdown.Toggle variant="outline-primary">
                           {randomEncounterMonsters[index].category ? randomEncounterMonsters[index].category : "Choose Your Monsters"}
                         </Dropdown.Toggle>
@@ -176,7 +176,7 @@ const RandomEvents = ({ campaign, onSetRandomEncounters }) => {
                       {randomEncounterMonsters[index].category && (
                         <Dropdown
                           onSelect={(ek, e) => handleFinalSelect(ek, e, index)}
-                          className="sideQuestBtns">
+                          style={{ margin: 2 }}>
                           <Dropdown.Toggle variant="outline-primary">
                             {randomEncounterMonsters[index].finalSelection ? randomEncounterMonsters[index].finalSelection : "Choose Your Monsters"}
                           </Dropdown.Toggle>

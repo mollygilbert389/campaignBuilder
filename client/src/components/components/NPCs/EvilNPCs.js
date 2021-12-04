@@ -21,7 +21,7 @@ const EvilNPCs = () => {
 
   return (
     <div>
-      <div className="btns">
+      <div style={{ margin: 10}}>
         <Button
           variant="outline-success"
           size="lg"
@@ -51,7 +51,7 @@ const EvilNPCs = () => {
             min={1}
             max={5}
             defaultValue={3}
-            className="sliderclass"
+            style={{ color: "#576490" }}
             onChangeCommitted={handleSlider}
             valueLabelDisplay="on"/>
         </Modal.Body>

@@ -58,7 +58,7 @@ const Encounters = ({ onSetEncounters }) => {
   } else {
     return (
       <div>
-        <div className="btns">
+        <div style={{ margin: 10}}>
           <Button
             variant="outline-success"
             size="lg"
@@ -94,7 +94,7 @@ const Encounters = ({ onSetEncounters }) => {
                       <Dropdown
                         onSelect={(ek, e) => handleSelect(ek, e, idx)}
                         name={space.id}
-                        className="sideQuestBtns">
+                        style={{ margin: 2 }}>
                         <Dropdown.Toggle variant="outline-primary">
                           {encounterEvents[idx].type ? encounterEvents[idx].type : "Choose an Encounter Goal"}
                         </Dropdown.Toggle>
@@ -110,7 +110,7 @@ const Encounters = ({ onSetEncounters }) => {
                       </Dropdown>
                       <Dropdown
                         onSelect={(ek, e) => handleDifficultySelect(ek, e, idx)}
-                        className="sideQuestBtns">
+                        style={{ margin: 2 }}>
                         <Dropdown.Toggle variant="outline-primary">
                           {encounterEvents[idx].difficulty ? encounterEvents[idx].difficulty : "Choose the Difficulty"}
                         </Dropdown.Toggle>

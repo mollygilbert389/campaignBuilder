@@ -118,7 +118,7 @@ const PartyInfo = ({ onSetPlayers }) => {
       </p>
       <div className="partyBtnSpace">
         {quantity.map((number, idx) => (
-          <div key={idx} className="prtyBtns">
+          <div key={idx} style={{ margin: 2 }}>
             <Button id={number} variant="outline-primary" onClick={handleClick}>
               {number}
             </Button>
@@ -127,7 +127,7 @@ const PartyInfo = ({ onSetPlayers }) => {
       </div>
       {partyMemberData.length > 0 && (
         <div>
-          <div className="forms">
+          <div style={{ textAlign: "center" }}>
             {partyMemberData.map((partyMember, index) => (
               <div key={partyMember.id}>
                 <Form style={{ marginBottom: 5}}>

@@ -85,12 +85,11 @@ const Government = ({
   } else {
     return (
         <div>
-        <div className="btns">
+        <div style={{ margin: 10}}>
             <Button
             variant="outline-success"
             size="lg"
-            onClick={() => setShowModal(!showModal)}
-            >
+            onClick={() => setShowModal(!showModal)}>
             Government
             </Button>
         </div>

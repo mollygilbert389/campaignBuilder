@@ -69,7 +69,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
 
     return (
       <div>
-        <div className="btns">
+        <div style={{ margin: 10}}>
           <Button
             variant="outline-success"
             size="lg"
@@ -104,10 +104,11 @@ const Patron = ({ onSetPatronData, campaign }) => {
                   handleGenerate={(feedback) => setPatronData({ ...patronData, name: feedback })}/>
               </Form>
               <br />
-              <div className="patronContainer">
+              <div style={{ display: "flex" }}>
                 <div>
                   <Card
-                    className="d-flex flex-column align-items-center villainPatronCard"
+                    style={{ border: "none" }}
+                    className="d-flex flex-column align-items-center"
                     enforceFocus={false}>
                     <div>
                       <OverlayTrigger
@@ -129,7 +130,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                                   onChange={(e) => setPatronData({...patronData, image: e.target.value})}/>
                                 <Button
                                   onClick={handleCloseOverlay}
-                                  className="imageSubmit">
+                                  style={{ marginLeft: 5 }}>
                                   Submit
                                 </Button>
                               </div>
@@ -137,7 +138,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                           </Popover>
                         }>
                         <Card.Img
-                          className="NPCimage"
+                          style={{ width: 150, height: 150 }}
                           variant="top"
                           src={patronData?.image || imageLink}/>
                       </OverlayTrigger>
@@ -148,7 +149,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                       </Card.Title>
                       <Dropdown
                         onSelect={(ek, e) => setPatronData({...patronData, gender: e.target.text})}
-                        className="giveMeNPCSpace">
+                       style={{ margin: 2 }}>
                         <Dropdown.Toggle variant="outline-primary">
                           {patronData.gender ? `Gender: ${patronData.gender}` : "Choose your Patron's Gender"}
                         </Dropdown.Toggle>
@@ -160,7 +161,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                       </Dropdown>
                       <Dropdown
                         onSelect={(ek, e) => setPatronData({ ...patronData, type: e.target.text })}
-                        className="giveMeNPCSpace">
+                        style={{ margin: 2 }}>
                         <Dropdown.Toggle variant="outline-primary">
                           {patronData.type ? `Type: ${patronData.type}` : "Choose your Patron's Type"}
                         </Dropdown.Toggle>
@@ -174,7 +175,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                       </Dropdown>
                       <Dropdown
                         onSelect={(ek, e) => setPatronData({...patronData, manner: e.target.text})}
-                        className="giveMeNPCSpace">
+                        style={{ margin: 2 }}>
                         <Dropdown.Toggle variant="outline-primary">
                           {patronData.manner ? `Mannerism: ${patronData.manner}` : "Choose your Patron's Mannerism"}
                         </Dropdown.Toggle>
@@ -188,7 +189,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                       </Dropdown>
                       <Dropdown
                         onSelect={(ek, e) => setPatronData({ ...patronData, trait: e.target.text })}
-                        className="giveMeNPCSpace">
+                        style={{ margin: 2 }}>
                         <Dropdown.Toggle variant="outline-primary">
                           {patronData.trait ? `Trait: ${patronData.trait}` : "Choose your Patron's Trait"}
                         </Dropdown.Toggle>
@@ -207,9 +208,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                   {campaign.factionOrgs.length > 0 &&
                     campaign.factionOrgs.map((item, idx) => (
                       <div key={idx}>
-                        <FontAwesomeIcon
-                          className="iconSpace"
-                          icon={item.icon}/>
+                        <FontAwesomeIcon style={{ margin: 3 }} icon={item.icon}/>
                         <FormControlLabel
                           control={
                             <Checkbox

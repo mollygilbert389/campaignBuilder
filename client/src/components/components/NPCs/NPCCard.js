@@ -71,7 +71,8 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
       <div>
         <Card
           enforceFocus={false}
-          className="changeOverflow d-flex flex-column align-items-center color">
+          style={{ overflow: "auto" }}
+          className="d-flex flex-column align-items-center color">
           <div>
             <OverlayTrigger
               trigger="click"
@@ -90,7 +91,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
                         onChange={(e) => handleNameorImageChange(e, index, "NPCImage")}/>
                       <Button
                         onClick={handleCloseOverlay}
-                        className="imageSubmit">
+                        style={{ marginLeft: 5 }}>
                         Submit
                       </Button>
                     </div>
@@ -98,7 +99,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
                 </Popover>
               }>
               <Card.Img
-                className="NPCimage"
+                style={{ width: 150, height: 150 }}
                 variant="top"
                 src={NPCData?.NPCImage || imageLink}/>
             </OverlayTrigger>
@@ -107,7 +108,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
             <Card.Title>
               {!NPCData.NPCName ? `NPC # ${index + 1}` : `${NPCData.NPCName}`}
             </Card.Title>
-            <Form inline className="giveMeNPCSpace">
+            <Form inline style={{ margin: 2 }}>
               <FormControl
                 type="text"
                 placeholder="NPC Name"
@@ -121,7 +122,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
             </Form>
             <Dropdown
               onSelect={(ek, e) => handleSelections(ek, e, index, "gender")}
-              className="giveMeNPCSpace">
+              style={{ margin: 2 }}>
               <Dropdown.Toggle variant="outline-primary">
                 {NPCData.gender ? `Gender: ${NPCData.gender}` : "Choose your NPCs Gender"}
               </Dropdown.Toggle>
@@ -133,7 +134,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
             </Dropdown>
             <Dropdown
               onSelect={(ek, e) => handleSelections(ek, e, index, "appearance")}
-              className="giveMeNPCSpace">
+              style={{ margin: 2 }}>
               <Dropdown.Toggle variant="outline-primary">
                 {NPCData.appearance ? `Appearance: ${NPCData.appearance}` : "Choose your NPC's Appearance"}
               </Dropdown.Toggle>
@@ -145,7 +146,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
             </Dropdown>
             <Dropdown
               onSelect={(ek, e) => handleSelections(ek, e, index, "highAbility")}
-              className="giveMeNPCSpace">
+              cstyle={{ margin: 2 }}>
               <Dropdown.Toggle variant="outline-primary">
                 {NPCData.highAbility ? `High Ability: ${NPCData.highAbility}` : "Choose your NPC's High Ability"}
               </Dropdown.Toggle>
@@ -160,7 +161,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
             </Dropdown>
             <Dropdown
               onSelect={(ek, e) => handleSelections(ek, e, index, "lowAbility")}
-              className="giveMeNPCSpace">
+              style={{ margin: 2 }}>
               <Dropdown.Toggle variant="outline-primary">
                 {NPCData.lowAbility ? `Low Ability: ${NPCData.lowAbility}` : "Choose your NPC's Low Ability"}
               </Dropdown.Toggle>
@@ -175,7 +176,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
             </Dropdown>
             <Dropdown
               onSelect={(ek, e) => handleSelections(ek, e, index, "talent")}
-              className="giveMeNPCSpace">
+              style={{ margin: 2 }}>
               <Dropdown.Toggle variant="outline-primary">
                 {NPCData.talent ? `Talent: ${NPCData.talent}` : "Choose your NPC's Talent"}
               </Dropdown.Toggle>
@@ -189,7 +190,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
             </Dropdown>
             <Dropdown
               onSelect={(ek, e) => handleSelections(ek, e, index, "manner")}
-              className="giveMeNPCSpace">
+              style={{ margin: 2 }}>
               <Dropdown.Toggle variant="outline-primary">
                 {NPCData.manner ? `Mannerism: ${NPCData.manner}` : "Choose your NPC's Mannerism"}
               </Dropdown.Toggle>
@@ -203,7 +204,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
             </Dropdown>
             <Dropdown
               onSelect={(ek, e) => handleSelections(ek, e, index, "trait")}
-              className="giveMeNPCSpace">
+              style={{ margin: 2 }}>
               <Dropdown.Toggle variant="outline-primary">
                 {NPCData.trait ? `Trait: ${NPCData.trait}` : "Choose your NPC's Trait"}
               </Dropdown.Toggle>
@@ -215,10 +216,10 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
                 ))}
               </Dropdown.Menu>
             </Dropdown>
-            <div className="center">
+            <div style={{ display: "flex", justifyContent: "center" }}>
               <Dropdown
                 onSelect={(ek, e) => handleSelections(ek, e, index, "ideal")}
-                className="giveMeNPCSpace">
+                style={{ margin: 2 }}>
                 <Dropdown.Toggle variant="outline-primary">
                   {NPCData.ideal ? NPCData.ideal : "Choose your NPC's Ideal"}
                 </Dropdown.Toggle>
@@ -233,7 +234,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
               {NPCData.ideal && (
                 <Dropdown
                   onSelect={(ek, e) => handleSelections(ek, e, index, "drilledIdealChoice")}
-                  className="giveMeNPCSpace">
+                  style={{ margin: 2 }}>
                   <Dropdown.Toggle variant="outline-primary">
                     {NPCData.drilledIdealChoice ? NPCData.drilledIdealChoice : "Choose your NPC's Ideal"}
                   </Dropdown.Toggle>
@@ -249,7 +250,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
             </div>
             <Dropdown
               onSelect={(ek, e) => handleSelections(ek, e, index, "bond")}
-              className="giveMeNPCSpace">
+              style={{ margin: 2 }}>
               <Dropdown.Toggle variant="outline-primary">
                 {NPCData.bond ? `Bond: ${NPCData.bond}` : "Choose your NPC's Bond"}
               </Dropdown.Toggle>
@@ -263,7 +264,7 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
             </Dropdown>
             <Dropdown
               onSelect={(ek, e) => handleSelections(ek, e, index, "flawOrSecret")}
-              className="giveMeNPCSpace">
+              style={{ margin: 2 }}>
               <Dropdown.Toggle variant="outline-primary">
                 {NPCData.flawOrSecret ? `Flaw/Secret: ${NPCData.flawOrSecret}` : "Choose your NPC's Flaw or Secret"}
               </Dropdown.Toggle>

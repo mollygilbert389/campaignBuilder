@@ -40,7 +40,7 @@ const Renown = ({ campaign, setReduxPlayers }) => {
 
   return (
     <div>
-      <div className="btns">
+      <div style={{ margin: 10}}>
         <Button
           variant="outline-success"
           size="lg"
@@ -68,9 +68,7 @@ const Renown = ({ campaign, setReduxPlayers }) => {
                     <div>{player.name}</div>
                     {campaign.factionOrgs.map((faction, index) => (
                         <div key={index}>
-                          <FontAwesomeIcon
-                            className="iconSpace"
-                            icon={faction.icon}/>
+                          <FontAwesomeIcon style={{ margin: 3 }} icon={faction.icon}/>
                           <FormControlLabel
                             label={faction.name}
                             control={

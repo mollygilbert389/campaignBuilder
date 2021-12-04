@@ -44,7 +44,7 @@ const StoryInfo = ({ campaign }) => {
     campaign.dungeonData.monsterList;
 
   return (
-    <div className="cardStyle d-flex flex-column align-items-center">
+    <div style={{ marginTop: "10%" }} d-flex flex-column align-items-center>
       <Card className="text-center" style={{ width: "800px" }}>
         <Card.Header>
           {campaign.campaignName && (
@@ -52,9 +52,9 @@ const StoryInfo = ({ campaign }) => {
           )}
         </Card.Header>
         <Card.Body>
-          <div className="dualData">
+          <div style={{ display: "flex", justifyContent: "center" }}>
             {campaign.playerData.length > 0 && (
-              <div className="playerInfo grouping pair">
+              <div style={{ width: 400 }} className="playerInfo grouping">
                 <Card.Title className="title">Player Info:</Card.Title>
                 <div>
                   <div className="d-flex flex-column align-items-center">
@@ -63,10 +63,10 @@ const StoryInfo = ({ campaign }) => {
                         <div>Player: {player.name}</div>
                         <div>Class: {player.raceClass}</div>
                         <div>Level: {player.level}</div>
-                        <div className="iconHolder">
+                        <div style={{ display: "flex", justifyContent: "center" }}>
                           {player.factions &&
                             player.factions[0].map((icon, index) => (
-                              <div key={index} className="iconSpace">
+                              <div key={index} style={{ margin: 3 }}>
                                 <FontAwesomeIcon
                                   className="playerIcon"
                                   icon={icon.icon}
@@ -81,12 +81,10 @@ const StoryInfo = ({ campaign }) => {
               </div>
             )}
             {campaign.worldStyle && (
-              <div
-                className="cliamteImage"
-                style={{ backgroundImage: campaign.worldStyle }}/>
+              <div style={{ backgroundImage: campaign.worldStyle, width: 200 }}/>
             )}
             {worldData && (
-              <div className="grouping pair">
+              <div style={{ width: 400 }} className="grouping">
                 <Card.Title className="title">World Info:</Card.Title>
                 {campaign.world && (
                   <div>
@@ -137,18 +135,14 @@ const StoryInfo = ({ campaign }) => {
                   </div>
                 )}
                 {campaign.factionShow && (
-                  <div className="miniSection">
+                  <div style={{ border: "solid 1px rgb(182, 177, 177)" }}>
                     <div>
                       <strong>Factions and Organizations:</strong>
                     </div>
                     {campaign.factionOrgs.map((oneFaction, idx) => (
-                      <div key={idx} className="iconHolder">
-                        {" "}
+                      <div key={idx} style={{ display: "flex", justifyContent: "center" }}>
                         {`-${oneFaction.name}`}
-                        <FontAwesomeIcon
-                          className="iconSpace"
-                          icon={oneFaction.icon}
-                        />
+                        <FontAwesomeIcon style={{ margin: 3 }} icon={oneFaction.icon}/>
                       </div>
                     ))}
                   </div>
@@ -166,7 +160,7 @@ const StoryInfo = ({ campaign }) => {
               </div>
             )}
           </div>
-          <div className="dualData dataBoxes">
+          <div style={{ display: "flex", justifyContent: "center" }} className="dataBoxes">
             {generalData && (
               <div className="grouping dataBoxes">
                 <Card.Title className="title">
@@ -202,10 +196,10 @@ const StoryInfo = ({ campaign }) => {
             )}
             {playerData && (
               <div className="grouping dataBoxes">
-                <Card className="bg-dark text-white skinnyCard">
-                  <Card.Header className="fixedHeader">
+                <Card style={{ width: 250, border: "none" }} className="bg-dark text-white">
+                  <Card.Header style={{ width: 250, padding: 0 }}>
                     <Card.Img src={campaign.patronData.image} />
-                    <Card.ImgOverlay className="bottom"></Card.ImgOverlay>
+                    <Card.ImgOverlay style={{ marginTop: "35%" }} />
                   </Card.Header>
                   <Card.Body>
                     {campaign.patronData.name && (
@@ -224,13 +218,10 @@ const StoryInfo = ({ campaign }) => {
                       <div>{`Type: ${campaign.patronData.type}`}</div>
                     )}
                     {campaign.patronData.factions && (
-                      <div className="iconHolder">
+                      <div style={{ display: "flex", justifyContent: "center" }}>
                         {campaign.patronData.factions.map((icon, idx) => (
                           <div key={idx}>
-                            <FontAwesomeIcon
-                              className="iconSpace"
-                              icon={icon.icon}
-                            />
+                            <FontAwesomeIcon style={{ margin: 3 }} icon={icon.icon}/>
                           </div>
                         ))}
                       </div>
@@ -243,7 +234,7 @@ const StoryInfo = ({ campaign }) => {
           {campaign.NPCData.length > 0 && (
             <div className="grouping dataBoxes">
               <Card.Title className="title">NPCs & Allies</Card.Title>
-              <CardGroup className="cardContainer">
+              <CardGroup style={{ justifyContent: "center" }}>
                 {campaign.NPCData.map((NPC, idx) => (
                   <div key={idx}>
                     <NPCCards
@@ -267,14 +258,14 @@ const StoryInfo = ({ campaign }) => {
             </div>
           )}
           {(campaign.villainData.name || campaign.villainData.type) && (
-            <div className="dualData">
+            <div style={{ display: "flex", justifyContent: "center" }}>
               <div className="grouping dataBoxes">
-                <Card className="bg-dark text-white skinnyCard">
-                  <Card.Header className="fixedHeader">
+                <Card style={{ width: 250, border: "none" }} className="bg-dark text-white">
+                  <Card.Header style={{ width: 250, padding: 0 }}>
                     {campaign.villainData.image && (
                       <Card.Img src={campaign.villainData.image} />
                     )}
-                    <Card.ImgOverlay className="bottom"></Card.ImgOverlay>
+                    <Card.ImgOverlay style={{ marginTop: "35%" }} />
                   </Card.Header>
                   <Card.Body>
                     {campaign.villainData.name && (
@@ -314,9 +305,9 @@ const StoryInfo = ({ campaign }) => {
               </div>
             </div>
           )}
-          <div className="dualData">
+          <div style={{ display: "flex", justifyContent: "center" }}>
             {moreAdventureData && (
-              <div className="grouping pair">
+              <div style={{ width: 400 }} className="grouping">
                 <Card.Title className="title">More Story Info:</Card.Title>
                 <div>
                   {campaign?.twist && (
@@ -337,7 +328,7 @@ const StoryInfo = ({ campaign }) => {
                           {`${campaign.setback.name}`}
                       </div>
                     )}
-                  <div className="miniSection">
+                  <div style={{ border: "solid 1px rgb(182, 177, 177)" }}>
                     {campaign.localEvents && (
                       <div>
                         <strong>Local Events:</strong>
@@ -352,7 +343,7 @@ const StoryInfo = ({ campaign }) => {
             )}
             <div className="eventImage" />
             {campaign.encounters.length > 0 && (
-              <div className="grouping pair dataBoxes">
+              <div style={{ width: 400 }} className="grouping dataBoxes">
                 <Card.Title className="title">Planned Encouonters:</Card.Title>
                 <div>
                   {campaign.encounters.map((encounter, idx) => (
@@ -412,7 +403,7 @@ const StoryInfo = ({ campaign }) => {
             <div className="grouping dataBoxes">
               <Card.Title className="title">Side Quests:</Card.Title>
               {campaign.sideQuests.length > 0 && (
-                <div className="sideQuestTable">
+                <div style={{ display: "flex", justifyContent: "center" }}>
                   {campaign.sideQuests.map((sidequest, idx) => (
                     <div key={idx} className="sideQuestTableItem">
                       <strong>{`${sidequest.type}`}</strong>
@@ -427,7 +418,7 @@ const StoryInfo = ({ campaign }) => {
               )}
             </div>
           )}
-          <div className="dualData">
+          <div style={{ display: "flex", justifyContent: "center" }}>
             {dungeonData && (
               <div className="grouping dataBoxes centerData">
                 <Card.Title className="title">Dungeon Info:</Card.Title>
@@ -467,7 +458,7 @@ const StoryInfo = ({ campaign }) => {
             )}
             <div className="dungeonImage" />
             {campaign.treasureData.treasureTypes && (
-              <div className="grouping treasure dataBoxes">
+              <div style={{ width: 250 }} className="grouping dataBoxes">
                 <Card.Title className="title">
                   Treasure: {campaign.treasureData.treasureNumber}
                 </Card.Title>

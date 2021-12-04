@@ -7,7 +7,7 @@ const PatronNPCs = () => {
   const [showModal, setShowModal] = useState(false);
   return (
     <div>
-      <div className="btns">
+      <div style={{ margin: 10}}>
         <Button
           id="questGiver"
           variant="outline-success"

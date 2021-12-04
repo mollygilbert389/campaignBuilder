@@ -6,7 +6,7 @@ import '../components/home.css';
 function Long() {
     return (
         <div>
-            <div className="mainques">
+            <div style={{ paddingTop: 10, paddingLeft: 10 }}>
                 <h1> Welcome to the Long Campaign Builder</h1>
                 <p>A Long campaign.</p>
                 <p>

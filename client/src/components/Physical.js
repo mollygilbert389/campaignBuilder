@@ -93,7 +93,7 @@ const Physical = ({ onSetWorldData }) => {
   } else {
     return (
       <div>
-        <div className="btns">
+        <div style={{ margin: 10}}>
           <Button
             variant="outline-success"
             size="lg"
@@ -236,8 +236,8 @@ const Physical = ({ onSetWorldData }) => {
               Consider some places your adventurers might travel through. Pick
               only 3.
             </p>
-            <div className="container">
-              <div className="side tags">
+            <div style={{ display: "flex" }}>
+              <div style={{ width: 500 }} className="tags">
                 {(travelPoints || []).map((drop, idx) => {
                   const travelPoint = travelPointChoices?.find((item) => item === drop.option) || false;
                   const eventCap = travelPointChoices.length >= 3 ? true : false;
@@ -246,7 +246,7 @@ const Physical = ({ onSetWorldData }) => {
                       key={idx}
                       name="travelPointChoices"
                       value={drop.option}
-                      className="eventbtns"
+                      style={{  margin: 1 }}
                       onClick={(e) => handleAddEvent(e)}
                       disabled={eventCap || travelPoint}>
                       {drop.option}
@@ -254,13 +254,13 @@ const Physical = ({ onSetWorldData }) => {
                   );
                 })}
               </div>
-              <div className="side tags">
+              <div style={{ width: 500 }} className="tags">
                 {(travelPointChoices || []).map((drop, idx) => (
                   <Button
                     key={idx}
                     name="travelPointChoices"
                     value={drop}
-                    className="eventbtns"
+                    style={{  margin: 1 }}
                     onClick={removeEvent}>
                     {drop}
                   </Button>

@@ -44,7 +44,7 @@ const EvilNPCCard = ({ campaign, setReduxNPCData }) => {
 
   return (
     <div>
-      <Card className="d-flex flex-column align-items-center villainPatronCard">
+      <Card style={{ border: "none" }} className="d-flex flex-column align-items-center">
         <OverlayTrigger
           trigger="click"
           ref="overlay"
@@ -60,14 +60,14 @@ const EvilNPCCard = ({ campaign, setReduxNPCData }) => {
                     className="mr-sm-2"
                     value={imageLink}
                     onChange={handleImageLink}/>
-                  <Button onClick={handleImageSubmit} className="imageSubmit">
+                  <Button onClick={handleImageSubmit} style={{ marginLeft: 5 }}>
                     Submit
                   </Button>
                 </div>
               </Popover.Content>
             </Popover>
           }>
-          <Card.Img className="NPCimage" variant="top" src={imageLink} />
+          <Card.Img style={{ width: 150, height: 150 }} variant="top" src={imageLink} />
         </OverlayTrigger>
         <Card.Body className="d-flex flex-column align-items-center">
           <Form inline>
@@ -91,7 +91,7 @@ const EvilNPCCard = ({ campaign, setReduxNPCData }) => {
           </Form>
           <Card.Title>{evilNPCData && `Name: ${evilNPCData.name}`}</Card.Title>
           <div className="d-flex flex-column align-items-center">
-            <Dropdown className="giveMeNPCSpace">
+            <Dropdown style={{ margin: 2 }}>
               <Dropdown.Toggle variant="outline-primary">
                 {"Choose your some evil NPC Types"}
               </Dropdown.Toggle>
@@ -112,7 +112,7 @@ const EvilNPCCard = ({ campaign, setReduxNPCData }) => {
                 <Dropdown.Item>Something else</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
-            <Dropdown className="giveMeNPCSpace">
+            <Dropdown style={{ margin: 2 }}>
               <Dropdown.Toggle variant="outline-primary">
                 {"Choose your Adventure Villain"}
               </Dropdown.Toggle>
@@ -122,8 +122,8 @@ const EvilNPCCard = ({ campaign, setReduxNPCData }) => {
                 <Dropdown.Item>Non Binary</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
-            <div className="dualDrop giveMeNPCSpace">
-              <Dropdown className="giveMeNPCSpace">
+            <div style={{ display: "flex", margin: 2 }}>
+              <Dropdown style={{ margin: 2 }}>
                 <Dropdown.Toggle variant="outline-primary">
                   {"Choose your Villain's Main Objective"}
                 </Dropdown.Toggle>
@@ -142,7 +142,7 @@ const EvilNPCCard = ({ campaign, setReduxNPCData }) => {
                 </Dropdown.Menu>
               </Dropdown>
             </div>
-            <div className="dualDrop giveMeNPCSpace">
+            <div style={{ display: "flex", margin: 2 }}>
               <Dropdown>
                 <Dropdown.Toggle variant="outline-primary">
                   {"Choose your Villain's Method"}
@@ -162,7 +162,7 @@ const EvilNPCCard = ({ campaign, setReduxNPCData }) => {
                 </Dropdown.Menu>
               </Dropdown>
             </div>
-            <Dropdown className="giveMeNPCSpace">
+            <Dropdown style={{ margin: 2 }}>
               <Dropdown.Toggle variant="outline-primary">
                 {"Choose your Villain's Weakness"}
               </Dropdown.Toggle>

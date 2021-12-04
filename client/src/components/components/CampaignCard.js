@@ -3,22 +3,22 @@ import "../home.css";
 
 const CampaignCard = ({ campaign }) => {
   return (
-    <div className="campaignCardWhole">
+    <div style={{ textAlign: "left" }}>
       <div className="main">
         <div className="logoSpace">
           {/* {campaign.campaignName} */}
           Campaign Name: Mollywood
         </div>
-        <div className="campaignTitle">
+        <div style={{ fontSize: 35 }}>
           Title: {`Dynamically Created Title basde off random array`}
         </div>
-        <div className="shortCampaignDescription">
+        <div style={{ fontSize: 20, marginBottom: 10 }}>
           Description: I'm going to lap some water out of my master's cup meow
           sit on human they not getting up ever so kitten is playing with dead
           mouse taco cat backwards spells taco cat get video posted to internet
           for chasing red dot.
         </div>
-        <div className="dateCreated">
+        <div style={{ fontSize: 15 }}>
           Date Created: UserName: {`added once login is added`}
         </div>
       </div>
@@ -27,7 +27,7 @@ const CampaignCard = ({ campaign }) => {
       <div className="infoSection">
         Here are some key facts about this D&D Gameplay:
       </div>
-      <div className="keyfacts">
+      <div style={{ border: "solid rgb(63, 156, 243) 1px", margin: 5 }}>
         <div className="intro">
           <div className="subTitle">Overview:</div>
           <p>
@@ -76,7 +76,7 @@ const CampaignCard = ({ campaign }) => {
 
       {/* this is the important part thtis will dynamically be created based off what the user has said*/}
       <div className="infoSection">Your Adventure:</div>
-      <div className="aboutThisAdventure">
+      <div style={{ border: "solid rgb(63, 156, 243) 1px", margin: 5 }}>
         <div className="background">
           <div className="subTitle">
             A little background about this adventure:
@@ -113,7 +113,7 @@ const CampaignCard = ({ campaign }) => {
 
       {/* Acts will dynamically be created as well */}
       <div className="infoSection">Act 1</div>
-      <div className="act1">
+      <div style={{ border: "solid rgb(63, 156, 243) 1", margin: 5 }}>
         <div>
           <div className="">
             <div className="subTitle">It Begins</div>
@@ -210,7 +210,7 @@ const CampaignCard = ({ campaign }) => {
       </div>
 
       <div className="infoSection">Act 2</div>
-      <div className="act1">
+      <div style={{ border: "solid rgb(63, 156, 243) 1", margin: 5 }}>
         <div>
           <div className="">
             <div className="subTitle">It Begins</div>
@@ -309,7 +309,7 @@ const CampaignCard = ({ campaign }) => {
       {/* this will always be in your game so it could be acts -1 and the finale */}
       <div>
         <div className="infoSection">Finale</div>
-        <div className="act1">
+        <div style={{ border: "solid rgb(63, 156, 243) 1", margin: 5 }}>
           <div>
             <div className="subSectionTitle">Wrap It Up:</div>
             <p>

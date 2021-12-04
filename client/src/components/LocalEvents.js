@@ -44,7 +44,7 @@ const LocalEvents = ({ onSetLocalEvents }) => {
   } else {
     return (
       <div>
-        <div className="btns">
+        <div style={{ margin: 10}}>
           <Button
             variant="outline-success"
             size="lg"
@@ -65,15 +65,15 @@ const LocalEvents = ({ onSetLocalEvents }) => {
               your immediate world.
             </p>
             <br />
-            <div className="container staticModal">
-              <div className="side">
+            <div style={{ display: "flex", height: 500, overflow: "scroll" }}>
+              <div style={{ width: 500 }}>
                 {data?.localEvents.map((drop, idx) => {
                   const localEventTrue = localEventChoice?.find((item) => item === drop.option) || false;
                   return (
                     <Button
                       name={drop.option}
                       key={idx}
-                      className="eventbtns"
+                      style={{  margin: 1 }}
                       onClick={handleAddEvent}
                       disabled={eventCap || localEventTrue}>
                       {drop.option}
@@ -81,12 +81,12 @@ const LocalEvents = ({ onSetLocalEvents }) => {
                   );
                 })}
               </div>
-              <div className="side">
+              <div style={{ width: 500 }}>
                 {localEventChoice.map((drop, idx) => (
                   <Button
                     name={drop}
                     key={idx}
-                    className="eventbtns"
+                    style={{  margin: 1 }}
                     onClick={removeEvent}>
                     {drop}
                   </Button>

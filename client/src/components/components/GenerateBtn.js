@@ -23,7 +23,7 @@ const GenerateBtn = ({ name, index, handleGenerate }) => {
   } else {
     return (
       <Button
-        className="giveMeSomeSpace"
+        style={{ marginLeft: 5 }}
         variant="outline-primary"
         onClick={generateName}>
         Generate

@@ -11,7 +11,7 @@ const diceRoller = function ({ rollingArray, handleRoll, name }) {
   }
 
   return (
-    <Button className="giveMeSomeSpace" onClick={rollIt}>
+    <Button style={{ marginLeft: 5 }} onClick={rollIt}>
       Roll it
     </Button>
   );

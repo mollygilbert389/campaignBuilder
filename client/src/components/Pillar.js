@@ -19,7 +19,7 @@ const Pillar = ({ onSetPillar }) => {
 
   return (
     <div>
-      <div className="btns">
+      <div style={{ margin: 10}}>
         <Button
           variant="outline-success"
           size="lg"

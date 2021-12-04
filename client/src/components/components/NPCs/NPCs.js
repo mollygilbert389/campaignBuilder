@@ -27,7 +27,7 @@ const NPCs = ({ onSetNPCData }) => {
 
   return (
     <div>
-      <div className="btns">
+      <div style={{ margin: 10}}>
         <Button
           variant="outline-success"
           size="lg"
@@ -54,11 +54,11 @@ const NPCs = ({ onSetNPCData }) => {
             min={0}
             max={5}
             defaultValue={0}
-            className="sliderclass"
+            style={{ color: "#576490" }}
             onChangeCommitted={handleSlider}
             valueLabelDisplay="on"/>
           {NPCData.length > 0 && (
-            <Carousel className="center" interval={null}>
+            <Carousel style={{ display: "flex", justifyContent: "center" }} interval={null}>
               {NPCData.map((item, index) => (
                   <Carousel.Item key={index}>
                     <NPCCard index={index} key={item.id} name={item.id} />

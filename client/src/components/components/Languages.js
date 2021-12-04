@@ -36,9 +36,9 @@ const Languages = ({
         We have a few languages suggestions here. Feel free to add and remove as
         many or as little as you want.
       </p>
-      <div className="tagsArea centeredItems">
+      <div style={{ width: 500 }} className="centeredItems">
         {suggestedTags.map((item, idx) => (
-          <ButtonGroup key={idx} className="factionButtons">
+          <ButtonGroup key={idx} style={{ margin: 2 }}>
             <Button name={item}>{item.option}</Button>
             <Button name={item.option} onClick={handleRemove}>
               X
@@ -46,12 +46,12 @@ const Languages = ({
           </ButtonGroup>
         ))}
       </div>
-      <div className="inputAndBtn factionButtons">
+      <div style={{ margin: 2 }} className="inputAndBtn">
       <FloatingLabel label="Language">
         <Form.Control type="text" placeholder="Language" />
       </FloatingLabel>
         <input
-          className="factionInput"
+          style={{ border: "none", width: 300 }}
           placeholder="Language"
           type="text"
           value={value?.option || ""}
