@@ -76,11 +76,10 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
     const flawSecrets = data.npcs.filter((item) => item.type === "flawSecret");
 
     return (
-      <div>
         <Card
           enforceFocus={false}
           style={{ overflow: "auto", width: 675 }}
-          className="d-flex flex-column align-items-center color">
+          className="d-flex flex-column align-items-center">
           <div>
             <OverlayTrigger
               trigger="click"
@@ -369,7 +368,6 @@ const NPCCard = ({ onSetNPCData, campaign, index }) => {
             </Form>
           </Card.Body>
         </Card>
-      </div>
     );
   }
 };

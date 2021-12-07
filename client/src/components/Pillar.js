@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Button, Modal } from "react-bootstrap";
+import { Button, Modal, Form, Row, Col } from "react-bootstrap";
 import { setPillar } from "../actions";
 import "./home.css";
 
@@ -39,32 +39,38 @@ const Pillar = ({ onSetPillar }) => {
             pillar for a short campaign, but you can have any type of campaign
             you choose!
           </p>
-          <div>
-            <Button
-              onClick={handlePillarBtn}
-              variant="outline-success"
-              name="Combat"
-              size="lg"
-              block>
-              Combat
-            </Button>
-            <Button
-              onClick={handlePillarBtn}
-              variant="outline-warning"
-              name="Interaction"
-              size="lg"
-              block>
-              Interaction
-            </Button>
-            <Button
-              onClick={handlePillarBtn}
-              variant="outline-danger"
-              name="Exploration"
-              size="lg"
-              block>
-              Exploration
-            </Button>
-          </div>
+            <Form>
+              <Row style={{ margin: 5 }}>
+                <Button
+                  onClick={handlePillarBtn}
+                  variant="outline-success"
+                  name="Combat"
+                  size="lg"
+                  block>
+                  Combat
+                </Button>
+              </Row>
+              <Row style={{ margin: 5 }}>
+                <Button
+                  onClick={handlePillarBtn}
+                  variant="outline-warning"
+                  name="Interaction"
+                  size="lg"
+                  block>
+                  Interaction
+                </Button>
+              </Row>
+              <Row style={{ margin: 5 }}>
+                <Button
+                  onClick={handlePillarBtn}
+                  variant="outline-danger"
+                  name="Exploration"
+                  size="lg"
+                  block>
+                  Exploration
+                </Button>
+              </Row>
+            </Form>
         </Modal.Body>
         <Modal.Footer />
       </Modal>

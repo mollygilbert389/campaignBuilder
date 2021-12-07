@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { useQuery } from "@apollo/client";
-import { Button, Dropdown, Form, Modal } from "react-bootstrap";
+import { Button, Dropdown, Form, Modal, Row, Col } from "react-bootstrap";
 import { RollBtn } from "./components";
 import { setMainGoal } from "../actions";
 import { QUERY_GOAL_DATA } from "../utils";
@@ -129,76 +129,80 @@ const MainGoals = ({ onSetMainGoal }) => {
             </div>
             <br />
             <div className="d-flex flex-column align-items-center">
-              <Form inline>
-                {dungeonGoalsClicked && (
-                  <div>
-                    <Dropdown onSelect={handleGoalClick}>
-                      <Dropdown.Toggle variant="outline-primary">
-                        {mainGoal ? `Goal: ${mainGoal}` : "Choose Overal Campaign Goal"}
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu>
-                        {dungeonGoals.map((drop) => (
-                          <Dropdown.Item key={drop.id} name={drop.option}>
-                            {drop.option}
-                          </Dropdown.Item>
-                        ))}
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </div>
-                )}
-                {wildernessGoalsClickd && (
-                  <div>
-                    <Dropdown onSelect={handleGoalClick}>
-                      <Dropdown.Toggle variant="outline-primary">
-                        {mainGoal ? `Goal: ${mainGoal}` : "Choose Overal Campaign Goal"}
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu>
-                        {wildernessGoals.map((drop) => (
-                          <Dropdown.Item key={drop.id} name={drop.option}>
-                            {drop.option}
-                          </Dropdown.Item>
-                        ))}
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </div>
-                )}
-                {otherGoalsClicked && (
-                  <div>
-                    <Dropdown onSelect={handleGoalClick}>
-                      <Dropdown.Toggle variant="outline-primary">
-                        {mainGoal ? `Goal: ${mainGoal}` : "Choose Overal Campaign Goal"}
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu>
-                        {otherGoals.map((drop) => (
-                          <Dropdown.Item key={drop.id} name={drop.option}>
-                            {drop.option}
-                          </Dropdown.Item>
-                        ))}
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </div>
-                )}
-                {eventGoalsClicked && (
-                  <div>
-                    <Dropdown onSelect={handleGoalClick}>
-                      <Dropdown.Toggle variant="outline-primary">
-                        {mainGoal ? `Goal: ${mainGoal}` : "Choose Overal Campaign Goal"}
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu>
-                        {eventGoals.map((drop) => (
-                          <Dropdown.Item key={drop.id} name={drop.option}>
-                            {drop.option}
-                          </Dropdown.Item>
-                        ))}
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </div>
-                )}
-                <RollBtn
-                  name="mainGoal"
-                  handleRoll={handleRoll}
-                  rollingArray={(goalData || []).map((item) => item.option)}
-                />
+              <Form>
+                <Row>
+                  <Col>
+                    {dungeonGoalsClicked && (
+                      <div>
+                        <Dropdown onSelect={handleGoalClick}>
+                          <Dropdown.Toggle variant="outline-primary">
+                            {mainGoal ? `Goal: ${mainGoal}` : "Choose Overal Campaign Goal"}
+                          </Dropdown.Toggle>
+                          <Dropdown.Menu>
+                            {dungeonGoals.map((drop) => (
+                              <Dropdown.Item key={drop.id} name={drop.option}>
+                                {drop.option}
+                              </Dropdown.Item>
+                            ))}
+                          </Dropdown.Menu>
+                        </Dropdown>
+                      </div>
+                    )}
+                    {wildernessGoalsClickd && (
+                      <div>
+                        <Dropdown onSelect={handleGoalClick}>
+                          <Dropdown.Toggle variant="outline-primary">
+                            {mainGoal ? `Goal: ${mainGoal}` : "Choose Overal Campaign Goal"}
+                          </Dropdown.Toggle>
+                          <Dropdown.Menu>
+                            {wildernessGoals.map((drop) => (
+                              <Dropdown.Item key={drop.id} name={drop.option}>
+                                {drop.option}
+                              </Dropdown.Item>
+                            ))}
+                          </Dropdown.Menu>
+                        </Dropdown>
+                      </div>
+                    )}
+                    {otherGoalsClicked && (
+                      <div>
+                        <Dropdown onSelect={handleGoalClick}>
+                          <Dropdown.Toggle variant="outline-primary">
+                            {mainGoal ? `Goal: ${mainGoal}` : "Choose Overal Campaign Goal"}
+                          </Dropdown.Toggle>
+                          <Dropdown.Menu>
+                            {otherGoals.map((drop) => (
+                              <Dropdown.Item key={drop.id} name={drop.option}>
+                                {drop.option}
+                              </Dropdown.Item>
+                            ))}
+                          </Dropdown.Menu>
+                        </Dropdown>
+                      </div>
+                    )}
+                    {eventGoalsClicked && (
+                      <div>
+                        <Dropdown onSelect={handleGoalClick}>
+                          <Dropdown.Toggle variant="outline-primary">
+                            {mainGoal ? `Goal: ${mainGoal}` : "Choose Overal Campaign Goal"}
+                          </Dropdown.Toggle>
+                          <Dropdown.Menu>
+                            {eventGoals.map((drop) => (
+                              <Dropdown.Item key={drop.id} name={drop.option}>
+                                {drop.option}
+                              </Dropdown.Item>
+                            ))}
+                          </Dropdown.Menu>
+                        </Dropdown>
+                      </div>
+                    )}
+                  </Col>
+                  <Col>
+                    <RollBtn
+                      handleRoll={handleRoll}
+                      rollingArray={(goalData || []).map((item) => item.option)}/>
+                  </Col>
+                </Row>
               </Form>
             </div>
           </Modal.Body>

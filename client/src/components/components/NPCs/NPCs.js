@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Button, Carousel, Modal } from "react-bootstrap";
+import { Button, Carousel, Form, Modal } from "react-bootstrap";
 import { Slider } from "@material-ui/core";
 import { NPCCard } from ".";
 import { setNPCData } from "../../../actions";
@@ -43,7 +43,7 @@ const NPCs = ({ onSetNPCData }) => {
         <Modal.Header closeButton>
           <Modal.Title>Let's get some NPCs added to your campaign.</Modal.Title>
         </Modal.Header>
-        <Modal.Body className="d-flex flex-column align-items-center">
+        <Modal.Body>
           <p>
             Below are some buttons to help you pick some NPCs. This modal is for
             NPCs that play a bigger part in your campaign, not necesarily the
@@ -57,15 +57,21 @@ const NPCs = ({ onSetNPCData }) => {
             style={{ color: "#576490" }}
             onChangeCommitted={handleSlider}
             valueLabelDisplay="on"/>
-          {NPCData.length > 0 && (
-            <Carousel style={{ display: "flex", justifyContent: "center" }} interval={null}>
-              {NPCData.map((item, index) => (
-                  <Carousel.Item key={index}>
-                    <NPCCard index={index} key={item.id} name={item.id} />
-                  </Carousel.Item>
-                ))}
-            </Carousel>
-          )}
+          <div className="d-flex flex-column align-items-center">
+            <Form>
+              <div style={{ display: "flex" }}>
+                {NPCData.length > 0 && (
+                  <Carousel style={{ display: "flex", justifyContent: "center" }} interval={null}>
+                    {NPCData.map((item, index) => (
+                        <Carousel.Item key={index}>
+                          <NPCCard index={index} key={item.id} name={item.id} />
+                        </Carousel.Item>
+                      ))}
+                  </Carousel>
+                )}
+              </div>
+            </Form>
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <Button

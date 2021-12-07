@@ -101,7 +101,6 @@ const Patron = ({ onSetPatronData, campaign }) => {
             <div className="d-flex flex-column align-items-center">
               <Form>
                 <div style={{ display: "flex" }}>
-                  <div>
                     <Card
                       style={{ border: "none" }}
                       className="d-flex flex-column align-items-center"
@@ -250,7 +249,6 @@ const Patron = ({ onSetPatronData, campaign }) => {
                         </Row>
                       </Card.Body>
                     </Card>
-                  </div>
                   <div>
                     {campaign.factionOrgs.length > 0 &&
                       campaign.factionOrgs.map((item, idx) => (
