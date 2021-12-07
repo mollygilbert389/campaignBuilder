@@ -2,8 +2,8 @@
 
 ## Table of Contents
   - [Description](#description)
+  - [Dependencies](#dependencies)
   - [Installation](#installation)
-  - [Usage](#usage)
   - [Questions](#questions)
 
 ## Description
@@ -32,7 +32,7 @@ The purpose of this application is to help D&D Dungeon Masters build fun and eng
   
 ## Installation
 1. Clone it down. 
-3. Run npm i.
+3. Run npm i
 4. run npm run seed
 5. run npm run develop
 
