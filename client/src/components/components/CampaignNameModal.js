@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { useQuery } from '@apollo/client';
-import { Button, Form, Modal, Row, Col } from 'react-bootstrap';
+import { Button, Form, Modal, Row, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { setCampaignName } from "../../actions/index";
 import { QUERY_CAMPAIGN_NAME_DATA } from '../../utils';
 import "../home.css";
@@ -57,11 +57,15 @@ const CampaignNameModal = ({ onSetCampaignName }) => {
                             </Col>
                             <Col align-self-center>
                                 <Button variant="outline-primary" onClick={handleGenerateBtn} disabled={campaigns.length === 0}>Generate</Button>
+
                             </Col>
                         </Row>
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
+                {/* <OverlayTrigger
+                    show={Boolean(!campaignName)}
+                    overlay={<Tooltip>Add a campaign name to get started!</Tooltip>}> */}
                     <Button 
                         variant={disabled ? "outline-success" : "success" }
                         disabled={!campaignName}
@@ -70,6 +74,7 @@ const CampaignNameModal = ({ onSetCampaignName }) => {
                         onClick={close}>
                         Save
                     </Button>
+                    {/* </OverlayTrigger> */}
                 </Modal.Footer>
             </Modal>
         </div>

@@ -92,7 +92,7 @@ const Religion = ({ onSetReligion }) => {
               <RollBtn
                 name="religion"
                 handleRoll={handleRoll}
-                rollingArray={(data?.religion || []).map((item) => item.option)}/>
+                rollingArray={(data?.religion || []).filter((item) => item.option !== "Other").map((item) => item.option)}/>
             </Form>
             <br />
             {other && (

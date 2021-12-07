@@ -102,7 +102,7 @@ const MonsterCard = ({ campaign, onSetDungeonData }) => {
               <Slider
                 min={4}
                 max={20}
-                defaultValue={campaign.dungeonData.monsterNum}
+                defaultValue={campaign.dungeonData.monsterNum || 0}
                 valueLabelDisplay="on"
                 onChangeCommitted={(e, value) => setReduxDungeonData("dungeonData", {...campaign.dungeonData, monsterNum: value})
                 }/>

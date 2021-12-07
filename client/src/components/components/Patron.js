@@ -14,13 +14,13 @@ import {
 } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FormControlLabel, Checkbox } from "@material-ui/core";
-import { GenerateBtn } from ".";
+import { GenerateBtn, RollBtn } from ".";
 import { setPatronData } from "../../actions";
 import { QUERY_PATRON_DATA } from "../../utils";
 import "../home.css";
 
 const Patron = ({ onSetPatronData, campaign }) => {
-  const overlay = useRef(null);
+  const target = useRef(null);
   const imageLink = "https://st3.depositphotos.com/9998432/13335/v/600/depositphotos_133351974-stock-illustration-default-placeholder-woman.jpg";
   const [showModal, setShowModal] = useState(false);
   const [patronData, setPatronData] = useState({ factions: [] });
@@ -37,7 +37,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
   };
 
   const handleCloseOverlay = () => {
-    overlay.current.hide();
+    target.current.hide();
   };
 
   const handleCheckBoxChange = (e) => {
@@ -57,6 +57,14 @@ const Patron = ({ onSetPatronData, campaign }) => {
       setPatronData({ ...patronData, factions: updatedFactions });
     }
   };
+
+  const handleRoll = (name, f, type) => {
+    console.log(patronData)
+      setPatronData({ ...patronData, 
+        [type]: name 
+      });
+  };
+
 
   if (loading || data === undefined) {
     return <div>Loading...</div>;
@@ -113,8 +121,8 @@ const Patron = ({ onSetPatronData, campaign }) => {
                     <div>
                       <OverlayTrigger
                         trigger="click"
-                        ref={overlay}
                         placement="top"
+                        target={target.current}
                         overlay={
                           <Popover className="makeItBigger">
                             <Popover.Title as="h3">
@@ -130,6 +138,7 @@ const Patron = ({ onSetPatronData, campaign }) => {
                                   onChange={(e) => setPatronData({...patronData, image: e.target.value})}/>
                                 <Button
                                   onClick={handleCloseOverlay}
+                                  ref={target}
                                   style={{ marginLeft: 5 }}>
                                   Submit
                                 </Button>
@@ -159,6 +168,10 @@ const Patron = ({ onSetPatronData, campaign }) => {
                           <Dropdown.Item>Non Binary</Dropdown.Item>
                         </Dropdown.Menu>
                       </Dropdown>
+                      <RollBtn
+                        name="government"
+                        handleRoll={(name, feedback) => handleRoll(name, feedback, "gender")}
+                        rollingArray={["Female", "Male", "Non Binary"]}/>
                       <Dropdown
                         onSelect={(ek, e) => setPatronData({ ...patronData, type: e.target.text })}
                         style={{ margin: 2 }}>
@@ -173,6 +186,10 @@ const Patron = ({ onSetPatronData, campaign }) => {
                           ))}
                         </Dropdown.Menu>
                       </Dropdown>
+                      <RollBtn
+                        name="government"
+                        handleRoll={(name, feedback) => handleRoll(name, feedback, "type")}
+                        rollingArray={types.map((item) => item.option)}/>
                       <Dropdown
                         onSelect={(ek, e) => setPatronData({...patronData, manner: e.target.text})}
                         style={{ margin: 2 }}>
@@ -187,6 +204,10 @@ const Patron = ({ onSetPatronData, campaign }) => {
                           ))}
                         </Dropdown.Menu>
                       </Dropdown>
+                      <RollBtn
+                        name="government"
+                        handleRoll={(name, feedback) => handleRoll(name, feedback, "manner")}
+                        rollingArray={mannerisms.map((item) => item.option)}/>
                       <Dropdown
                         onSelect={(ek, e) => setPatronData({ ...patronData, trait: e.target.text })}
                         style={{ margin: 2 }}>
@@ -201,6 +222,10 @@ const Patron = ({ onSetPatronData, campaign }) => {
                           ))}
                         </Dropdown.Menu>
                       </Dropdown>
+                      <RollBtn
+                        name="government"
+                        handleRoll={(name, feedback) => handleRoll(name, feedback, "trait")}
+                        rollingArray={traits.map((item) => item.option)}/>
                     </Card.Body>
                   </Card>
                 </div>

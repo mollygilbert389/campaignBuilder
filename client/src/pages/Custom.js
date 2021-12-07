@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Button, ProgressBar } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 import "../scss/Custom.scss";
 import '../components/home.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { 
     Government, 
     Religion, 

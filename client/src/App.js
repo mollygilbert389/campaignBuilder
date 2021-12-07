@@ -6,12 +6,13 @@ import {
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
+import { Provider } from "react-redux";
 import { Home, Short, Long, Medium, Custom } from "./pages";
 import { Navtabs, Footer } from "./components/components";
+import store from "./store";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import "./scss/Custom.scss";
-import { Provider } from "react-redux";
-import store from "./store";
 
 const httpLink = createHttpLink({
   uri: '/graphql',
