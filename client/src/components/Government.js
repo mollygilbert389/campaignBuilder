@@ -1,22 +1,20 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { useQuery } from '@apollo/client';
+import { useQuery } from "@apollo/client";
 import {
   Button,
   Dropdown,
   OverlayTrigger,
   Tooltip,
   Form,
-  Modal
+  Modal,
+  Row,
+  Col,
 } from "react-bootstrap";
-import {
-  setGovernmentData,
-  setLanguageShow,
-  setLanguages,
-} from "../actions";
+import { setGovernmentData, setLanguageShow, setLanguages } from "../actions";
 import { RollBtn, Languages } from "./components";
-import { QUERY_GOVERNMENT_DATA } from '../utils';
+import { QUERY_GOVERNMENT_DATA } from "../utils";
 import "./home.css";
 
 const Government = ({
@@ -34,10 +32,10 @@ const Government = ({
   const governmentData = data || [];
 
   React.useEffect(() => {
-    if((governmentData?.languages || []).length > 0 ) {
-        setSuggestedTags(governmentData?.languages)
+    if ((governmentData?.languages || []).length > 0) {
+      setSuggestedTags(governmentData?.languages);
     }
-  }, [governmentData])
+  }, [governmentData]);
 
   const setReduxLanguages = (type) => {
     onSetLanguages(type);
@@ -78,94 +76,105 @@ const Government = ({
     }
   };
 
-  if( loading || data === undefined) {
-      return <div>Loading...</div>
+  if (loading || data === undefined) {
+    return <div>Loading...</div>;
   } else if (error) {
-      return <div>ERROR</div>
+    return <div>ERROR</div>;
   } else {
     return (
-        <div>
-        <div style={{ margin: 10}}>
-            <Button
+      <div>
+        <div style={{ margin: 10 }}>
+          <Button
             variant="outline-success"
             size="lg"
-            onClick={() => setShowModal(!showModal)}>
+            onClick={() => setShowModal(!showModal)}
+          >
             Government
-            </Button>
+          </Button>
         </div>
-        <Modal size="lg" show={showModal} onHide={() => setShowModal(!showModal)}>
-            <Modal.Header closeButton>
+        <Modal
+          size="lg"
+          show={showModal}
+          onHide={() => setShowModal(!showModal)}
+        >
+          <Modal.Header closeButton>
             <Modal.Title>
-                Let's pick a government some local languages and our world's
-                currency.
+              Let's pick a government some local languages and our world's
+              currency.
             </Modal.Title>
-            </Modal.Header>
-            <Modal.Body className="d-flex flex-column align-items-center">
+          </Modal.Header>
+          <Modal.Body className="d-flex flex-column align-items-center">
             <p>Below are some buttons to help you make those decisions.</p>
-            <br />
-            <Form inline>
-                <Dropdown
-                onSelect={(ek, e) => handleDropSelect(ek, e, "government")}>
-                <Dropdown.Toggle variant="outline-primary">
-                    {government ? government : "Choose Your Government"}
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                    {(data?.governments || []).map((item, idx) => (
-                    <div key={idx}>
-                        <OverlayTrigger
-                        overlay={<Tooltip>{item.description}</Tooltip>}>
-                        <span className="d-inline-block">
-                            <Dropdown.Item key={item.id} name="government">
-                            {item.name}
-                            </Dropdown.Item>
-                        </span>
-                        </OverlayTrigger>
-                    </div>
-                    ))}
-                </Dropdown.Menu>
-                </Dropdown>
+            <Form>
+              <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: 5 }}>
+                <Col>
+                  <Dropdown onSelect={(ek, e) => handleDropSelect(ek, e, "government")}>
+                    <Dropdown.Toggle variant="outline-primary">
+                      {government ? government : "Choose Your Government"}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      {(data?.governments || []).map((item, idx) => (
+                        <div key={idx}>
+                          <OverlayTrigger overlay={<Tooltip>{item.description}</Tooltip>}>
+                            <span className="d-inline-block">
+                              <Dropdown.Item key={item.id} name="government">
+                                {item.name}
+                              </Dropdown.Item>
+                            </span>
+                          </OverlayTrigger>
+                        </div>
+                      ))}
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Col>
+                <Col>
+                  <RollBtn
+                    handleRoll={(name, feedback) => handleRoll(name, feedback, "government")}
+                    rollingArray={(data?.governments || []).map((item) => item.name)}
+                  />
+                </Col>
+              </Row>
+              <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: 5 }}>
+                <Col>
+                  <Dropdown onSelect={(ek, e) => handleDropSelect(ek, e, "currency")}>
+                    <Dropdown.Toggle variant="outline-primary">
+                      {currency ? currency : "Choose Your Currency"}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      {(data?.currency || []).map((item, idx) => (
+                        <Dropdown.Item key={idx} name="currency">
+                          {item.option}
+                        </Dropdown.Item>
+                      ))}
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Col>
+                <Col>
                 <RollBtn
-                name="government"
-                handleRoll={(name, feedback) => handleRoll(name, feedback, "government")}
-                rollingArray={(data?.governments || []).map((item) => item.name)}/>
-            </Form>
-            <br />
-            <Form inline>
-                <Dropdown onSelect={(ek, e) => handleDropSelect(ek, e, "currency")}>
-                <Dropdown.Toggle variant="outline-primary">
-                    {currency ? currency : "Choose Your Currency"}
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                    {(data?.currency || []).map((item, idx) => (
-                    <Dropdown.Item key={idx} name="currency">
-                        {item.option}
-                    </Dropdown.Item>
-                    ))}
-                </Dropdown.Menu>
-                </Dropdown>
-                <RollBtn
-                name="currency"
-                handleRoll={(name, feedback) => handleRoll(name, feedback, "currency")}
-                rollingArray={(data?.currency || []).map((item) => item.option)}/>
+                  handleRoll={(name, feedback) => handleRoll(name, feedback, "currency")}
+                  rollingArray={(data?.currency || []).map((item) => item.option)}/>
+                </Col>
+              </Row>
             </Form>
             <Languages
-                setReduxLanguages={setReduxLanguages}
-                setReduxLanguageShow={setReduxLanguageShow}
-                suggestedTags={suggestedTags}
-                setSuggestedTags={setSuggestedTags}
-                value={value}
-                setValue={setValue}/>
-            </Modal.Body>
-            <Modal.Footer>
+              setReduxLanguages={setReduxLanguages}
+              setReduxLanguageShow={setReduxLanguageShow}
+              suggestedTags={suggestedTags}
+              setSuggestedTags={setSuggestedTags}
+              value={value}
+              setValue={setValue}
+            />
+          </Modal.Body>
+          <Modal.Footer>
             <Button variant="outline-success" onClick={handleClose}>
-                Save
+              Save
             </Button>
-            </Modal.Footer>
+          </Modal.Footer>
         </Modal>
-        </div>
+      </div>
     );
-  };
-}
+  }
+};
 
 const mapStateToProps = (state) => {
   return { campaign: state.campaignReducer };
