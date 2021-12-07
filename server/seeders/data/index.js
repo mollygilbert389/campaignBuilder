@@ -35,6 +35,7 @@ const villain_objective_data = require("./villainObjectiveData.json");
 const side_monster_data = require("./sideMonsterData.json");
 const room_data = require("./roomsData.json");
 const NPC_ideal_data = require("./NPCIdealData.json");
+const villain_data = require("./villainData.json");
 
 module.exports = {
     mini_boss_data,
@@ -74,4 +75,5 @@ module.exports = {
     goal_data,
     local_event_data,
     NPC_ideal_data,
+    villain_data
 }

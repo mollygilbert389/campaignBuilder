@@ -16,5 +16,10 @@ query villainData {
     category
     objectives
   }
+	villain {
+    id
+    option
+    type
+  }
 }
 `;

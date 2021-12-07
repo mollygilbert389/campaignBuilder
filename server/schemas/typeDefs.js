@@ -361,6 +361,12 @@ const typeDefs = gql`
     option: String
   }
 
+  type VillainData {
+    id: Int
+    option: String
+    type: String
+  }
+
   type Query {
     campaigns: [Campaign]
     campaign (campaignName: String!): Campaign
@@ -400,6 +406,7 @@ const typeDefs = gql`
     villainWeaknesses: [VillainWeaknessData]
     villainObjectives: [VillainObjectiveData]
     villainMethods: [VillainMethodData]
+    villain: [VillainData]
   }
 
   type Mutation {

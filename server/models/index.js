@@ -34,7 +34,8 @@ const Twists = require("./Twists");
 const VillainWeaknesses = require("./VillainWeaknesses");
 const VillainObjectives = require("./VillainObjectives");
 const VillainMethods = require("./VillainMethods");
-const Rooms = require("./Rooms")
+const Rooms = require("./Rooms");
+const Villain = require("./Villain");
 
 module.exports = { 
     Campaign, 
@@ -73,5 +74,6 @@ module.exports = {
     MeetingLocations,
     NonDungeonLocations,
     DungeonLocations,
-    Rooms
+    Rooms,
+    Villain
 };

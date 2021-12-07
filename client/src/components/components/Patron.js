@@ -66,7 +66,6 @@ const Patron = ({ onSetPatronData, campaign }) => {
       });
   };
 
-
   if (loading || data === undefined) {
     return <div>Loading...</div>;
   } else if (error) {

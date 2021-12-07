@@ -35,7 +35,8 @@ const {
   Patron,
   VillainWeaknesses,
   VillainObjectives,
-  VillainMethods
+  VillainMethods,
+  Villain
 } = require('../models');
 
 const resolvers = {
@@ -154,6 +155,9 @@ const resolvers = {
     villainMethods: async () => {
       return VillainMethods.find();
     },
+    villain: async () => {
+      return Villain.find();
+    }
   },
   Mutation: {
     addCampaign: async (parent, args) => {

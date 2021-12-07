@@ -10,9 +10,11 @@ import {
   OverlayTrigger,
   Card,
   Popover,
-  Modal
+  Modal,
+  Col, 
+  Row
 } from "react-bootstrap";
-import { GenerateBtn } from ".";
+import { GenerateBtn, RollBtn } from ".";
 import { setVillainData } from "../../actions";
 import { QUERY_VILLAIN_DATA } from "../../utils";
 import "../home.css";
@@ -58,6 +60,14 @@ const VillainModal = ({ onSetVillainData }) => {
     setReduxVillainData("villainData", villainData);
   };
 
+  const handleRoll = (name, f, type) => {
+    setVillainData({ ...villainData, 
+      [type]: name 
+    });
+};
+
+console.log(data)
+
   if (loading || data === undefined) {
     return <div>Loading...</div>;
   } else if (error) {
@@ -83,27 +93,21 @@ const VillainModal = ({ onSetVillainData }) => {
           </Modal.Header>
           <Modal.Body className="d-flex flex-column align-items-center">
             <p>Below are some buttons to create your villain</p>
-            <Form inline>
-              <FormControl
-                type="text"
-                placeholder="Villain Name"
-                className="mr-sm-2"
-                value={villainData?.name}
-                onChange={(e) => setVillainData({ ...villainData, name: e.target.value })}/>
-              <div style={{ paddingRight: "10px" }}>or</div>
-              <GenerateBtn
-                name="villainName"
-                handleGenerate={(feedback) => setVillainData({ ...villainData, name: feedback })}/>
-            </Form>
-            <br />
-            <Card style={{ border: "none" }} className="d-flex flex-column align-items-center">
+            <div className="d-flex flex-column align-items-center">
+            <Form>
+            <Card 
+              style={{ border: "none" }} 
+              className="d-flex flex-column align-items-center"
+              enforceFocus={false}>
               <OverlayTrigger
                 trigger="click"
                 ref={overlay}
                 placement="top"
                 overlay={
                   <Popover className="makeItBigger">
-                    <Popover.Title as="h3">Add Your Image!</Popover.Title>
+                    <Popover.Title as="h3">
+                      Add Your Image!
+                    </Popover.Title>
                     <Popover.Content>
                       <div className="centerMe">
                         <FormControl
@@ -130,47 +134,67 @@ const VillainModal = ({ onSetVillainData }) => {
                 <Card.Title>
                   {villainData.name && `Name: ${villainData.name}`}
                 </Card.Title>
-                <div className="d-flex flex-column align-items-center">
-                  <Dropdown
-                    onSelect={(ek, e) => setVillainData({ ...villainData, type: e.target.text })}
-                    style={{ margin: 2 }}>
-                    <Dropdown.Toggle variant="outline-primary">
-                      {villainData.type ? `Type: ${villainData.type}` : "Choose your Adventure Villain"}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Dropdown.Item>Beast or monstrosity with no particular agenda</Dropdown.Item>
-                      <Dropdown.Item>Abberation bent on corruption or desruction</Dropdown.Item>
-                      <Dropdown.Item>Dragon bent on domination and plunder</Dropdown.Item>
-                      <Dropdown.Item>Giant bent on plunder</Dropdown.Item>
-                      <Dropdown.Item>Undead with any agenda</Dropdown.Item>
-                      <Dropdown.Item>Fey with a mysterious goal</Dropdown.Item>
-                      <Dropdown.Item>Hummanoid cultist</Dropdown.Item>
-                      <Dropdown.Item>Hummanoid conqueror</Dropdown.Item>
-                      <Dropdown.Item>Hummanoid seeking revenge</Dropdown.Item>
-                      <Dropdown.Item>Hummanoid schemer seeking to rule</Dropdown.Item>
-                      <Dropdown.Item>Hummanoid criminal mastermind</Dropdown.Item>
-                      <Dropdown.Item>Hummanoid raider or ravager</Dropdown.Item>
-                      <Dropdown.Item>Hummanoid under a curse</Dropdown.Item>
-                      <Dropdown.Item>Misguided hummanoid zealot</Dropdown.Item>
-                      <Dropdown.Item>Something else</Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                  <Dropdown
-                    onSelect={(ek, e) => setVillainData({ ...villainData, gender: e.target.text })}
-                    style={{ margin: 2 }}>
-                    <Dropdown.Toggle variant="outline-primary">
-                      {villainData.gender ? `Gender: ${villainData.gender}` : "Choose your Adventure Villain"}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Dropdown.Item>Female</Dropdown.Item>
-                      <Dropdown.Item>Male</Dropdown.Item>
-                      <Dropdown.Item>Non Binary</Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                  <div style={{ display: "flex" }}>
-                    <Dropdown
-                      onSelect={handleVillainObjectiveCatSelect}
-                      style={{ margin: 2 }}>
+                <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: 5 }}>
+                  <Col>
+                    <FormControl
+                      type="text"
+                      placeholder="Villain Name"
+                      className="mr-sm-2"
+                      value={villainData?.name}
+                      onChange={(e) => setVillainData({ ...villainData, name: e.target.value })}/>
+                  </Col>
+                  <Col xs={2} style={{textAlign: "center"}}>
+                    or
+                  </Col>
+                  <Col>
+                    <GenerateBtn
+                      name="villainName"
+                      handleGenerate={(feedback) => setVillainData({ ...villainData, name: feedback })}/>
+                  </Col>
+                </Row>
+                <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: 5 }}>
+                  <Col>
+                    <Dropdown onSelect={(ek, e) => setVillainData({ ...villainData, gender: e.target.text })}>
+                      <Dropdown.Toggle variant="outline-primary">
+                        {villainData.gender ? `Gender: ${villainData.gender}` : "Choose your Adventure Villain"}
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu>
+                        <Dropdown.Item>Female</Dropdown.Item>
+                        <Dropdown.Item>Male</Dropdown.Item>
+                        <Dropdown.Item>Non Binary</Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </Col>
+                  <Col>
+                    <RollBtn
+                      handleRoll={(name, feedback) => handleRoll(name, feedback, "gender")}
+                      rollingArray={["Female", "Male", "Non Binary"]}/>
+                  </Col>
+                </Row>
+                <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: 5 }}>
+                  <Col>
+                    <Dropdown onSelect={(ek, e) => setVillainData({ ...villainData, type: e.target.text })}>
+                      <Dropdown.Toggle variant="outline-primary">
+                        {villainData.type ? `Type: ${villainData.type}` : "Choose your Adventure Villain"}
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu>
+                        {data.villain.map((item) => (
+                            <Dropdown.Item key={item.id} name={item.option}>
+                              {item.option}
+                            </Dropdown.Item>
+                          ))}
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </Col>
+                  <Col>
+                    <RollBtn
+                      handleRoll={(name, feedback) => handleRoll(name, feedback, "type")}
+                      rollingArray={data.villain.map((item) => item.option)}/>
+                  </Col>
+                </Row>
+                <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: 5 }}>
+                  <Col>
+                    <Dropdown onSelect={handleVillainObjectiveCatSelect}>
                       <Dropdown.Toggle variant="outline-primary">
                         {villainData.villainObjectiveCatChoice ? `Objective Category: ${villainData.villainObjectiveCatChoice}` : "Choose your Villain's Main Objective"}
                       </Dropdown.Toggle>
@@ -182,68 +206,101 @@ const VillainModal = ({ onSetVillainData }) => {
                         ))}
                       </Dropdown.Menu>
                     </Dropdown>
+                  </Col>
+                  <Col>
+                    <RollBtn
+                      handleRoll={(name, feedback) => handleRoll(name, feedback, "villainObjectiveCatChoice")}
+                      rollingArray={data.villainObjectives.map((item) => item.option)}/>
+                  </Col>
+                </Row>
                     {villainData?.villainObjectivesPossible?.length > 0 && (
-                      <Dropdown
-                        onSelect={(ek, e) => setVillainData({...villainData, finalVillainObjectiveChoice: e.target.text})}
-                        style={{ margin: 2 }}>
-                        <Dropdown.Toggle variant="outline-primary">
-                          {villainData.finalVillainObjectiveChoice ? `Objective: ${villainData.finalVillainObjectiveChoice}` : "Choose your Villain's Main Objective"}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                          {villainData.villainObjectivesPossible.map((item) => (
-                            <Dropdown.Item name={item}>{item}</Dropdown.Item>
-                          ))}
-                        </Dropdown.Menu>
-                      </Dropdown>
+                      <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: 5 }}>
+                        <Col>
+                          <Dropdown onSelect={(ek, e) => setVillainData({...villainData, finalVillainObjectiveChoice: e.target.text})}>
+                            <Dropdown.Toggle variant="outline-primary">
+                              {villainData.finalVillainObjectiveChoice ? `Objective: ${villainData.finalVillainObjectiveChoice}` : "Choose your Villain's Main Objective"}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                              {villainData.villainObjectivesPossible.map((item) => (
+                                <Dropdown.Item name={item}>{item}</Dropdown.Item>
+                              ))}
+                            </Dropdown.Menu>
+                          </Dropdown>
+                        </Col>
+                        <Col>
+                          <RollBtn
+                            handleRoll={(name, feedback) => handleRoll(name, feedback, "finalVillainObjectiveChoice")}
+                            rollingArray={villainData.villainObjectivesPossible.map((item) => item.option)}/>
+                        </Col>
+                      </Row>
                     )}
-                  </div>
-                  <div style={{ display: "flex" }}>
-                    <Dropdown
-                      onSelect={handleVillainMethodCatSelect}
-                      style={{ margin: 2 }}>
-                      <Dropdown.Toggle variant="outline-primary">
-                        {villainData.villainMethodCatChoice ? `Method Category: ${villainData.villainMethodCatChoice}` : "Choose your Villain's Method"}
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu>
-                        {data.villainMethods.map((item) => (
-                          <Dropdown.Item key={item.id} name={item.category}>
-                            {item.category}
-                          </Dropdown.Item>
-                        ))}
-                      </Dropdown.Menu>
-                    </Dropdown>
+                    <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: 5 }}>
+                      <Col>
+                        <Dropdown onSelect={handleVillainMethodCatSelect}>
+                          <Dropdown.Toggle variant="outline-primary">
+                            {villainData.villainMethodCatChoice ? `Method Category: ${villainData.villainMethodCatChoice}` : "Choose your Villain's Method"}
+                          </Dropdown.Toggle>
+                          <Dropdown.Menu>
+                            {data.villainMethods.map((item) => (
+                              <Dropdown.Item key={item.id} name={item.category}>
+                                {item.category}
+                              </Dropdown.Item>
+                            ))}
+                          </Dropdown.Menu>
+                        </Dropdown>
+                      </Col>
+                      <Col>
+                        <RollBtn
+                          handleRoll={(name, feedback) => handleRoll(name, feedback, "villainMethodCatChoice")}
+                          rollingArray={data.villainMethods.map((item) => item.option)}/>
+                      </Col>
+                    </Row>
                     {villainData?.villainMethodPossible?.length > 0 && (
-                      <Dropdown
-                        onSelect={(ek, e) => setVillainData({...villainData, finalVillainMethodChoice: e.target.text})}
-                        style={{ margin: 2 }}>
-                        <Dropdown.Toggle variant="outline-primary">
-                          {villainData.finalVillainMethodChoice ? `Method: ${villainData.finalVillainMethodChoice}` : "Choose your Villain's Method"}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                          {villainData.villainMethodPossible.map((item) => (
-                            <Dropdown.Item name={item}>{item}</Dropdown.Item>
-                          ))}
-                        </Dropdown.Menu>
-                      </Dropdown>
+                      <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: 5 }}>
+                        <Col>
+                          <Dropdown onSelect={(ek, e) => setVillainData({...villainData, finalVillainMethodChoice: e.target.text})}>
+                            <Dropdown.Toggle variant="outline-primary">
+                              {villainData.finalVillainMethodChoice ? `Method: ${villainData.finalVillainMethodChoice}` : "Choose your Villain's Method"}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                              {villainData.villainMethodPossible.map((item) => (
+                                <Dropdown.Item name={item}>{item}</Dropdown.Item>
+                              ))}
+                            </Dropdown.Menu>
+                          </Dropdown>
+                        </Col>
+                        <Col>
+                          <RollBtn
+                            handleRoll={(name, feedback) => handleRoll(name, feedback, "finalVillainMethodChoice")}
+                            rollingArray={villainData.villainMethodPossible}/>
+                        </Col>
+                      </Row>
                     )}
-                  </div>
-                  <Dropdown
-                    onSelect={(ek, e) => setVillainData({...villainData, weakness: e.target.text})}
-                    style={{ margin: 2 }}>
-                    <Dropdown.Toggle variant="outline-primary">
-                      {villainData.weakness ? `Weakness: ${villainData.weakness}` : "Choose your Villain's Weakness"}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      {data.villainWeaknesses.map((item) => (
-                        <Dropdown.Item key={item.id} name={item.option}>
-                          {item.option}
-                        </Dropdown.Item>
-                      ))}
-                    </Dropdown.Menu>
-                  </Dropdown>
-                </div>
+                    <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: 5 }}>
+                      <Col>
+                        <Dropdown onSelect={(ek, e) => setVillainData({...villainData, weakness: e.target.text})}>
+                          <Dropdown.Toggle variant="outline-primary">
+                            {villainData.weakness ? `Weakness: ${villainData.weakness}` : "Choose your Villain's Weakness"}
+                          </Dropdown.Toggle>
+                          <Dropdown.Menu>
+                            {data.villainWeaknesses.map((item) => (
+                              <Dropdown.Item key={item.id} name={item.option}>
+                                {item.option}
+                              </Dropdown.Item>
+                            ))}
+                          </Dropdown.Menu>
+                        </Dropdown>
+                      </Col>
+                      <Col>
+                        <RollBtn
+                          handleRoll={(name, feedback) => handleRoll(name, feedback, "weakness")}
+                          rollingArray={data.villainWeaknesses.map((item) => item.option)}/>
+                      </Col>
+                    </Row>
               </Card.Body>
             </Card>
+            </Form>
+            </div>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="outline-success" onClick={hanelSave}>

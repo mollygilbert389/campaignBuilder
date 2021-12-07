@@ -35,7 +35,8 @@ const {
   patron_data,
   villain_weakness_data,
   villain_objective_data,
-  villain_method_data
+  villain_method_data,
+  villain_data
 } = require("./data")
 const db = require('../config/connection');
 const { 
@@ -75,7 +76,8 @@ const {
   Patron,
   VillainWeaknesses,
   VillainObjectives,
-  VillainMethods
+  VillainMethods,
+  Villain
 } = require('../models');
 
 db.once('open', async () => {
@@ -116,6 +118,7 @@ db.once('open', async () => {
   await VillainWeaknesses.deleteMany({});
   await VillainObjectives.deleteMany({});
   await VillainMethods.deleteMany({});
+  await Villain.deleteMany({});
  
   await Climax.collection.insertMany(climax_data);
   await MeetingLocations.collection.insertMany(meeting_location_data);
@@ -153,6 +156,7 @@ db.once('open', async () => {
   await VillainWeaknesses.collection.insertMany(villain_weakness_data);
   await VillainObjectives.collection.insertMany(villain_objective_data);
   await VillainMethods.collection.insertMany(villain_method_data);
+  await Villain.collection.insertMany(villain_data);
 
   const campaignData = [];
 
