@@ -9,7 +9,9 @@ import {
   FormControl,
   OverlayTrigger,
   Tooltip,
-  Modal
+  Modal,
+  Row,
+  Col
 } from "react-bootstrap";
 import { setReligion } from "../actions";
 import { RollBtn } from "./components";
@@ -30,19 +32,19 @@ const Religion = ({ onSetReligion }) => {
     if (e.target.text === "Other") {
       setOther(true);
     } else {
-      const selection = e.target.text;
-      setReligion(selection);
-      setReduxReligion("religion", selection);
+      setOther(false);
+      setReligion(e.target.text);
+      setReduxReligion("religion", e.target.text);
     }
   };
 
   const handleChange = (e) => {
-    const selection = e.target.value;
-    setReligion(selection);
-    setReligion("religion", selection);
+    setReligion(e.target.value);
+    setReduxReligion("religion", e.target.value);
   };
 
   const handleRoll = (feedback) => {
+    setOther(false);
     setReligion(feedback);
     setReduxReligion("religion", feedback);
   };
@@ -69,30 +71,35 @@ const Religion = ({ onSetReligion }) => {
           <Modal.Body className="d-flex flex-column align-items-center">
             <p>Below are some buttons to help you set up your gods.</p>
             <br />
-            <Form inline>
-              <Dropdown onSelect={handleReligion}>
-                <Dropdown.Toggle variant="outline-primary">
-                  {religion ? `Religion: ${religion}` : "Choose Your Religious Philosophy"}
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  {(data?.religion || []).map((item, idx) => (
-                    <div key={idx}>
-                      <OverlayTrigger
-                        overlay={<Tooltip>{item.toolTipData}</Tooltip>}>
-                        <span className="d-inline-block">
-                          <Dropdown.Item key={item.id} name={item.option}>
-                            {item.option}
-                          </Dropdown.Item>
-                        </span>
-                      </OverlayTrigger>
-                    </div>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown>
-              <RollBtn
-                name="religion"
-                handleRoll={handleRoll}
-                rollingArray={(data?.religion || []).filter((item) => item.option !== "Other").map((item) => item.option)}/>
+            <Form>
+              <Row>
+                <Col>
+                  <Dropdown onSelect={handleReligion}>
+                    <Dropdown.Toggle variant="outline-primary">
+                      {religion ? `Religion: ${religion}` : "Choose Your Religious Philosophy"}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      {(data?.religion || []).map((item, idx) => (
+                        <div key={idx}>
+                          <OverlayTrigger
+                            overlay={<Tooltip>{item.toolTipData}</Tooltip>}>
+                            <span className="d-inline-block">
+                              <Dropdown.Item key={item.id} name={item.option}>
+                                {item.option}
+                              </Dropdown.Item>
+                            </span>
+                          </OverlayTrigger>
+                        </div>
+                      ))}
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Col>
+                <Col>
+                  <RollBtn
+                    handleRoll={handleRoll}
+                    rollingArray={(data?.religion || []).filter((item) => item.option !== "Other").map((item) => item.option)}/>
+                </Col>
+              </Row>
             </Form>
             <br />
             {other && (
@@ -100,7 +107,6 @@ const Religion = ({ onSetReligion }) => {
                 type="text"
                 placeholder="Add Religion"
                 className="mr-sm-2"
-                value={religion}
                 onChange={handleChange}/>
             )}
           </Modal.Body>
