@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { useQuery } from "@apollo/client";
-import { Button, Dropdown, Form, FormGroup, Modal } from "react-bootstrap";
+import { Button, Dropdown, Form, FormGroup, Modal, Row, Col } from "react-bootstrap";
 import { RollBtn } from "./components";
 import { setWorldData } from "../actions";
 import { QUERY_PHYSICAL_DATA } from "../utils";
@@ -114,124 +114,129 @@ const Physical = ({ onSetWorldData }) => {
               decisions you make now will help create a unique campaign down the
               line!
             </p>
-            <FormGroup>
-              <Form inline>
-                <Dropdown
-                  name="world"
-                  onSelect={(ek, e) => handleDropSelect(ek, e, "world")}>
-                  <Dropdown.Toggle variant="outline-primary" name="world">
-                    {world ? `Setting: ${world}` : "What is your setting?"}
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu name="world">
-                    {(physicalData?.worlds || []).map((item, idx) => (
-                      <Dropdown.Item key={idx} name="world">
-                        {item.option}
-                      </Dropdown.Item>
-                    ))}
-                  </Dropdown.Menu>
-                </Dropdown>
-                <RollBtn
-                  name="world"
-                  handleRoll={(ek, e) => handleDropSelect(ek, e, "world")}
-                  rollingArray={(physicalData?.worlds || []).map((item) => item.option)}/>
+              <Form>
+                <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: 5 }}>
+                  <Col>
+                    <Dropdown
+                      name="world"
+                      onSelect={(ek, e) => handleDropSelect(ek, e, "world")}>
+                      <Dropdown.Toggle variant="outline-primary" name="world">
+                        {world ? `Setting: ${world}` : "What is your setting?"}
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu name="world">
+                        {(physicalData?.worlds || []).map((item, idx) => (
+                          <Dropdown.Item key={idx} name="world">
+                            {item.option}
+                          </Dropdown.Item>
+                        ))}
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </Col>
+                  <Col>
+                    <RollBtn
+                      handleRoll={(ek, e) => handleDropSelect(ek, e, "world")}
+                      rollingArray={(physicalData?.worlds || []).map((item) => item.option)}/>
+                  </Col>
+                </Row>
+                <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: 5 }}>
+                  <Col>
+                    <Dropdown
+                      name="era"
+                      onSelect={(ek, e) => handleDropSelect(ek, e, "era")}>
+                      <Dropdown.Toggle variant="outline-primary">
+                        {era
+                          ? `Era: ${era}`
+                          : "What era does this adventure take place?"}
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu>
+                        {(physicalData?.eras || []).map((item, idx) => (
+                          <Dropdown.Item key={idx} name="era">
+                            {item.option}
+                          </Dropdown.Item>
+                        ))}
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </Col>
+                  <Col>
+                    <RollBtn
+                      handleRoll={(ek, e) => handleDropSelect(ek, e, "era")}
+                      rollingArray={(physicalData?.eras || []).map((item) => item.option)}/>
+                  </Col>
+                </Row>
+                <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: 5 }}>
+                  <Col>
+                    <Dropdown
+                      name="uniqueFeature"
+                      onSelect={(ek, e) => handleDropSelect(ek, e, "uniqueFeatures")}>
+                      <Dropdown.Toggle variant="outline-primary">
+                        {uniqueFeature
+                          ? `Feature: ${uniqueFeature}`
+                          : "Does this world have a unique feature?"}
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu>
+                        {(physicalData?.features || []).map((item, idx) => (
+                          <Dropdown.Item key={idx} name="uniqueFeature">
+                            {item.option}
+                          </Dropdown.Item>
+                        ))}
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </Col>
+                  <Col>
+                    <RollBtn
+                      handleRoll={(ek, e) => handleDropSelect(ek, e, "uniqueFeatures")}
+                      rollingArray={(physicalData?.features || []).map((item) => item.option)}/>
+                  </Col>
+                </Row>
+                <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: 5 }}>
+                  <Col>
+                    <Dropdown
+                      name="mapScale"
+                      onSelect={(ek, e) => handleDropSelect(ek, e, "mapScale")}>
+                      <Dropdown.Toggle variant="outline-primary">
+                        {mapScale
+                          ? `Size: ${mapScale}`
+                          : "What kind of place are your adventurers starting?"}
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu>
+                        {(physicalData?.mapScales || []).map((item, idx) => (
+                          <Dropdown.Item key={idx} name="mapScale">
+                            {item.option}
+                          </Dropdown.Item>
+                        ))}
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </Col>
+                  <Col>
+                    <RollBtn
+                      handleRoll={(ek, e) => handleDropSelect(ek, e, "mapScale")}
+                      rollingArray={(physicalData?.mapScales || []).map((item) => item.option)}/>
+                  </Col>
+                </Row>
+                <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: 5 }}>
+                  <Col>
+                    <Dropdown
+                      name="charMeeting"
+                      onSelect={(ek, e) => handleDropSelect(ek, e, "charMeeting")}>
+                      <Dropdown.Toggle variant="outline-primary">
+                        {charMeeting ? `Meeting: ${charMeeting}` : "How do your characters know each other?"}
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu>
+                        {(physicalData?.meetingLocations || []).map((item, idx) => (
+                          <Dropdown.Item key={idx} name="charMeeting">
+                            {item.option}
+                          </Dropdown.Item>
+                        ))}
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </Col>
+                  <Col>
+                    <RollBtn
+                      handleRoll={(ek, e) => handleDropSelect(ek, e, "charMeeting")}
+                      rollingArray={(physicalData?.meetingLocations || []).map((item) => item.option)}/>
+                  </Col>
+                </Row>
               </Form>
-            </FormGroup>
-            <FormGroup>
-              <Form inline>
-                <Dropdown
-                  name="era"
-                  onSelect={(ek, e) => handleDropSelect(ek, e, "era")}>
-                  <Dropdown.Toggle variant="outline-primary">
-                    {era
-                      ? `Era: ${era}`
-                      : "What era does this adventure take place?"}
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    {(physicalData?.eras || []).map((item, idx) => (
-                      <Dropdown.Item key={idx} name="era">
-                        {item.option}
-                      </Dropdown.Item>
-                    ))}
-                  </Dropdown.Menu>
-                </Dropdown>
-                <RollBtn
-                  name="era"
-                  handleRoll={(ek, e) => handleDropSelect(ek, e, "era")}
-                  rollingArray={(physicalData?.eras || []).map((item) => item.option)}/>
-              </Form>
-            </FormGroup>
-            <FormGroup>
-              <Form inline>
-                <Dropdown
-                  name="uniqueFeature"
-                  onSelect={(ek, e) => handleDropSelect(ek, e, "uniqueFeatures")}>
-                  <Dropdown.Toggle variant="outline-primary">
-                    {uniqueFeature
-                      ? `Feature: ${uniqueFeature}`
-                      : "Does this world have a unique feature?"}
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    {(physicalData?.features || []).map((item, idx) => (
-                      <Dropdown.Item key={idx} name="uniqueFeature">
-                        {item.option}
-                      </Dropdown.Item>
-                    ))}
-                  </Dropdown.Menu>
-                </Dropdown>
-                <RollBtn
-                  name="uniqueFeature"
-                  handleRoll={(ek, e) => handleDropSelect(ek, e, "uniqueFeatures")}
-                  rollingArray={(physicalData?.features || []).map((item) => item.option)}/>
-              </Form>
-            </FormGroup>
-            <FormGroup>
-              <Form inline>
-                <Dropdown
-                  name="mapScale"
-                  onSelect={(ek, e) => handleDropSelect(ek, e, "mapScale")}>
-                  <Dropdown.Toggle variant="outline-primary">
-                    {mapScale
-                      ? `Size: ${mapScale}`
-                      : "What kind of place are your adventurers starting?"}
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    {(physicalData?.mapScales || []).map((item, idx) => (
-                      <Dropdown.Item key={idx} name="mapScale">
-                        {item.option}
-                      </Dropdown.Item>
-                    ))}
-                  </Dropdown.Menu>
-                </Dropdown>
-                <RollBtn
-                  name="mapScale"
-                  handleRoll={(ek, e) => handleDropSelect(ek, e, "mapScale")}
-                  rollingArray={(physicalData?.mapScales || []).map((item) => item.option)}/>
-              </Form>
-            </FormGroup>
-            <FormGroup>
-              <Form inline>
-                <Dropdown
-                  name="charMeeting"
-                  onSelect={(ek, e) => handleDropSelect(ek, e, "charMeeting")}>
-                  <Dropdown.Toggle variant="outline-primary">
-                    {charMeeting
-                      ? `Meeting: ${charMeeting}`
-                      : "How do your characters know each other?"}
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    {(physicalData?.meetingLocations || []).map((item, idx) => (
-                      <Dropdown.Item key={idx} name="charMeeting">
-                        {item.option}
-                      </Dropdown.Item>
-                    ))}
-                  </Dropdown.Menu>
-                </Dropdown>
-                <RollBtn
-                  name="charMeeting"
-                  handleRoll={(ek, e) => handleDropSelect(ek, e, "charMeeting")}
-                  rollingArray={(physicalData?.meetingLocations || []).map((item) => item.option)}/>
-              </Form>
-            </FormGroup>
             <p>
               Consider some places your adventurers might travel through. Pick
               only 3.
