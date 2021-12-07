@@ -57,7 +57,7 @@ const Twists = ({ onSetTwist }) => {
           <Modal.Body>
             <p>Do you want to add a twist?</p>
             <br />
-            <div className="sideQuestBtnSpace">
+            <div className="centeredItems">
               <div style={{ margin: 2 }}>
                 <Button
                   name="Yes"

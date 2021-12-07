@@ -14,12 +14,6 @@ p {
   justify-content: center;
 }
 
-.characterRenownContainer {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 .tags {
   border: solid 1px rgb(182, 177, 177);
   padding: 10px;
@@ -29,12 +23,6 @@ p {
   align-items: center;
   justify-content: center;
   width: 500px;
-}
-
-.wrapIcons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 .grouping {
@@ -106,24 +94,6 @@ p {
   border-radius: 20%;
 }
 
-.partyBtnSpace {
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-}
-
-.saveBtn {
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-}
-
-.sideQuestBtnSpace {
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-}
-
 .setBackItem {
   align-self: start;
   align-content: center;
@@ -182,12 +152,6 @@ p {
   left: 0;
   width: 100%;
   text-align: center;
-}
-
-.actBtnSpace {
-  padding: 10px;
-  display: flex;
-  justify-content: center;
 }
 
 .color {

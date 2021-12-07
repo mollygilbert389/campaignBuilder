@@ -59,7 +59,7 @@ const Acts = ({ onSetActsAndClimx }) => {
                 dungeon exploration, and a final battle or acheivement of the end
                 goal.
             </p>
-            <div className="actBtnSpace">
+            <div className="centeredItems">
                 <div style={{ margin: 2 }}>
                 <Button name="3" variant="outline-primary" onClick={handleActBtn}>
                     3

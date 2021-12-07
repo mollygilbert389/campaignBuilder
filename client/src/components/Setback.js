@@ -125,7 +125,7 @@ const Setback = ({ onSetSetback }) => {
               You might want to make the campaign a little more interesting by
               adding a setback. Would you like to throw a wrench in their plans?
             </p>
-            <div className="sideQuestBtnSpace">
+            <div className="centeredItems">
               <div style={{ margin: 2 }}>
                 <Button
                   name="Yes"

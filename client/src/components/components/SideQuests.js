@@ -80,7 +80,7 @@ const SideQuests = ({ onSetSideQuests }) => {
           <Modal.Body>
             <p>Use the buttons below to add a side quest to your campaign.</p>
             <br />
-            <div className="sideQuestBtnSpace">
+            <div className="centeredItems">
               <div style={{ margin: 2 }}>
                 <Button
                   name="Yes"

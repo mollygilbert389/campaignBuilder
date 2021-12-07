@@ -61,7 +61,7 @@ const Renown = ({ campaign, setReduxPlayers }) => {
           </p>
           <br />
           {playerInfo.length > 0 && (
-            <div className="characterRenownContainer">
+            <div className="centeredItems">
               {playerInfo.map((player, idx) => {
                 return (
                   <div key={idx}>
@@ -87,7 +87,7 @@ const Renown = ({ campaign, setReduxPlayers }) => {
             </div>
           )}
           {playerInfo.length < 1 && (
-            <div className="characterRenownContainer">
+            <div className="centeredItems">
               <div>
                 <p>
                   You haven't added charcters to your campaign yet! If you're

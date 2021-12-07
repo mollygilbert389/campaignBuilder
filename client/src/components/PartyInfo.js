@@ -116,7 +116,7 @@ const PartyInfo = ({ onSetPlayers }) => {
         Click on the number of party members you plan to have. Must be at least
         3 (exluding the DM) and the max is 8.
       </p>
-      <div className="partyBtnSpace">
+      <div className="btnspace">
         {quantity.map((number, idx) => (
           <div key={idx} style={{ margin: 2 }}>
             <Button id={number} variant="outline-primary" onClick={handleClick}>
@@ -171,7 +171,7 @@ const PartyInfo = ({ onSetPlayers }) => {
               </div>
             ))}
           </div>
-          <div className="saveBtn">
+          <div className="btnspace">
             <Button variant="outline-success" onClick={handleReduxSave}>
               Save
             </Button>

@@ -130,7 +130,7 @@ const FactionOrgs = ({ onSetFactionOrgs, onSetFactionShow }) => {
                 <Modal.Title>Choose your Icon</Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                <div className="wrapIcons">
+                <div className="centeredItems">
                   {icons.map((icon, idx) => (
                     <Button
                       key={idx}

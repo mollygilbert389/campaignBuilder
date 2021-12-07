@@ -116,7 +116,7 @@ const RandomEvents = ({ campaign, onSetRandomEncounters }) => {
               figure this out later.
             </p>
             <br />
-            <div className="sideQuestBtnSpace">
+            <div className="centeredItems">
               <div style={{ margin: 2 }}>
                 <Button
                   name="Yes"
