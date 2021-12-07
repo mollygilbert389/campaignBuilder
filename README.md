@@ -15,18 +15,26 @@ The purpose of this application is to help D&D Dungeon Masters build fun and eng
 ![FactionsIcons](https://user-images.githubusercontent.com/29104770/95135904-c8928b00-072a-11eb-98d7-9ad1854d1d3c.gif)
 
 
-## Installation
+## Dependencies
+### Front End:
 * react
 * react-bootstrap 
-* reactstrap
+* materialui
 * react-redux
 * immutability-helper
 * react-router-dom
+
+### Back End:
+* mongoose
+* graphQL
+* apollo-server-express
+* express
   
-## Usage
+## Installation
 1. Clone it down. 
-2. Run npm i.
-3. Run npm start at the root level.
+3. Run npm i.
+4. run npm run seed
+5. run npm run develop
 
 ## Questions
 Please see my github: [Gihub Profile](https://github.com/mollygilberet389)
